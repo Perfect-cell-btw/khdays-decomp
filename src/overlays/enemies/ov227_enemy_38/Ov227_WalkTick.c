@@ -5,12 +5,12 @@
  * otherwise sub-state 2 is requested. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov227_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern unsigned int RandNextScaled(int n);
 extern int Ov227_ChooseMove(int *node, int dist);
 extern void Ov227_Steer(int *node, int rad);
 

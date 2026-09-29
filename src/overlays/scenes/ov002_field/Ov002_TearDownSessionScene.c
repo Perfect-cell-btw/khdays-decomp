@@ -2,7 +2,9 @@
  * when the party count at +0xc is more than one, hand the object at +0x10 back
  * through slot 0xc, run the two teardown steps and finally drop the global.
  * Session_GetLocalPlayerIndex is called for its side effect only -- the ROM discards r0. */
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_3(int handle, int slot);
 extern void Ov002_ClearSessionField14(void);
 extern void Ov002_ForwardToSubDc_6(int a);

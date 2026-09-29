@@ -14,11 +14,10 @@
  * ARM. Twin of Ov002_SceneOpenPanelStep, which hands this step back.
  */
 
+#include "game/engine.h"
+
 extern int data_ov002_0207f624;
 extern unsigned short data_0204c190;
-
-extern int func_02023c40(void);
-extern int func_02023c50(void);
 
 extern void Ov002_SelectEntryByKey(int nKey);
 extern void Ov002_WaitThenPlayIdle(void);

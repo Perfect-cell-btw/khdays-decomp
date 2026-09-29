@@ -5,6 +5,7 @@
  * the palette id (+0x22c) and its flag (bit 5 of +0x1b0) unconditionally. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016LiftDef {
     u8 pad_00[0x58];
@@ -28,7 +29,6 @@ typedef struct Ov016Lift {
 } Ov016Lift;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
 
 void Ov016_LiftBindSequence(Ov016Lift *pSelf)
 {

@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[8]; } KindTable;
@@ -21,9 +22,6 @@ typedef struct { VecFx32 center; VecFx32 ax; VecFx32 ay; VecFx32 az; int extent[
 
 extern void *Ov107_PackTextureHandle(void *self, int slot);
 extern void *CreateSubitemInstance0xB4(void *res);
-extern void RegisterSubscriberSlot(void *list, void *node);
-extern void Snd_RegisterSeqAndBind(void *dst, void *a, void *b, int n);
-extern void MainBlob_ResetSlotRows(void *obj, void *block);
 extern int InsertSortedEntryWithKey(void *obj, int set, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *res, const char *name);
 extern void *CallocInstance(int size);
@@ -31,10 +29,8 @@ extern void Ov107_EnqueueValue(void *self, void *obj);
 extern void *Ov265_Item_New(void *self);
 extern void Ov107_Actor_SetAttachSlot(void *self, int a, int b, const VecFx32 *v, int e);
 extern int FX_Div(int num, int den);
-extern void *List_InsertSorted(void *list, int size, int count);
 extern void *Ov107_CloneResourceTransform(const Placement *placement);
 extern void *Ov107_HitShape_NewBox(const Obb *box);
-extern void Res_RequestIdPair(int id);
 
 extern KindTable data_ov265_020d3668;
 extern const char data_ov265_020d36cc[];

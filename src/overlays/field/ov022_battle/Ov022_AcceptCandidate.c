@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct SphereFx32 {
     VecFx32 center;
@@ -46,11 +47,8 @@ typedef struct Ov022SelectorContext {
 } Ov022SelectorContext;
 
 extern Ov022SelectorContext *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
 extern VecFx32 *func_ov022_020881f8(int index);
-extern void *GetEntryField20ByIndex(int index);
 extern Ov022PartNode *List_First(void *list);
-extern Ov022PartNode *List_Next(void *list);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern int Ov107_HitShape_TestSphere(void *part, const SphereFx32 *sphere, int mode);
 extern void func_ov022_0208484c(int *state, Ov022Candidate *candidate,

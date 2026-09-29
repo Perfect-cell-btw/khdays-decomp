@@ -11,6 +11,9 @@
  * `unsigned char` on data_0204c240 is load-bearing -- signed gives ldrsb and an
  * extra zero register, and the total size still comes out right because mwcc then
  * reuses that zero for the following argument. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[4];
     void *pDialog;          /* +0x04 */
@@ -42,7 +45,6 @@ extern void Tween_Clear(void *tween);
 extern void G2x_SetBlendBrightness_(unsigned int reg, int planeMask, int ev);
 extern void *InstantiateClass(const void *res, int a);
 extern void *Ov002_CreateStepNode(void *fn);
-extern void Touch_StartAutoSampling(void);
 extern void Ov002_ForwardToSubDc_5(int a);
 extern void Ov002_RequestCaption(int a, int b);
 extern void Ov002_StepCaptionFade(void);

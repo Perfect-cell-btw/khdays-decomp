@@ -8,6 +8,8 @@
  * ARM.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad000[0x8c];
     int nTallyUp;
@@ -19,8 +21,6 @@ typedef struct {
 
 extern int data_ov002_0207f62c;
 
-extern void Draw_ScaledValue(void *pCtx, int nScreenBase, int nColumn, int nRow,
-                          int nWidth);
 extern int Ov002_GetItemResource(int nId);
 
 void Ov002_RedrawCaptionTallies(void)

@@ -15,9 +15,9 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa14;
-extern short Session_GetLocalPlayerIndex(void);
 
 void Ov002_SetLocalSlotPair(char *object, u16 first, int unused, u16 second) {
     char *ctx = data_ov002_0207fa14;

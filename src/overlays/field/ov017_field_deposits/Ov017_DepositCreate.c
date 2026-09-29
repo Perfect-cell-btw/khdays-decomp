@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x8c];
@@ -52,7 +53,6 @@ typedef struct Ov017Deposit {
 extern Ov017Deposit *Ov002_ClaimPoolEntry(Ov017DepositDef *pClass, int nSlot); /* take a piece from the class table */
 extern void  Ov002_PlaceElementNode(void *pPiece, void *pNode, int *aPlace, int nSlot, int nKind, int nA, int nB, int nC, int nFacing, int nOne);
 extern void  Ov002_BuildSpawnPosition(VecFx32 *pStart, VecFx32 *pPos, int *aPlace); /* start position from the placement */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);          /* Actor_SetVecAndSyncChild */
 extern void  Ov002_PushBucketNode(int nBucket, void *pPiece);          /* register the piece */
 extern void *Ov017_DepositStep(Ov017Deposit *pSelf);                /* Ov017_DepositStep */
 

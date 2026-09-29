@@ -6,20 +6,10 @@
  * 0x20 fails outright. Case-body order (0x15,0x16,0x13,0x19,0x1a,0x1b,0x1c,
  * 0x14,0x1d,0x1e,0x1f,0x20,0x17/0x18,0..0x12) is the ROM's own source order,
  * confirmed against the jump table's raw offsets, not value-sorted. */
+
+#include "game/engine.h"
+
 extern int MsgDb_LoadRecord15(int *rec_out, unsigned int index, int keep);
-extern int MsgDb_DecodeDb16(int *rec_out, int value, int keep);
-extern int MsgDb_DecodeDb13(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb19(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb1A(int *rec_out, int index, int keep);
-extern int MsgDb_FetchEntryPair0x1b(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb1C(int *rec_out, unsigned int index, int keep);
-extern int MsgDb_DecodeDb14(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb1D(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb1E(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb1F(int *rec_out, int index, int keep);
-extern int MsgDb_DecodeDb20(int *rec_out, int index, int keep);
-extern int MsgDb_BuildEntryRecord(int *rec_out, unsigned int index, int keep, int db);
-extern int MsgDb_DecodeGenericRecord(int *param_1, int param_2, unsigned int param_3, int param_4);
 
 int MsgDb_FetchRecord(void *pRec_out, int db, unsigned int index, int keep) {
     int *rec_out = (int *)pRec_out;

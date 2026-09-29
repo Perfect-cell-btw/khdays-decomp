@@ -2,6 +2,7 @@
  * equipment, sets up the graphics and starts the calendar animation. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov004SceneArgs {
     int currentDay;
@@ -13,8 +14,6 @@ extern char *data_ov004_02051380;
 extern u8 data_0204c300[];
 extern char data_ov004_020512ec[];
 
-extern u32 GameState_GetField(u32 field, int width);
-extern void GameState_SetField(u32 field, int width, u32 value);
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void *MI_CpuFill8(void *dst, int value, u32 size);
 extern int Ov004_MapMissionToRankSlot(int value);

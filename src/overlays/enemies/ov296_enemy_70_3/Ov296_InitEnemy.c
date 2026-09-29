@@ -2,6 +2,7 @@
  * its model (lowered) with its animation tracks and attach slots, and its transform entries. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct v3 {
     int a;
@@ -48,13 +49,8 @@ extern void Ov296_TickStaggerAndFlipFacing(void);
 
 extern void *Ov107_PackTextureHandle(struct Obj *, int);
 extern char *CreateSubitemInstance0xB4(void *);
-extern void RegisterSubscriberSlot(void *, void *);
-extern void Srt_SetTranslationXYZ(void *, int, int, int);
-extern void SetSubitemState(void *, int, int, int);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *, int, int, int, int);
-extern int *List_InsertSorted(void *, int, int);
 extern int Ov107_CloneResourceTransform(void *);
-extern void Res_RequestIdPair(int nId);
 
 void Ov296_InitEnemy(struct Obj *arg0)
 {

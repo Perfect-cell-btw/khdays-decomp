@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MenuContext {
     u8   pad_0000[0x30];
@@ -26,11 +27,7 @@ typedef struct Ov008ListHooks {
 #define NO_TARGET   -1
 
 extern Ov008MenuContext *Ov008_GetMenuContext(void);            /* Ov008_GetMenuContext */
-extern int GameState_IsFlagSet(int nFlag);                            /* GameState_IsFlagSet */
-extern void GameState_SetFlag(int nFlag);                           /* GameState_SetFlag */
-extern void func_020235bc(int nFlag);                           /* GameState_ClearFlag */
 extern void Ov008_SetTargetSlot(int nEntry, int nTarget);       /* Ov008_SetTargetSlot */
-extern void PlaySound(int nKind, int nArg);                 /* PlaySound */
 extern void Ov008_GridMenuConfirm(void);
 extern void Ov008_MenuKeyUp(void);
 extern void Ov008_MenuKeyDown(void);

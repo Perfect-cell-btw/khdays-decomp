@@ -2,8 +2,9 @@
  * +0x46c) on the local player's session, resets the mission owner's +0x2d38 block speed (+0xc)
  * to 0x50a -- scaled by 1.5 on difficulty 1 -- and its +0x128 duration to 0x1e6 (0x144
  * otherwise), then runs the shared state entry. */
-extern int Session_GetLocalPlayerIndex(void);
-extern int func_02023c40(void);
+
+#include "game/engine.h"
+
 extern int Ov022_ActorSetState(int *self, int state);
 extern int data_ov062_020b80e0;
 

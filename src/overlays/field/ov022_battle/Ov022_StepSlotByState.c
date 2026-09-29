@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define WAIT_HOLD 0x3000
 
@@ -36,7 +37,6 @@ struct ReactionCtx {
 extern void func_ov022_0208cbf8(struct ReactionCtx *pCtx, int nDelta);
 extern void Ov022_StepSlotState2(struct ReactionCtx *pCtx, int nDelta);
 extern void Ov022_StepSlotState3(struct ReactionCtx *pCtx, int nDelta);
-extern int Session_IsReady(void);
 
 int Ov022_StepSlotByState(struct ReactionCtx *pCtx, int nDelta)
 {

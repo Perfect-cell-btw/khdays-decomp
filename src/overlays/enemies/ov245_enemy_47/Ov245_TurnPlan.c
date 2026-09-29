@@ -8,12 +8,12 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_SwingTick(void);
 extern const short data_0203d210[];

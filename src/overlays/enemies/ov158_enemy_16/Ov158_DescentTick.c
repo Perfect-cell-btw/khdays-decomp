@@ -10,6 +10,7 @@
  * x / +0x24 z while its y sinks by the probe and the +4 sub-object follows. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int q[4]; } Quat;
 typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
@@ -19,7 +20,6 @@ static inline int FX_Mul(int a, int b) {
 }
 
 extern int Ov107_FindNearestObject(int owner, int flag);
-extern void Task_MarkFinished(int *node);
 extern int Ov158_ProbeGround(int *state, VecFx32 *dir, VecFx32 *out);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Srt_SetRotationQuat(void *transform, const Quat *q);

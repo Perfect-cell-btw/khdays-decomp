@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -80,7 +81,6 @@ extern void VEC_Add(FxVec *a, FxVec *b, FxVec *ab);
 extern int VEC_Normalize(FxVec *out, FxVec *in);
 extern void ScaleVec3Fx12(int scale, FxVec *in, FxVec *out);
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern int Ov107_CollectSphereOverlaps(char *actor, struct Sphere *shape, void **out);
 extern int Ov107_InvokeHitCallback(void *victim, char *a, char *b, int mode,
                                FxVec *push, int flags);

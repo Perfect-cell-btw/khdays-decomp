@@ -1,7 +1,6 @@
 /* Disables (0) or enables (1) the element's scene node unless it is locked. */
 
-extern void SceneNode_Disable(void *p);
-extern void SceneNode_Enable(void *p);
+#include "game/engine.h"
 
 void Ov014_DispatchTouchAction(char *obj, int sel) {
     switch (sel) {

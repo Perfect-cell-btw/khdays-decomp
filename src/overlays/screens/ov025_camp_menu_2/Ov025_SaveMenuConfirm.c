@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SLOT_COUNT     3
 #define SLOT_HIDDEN_X  0x100000
@@ -42,12 +43,10 @@ typedef struct Ov008SaveMenu {
 extern int  Ov025_GetContext(void);                                   /* Ov008_GetContext */
 extern void Ov025_SetMenuEntriesVisible(int bPrompt, int bShow);                 /* confirm prompt */
 extern void Ov025_SaveMenuDrawPrompt(Ov008SaveMenu *pMenu, int nPhase);       /* lay the menu out */
-extern void func_02020904(void);                                         /* IncGlobalShort_0204bda0 */
 extern int  Ov025_BeginSaveToSlot(Ov008SaveMenu *pMenu, u32 nSlot);        /* Ov008_BeginSaveToSlot */
 extern void Ov025_UpdateMenuButton5(int nArg);                               /* Ov008_UpdateMenuButton5 */
 extern void Ov025_SetCtxField95fc(int nValue);                             /* Ov008_SetCtxField95fc */
 extern void Ov025_SetTargetSlot(int nEntry, int nTarget);                /* Ov008_SetTargetSlot */
-extern void PlaySound(int nKind, int nSound);                        /* PlaySound */
 
 void Ov025_SaveMenuConfirm(Ov008SaveMenu *pMenu)
 {

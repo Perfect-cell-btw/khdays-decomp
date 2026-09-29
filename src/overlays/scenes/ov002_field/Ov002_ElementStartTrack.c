@@ -1,10 +1,9 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nTrack, int nFrame);
-extern void SceneNode_Enable(u16 *pAnim);
 extern void *func_ov022_020881f8(int nIndex);
-extern void Slot_Spawn(int nId, int nMode, void *pBlock, int nParam);
 
 /* Start an element's track and, when it is the one that matters, its effect.
  *

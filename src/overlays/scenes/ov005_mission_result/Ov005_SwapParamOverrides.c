@@ -1,7 +1,7 @@
 /* Swaps the parameter overrides of the current element: restores the previous element's saved slot
  * values, applies the new element's override values and makes it current (+0x4a70). */
 
-extern int SetSubitemValueFromIndex();
+#include "game/engine.h"
 
 void Ov005_SwapParamOverrides(char *a, int *b)
 {

@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Owner {
     u8 pad000[9];
@@ -49,8 +50,6 @@ struct Message {
     u8 nField24 : 2;             /* bits 6 and 7 */
     u8 pad17;
 };
-
-extern void MsgQueue_SendGate(int nGate, void *pMessage, int nSize);
 
 #define MESSAGE_GATE 9
 

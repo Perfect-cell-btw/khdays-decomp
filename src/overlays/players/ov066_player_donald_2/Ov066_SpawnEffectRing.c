@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct SpawnRing4 {
     VecFx32 v[4];
@@ -53,7 +54,6 @@ extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
  * byte-identical code but names the reloc _s32_div_f, which symbols.txt does not
  * define, so the helper is called by its address instead. */
 extern long long func_02020400(int a, int b);
-extern int Session_RandNextScaled(int a);
 extern void Ov022_SendPlacementMessage(char *self, struct PanelSpawnReq *pReq);
 
 extern struct SpawnRing4 data_ov066_020b6a4c;

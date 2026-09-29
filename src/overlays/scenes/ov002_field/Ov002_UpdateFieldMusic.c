@@ -1,5 +1,5 @@
-extern int GameState_IsFlagSet(int id);
-extern void GameState_SetFlag(int id);
+#include "game/engine.h"
+
 extern int func_ov022_02086ef4(void);
 extern int func_ov022_02086f24(void);
 extern int Ov002_RunShutdownHook(void);

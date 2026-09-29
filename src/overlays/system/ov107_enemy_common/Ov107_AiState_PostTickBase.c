@@ -1,9 +1,10 @@
 /* Counts the hit cooldown down, updates the hit shapes, respawns actors fallen below the world and
  * ticks the rest timer. */
 
+#include "game/engine.h"
+
 extern int func_ov107_020c9848(void);
 extern int List_First(void *list);
-extern int List_Next(void *list);
 extern void Ov107_HitShape_UpdateWorld(int v);
 extern void Ov107_MoveNodeAndRelayout(void *self, void *node);
 extern void Ov107_AiState_PostTick(void *self);

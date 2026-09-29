@@ -9,18 +9,17 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov026_02091368;
 
 extern void Ov026_RebuildSpriteCells(void);                       /* Ov008_RebuildSpriteCells */
 extern void Ov026_Shop_ReleaseModel(void);                       /* close the panel screen */
 extern void Ov026_InvokeMethod8(void *pObject);              /* ov008_InvokeMethod8 */
-extern void FSi_BindCardTransfer(int nArg);                         /* FSi_BindCardTransfer */
 extern void Ov026_FreeParamTable(void);                       /* Ov008_FreeParamTable */
 extern void Ov026_Shop_HideCells(void);                       /* free the digit cells */
 extern void Ov026_FreeResourceRecordBuffer(void *pCache);
 extern void FreeAllListNodeSubBuffers(void *pSurface);                   /* FreeAllListNodeSubBuffers */
-extern void FreeFieldAt8(void *pGlyphs);                    /* FreeFieldAt8 */
 extern void Ov026_DestroyObjectsAndRelease(void *pGroup);               /* Ov008_Set_4364 */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void Ov026_SweepElements(void *pPanel);

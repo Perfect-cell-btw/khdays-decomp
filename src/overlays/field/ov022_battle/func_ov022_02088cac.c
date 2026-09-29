@@ -1,6 +1,7 @@
 /* Triggers event 0x1a on a player's timer when it is idle. */
 
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 extern int Ov022_IsByte8ZeroOr3(int arg0);
 extern int func_ov022_020b19ec(int *arg0, int arg1);
 int func_ov022_02088cac(int arg0) {

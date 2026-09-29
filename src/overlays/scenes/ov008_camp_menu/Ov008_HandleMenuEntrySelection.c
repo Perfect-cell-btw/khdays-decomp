@@ -2,6 +2,7 @@
  * the selected value, maps its icon, and redraws the caption surface. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int x;
@@ -28,12 +29,8 @@ extern Ov008MenuEntry *Ov008_FindEntryById(int context, int entryId);
 extern UiLayoutPos *Ov008_GetEntryPos(int context, Ov008MenuEntry *entry);
 extern void Ov008_SetEntryPos(int context, Ov008MenuEntry *entry,
                                 UiLayoutPos *position);
-extern void PlaySound(unsigned int soundId, unsigned int variant);
 extern int Ov008_MapMenuObjectTypeToIcon(int value);
 extern void *Ov008_GetVarRecordByIndex(void *variables, int index);
-extern void Obj_InvokeInnerVtable4(void *surface);
-extern void Text_DrawWithShadow(void *surface, int id, int x, int y,
-                          void *buffer, int shadow);
 extern void EnqueueObjGfxCommand(void *surface);
 
 void Ov008_HandleMenuEntrySelection(Ov008MenuEntry *selectedEntry, u32 eventFlags)

@@ -12,10 +12,10 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int Ov002_GetPhaseWord(void);
 extern int func_ov022_020882f8(void);
-extern void GetEntryField20ByIndex(int index);
 extern void func_ov022_020888ec(int index, int on);
 
 void Ov002_SetRosterHighlight(char *self, int unused, int on) {

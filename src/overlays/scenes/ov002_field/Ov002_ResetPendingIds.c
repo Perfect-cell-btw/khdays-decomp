@@ -1,9 +1,9 @@
+#include "game/engine.h"
+
 extern char *data_ov002_0207fa00;
 
-extern void func_02020878(int nMode);
 extern void Ov002_SetSessionActive(int nKind, int nValue);
 extern void MIi_CpuClear16(unsigned short nValue, void *pDest, int nSize);
-extern int func_0201e428(void);
 
 /* Reset the pending-id list and re-arm its timer. The eight slots are blanked
  * to 0xffff first, then the caller's ids are narrowed into them. */

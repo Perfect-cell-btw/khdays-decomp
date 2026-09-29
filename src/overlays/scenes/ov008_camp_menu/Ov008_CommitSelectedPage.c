@@ -5,14 +5,13 @@
  * title (Ov008_ResetPartyMemberAndLayout from slot+4). Then loads the page layout (0205005c/020511c8) and
  * the difficulty glyph (020511f8 from Ov008_CountOccupiedSlots), and for each of the 4 slots pushes
  * its state icon (bits 1-3 of heap+slot*0x1c+0xbb) and its enabled flag (bit 0). */
+
+#include "game/engine.h"
+
 extern void  Ov008_ResetDisplayForPageList(void);
 extern void  Ov008_ReleaseMenuUi(void);
-extern int   Session_GetLocalPlayerIndex(void);
 extern void  Ov008_RefreshSaveSlotWidget(int a);
-extern void  SetSelectionIfChanged(int a);
-extern void  InvokeSubStructAndStampByte(int a, int b);
 extern int   Slot4_GetIfOccupied(int slot);
-extern void  PartyState_ResetBuffers(void);
 extern void  Ov008_ResetPartyMemberAndLayout(int a, int b);
 extern void  Ov008_InitCampaignMenuContext(int a);
 extern void  Ov008_SetCtxField967c(unsigned int a);

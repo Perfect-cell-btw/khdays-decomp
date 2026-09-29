@@ -5,12 +5,11 @@
  * plays (02033b78 0 / 3). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
 extern int   Ov025_GetCtxObject95c0(void);                             /* Ov008_GetCtxObject95c0 */
 extern void  Ov002_PostResultReport(int nPayload);
 extern void  Ov025_SetTargetSlot(int nEntry, int nTarget);          /* Ov008_SetTargetSlot */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 
 void Ov025_ScrollList_Leave(void)
 {

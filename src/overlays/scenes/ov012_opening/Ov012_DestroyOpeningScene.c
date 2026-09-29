@@ -1,12 +1,11 @@
 /* Releases the opening archives, renderer and font resource, clears sound slot 3, unloads ov024,
  * invalidates the opening clip id and restores the LCD swap bit. */
 
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 extern int func_ov012_0205bb78(void *renderer);
-extern int FontResource_Destroy(void *font);
-extern void StoreGlobalArrayEntry(int slot, int value);
-extern void UnloadOverlaySync(int processor, int overlayId);
 
 extern unsigned int OVERLAY_24_ID[1];
 #define FS_OVERLAY_ID_ov024 ((unsigned int)&OVERLAY_24_ID)

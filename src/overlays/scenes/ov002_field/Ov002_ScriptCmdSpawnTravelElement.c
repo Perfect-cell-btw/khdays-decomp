@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     short kind;
@@ -11,8 +12,6 @@ typedef struct {
     int   value;
 } OperandSlot;
 
-extern int ScriptVm_ReadOperandInt(void *pContext, OperandSlot *pOperand);
-extern int ScriptVm_ReadOperandFx32(void *pContext, OperandSlot *pOperand);
 extern void *Ov002_GetModuleSlot(int nModule);
 extern int func_02020400(int nNumerator, int nDenominator);
 extern void Ov002_SpawnTravelElement(void *pClass, u16 wA, u16 wB, u16 wC,

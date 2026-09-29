@@ -1,8 +1,9 @@
 /* Unless busy moves the page B selection forward and plays the cursor sound. */
 
+#include "game/engine.h"
+
 extern int Ov025_GetPageB();
 extern int Ov025_ChangeMenuSelection();
-extern int PlaySound();
 
 void Ov025_PageB_SelectNext(int arg0) {
     int x = Ov025_GetPageB(arg0);

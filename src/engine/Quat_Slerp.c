@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 typedef struct {
     int x;
     int y;
@@ -5,13 +7,9 @@ typedef struct {
     int w;
 } Quat;
 
-extern int Vec4_DotFx12(int *a, int *b);
 extern int FX_Sqrt(int x);
 extern int func_020050b4(int x, int z);
 extern long long FX_InvFx64c(int x);
-extern void Obj_SetFourWords(int *p, int a, int b, int c, int d);
-extern void Vec4_ScaleFx12(unsigned int *out, int *v, int scalar);
-extern void func_0202ef10(int *out, int *a, int *b);
 extern short data_0203d210[];
 
 /*

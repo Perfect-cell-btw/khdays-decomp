@@ -9,6 +9,7 @@
  * predicating them inline. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct NNSFndList {
     u16   numObjects;
@@ -42,7 +43,6 @@ extern void  Ov008_BuildMenuGrid(void *self, void *entries, NNSFndList *list, vo
 extern void  Ov008_RebuildViewAndCountCells(void *self, void *entries, NNSFndList *list);
 extern void  Ov008_ReleaseHandleGridAndList(void *self, void *entries, NNSFndList *list);
 extern void  func_ov008_02053464(void *self);
-extern int   GameState_GetField(int id, int field);
 
 void Ov008_BuildSaveSlotEntry(int param_1, int param_2, int param_3)
 {

@@ -4,6 +4,7 @@
 #pragma thumb on
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022AnimationSlot Ov022AnimationSlot;
 
@@ -36,7 +37,6 @@ typedef int (*Ov022SceneCallback)(void);
 extern Ov022AnimationRoot *NNSi_FndGetCurrentRootHeap(void);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 size);
 extern void Ov022_SetupAnimationSlots(Ov022AnimationSetup *setup);
-extern int LoadGlobalU16At0(void);
 extern u8 data_0204be04;
 extern int func_ov022_02088dec(void);
 

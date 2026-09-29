@@ -2,6 +2,7 @@
  * loads the shop table. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern u32 OVERLAY_106_ID[1];
 #define FS_OVERLAY_ID_ov106 ((u32)(u32)&OVERLAY_106_ID)
@@ -17,7 +18,6 @@ typedef struct Ov022RegistrationState {
 } Ov022RegistrationState;
 
 extern void Ov022_SetupRenderState(void);
-extern void LoadOverlaySync(int arg0, int arg1);
 extern int InstantiateClass(void *registrationClass,
                          Ov022RegistrationBuffer *buffer);
 extern void Ov002_LoadShopTable(void);

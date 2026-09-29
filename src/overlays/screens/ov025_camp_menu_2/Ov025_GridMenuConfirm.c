@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define STATE_LIST   0
 #define STATE_GRID   1
@@ -60,7 +61,6 @@ typedef struct Ov008MenuContext {
 extern void Ov025_CopySourceBlock(void *pOut);                              /* touch record */
 extern int  Ov025_PlaceDraggedNode(Ov008MenuContext *pCtx, int nArg);        /* drop the dragged node */
 extern int  Ov025_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep); /* move the cursor */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern int  Ov025_PickUpGridNode(Ov008MenuContext *pCtx);                  /* Ov008_PickUpGridNode */
 extern int  Ov025_DrawPageBElement(int nMode, int nA, int nB);               /* cursor mode request */
 extern void Ov025_PageB_UploadSurface154(void);                                    /* grid refresh */

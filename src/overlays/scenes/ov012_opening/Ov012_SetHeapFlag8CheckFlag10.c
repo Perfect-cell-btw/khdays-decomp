@@ -1,8 +1,9 @@
 /* Gets the NNS root heap and ORs bit 8 into the u16 at heap+2; if bit 0x10 is now clear returns 0,
  * else calls Scene_RequestPending(5, 0x190) and returns -2. */
 
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap();
-extern void Scene_RequestPending();
 
 int Ov012_SetHeapFlag8CheckFlag10(void) {
     unsigned short *p = (unsigned short *)(NNSi_FndGetCurrentRootHeap() + 2);

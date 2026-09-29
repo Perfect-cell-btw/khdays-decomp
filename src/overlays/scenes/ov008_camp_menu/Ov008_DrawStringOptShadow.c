@@ -10,7 +10,8 @@
  * scene label is not. The offsets and logic below are this function's -- the code is
  * byte-identical to the rep.
  */
-extern void Text_DrawDirectional_2(int dst, int x, int y, int colour, unsigned int flags, int text);
+
+#include "game/engine.h"
 
 void Ov008_DrawStringOptShadow(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6) {
     if (param_5 != 0) {

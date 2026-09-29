@@ -5,6 +5,7 @@
  * bit 7 is dropped and the five queued effects (+0x45c) wiped. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023MotionState {  /* at +4 of the actor */
     u8   pad_000[0x324];
@@ -24,7 +25,6 @@ typedef struct Ov023Actor {
     int  nFlags;              /* 0x1a28 */
 } Ov023Actor;
 
-extern void ReleaseField74AndCleanup(void *pAnim);                             /* Anim_Release */
 extern void MI_CpuFill8(void *pDst, u32 nValue, u32 nSize);
 
 void Ov023_ResetActorModel(Ov023Actor *pActor)

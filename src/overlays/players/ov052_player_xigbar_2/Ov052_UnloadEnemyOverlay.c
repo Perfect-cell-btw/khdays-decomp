@@ -1,9 +1,9 @@
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov052_DisposeAndFreeChild(char *obj);
 extern void Ov052_ReleaseChildFromGlobal(char *heap);
 extern void func_02023ad0(int h);
-extern void ReleaseField74AndCleanup(char *p);
-extern void FreeAllResourceTables(char *p);
 extern void Ov022_DestroyRoot(char *heap);
 
 /* Enemy overlay teardown: drops the model handle, the two animation blocks and the sound block,

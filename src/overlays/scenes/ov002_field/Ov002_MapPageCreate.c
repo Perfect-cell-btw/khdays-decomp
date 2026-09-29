@@ -21,6 +21,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002MapPage {
     int nLocalPlayer;
@@ -51,7 +52,6 @@ extern void Ov002_Ctx_InvokeTagTrackerCallback(int hSound);
 extern int Ov002_Ctx_FindActiveEntryByTag(int nKind);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int hItem, int nFlag);
 extern void Ov002_AppendEntry(int *pTarget, void *pFn, int nArg);
-extern int Session_GetLocalPlayerIndex(void);
 extern Ov002MapSelection *Ov002_GetPlayerFlagRecord(int nPlayer);
 extern void Ov002_StopSlotSounds(int nGroup, int nFlag);
 extern void Ov002_SwapActivePair(int nCell, int hSound);

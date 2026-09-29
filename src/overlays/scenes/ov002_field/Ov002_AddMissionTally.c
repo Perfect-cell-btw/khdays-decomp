@@ -17,6 +17,7 @@
 /* The record the deferred handler consumes: kind, index and value. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 nKind;
@@ -27,7 +28,6 @@ typedef struct {
 
 extern char *data_ov002_0207fa00;
 
-extern int Session_IsReady(void);
 extern void Ov002_SplitWordToHalves(int nPacked, short *pHi, short *pLo);
 extern void Ov002_ApplyTally(Ov002Request *pRequest);
 

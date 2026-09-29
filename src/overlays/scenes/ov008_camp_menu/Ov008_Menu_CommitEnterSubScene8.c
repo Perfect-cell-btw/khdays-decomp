@@ -18,16 +18,15 @@
  * scratch register (r1) and diverges at the first bit test.
  */
 
+#include "game/engine.h"
+
 extern int Ov008_PageB_GetBusy(void);
 extern int Ov008_PageB_HasPending(void);
 extern int Ov008_IsSessionReady(void);
 extern int Ov008_AreSelectedMenuSlotsReady(void);
 extern int Ov008_IsBusy(void);
-extern int GameState_IsFlagSet(int flag);
-extern void PlaySound(int a, int b);
 extern void Ov008_UpdateMenuButton5(int a);
 extern void Ov008_SetActivePage(int a);
-extern void GameState_SetFlag(int flag);
 extern void Ov008_PrimeSubSceneFromCursor(int arg);
 extern int data_ov008_02090f1c;
 

@@ -2,6 +2,7 @@
  * mission members, thresholds, rules and day clock into the game state and acknowledges it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002MissionMemberHeader {
     u8 memberId;
@@ -70,7 +71,6 @@ extern void Ov008_UpdateCursorSprite(void);
 extern int Ov008_Link_IsLocal(void);
 extern int Ov008_IsSessionReady(void);
 extern void Ov008_SendMenuMessage(u8 messageType);
-extern int MsgQueue_Contains(u32 handle);
 extern int Slot4_GetIfOccupied(int slot);
 extern void Ov008_RefreshSaveSlotWidget(int slot);
 

@@ -3,7 +3,8 @@
  * advances the state via Ov022_ActorSetState(obj, 0); on success clears bit 11 and returns the
  * result. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern int Ov022_ActorSetState(int obj, int mode);
 
 int Ov022_TryAdvanceAndClearBit11(int obj) {

@@ -10,6 +10,7 @@
  * flag 0x200a set when the 95c0 object (02084dd8) is 2. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct GameplayThresholdSnapshot {
     u32  words[7];
@@ -45,14 +46,9 @@ extern Ov008MissionMenu *Ov025_GetPageB(void);                 /* Ov025_GetPageB
 extern u32   Ov025_GetCtxField967c(void);                             /* Ov008_GetCtxField967c: current mission id */
 extern Ov008MissionListEntry *Ov025_GetNextMissionEntry_5(u32 nMissionId);  /* find the listed mission */
 extern void  Ov002_PostResultReport(int nPayload);                     /* leave the menu into the mission */
-extern void  func_020235bc(int nFlag);                              /* GameState_ClearFlag */
 extern int   Ov025_GetCtxObject9630(void);                             /* Ov008_GetCtxObject9630 */
-extern void  GameState_SetFlag(int nFlag);                              /* GameState_SetFlag */
 extern int   Ov025_GetCtxObject9634(void);                             /* Ov025_GetCtxObject9634: page transition */
-extern int   GameState_IsFlagSet(int nFlag);                              /* GameState_IsFlagSet */
 extern void  Ov025_CampaignModeHookNoOp(int bEnabled);                     /* Ov025_SetTouchEnabled */
-extern void  StampByteAndInvokeSubStructAt(int nKind, int nSound);                  /* PlayJingle */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern int   Ov025_GetCtxObject95c0(void);                             /* Ov008_GetCtxObject95c0 */
 extern void  Ov025_SetTargetSlot(int nEntry, int nTarget);          /* Ov008_SetTargetSlot */
 

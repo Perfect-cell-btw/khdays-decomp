@@ -1,4 +1,7 @@
 /* Ov116_CircleTick: circle tick of the ov115 enemy (x2), variant of the matched ov175 sibling (pull capped at 0x100, height steps of 0x40, rolls 9 (<0x28) or 8 (<0x3c) when the target check passes, else 5). */
+
+#include "game/engine.h"
+
 /*
  * Circle-strafe the target: build a perpendicular drift, nudge the facing, and roll for the next
  * attack when the timer expires (x5).
@@ -37,7 +40,6 @@ extern void ScaleVec3Fx12(int s, void *v, void *d);
 extern void VEC_CrossProduct(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
-extern int RandNextScaled();
 extern int Ov116_IsHeldSlotEmpty(int self);
 extern int data_02042264;
 

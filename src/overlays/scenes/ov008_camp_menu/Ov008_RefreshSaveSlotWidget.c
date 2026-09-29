@@ -8,9 +8,11 @@
  * register to keep the frame 8-byte aligned, and r3 is simply the cheapest one to hand. Reading
  * that pushed r3 as data invented both a fourth parameter and a third array element; with the
  * record two words long and the function taking one argument, it matches exactly. */
+
+#include "game/engine.h"
+
 extern int  Slot4_GetIfOccupied(int slot);
 extern int  Ov008_GetEntryStatusByte(int slot);
-extern void CopyToSlotTable8(short *info, int slot);
 
 void Ov008_RefreshSaveSlotWidget(int slot) {
     int info[2];

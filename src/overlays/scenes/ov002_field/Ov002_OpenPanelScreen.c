@@ -26,6 +26,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     void *pScreen;
@@ -150,13 +151,8 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void *Archive_LoadFile(unsigned int nKey, int nHeap);
 extern void GetResourceSubBlock_CHAR2(void *hRes, void **ppOut);
-extern void Resource_BindByName(void *pField, const void *pTable);
-extern int LoadGlobalU16At0(void);
 extern int InstantiateClass(const void *pClass, const void *pParams);
-extern void *Res_LoadSpriteSet(SpriteResSet *pSet, void *pArc, int a, int b, int c);
-extern int func_02024e5c(void);
 extern void *Msg_OpenContainerAndReadHeader(const void *pName, int nHeap);
-extern void ZeroHalfThenFree(void *pContainer);
 extern void Tween_Clear(void *pTween);
 extern void *Ov002_CreateStepNode(void *pStep);
 extern void Ov002_StartBlendFade(int a, int b, int nDuration);

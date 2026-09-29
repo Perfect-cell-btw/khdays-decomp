@@ -1,6 +1,8 @@
 /* First active entity of the container (+0x80), other than the owner, one of whose shapes (+0x22c)
  * overlaps the sphere; shape out optional. */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad[4];
     void *container;
@@ -20,7 +22,6 @@ typedef struct {
 } Inner;
 
 extern int List_First(void *o);
-extern int List_Next(void *o);
 extern int Ov107_HitShape_TestSphere(void *p, void *position, int flag);
 
 Elem *Ov107_FindEntityHitBySphere(Owner *owner, void *position, void **outHit)

@@ -8,6 +8,7 @@
  * Ov008_ApplyModeWidgets2 (same shape, ctx->selected at 0x184 there). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008ModeCtx {
     u8  pad_0000[0x4fc];
@@ -20,7 +21,6 @@ extern void  Ov025_ReleaseTwoSlotsEx_2(void *wctx, void *w, int val);
 extern void  Ov025_SwapParamOverrides(void *wctx, void *w);
 extern void  Ov025_PushSubitemPair(void *wctx, void *w, int arg);
 extern void  Ov025_SetEntrySlotsVisible(void *wctx, void *w, int flag);
-extern void  PlaySound(int a, int b);
 
 void Ov025_ApplyModeWidgets(Ov008ModeCtx *ctx, int mode)
 {

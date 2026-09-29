@@ -2,8 +2,8 @@
  * (0x1000 + d0x4001) into node[0xc], then register the wait think callback. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov245_WaitForFreeSlot(void);
 

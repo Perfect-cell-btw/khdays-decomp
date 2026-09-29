@@ -1,6 +1,7 @@
 /* Ov136_OrientFromYaw: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-extern int Angle_TurnToward();
-extern int QuatFromAxisAngle();
+
+#include "game/engine.h"
+
 extern int Quat_FromTwoVectors();
 extern int Quat_Multiply();
 extern int Srt_SetRotationQuat();

@@ -6,13 +6,13 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int List_First(void *list);
-extern int List_Next(void *list);
 extern void Ov254_ForwardToAiIfReady_2(int partner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;

@@ -2,11 +2,10 @@
  * (starting the selection schedule and playing its sound the first time); returns the next step
  * handler or 0. */
 
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_02086d0c(int a);
-extern int GameState_IsFlagSet(int id);
-extern void PlaySoundChecked(int a, int b);
-extern void func_020235bc(int id);
 extern void func_ov022_020869f4(void);
 extern void Ov022_StepSelectionSchedule(void);
 

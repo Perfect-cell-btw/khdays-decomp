@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 typedef void *StateFn;
@@ -24,11 +25,7 @@ extern u32 OVERLAY_12_ID[1];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int  Ov012_IsGlobalFlag3Set(void);
-extern void SetMasterBrightnessMain(int brightness);   /* master brightness, main engine */
-extern void SetMasterBrightnessSub(int brightness);   /* master brightness, sub engine  */
 extern void func_02023ad0(int handle);
-extern void UnloadOverlaySync(int target, FSOverlayID id);   /* unload overlay */
-extern void Gfx_Reset2DEngines(void);
 extern StateFn Ov000_FreshBootGfxSetup(int arg);
 
 StateFn Ov000_FinishMoviePlayback_2(void) {

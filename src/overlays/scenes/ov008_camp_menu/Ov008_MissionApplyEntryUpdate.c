@@ -1,9 +1,8 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
-extern void Obj_GetWord28(void *instance);
-extern int Session_IsReady(void);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 void Ov008_MissionApplyEntryUpdate(const void *data, u32 size) {

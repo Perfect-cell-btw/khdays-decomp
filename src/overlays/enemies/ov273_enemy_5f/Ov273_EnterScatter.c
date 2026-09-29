@@ -6,10 +6,10 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct SpreadMsg { int w[17]; };
 typedef void (*MsgHook)(int actor, struct SpreadMsg *m, int size);
-extern int  RandNextScaled(int bound);
 extern void func_ov107_020c0b90(int obj, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern const struct SpreadMsg data_ov273_020d6b24;

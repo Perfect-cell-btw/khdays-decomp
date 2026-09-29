@@ -7,9 +7,11 @@
  * up front and the bodies laid out after, with the no-match branch to the commit. The if/else-if
  * the park used is what folds that branch away, because it interleaves each body with its own
  * test. Four bytes, and the switch is the honest shape anyway. */
+
+#include "game/engine.h"
+
 extern int  Ov025_GetPageA(void);
 extern void Ov025_BuildActionPage(int rec, int mode);
-extern void PlaySound(int a, int b);
 
 void Ov025_ConfirmMissionAction(void) {
     int rec = Ov025_GetPageA();

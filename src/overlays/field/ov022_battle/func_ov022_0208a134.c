@@ -1,7 +1,7 @@
 /* Host only: sends a member event of kind 2. */
 
-extern int Session_GetLocalPlayerIndex(void);
-extern void func_02031384(int arg0, void *arg1, int arg2);
+#include "game/engine.h"
+
 extern int data_ov022_020b2ea4;
 
 struct marshal_0208a134 {

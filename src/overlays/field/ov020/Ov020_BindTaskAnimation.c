@@ -17,6 +17,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov020ScriptTask {
     char pad00[8];
@@ -33,9 +34,7 @@ struct Ov020ScriptTask {
 };
 
 extern void *Ov002_LookupChannelEntry(const char *name);
-extern void RegisterSeqAndInit(unsigned short *node, void *anim, int a, int b);
 extern void Ov002_RebindAnimTracks(unsigned short *node, int a, int b);
-extern void SceneNode_Disable(unsigned short *node);
 
 void Ov020_BindTaskAnimation(struct Ov020ScriptTask *task)
 {

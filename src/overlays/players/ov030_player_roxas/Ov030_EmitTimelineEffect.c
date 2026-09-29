@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 VecFx32;
 struct TimelineActor;
@@ -16,8 +17,6 @@ struct StructM;
 extern void func_ov022_020ad44c(VecFx32 *, struct TimelineActor *);
 extern void Ov022_ScaleRowValues(struct TimelineActor *, int, int *, int *);
 extern int Ov022_RunCommandHandlers(struct TimelineActor *, struct StructOut *, int *, int);
-extern unsigned Session_RandNextScaled(unsigned);
-extern int Session_RandNext(void);
 extern void Ov022_SendAimMessage(void *, int, struct StructM *);
 
 extern const short data_0203d210[];

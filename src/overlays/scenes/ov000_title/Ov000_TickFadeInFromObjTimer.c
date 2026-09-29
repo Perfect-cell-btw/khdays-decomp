@@ -6,6 +6,7 @@
  * brightness range -- the same 0x10 Game_RunSceneLoop writes. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_0000[0x4bc4];
@@ -16,7 +17,6 @@ typedef struct {
 extern OverlayContext *volatile data_ov000_0205ac28;
 extern u64 OS_GetTick(void);
 extern int func_02020368(u64 value, u32 divisor, int mode);
-extern void SetMasterBrightnessSub(int value);
 
 void Ov000_TickFadeInFromObjTimer(void) {
     u64 elapsed =

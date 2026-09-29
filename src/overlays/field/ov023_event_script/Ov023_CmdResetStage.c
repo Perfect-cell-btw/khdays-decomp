@@ -11,6 +11,7 @@
  * requested (0203355c).  Returns 1. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u16 *const REG_POWCNT = (volatile u16 *)0x04000304;
 
@@ -34,23 +35,13 @@ typedef struct Ov023ScriptCtx {
     Ov023EventBlock *pEvent;  /* 0x128 */
 } Ov023ScriptCtx;
 
-extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);  /* ScriptVm_ReadOperandInt */
-extern int   LoadGlobalU16At0(void);                                   /* the global mode halfword */
 extern void  GX_SetBankForTex(int nBank);
 extern void  NNS_GfdInitFrmTexVramManager(int nA, int nB);
 extern void  NNS_GfdResetFrmPlttVramState(void);
 extern void  Ov023_Teardown(void);                             /* Ov023_Teardown */
 extern void  Ov002_ScheduleRetry(void);
 extern void  Ov023_ResetEntryTable(void);                             /* Ov023_ResetActors */
-extern int   func_0202c57c(void);                                   /* entity work pending */
-extern void  EntityMgr_PopVramState(void);                                   /* run one entity work item */
-extern void  EntityManager_ReleaseViews(void);                                   /* EntityManager_ReleaseViews */
-extern void  EntityManager_ResetSingleton(void);                                   /* EntityManager_ResetSingleton */
-extern void  EntityMgr_PushVramState(void);
 extern void  Ov023_RebuildSubObject(void);                             /* Ov023_RebuildSubObject */
-extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
-extern void  ClearGlobalPtrE8AndHead(void);
-extern void Res_RequestIdPair(int nId);                                /* Res_RequestIdPair */
 extern u8    data_0204c240;                                         /* session bits */
 
 int Ov023_CmdResetStage(Ov023ScriptCtx *pCtx, void *pOperand)

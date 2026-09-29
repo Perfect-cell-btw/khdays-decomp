@@ -19,6 +19,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov020WallQuery {
     VecFx32 vOrigin;                    /* 0x00 */
@@ -52,10 +53,8 @@ struct TrackEntryGroup {
 extern char data_ov020_020800e4[];
 extern char data_ov020_020800f0[];
 
-extern int QueryActiveStateOrDelegate(void);
 extern VecFx32 *func_ov022_020881f8(int id);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
-extern void SceneNode_Disable(struct Ov020WallNode *node);
 extern struct TrackEntryGroup *GetTrackEntryBase(int track);
 extern void *FindEntryByExactName(void *entry, const char *name);
 extern void RoomMesh_ForEachPrimOnPoint(void *entry, int a, void *mesh, void *hook, int d);

@@ -1,4 +1,7 @@
 /* Tick result resources, dispatch the active phase, and flush pending buffers. */
+
+#include "game/engine.h"
+
 typedef void (*Ov005ResultPhaseHandler)(void);
 typedef struct Ov005ResultPhaseTable { Ov005ResultPhaseHandler states[5]; } Ov005ResultPhaseTable;
 typedef struct Ov000ResourceTracker { char opaque[76]; } Ov000ResourceTracker;
@@ -12,7 +15,6 @@ typedef struct Ov005ResultContext {
 } Ov005ResultContext;
 extern Ov005ResultContext *data_ov005_0205b810;
 extern const Ov005ResultPhaseTable data_ov005_0205b39c;
-extern int Session_IsActive(void);
 extern unsigned short Ov105_WM_GetLinkLevel(void);
 extern void Ov005_SelectAndShowResultSprite(int, unsigned int);
 extern void Ov005_TickSelectionWidget(Ov000ResourceTracker *);

@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
 
 /* Rebinds the actor model against its own bone table and clears the pending-reload flag. */
 void Ov016_RebindActorModelWithBones(char *self) {

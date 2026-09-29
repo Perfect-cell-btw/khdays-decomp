@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { fx32 rot[9]; VecFx32 pos; } MtxFx43;
 
@@ -10,8 +11,6 @@ extern int func_02016320(void *pRenderObj, MtxFx43 *pos, void *nrm, u32 nodeID);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
 extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
-extern int LoadGlobalU16At0(void);
-extern void SetSubitemState(void *self, int a, int b, int c);
 extern unsigned char data_0204c058;
 
 typedef struct {

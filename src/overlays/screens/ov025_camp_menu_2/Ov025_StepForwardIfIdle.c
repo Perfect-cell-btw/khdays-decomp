@@ -1,8 +1,9 @@
 /* If the object has no active handle (+0x158 and +0x180 both zero) and both counters at
  * +0x17a/+0x178 exceed 1, kick off the transition (mode 1). */
 
+#include "game/engine.h"
+
 extern void Ov025_MissionMenuStep();
-extern void PlaySound();
 
 void Ov025_StepForwardIfIdle(int arg0, int arg1, int arg2, int arg3) {
     unsigned char b;

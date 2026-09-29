@@ -4,8 +4,8 @@
  * and the +0x50 count with 7 + rand(4), then register the hop think callback. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov125_HopTick(void);
 

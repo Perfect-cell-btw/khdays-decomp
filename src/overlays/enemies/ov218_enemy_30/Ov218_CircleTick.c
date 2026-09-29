@@ -8,9 +8,9 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov218_DistanceToTarget(int *node);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_FlightTick(int *node);
 extern int Ov218_WalkDecide(int *node, int value);

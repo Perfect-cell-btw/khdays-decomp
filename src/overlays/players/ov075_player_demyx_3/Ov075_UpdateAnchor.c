@@ -4,11 +4,12 @@
  * (020b4c50) for the current owner and, for the local player, queues action 3/1 once a
  * puppet-free actor (bit 16 clear) in mode 0x30 reaches tick 0xf000. Finally 020ad588 runs.
  */
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
+
+#include "game/engine.h"
+
 extern void Ov002_WidgetScrollCommit(char *channel, char *config, int heading, int frame);
 extern int Ov022_GetGlobal34(void);
 extern void Ov075_PushPartsArgAndRefresh(char *self, int owner);
-extern int Session_GetLocalPlayerIndex(void);
 extern void func_ov022_020ad588(char *self);
 
 void Ov075_UpdateAnchor(char *self)

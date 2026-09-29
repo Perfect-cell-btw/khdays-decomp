@@ -1,7 +1,8 @@
 /* Returns the local player's index when the battle session is networked, otherwise whether the
  * single-player battle is active. */
 
-extern int Session_GetLocalPlayerIndex();
+#include "game/engine.h"
+
 extern int data_ov022_020b2e78[];
 extern unsigned char data_0204be04;
 int QueryActiveStateOrDelegate(void)

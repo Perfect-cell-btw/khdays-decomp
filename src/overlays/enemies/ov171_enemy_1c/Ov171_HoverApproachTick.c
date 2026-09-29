@@ -9,15 +9,14 @@
  * sub-state 6. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(int *out, const int *axis, int angle);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int Ov171_IsChildInactive(int node);
 extern int data_02042264;
 

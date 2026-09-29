@@ -11,16 +11,14 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;
     unsigned char bFired : 1;
 };
 
-extern int func_02023c40(void);                                                /* frame-rate flag, 1 when running 60Hz */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
-extern void SceneNode_Enable(int *p);
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern int Ov022_ValidateTargetRef(char *self);
 extern VecFx32 *func_ov022_020ad0c0(char *self);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

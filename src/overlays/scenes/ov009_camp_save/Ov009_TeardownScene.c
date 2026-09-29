@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 extern void Ov009_FreeResourceRecordBuffer(char *p);
 extern void FreeAllListNodeSubBuffers(char *p);
 extern int Ov009_GetCtxBlock9500(void);
@@ -10,7 +12,6 @@ extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *dst, unsigned size);
 extern void G3X_SetHOffset(int off);
-extern void Scene_RequestPending(int a, int b);
 
 /* Scene teardown: releases the sub-allocators, unwinds the active object, blanks the three
  * tiled BG screens and resets the 3D horizontal offset. */

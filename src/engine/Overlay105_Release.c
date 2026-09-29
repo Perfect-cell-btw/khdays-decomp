@@ -5,6 +5,7 @@
  * id cannot be spelled as the integer 105. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 
@@ -12,8 +13,6 @@ extern u32 OVERLAY_105_ID[1];
 #define FS_OVERLAY_ID_ov105 ((FSOverlayID)(u32) & (OVERLAY_105_ID))
 
 extern s8 data_027e0060;
-
-extern void UnloadOverlaySync(int target, FSOverlayID id);
 
 void Overlay105_Release(void)
 {

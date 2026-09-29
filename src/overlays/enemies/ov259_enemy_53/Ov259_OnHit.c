@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
@@ -27,7 +28,6 @@ extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int func_020050b4(int y, int x);
-extern int RandNextScaled(int bound);
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, int at);

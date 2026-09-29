@@ -7,6 +7,7 @@
  * the +0x2d8 range but at or beyond 0x4000 requests sub-state 4. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 
@@ -15,7 +16,6 @@ extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern int RandNextScaled(int range);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern int Ov139_TestSubObjectHelperNonzero(int *node, VecFx32 *at);

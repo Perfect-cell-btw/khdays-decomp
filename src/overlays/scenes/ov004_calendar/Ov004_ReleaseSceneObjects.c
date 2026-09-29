@@ -2,13 +2,10 @@
  * windows off. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov004_02051384;
 
-extern void TileTextRenderer_Destroy(void *tileEngine);
-extern void FontResource_Destroy(void *textEngine);
-extern void ReleaseField74AndCleanup(void *object);
-extern void Obj_Release(void *manager);
 extern void Ov004_FreeResourceRecordBuffer(void *object);
 
 void Ov004_ReleaseSceneObjects(void) {

@@ -1,9 +1,9 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern u8 data_ov008_0208fc84[];
-extern int Game_PollSceneAlive(void);
 extern void Ov105_SetParamWord8(u32 value);
 extern void Ov105_WH_StartScan(void (*callback)(const MissionRecord *),
                                 void *data, int value);

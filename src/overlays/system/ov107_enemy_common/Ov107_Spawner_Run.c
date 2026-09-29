@@ -15,6 +15,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct AiState AiState;
 typedef struct Ov107Object Ov107Object;
@@ -115,7 +116,6 @@ typedef struct {
 extern void List_Init(SpawnList *list);
 extern AiState *Ov107_Spawner_FindFreeActor(Ov107Object *obj, int index);
 extern void Ov107_SetStatusAndEmit(AiState *actor, u8 status);
-extern void *List_InsertSorted(SpawnList *list, int extra, u32 key);
 extern void Ov107_Spawner_PlaceActors(Ov107Object *obj, SpawnList *list);
 extern void NNSi_FndDestroyDoubleList(SpawnList *list);
 extern void Ov107_Spawner_OnActorRetired(AiState *actor);

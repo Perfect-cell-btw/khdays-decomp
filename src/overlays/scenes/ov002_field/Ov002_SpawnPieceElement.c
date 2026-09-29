@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern char *Ov002_ClaimPoolEntry(char *pClass, int nSlot);
 extern int Ov002_PlaceElementNode(void *pObj, int nNode, void *pOut,
@@ -8,8 +9,6 @@ extern int Ov002_PlaceElementNode(void *pObj, int nNode, void *pOut,
                                 int nParamB, int nParamC,
                                 int nAngle, int nFlag);
 extern void Ov002_BuildSpawnPosition(VecFx32 *pOut, VecFx32 *pPos, int *pIn);
-extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
-extern void Actor_SetBindingByte(void *pNode, int nIndex, int nValue);
 extern void Ov002_PushBucketNode(int nBucket, char *pPiece);
 extern void Ov002_DoneTick(void);
 

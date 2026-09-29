@@ -1,8 +1,6 @@
+#include "game/engine.h"
+
 extern int *NNSi_FndGetCurrentRootHeap(void);
-extern int func_02023650(void);
-extern void func_0202362c(int mode);
-extern void TileTextRenderer_Destroy(int *obj);
-extern void FontResource_Destroy(int *obj);
 extern void NNSi_FndFreeFromDefaultHeap(int ptr);
 extern void func_02003948(int result);
 

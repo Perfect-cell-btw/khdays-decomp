@@ -10,6 +10,7 @@
  * cleared. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u16 *const REG_BLDCNT = (volatile u16 *)0x04000040;
 static volatile u16 *const REG_BLDY = (volatile u16 *)0x04000044;
@@ -33,15 +34,8 @@ typedef struct Ov023SceneRoot {
 } Ov023SceneRoot;
 
 extern void Ov023_ResetEntryTable(void);                              /* Ov023_ResetActors */
-extern void EntityManager_ReleaseViews(void);                                    /* EntityManager_ReleaseViews */
-extern void EntityManager_ResetSingleton(void);                                    /* EntityManager_ResetSingleton */
-extern void Obj_Release(void *pDisplay);                          /* release a display */
-extern int  Session_IsActive(void);                                    /* Session_IsActive */
-extern int  LoadGlobalU16At0(void);                                    /* the global mode halfword */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
-extern void ZeroHalfThenFree(void *pContainer);                        /* close a text container */
 extern void func_02023ad0(void *pObject);            /* end a sub-object */
-extern void StoreGlobalArrayEntry(int nSlot, const void *pTable);          /* register a global table */
 extern u8   data_0204c240;                                          /* session bits */
 extern Ov023SceneRoot data_ov023_0208a784;
 

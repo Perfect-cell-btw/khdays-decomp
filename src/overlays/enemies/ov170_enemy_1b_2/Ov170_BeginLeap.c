@@ -11,6 +11,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
@@ -21,7 +22,6 @@ extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern int FX_Inv(int v);
 extern int FX_Div(int a, int b);
-extern int RandNextScaled(int bound);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov170_LeapTick(int *node);

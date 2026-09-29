@@ -1,4 +1,5 @@
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Ov008_MissionMenuOpenTick -- menu-open tick, returns the next scene state (0 = stay).
  * While the scene is locked out (obj+0x4e8) it drives the sound and waits for the intro
  * jingle latch at obj+0x49c to clear, then clears the pending transition at obj+0x2c.
@@ -17,7 +18,6 @@
 extern void Ov008_TickCardTransferScene(void);
 extern int  Ov008_IsSceneState4(void);
 extern void Ov008_MissionUpdateInputTransition(void);
-extern void GameSession_SetSyncEnabled(int a);
 extern void Ov008_MissionIdleStateNoOp(void);
 extern void Ov008_UpdateSelectionConfirmationState(void);
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)

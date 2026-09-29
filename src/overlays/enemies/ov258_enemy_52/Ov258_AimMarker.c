@@ -4,12 +4,12 @@
  * plays at that spot 15.6 high. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 
 void Ov258_AimMarker(int *node, int side)

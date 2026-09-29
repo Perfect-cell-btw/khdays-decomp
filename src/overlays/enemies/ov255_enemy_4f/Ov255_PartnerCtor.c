@@ -4,6 +4,9 @@
  * pose 0x4a, creates the +0x3c4 effect (Ov255_CreateShakeTask), allocates the two-pair +0x3c0 table
  * (the first item from the data_ov255_020d2c30 resource, the second from pose 0x4b; both hidden)
  * and reserves the +0x38c shape (a placement at the +0x64 pose, flag bit 1). */
+
+#include "game/engine.h"
+
 typedef void (*Callback)(void);
 struct Word8 { unsigned int lo : 8; };
 
@@ -14,7 +17,6 @@ extern void Ov107_EnqueueValue(int self, int item);
 extern int Ov255_CreateShakeTask(char *self);
 extern int *CallocInstance(int size);
 extern int CreateSubitemInstance0xB4(void *res);
-extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(const void *placement);
 extern const char data_ov255_020d2c30[];
 extern void Ov255_Partner_Destroy(void);

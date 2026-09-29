@@ -3,6 +3,9 @@
  * nothing at all while the object at +0x4c is absent -- and note the handle is
  * fetched BEFORE that check, which is why the ROM calls Ov002_GetItemResource
  * ahead of loading the context. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x4c];
     int pTarget;            /* +0x4c */
@@ -11,7 +14,6 @@ typedef struct {
 } Ov002PanelContext;
 
 extern int Ov002_GetItemResource(int kind);
-extern void Draw_ScaledValue(void *list, int handle, int a, int b, int mask);
 extern void Ov002_TakeLock(int a);
 extern int Ov002_ForwardToSubDc(int event);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int);

@@ -2,9 +2,9 @@
  * point slightly raised, or the point lowered by the search height when nothing is hit. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void *EntityMgr_RunRayCast(int a, void *b, void *c, int d);
-extern void Vec3ScaleAddQ27(int a, void *b, void *c, void *d);
 extern int data_ov068_020b7500;
 
 void Ov068_ResolveHitPositionRaised(VecFx32 *src, int *out) {
@@ -24,6 +24,6 @@ void Ov068_ResolveHitPositionRaised(VecFx32 *src, int *out) {
         out[1] -= 0x25000;
         return;
     }
-    Vec3ScaleAddQ27(*(int *)((char *)r + 0xc), q, &a, out);
+    Vec3ScaleAddQ27(*(int *)((char *)r + 0xc), (const VecFx32 *)q, &a, (VecFx32 *)out);
     out[1] += 0x333;
 }

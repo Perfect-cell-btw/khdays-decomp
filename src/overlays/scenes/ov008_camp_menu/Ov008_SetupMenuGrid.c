@@ -11,6 +11,7 @@
  * iteration (index addressing) instead of adding an induction variable. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct DisplayObj {
     u8  b[0x3c];
@@ -26,7 +27,6 @@ typedef struct Ov008Setup {
     u8  field124[0x250 - 0x124];   /* 0x124: SRT/display object A */
 } Ov008Setup;
 
-extern void  Draw_ScaledValue(void *base, int a, int b, int c, int d);
 extern void  Ov008_DrawMenuEntry(Ov008Setup *p, int a, int b);
 extern void  EnqueueObjGfxCommand(void *base);
 extern void  TileSurface_SetCurrentItem(void *base, int target, int update);

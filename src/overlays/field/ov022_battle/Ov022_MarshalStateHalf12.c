@@ -2,8 +2,7 @@
  * Returns the queued message's handle.
  */
 
-extern int QueryActiveStateOrDelegate(void);
-extern unsigned short func_02031384(int a, void *buf, int c);
+#include "game/engine.h"
 
 struct Buf0208a464 {
     unsigned short f0 : 3;

@@ -1,7 +1,8 @@
 /* Whether two angles differ by more than the turn limit (larger in mode 1). */
 
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int func_02023c40(void);
 
 int Ov002_IsAngleBeyondLimit(int angleA, int angleB)
 {

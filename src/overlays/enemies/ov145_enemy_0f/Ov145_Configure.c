@@ -6,8 +6,8 @@
  * +0x28/+0x14 pairs (+0x3c0/+0x3d4). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern void FreeInstanceMemory(void *block);
 extern void *CallocInstance(int size);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 

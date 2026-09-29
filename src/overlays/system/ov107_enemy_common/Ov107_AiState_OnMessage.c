@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad000[2];
@@ -130,7 +131,6 @@ extern int Ov002_GetSlotTableByte(int value);
 extern void Ov002_SpawnAllDrops(const u8 *amount, int context,
                                 const VecFx32 *place);
 extern int List_First(void *list);
-extern int List_Next(void *list);
 extern int Ov107_FindMessageHandler(unsigned int id);
 extern void Ov107_PlaceAttachmentAtOwner(void *self, void *entry);
 extern void Ov107_AiState_OnSyncMessage(void *self, u8 *msg, int size);

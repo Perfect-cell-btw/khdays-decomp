@@ -4,11 +4,10 @@
  * is zeroed. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int v[4]; } Xform;
 
-extern int Angle_TurnToward(int cur, int target, int step, int *out);
-extern void QuatFromAxisAngle(Xform *out, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(Xform *out, const VecFx32 *axis, void *rig);
 extern void Quat_Multiply(Xform *out, const Xform *a, const Xform *b);
 extern void Srt_SetRotationQuat(void *srt, const Xform *x);

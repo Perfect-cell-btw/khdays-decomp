@@ -8,6 +8,7 @@
  * command is re-queued (020219b4) for Ov023_CmdStepScreenBlend (02085310) and 0 returned. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u32 *const REG_DISPCAPCNT = (volatile u32 *)0x04000064;
 
@@ -27,10 +28,7 @@ typedef struct Ov023ScriptCtx {
     Ov023EventBlock *pEvent;  /* 0x128 */
 } Ov023ScriptCtx;
 
-extern int  ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);   /* ScriptVm_ReadOperandInt */
-extern int  LoadGlobalU16At0(void);                                    /* the global mode halfword */
 extern void GX_SetBankForLCDC(int nBanks);
-extern void StoreToGlobalPtr4FieldE4IfSet(int nFlag);
 extern void Ov023_SceneExit(int nWeight);                       /* Ov023_ScreenBlendDone */
 extern void Slot48_StoreAtCurrentIndex(Ov023ScriptCtx *pCtx, void *pCmd);        /* ScriptVm_RequeueCommand */
 

@@ -2,11 +2,13 @@
  * enter menu mode 1: set mode (Ov008_PrimeSubSceneFromCursor), enable two sub-widgets
  * (Ov008_SetCtxObject9630/02051010), set the active slot (Ov008_SetTargetSlot(1,-1)), fire the UI
  * event (PlaySound(0,1)) and notify (Ov008_SetBusyFlag). ov008; 02059a54 family sibling. */
+
+#include "game/engine.h"
+
 extern int  Ov008_PrimeSubSceneFromCursor(int mode);
 extern void Ov008_SetCtxObject9630(int a);
 extern void Ov008_SetCtxObject9634(int a);
 extern void Ov008_SetTargetSlot(int a, int b);
-extern void PlaySound(int a, int b);
 extern void Ov008_SetBusyFlag(int a);
 extern char *data_ov008_02090f1c;   /* -> menu/status object */
 

@@ -1,6 +1,7 @@
 /* Sample active Mission Mode UI tweens and apply their values. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Tween {
     int mode;
@@ -33,10 +34,7 @@ typedef struct Ov006CharacterSelectContext {
 
 extern Ov006CharacterSelectContext *data_ov006_02056664;
 extern void Tween_Sample(Tween *tween, int *value);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void G2x_SetBlendAlpha_(u32 reg, int plane1, int plane2, int eva, int evb);
-extern void Slot_ForwardToEntry(void *slots, int entryId, u32 value);
 extern void Slot_ClearFlagBit1(void *slots, int entryId);
 
 void Ov006_UpdateCharacterSelectTweens(void) {

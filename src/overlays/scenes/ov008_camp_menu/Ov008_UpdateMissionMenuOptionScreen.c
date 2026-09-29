@@ -2,6 +2,7 @@
  * and returns the next state callback when leaving the screen. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*MissionState)(void);
 
@@ -52,8 +53,6 @@ extern void Ov008_ForwardSevenArgs(void *text, int x, int y, int style, int laye
                                    int visible);
 extern void *Ov008_GetVarRecordByIndex(void *resource, int index);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern void func_020362ec(void *image);
-extern void PlaySound(u32 soundId, u32 variant);
 extern void func_ov008_0207c498(void);
 extern void Ov008_OptionMenuNextStateNoOp(void);
 

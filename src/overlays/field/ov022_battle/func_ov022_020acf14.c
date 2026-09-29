@@ -1,7 +1,8 @@
 /* Sets the actor's animation frame and flags the change (the host also marks it for sync). */
 
+#include "game/engine.h"
+
 extern void Anim_SetFrameWrapped(unsigned short *a, unsigned int b, unsigned int c);
-extern int Session_GetLocalPlayerIndex(void);
 
 void func_ov022_020acf14(unsigned int *param_1, unsigned int param_2) {
     Anim_SetFrameWrapped((unsigned short *)(param_1[8] + 4), 0, param_2);

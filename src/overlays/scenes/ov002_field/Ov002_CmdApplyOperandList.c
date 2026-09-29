@@ -12,8 +12,8 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int ScriptVm_ReadOperandInt(void *vm, char *operand);
 extern void Ov002_ResetPendingIds(void *items, int count);
 extern u8 data_0204c240;
 

@@ -3,11 +3,13 @@
  * click unless the shutdown hook has already taken over. Raises the +0x28 bit
  * either way, even when the prompt was never open.
  */
+
+#include "game/engine.h"
+
 extern int Ov002_Ctx_FindActiveEntryByTag(int tag);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int node, int armed);
 extern void Ov002_RepaintPanelRows(void);
 extern int Ov002_RunShutdownHook(void);
-extern void PlaySoundChecked(int nBank, int nSound);
 
 extern char *data_ov002_0207f618;
 

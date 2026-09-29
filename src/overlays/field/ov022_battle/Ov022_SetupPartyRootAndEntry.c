@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct Ov022LimitConfig {
     char padding000[6];
@@ -58,10 +59,7 @@ extern Ov022LimitConfig data_0204c77c;
 extern Ov022LimitConfig data_0204c784;
 
 extern int Ov002_GetRootField8bae(void);
-extern void PartyMember_RebuildDerived(int memberIndex, int flags, int memberKind, int level);
-extern void PartyState_SaveTables(void);
 extern int Ov029_AcquireOverlaySlot(int proc, int group);
-extern Ov022ActorEntry *GetEntryField20ByIndex(int index);
 
 void Ov022_SetupPartyRootAndEntry(void)
 {

@@ -4,7 +4,9 @@
  * Then per phase: 1 accumulates the timer, at 0x9000 (once, while +0x11c is clear) fires the
  * slot's action and tells 0x53 with the alternate flag, and at 0xc000 goes to phase 2; 2 just
  * advances the tracks; 3 advances them and goes idle when they finish. */
-extern void SoundSeqHandle_Stop(int handle);
+
+#include "game/engine.h"
+
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
 extern void Ov103_BindAnimsAndFaceOwner(char *self, char *slot);

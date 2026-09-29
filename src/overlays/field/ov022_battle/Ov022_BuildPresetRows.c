@@ -1,6 +1,8 @@
 /* Builds the four battle panel rows from the preset table for the current variant and starts their
  * tweens. */
 
+#include "game/engine.h"
+
 typedef struct Ov022Pair {
     int a;
     int b;
@@ -58,7 +60,6 @@ typedef struct Ov022RootContext {
 extern Ov022RootContext *const data_ov022_020b2e74;
 extern const Ov022PresetTable data_ov022_020b22a4;
 extern const Ov022ScaleSourcePair data_ov022_020b229c;
-extern int func_02024e5c(void);
 extern void Tween_Configure(Ov022Tween *tween, int mode, int start, int target,
                           int duration);
 extern void Tween_Start(Ov022Tween *tween);

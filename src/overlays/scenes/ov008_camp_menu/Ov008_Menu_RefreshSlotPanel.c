@@ -30,6 +30,8 @@
  *    declared before `page` so the two byte loads colour r7/r8 as the ROM does.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned short b0:1, b1:1, b2:1, b3:1, b4:1, b5:1, b6:1, b7:1,
                    b8:1, b9:1, b10:1, b11:1, b12:1, b13:1, b14:1, b15:1;
@@ -41,20 +43,13 @@ extern unsigned int Ov008_GetSlotPresenceMask(void);
 extern unsigned int Ov008_BuildSlotMatchMask(int a);
 extern unsigned int Ov008_GetCachedPlayerMask(void);
 extern int Ov008_IsSessionReady(void);
-extern int GameState_IsFlagSet(int flag);
 extern int Ov008_GetPlayerRecord(int slot);
 extern int Ov008_IsBusy(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov008_GetSharedRecord(void);
-extern void PlaySound(int a, int b);
-extern void func_020235bc(int id);
 extern void Ov008_UpdateMenuButton5(int a);
 extern void Ov008_SetActivePage(int a);
 extern void Ov008_PrimeSubSceneFromCursor(int a);
 extern int Ov008_Link_IsLocal(void);
-extern int Session_Exists(void);
-extern int Session_IsActive(void);
-extern int Session_IsSceneInterruptible(void);
 extern void Ov008_SetBusyFlag(int a);
 extern void Ov008_GetMissionRowInfo(int idx, void *out);
 extern int Ov008_IsMenuPageUnlocked(int a);

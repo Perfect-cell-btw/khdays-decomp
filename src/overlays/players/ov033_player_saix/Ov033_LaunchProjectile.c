@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 
@@ -18,7 +19,6 @@ extern void MTX_RotY33_(Mtx33 *m, int s, int c);
 extern void MTX_RotX33_(Mtx33 *m, int s, int c);
 extern void MTX_RotZ33_(Mtx33 *m, int s, int c);
 extern void MTX_Concat33(const Mtx33 *a, const Mtx33 *b, Mtx33 *out);
-extern int Session_RandNextScaled(int n);                                                 /* Session_RandNextScaled */
 extern void MI_Copy36B(const void *src, void *dst);
 extern char *data_ov033_020b4b80;
 extern short data_0203d210[];

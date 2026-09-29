@@ -11,17 +11,15 @@
  * otherwise to state 0x25. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov073_FireThirdCountBurst(char *self);
 extern int Ov022_ValidateTargetRef(char *self);
 extern VecFx32 *func_ov022_020ad0c0(char *self);
-extern void SceneNode_Enable(void *node);                                          /* SceneNode_Enable */
-extern void SceneNode_Disable(void *node);                                          /* SceneNode_Disable */
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov073_020ba540;

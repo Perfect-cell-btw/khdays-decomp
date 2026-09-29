@@ -1,7 +1,9 @@
 /* Script opcode: resolve four operands and drive Ov002_StampEntry with them,
  * the third narrowed to an unsigned halfword and the fourth to a signed byte,
  * with -1 as the fifth (stack) argument. Reports 1. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern void Ov002_StampEntry(int a, int b, int c, int d, int e);
 
 int Ov002_ScriptDriveFourOperands(void *self, char *args) {

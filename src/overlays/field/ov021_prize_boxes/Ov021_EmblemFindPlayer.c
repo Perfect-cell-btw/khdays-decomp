@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov021PlayerActor {
     u64  nFlags;              /* 0x00: bit 16 = out of play */
@@ -24,7 +25,6 @@ extern int   Ov002_RunShutdownHook(void);                               /* the s
 extern int   Ov002_IsSessionOpen(void);                               /* scene running? */
 extern int   Ov002_GetStateWord(void);                               /* the mission id */
 extern int   func_ov022_020882f8(void);                               /* number of players */
-extern Ov021PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
 extern int   Ov022_GetEntryField66(int nSeat);                          /* seat -> owner slot */
 extern int   Ov002_GetSlotTableByte(int nGroup);                         /* a group's piece kind */
 extern VecFx32 *func_ov022_020881f8(int nSeat);                       /* where the seat is */

@@ -1,9 +1,9 @@
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 /* Ov006_MissionArmCursorRequest -- Mission Mode: arm a cursor-move request on the menu.
  * Reads the cursor row (0 while the scene is locked out at obj+0x4e8), then fills the
  * request slot for that row: obj+0x4ac is the "row 0 / home" slot and obj+0x4e0 the slot
  * for every other row. The request carries the target id, kind and one flag bit. */
-extern int Session_GetLocalPlayerIndex(void);
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 
 #define OBJ ((int *)data_ov006_020565e4.pContext)

@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov022_IsSlotReady(void *context);
 extern int Ov022_ValidateTargetRef(char *self);
@@ -19,7 +20,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *v);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
-extern void SceneNode_Enable(u16 *nodeFlags);                                     /* SceneNode_Enable */
 extern void Ov058_StartFlight(char *self);                                    /* Ov039_StartFlight */
 extern char *data_ov058_020b7e00;
 extern void Ov058_IdleStep(void);

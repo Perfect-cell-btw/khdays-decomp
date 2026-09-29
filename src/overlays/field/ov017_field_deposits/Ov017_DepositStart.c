@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x58];
@@ -56,9 +57,7 @@ typedef struct Ov017Deposit {
 } Ov017Deposit;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
 extern void  Ov017_StoreArgsRunTwoSubActionsIfFlag4(Ov017Deposit *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov017_DepositPlayAnim */
-extern int   GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
 
 void Ov017_DepositStart(Ov017Deposit *pSelf)
 {

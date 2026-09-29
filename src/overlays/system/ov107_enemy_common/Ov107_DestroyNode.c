@@ -1,6 +1,6 @@
-extern void DestroyInstance(void *obj);
+#include "game/engine.h"
+
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 extern void func_ov107_020c3190(void *obj);
 extern void NNSi_FndDestroyDoubleList(void *list);
 extern void Ov107_DestroyInstance(void *self);

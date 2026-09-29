@@ -14,6 +14,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     fx32 a[16];
@@ -52,7 +53,6 @@ typedef struct {
 extern int data_ov002_0207f628;
 
 extern void Tween_Clear(Ov002Tween *pTween);
-extern void SceneNode_SetFlag40(void *pWidget, int nValue);
 extern void BindAnimTrack(void *pWidget, int nSlot, void *pNode, int nFlags);
 extern void Camera_BuildProjectionMtx(int a, int b, int c, int d, int e, int f,
                           MtxFx44 *pOut);

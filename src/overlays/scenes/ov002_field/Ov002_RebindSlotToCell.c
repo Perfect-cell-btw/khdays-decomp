@@ -16,9 +16,8 @@
  * ldrsh. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void InstallHandlerPairByFlag(int bEnable);
-extern void G3dRes_DefaultSetup(void *pRes);
 extern int NNS_G3dGetTex(void *pRes);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 

@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002DayEntry {
     u8 nEntry;              /* 0x00 */
@@ -31,12 +32,9 @@ extern Ov002CodeBase *data_ov002_0207fa10;
 
 extern Ov002DayEntry *Ov002_FindPeerRow(int nDay, int nSlotValue);
 /* Index of the local player; zero for the one running the session. */
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_RequestLeave(void);
 /* Number of players the session currently holds. */
 extern int func_ov022_020882f8(void);
-extern char *GetEntryField20ByIndex(int nPlayer);
-extern int QueryActiveStateOrDelegate(void);
 
 /* Publish the day one slot is playing.
  *

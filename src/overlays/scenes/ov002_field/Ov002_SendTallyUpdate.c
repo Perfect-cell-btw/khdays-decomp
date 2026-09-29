@@ -30,6 +30,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RootContext {
     char pad0000[0x8b6a];
@@ -51,7 +52,6 @@ typedef struct Ov002TallyCmd {
 extern Ov002RootContext *data_ov002_0207fa00;
 
 extern void Ov002_SplitWordToHalves(int nPair, s16 *pFirst, s16 *pSecond);
-extern unsigned short func_02031384(int nKind, void *pCmd, u16 nSize);
 extern void MIi_CpuClear16(u16 nValue, void *pDest, u32 nSize);
 
 int Ov002_SendTallyUpdate(void)

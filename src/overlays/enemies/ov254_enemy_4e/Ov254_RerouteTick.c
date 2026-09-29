@@ -10,10 +10,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
 extern VecFx32 *List_First(void *list);
-extern VecFx32 *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *v);
 extern int Ov107_FindNearestObject(int obj, int kind);

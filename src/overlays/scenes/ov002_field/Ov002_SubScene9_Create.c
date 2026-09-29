@@ -1,6 +1,7 @@
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void INITi_CpuClear32_0x01ff86fc(int value, void *dst, int size);
-extern int Session_IsReady(void);
 extern char *data_ov002_0207fa08;
 extern void Ov002_StartSession(void);
 extern void Ov002_SubScene9_IdleStep(void);

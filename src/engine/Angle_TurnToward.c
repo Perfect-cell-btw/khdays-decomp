@@ -3,7 +3,9 @@
  * table), then move `currentAngle` by `maxStep` in whichever rotational
  * direction (sign of sin(current-target)) closes that delta. Optionally
  * reports the unsigned delta angle through `outAngle`. */
-extern int Fx_Acos(int c);
+
+#include "game/engine.h"
+
 extern short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)

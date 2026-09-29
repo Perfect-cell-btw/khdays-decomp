@@ -1,9 +1,8 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
-extern int GameState_GetField(int nId, int nSlot);
-extern void Obj_SetFlagBit3(char *pObj, int bOn);
 
 /* Put a timed element back at the start of its cycle.
  *

@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define PHASE_PICK     0
 #define PHASE_SAVING   2
@@ -59,12 +60,8 @@ extern void Ov008_SaveMenu_RefreshRows(Ov008SaveMenu *pMenu);                   
 extern void Ov008_RefreshSaveRowDigits(Ov008SaveMenu *pMenu);                   /* Ov008_RefreshSaveRowDigits (pMenu unused) */
 extern void Ov008_SetMenuEntriesVisible(int bPrompt, int bShow);                 /* confirm prompt */
 extern void Ov008_SaveMenuDrawPrompt(Ov008SaveMenu *pMenu, int nPhase);       /* Ov008_SaveMenuDrawPrompt */
-extern void PlaySound(int nKind, int nSound);                        /* PlaySound */
 extern void Ov008_UpdateMenuButton5(int nArg);                               /* Ov008_UpdateMenuButton5 */
-extern void func_020208f0(void);                                         /* DecGlobalShortIfPositive_0204bda0 */
 extern void Ov008_SetCtxField95fc(int nValue);                             /* Ov008_SetCtxField95fc */
-extern void SetMasterBrightnessMain(int nBrightness);                              /* SetMasterBrightnessMain */
-extern void SetMasterBrightnessSub(int nBrightness);                              /* SetMasterBrightnessSub */
 extern void Ov008_TickPageScroll(Ov008SaveMenu *pMenu);                   /* page scroll tick */
 extern void Ov008_SaveMenu_SlideArrows(Ov008SaveMenu *pMenu);                   /* slot rows tick */
 

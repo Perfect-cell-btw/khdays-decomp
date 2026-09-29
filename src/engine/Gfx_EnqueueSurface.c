@@ -1,7 +1,8 @@
 /* Enqueues the object's surface upload (command 0xb, or 0xa in the alternate mode). Returns what
  * GFXi_EnqueueCommand returns. */
 
-extern unsigned short LoadGlobalU16At0(void);
+#include "game/engine.h"
+
 extern int GFXi_EnqueueCommand(int a, int b, int c, int d);
 
 int Gfx_EnqueueSurface(int param_1) {

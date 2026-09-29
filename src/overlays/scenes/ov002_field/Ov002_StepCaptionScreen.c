@@ -17,6 +17,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     void (*aStep[4])(void);
@@ -35,7 +36,6 @@ extern const Ov002StepTable data_ov002_0207e378;
 extern const int data_ov002_0207e3c4[];
 extern const int data_ov002_0207e368[];
 
-extern int Session_IsActive(void);
 extern int Ov105_WM_GetLinkLevel(void);
 
 extern int Ov002_ForwardToSubDc(int nSound);

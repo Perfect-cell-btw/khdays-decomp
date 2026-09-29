@@ -17,6 +17,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     void *hFlipClass;                   /* +0x000 */
@@ -59,7 +60,6 @@ extern Ov002PanelContext *data_ov002_0207f614;
 
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void func_02023ad0(void *hClass);
-extern void FreeFieldAt8(void *pField);
 extern void FreeAllListNodeSubBuffers(int *pSurface);
 extern void Ov002_RemoveAndFreeNode(void *hNode);
 

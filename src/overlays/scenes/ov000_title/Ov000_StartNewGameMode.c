@@ -3,6 +3,7 @@
  * data_ov000_0205a858. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000ResourceBlock {
     u8 pad_0000[0x10];
@@ -49,10 +50,7 @@ extern Ov000NewGameContext *data_ov000_0205ac28;
 
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
 extern void *Archive_LoadFile(u32 handle, int heapId);
-extern void Res_LoadSpriteSet(Ov000ResourceCell *cell, void *resource,
-                         int characterIndex, int paletteIndex, int screenIndex);
 extern void GXS_LoadBGPltt(const void *source, u32 offset, u32 size);
-extern int func_02024e5c(void);
 extern void OS_Terminate(void);
 extern void GetResourceSubBlock_CHAR2(void *resource, Ov000ResourceBlock **block);
 extern void DC_FlushRange(const void *address, u32 size);

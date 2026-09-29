@@ -2,9 +2,11 @@
  * (ScriptVm_ResolveOperand) for slot param_1's context block (at param_1+4+ctx*0x48, ctx =
  * *(param_1+0x124)). Opcode 0x40 indexes a runtime table (base +0x14) by the operand
  * plus a global selector (func_02024e5c)*4; any other opcode is a plain base+operand. */
+
+#include "game/engine.h"
+
 #pragma thumb on
 extern short *ScriptVm_ResolveOperand(int a, unsigned short *b);
-extern int func_02024e5c(void);
 int ByteCode_ResolveOperand(void *pArg1, char *pArg2) {
     int param_1 = (int)pArg1;
     unsigned short *param_2 = (unsigned short *)pArg2;

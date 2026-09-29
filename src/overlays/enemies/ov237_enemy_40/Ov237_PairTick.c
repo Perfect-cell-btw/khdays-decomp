@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;
@@ -21,8 +22,6 @@ extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
 extern const short data_0203d210[];

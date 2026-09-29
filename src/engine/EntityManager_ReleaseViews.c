@@ -19,6 +19,8 @@
  * the loop counter into r4 instead of r6.  THUMB.
  */
 
+#include "game/engine.h"
+
 #pragma thumb on
 
 typedef struct Manager {
@@ -34,7 +36,6 @@ extern Manager *data_0204c208;
 
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern int SNDi_ProcessEntry(int nIndex);
-extern void SubResourceTable_Free(unsigned short *pRecord);
 
 int EntityManager_ReleaseViews(void)
 {

@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002Piece {
     char pad000[0x1ac];
@@ -17,7 +18,6 @@ typedef struct Ov002Owner {
 extern int Ov002_QueryEntryValue(int nIndex, int nFilter);
 extern Ov002Owner *Ov002_GetPieceOwner(int nSlot);
 extern Ov002Piece **List_First(void *pList);   /* first */
-extern Ov002Piece **List_Next(void *pList);   /* next */
 
 /* Says whether every piece still fits once its span is scaled by nScale, an
    fx32 factor.  A settled record set answers yes without looking at anything.

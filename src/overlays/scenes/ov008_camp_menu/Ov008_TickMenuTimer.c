@@ -7,6 +7,7 @@
  * Ov008_ReleaseTwoSlotsEx. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008TimerState {
     u8  pad_0000[4];
@@ -21,7 +22,6 @@ typedef struct Ov008TimerState {
 extern u64   OS_GetTick(void);
 extern void  Ov008_MainMenu_UpdateSelectionText(int a, int b);
 extern void  Ov008_DrawMenuPanels(void *sub);
-extern int   GameState_IsFlagSet(int a);
 extern void *Ov008_GetContext(void);
 extern void *Ov008_FindEntryById(void *ctx, int id);
 extern int   Ov105_WM_GetLinkLevel(void);

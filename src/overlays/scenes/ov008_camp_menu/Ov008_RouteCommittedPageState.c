@@ -2,6 +2,7 @@
  * scene pick) or syncs the persistent flag before committing the selected page. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef union Ov008FlagsByte {
     u8 raw;
@@ -23,8 +24,6 @@ extern void Ov008_UpdateMenuInput(void);
 extern int Ov008_CommitPage(int mode);
 extern int Ov008_GetCtxField9678(void);
 extern int Ov008_TeardownMenu2D(void);
-extern int GameState_IsFlagSet(int flagId);
-extern void GameSession_SetSyncEnabled(int enabled);
 
 extern void Ov008_OpenShopState(void);
 extern void Ov008_EnterSubMenu(void);

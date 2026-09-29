@@ -5,6 +5,7 @@
 #include "game/actor.h"
 #include "game/ai_task.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Sphere {
     VecFx32 centre;
@@ -53,13 +54,11 @@ typedef struct { Fx32 x, y, z; } FxVec;
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *ab);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *ab);
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, struct Sphere *shape, int mode);
 extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, VecFx32 *in, VecFx32 *out);
 extern int Ov107_AiState_ApplyHit(Actor *obj, void *target, struct HitPacket *packet);
 extern void func_ov107_020c0b90(void *actor, int a, VecFx32 v, int d);
-extern void func_02031384(int channel, void *packet, int len);
 extern void SetIndexedSlot(struct Node *node, int slot, void *arg);
 
 void Ov287_AreaSweepAttack_Tick(struct Node *node)

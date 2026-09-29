@@ -9,7 +9,8 @@
  * Ghidra carries the operands as OperandSlot.
  */
 
-extern int ScriptVm_ReadOperandInt(void *vm, char *operand);
+#include "game/engine.h"
+
 extern void Ov002_StampEntry(int a, int b, int c, int d, int e);
 
 int Ov002_CmdSetRowValues(void *vm, char *table) {

@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov274ActionState {
     int pOwner;
@@ -42,7 +43,6 @@ struct ActorHitEvent {
 
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *basis, const VecFx32 *v);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, unsigned short mode, void *anchor);
 extern const VecFx32 data_02042258;
 

@@ -1,7 +1,8 @@
 /* Selects a save page and rebuilds the action page for the current mode, with a sound. */
 
+#include "game/engine.h"
+
 extern void Ov025_BuildActionPage();
-extern void PlaySound();
 
 void Ov025_SetField20AndDispatch(int arg0, int arg1, int arg2, int arg3) {
     *(int *)(arg0 + 0x20) = arg1;

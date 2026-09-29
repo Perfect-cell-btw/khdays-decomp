@@ -1,7 +1,8 @@
 /* Resets the action state, caches the position/anim pointers, rolls the move timer and installs the
  * AI slots. */
 
-extern int RandNextScaled(int);
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov131_stateSetFlagsClearBit(void);
 extern void Ov131_stDispatchByStateByte(void);

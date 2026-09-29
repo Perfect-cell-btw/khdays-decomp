@@ -1,6 +1,6 @@
-extern char *data_ov008_02090fac;
-extern void SetMasterBrightnessSub(int value);
+#include "game/engine.h"
 
+extern char *data_ov008_02090fac;
 
 /* Fade-in step: ramps the fade level up by 5 per frame and drives the master brightness until it
  * reaches full, then reports done. */

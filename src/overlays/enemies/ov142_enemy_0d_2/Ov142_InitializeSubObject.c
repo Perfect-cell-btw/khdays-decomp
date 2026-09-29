@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Ov142ChildIds {
     int values[2];
@@ -69,12 +70,8 @@ extern void Ov142_InvertVecOnceIfFlagSet(void);
 
 extern void *Ov107_PackTextureHandle(struct Ov142SubObj *owner, int index);
 extern struct Ov142Subitem *CreateSubitemInstance0xB4(void *item);
-extern void RegisterSubscriberSlot(struct Ov142Subitem *subscriber, struct Ov142Subitem *item);
-extern void SetSubitemState(struct Ov142Subitem *item, int state, int zero, int enabled);
-extern void RefreshObjectCallbacks(struct Ov142Subitem *item, int value);
 extern void *CallocInstance(int size);
 extern void Ov107_EnqueueValue(struct Ov142SubObj *owner, struct Ov142Subitem *item);
-extern struct Ov142PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 
 void Ov142_InitializeSubObject(struct Ov142SubObj *self)

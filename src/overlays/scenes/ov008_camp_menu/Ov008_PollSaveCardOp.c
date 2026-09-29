@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define CARD_OP_NONE     0
 #define CARD_OP_LOAD     1
@@ -33,7 +34,6 @@ typedef struct Ov008SaveMenu {
 
 extern int Ov008_PollSaveLoad(void);                          /* Ov008_PollSaveLoad */
 extern int Ov008_CardTransferStep(void);                          /* Ov008_CardTransferStep */
-extern void GameState_SetFlag(int nFlag);                          /* GameState_SetFlag */
 extern void Ov008_SetupWorkArea(int bArm);                     /* re-arm the card poll */
 
 int Ov008_PollSaveCardOp(Ov008SaveMenu *pMenu, int nSlot, int nPhase, int nArg)

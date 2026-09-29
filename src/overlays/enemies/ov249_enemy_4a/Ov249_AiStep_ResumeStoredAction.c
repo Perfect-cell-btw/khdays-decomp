@@ -4,8 +4,8 @@
  * byte +0x1c9 into +0x1c7, then dispatch with no handler. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int a);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern const VecFx32 data_02041dc8;
 struct hw60lo_020d34b8 { unsigned short lo : 8; unsigned short hi : 8; };

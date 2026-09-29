@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/class_descriptor.h"
+#include "game/engine.h"
 
 typedef struct Ov002PanelSlot {
     int nId, nIcon;
@@ -74,20 +75,15 @@ extern const s8 data_ov002_0207ef68[];
 extern const GameClassDescriptor data_ov002_0207e8c8;
 extern Ov002DayClock data_0204c240;
 extern Ov002PanelThresholds data_0204c254;
-extern SessionSlotTable *Session_GetSlotTable(void);
-extern int Session_IsActive(void);
 extern u8 func_ov022_020882f8(void);
 extern int Ov022_GetEntryField12(int);
 extern SessionSlotInfo *Slot4_GetIfOccupied(int);
-extern u32 Session_GetLocalPlayerIndex(void);
 extern void *Ov002_Event_GetBlock3C(void);
-extern u8 Slot_EvalPackedParam(int, int);
 extern int InstantiateClass(const GameClassDescriptor *, void *);
 extern u16 *Slot_GetEntryIfBothSet(int, int);
 extern u16 *Slot_GetEntryIfCounted(int, int);
 extern void Ov002_PanelSetEntryTag(int, u16);
 extern void Ov002_PanelAddSubEntryAndRepaint(int, int);
-extern int Load2DArrayU8(int, int);
 extern void Ov002_HudSetSlotValue(int, int);
 extern void Ov002_Panel_RestoreRowsIfAny(void);
 extern void Ov002_RepublishHud(void);
@@ -95,7 +91,6 @@ extern int Ov002_IsPanelModeSet(void);
 extern void Ov002_AddToPanelTotal(int, int, int);
 extern s16 Ov002_GetRootField8bc8(void);
 extern void Ov002_StartHudTimer(int, int);
-extern u16 LoadGlobalU16At0(void);
 extern void Ov002_SetPanelField01b8(int);
 extern void Ov002_Field_RequestTransfer(int, int);
 extern void Ov002_ForwardWithOptionalPublish(int, int);

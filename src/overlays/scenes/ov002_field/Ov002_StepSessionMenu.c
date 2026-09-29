@@ -2,6 +2,7 @@
 /* One of the four members a wireless session can hold. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SessionMember {
     s16 nValue;             /* value published onto the shared board */
@@ -44,17 +45,11 @@ extern u8 data_0204c340[];          /* +0xe is the member-present mask */
 extern u8 *data_0204be18;           /* tally source; totals live at +0x1974 */
 
 extern Ov002SessionScreen *NNSi_FndGetCurrentRootHeap(void);
-extern int GameState_IsFlagSet(int nFlagId);          /* progress flag set */
 extern void Ov002_RaiseSeatFlagsForKey(void);
 extern void Ov002_ResetTracks(void);          /* reset tracks */
 extern void Ov002_FillMissionResult(void);
-extern int Session_IsActive(void);                 /* session active */
-extern int Session_IsReady(void);                 /* session ready */
-extern int Session_GetLocalPlayerIndex(void);                 /* local wireless id */
-extern void Scene_RequestPending(int nKind, int nArg); /* request a scene */
 extern void MIi_CpuClear16(u16 nValue, void *pDest, u32 nSize);
 extern int Ov002_BuildSessionCommand(int nKind, void *pMsg);
-extern int GameState_GetField(int nWho, int nField);
 extern void Ov002_SendSeatTally(void);
 
 /* Runs the session screen's menu: first it publishes every member's value onto

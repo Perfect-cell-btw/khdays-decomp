@@ -1,6 +1,7 @@
 /* Frees the scene's lookup list and tables, then the base region teardown. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Obj {
     char pad0[0x94];
@@ -13,7 +14,6 @@ typedef struct Obj {
 } Obj;
 
 extern void NNSi_FndDestroyDoubleList(void *list);
-extern void FreeInstanceMemory(void *p);
 extern void Ov107_Region_Destroy(Obj *self);
 
 void Ov107_Scene_Destroy(Obj *self)

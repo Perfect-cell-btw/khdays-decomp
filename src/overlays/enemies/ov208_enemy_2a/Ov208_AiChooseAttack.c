@@ -32,6 +32,8 @@
  * 0x28be60db9391 is 65536/(2*pi) in .32, the +0x800<<32 is rounding, and the (unsigned short) cast
  * is what makes the shifts come out as lsl#4/lsr#16/asr#4. */
 
+#include "game/engine.h"
+
 extern int Ov208_PickBestFacingNode(int obj, int kind);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
 extern void VEC_Subtract(const int *a, const int *b, int *dst);
@@ -39,9 +41,7 @@ extern int VEC_DotProduct(const int *a, const int *b);
 extern int VEC_Normalize(const int *v, int *unit);
 extern int func_020050b4(int x, int z);
 extern int Ov107_ActionResource_GetOffsetAndScale(int a, int *out);
-extern void Vec3TransformViaTempMtx(int *dst, const int *a, const int *b);
 extern void ScaleVec3Fx12(int scale, const int *src, int *dst);
-extern int RandNextScaled(int mul);
 extern short data_0203d210[];
 
 void Ov208_AiChooseAttack(int self) {

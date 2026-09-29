@@ -2,6 +2,7 @@
  * cancel. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009SaveChoiceVisual {
     int value;
@@ -24,11 +25,9 @@ typedef struct Ov009SaveContext {
 extern void Ov009_GetContext(void);
 extern void Ov009_SetMenuEntriesVisible(int enabled, int mode);
 extern void Ov009_DrawMenuText(Ov009SaveContext *ctx, int mode);
-extern void func_02020904(void);
 extern int Ov009_CommitSaveFields(Ov009SaveContext *ctx, int slot);
 extern void Ov009_SetCtxField95fc(int value);
 extern void Ov009_StartScreenTransition(int a, int b);
-extern void PlaySound(int bank, int sound);
 
 #define REG_DISPCNT (*(volatile u32 *)0x04000000)
 

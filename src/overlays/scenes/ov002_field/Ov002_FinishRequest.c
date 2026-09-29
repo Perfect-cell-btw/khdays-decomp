@@ -6,12 +6,13 @@
  * bit 2 of data_0204c240 -- the same gate Ov002_EnterDimmedScene reads. Sibling of
  * Ov002_ScriptCmd_WaitPanelPose, which drives the same request one step at a time; note
  * ScriptVm_ReadOperandInt's result is fetched and discarded here. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern int Ov002_GetPhaseWord(void);
 extern void INITi_CpuClear32_0x01ff86fc();
 extern void Ov002_DrawRecordLine(void *self, void *req);
 extern void Ov002_TakeBattleViewFocus(void);
-extern void GameState_SetField(int event, int a, int b);
 extern void Slot48_StoreAtCurrentIndex(void *self, void *req);
 
 extern unsigned char data_0204c240;

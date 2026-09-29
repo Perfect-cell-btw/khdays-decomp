@@ -1,10 +1,9 @@
 /* Applies the message by its mode (store params mode 0-3) or marks none pending; clears the timer.
  */
 
-extern int InitNodeAndStoreParamsMode1(int, int, int, int, int);
-extern int InitNodeAndStoreParamsMode2(int, int, int, int, int);
+#include "game/engine.h"
+
 extern int Record_InitMode2(int, int, int, int);
-extern int InitNodeAndStoreParams(int, int, int, int, int, int, int);
 
 typedef struct {
     unsigned short field_00;

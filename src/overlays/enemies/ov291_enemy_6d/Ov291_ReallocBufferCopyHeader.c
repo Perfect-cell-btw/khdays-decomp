@@ -1,5 +1,7 @@
 /* Replaces the object's data with a copy of the source and its two values. */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad[0x3a0];
     void *data;
@@ -14,7 +16,6 @@ typedef struct {
 
 extern void MI_CpuCopy8(void *src, void *dst, int size);
 extern void *CallocInstance(int size);
-extern void FreeInstanceMemory(void *ptr);
 
 void Ov291_ReallocBufferCopyHeader(Obj291 *obj, int size, Header291 *src)
 {

@@ -2,6 +2,7 @@
 /* The queue record the collector fills in. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned char bTag;             /* +0x00 */
@@ -13,8 +14,6 @@ typedef struct {
 
 typedef void *(*Ov002ElementProc)(char *pElement);
 
-extern short Session_GetLocalPlayerIndex(void);
-extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_RecordElementHit(char *pElement, Ov002HitRecord *pRecord, int nKind);
 extern void *Ov002_ElementTickFinishing(char *pElement);
 

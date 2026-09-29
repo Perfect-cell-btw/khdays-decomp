@@ -3,6 +3,8 @@
    the ov002 effect on whichever id it lands on. A list shorter than the chosen
    depth simply runs out and does nothing. */
 
+#include "game/engine.h"
+
 struct State {
     char *pActor;
 };
@@ -12,9 +14,7 @@ struct Node {
     struct State *pState;
 };
 
-extern int RandNextScaled();
 extern int *List_First(void *list);
-extern int *List_Next(void *list);
 extern void Ov002_SetLocalSlotPair(char *actor, int nId, int a, int b);
 
 void Ov130_FireEffectOnRandomListId(struct Node *node)

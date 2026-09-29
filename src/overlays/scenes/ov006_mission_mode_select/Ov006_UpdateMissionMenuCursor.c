@@ -2,6 +2,7 @@
  * two-frame auto-repeat and movement sound. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_00[0x38];
@@ -12,7 +13,6 @@ typedef struct {
 extern MissionMenuContext *data_ov006_02056660;
 extern unsigned short data_0204c190;
 extern unsigned short data_0204c18c;
-extern void PlaySound(unsigned int soundId, unsigned int variant);
 
 void Ov006_UpdateMissionMenuCursor(int count)
 {

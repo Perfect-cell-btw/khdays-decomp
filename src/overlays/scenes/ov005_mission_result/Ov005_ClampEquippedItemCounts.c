@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct NNSFndList {void *head,*tail;u16 count,offset;} NNSFndList;
 typedef struct Ov005PanelView {char opaque[0x20];NNSFndList itemQuantities;char tail[0x100-0x2c];} Ov005PanelView;
@@ -10,7 +11,6 @@ extern void *NNS_FndGetNextListObject(NNSFndList *,void *);
 extern void Ov005_InitRecordContext(Ov005PanelView *,void *);
 extern void Ov005_BuildMenuGrid(Ov005PanelView *,void **,NNSFndList *,u16 *);
 extern void Ov005_RebuildViewAndCountCells(Ov005PanelView *,void **,NNSFndList *);
-extern unsigned int Session_GetLocalPlayerIndex(void);
 extern PlayerItemLimit *Table_FindKey(int,unsigned int);
 extern void Ov005_RemoveEquippedItem(unsigned int,int);
 extern void Ov005_ReleaseHandleGridAndList(Ov005PanelView *,void **,NNSFndList *);

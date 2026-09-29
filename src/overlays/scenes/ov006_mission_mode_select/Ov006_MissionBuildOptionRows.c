@@ -2,6 +2,7 @@
  * handles leaving the menu. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 id;
@@ -42,14 +43,12 @@ extern int Ov006_GetMissionMenuSelection(void);
 extern int Ov006_SetMissionCursorSelection(int selection);
 extern int Ov006_Link_Poll(void);
 extern int Ov006_MissionScene_GetState(void);
-extern int GameState_GetField(int id, int field);
 extern void Ov006_MissionScene_SetByte9520(int mask);
 extern void Ov006_GetMissionRowInfo(int row, MissionMenuRow *out);
 extern int Ov006_CountPlayers(void);
 extern int Ov006_SetTitleMode(unsigned mode);
 extern void Ov006_ResetTextLayers(void);
 extern void Ov006_FlushTextLayers(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov006_MissionScene_SetHalf95C2(int row);
 extern int Ov006_RequestMenuState(unsigned state, int arg1, int arg2);
 extern int Ov006_MissionSetModelPose(int pose);

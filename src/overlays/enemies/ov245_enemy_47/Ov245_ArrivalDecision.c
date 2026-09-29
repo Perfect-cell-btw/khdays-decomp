@@ -8,6 +8,9 @@
  * a +0x420 part active allow 7, picked by a coin (the +0x43 counter takes the first two picks);
  * otherwise the sub-state is cleared to -1 and 0 returned. Returns 1 with the +0x2c delay set to
  * 0.75 (low) or 1.0. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov245Sub { char pad[0x1c7]; signed char sub; };
 struct Ov245Actor { char pad[0x3fc]; int slots[9]; };
@@ -15,7 +18,6 @@ struct Ov245Owner { char pad[0x390]; int slots[10]; };
 struct Ov245Parts { char pad[0x420]; int parts[3]; };
 
 extern int FX_Div(int num, int den);
-extern int RandNextScaled(int scale);
 
 static inline int Ov245_Abs(int x) { return x < 0 ? -x : x; }
 

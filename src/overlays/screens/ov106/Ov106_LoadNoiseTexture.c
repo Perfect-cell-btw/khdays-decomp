@@ -9,6 +9,7 @@
  * pool layout in the ov106 event scene; the ov023 source is the analysed one. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct NNSG3dResDict {
     u8 revision, numEntry;
@@ -54,8 +55,6 @@ typedef struct Ov023NoiseState {
 } Ov023NoiseState;
 
 extern NNSG3dResFileHeader *Archive_LoadFile(const char *pszName, int nKind); /* open a resource file */
-extern void InstallHandlerPairByFlag(int bPhase);                                    /* InstallHandlerPairByFlag */
-extern void G3dRes_DefaultSetup(NNSG3dResFileHeader *pResource);               /* set a resource up */
 extern NNSG3dResTex *NNS_G3dGetTex(const NNSG3dResFileHeader *resource);  /* NNS_G3dGetTex */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern Ov023NoiseState *data_ov106_020b8b68;                              /* the noise overlay state */

@@ -1,13 +1,13 @@
 /* Runs the frame and, once the scene is idle, broadcasts the current cue, marks the context state
  * and disables the sound listeners; returns the gameplay hub step. */
 
+#include "game/engine.h"
+
 extern void Ov022_UpdateCameraAndViews(int a);
 extern int Ov002_Scene_IsIdle(void);
 extern int Ov022_GetGlobalPlus4(void);
-extern int QueryActiveStateOrDelegate(void);
 extern void Ov022_BroadcastCue(int state, int id, int obj, int a);
 extern void func_ov022_0208872c(int a);
-extern void SoundMgr_SetListenersEnabled(int a);
 extern void Ov022_StateGameplayHub(void);
 extern int data_0204be04;
 extern int data_ov022_020b2e60;

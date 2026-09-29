@@ -11,10 +11,9 @@
  * ARM.
  */
 
-extern int data_ov002_0207f624;
+#include "game/engine.h"
 
-extern int func_02023c40(void);
-extern int func_02023c50(void);
+extern int data_ov002_0207f624;
 
 extern void Ov002_StepSurfaceReveal(void *pSurface);
 extern void Ov002_SelectEntryByKey(int nKey);

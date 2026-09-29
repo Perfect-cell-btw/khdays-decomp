@@ -1,10 +1,11 @@
 /* Ov008_ResetTweensAndBlank -- if a heap is active, reset the two title tween channels (-0x10) and
  * blank both screens' BG mode bits. */
+
+#include "game/engine.h"
+
 #define REG_DISPCNT     (*(volatile unsigned int *)0x04000000)
 #define REG_DISPCNT_SUB (*(volatile unsigned int *)0x04001000)
 extern int  NNSi_FndGetCurrentRootHeap(void);
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
 
 void Ov008_ResetTweensAndBlank(void) {
     if (NNSi_FndGetCurrentRootHeap() == 0) {

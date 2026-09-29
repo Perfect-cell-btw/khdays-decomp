@@ -9,7 +9,8 @@
  *    written as an inline `return 0` mwcc duplicates the epilogue instead of
  *    branching to it.
  */
-extern int BuildSlotMask(int p, int mask);
+
+#include "game/engine.h"
 
 int Ov002_IsAnySlotEnabled(int obj) {
     int four = 4;

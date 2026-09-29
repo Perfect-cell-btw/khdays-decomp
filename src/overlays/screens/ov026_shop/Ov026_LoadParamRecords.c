@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define DB_SLOT      0xf
 #define DB_ONE_BASED 0x15
@@ -16,12 +17,7 @@ typedef struct Ov008ParamRecord {
 
 typedef void (*Ov008FillRecordFn)(Ov008ParamRecord *pRecord, void *pRaw, int nIndex);
 
-extern void MsgDb_LoadDb(int nDbId, int nSlot);                        /* MsgDb_LoadDb */
-extern u16 LoadArrayU16Stride14At0c(int nDbId);                                    /* record count */
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);                /* AllocDefault (func_02023660) */
-extern void MsgDb_FetchRecord(void **ppRaw, int nDbId, u32 nIndex, int nSlot); /* MsgDb_FetchRecord */
-extern void DispatchByNodeKind(void **ppRaw);                                /* release a raw record */
-extern int ResSlot_Release_2(int nDbId);                                    /* ResSlot_Release */
 
 int Ov026_LoadParamRecords(u32 *pCount, Ov008ParamRecord **ppRecords, Ov008FillRecordFn pfnFill, int nDbId)
 {

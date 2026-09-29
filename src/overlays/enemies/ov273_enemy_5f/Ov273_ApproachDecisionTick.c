@@ -2,9 +2,11 @@
  * velocity, sets the +0x48 rate to 30/10 of the frame step and, unless the +8 flag byte is set,
  * rolls a percentage: while the +0x6c wait is spent it picks pose 8 / 0xc / 0xd (33/33/34 %),
  * otherwise pose 5 (80 %) or 4; then dispatches with a null handler. */
+
+#include "game/engine.h"
+
 struct v3 { int a, b, c; };
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
-extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 
 void Ov273_ApproachDecisionTick(int *node) {

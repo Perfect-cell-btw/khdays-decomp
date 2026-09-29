@@ -2,6 +2,7 @@
 /* The queue record the collector fills in; only the value field is ours. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned char bKind;            /* +0x00 filled by the collector */
@@ -11,8 +12,6 @@ typedef struct {
     u16 wPad;                       /* +0x06 */
 } Ov002HitRecord;
 
-extern int GameState_GetField(int nId, int nSlot);
-extern void GameState_SetField(unsigned int nId, unsigned int nSlot, unsigned int wState);
 extern int Ov002_RecordElementHit(char *pElement, Ov002HitRecord *pRecord, int nKind);
 
 /* Register a hit on this element once.

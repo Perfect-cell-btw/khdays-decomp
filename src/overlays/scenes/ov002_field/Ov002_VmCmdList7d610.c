@@ -19,6 +19,9 @@
  *   past the call and the ldrsb. Same instructions either way; only the position
  *   of `adds r5, #0x28` differs.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;              /* +0x00 */
     short nField04;            /* +0x04 */
@@ -27,9 +30,6 @@ typedef struct {
     int aItems[7];             /* +0x08 -- extent bounded by the 0x24 frame slot */
 } Ov002ListParams;             /* 0x24 */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov002_CreateLineClass(int nEntries, Ov002ListParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

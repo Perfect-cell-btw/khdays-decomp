@@ -1,6 +1,7 @@
 /* Sets a player's heading unless its node is locked, and marks it updated. */
 
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 void func_ov022_02088280(int arg0, short arg1) {
     int e = GetEntryField20ByIndex(arg0);
     unsigned int *p;

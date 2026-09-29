@@ -3,6 +3,7 @@
  * success (result 0) builds the entry's working lists. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000LoadEntry {
     u16 profileValue;
@@ -42,7 +43,6 @@ extern void Ov000_BuildMenuGrid(
 extern void Ov000_RebuildViewAndCountCells(void *state, void *work, void *list);
 extern void Ov000_ReleaseHandleGridAndList(void *state, void *work, void *list);
 extern void func_ov000_02058360(void *state);
-extern int GameState_GetField(int field, int kind);
 
 void Ov000_RecordLoadResult(int index, int result) {
     char list[0xc];

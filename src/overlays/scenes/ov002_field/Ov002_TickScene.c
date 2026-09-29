@@ -3,6 +3,7 @@
  * pending prompt sound; returns whether everything is idle. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned long long qwStart;
@@ -51,8 +52,6 @@ extern void GFXi_EnqueueCommand(int nQueue, int nTarget, int nSrc, int nSize);
 extern unsigned long long OS_GetTick(void);
 extern void Ov002_UploadSlotIconPalette(int nIndex, int nMode);
 extern int Ov002_RunShutdownHook(void);
-extern void PlaySoundChecked(int nBank, int nSound);
-extern void ForwardToHandlerOrCurrentObject(int nBank, int nSound, int nFlag);
 
 int Ov002_TickScene(void) {
     int bIdle = 1;

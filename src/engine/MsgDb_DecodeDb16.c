@@ -3,10 +3,10 @@
  * 1-based indices. If none match, fail. Otherwise alloc a 0x18-byte record (kind
  * 0x16), store the search value and match count, then allocate and fill an
  * out-of-line array of the matched indices. */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, unsigned int size, short kind, int keep);
+
+#include "game/engine.h"
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
-extern int Record_ReleaseSlot(int *slot);
 extern int data_0204c238;
 
 typedef struct {

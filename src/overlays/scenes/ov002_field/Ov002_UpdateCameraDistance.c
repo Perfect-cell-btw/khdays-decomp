@@ -15,9 +15,11 @@
  * counter is declared immediately before the target so the two land in the
  * registers the ROM uses.
  */
+
+#include "game/engine.h"
+
 extern char data_ov002_0207e764[];
 
-extern int func_02023bf0(void);
 extern void VEC_Subtract(const int *pA, const int *pB, int *pOut);
 extern int VEC_Normalize(const int *pIn, int *pOut);
 extern int VEC_DotProduct(const int *pA, const int *pB);

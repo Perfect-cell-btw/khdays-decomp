@@ -4,9 +4,7 @@
  * main BG0..3 = 3/0/1/2, sub BG0..3 = 0/1/2/3 (preserving each register's char/screen bits). */
 
 #include "nitro/types.h"
-
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
+#include "game/engine.h"
 
 void Ov008_ResetDisplayForPageList(void) {
     vu16 *sub = (vu16 *)0x04001008;

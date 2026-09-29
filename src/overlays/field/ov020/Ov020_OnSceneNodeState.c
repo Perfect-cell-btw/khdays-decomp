@@ -6,6 +6,9 @@
  * before copying anything into it. The parent pointer is loaded before the
  * dispatch rather than inside the arms, so the load sits above the switch.
  */
+
+#include "game/engine.h"
+
 struct Ov020ScriptTask {
     char pad00[8];
     struct Ov020ScriptTask *pParent08;      /* 0x08 */
@@ -14,9 +17,6 @@ struct Ov020ScriptTask {
     char pad1e[0x3a];
     char aName58[0x10];                     /* 0x58 */
 };
-
-extern void SceneNode_Enable(unsigned short *node);
-extern void SceneNode_Disable(unsigned short *node);
 
 void Ov020_OnSceneNodeState(struct Ov020ScriptTask *task, int state)
 {

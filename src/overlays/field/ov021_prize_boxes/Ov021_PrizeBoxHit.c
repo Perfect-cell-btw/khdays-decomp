@@ -9,6 +9,7 @@
  * Otherwise 8. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov021HitInfo {
     u8   pad_00[0xc];
@@ -64,7 +65,6 @@ typedef struct Ov021PrizeBox {
 extern int  Ov002_TakeEntryOfKind1(void);                                /* take a spawn id from the low band */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern int  func_02020400(int nNumerator, int nDenominator);          /* _s32_div_f */
-extern void MsgQueue_SendGate(int nGate, void *pMessage, int nSize);      /* MsgQueue_SendGate */
 
 int Ov021_PrizeBoxHit(Ov021PrizeBox *pSelf, Ov021HitInfo *pHit)
 {

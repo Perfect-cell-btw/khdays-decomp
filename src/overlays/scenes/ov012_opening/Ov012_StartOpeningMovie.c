@@ -4,6 +4,7 @@
  * Ov012_MayWaitFrames, waits forever -- the game does not recover from a movie that fails to open. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct MobiClipHeader {
     u16 destinationX;
@@ -30,12 +31,9 @@ extern char *data_ov012_0205cb20;
 extern void Ov012_UpdateOpeningGlobals(void);
 extern void Ov012_InitOpeningRendererFromMobiClipHeader(void *renderer, int layer, void *font,
                                 MobiClipHeader *header);
-extern u16 *GetBGScreenBaseForLayer(int layer);
 extern void Tilemap_FillRect(u16 *tilemap, int width, int height, int x, int y, int mapWidth,
                              int tile, int palette);
 extern void Ov012_TileTextRenderer_SetReady(void *renderer, int ready);
-extern void func_02031574(int value);
-extern void func_02030e64(int value);
 extern int Ov024_MobiClip_OpenStreams(MobiClipOpenRequest *request);
 
 void Ov012_StartOpeningMovie(char *streamName)

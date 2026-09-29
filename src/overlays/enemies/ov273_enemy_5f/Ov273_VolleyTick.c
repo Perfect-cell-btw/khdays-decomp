@@ -6,11 +6,11 @@
  * pose request 5 is queued and the node dispatches null. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Pair { int a, b; };
 typedef void (*LaunchHook)(int part, int arg);
 extern void func_ov107_020c0b90();  /* K&R + const vector: hoists the pool load over the latch store */
-extern int  RandNextScaled(int bound);
 extern void Srt_SetTranslation(int srt, int translation);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern const VecFx32 data_02041dc8;

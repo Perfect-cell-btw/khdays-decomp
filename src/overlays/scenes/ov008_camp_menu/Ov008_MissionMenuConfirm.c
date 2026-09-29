@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionMenu {
     u8  pad_000[8];
@@ -26,7 +27,6 @@ typedef struct Ov008MissionMenu {
 #define SOUND_CANCEL 3
 
 extern void Ov008_ShowMissionInfoPanel(Ov008MissionMenu *pMenu, int bExpand);   /* info panel slide */
-extern void PlaySound(int nKind, int nSound);                        /* PlaySound */
 extern void Ov008_StartSelectedMission(void);                                   /* start the mission */
 
 void Ov008_MissionMenuConfirm(Ov008MissionMenu *pMenu)

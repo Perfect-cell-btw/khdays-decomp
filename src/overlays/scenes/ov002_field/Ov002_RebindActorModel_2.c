@@ -10,9 +10,10 @@
  * (`adds r0,#0xc`). Any spelling that names 0x1ce -- directly, as 0x1c2 + 0xc, through a
  * pointer, or through a read-only index variable -- makes mwcc reload the second constant
  * from the pool and costs four bytes. */
+
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern int GameState_GetField(int id, int kind);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
 extern void Ov002_ElementRefreshNamedBindings(void *self);
 
 void Ov002_RebindActorModel_2(char *self) {

@@ -1,9 +1,10 @@
 /* Release every sub-object of the ov002 panel set held at data_ov002_0207f628 --
  * fourteen of them, at fixed offsets -- then drop the pointer. A null pointer
  * skips straight to the (redundant) clear. */
-extern int data_ov002_0207f628;
 
-extern void ReleaseField74AndCleanup(void *sub);
+#include "game/engine.h"
+
+extern int data_ov002_0207f628;
 
 void Ov002_Hud_ReleaseAll(void) {
     char *self = *(char **)&data_ov002_0207f628;

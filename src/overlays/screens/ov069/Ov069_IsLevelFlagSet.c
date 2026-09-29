@@ -3,6 +3,7 @@
  * (+2), added to 0x3bd5 (offset 0 when none does). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct LevelFlagEntry {
     u16 nThreshold;
@@ -10,8 +11,6 @@ struct LevelFlagEntry {
     u16 pad[2];
 };
 
-extern unsigned int GameState_GetField(int id, int kind);
-extern int GameState_IsFlagSet(int flag);
 extern const struct LevelFlagEntry data_ov069_020ba7f8[];
 
 int Ov069_IsLevelFlagSet(void)

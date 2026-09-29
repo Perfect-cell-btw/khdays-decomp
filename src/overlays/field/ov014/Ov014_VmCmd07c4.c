@@ -12,15 +12,15 @@
  * the fetch and the use (the conditional, here) the ROM truncates at the
  * assignment, and when the fetch is adjacent to the use it truncates there.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     int nField04;            /* +0x04 */
     int nField08;            /* +0x08 */
 } Ov014EmitParams;           /* 0xc */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov014_Instantiate(int nCount, Ov014EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

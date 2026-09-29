@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define LIST_TOP      0x18
 #define ROW_HEIGHT    16
@@ -83,7 +84,6 @@ extern void Ov008_ReleaseTwoSlotsEx(int nCtx, void *pEntry, int nFrame);      /*
 extern void Ov008_DisableRowBlock(void);                                    /* Ov008_DisableRowBlock */
 extern void Ov008_RefreshEquipPanel(Ov008GridSummary *pSummary);              /* Ov008_RefreshEquipPanel */
 extern void Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                  /* Ov008_RebuildGridHits */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern void Ov008_HighlightListRow(Ov008MenuContext *pCtx, int nRow);        /* highlight a visible row */
 
 void Ov008_TouchPickUpListItem(void)

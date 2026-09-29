@@ -1,9 +1,11 @@
 /* Ov025_GridConfirmOnPenUp_2 -- confirm the current grid selection on pen-up.
  * Only when the pen is released (touch[2]==0) and the grid is idle (obj+0x30==0), a selection
  * exists (obj+0x4c) and nothing is animating (obj+8): applies obj+0x70 and fires UI event 2. */
+
+#include "game/engine.h"
+
 extern void Ov025_CopySourceBlock(unsigned short *touch);
 extern void Ov025_AdvanceIndexForwardUntilOk(int obj, int key);
-extern void PlaySound(int a, int b);
 
 void Ov025_GridConfirmOnPenUp_2(int param_1) {
     unsigned short touch[4];

@@ -2,6 +2,7 @@
  * of the entry's flags at +0x40 is set; clears that bit afterward. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int pad[16];
@@ -9,8 +10,6 @@ typedef struct {
     signed int b1:1;
     signed int b2:1;
 } EntFlags;
-
-extern unsigned short func_02031384(int a, void *buf, int b);
 
 typedef struct { u16 a; u16 b; } Buf2;
 

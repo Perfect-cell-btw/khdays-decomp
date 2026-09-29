@@ -1,7 +1,9 @@
 /* Ov006_CanAdvancePastIntro -- test whether the Mission Mode may advance past the intro, ov006.
  * Returns true immediately if the global gate Session_IsSceneInterruptible is engaged; otherwise returns
  * whether the Mission Mode's ready check Ov006_ShouldEnterConfirmState is non-zero. */
-extern int Session_IsSceneInterruptible(void);
+
+#include "game/engine.h"
+
 extern int Ov006_ShouldEnterConfirmState(void);
 
 int Ov006_CanAdvancePastIntro(void) {

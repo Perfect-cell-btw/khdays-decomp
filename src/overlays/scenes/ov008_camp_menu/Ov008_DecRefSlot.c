@@ -1,6 +1,7 @@
 /* Drops a reference to a resource slot, releasing the slot when the last reference goes. */
 
-extern void ResSlot_Release_2();
+#include "game/engine.h"
+
 extern int data_ov008_02090f04;
 
 void Ov008_DecRefSlot(int arg0) {

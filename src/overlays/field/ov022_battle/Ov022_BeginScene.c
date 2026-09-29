@@ -2,6 +2,7 @@
  * scene scale and markers, and returns the battle entry poll step. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef int (*Ov022StateCallback)(void);
 
@@ -36,8 +37,6 @@ extern u8 data_0204be04;
 
 extern Ov022Context *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov022_SetupSessionObject(void);
-extern unsigned char EntityMgr_PushVramState(void);
-extern int func_02023c40(void);
 extern void Ov002_RefreshSessionMarkerDestinations(void);
 extern void Ov002_SetSceneScale(int value);
 extern void Ov002_TeardownAllSpawnSlots(void);

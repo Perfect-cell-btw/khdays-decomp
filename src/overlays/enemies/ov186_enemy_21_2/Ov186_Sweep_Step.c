@@ -2,6 +2,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 struct Quat { int x, y, z, w; };
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
@@ -63,7 +64,6 @@ extern const VecFx32 data_02041dc8;
 extern void Quat_Slerp(struct Quat *out, int t, struct Quat *a, struct Quat *b);
 extern void Srt_SetRotationQuat(struct Quat *dst, struct Quat *src);
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern int Ov107_InvokeHitCallback(struct Ov185Target *candidate, Actor *owner,

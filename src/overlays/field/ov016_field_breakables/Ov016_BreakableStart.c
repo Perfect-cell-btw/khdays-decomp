@@ -7,6 +7,7 @@
  * pair (0203355c) when the definition has a drop slot (def +0x78 >= 0). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016BreakableDef {
     u8 pad_00[0x58];
@@ -35,12 +36,7 @@ typedef struct Ov016Breakable {
 } Ov016Breakable;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
-extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
 extern u8    Ov002_GetLastPositiveSlotValue(void *pNode);                        /* frame count of a node */
-extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                   /* Obj_SetFlagBit3 */
-extern void Res_RequestIdPair(int nId);                                  /* Res_RequestIdPair */
 
 void Ov016_BreakableStart(Ov016Breakable *pSelf)
 {

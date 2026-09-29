@@ -16,13 +16,14 @@
  * payload pointer reuses the materialized pBuffer+off (payload = (u8*)hdr + 2), which
  * also fixes the param->register colouring to match; writeOffset update is grouped
  * `wo + (param2 + 2)`; and the odd-length pad test is the signed `% 2` ROR idiom. */
+
+#include "game/engine.h"
+
 typedef struct { int state; unsigned char *pBuffer; unsigned short writeOffset; unsigned short pad; } MsgQueueBuf;
 typedef struct { MsgQueueBuf slots[2]; MsgQueueBuf *pActive; int field1c; } MsgQueueEntry;
 typedef struct { int f0; MsgQueueEntry *entries; int count; } MsgQueueCtx;
 
 extern MsgQueueCtx *data_0204c230;
-extern int IsKind1Or4(int id);
-extern int Session_IsReady(void);   /* Session_IsReady */
 extern void MI_CpuCopy8(void *src, void *dst, unsigned int size);
 
 int MsgQueue_Enqueue(int param1, int param2, unsigned short *param3)

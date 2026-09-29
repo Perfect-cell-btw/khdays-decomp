@@ -7,6 +7,7 @@
  * the +0x384 model and the node moves to 020d0d8c; otherwise the common 020d1364 step runs. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct m4 { int w[4]; };
 
@@ -17,7 +18,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Quat_FromTwoVectors(void *rotation, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);

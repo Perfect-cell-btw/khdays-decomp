@@ -6,9 +6,8 @@
  * address first (ip) and the source (lr) second. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(void *out, void *tbl, int idx);
 extern void Quat_FromTwoVectors(void *out, const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Multiply(void *out, void *a, void *b);
 extern void Srt_SetRotationQuat(int placement, void *rotation);

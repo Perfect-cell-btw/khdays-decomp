@@ -2,10 +2,12 @@
  * If the record is modal-but-unconfirmed (rec+0x150 set, rec+0x154 clear) or has no popup open
  * (rec+0x180 == 0), does nothing. Otherwise dismisses (Ov008_ApplyModeWidgets2 when rec+0x184 set),
  * releases (Ov008_ShowMissionInfoPanel) and commits the input latch. */
+
+#include "game/engine.h"
+
 extern int  Ov008_GetPageB(void);
 extern void Ov008_ApplyModeWidgets2(int rec, int a);
 extern void Ov008_ShowMissionInfoPanel(int rec, int a);
-extern void PlaySound(int a, int b);
 
 void Ov008_MissionMenu_OnBack(void) {
     int rec = Ov008_GetPageB();

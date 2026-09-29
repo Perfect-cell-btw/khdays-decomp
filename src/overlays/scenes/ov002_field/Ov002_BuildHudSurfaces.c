@@ -9,6 +9,8 @@
  * THUMB.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     int nUnk00;
     int nUnk04;
@@ -29,7 +31,6 @@ extern const TileSurfaceCfg data_ov002_0207e5c0;
 
 extern int Ov002_GetItemResource(int nSlot);
 extern void *Ov002_Hud_GetBlock30(void);
-extern void TileSurface_InitAndUpload4bpp(void *pSurface, const TileSurfaceCfg *pCfg);
 
 void Ov002_BuildHudSurfaces(void)
 {

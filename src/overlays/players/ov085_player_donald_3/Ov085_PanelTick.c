@@ -8,7 +8,9 @@
  * emits exactly two loads, `orr` low with the mask, `orr` high with zero, two stores. It also
  * explains the two-step base (`add r0, r4, #0x64` then `[r0, #0x404]`): that is just how mwcc
  * addresses the high half, not a separate source construct. */
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(int a, int b);
 extern void Ov022_InvokeCallback24IfBit0(int a);

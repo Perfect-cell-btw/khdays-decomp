@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
@@ -20,7 +21,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
-extern unsigned int RandNextScaled(int bound);
 extern void Ov218_PlaceAt(int partner, void *hand, VecFx32 *aim, int spin);
 extern void Ov218_AiEnterAnim4IfTarget(void);
 extern const short data_0203d210[];

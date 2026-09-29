@@ -1,4 +1,5 @@
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Ov008_MissionDriveSound -- drive the ov105 sound state from the scene state.
  * State 0 (still booting) arms the "intro jingle started" latch at obj+0x49c once the
  * sound engine reports ready; states 1 and 3 are quiet; 9 and 10 fade out; every other
@@ -13,7 +14,6 @@
  * scene label is not. The offsets and logic below are this function's -- the code is
  * byte-identical to the rep.
  */
-extern int  Game_PollSceneAlive(void);
 extern void Ov105_KickIdleHandler(void);
 extern int  Ov105_WH_Initialize(void);
 extern void Ov105_WH_Finalize(void);

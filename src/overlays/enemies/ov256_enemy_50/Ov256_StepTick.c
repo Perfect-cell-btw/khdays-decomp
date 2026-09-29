@@ -6,9 +6,9 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_WalkTick(void);
 

@@ -1,9 +1,11 @@
-extern int GameState_GetField(int query, int kind);
 
 /* Gate check for a spawn/encounter record at `param_1` against flag word
  * `param_2`: validates the record is active, its zone id is in range and its
  * team matches, then tests several difficulty/level dispatch tables. Returns 1
  * if the record is eligible, else 0. */
+
+#include "game/engine.h"
+
 int Ov025_IsEncounterEligible(int param_1, unsigned int param_2) {
     unsigned int bit;
     unsigned int m;

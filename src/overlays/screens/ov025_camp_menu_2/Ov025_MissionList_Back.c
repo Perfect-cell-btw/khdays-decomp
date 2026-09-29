@@ -8,6 +8,7 @@
  * a page transition (02084e08 / 02084e38), else to target 0 / -1; the cancel sound plays. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionList {
     u8   pad_000[0x40];
@@ -35,7 +36,6 @@ typedef struct Ov008MissionGlobals {
 extern Ov008SessionInfo data_0204c240;
 extern u8 data_0204c300[];                                          /* Ov008MissionGlobals: +0x4f the badge flag */
 extern void  Ov025_ShowMissionListInfoPanel(Ov008MissionList *pList, int nArg);  /* Ov025_MissionList_CancelSelection */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern int   Ov025_GetCtxObject95c0(void);                             /* Ov008_GetCtxObject95c0 */
 extern void  Ov002_PostResultReport(int nPayload);                     /* leave the menu */
 extern void  Ov025_SetTargetSlot(int nEntry, int nTarget);          /* Ov008_SetTargetSlot */

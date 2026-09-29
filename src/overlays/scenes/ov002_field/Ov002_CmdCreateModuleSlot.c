@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 wValue;
@@ -20,7 +21,6 @@ typedef struct {
     u8 bZero;
 } Ov002SlotArg;
 
-extern int ScriptVm_ReadOperandInt(void *vm, char *operand);
 extern int Ov002_CreateSpareClass(int nCount, Ov002SlotArg *arg);
 extern void Ov002_SetModuleSlot(int slot, int handle);
 

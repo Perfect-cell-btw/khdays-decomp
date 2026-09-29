@@ -2,8 +2,7 @@
  * +0x310 kind byte and its +0x311 bit-0 flag. */
 
 #include "game/actor.h"
-
-extern int SetSubitemState();
+#include "game/engine.h"
 
 struct S {
     Actor base;                  /* 0x000 */

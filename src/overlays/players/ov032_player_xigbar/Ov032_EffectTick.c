@@ -2,14 +2,14 @@
  * effect block, then, while bit 0 of the +0x694 flags is set in modes 0x1b/0x1c, winds the two
  * +0x2c34 animation blocks to the model's track-0 frame minus 2.0 (only inside the track's
  * length), refreshes the matrix stack from the +0x528 matrices and submits the +0x2c54 objects. */
+
+#include "game/engine.h"
+
 extern void Ov032_EffectBlockTick(int self, char *block, int rate);
 extern void Ov032_EffectBlockPlace(int self, char *block);
-extern int Anim_GetFrame(void *anim, int track);                                 /* Anim_GetFrame */
-extern int Anim_GetLengthQ12(void *anim, int track);
 extern void Anim_SetFrameWrapped(void *anim, int channel, int frame);
 extern void Gfx_SubmitCachedCommandBlock(void);
 extern void GX_SendFifoWords(unsigned int cmd, const void *src, unsigned int words);
-extern void Obj_InitChannelsAndRun(void *obj);
 
 struct b1 { unsigned char b0 : 1; };
 

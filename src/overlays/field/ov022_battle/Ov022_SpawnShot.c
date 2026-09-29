@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ShotDesc {
     unsigned int nFlags;             /* 0x00 */
@@ -77,7 +78,6 @@ struct SpawnReq {
 };
 
 extern void Ov022_ReleaseRigSlots(struct Shot *pShot, int nRig);
-extern int func_02023c40(void);
 extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);
 
 #define SHOT_IDLE 0

@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Actor;
 
@@ -94,7 +95,6 @@ struct MoveProbe {
 #define CAST_LANDED 2
 #define TRAIL_PERIOD 0x36000
 
-extern int func_02023c40(void);
 extern int Ov022_ValidateTargetRef(struct Actor *pActor);
 extern VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
 extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB,

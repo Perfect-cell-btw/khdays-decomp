@@ -2,6 +2,7 @@
  * records, thresholds, rules and configuration, then moves on once everyone has it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;
@@ -65,7 +66,6 @@ extern GameplayRules data_0204c248;
 extern GameplaySessionConfig data_0204c240;
 extern u16 data_0204c23c;
 
-extern u32 Session_GetLocalPlayerIndex(void);
 extern void Ov008_UpdateCursorSprite(void);
 extern int Ov008_IsSessionReady(void);
 extern u32 Ov008_GetSlotPresenceMask(void);

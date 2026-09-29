@@ -17,10 +17,11 @@
  * the lower register.
  */
 
+#include "game/engine.h"
+
 extern void *NNS_FndGetNextListObject(void *pList, void *pObj);
 extern void NNS_FndRemoveListObject(void *pList, void *pObj);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
-extern void Loader_SleepIfBusy(void);                      /* settle the file system */
 extern void Ov002_DestroyOwnedEntry(int *pNode, int nFlag);
 
 extern int data_ov002_0207f608;   /* the pending list, done list at +0xc */

@@ -9,6 +9,8 @@
  * ARM.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad000[4];
     int nSlot;
@@ -17,10 +19,6 @@ typedef struct {
 } Ov002TabCtx;
 
 extern Ov002TabCtx *data_ov002_0207f99c;
-
-extern int func_020208e0(void);
-extern int Session_GetLocalPlayerIndex(void);
-extern void PlaySound(int a, int b);
 
 extern int Ov002_ForwardToSubDc(int nCue);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);

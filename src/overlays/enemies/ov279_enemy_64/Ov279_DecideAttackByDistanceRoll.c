@@ -8,9 +8,11 @@
  * chosen. Both rolls are the inline RandRange (lo + rand(|hi - lo| + 1)); the d100's zero
  * low bound survives as the `add r1,r0,#0` copy of the roll. The target and owner pointers are
  * read between the two vector calls and kept callee-saved for the gap. */
+
+#include "game/engine.h"
+
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
-extern int  RandNextScaled(int scale);
 
 static inline int RandRange(int low, int high)
 {

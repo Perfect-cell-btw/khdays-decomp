@@ -3,6 +3,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef int (*Ov022StateCallback)(void);
 
@@ -41,8 +42,6 @@ extern void *InstantiateClass(void *classDescriptor, int argument);
 extern int Ov002_GetRootField8d68(void);
 extern void *func_ov022_02083f40(void);
 extern void Ov002_SetValueAndDerive(void *owner, int value, int unused);
-extern unsigned char EntityMgr_PushVramState(void);
-extern int func_02023c40(void);
 extern void Ov002_RefreshSessionMarkerDestinations(void);
 extern void Ov002_SetSceneScale(int value);
 extern void Ov002_TeardownAllSpawnSlots(void);

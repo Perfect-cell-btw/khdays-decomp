@@ -19,10 +19,10 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern int RandNextScaled();
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern void ScaleVec3Fx12(int t, const VecFx32 *a, VecFx32 *b);

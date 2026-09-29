@@ -12,6 +12,7 @@
  * cancels the viewer and refreshes the rows (0209e3f8). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */
@@ -70,7 +71,6 @@ extern void  Ov025_OpenSubObject(int nTopic);                       /* Ov025_Vie
 extern int   Ov025_PageB_IsBusyOrInactive(void);                             /* Ov025_Viewer_IsBusy */
 extern int   Ov025_PointInBox(const u16 *pPos, const u8 *pBox);  /* Ov025_PointInBox */
 extern void  Ov025_Tutorial_DragKnob(const Ov025TouchInput *pTouch);    /* Ov025_Tutorial_DragKnob */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov025_Tutorial_Refresh(void);                             /* Ov025_Tutorial_RefreshRows */
 extern u16   data_0204c18c;                                         /* held keys */
 extern const u8 data_ov025_020b41a0[];                              /* the scroll bar box */

@@ -9,6 +9,7 @@
  * r4 and r5). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad00[0x14];
@@ -16,7 +17,6 @@ typedef struct {
     char sequence[0xf4];    /* 0x18 */
 } Ov042SeqSlot;             /* 0x10c */
 
-extern void RegisterSeqAndInit(void *sequence, void *descriptor, int a, int index);   /* RegisterSeqAndInit */
 extern void Ov081_CreateSubObject(char *self);
 extern char *data_ov081_020b96e0;
 extern char data_ov081_020b9694[];

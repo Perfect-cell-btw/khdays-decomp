@@ -4,6 +4,7 @@
 #include "nitro/types.h"
 #include "game/ai_task.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct State {
     char *pActor;       /* 0x00 */
@@ -20,7 +21,6 @@ struct Node {
 };
 
 extern void *Ov107_FindNearestObject(char *actor, int mode);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(struct Node *node, int slot, void *next);
 
 extern void Ov293_ChaseTick(void);

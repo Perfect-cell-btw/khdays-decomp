@@ -1,6 +1,6 @@
 /* Returns the local player's index in the session. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
 
 int Ov008_GetLocalPlayerIndex(void)
 {

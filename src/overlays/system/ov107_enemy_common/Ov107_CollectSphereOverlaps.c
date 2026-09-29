@@ -1,5 +1,7 @@
 /* Collects the container's elements whose hit shape overlaps the sphere; returns the count. */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad0[4];
     int f4;
@@ -13,7 +15,6 @@ typedef struct {
 } Owner;
 
 extern int List_First(void *o);
-extern int List_Next(void *o);
 extern int Ov107_HitShape_TestSphere(void *p, void *source, int flag);
 
 int Ov107_CollectSphereOverlaps(Owner *owner, void *source, void **results)

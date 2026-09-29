@@ -1,7 +1,8 @@
 /* Resets the charge state and releases the associated global slot when present. */
 
+#include "game/engine.h"
+
 extern int data_ov057_020b74a0;
-extern void SoundSeqHandle_Stop();
 
 void Ov057_ReleaseGlobalSlotIfSet(int this_, int arg1) {
     int *base = (int *)(data_ov057_020b74a0 + 0x2c2c);

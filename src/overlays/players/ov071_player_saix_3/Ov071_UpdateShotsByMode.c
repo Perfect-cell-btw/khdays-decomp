@@ -7,10 +7,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_MultAdd(int scale, const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov071_LaunchProjectile(VecFx32 *pos, unsigned int angle, int kind, int grounded);
-extern int Session_GetLocalPlayerIndex(void);
 extern void func_ov022_020ad44c(VecFx32 *out, char *self);
 extern void func_ov022_020ad588(char *self);
 extern short data_0203d210[];

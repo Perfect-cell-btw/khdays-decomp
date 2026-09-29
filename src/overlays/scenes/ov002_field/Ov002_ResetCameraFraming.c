@@ -4,7 +4,8 @@
  * The global is RE-READ before every store rather than cached in a local -- four
  * separate loads in the ROM. Holding it costs the match here, which is the
  * mirror image of the usual held-pointer lever. */
-extern int func_0201e438(void);
+
+#include "game/engine.h"
 
 typedef struct {
     unsigned int dwFlags;   /* +0 */

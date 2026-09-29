@@ -2,11 +2,11 @@
  * table, initialises the child projectile model and refreshes its callbacks. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct nine { int w[9]; };
 struct b1 { unsigned char b : 1; };
 extern void Ov264_initChildProjectile(void *a, int b, int c, void *d);
-extern void RefreshObjectCallbacks(void *a, int b);
 extern int data_ov264_020cebd8[];
 
 void Ov264_spawnFromTable(char *this) {

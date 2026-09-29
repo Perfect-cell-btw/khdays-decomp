@@ -9,6 +9,7 @@
  * callback Session_CheckSceneLoop. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct MATHRandContext32 {
     u64 x;
@@ -42,14 +43,9 @@ typedef struct SessionCtx {
 } SessionCtx;
 
 extern SessionCtx *NNSi_FndGetCurrentRootHeap(void);
-extern SessionSource *Session_GetSlotTable(void);
-extern int Session_IsActive(void);
-extern void Rng_Seed(int a, int b, int c);
 extern u16 func_01ff8138(void);
-extern u32 RandNextScaled(int mode);
 extern void *InstantiateClass(const void *desc, int flags);
 extern int func_01ff8128(void);
-extern void Session_CheckSceneLoop(void);
 extern SessionCtx *data_0204c228;
 extern const char data_02042990[];
 extern const char data_020429a4[];

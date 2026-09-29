@@ -1,8 +1,8 @@
 /* Orientation step: turns the heading toward its target unless the actor is locked, combines it
  * with the ground-normal rotation into the model's SRT, and counts the delay timer down. */
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(void *dst, void *m, int v);
+#include "game/engine.h"
+
 extern void Quat_FromTwoVectors(void *dst, void *m, int v);
 extern void Quat_Multiply(void *dst, void *a, void *b);
 extern void Srt_SetRotationQuat(void *dst, void *m);

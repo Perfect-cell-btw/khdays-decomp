@@ -1,6 +1,7 @@
 /* Ov002_ScriptSpawnTimedSet: load and instantiate the current state's timed records. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002TimedClassDesc { const char *pName; int nOwnerArg; } Ov002TimedClassDesc;
 typedef struct Ov002TimedSpawnRecord {
@@ -34,11 +35,9 @@ extern void Ov002_LoadOffsetTableOnce(int bAlternate);
 extern Ov002TimedSpawnSet *Ov002_FindHandlerByKey(int wKey);
 extern void *Ov002_CreateTimedClass(int nCount, const Ov002TimedClassDesc *pDesc);
 extern void Ov002_SetModuleSlot(int nModuleId, void *pClass);
-extern int GameState_IsFlagSet(int nFlag);
 extern int func_02020400(int nNumerator, int nDenominator);
 extern void Ov002_SpawnTimedElementAt(void *pClass, int nSlot, int nBucket, VecFx32 *pPos,
                              short nAngle, unsigned short wField, unsigned char bWidth, short nKey);
-extern void GameState_SetField(unsigned int wField, int nWidth, int nValue);
 extern void Ov002_AppendPendingId(int nKey);
 extern void Ov002_FreeRootBuffer0x8d7c(void);
 

@@ -6,6 +6,7 @@
 #pragma opt_propagation off
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 type;
@@ -18,7 +19,6 @@ typedef struct {
 } Ov025Page;
 
 extern Ov025Page *Ov008_GetMenuContext(void);
-extern int DispatchByNodeKind(Ov025Message **messageSlot);
 
 int Ov008_FilterIncomingMessage(Ov025Message **messageSlot) {
     Ov025Page *page = Ov008_GetMenuContext();

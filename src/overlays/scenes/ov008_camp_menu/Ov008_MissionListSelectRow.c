@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ROW_HEIGHT 32
 
@@ -43,7 +44,6 @@ extern void Ov008_MainMenu_UpdateSelectionText(int nSlot, int bLocked);         
 extern int  func_02020400(int nNum, int nDen);                            /* _s32_div_f */
 extern void Ov008_ScrollListTo(Ov008MissionList *pList, int nPos, int nTarget, int bNow); /* Ov008_ScrollListTo */
 extern void Ov008_PositionListCursor(Ov008MissionList *pList);                 /* Ov008_PositionListCursor */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern int  Ov008_GetCtxObject9634(void);                                    /* page transition active */
 extern int  Ov008_GetCtxObject9630(void);                                    /* Ov008_GetCtxObject9630 */
 extern void Ov008_LayoutMissionDots(Ov008MissionList *pList);                 /* Ov008_LayoutMissionDots */

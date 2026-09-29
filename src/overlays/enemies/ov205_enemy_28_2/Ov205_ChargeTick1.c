@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -45,7 +46,6 @@ struct Ov204ChargeState {
 };
 
 extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov205_ChargeSweep(struct Ov204ChargeState *state);
 extern int Ov107_FindNearestObject(struct Ov204Owner *actor, int mode);

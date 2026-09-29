@@ -1,9 +1,8 @@
+#include "game/engine.h"
+
 extern unsigned char data_0204be04;
 
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov002_StepRosterSlotPhase(int nIndex);
-extern int LoadGlobalU16At0(void);
-extern int GetEntryField20ByIndex(int nIndex);
 
 /* Refresh one entry, or every active entry when the caller passes a negative
  * index. The broadcast form is suppressed while the lock byte is set, and it

@@ -2,10 +2,10 @@
  * >>12, passes the result to SetMasterBrightnessMain and SetMasterBrightnessSub, and returns bit2
  * of *(heap+0x70). */
 
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern void Tween_Sample();
-extern void SetMasterBrightnessMain();
-extern void SetMasterBrightnessSub();
 
 struct bf70 { unsigned int _pad : 2; unsigned int b : 1; };
 

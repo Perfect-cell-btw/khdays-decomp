@@ -26,6 +26,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SessionScreen {
     char pad0000[8];
@@ -44,7 +45,6 @@ extern u8 data_0204be04;
 
 extern Ov002SessionScreen *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov002_StepGiveUpTimer(void);
-extern int Game_RunActionScript(void *pSub);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_SetOrClearFlag200(int a, int b);
 extern void Ov002_ResetWorldSubBlocks(void);

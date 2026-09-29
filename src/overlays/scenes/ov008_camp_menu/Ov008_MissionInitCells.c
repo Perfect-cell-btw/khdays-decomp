@@ -2,6 +2,7 @@
  * selection. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_0000[0x4a8c];
@@ -20,7 +21,6 @@ typedef struct {
 
 extern Ov006RootContext *NNSi_FndGetCurrentRootHeap(void);
 extern Ov006RootContext *data_ov008_02090fa4;
-extern void Slot_ForwardToEntry(void *renderer, int cell, int value);
 extern void Slot_ClearFlagBit1(void *renderer, int cell);
 extern void Ov008_MissionPlaceCellPair(int slot, int selection);
 

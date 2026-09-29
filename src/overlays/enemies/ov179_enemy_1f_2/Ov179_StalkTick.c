@@ -7,15 +7,14 @@
  * to 2; otherwise the +0x48 phase advances and at 0x3000 sub-state 6 follows. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(void *quat, void *axis, int angle);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int Ov179_IsChildInactive(int node);
 extern int data_02042264;
 

@@ -1,9 +1,10 @@
 /* Character constructor: builds the rig object, initialises the effect slots unless in the mode
  * that has none, requests its two voice ids and returns the decoder step. */
 
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov035_BuildRigObject(int a);
-extern int LoadGlobalU16At0(void);
 extern void Ov035_InitEffectSlotsWithTimings(int a);
 extern void Ov022_RequestVoiceIds(int a, int b, int c);
 extern void Ov022_ArmDecoder(void);

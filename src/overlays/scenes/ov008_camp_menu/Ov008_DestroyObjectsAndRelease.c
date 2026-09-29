@@ -1,6 +1,7 @@
 /* Destroys the list objects, then releases the object when its bit 2 flag is set. */
 
-extern void Obj_Release(void *context);
+#include "game/engine.h"
+
 extern void Ov008_DestroyAllListObjects(void *context);
 
 typedef struct {

@@ -2,6 +2,7 @@
  * its result or 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002Entry Ov002Entry;
 typedef int (*Ov002EntryCallback)(Ov002Entry *entry);
@@ -19,8 +20,6 @@ struct Ov002Entry {
     u16 wKey;
     u8 bKind;
 };
-
-extern int GameState_GetField(int key, int kind);
 
 int Ov002_TriggerEntrySecondary(Ov002Entry *self)
 {

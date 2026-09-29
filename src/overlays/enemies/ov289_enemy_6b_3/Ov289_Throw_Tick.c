@@ -48,6 +48,7 @@
 #include "game/actor.h"
 #include "game/ai_task.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct SinCos {
     short sin;
@@ -107,7 +108,6 @@ extern struct Hit *Collision_CastSphereEx(void *world, VecFx32 *from, VecFx32 *d
                                  void *ignore);
 extern struct Hit *Collision_CastRay(void *world, VecFx32 *from, VecFx32 *delta);
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *shape, void *other, int mode);
 extern int FX_Div(int a, int b);
 extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);

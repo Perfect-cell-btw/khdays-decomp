@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 wX;
@@ -40,7 +41,6 @@ extern Ov002TabCtx *data_ov002_0207f99c;
 extern Ov002TabSlot data_ov002_0207f9a0[];
 
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
-extern int Session_GetLocalPlayerIndex(void);
 
 extern int Ov002_LinkSyncReadPeer(Ov002TouchInput *pOut, unsigned int nSlot);
 extern void Ov002_PlotStroke(int nSlot, Ov002TouchInput *pInput);

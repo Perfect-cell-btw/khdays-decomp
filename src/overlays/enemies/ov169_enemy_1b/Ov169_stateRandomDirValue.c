@@ -2,8 +2,8 @@
  * limits at +0x224 and +0x228, and installs the circle-strafe step. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov169_CircleStrafeTarget(void);
 void Ov169_stateRandomDirValue(int *node) {

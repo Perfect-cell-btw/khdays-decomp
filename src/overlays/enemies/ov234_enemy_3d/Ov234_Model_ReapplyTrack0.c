@@ -2,9 +2,7 @@
  * RefreshObjectCallbacks. */
 
 #include "game/actor.h"
-
-extern int SetSubitemState();
-extern int RefreshObjectCallbacks();
+#include "game/engine.h"
 
 void Ov234_Model_ReapplyTrack0(Actor *this) {
     SetSubitemState(this->pSubitem, 0, this->mode310, this->flags311.bits.bit0);

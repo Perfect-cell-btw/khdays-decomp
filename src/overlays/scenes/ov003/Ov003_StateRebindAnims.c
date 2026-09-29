@@ -2,6 +2,7 @@
  * threshold; moves on when all are done. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 raw[0x108];
@@ -39,7 +40,6 @@ extern Ov003SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov105_WM_GetLinkLevel(void);
 extern void Ov003_UpdateLayers(Ov003SceneContext *pContext);
 extern void BindAnimTrack(int nObject, int nTrack, int nBinding, int nAnim);
-extern unsigned int BuildSlotMask(int nObject, int nMask);
 extern void Sequence_UpdateTracks(void *pObject, int nMask);
 
 int Ov003_StateRebindAnims(void)

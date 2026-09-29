@@ -8,8 +8,8 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int range);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void VEC_Add(const void *a, const VecFx32 *b, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

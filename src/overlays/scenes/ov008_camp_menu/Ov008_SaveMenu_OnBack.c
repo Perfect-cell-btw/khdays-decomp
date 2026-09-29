@@ -12,13 +12,15 @@
  * pointer; folding the offset into the index does not, because there is no expression left to
  * strength-reduce: the scale IS the element size and the constant IS an addressing-mode immediate.
  */
+
+#include "game/engine.h"
+
 typedef struct { int a, b; } Ov008Pair8;
 
 extern int Ov008_GetContext(void);
 extern void Ov008_SetTargetSlot(int a, int b);
 extern void Ov008_SetMenuEntriesVisible(int a, int b);
 extern void Ov008_SaveMenuDrawPrompt(int *obj, int a);
-extern void PlaySound(int a, int b);
 
 void Ov008_SaveMenu_OnBack(int *param_1) {
     Ov008_GetContext();

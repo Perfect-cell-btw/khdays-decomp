@@ -1,7 +1,8 @@
 /* AI step: once track-0 animation ends, context +0x34 = a random value in the actor's Ms/UP range
  * (+0x224..+0x228), pendingAction = 2, step cleared. */
 
-extern int RandNextScaled();
+#include "game/engine.h"
+
 extern int SetIndexedSlot();
 
 struct sub {

@@ -2,9 +2,10 @@
  * fixed parameters (speed, lifetime, ranges), enabling the extra flag when the owner's slot option
  * is set. */
 
+#include "game/engine.h"
+
 extern int NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void Ov022_TakeChannelBlock(int a, int b, int c);
-extern int Slot_EvalPackedParam(int a, int b);
 extern void Ov022_PublishGroupUpdateFixed(int a, int b, void *c, void *d);
 extern int data_ov055_020b7718;
 

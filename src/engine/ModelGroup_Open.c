@@ -5,6 +5,7 @@
 #pragma thumb on
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 flags;          /* 0x00 */
@@ -12,8 +13,6 @@ typedef struct {
     void **models;      /* 0x04 */
 } ModelGroup;
 
-extern int Obj_GetIndirectWord(void *pack, int kind);
-extern void *Archive_GetMember(void *pack, int kind, int index);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void Coll_ResolveModelBlobPointers(void *model);
 

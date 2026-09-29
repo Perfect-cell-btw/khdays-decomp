@@ -14,6 +14,8 @@
  * buffer at sp+8.
  */
 
+#include "game/engine.h"
+
 typedef void (*Ov002TickFn)(void);
 
 /* The tick this factory hands back; its parameters are not established here. */
@@ -21,7 +23,6 @@ extern void Ov002_GetBootModeStep(void);
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void OS_SPrintf(char *pDst, const char *pFmt, ...);
-extern int LoadGlobalU16At0(void);
 extern int Ov002_GetWorldName(int nId);
 extern void Ov002_Slot_LoadCellFile(unsigned short *pDst, const char *pName);
 

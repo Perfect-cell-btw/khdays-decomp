@@ -21,16 +21,15 @@
  * The DISPCNT masks clear bits 8-12 (the four BG layers and OBJ) on both
  * engines; the closing GXx_SetMasterBrightness_ pair drives both MASTER_BRIGHT
  * registers to 0x10. */
+
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Gfx_Reset2DEngines(void);
-extern void Res_TearDownBlock(void);
-extern int Game_PollSceneAlive(void);              /* Game_PollSceneAlive */
 extern void Ov105_RunScriptedStepState3(void);
 extern void Ov105_WH_Finalize(void);
 extern void GXx_SetMasterBrightness_(unsigned int reg, int value);
 extern unsigned short Ov105_GetState(void);
 extern unsigned short Ov105_GetStatusLow(void);
-extern void func_0202362c(int a);
 extern void func_02003948(unsigned int a);
 
 void Game_RunSceneLoop(void) {

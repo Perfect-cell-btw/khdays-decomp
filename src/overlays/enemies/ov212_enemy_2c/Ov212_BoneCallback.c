@@ -13,6 +13,7 @@
  * locals, as its ov266/ov267 twins; with CSE on the chain loop's i/seg registers swap. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int m[9]; VecFx32 t; } Mtx43;
@@ -26,7 +27,6 @@ struct Ov212Chain {
 };
 
 extern int func_02016320(int a, Mtx43 *out, int b, int bone);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void Srt_SetTranslation(void *srt, const VecFx32 *t);
 extern void VEC_Subtract(const void *a, const void *b, void *out);

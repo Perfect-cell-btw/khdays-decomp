@@ -7,11 +7,11 @@
  * between the +0x224 / +0x228 bounds and 1 is returned, otherwise 0. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov260Parts { char pad[0x430]; int parts[2]; };
 struct flags16 { unsigned short lo : 8; unsigned short hi : 8; };
 
-extern int RandNextScaled(int n);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 

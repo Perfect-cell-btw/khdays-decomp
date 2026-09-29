@@ -8,6 +8,7 @@
  * sub-state 4, and inside 7.0 an expired timer requests 9 (beyond 3.0), 8 (beyond 1.0) or 7. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern int FX_Sqrt(int x);
@@ -17,7 +18,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern const VecFx32 data_02042264;
 

@@ -1,7 +1,8 @@
 /* Releases both table slots (+0x2c30 and +0x2d4c). */
 
+#include "game/engine.h"
+
 extern void *data_ov037_020b4e20;
-extern void ReleaseField74AndCleanup(void *p);
 
 void Ov037_ReleaseBothSlots(void) {
     char *base = (char *)data_ov037_020b4e20 + 0x2c2c;

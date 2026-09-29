@@ -1,8 +1,7 @@
 /* Sends a gauge message (kind 0x10) with the actor, the local player and the value; stores the
  * message handle. */
 
-extern int QueryActiveStateOrDelegate(void);
-extern unsigned short func_02031384(int arg0, void *arg1, int arg2);
+#include "game/engine.h"
 
 struct marshal_02094730 {
     unsigned char f0 : 2;

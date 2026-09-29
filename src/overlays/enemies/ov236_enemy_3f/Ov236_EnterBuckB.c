@@ -8,6 +8,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct m4 { int w[4]; };
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -16,7 +17,6 @@ static inline unsigned short FX_RadToIdx(int rad) {
     return (unsigned short)((0x28BE60DB9391LL * rad + 0x80000000000LL) >> 44);
 }
 
-extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov236_DismountLeapTick(int *node);

@@ -23,6 +23,8 @@
  * Case 0 is absent from the switch. Every case body is 20 bytes here (not the usual 16) because
  * self lives in r5 and each arm restores r0 -- that is normal for this function, not extra code. */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned short lo : 8;
     unsigned short hi : 8;
@@ -32,7 +34,6 @@ typedef struct {
     unsigned f : 8;
 } B8;
 
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
 extern void Ov256_EnterState(void);
 extern void Ov256_AiEnterThink(void);

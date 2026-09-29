@@ -11,13 +11,13 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
 extern int Ov256_PickTarget(int *node);
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov256_WalkTick(int *node)

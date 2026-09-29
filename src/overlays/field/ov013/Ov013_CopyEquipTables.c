@@ -1,6 +1,6 @@
 /* Copies the party equipment tables; returns 1. */
 
-extern int PartyState_CopyEquipTables();
+#include "game/engine.h"
 
 int Ov013_CopyEquipTables(void) {
     PartyState_CopyEquipTables(1, 1);

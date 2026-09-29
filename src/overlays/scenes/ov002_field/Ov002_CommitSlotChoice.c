@@ -25,6 +25,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SlotContext {
     char pad000[4];
@@ -45,7 +46,6 @@ extern Ov002SlotEntry data_ov002_0207f9a0[];
 extern int Ov002_ForwardToSubDc(int nSound);
 extern void Ov002_PublishSlotValueA(int nValue, int hSound);
 extern void Ov002_StopSlotSoundsIfActive(int nIndex);
-extern u16 Session_GetLocalPlayerIndex(void);
 
 void Ov002_CommitSlotChoice(int nIndex, int bFlag)
 {

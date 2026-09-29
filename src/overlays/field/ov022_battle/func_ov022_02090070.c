@@ -1,6 +1,7 @@
 /* Draws the current sub-object's node when it belongs to the local player's group. */
 
-extern unsigned short QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(unsigned int arg0);
 extern void func_ov022_0208ffe8(unsigned short *arg0, int arg1);
 void func_ov022_02090070(int arg0, int arg1, int arg2, int arg3) {

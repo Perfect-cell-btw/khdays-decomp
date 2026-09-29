@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned bit0 : 1;
@@ -15,9 +16,7 @@ typedef struct {
 } HitFlags;
 
 extern void Srt_SetTranslation(void *dst, const void *src);
-extern void QuatFromAxisAngle(int *quat, int *axis, int angle);
 extern int Srt_SetRotationQuat(void *dst, void *src);
-extern unsigned int Slot_Spawn(unsigned int id, unsigned int kind, unsigned int *vec, unsigned int extra);
 
 void Ov107_AiState_OnSyncMessage(int self, u8 *msg) {
     int axis[3];

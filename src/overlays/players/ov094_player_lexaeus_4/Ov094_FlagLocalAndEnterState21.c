@@ -1,7 +1,8 @@
 /* When this is the local player, sets bit 16 of the two 64-bit flag words at +0x464 and +0x46c;
  * then switches the actor to its fixed follow-up state (Ov022_ActorSetState). */
 
-extern int Session_GetLocalPlayerIndex();
+#include "game/engine.h"
+
 extern int Ov022_ActorSetState();
 
 int Ov094_FlagLocalAndEnterState21(int *r0)

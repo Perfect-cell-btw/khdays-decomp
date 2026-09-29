@@ -1,5 +1,7 @@
 /* Builds a 4bpp TileSurface config from the caller's parameters and uploads it. */
 
+#include "game/engine.h"
+
 typedef struct {
     int nUnk00;
     int nUnk04;
@@ -12,8 +14,6 @@ typedef struct {
     void *pPixels;
     int nUnk24;
 } TileSurfaceCfg;
-
-extern void TileSurface_InitAndUpload4bpp(void *surface, const TileSurfaceCfg *cfg);
 
 void Ov008_UploadTileSurface(int surface, int a, int b, int width, int height,
                          int rows, int vram, int unk1c, void *pixels) {

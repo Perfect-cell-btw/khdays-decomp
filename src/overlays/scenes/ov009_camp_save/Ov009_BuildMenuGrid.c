@@ -24,11 +24,10 @@
  * it produced seven adjacent-instruction differences that all read like irreducible scheduler
  * noise -- they were one wrong source form. */
 
+#include "game/engine.h"
+
 extern void *MI_CpuFill8(void *dst, unsigned char v, unsigned int n);
 extern int Ov009_LookupTypeCode(int a);
-extern int MsgDb_IsLoaded(int id);
-extern void MsgDb_LoadDb(int id, int a);
-extern void ResSlot_Release_2(int id);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void Ov009_GetGridMaskExtent(int a, short *out1, short *out2);
 extern void NNS_FndAppendListObject(void *list, void *obj);

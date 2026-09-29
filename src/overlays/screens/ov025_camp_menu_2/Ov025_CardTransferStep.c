@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 extern int Ov025_CARD_TryWaitRomAsync(void);
 extern int CARD_GetResultCode(void);
 extern void CardUnlockAfterKeyShare(int id);
-extern void func_020208f0(void);
 extern void Ov025_EmitCommandVariantA(int arg0, int arg1, int arg2);
 
 extern unsigned char data_ov025_020b5760[];

@@ -1,5 +1,7 @@
 /* Shows or hides the model node when the visibility changes and stores the flag. */
 
+#include "game/engine.h"
+
 typedef union {
     int word;
     struct {
@@ -13,9 +15,6 @@ typedef struct {
     char pad_44[0x9c - 0x44];
     int field_9c;
 } Ov107Obj;
-
-extern void invokeObjCallbackGuarded(int param_1);
-extern void Node_CallHook80(char *node);
 
 void Ov107_AiState_SetVisible(Ov107Obj *self, int flag)
 {

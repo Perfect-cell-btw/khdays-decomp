@@ -11,11 +11,11 @@
  * AFTER the bl (lo held in a callee-saved register across the call). */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 
-extern int RandNextScaled(int a);
 extern void Ov212_SetState6cReset70(int *ctx);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 

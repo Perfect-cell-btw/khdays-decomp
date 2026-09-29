@@ -3,9 +3,11 @@
  * while Session_IsActive agrees, does it un-quiesce first. Returns the step at
  * Ov002_RetireSubFlow, or nothing on either refusal. +0x8b58 is the phase word
  * Ov002_GetPhaseWord reads. */
+
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_PollSessionReady(void);
-extern int Session_IsActive(void);
 extern void Ov002_SetLazyClassEnabled(int mode);
 extern void Ov002_RetireSubFlow(void);
 

@@ -1,7 +1,8 @@
 /* Steps the mission menu back one entry when it is idle and not at the start, with a sound. */
 
+#include "game/engine.h"
+
 extern void Ov025_MissionMenuStep();
-extern void PlaySound();
 
 void Ov025_StepBackIfIdle(int arg0, int arg1, int arg2, int arg3) {
     unsigned char b;

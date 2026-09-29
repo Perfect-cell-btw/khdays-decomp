@@ -1,6 +1,8 @@
 /* Destroys the field block: stops its sound when active, frees its six buffers, releases its owner
  * and clears the block pointer. */
 
+#include "game/engine.h"
+
 typedef struct {
     void *owner;      /* +0x00 */
     char pad04[4];
@@ -19,7 +21,6 @@ typedef struct {
 
 extern Ov002Block *data_ov002_0207f634;
 extern Ov002Handle *Ov002_Field_GetBlock194(void);
-extern void ForwardToHandlerOrCurrentObject(int a, int b, int c);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void func_02023ad0(void *p);
 

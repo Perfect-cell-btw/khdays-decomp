@@ -2,6 +2,7 @@
  * ones). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009MenuContext {
     u8 pad_0000[0x95d4];
@@ -28,8 +29,6 @@ extern void  CP_SaveContext(void *context);
 extern void  CPi_RestoreContext(const void *context);
 extern void  Tween_Sample(void *tween, int *value);
 extern int   Ov009_GetCtxField95cc(void);
-extern void  SetMasterBrightnessSub(int brightness);
-extern void  SetMasterBrightnessMain(int brightness);
 extern void *NNS_FndGetNextListObject(void *list, void *previous);
 extern void  Ov009_ListRemoveAndFree(void *widget);
 

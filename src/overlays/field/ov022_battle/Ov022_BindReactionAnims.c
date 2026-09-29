@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Anim {
     u8 pad0000[0x108];
@@ -30,11 +31,6 @@ struct SlotNames {
 
 extern struct SlotNames data_ov022_020b2510;
 extern char data_ov022_020b2c28[];
-
-extern void RegisterSeqAndInit(struct Anim *pAnim, char *pszDescriptor, int nA,
-                          int nB);
-extern void Snd_RegisterSeqAndBind(struct Bind *pBind, struct Anim *pAnim,
-                          char *pszName, int nB);
 
 void Ov022_BindReactionAnims(struct Request *pReq)
 {

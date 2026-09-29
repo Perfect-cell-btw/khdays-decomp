@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 typedef void (*Ov002OverlayHook)(void);
 typedef unsigned int FSOverlayID;
 
@@ -16,7 +18,6 @@ typedef struct {
 } Ov002RootContext;
 
 extern Ov002RootContext *data_ov002_0207fa00;
-extern void LoadOverlaySync(int processor, int overlayId);
 extern void Ov025_FillSceneHooks(Ov002OverlayHook *hook);
 extern void Ov026_FillSceneHooks(Ov002OverlayHook *hook);
 extern void Ov027_FillSceneVTable(Ov002OverlayHook *hook);

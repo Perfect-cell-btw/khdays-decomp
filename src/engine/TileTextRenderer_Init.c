@@ -21,6 +21,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 x;         /* +0x00 */
@@ -69,7 +70,6 @@ typedef struct {
     BgControl field_02;
 } BgControlBackup;
 
-extern int GetBGScreenBaseForLayer(int index);
 extern void Tilemap_FillRect(u16 *dst, int width, int height, int x, int y,
                           int mapW, int tile, int palette);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);

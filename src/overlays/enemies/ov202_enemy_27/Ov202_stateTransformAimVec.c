@@ -2,8 +2,9 @@
  * the gate byte is clear sends the animation pair from the overlay's table to the actor's event
  * callback, posts pose 10, sets the dash speed and installs the homing-dash step. */
 
+#include "game/engine.h"
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

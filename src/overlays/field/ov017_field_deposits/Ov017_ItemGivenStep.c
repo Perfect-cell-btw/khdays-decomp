@@ -10,6 +10,7 @@
  * a type-4 message and the terminal state (ov002 0207cea4) is returned.  Otherwise 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov017ItemMessage {
     u8   nType;               /* 0x00 */
@@ -48,15 +49,10 @@ typedef struct Ov017PlayerActor {
 } Ov017PlayerActor;
 
 extern int   Ov002_GetModuleScale(void);                               /* frame delta */
-extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
 extern int   Ov002_IsSessionOpen(void);                               /* scene running? */
-extern Ov017PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
 extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
 extern Ov017KeyEntry *Ov002_GetRootField8d14(int nIndex);              /* entry index -> entry */
-extern int   Session_IsActive(void);                                     /* Session_IsActive */
 extern int   Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
-extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
-extern void  GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
 extern void  Ov002_SetFieldBit0(void *pPiece, int nMode);            /* retire a piece */
 extern void *Ov002_DoneTick(void *pPiece);                       /* terminal state */
 

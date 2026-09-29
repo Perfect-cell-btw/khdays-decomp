@@ -8,6 +8,9 @@
  *
  * Kind is 1 for request[2] == 0; for request[2] == 1 it is 2 or 0 depending on
  * request[3]. Any other value leaves the previous kind alone. */
+
+#include "game/engine.h"
+
 typedef struct {
     unsigned char nKind : 3;    /* +0x00 bits 0..2 */
     unsigned char nSlot : 3;    /*       bits 3..5 */
@@ -25,8 +28,6 @@ typedef struct {
     unsigned char bLocalPending : 1;/*       bit 1 */
     unsigned char bMirrorReady : 1; /*       bit 2 */
 } Ov002LinkSyncCtx;
-
-extern int Session_GetLocalPlayerIndex(void);
 
 extern Ov002LinkSyncCtx *data_ov002_0207f9f4;
 

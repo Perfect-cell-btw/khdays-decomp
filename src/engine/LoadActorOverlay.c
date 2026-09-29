@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 
@@ -8,8 +9,6 @@ typedef u32 FSOverlayID;
  * though 107 is perfectly encodable as an ARM immediate. */
 extern u32 OVERLAY_107_ID[1];
 #define FS_OVERLAY_ID_ov107 ((FSOverlayID)(u32) & (OVERLAY_107_ID))
-
-extern void LoadOverlaySync(int target, FSOverlayID id);
 
 void LoadActorOverlay(void)
 {

@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define CURSOR_MODE_DRAG 0x14
 #define SOUND_DROP_OK    0x36
@@ -52,7 +53,6 @@ extern void Ov008_EnableMissionRowOnPage1(void);                                
 extern void Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                          /* Ov008_RebuildGridHits */
 extern int  Ov008_DrawPageBElement(int nMode, int nA, int nB);                       /* cursor mode request */
 extern int  Ov008_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep);
-extern void PlaySound(int nKind, int nSound);                                 /* PlaySound */
 
 void Ov008_SettleGridNodes(Ov008MenuContext *pCtx)
 {

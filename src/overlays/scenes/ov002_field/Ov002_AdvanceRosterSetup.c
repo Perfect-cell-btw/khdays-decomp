@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RosterBlock {
     void *pInstance;                /* +0x00, -1 until the class is made */
@@ -41,23 +42,16 @@ extern u8 data_0204c4f1;
 extern int data_02041dc8;               /* the zero vector */
 extern int data_ov022_020b291c;         /* the roster class */
 
-extern void Slot_EvalPackedParamWith(int a, int b, int c);
-extern int GameState_IsFlagSet(int nFlag);
-extern void func_020235bc(int nFlag);
 extern void Ov002_ResetTracks(void);
 extern int InstantiateClass(const void *pClass, void *pArgs);
 extern void Ov022_Party_SetFrozen(int a);
-extern int Session_IsActive(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_WriteSessionMarker(int index, int a, int *out, int d, void *buf, int f);
-extern int PartyState_CopyEquipTables(int a, int b);
 extern void Ov002_SetRosterSlotTargets(int a, int b);
 extern void Ov002_World_SetByte8BAD(int a);
 extern void Ov002_World_ResetMarker(void);
 extern int Ov002_GetCtxTableByte(int nId);
 extern int Ov002_GetWidgetStateByte(int nId);
 extern int Ov002_FindSeatByKind(int nId);
-extern unsigned short GetGlobalU16At6(void);
 extern int func_ov022_020882f8(void);
 extern void strcpy(char *pDst, const char *pSrc);
 extern int Ov002_BuildSessionCommand(int nKind, void *pCmd);

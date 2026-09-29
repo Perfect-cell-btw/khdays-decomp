@@ -1,4 +1,5 @@
-extern int GameState_GetField(int key, int sub);
+#include "game/engine.h"
+
 extern int OS_SPrintf(char *buf, const char *fmt, ...);
 extern char data_0204c270[];
 extern char data_ov002_0207efc4[];

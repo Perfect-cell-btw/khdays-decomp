@@ -5,6 +5,7 @@
  * 0202ff98). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileSurfaceCfg {
     u32  nUnk00;
@@ -67,7 +68,6 @@ typedef struct Ov025ScrollList {
 
 extern void *Ov025_GetCtxBlock968c(void);                             /* Ov008_GetCtxBlock968c */
 extern int   Ov025_LookupEntry(int nSlot);                        /* Ov008_ResetEntry: slot handle */
-extern void  TileSurface_InitAndUpload8bpp(void *pSurface, TileSurfaceCfg *pCfg);   /* TileSurface_InitAndUpload8bpp */
 extern TileSurfaceCfg data_ov025_020b481c;
 
 void Ov025_ScrollList_SetupSurfaces(Ov025ScrollList *pList)

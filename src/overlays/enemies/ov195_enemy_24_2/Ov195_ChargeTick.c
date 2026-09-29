@@ -16,6 +16,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
@@ -40,7 +41,6 @@ extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Ow
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Msg20 data_ov195_020d2be0;
 extern const VecFx32 data_02042258;
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern const struct Msg14 data_ov195_020d2bd0;
 extern void Ov195_AiStep_RollDelayQueueAction2OnAnimEnd_2(void);
 

@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionListEntry {
     u16 nWord;                /* 0x00 */
@@ -49,12 +50,7 @@ extern GameplayThresholdSnapshot data_0204c254;
 extern Ov008PageB *Ov008_GetPageB(void);              /* Ov008_GetPageB */
 extern u32  Ov008_GetCtxField967c(void);                     /* Ov008_GetCtxField967c */
 extern Ov008MissionListEntry *Ov008_GetNextMissionEntry_5(u32 nMissionId);
-extern int  Session_IsActive(void);                           /* Session_IsActive */
-extern int  GameState_IsFlagSet(int nFlag);                      /* GameState_IsFlagSet */
-extern void GameState_SetFlag(int nFlag);                      /* GameState_SetFlag */
 extern void Ov008_CampaignModeHookNoOp(int bEnable);
-extern void StampByteAndInvokeSubStructAt(int nA, int nB);                 /* StampByteAndInvokeSubStructAt */
-extern void PlaySound(int nKind, int nSound);          /* PlaySound */
 extern int  Ov008_GetCtxObject95c0(void);                     /* Ov008_GetCtxObject95c0 */
 extern void Ov008_SetTargetSlot(int nEntry, int nTarget);  /* Ov008_SetTargetSlot */
 

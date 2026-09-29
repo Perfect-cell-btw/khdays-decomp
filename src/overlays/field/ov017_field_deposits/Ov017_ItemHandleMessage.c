@@ -9,6 +9,7 @@
  * 4: state 7 (done).  Type 0 and anything above 4 do nothing. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov017ItemMessage {
     u8   nType;               /* 0x00 */
@@ -48,9 +49,6 @@ typedef struct Ov017PlayerActor {
 
 extern void  Ov017_ResetState5(Ov017Item *pSelf);                   /* Ov017_ItemBeginGiven */
 extern int   Ov002_IsSessionOpen(void);                               /* scene running? */
-extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
-extern int   QueryActiveStateOrDelegate(void);                                     /* the local peer */
-extern Ov017PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
 extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
 extern Ov017KeyEntry *Ov002_GetRootField8d14(int nIndex);              /* entry index -> entry */
 

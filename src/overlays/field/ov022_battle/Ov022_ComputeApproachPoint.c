@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov022ActorNode {
     char pad_0000[0x80];
@@ -27,7 +28,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *vector);
 extern void VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern int Slot_EvalPackedParam(int index, int parameter);
 
 void Ov022_ComputeApproachPoint(Ov022Actor *actor, const VecFx32 *targetPosition,
                           VecFx32 *result, int mode)

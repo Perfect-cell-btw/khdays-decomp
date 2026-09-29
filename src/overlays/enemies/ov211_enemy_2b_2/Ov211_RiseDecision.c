@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 h[7]; } Cmd14;
@@ -26,7 +27,6 @@ struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern int Ov107_FindNearestObject(int owner, int *out);
 extern int FX_Sqrt(int v);
-extern long long RandNextScaled(int bound);
 
 static inline int RandRange(int lo, int hi) { return (int)RandNextScaled(hi - lo + 1) + lo; }
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -9,6 +9,7 @@
  * Ov005_UpdateRewardPosition.c with the identical field layout). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TweenFlags {
     u32 started : 1;
@@ -29,7 +30,6 @@ typedef struct Tween {
 
 extern long long OS_GetTick(void);                     /* 64-bit tick counter */
 extern int func_02020368(u64 value, u32 divisor, int mode); /* runtime 64/32 divide */
-extern s32 Fx_Tween(s32 start, s32 end, u32 elapsed, u32 duration, u32 curve);
 
 /* Sample a tween's current value. Does nothing if it hasn't been started.
  * Once finished, keeps reporting the end value. While paused, the elapsed

@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov234Box {
     VecFx32 min;
@@ -73,14 +74,9 @@ extern void func_ov234_020cc268(void);
 extern const struct Ov234TextureTable data_ov234_020cd100;
 extern unsigned Ov107_PackTextureHandle();
 extern char *CreateSubitemInstance0xB4(unsigned);
-extern void RegisterSubscriberSlot(void *, char *);
-extern void MainBlob_ResetSlotRows(char *, void *);
-extern void Srt_SetTranslationXYZ(void *, int, int, int);
 extern void Srt_SetScaleUniform(void *, int);
 extern void Ov107_EnqueueValue(struct Ov234Actor *, int);
-extern int *List_InsertSorted(void *, int, int);
 extern int Ov107_CloneResourceTransform(void *);
-extern void Res_RequestIdPair(int nId);
 
 void Ov234_InitEffectActor(struct Ov234Actor *arg0)
 {

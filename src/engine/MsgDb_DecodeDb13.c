@@ -2,10 +2,10 @@
  * the string pair (MsgDb_FetchStringPair), then store index and 4 bytes from the
  * per-entry table (pb[0],pb[1],pb[3] as words, pb[2] as a byte). pb = entry[8] +
  * (index-1)*4 (table + 0x13*0x14). */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, int size, int kind, int keep);
+
+#include "game/engine.h"
+
 extern int MsgDb_FetchStringPair(short *rec, void *a, void *b, void *c, void *d, int db, int index, int keep);
-extern void DispatchByNodeKind(int *rec_out);
 extern int data_0204c238;
 int MsgDb_DecodeDb13(int *rec_out, int index, int keep) {
     int iv = index - 1;

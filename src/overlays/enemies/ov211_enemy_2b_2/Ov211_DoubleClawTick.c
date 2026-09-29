@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flagLo : 4; u8 flagHi : 4; u8 pos[9]; } Cmd14;
@@ -30,7 +31,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov211_020d6538;
 extern const Cmd14 data_ov211_020d6570;

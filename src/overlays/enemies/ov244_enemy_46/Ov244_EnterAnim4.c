@@ -1,6 +1,8 @@
 /* Kick anim 4, send sprite request 4 (data_ov244_020d3724 entry 10 with the actor's +2 id),
  * clear the +9 byte and +0x1c word, then dispatch to 020d03a0. */
-extern void func_02031384(int a, void *req, int b);
+
+#include "game/engine.h"
+
 extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern unsigned short data_ov244_020d3724[];

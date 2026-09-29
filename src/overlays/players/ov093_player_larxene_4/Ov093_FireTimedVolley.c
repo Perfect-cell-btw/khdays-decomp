@@ -22,6 +22,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Emit {
     char pad00[0xc];
@@ -64,8 +65,6 @@ struct EffectRec {
 extern void func_ov022_020ad44c(struct Emit *emit, char *self);
 extern void Ov022_ScaleRowValues(char *self, int spin, void *a, void *b);
 extern int Ov022_RunCommandHandlers(char *self, struct Emit *emit, void *params);
-extern unsigned int Session_RandNextScaled(unsigned int n);
-extern int Session_RandNext(void);
 extern void Ov022_SendAimMessage(void *pool, int n, struct EffectRec *rec);
 extern short data_0203d210[];
 

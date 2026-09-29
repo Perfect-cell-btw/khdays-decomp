@@ -10,9 +10,11 @@
  * 0x918 offset in r4 across the calls and folds it into the register-offset ldrb, which is the
  * ROM's early `ldr r4,[pc]`. Field order is the ov036_020b4b9c one (f1c before f20).
  */
+
+#include "game/engine.h"
+
 extern int NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void Ov022_TakeChannelBlock(int a, int b, int c);
-extern int Slot_EvalPackedParam(int a, int b);
 extern void Ov022_PublishGroupUpdateFixed(int a, int b, unsigned int key, void *d);
 
 typedef struct {

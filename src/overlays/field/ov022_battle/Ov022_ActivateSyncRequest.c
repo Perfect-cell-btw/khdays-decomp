@@ -1,7 +1,8 @@
 /* When the object's sync id is free, resets its counter, clears its state and builds its resource
  * node set; returns whether it did. */
 
-extern int Obj_IsIdFree(int arg0);
+#include "game/engine.h"
+
 extern void func_ov022_020b1264(int arg0, int arg1);
 extern void Ov022_BuildResNodeSet(int arg0, unsigned int *arg1);
 int Ov022_ActivateSyncRequest(int arg0) {

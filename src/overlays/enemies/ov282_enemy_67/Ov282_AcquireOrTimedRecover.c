@@ -7,10 +7,10 @@
  */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern int  RandNextScaled(int mul);
 extern void Ov282_StrafeSameTarget(void);
 
 void Ov282_AcquireOrTimedRecover(int *self) {

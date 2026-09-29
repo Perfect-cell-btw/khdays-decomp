@@ -8,9 +8,9 @@
  * The size was right the entire time, which is exactly why the arity was never suspected. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern unsigned char func_ov022_020882bc(unsigned int arg0);
-extern int QueryActiveStateOrDelegate(void);
 
 void Ov022_RefreshSharedPanel(int arg0) {
     unsigned int s = func_ov022_020882bc(*(unsigned char *)(arg0 + 9));

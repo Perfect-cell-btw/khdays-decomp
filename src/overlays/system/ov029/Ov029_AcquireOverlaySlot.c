@@ -34,6 +34,9 @@
  *   3. `base + group + k*4`, two variables scaled by different constants, is a
  *      NESTED ARRAY: `data_ov029_020b2f70[group].initFns[k]()`.
  */
+
+#include "game/engine.h"
+
 typedef void (*OverlayInitFn)(void);
 
 /* One row per group: which overlay id belongs in each slot (-1 = group can't use it). */
@@ -50,7 +53,6 @@ extern OverlayGroup   data_ov029_020b30b0[];  /* group table */
 extern OverlayInitRow data_ov029_020b2f70[];  /* init hooks, one row per group */
 extern int data_ov029_020b3200[4];            /* slots: loaded overlay id, or -1 if free */
 extern int data_ov029_020b320c[];             /* == &data_ov029_020b3200[3]; see note above */
-extern void LoadOverlaySync(int proc, int overlayId);   /* wraps FS_LoadOverlay */
 
 int Ov029_AcquireOverlaySlot(int proc, int group)
 {

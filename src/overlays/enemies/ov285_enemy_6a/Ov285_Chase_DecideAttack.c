@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 struct State {
     char *pActor;
@@ -18,7 +19,6 @@ extern char *Ov107_FindNearestObject(char *actor, int *pOutDistSq);
 extern int FX_Sqrt(int x);
 /* Returns long long; the unfoldable `+ (z - z)` below is what makes mwcc
    truncate through `adds r0, r0, #0` the way the ROM does. Do not simplify. */
-extern int RandNextScaled();
 extern void SetIndexedSlot(struct Node *node, int slot, void *next);
 
 void Ov285_Chase_DecideAttack(struct Node *node)

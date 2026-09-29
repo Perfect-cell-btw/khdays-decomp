@@ -4,14 +4,13 @@
  * the +0x384 rider is flagged (+0x390) and the next move is 9. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Mover { char pad[0xf0]; VecFx32 vel; };
 struct Health { char pad[0x21a]; short hp; };
 struct Ov238Node { int actor; char pad[8]; VecFx32 vel; };
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern const VecFx32 data_02042264;

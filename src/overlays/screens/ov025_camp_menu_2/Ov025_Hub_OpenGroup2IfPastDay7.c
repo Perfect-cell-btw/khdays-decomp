@@ -1,8 +1,8 @@
 /* Opens menu group 2 from day 8 onwards (with a sound); before that, plays the refusal sound. */
 
+#include "game/engine.h"
+
 extern int Ov025_GetPageA();
-extern int GameState_GetField();
-extern void PlaySound();
 extern void Ov025_Hub_SelectMenuGroup();
 
 void Ov025_Hub_OpenGroup2IfPastDay7(unsigned int arg0, unsigned int arg1, unsigned int arg2, unsigned int arg3) {

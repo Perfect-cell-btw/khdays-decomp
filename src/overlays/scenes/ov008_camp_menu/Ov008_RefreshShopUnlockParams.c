@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define FIELD_RANK_BASE     0x28e4
 #define FIELD_PROGRESS_BASE 0x2a4c
@@ -49,7 +50,6 @@ extern Ov008ParamTable *data_ov008_02090fb0;
 extern void Ov008_InitMissionList(Ov008MissionListState *pList, Ov008MissionResourceDescriptor *pDescriptor); /* Ov008_InitMissionList */
 extern Ov008MissionListEntry *Ov008_FindNextMissionEntry(Ov008MissionListState *pList, Ov008MissionListEntry *pEntry); /* Ov008_FindNextMissionEntry */
 extern void Ov008_DestroyMissionList(Ov008MissionListState *pList);           /* Ov008_DestroyMissionList */
-extern int  GameState_GetField(int nField, int nBits);                         /* GameState_GetField */
 
 void Ov008_RefreshShopUnlockParams(void)
 {

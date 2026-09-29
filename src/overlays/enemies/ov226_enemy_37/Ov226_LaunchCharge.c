@@ -7,11 +7,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern int RandNextScaled(int bound);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Collision_CastSphere(void *collision, void *origin, VecFx32 *dir, int radius);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);

@@ -25,6 +25,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 #define FX32_PI      0x3244
 #define FX32_PI_HALF 0x1922
@@ -69,7 +70,6 @@ extern const VecFx32 data_02042258;                                       /* kVe
 extern void  Ov232_rotateVecByOwnerYaw(VecFx32 *pOut, DiveNode *pNode, const VecFx32 *pIn); /* rotate by the owner yaw */
 extern void  Ov232_AcquireTarget(DiveNode *pNode);                      /* update the heading */
 extern void  ScaleVec3Fx12(int nScale, const VecFx32 *pSrc, VecFx32 *pDst);   /* ScaleVec3Fx12 */
-extern void  Vec3TransformViaTempMtx(VecFx32 *pOut, void *pSrt, const VecFx32 *pIn);    /* Vec3TransformViaTempMtx */
 extern void  VEC_DotProduct(VecFx32 *pOut, const VecFx32 *pIn);
 extern int   Ov232_ProbeGround(DiveNode *pNode, const VecFx32 *pDir, int nArg); /* probe for a hit */
 extern void  SetIndexedSlot(DiveNode *pNode, int nSlot, void *pValue);   /* SetIndexedSlot */

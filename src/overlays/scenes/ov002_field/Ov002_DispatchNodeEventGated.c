@@ -1,4 +1,5 @@
-extern int GameState_GetField(int nId, int nSlot);
+#include "game/engine.h"
+
 extern int Ov002_Hud_IsPanelOpen(void);
 
 typedef int (*Ov002NodeHandler)(int pNode, int pEvent);

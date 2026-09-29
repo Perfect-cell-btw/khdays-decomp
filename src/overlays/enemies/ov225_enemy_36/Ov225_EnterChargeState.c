@@ -31,13 +31,13 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct {
     u32 lo : 8;
     u32 rest : 24;
 } FlagsW;
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int slot, void *cb);
 extern void Ov225_SpinLungeTick(void);
 extern void Ov225_Projectile_FlightTick(void);

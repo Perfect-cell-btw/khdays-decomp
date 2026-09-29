@@ -1,7 +1,9 @@
 /* Wander entry of the ov239 enemy: re-arms the +0x2c timer at random between the actor's
  * +0x224 and +0x228 and configures sub-state 2 (part action 0, flag 1) before handing off to
  * cd028. */
-extern int RandNextScaled(int range);
+
+#include "game/engine.h"
+
 extern void Ov239_ConfigSubStateThenAdvanceSlot(int *node, int anim, int action, int flag, void *next);
 extern void Ov239_WanderTick(int *node);
 

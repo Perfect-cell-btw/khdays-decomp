@@ -6,6 +6,7 @@
  * and the scroll-bounds setup (Camera_CommitMatricesEx), then hands off to Ov000_TickBootFadeIn. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void          *StateFn;
 
@@ -15,8 +16,6 @@ extern void *G2S_GetBG2CharPtr(void);
 extern void  MIi_CpuClearFast(int val, void *dst, int size);
 extern void  GXS_SetGraphicsMode(int);
 extern void  Bg_LoadPaletteForScreen(int, void *, void *, int, int);
-extern void  Gfx_EnqueueTableCmdAt14(int, void *, int, int);
-extern void  Gfx_EnqueueTableCmdAtC(int, void *, int, int);
 extern void  G2x_SetBlendAlpha_(int reg, int a, int b, int c, int d);
 extern void  Ov000_RefreshMenuLayout(void);
 extern void  Ov000_RegisterLogoObjects(void);

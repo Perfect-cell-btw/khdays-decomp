@@ -1,8 +1,10 @@
 /* Target pick of the ov218 actor: the nearest target (020cab14) goes to +0x390; without one the next
  * move is 2 and the node ends. Otherwise +0x48 is -1, +0x60 clears, a random side (+0x5c) is drawn,
  * the +0x18 wait is rolled between +0x224 and +0x228 and the node moves on to 020ccfa8. */
+
+#include "game/engine.h"
+
 extern int Ov107_FindNearestObject(int actor, int *distOut);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_CircleTick(void);
 

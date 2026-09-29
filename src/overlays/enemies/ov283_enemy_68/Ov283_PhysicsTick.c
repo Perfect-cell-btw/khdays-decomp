@@ -5,12 +5,11 @@
  * down. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Ov283Limbs { char pad[0x394]; int bones[2]; int parts[2]; };
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov283_ForwardToAiTaskWhenReady(int part, int bone);

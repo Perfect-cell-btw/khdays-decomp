@@ -1,7 +1,9 @@
 /* Calls each child entry's optional handler at +0x18 with `value`, then folds bit 0 of
  * `value` into self->field_40 (preserving the other bits). */
+
+#include "game/engine.h"
+
 extern int List_First(void *list);
-extern int List_Next(void *list);
 
 void Ov107_BroadcastValueToChildren(char *self, int value) {
     int p = List_First(self + 0x44);

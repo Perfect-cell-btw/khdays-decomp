@@ -11,10 +11,10 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct b17a { unsigned char b0 : 1; };
 extern void VEC_Subtract(void *a, void *b, void *c);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *m);
 extern int  VEC_DotProduct(void *a, void *b);
 extern int  func_020050b4(int x, int z);
 extern void SetIndexedSlot(int self, int idx, int cb);

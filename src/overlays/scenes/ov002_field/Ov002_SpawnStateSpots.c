@@ -1,13 +1,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c240;
 extern u16 data_0204c23c;
 
 extern int Ov002_GetStateWord(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_AppendPendingId(int nId);
 /* Declared with one parameter on purpose. The callee reads four, and passes
  * the last two on to the archive loader, but the ROM sets only r0 here and
@@ -15,7 +15,6 @@ extern void Ov002_AppendPendingId(int nId);
  * translation unit had the one-argument declaration. */
 extern void Ov002_LoadOffsetTableOnce(int bAlternate);
 extern char *Ov002_FindHandlerByKey(int nKey);
-extern int GameState_GetField(int nField, int nWidth);
 extern int Ov002_TakeEntryOfKind1(void);
 extern void Ov002_SpawnSpot(int nIndex, int nGroup, int nSlot, int nKind,
                                 VecFx32 *pPlace, int nFlags, int nLevel);

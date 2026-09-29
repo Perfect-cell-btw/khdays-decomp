@@ -8,7 +8,9 @@
  * live in r6 / [sp+8] with the outer counter spilled at [sp+4]. The counters are declared
  * first (lowest registers) and the outer loop steps row, block, counter in that order -- the
  * row's 0x240 takes the copied constant, the block's the in-place one. */
-extern void RegisterSeqAndInit(void *req, void *script, int c, int rate);
+
+#include "game/engine.h"
+
 extern void Ov062_OpenSecondarySub(int self);
 extern char *data_ov062_020b80e0;
 extern int data_ov062_020b809c;

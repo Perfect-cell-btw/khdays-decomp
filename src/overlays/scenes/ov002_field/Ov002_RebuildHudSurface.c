@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int nUnk00;
@@ -27,7 +28,6 @@ extern void Ov002_BuildHudSurfaces(void);
 extern int Ov002_GetItemResource(int slot);
 extern void *Ov002_Hud_GetBlock30(void);
 extern void Ov002_SelectEntry(int slot);
-extern void TileSurface_InitAndUpload4bpp(void *surface, const TileSurfaceCfg *cfg);
 
 void Ov002_RebuildHudSurface(void) {
     int base = (int)data_ov002_0207f9fc;

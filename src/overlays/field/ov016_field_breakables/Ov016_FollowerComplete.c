@@ -5,6 +5,7 @@
  * 0207386c == -1) or without an owner. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016Piece {
     u8 pad_000[0x19c];
@@ -25,7 +26,6 @@ extern int  Ov002_Event_GetField18(void);                    /* record set state
 extern int  Ov002_GetCtxTableByte(int nBucket);             /* bucket -> seat slot */
 extern Ov016Owner *Ov002_GetPieceOwner(int nSlot);        /* seat owner */
 extern void *List_First(void *pList);                  /* List_First */
-extern void *List_Next(void *pList);                  /* List_Next */
 extern void Ov233_NotifyPartsThenBase(Ov016Piece *pPiece, int nKind);
 extern void func_ov022_020888b8(int nA, int nB);
 

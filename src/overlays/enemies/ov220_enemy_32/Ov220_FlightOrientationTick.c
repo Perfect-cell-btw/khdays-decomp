@@ -5,11 +5,10 @@
  * 0x200/0x88 of it. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Quat { int a, b, c, d; };
 
-extern int Angle_TurnToward(int cur, int target, int step, int flags);
-extern void QuatFromAxisAngle(struct Quat *q, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(struct Quat *q, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(struct Quat *dst, const struct Quat *a, const struct Quat *b);
 extern void Srt_SetRotationQuat(int transform, const struct Quat *q);

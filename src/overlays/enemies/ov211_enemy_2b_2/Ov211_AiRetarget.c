@@ -17,9 +17,10 @@
  *    order out; every matching one has `target` last.
  */
 
+#include "game/engine.h"
+
 extern int  Ov107_FindNearestObject(int obj, void *out);
 extern int  FX_Sqrt(int x);
-extern int  RandNextScaled(int mul);
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov211_AiRetarget(int *self) {

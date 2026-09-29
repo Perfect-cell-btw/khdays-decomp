@@ -2,6 +2,7 @@
  * play time and party. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009SaveSlot {
     u16 profileValue;
@@ -44,7 +45,6 @@ extern void Ov009_BuildMenuGrid(
 extern void Ov009_RebuildViewAndCountCells(void *state, void *work, void *list);
 extern void Ov009_ReleaseHandleGridAndList(void *state, void *work, void *list);
 extern void func_ov009_020507d4(void *state);
-extern int GameState_GetField(int field, int kind);
 
 void Ov009_FillSaveSlotInfo(Ov009SaveContext *ctx, int index, int result)
 {

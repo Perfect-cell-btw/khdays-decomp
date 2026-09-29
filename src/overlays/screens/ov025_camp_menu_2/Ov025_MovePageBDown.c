@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008PageB {
     u8  pad_000[0x1e8];
@@ -27,7 +28,6 @@ extern Ov008CueRequest *Ov025_GetCueRequest(void);         /* Ov008_GetCueReques
 extern short Ov025_Res_GetCount(void *pList);             /* list scroll total */
 extern void Ov025_Res_BindSecondBlock(void *pList);              /* list reset */
 extern void Ov025_InitOverlayFade(void);                     /* collapse slide */
-extern void PlaySound(int nKind, int nSound);          /* PlaySound */
 
 void Ov025_MovePageBDown(void)
 {

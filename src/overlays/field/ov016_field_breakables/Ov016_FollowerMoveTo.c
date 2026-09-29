@@ -4,6 +4,7 @@
  * render node (+0x28, 0202b450). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016Follower {
     unsigned char pad_000[0x28];
@@ -12,8 +13,6 @@ typedef struct Ov016Follower {
     unsigned char pad_0dc[0x1a0 - 0xdc];
     VecFx32 offset;                    /* 0x1a0 */
 } Ov016Follower;
-
-extern void Actor_SetVecAndSyncChild(void *pNode, VecFx32 *pPos);   /* Actor_SetVecAndSyncChild */
 
 void Ov016_FollowerMoveTo(Ov016Follower *pSelf, VecFx32 *pPos)
 {

@@ -23,6 +23,8 @@
  *    two ldr (not a coalesced ldm).
  */
 
+#include "game/engine.h"
+
 typedef struct { int nX; int nY; } UiLayoutPos;
 typedef struct {
     unsigned short b0:1, b1:1, b2:1, b3:1, b4:1, b5:1, b6:1, b7:1,
@@ -36,8 +38,6 @@ extern void Ov008_SetEntrySlotsVisible(int ctx, int entry, int visible);
 extern int Ov008_FindEntryByTag(int block, unsigned int tag);
 extern void Ov008_TagTracker_InvokeCallback(int owner, int tag);
 extern int Ov008_GetVarRecordByIndex(int recs, int index);
-extern void Obj_InvokeInnerVtable4(void *surface);
-extern void Text_DrawWithShadow(void *widget, int a, int b, int c, void *text, int d);
 extern void EnqueueObjGfxCommand(void *obj);
 extern UiLayoutPos *Ov008_GetEntryPos(int ctx, int entry);
 extern void Ov008_SetEntryPos(int ctx, int entry, UiLayoutPos *pos);

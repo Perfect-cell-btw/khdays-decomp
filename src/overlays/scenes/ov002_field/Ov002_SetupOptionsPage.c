@@ -1,10 +1,11 @@
+#include "game/engine.h"
+
 extern char *Ov002_Field_GetBlock194(void);
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int value, unsigned size);
 extern void Ov002_BuildOptionsPage(void);
 extern int InstantiateClass(void *desc, int a);
 extern void *NNS_FndAllocFromDefaultExpHeapEx(unsigned size, int align);
-extern int Session_IsActive(void);
 extern int Ov002_ForwardToSubDc(int id);
 extern void Ov002_ForwardWithContext(int a, int b, int c, int d, int e, int f, void *cb);
 extern int Ov002_Ctx_FindActiveEntryByTag(int id);

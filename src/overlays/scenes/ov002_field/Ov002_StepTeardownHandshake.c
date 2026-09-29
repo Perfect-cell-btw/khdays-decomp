@@ -1,13 +1,11 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa14;   /* g_pOv002ObjectContext */
 
 extern void Ov002_SetCurrentSlotFlag1(int nArg);  /* Ov002_SetCurrentSlotFlag1 */
-extern int Session_IsActive(void);                 /* Session_IsActive */
-extern int Session_GetLocalPlayerIndex(void);                 /* Session_GetLocalPlayerIndex */
 extern int Ov002_BuildSessionCommand(int nKind, void *pCmd);  /* send, or 0xffff */
-extern unsigned short GetGlobalU16At6(void);                 /* the peer mask */
 
 /* Drives the two-sided handshake that settles which peers are in, and reports
  * whether it is finished.

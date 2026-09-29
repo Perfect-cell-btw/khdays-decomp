@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov022ActorNode {
     char pad_0000[0x80];
@@ -29,8 +30,6 @@ extern const short data_0203d210[];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern VecFx32 *func_ov022_020881f8(int index);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int index);
 extern int Ov002_GetSlotTableByte(int group);
 extern Ov022TargetEntry *Ov002_List_GetWord(int value);

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 #define PACKET_CHANNEL 0xa
 #define PACKET_MODE 6
@@ -35,9 +36,6 @@ struct Packet {
     unsigned nExtra : 8;         /* bits 23-30 */
     unsigned nPad31 : 1;         /* bit 31 */
 };
-
-extern int Session_IsReady(void);
-extern void MsgQueue_SendGate(int nChannel, struct Packet *pPacket, int nSize);
 
 void Ov022_PostContactPacket(int nUnused, struct Source *pSrc)
 {

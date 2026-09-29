@@ -14,12 +14,14 @@
  * the function HEAD matches (divisor 3, magic 0x55555556, no post-shift; unlike the tail-position
  * /5 of ov142 which ties). `tmp` before `aim` for the frame; the counter's <= 0 arm first.
  */
+
+#include "game/engine.h"
+
 extern int Ov107_FindNearestObject(int obj, int out);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
 extern int Ov107_ActionResource_GetOffsetAndScale(int a, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, void *src);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
 
 void Ov270_TickSpinRetreatB(int *self) {

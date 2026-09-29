@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 
 /* Synchronises the mission selection confirmations with the peers: once every connected peer has
  * confirmed (or on a forced exit), moves on to syncing the entries. */
@@ -9,12 +10,7 @@ typedef void (*MissionCallback)(void);
 
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern int Ov006_IsSceneState4(void);
-extern int Session_IsReady(void);
-extern u16 GetGlobalU16At6(void);
 extern void Ov006_RefreshSelectionSendBlock(void);
-extern int MsgQueue_SendGate(int type, u16 *payload, u16 size);
-extern u32 Session_GetLocalPlayerIndex(void);
-extern void StoreToGlobalPtr4Field28(int state);
 extern void Ov006_UpdateAndGetIdleHandler(void);
 extern void Ov006_SynchronizeMissionEntries(void);
 

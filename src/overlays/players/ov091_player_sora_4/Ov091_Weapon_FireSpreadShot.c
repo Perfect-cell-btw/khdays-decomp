@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 p; short a,b,c; short scale; int f14,f18,f1c,f20,f24,f28; } Placement;
 typedef struct { int m[9]; } MtxFx33;
@@ -10,7 +11,6 @@ extern void MTX_MultVec33(VecFx32 *, MtxFx33 *, VecFx32 *);
 extern void VEC_Add(VecFx32 *, VecFx32 *, VecFx32 *);
 extern int VEC_Mag(VecFx32 *);
 extern int VEC_Normalize(VecFx32 *, VecFx32 *);
-extern int Session_RandNext(void);
 extern int Ov022_ValidateTargetRef(char *);
 extern void Ov022_SendPlacementMessage(char *, Placement *);
 extern short data_0203d210[];

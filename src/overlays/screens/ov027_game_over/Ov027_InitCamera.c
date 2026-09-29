@@ -5,6 +5,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
@@ -115,7 +116,6 @@ typedef struct Ov027Scene {
     u8   font[0xc];           /* 0x624 */
 } Ov027Scene;                 /* 0x630 */
 
-extern void  Projection_LoadDefaults(Ov027Camera *pCamera);                  /* Camera_Init */
 extern void  Camera_CommitMatrices(Ov027Camera *pCamera);                  /* Camera_Commit */
 /* khdays: shared-bss */
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */

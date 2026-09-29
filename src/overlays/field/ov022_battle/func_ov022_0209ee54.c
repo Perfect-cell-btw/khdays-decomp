@@ -1,9 +1,10 @@
 /* Returns a player's actor when it is alive, in the group and not in the exclusion list; otherwise
  * 0. */
 
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField12(int a);
 extern int Ov022_GetEntryField66(int a);
-extern int GetEntryField20ByIndex(int a);
 
 int func_ov022_0209ee54(int param_1, int param_2, int param_3, int param_4) {
     int sVar2 = Ov022_GetEntryField12(param_2);

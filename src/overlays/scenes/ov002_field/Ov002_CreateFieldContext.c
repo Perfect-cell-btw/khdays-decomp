@@ -1,6 +1,6 @@
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern void LoadActorOverlay(void);
 extern void Ov002_SetCurrentSlotFlag1(int a);
 extern int Ov002_GetRootField8d94(void);
 extern void Ov002_Camera_SetMode(void);

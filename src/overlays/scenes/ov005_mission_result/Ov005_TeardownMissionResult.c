@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern void Ov005_RegisterAnimTables(void);
-extern void ResSlot_Release_2(int id);
 extern void func_02023ad0(int h);
 extern void MI_CpuFill8(void *dst, int value, unsigned size);
 extern int **data_ov005_0205b808;

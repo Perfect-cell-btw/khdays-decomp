@@ -1,7 +1,7 @@
 /* Black both screens, clear VRAM, and configure the overlay's graphics banks. */
-extern void SetMasterBrightnessMain(int);
-extern void SetMasterBrightnessSub(int);
-extern void Gfx_Reset2DEngines(void);
+
+#include "game/engine.h"
+
 extern void GX_SetBankForLCDC(int);
 extern void MIi_CpuClearFast(unsigned int,void *,unsigned int);
 extern void GX_DisableBankForLCDC(void);

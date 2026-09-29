@@ -7,12 +7,14 @@
  *     func_02024e5c()!=1 also overlays language pack sub-resource 3 (idx 0 cell).
  *   Attract states {4,5,6,7}: main-pack cells idx 3, then idx 4, then idx 2; language variant
  *     uses sub-resource 4. Other states do nothing but free the pack. */
+
+#include "game/engine.h"
+
 struct Src { int a[6]; };                    /* [2]=+8 [3]=+0xc palette; [4]=+0x10 [5]=+0x14 char */
 struct Cell { int f0; struct Src *pChar; struct Src *pPltt; };
 
 extern int  *data_ov008_02090fa4;
 extern void *Archive_LoadFile(unsigned int entry, int mode, int a);      /* Archive_LoadFile */
-extern void  Res_LoadSpriteSet(struct Cell *info, void *arch, int a, int idx, int param);
 extern void  GX_LoadBGPltt(unsigned int src, int off, unsigned int len);     /* func_02007154 */
 extern void  GX_LoadBG1Char(void *src, int off, unsigned int len);
 extern void  GXS_LoadBG1Char(void *src, int off, unsigned int len);
@@ -20,7 +22,6 @@ extern void  GX_LoadBG2Char(void *src, int off, unsigned int len);
 extern void  GXS_LoadBG2Char(void *src, int off, unsigned int len);
 extern void  GX_LoadBG0Char(void *src, int off, unsigned int len);          /* func_0200770c */
 extern void  GXS_LoadBGPltt(unsigned int src, int off, unsigned int len);
-extern int   func_02024e5c(void);
 extern void  NNSi_FndFreeFromDefaultHeap(void *p);
 
 void Ov008_UploadTextCells(int state, int p2, int p3, int param4) {

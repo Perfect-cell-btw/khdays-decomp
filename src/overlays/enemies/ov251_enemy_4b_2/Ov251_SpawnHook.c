@@ -8,8 +8,8 @@
  * shape with. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(void *self, int script, void *handler);
 extern void Ov251_CircleTick(void);
 

@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002TallyRow {
     int aCounters[11];      /* one per tally kind, indexed by the kind */
@@ -33,24 +34,17 @@ extern char *data_ov002_0207fa00;
 extern u8 data_0204c240;                        /* boot-mode flags */
 
 extern void Ov002_SplitWordToHalves(int nAmount, s16 *pA, s16 *pB);
-extern int GameState_GetField(int nFlag, int nWidth);
-extern void GameState_SetField(int nFlag, int nWidth, int nValue);
 extern int Ov002_HasAssignedPeerId(void);           /* a peer id is assigned */
 extern int Ov002_FindListEntryByKey(int nIndex);     /* find the list entry */
 extern void Ov002_RenderDecimalIntoEntry(int pEntry, int nValue);
 extern void Ov002_PushMarkerNumber(int nAmount);   /* push the marker number */
-extern int QueryActiveStateOrDelegate(void);                 /* the local peer */
 extern void Ov002_CancelSlotByIndex(int nOwner);    /* cancel the owner's slot */
 extern int Ov002_IsPanelModeSet(int fallback);
 extern void Ov002_AddToPanelTotal(int a, int b, int c);
 extern int func_ov022_020882f8(void);           /* how many entries are live */
-extern int Slot_EvalPackedParam(int nEntry, int nWhat);
 extern int Ov022_GetEntryField12(int nEntry);
 extern void func_ov022_02088bec(int nEntry, int nAmount);
-extern int LoadGlobalU16At0(void);
 extern void Ov002_ForwardWithOptionalPublish(int nTotal, int a);
-extern int GameState_IsFlagSet(int nFlag);
-extern void GameState_SetFlag(int nFlag);
 
 /* Moves one tally counter and then runs whatever its kind asks for.  Kind 2
    splits the amount into two halves and uses their sum; every other kind takes

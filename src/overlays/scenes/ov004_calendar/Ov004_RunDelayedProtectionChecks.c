@@ -2,6 +2,7 @@
  * then unloads it and moves on. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*Ov004AlarmCallback)(void *arg);
 typedef struct {
@@ -15,8 +16,6 @@ typedef struct {
 extern Ov004Context *data_ov004_02051384;
 extern char OVERLAY_28_ID[];
 extern u64 OS_GetTick(void);
-extern void LoadOverlaySync(int processor, int overlayId);
-extern void UnloadOverlaySync(int processor, int overlayId);
 extern int func_ov028_0208b490(Ov004AlarmCallback callback);
 extern int func_ov028_0208b040(Ov004AlarmCallback callback);
 extern int func_ov028_0208b200(Ov004AlarmCallback callback);

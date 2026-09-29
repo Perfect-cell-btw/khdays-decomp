@@ -2,7 +2,9 @@
  * re-acquired (Ov231_AcquireTarget); by the +0x20 distance the owner requests sub-state 5/6/7 with
  * thresholds 15/55 (closer than 3.0), 20/75 (closer than 5.0) or 5/6 split at 80 (farther). When a
  * sub-state was requested the +0x24 delay is re-rolled in [+0x224, +0x228] and 1 is returned. */
-extern int RandNextScaled(int n);
+
+#include "game/engine.h"
+
 extern void Ov231_AcquireTarget(int *node);
 
 static inline int RandRange(int low, int high)

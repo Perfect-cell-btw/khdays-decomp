@@ -2,11 +2,11 @@
  * table, initialises the child projectile model and refreshes its callbacks. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct nine { int w[9]; };
 struct b1 { unsigned char b : 1; };
 extern void Ov216_initChildProjectile(void *a, int b, int c, void *d);
-extern void RefreshObjectCallbacks(void *a, int b);
 extern int data_ov216_020cebf8[];
 
 void Ov216_spawnFromTable(char *this) {

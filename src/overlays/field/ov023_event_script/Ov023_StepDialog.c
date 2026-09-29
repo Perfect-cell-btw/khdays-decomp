@@ -9,6 +9,7 @@
  * shows BG1..BG3 (DISPCNT_SUB bits 9..11) and 1 is returned. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u32 *const REG_DISPCNT_SUB = (volatile u32 *)0x04001000;
 
@@ -31,7 +32,6 @@ typedef struct Ov023SceneRoot {
 extern void  G2x_SetBlendBrightness_(int nBldCnt, int nPlanes, int nBrightness);
 extern int   Ov002_HudPage_IsState3(void);                             /* the ov002 dialog is done */
 extern void  func_02023ad0(void *pObject);            /* end an object */
-extern void  func_02020878(char bValue);                            /* set the global byte 0204bd85 */
 extern Ov023SceneRoot data_ov023_0208a784;
 
 int Ov023_StepDialog(void)

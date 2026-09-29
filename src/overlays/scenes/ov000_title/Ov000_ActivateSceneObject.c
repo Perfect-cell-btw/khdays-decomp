@@ -3,6 +3,7 @@
  * Ov000_CreateSceneContext initialises, so this is the same 0xd18c scene context. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     s16 value_0;
@@ -14,8 +15,6 @@ typedef struct {
     int transition_mode;
 } OverlayContext;
 
-extern void PlaySound(int first, int second);
-extern void func_02020904(void);
 extern void Table_TailCallWithEntry(int first, int second);
 extern void Tween_Configure(void *object, int x, int y, int scale, int duration);
 extern void Tween_Start(void *object);

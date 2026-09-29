@@ -3,9 +3,8 @@
  * to the top physical LCD via Ov002_SetDisplaySwap. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
 extern void Ov002_SetDisplaySwap(int top);
 
 void Ov026_BlankScreens(void) {

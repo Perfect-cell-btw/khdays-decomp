@@ -10,9 +10,9 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern u8   data_0204c240;
-extern void GameState_SetField(int id, int kind, unsigned int value);
 
 void Game_ApplyModeFlags(void)
 {

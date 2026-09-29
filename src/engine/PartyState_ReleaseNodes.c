@@ -1,7 +1,8 @@
 /* Releases the node of each of the two party records. */
 
+#include "game/engine.h"
+
 extern char data_0204c500;
-extern void DispatchByNodeKind(void *ptr);
 
 void PartyState_ReleaseNodes(void) {
     register int index asm("r4") = 0;

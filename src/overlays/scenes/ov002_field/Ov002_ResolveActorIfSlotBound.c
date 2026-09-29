@@ -1,8 +1,9 @@
 /* Only while the slot byte at +0x96 is bound (negative), resolve the actor for the given id and
  * hand it to ov022; otherwise report 0. */
 
+#include "game/engine.h"
+
 extern int data_ov002_0207fa14;
-extern int GetEntryField20ByIndex(int arg0);
 extern int Ov022_RequestGuardBreak(int arg0);
 
 int Ov002_ResolveActorIfSlotBound(int arg0) {

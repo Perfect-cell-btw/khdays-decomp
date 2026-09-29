@@ -1,8 +1,8 @@
 /* When the context is not yet running, resends the peer's queued messages and flips the entry's
  * double buffer. */
 
-extern void MsgQueue_ResendForPeer(int a);
-extern void Node_FlipDoubleBuffer(int a);
+#include "game/engine.h"
+
 extern int *data_0204c230;
 
 void InitContextEntryOnce(int param_1) {

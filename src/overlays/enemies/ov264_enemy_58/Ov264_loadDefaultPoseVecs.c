@@ -1,7 +1,8 @@
 /* Resets the tracked position and movement vectors to zero and starts the child's animation. */
 
+#include "game/engine.h"
+
 struct v3 { int a, b, c; };
-extern void SetSubitemState(void *p, int a, int b, int c);
 extern int data_02041dc8[];
 
 void Ov264_loadDefaultPoseVecs(char *this, int param2) {

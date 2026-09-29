@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[0xb8];
@@ -29,9 +30,6 @@ extern u8 data_0204c240;
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int nSize);
 extern int Wcslen(const u16 *pText);
 extern void StrCopy16(u16 *pDst, const u16 *pSrc);
-extern void Text_DrawWithShadow(void *pCtx, int a, int b, int c, const void *pText,
-                          int d);
-extern int Obj_GetWord18(void *pCtx);
 
 extern void Ov002_DrawMessageCaption(void);
 extern void Ov002_TickOptionsPage(void);

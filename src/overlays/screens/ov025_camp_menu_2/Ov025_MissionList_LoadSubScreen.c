@@ -12,6 +12,7 @@
  * list's 020ae384. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;
@@ -30,11 +31,9 @@ typedef struct Ov008MissionList {
 typedef void (*Ov025CharLoader)(const void *pSrc, u32 nOffset, u32 nSize);
 
 extern int   Ov025_GetCtxBlock954c(void);                             /* Ov008_GetCtxBlock954c: the tag tracker */
-extern int   func_02024e5c(void);                                   /* LoadGlobalShort_0204c1ec: the language */
 extern u32   Ov025_PackSlotTag(int nMember);                      /* Ov008_PackSlotTag */
 extern u32   Ov025_PackHandleTag(int nSubFile);                     /* Ov008_PackLocalisedTag */
 extern void *Archive_LoadFile(u32 nTag, int nHeap);                    /* Res_Open */
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *pCell, void *pFile, int nScreen, int nChar, int nPalette); /* Res_LoadSpriteSet */
 extern void  GXS_LoadBGPltt(const void *pSrc, u32 nOffset, u32 nSize);
 extern void  GXS_LoadBG3Char(const void *pSrc, u32 nOffset, u32 nSize);
 extern void  GXS_LoadBG0Char(const void *pSrc, u32 nOffset, u32 nSize);

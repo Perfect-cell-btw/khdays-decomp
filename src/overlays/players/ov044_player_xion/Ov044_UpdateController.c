@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov044UpdateVectors {
     VecFx32 horizontal;
@@ -64,7 +65,6 @@ struct Ov044Controller4c14 {
     struct Ov044Actor *actorDb4;
 };
 
-extern u32 Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(struct Ov044Actor *actor);
 extern VecFx32 *func_ov022_020ad0c0(struct Ov044Actor *actor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
@@ -79,7 +79,6 @@ extern void Ov044_EmitTimelineEffect(struct Ov044Controller4c14 *self);
 extern int Ov022_IsSlotReady(void *context);
 extern int Ov022_IsState9Or6WithFlag200(void *context);
 extern void func_ov022_020acf14(struct Ov044Actor *actor, int mode);
-extern void SceneNode_Enable(u16 *nodeFlags);
 extern void *Ov022_ActorSetState(struct Ov044Actor *actor, int mode);
 
 void *Ov044_UpdateController(struct Ov044Controller4c14 *self)

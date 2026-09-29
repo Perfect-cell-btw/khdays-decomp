@@ -8,6 +8,7 @@
  * (Ov025_ReportDetail_Refresh 020b0484).  Always returns 1. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ReportDetailPage {
     int  nField00;            /* 0x00 */
@@ -24,7 +25,6 @@ typedef struct Ov025ReportDetailPage {
 extern Ov025ReportDetailPage *Ov025_GetPageB(void);            /* Ov025_GetPageB */
 extern void  Ov025_PageB_Reset(void);                             /* Ov025_ReportDetail_Reset */
 extern int   Ov025_GetCtxField9768(void);                             /* Ov025_GetCtxField9768 */
-extern int   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 extern void  Ov025_ReportDetail_LoadBackground(void);                             /* Ov025_ReportDetail_LoadBackground */
 extern int   Ov025_GetCtxBlock954c(void);                             /* Ov025_GetCtxBlock954c */
 extern int   Ov025_GetBlock4a80(void);                             /* Ov025_GetBlock4a80 */

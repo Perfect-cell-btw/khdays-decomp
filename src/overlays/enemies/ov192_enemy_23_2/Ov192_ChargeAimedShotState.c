@@ -37,6 +37,7 @@
  */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov192_ProbeGroundBelowNode(int *state, int *p);
 extern long long FX_DivFx64c(int a, int b);
@@ -44,7 +45,6 @@ extern void Ov192_BoxSweepPush(int *state, int lo, int hi, int *p);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int Ov192_FindTarget(int obj, int out);
 extern void VEC_Subtract(void *a, void *b, void *d);
-extern int RandNextScaled(int mul);
 extern int func_020050b4(int x, int z);
 extern int Ov192_stTimedInterpPhases;
 

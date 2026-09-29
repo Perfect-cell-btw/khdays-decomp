@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define KEY_LEFT   0x20
 #define SOUND_MOVE 0x35
@@ -33,7 +34,6 @@ typedef struct Ov008MenuContext {
 extern void Ov008_CopySourceBlock(void *pOut);                              /* touch record */
 extern int  Ov008_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep);
 extern void Ov008_EnterMenuState(Ov008MenuContext *pCtx, int nMode);
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 
 void Ov008_MenuKeyLeft(Ov008MenuContext *pCtx)
 {

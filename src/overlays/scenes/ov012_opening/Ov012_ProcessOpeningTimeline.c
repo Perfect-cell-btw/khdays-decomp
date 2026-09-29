@@ -2,6 +2,7 @@
  * when a handler accepts an event, and applies the current master brightness. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov012OpeningEvent {
     u32 nTriggerThreadDelta;
@@ -14,7 +15,6 @@ typedef int (*Ov012OpeningEventHandler)(void *pContext, u32 nThreadDelta,
 
 extern Ov012OpeningEventHandler data_ov012_0205c2a4[];
 extern Ov012OpeningEvent data_ov012_0205c310[];
-extern void SetMasterBrightnessMain(int brightness);
 
 void Ov012_ProcessOpeningTimeline(void *pContext, u32 nThreadDelta) {
     char *context;

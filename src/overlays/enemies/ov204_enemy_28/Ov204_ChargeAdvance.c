@@ -6,9 +6,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov204_ChargeSweep(int *state);
 extern int Ov107_FindNearestObject(int actor, int mode);

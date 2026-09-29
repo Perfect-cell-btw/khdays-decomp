@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
@@ -117,8 +118,6 @@ typedef struct Ov027Scene {
 } Ov027Scene;                 /* 0x630 */
 
 extern Ov027Scene *NNSi_FndGetCurrentRootHeap(void);                /* the current scene work */
-extern void  SetMasterBrightnessMain(int nBrightness);                        /* SetMasterBrightnessMain */
-extern void  SetMasterBrightnessSub(int nBrightness);                        /* SetMasterBrightnessSub */
 extern void  Ov027_SetFlag4(int nArg);                         /* Ov027_SetLeaving */
 extern void *Ov027_ConstReturn0(void);                             /* the terminal state */
 /* khdays: shared-bss */

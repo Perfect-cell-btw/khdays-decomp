@@ -14,6 +14,8 @@
  * THUMB.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad000[0xfc];
     char textCtx[0xc];
@@ -32,9 +34,7 @@ extern int data_0204c240;
 extern void GetResourceSubBlock_CHAR(int nId, void **ppOut);
 extern void MIi_CpuCopyFast(const void *pSrc, void *pDst, unsigned int nSize);
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
-extern int GameState_GetField(int a, int b);
 extern void *TileSurface_AddCanvas(void *pCtx, int nFlags);
-extern void Text_DrawWithShadow(void *pCtx, int a, int b, int c, void *pText, int d);
 
 extern void Ov002_DestroyOwnedEntry(void *pNode, int nMode);
 extern void Ov002_VariadicMapForward(void *pMsg, int nKind, char *pOut, int nSize,

@@ -10,6 +10,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[0x78];
@@ -43,7 +44,6 @@ typedef struct {
 extern int data_ov002_0207f628;
 
 extern void Tween_Clear(Ov002Tween *pTween);
-extern void SceneNode_Enable(void *pWidget);
 extern void Ov002_RetargetWidget(void *pWidget, unsigned int nFileId, int nKind,
                                 int nParam);
 

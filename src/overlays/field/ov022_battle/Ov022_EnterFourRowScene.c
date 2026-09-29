@@ -10,6 +10,9 @@
  * Ov002_Slot_SetCellData is declared with FOUR parameters here even though its own
  * matched body only reads two -- this call site sets r0..r3, and a callee's body
  * can never settle its arity, only its callers can. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x2c];
     void *pResource;        /* +0x2c -- what Ov002_Slot_SetCellData stores */
@@ -30,9 +33,6 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern char *Msg_BuildLangPath(char *path);
 extern void *Archive_LoadFile(char *path, int heap);
-extern void InstallHandlerPairByFlag(int phase);
-extern void G3dRes_DefaultSetup(void *arc);
-extern int GameState_IsFlagSet(int cue);
 extern int Ov002_Slot_SetCellData(Ov022Row *row, void *arc, int bFirst, int index);
 extern void Tween_Clear(void *tween);
 extern void Ov022_AdvanceFadeStateThenNextStep(void);

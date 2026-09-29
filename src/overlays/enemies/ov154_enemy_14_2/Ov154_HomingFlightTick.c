@@ -22,6 +22,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -66,7 +67,6 @@ extern void SetIndexedSlot(int node, int slot, void *cb);
 extern struct Ov153Actor *Ov107_FindNearestObject(struct Ov153Actor *owner, int mode);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int func_020050b4(int x, int z);
 extern int VEC_Mag(const VecFx32 *v);
 extern const short data_0203d210[];

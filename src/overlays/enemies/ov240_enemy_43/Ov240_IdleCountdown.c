@@ -2,7 +2,8 @@
  * re-arms at random between the actor's +0x224 and +0x228 and requests a sub-state by range: up to
  * 0x3000 6 (roll below 60) or 4, below 0x10000 7 (roll below 50) or 5, else 5 (roll below 80)
  * or 4. Returns 1 when a sub-state was requested. */
-extern int RandNextScaled(int range);
+
+#include "game/engine.h"
 
 static inline int RandRange(int low, int high)
 {

@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Pick the per-state callback, stage the active_record for it, and update the two flag bytes at
  * context+0x4ee and +0x4ef. Those two flags sit just below the 0x4f4 context size that
  * Ov006_MissionCreateContext measures, so they are the last fields of the object rather than
@@ -9,7 +10,6 @@
 typedef void (*MissionCallback)(void);
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
-extern int Game_PollSceneAlive(void);
 extern void Ov105_WH_SetSsid(u8 *mode, int value);
 extern int Ov105_WH_ChildConnect(int value, MissionRecord *record);
 extern void Ov105_WH_SetReceiver(MissionCallback callback);

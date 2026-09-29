@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define LIST_COUNT      2
 #define LIST_FIRST      3
@@ -37,8 +38,6 @@ typedef struct GameState {
 
 extern GameState *data_0204be18;
 extern Ov008ParamTable *data_ov026_0209136c;
-extern int GameState_GetField(int nField, int nBits);                         /* GameState_GetField */
-extern int GameState_IsFlagSet(int nFlag);                                     /* GameState_IsFlagSet */
 
 void Ov026_CountAffordableRecords(u16 *aCount)
 {

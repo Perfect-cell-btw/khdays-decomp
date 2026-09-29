@@ -16,8 +16,10 @@
  * so a dropped argument of that kind is invisible in the size and shows up only as "one register
  * is wrong". tools/audit_extern_sig.py finds them without any analysis.
  */
+
+#include "game/engine.h"
+
 extern void Ov084_FillEightHalvesMinus1(int *node);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov084_LaunchPartProjectile(int *node);
 extern unsigned short Sequence_UpdateTracks(int a, int b);
 

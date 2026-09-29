@@ -2,6 +2,7 @@
  * confirmation text and cursor; returns the next state. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*MissionState)(void);
 
@@ -28,7 +29,6 @@ extern u16 data_ov006_0205651c[8];
 extern int Ov006_SetMissionCursorSelection(int selection);
 extern int Ov006_IsMissionMenuExitRequested(void);
 extern void Ov006_BlankScreensAndTeardownText(void);
-extern int Game_PollSceneAlive(void);
 extern u16 func_01ff8138(void);
 extern int Ov006_GetMissionMenuSelection(void);
 extern void Ov006_ResetTextLayers(void);

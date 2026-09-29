@@ -1,7 +1,8 @@
 /* When the object belongs to the local player's side and is active, aims its heading at its offset
  * (unless in modes 6-8) and posts its update. */
 
-extern int QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(int state);
 extern short FX_Atan2(int a, int b);
 extern void func_ov022_0208ffe8(int a);

@@ -7,6 +7,9 @@
  * SetMasterBrightnessMain(0) unless bit 3 indicates init already happened. The subsystem pointer is re-read
  * after the call because it may have moved.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int flags;            /* +0x00 */
     char _4[0x40 - 4];
@@ -14,7 +17,6 @@ typedef struct {
 } Ov002Sub;
 
 extern int data_ov002_0207f600;
-extern void SetMasterBrightnessMain(int a);
 
 void Ov002_RefreshWindowCallback(void)
 {

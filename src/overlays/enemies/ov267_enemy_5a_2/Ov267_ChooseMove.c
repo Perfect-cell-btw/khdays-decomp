@@ -59,13 +59,13 @@
  * share no address with a load. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad0[0x1c7];
     signed char queued;
 } Owner;
 
-extern int RandNextScaled();
 extern int Ov267_CheckState6c(int *ctx, int a);
 extern int Ov267_IsField21aBelowField218Div10(int *ctx);
 extern int Ov267_IsState6cActive(int *ctx, int a);

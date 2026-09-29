@@ -20,6 +20,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define STATE_LIST   0
 #define STATE_GRID   1
@@ -75,7 +76,6 @@ typedef struct Ov008MenuContext {
 extern Ov008ListHooks data_ov008_02090380;
 extern int   Ov008_CopySourceBlock(Ov000_Input *pIn);                         /* sample the input */
 extern void  Ov008_SetTargetSlot(int nEntry, int nTarget);                  /* Ov008_SetTargetSlot */
-extern void  PlaySound(int nKind, int nSound);                          /* PlaySound */
 extern void  Ov008_ResetGridDrag(Ov008MenuContext *pCtx, int bRestore);     /* Ov008_ResetGridDrag */
 extern void  Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                   /* Ov008_RebuildGridHits */
 extern void  Ov008_EnterMenuState(Ov008MenuContext *pCtx, int nState);       /* Ov008_EnterMenuState */
@@ -84,9 +84,6 @@ extern int   Ov008_DrawPageBElement(int nMode, int nA, int nB);                /
 extern int   Ov008_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep); /* move the cursor */
 extern void  Ov008_DisableRowBlock(void);                                     /* Ov008_DisableRowBlock */
 extern void  Ov008_RefreshEquipPanel(void *pSummary);                           /* Ov008_RefreshEquipPanel */
-extern int   GameState_IsFlagSet(int nFlag);                                      /* GameState_IsFlagSet */
-extern void  GameState_SetFlag(int nFlag);                                      /* GameState_SetFlag */
-extern void  func_020235bc(int nFlag);                                      /* GameState_ClearFlag */
 extern int   Ov008_RemoveGridNode(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow, int bSilent); /* Ov008_RemoveGridNode */
 extern int   Ov008_GetContext(void);                                     /* Ov008_GetContext */
 extern void  Ov008_SwapParamOverrides(int nCtx, void *pEntry);                   /* Ov008_SwapParamOverrides */

@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov021EmblemDef {
     u8   pad_00[0x58];
@@ -34,10 +35,6 @@ typedef struct Ov021Emblem {
 } Ov021Emblem;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
-extern void  SceneNode_Enable(void *pNode);                             /* SceneNode_Enable */
-extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
 
 void Ov021_EmblemStart(Ov021Emblem *pSelf)
 {

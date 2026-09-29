@@ -5,6 +5,7 @@
  * evaluated before the id / width constants (mwcc argument order). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ConfigPage {
     u8   pad_00[0x4e];
@@ -18,8 +19,6 @@ typedef struct GameState {
 
 extern Ov025ConfigPage *Ov025_GetPageA(void);                  /* Ov008_GetPageA */
 extern GameState *data_0204be18;
-extern void  GameState_SetField(int nField, int nBits, unsigned int nValue);      /* GameState_SetField */
-extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 
 void Ov025_Config_SaveValues(void)
 {

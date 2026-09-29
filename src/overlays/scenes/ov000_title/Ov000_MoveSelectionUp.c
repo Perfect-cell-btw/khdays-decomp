@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     s16 limit;
@@ -15,7 +16,6 @@ typedef struct {
     int changed;
 } OverlaySelection;
 
-extern void PlaySound(int x, int y);
 extern void Ov000_QueueResourceTransfers(void);
 
 void Ov000_MoveSelectionUp(OverlaySelection *selection) {

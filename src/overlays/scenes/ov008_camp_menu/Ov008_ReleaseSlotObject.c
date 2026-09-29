@@ -1,7 +1,7 @@
 /* Releases a live slot object (and its resources when it owns them) and clears it. */
 
-extern void ReleaseField74AndCleanup(void *object);
-extern void FreeAllResourceTables(void *object);
+#include "game/engine.h"
+
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void Ov008_ReleaseSlotObject(void *object)

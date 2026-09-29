@@ -2,6 +2,7 @@
  * next scene. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct BootModeState {
     u8 flags;
@@ -19,11 +20,7 @@ extern Ov004SceneState *data_ov004_02051380;
 extern BootModeState data_0204c240;
 
 extern int Ov004_GetResult(void);
-extern void func_020235bc(int handlerId);
-extern void GameState_SetField(u32 field, int width, u32 value);
-extern void PartyState_ResetBuffers(void);
 extern void Ov004_ResetPartyMemberAndLayout(int arg, int unused);
-extern void Scene_RequestPending(int scene, int arg);
 
 int Ov004_StepMissionSelectScene(void) {
     if (Ov004_GetResult() != 0) {

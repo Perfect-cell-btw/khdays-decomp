@@ -7,6 +7,7 @@
  * range sub-state 4 is requested. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Flags42 { unsigned char bCharge : 1; };
 
@@ -14,7 +15,6 @@ extern int Ov107_FindNearestObject(int actor, int *distSq);
 extern int FX_Sqrt(int x);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov134_IdleTick(int *node)

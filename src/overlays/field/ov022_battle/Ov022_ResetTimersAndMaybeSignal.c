@@ -1,7 +1,8 @@
 /* Resets the actor's timers, flags it on the host, counts the statistic for player 0 outside mode 4
  * (unless forced) and sets its state to 1. Returns what Ov022_ActorSetState returns. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern void Ov002_World_AddStat(int a, int b);
 extern int Ov022_ActorSetState(int obj, int a);
 extern int data_0204c240;

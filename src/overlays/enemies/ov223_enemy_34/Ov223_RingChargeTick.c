@@ -8,11 +8,11 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov223Segment { VecFx32 p0; VecFx32 p1; int nLength; int nRadius; };
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *pose, const VecFx32 *in);
 extern int Ov223_StrikeSweep(int *node, int mode, struct Ov223Segment *seg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;

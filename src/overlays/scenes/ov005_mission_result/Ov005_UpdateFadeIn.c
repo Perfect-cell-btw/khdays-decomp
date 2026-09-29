@@ -1,12 +1,12 @@
 /* Fades the reward menu in over time and moves to state 1 when done. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005Context { char opaque00[0x4bf0]; int menuState; u64 startTick; } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
 extern u64 OS_GetTick(void);
 extern u64 func_02020368(u64,u64);
-extern void SetMasterBrightnessMain(int);
 #define REG_DISPCNT (*(volatile unsigned int *)0x04000000)
 void Ov005_UpdateFadeIn(void) {
     u64 elapsed=OS_GetTick()-data_ov005_0205b80c->startTick;

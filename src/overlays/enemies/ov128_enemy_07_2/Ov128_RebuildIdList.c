@@ -2,9 +2,10 @@
    frees the existing nodes, re-initialises the list, then appends one node per
    word. The count arrives in bytes and is turned into words in place. */
 
+#include "game/engine.h"
+
 extern void NNSi_FndDestroyDoubleList(void *list);
 extern void List_Init(void *list);
-extern int *List_InsertSorted(void *list, int size, int rank);
 
 void Ov128_RebuildIdList(char *self, int nCount, const int *pSrc)
 {

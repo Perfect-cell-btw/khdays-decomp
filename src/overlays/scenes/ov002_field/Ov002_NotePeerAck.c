@@ -2,8 +2,8 @@
  * skipping our own slot. Outside a live session there are no peers, so the
  * standalone flag at +0x8d9c is set instead. The sender's slot is the byte at
  * +1 of the message. */
-extern int Session_IsReady(void);
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;
 

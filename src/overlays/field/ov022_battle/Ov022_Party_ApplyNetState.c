@@ -2,6 +2,7 @@
  * returns whether any changed. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov022NetRecord {
     unsigned long long state;
@@ -85,11 +86,7 @@ typedef struct Ov022Actor {
 
 extern char data_ov022_020b2e78[];
 
-extern int Session_GetLocalPlayerIndex(void);
-extern int func_0202bfb8(void);
 extern int Ov022_GetGlobalPlus14_2(void);
-extern void List_TryInvokeEntry(int index);
-extern int QueryActiveStateOrDelegate(void);
 extern void Ov022_ActorSetHp(Ov022Actor *actor, int value);
 extern void Ov022_ResolveTargetPick(Ov022Actor *actor, int bit2,
                                 void *arg2, void *arg3);
@@ -98,7 +95,6 @@ extern int func_ov022_02083f0c(void);
 extern void Ov002_Camera_SetMode(int arg0, int arg1, int arg2);
 extern void func_ov022_02087298(int index);
 extern void func_ov022_02088428(int index, int value);
-extern void Actor_SetVecAndSyncChild(void *child, VecFx32 *position);
 extern void func_ov022_020a0678(Ov022Actor *actor, int value);
 
 int Ov022_Party_ApplyNetState(void)

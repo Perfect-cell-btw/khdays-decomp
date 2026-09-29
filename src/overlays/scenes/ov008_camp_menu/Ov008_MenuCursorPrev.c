@@ -1,7 +1,8 @@
 /* Plays the cursor sound and moves the menu cursor to the previous entry. */
 
+#include "game/engine.h"
+
 extern char *Ov008_GetMenuContext(void);
-extern void PlaySound(int arg0, int arg1);
 extern void Ov008_MoveMenuCursor(int arg0);
 
 void Ov008_MenuCursorPrev(void)

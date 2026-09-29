@@ -10,7 +10,8 @@
  * the two stores through r0, which also fixes the sign-extend/umull scheduling in the loop body.
  */
 
-extern int Quat_Length(int *v);
+#include "game/engine.h"
+
 extern long long FX_InvFx64c(int x);
 
 int Vec4_Normalize(void *pQ, void *pV)

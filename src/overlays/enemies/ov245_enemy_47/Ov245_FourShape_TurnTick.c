@@ -4,14 +4,15 @@
  * ★ The struct ladder: with the cursor written as `*(int *)(o + 0x20)` mwcc copies the call
  * result into r2 BEFORE storing it; as the struct field `o->a` it stores r0 first and then
  * copies, exactly as the ROM does. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad[0x20];
     int cursor;
     int limit;
 } Obj;
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(void *out, void *tbl, int idx);
 extern void Srt_SetRotationQuat(char *p, void *m);
 extern char data_02042264[];
 

@@ -17,10 +17,10 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
 extern int Ov022_IsIndexedRecordBit0Set(char *self, int i);
 extern int Ov022_GetGlobal34(void);
 extern void Ov073_ReleaseIndexedHandles(char *self);
@@ -29,7 +29,6 @@ extern void Anim_SetFrameWrapped(char *anim, int track, int frame);             
 extern void GX_SendFifoWords(unsigned int cmd, const void *src, unsigned int words); /* GX_SendFifoWords */
 extern void Gfx_SubmitCachedCommandBlock(void);                                                  /* submit the cached block */
 extern void MaterialColorScale_SetRgb555(unsigned int value);
-extern void Obj_InitChannelsAndRun(char *channels);
 
 void Ov073_UpdateAnimationAndDraw(char *self)
 {

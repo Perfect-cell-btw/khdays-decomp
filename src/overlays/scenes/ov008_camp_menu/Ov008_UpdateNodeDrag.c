@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct UiLayoutPos {
     int nX;
@@ -52,7 +53,6 @@ extern int  Ov008_PixelToTileCell(u16 *pCol, u16 *pRow, unsigned int nX, unsigne
 extern int  Ov008_DropLiftedNode(Ov008MenuContext *pCtx);                  /* drop the dragged node */
 extern void Ov008_ResetGridDrag(Ov008MenuContext *pCtx, int nArg);        /* grid reset */
 extern void Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                  /* Ov008_RebuildGridHits */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern int  Ov008_RemoveGridNode(Ov008MenuContext *pCtx, u32 nNode, u32 nCol, u32 nRow, int nArg); /* put the node back */
 extern void Ov008_EnterMenuState(Ov008MenuContext *pCtx, int nMode);
 extern void Ov008_UpdateMenuButton5(int nArg);                                /* Ov008_UpdateMenuButton5 */

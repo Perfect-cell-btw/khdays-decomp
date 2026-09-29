@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016FollowerDef {
     u8 pad_00[0x58];
@@ -38,12 +39,7 @@ typedef struct Ov016Follower {
 } Ov016Follower;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);          /* Actor_SetVecAndSyncChild */
 extern void  Ov002_RebindAnimTracks(void *pNode, int nTrack, int nFrame); /* rewind a sequence */
-extern void  SceneNode_Disable(void *pNode);                              /* SceneNode_Disable */
-extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                   /* Obj_SetFlagBit3 */
 
 void Ov016_FollowerStart(Ov016Follower *pSelf)
 {

@@ -3,9 +3,9 @@
  * refreshes. Returns the test result. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern char *data_ov106_020b8b60;
-extern int func_02023c40(void);
 extern void Ov106_ProjectToScreen(VecFx32 *out, const VecFx32 *point, void *cam);
 extern unsigned short Sequence_UpdateTracks(void *p, int a);
 extern void Scene_DrawNode(void *widget);

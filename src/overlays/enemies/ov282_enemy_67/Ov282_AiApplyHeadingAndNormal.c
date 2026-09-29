@@ -2,12 +2,11 @@
  * it. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct T { int a, b, c, d; };
 struct S { struct T t; char pad[0x28 - 16]; unsigned char flag; };
 
-extern int Angle_TurnToward(int cur, int target, int step, int flag);
-extern void QuatFromAxisAngle(int *out, int *axis, int angle);
 extern void Quat_FromTwoVectors(void *dst, void *axis, int src);
 extern void Quat_Multiply(void *a, void *b, void *c);
 extern int Srt_SetRotationQuat(struct S *dst, struct S *src);

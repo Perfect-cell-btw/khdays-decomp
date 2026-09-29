@@ -6,6 +6,7 @@
  * hands over to Ov227_RockFlightTick. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -13,7 +14,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov227_HitSweep(int *part, void *sphere);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int RandNextScaled(int n);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov227_RockFlightTick(int *node);

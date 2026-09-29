@@ -10,9 +10,8 @@
  * velocity goes to the owner's +0xf0 and is scaled by 0.25. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward(int from, int to, int step, int mode);
-extern void QuatFromAxisAngle(void *q, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *pose, void *q);
 extern void Ov231_AcquireTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -3,12 +3,13 @@
  * has it. Writing it as `if (in range) { rand } else { state2 }` emits the two blocks
  * the other way round.
  * Ov186_LookAtQuat_2 takes THREE arguments; Ghidra shows a fourth (leftover in r3). */
+
+#include "game/engine.h"
+
 extern int  Ov107_FindNearestObject(int obj, int *out);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern int  FX_Sqrt(int x);
-extern int  RandNextScaled();
 extern void Ov186_LookAtQuat_2();
-extern void Vec3TransformViaTempMtx();
 extern void ScaleVec3Fx12();
 extern char data_02042258[];
 

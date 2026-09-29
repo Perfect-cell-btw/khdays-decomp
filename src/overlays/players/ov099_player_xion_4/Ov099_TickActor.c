@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov044TickVectors {
     VecFx32 horizontal;
@@ -70,7 +71,6 @@ struct TimelineActorOwner {
     struct TimelineActor *actorDb4;
 };
 
-extern u32 Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(struct TimelineActor *actor);
 extern VecFx32 *func_ov022_020ad0c0(struct TimelineActor *actor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
@@ -82,7 +82,6 @@ extern void Ov022_StepAnchorDelta(struct TimelineActor *actor, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b,
                     VecFx32 *out);
 extern void Ov099_EmitTimelineEffect(struct TimelineActorOwner *self);
-extern void SceneNode_Enable(u16 *nodeFlags);
 extern void *Ov022_ActorSetState(struct TimelineActor *actor, int mode);
 
 void *Ov099_TickActor(struct TimelineActorOwner *self)

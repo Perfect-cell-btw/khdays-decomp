@@ -1,7 +1,7 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int Session_IsActive(void);
 extern void Ov002_ApplyTimerCommand(int nSlot, int nValue);
 extern u16 Ov002_BuildSessionCommand(int nKind, void *pOut);
 

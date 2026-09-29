@@ -1,10 +1,9 @@
 /* Element tick: notifies the player in range, advances the open/close state and draws the node. */
 
-extern int Session_IsActive(void);
+#include "game/engine.h"
+
 extern int Ov002_IsSessionOpen(void);
 extern int Ov014_IsPlayerInRange(void *self);
-extern int QueryActiveStateOrDelegate(void);
-extern int GetEntryField20ByIndex(int index);
 extern void func_ov022_020ad2e4(int arg0, int arg1);
 extern void Ov014_ActorRelease(int this_);
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);

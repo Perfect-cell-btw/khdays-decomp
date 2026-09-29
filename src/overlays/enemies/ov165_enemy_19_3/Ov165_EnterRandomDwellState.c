@@ -3,7 +3,8 @@
  * bits, picks a random dwell time and installs the first action, the dispatcher and the heading
  * step. */
 
-extern int RandNextScaled(int);
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov165_stateSetFlagsClearBit(void);
 extern void Ov165_stDispatchByStateByte(void);

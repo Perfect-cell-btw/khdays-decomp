@@ -5,6 +5,7 @@
  * 1.5 on x and z after the first shot). Eight shots, 0.19 apart, then brain slot +0x20 runs 020cfe84. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned short lo : 8; unsigned short hi : 8; } Flags60;
 struct Ov248Owner { char pad[0x3c0]; int shots[8]; };
@@ -13,7 +14,6 @@ extern int Ov248_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern void Ov248_SetTwoVecsAndFlag(int shot, VecFx32 at, VecFx32 dir);
 extern void Ov248_AiStep_QueueAction2OnAnimEnd_2(void);
 extern const short data_0203d210[];

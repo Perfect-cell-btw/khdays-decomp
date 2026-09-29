@@ -3,9 +3,9 @@
  * front test, else 8; under 9.0 20 % 7/8, else 8. When a move is set +0x28 is 3.0 and 1 is returned. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int Ov238_TargetGap(int *node);
-extern int RandNextScaled(int bound);
 
 int Ov238_PickMove(int *node)
 {

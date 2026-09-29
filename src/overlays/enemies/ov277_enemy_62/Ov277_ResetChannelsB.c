@@ -1,8 +1,9 @@
 /* Points the entry's +8 at the owner's +0xad byte, clears bit 1 of the owner's flag word at
  * +0x5c, rewrites its four state channels (0, 4, 1, 2) to (0, 0), closes the update and re-arms
  * 020cf14c. */
-extern void SetSubitemState(void *sub, int channel, short value, int flag);
-extern void RefreshObjectCallbacks(void *sub, int a);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(char *self, int a, void *cb);
 extern void Ov277_FinishWhenChildAnimEnds(int);
 

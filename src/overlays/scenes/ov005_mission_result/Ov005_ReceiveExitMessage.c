@@ -2,11 +2,11 @@
  * replies. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005ExitTask { unsigned receivedPlayerMask; int protocolPhase; } Ov005ExitTask;
 extern Ov005ExitTask *data_ov005_0205b8d0;
 extern const char *data_ov005_0205b79c[3];
-extern unsigned Session_GetLocalPlayerIndex(void);
 extern int strcmp(const char *,const char *);
 void Ov005_ReceiveExitMessage(const u8 *message,int size) {
     Ov005ExitTask *task=data_ov005_0205b8d0;

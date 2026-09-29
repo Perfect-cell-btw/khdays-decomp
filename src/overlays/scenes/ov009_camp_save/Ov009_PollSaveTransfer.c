@@ -2,6 +2,7 @@
  * the transfer state; returns the result (-1 while busy). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009SaveSlot {
     u8 pad00[0x10];
@@ -29,7 +30,6 @@ typedef struct Ov009SaveContext {
 
 extern int Ov009_PollSaveLoad(void);
 extern int Ov009_CardTransferStep(int state, int arg1, int arg2, int arg3);
-extern void GameState_SetFlag(int flag);
 extern void Ov009_SetupWorkArea(int slot);
 
 int Ov009_PollSaveTransfer(Ov009SaveContext *ctx, int arg1, int arg2, int arg3)

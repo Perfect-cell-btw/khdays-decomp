@@ -1,9 +1,8 @@
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern char *data_ov008_02090fac;
 extern char data_ov008_02090dd8;
-extern void Projection_LoadDefaults(void *obj);
-extern void RegisterSeqAndInit(void *obj, void *desc, int a, int b);
 extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 
 /* Resets the preview model: default camera distances, no tint, and the idle pose. */

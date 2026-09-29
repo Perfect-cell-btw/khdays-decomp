@@ -1,5 +1,7 @@
 /* Whether the save block's +0x10e0 bit array has bit `id` set (ids from 0x400 up are never set). */
-extern int BitArray_TestBit(void *bits, unsigned int bit);
+
+#include "game/engine.h"
+
 extern char *data_0204be18;
 
 int Ov069_IsItemFlagSet(unsigned int id)

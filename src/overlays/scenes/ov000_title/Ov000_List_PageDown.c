@@ -1,8 +1,10 @@
 /* Ov000_List_PageDown -- fast-scroll the logo list down by up to 0xa rows, ov000. No-op
  * at the bottom (field[0]>=0x13) or while L/R are held (data_0204c18c & 0xc0). Advances
  * field[0]/field[1] by 0xa (clamped to 0x12), refreshing the display when it moves. */
+
+#include "game/engine.h"
+
 extern unsigned short data_0204c18c;
-extern void PlaySound(int, int);
 extern void Ov000_QueueResourceTransfers(void);
 void Ov000_List_PageDown(short *s) {
     int old = s[0];

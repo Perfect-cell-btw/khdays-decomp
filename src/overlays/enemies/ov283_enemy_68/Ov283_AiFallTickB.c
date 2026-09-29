@@ -1,9 +1,9 @@
 /* Applies gravity and damping; lands when the animation ends and grounded (second variant). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void ScaleVec3Fx12(int factor, int *src, int *dst);
-extern unsigned int Rand16NextScaled(unsigned int range);
 extern void SetIndexedSlot(int *a, int i, int v);
 
 void Ov283_AiFallTickB(int *this)

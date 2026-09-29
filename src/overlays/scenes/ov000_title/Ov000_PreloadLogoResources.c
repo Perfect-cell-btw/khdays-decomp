@@ -5,9 +5,10 @@
  * variants 2..5 load a region-specific secondary resource into slot [2], and any
  * other value (0 or >5) is a fatal configuration error -> OS_Terminate. */
 
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void *Msg_OpenContainerAndReadHeader(void *desc, int mode);
-extern int   func_02024e5c(void);
 extern void  OS_Terminate(void);
 extern char  data_ov000_0205aa18[];
 extern char  data_ov000_0205aa24[];

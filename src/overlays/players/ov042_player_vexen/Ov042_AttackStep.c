@@ -24,6 +24,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 typedef struct { int m[9]; } Mtx33;
@@ -35,16 +36,13 @@ typedef struct {
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern unsigned int Session_RandNextScaled(unsigned int n);
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
 extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, Params *p);
-extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov042_020b4800;
 extern VecFx32 data_02041dc8;                  /* kVecZero */

@@ -1,11 +1,10 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef int (*Ov002ReserveProc)(char *pCtx, unsigned char bLane, int nKind,
                                 u16 wSlot);
 
-extern int GameState_GetField(int nId, int nSlot);
-extern char *GetEntryField20ByIndex(int nIndex);
 extern int Ov002_FindKeyEntryIndex(int nId);
 extern char *Ov002_GetRootField8d14(int nIndex);
 extern void Ov022_Member_ShowSpotMessage(int nIndex, int nSlot, int nLane);

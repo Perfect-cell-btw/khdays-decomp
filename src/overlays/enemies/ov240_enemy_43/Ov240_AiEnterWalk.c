@@ -1,9 +1,9 @@
 /* Plays looping anim 2, resets the part, rolls the move timer and installs the walk tick. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov240_startAnim();
-extern int RandNextScaled(int);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov240_WanderTick(void);
 

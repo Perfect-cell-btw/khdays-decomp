@@ -1,14 +1,12 @@
 /* Picks a random item from a weighted item table and adds it to the reward list. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005MenuItemHeader {char data[0x24c];} Ov005MenuItemHeader;
 typedef struct ItemWeight {u32 itemId;int weight;} ItemWeight;
 typedef struct WeightedItemRecord {char header[0x14];ItemWeight items[8];} WeightedItemRecord;
 extern char *data_ov005_0205b80c;
-extern int MsgDb_FetchRecord(WeightedItemRecord **,int,u32,int);
-extern void DispatchByNodeKind(WeightedItemRecord **);
-extern u32 RandNextScaled(u32);
 extern void Ov005_PopulateMenuItem(Ov005MenuItemHeader *,u32,int,int);
 void Ov005_AddWeightedMenuItem(u32 tableId) {
     WeightedItemRecord *record=0;

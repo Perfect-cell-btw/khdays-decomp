@@ -9,10 +9,10 @@
  * position. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, const VecFx32 *k);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int FX_Div(int num, int den);
@@ -26,7 +26,6 @@ extern int Ov107_FindNearestObject(int actor, int mode);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *forward, const VecFx32 *direction);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
-extern void Vec4_Normalize(Quat *out, Quat *in);
 extern int Collision_CastRay(int collision, VecFx32 *start, VecFx32 *ray);
 extern int Collision_CastSphereEx(int collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
 extern const VecFx32 data_02042258;

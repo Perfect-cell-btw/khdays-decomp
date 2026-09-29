@@ -1,8 +1,9 @@
 /* Refreshes the current phase and, in state 3, updates the scene's widget. */
 
+#include "game/engine.h"
+
 extern void Ov011_RefreshCurrentPhase();
 extern int data_ov011_0205e960;
-extern void func_0203256c();
 
 void Ov011_RunSetupThenInvokeIfState3(void) {
     int r1;

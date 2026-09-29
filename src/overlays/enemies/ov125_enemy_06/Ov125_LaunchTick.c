@@ -8,13 +8,12 @@
  * over to Ov125_HopTick. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Owner { char pad[0x3a0]; int kids[2]; };
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
 extern void Ov125_RelayoutAndStoreVec(int child, void *from, VecFx32 *dir);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 /* data_ov125_020d03cc: the enemy's four owner-message pairs. This tick copies pair 3 as a typed
  * struct member; read as two u16 elements the copy is scheduled differently. */

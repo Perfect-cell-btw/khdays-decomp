@@ -2,6 +2,7 @@
  * portrait changes, retargets the portrait cell tag and records the uploaded index. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_00[0x10];
@@ -25,9 +26,6 @@ typedef struct {
 
 extern CharacterSelectContext *data_ov008_02090fa4;
 extern void *Archive_LoadFile(u32 archiveEntry, int mode);
-extern void Res_LoadSpriteSet(SpriteResSet *resources, void *archive,
-                          int screenIndex, int characterIndex,
-                          int paletteIndex);
 extern void GX_LoadBG0Char(void *source, u32 offset, u32 size);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 extern void Ov008_MissionRetargetCellByTag(u32 cellTag, int x, int y);

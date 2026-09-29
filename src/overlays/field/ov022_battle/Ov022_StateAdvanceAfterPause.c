@@ -2,6 +2,7 @@
  * sharing session. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -19,10 +20,6 @@ extern Ov022Context *data_ov022_020b2e60;
 
 extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_Scene_IsIdle(void);
-extern void StoreToGlobalPtr4Field28(int value);
-extern int func_02023c40(void);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void *Ov022_EndKeySharingSession(void);
 
 Ov022StateCallback Ov022_StateAdvanceAfterPause(void)

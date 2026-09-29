@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define TAB_SHOP    0
 #define TAB_ITEMS   1
@@ -66,8 +67,6 @@ typedef struct Ov008PanelContext {
 extern Ov008PanelContext *data_ov026_02091368;
 extern s16 data_ov026_02091110[];                                 /* category slots (8) */
 extern s16 data_ov026_020910b8[];                                 /* reward lists (2) ... recipe categories at +0x2c (6) */
-extern int  GameState_IsFlagSet(int nFlag);                             /* GameState_IsFlagSet */
-extern u32  GameState_GetField(int nField, int nBits);                 /* GameState_GetField */
 extern Ov008ParamRecord **Ov026_BuildShopList(int nLevel, int nSlot, u32 *pCount); /* Ov008_BuildShopList */
 extern Ov008ParamRecord **Ov026_BuildSellList(int nSlot, u32 *pCount);           /* item list */
 extern Ov008ParamRecord **Ov026_BuildRecipeList(int nCategory, u32 *pCount);       /* Ov008_BuildRecipeList */

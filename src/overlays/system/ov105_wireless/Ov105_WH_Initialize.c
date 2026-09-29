@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/os_types.h"
+#include "game/engine.h"
 
 typedef void *OSMessage;
 typedef void (*WMCallbackFunc)(void *arg);
@@ -527,7 +528,6 @@ extern void MI_CpuFill8(void *dst, u8 data, u32 size);
 extern void OS_GetMacAddress(u8 *macAddress);
 #define OS_GetVBlankCount() (*(volatile u32 *)0x027ffc3c)
 extern void *ExpHeap_AllocOrDefault(u32 size, int align, void **heap);   /* Heap_AllocAligned */
-extern void func_02023728(void *ptr, void *heap);                /* Heap_Free */
 extern void *data_0204c024;                                      /* the heap the helper allocates from */
 #define WH_RAND_INIT(x) (sWh_nRand = (u32)(x))
 #define WH_RAND()       (sWh_nRand = sWh_nRand * 69069UL + 12345)

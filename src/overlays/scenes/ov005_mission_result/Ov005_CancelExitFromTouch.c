@@ -1,5 +1,7 @@
 /* Touch handler: picks "no" in the exit dialog, closes it and plays the cancel sound. */
 
+#include "game/engine.h"
+
 typedef struct Ov005Context {
     char opaque00[0x4bf0];
     int menuState;
@@ -8,7 +10,6 @@ typedef struct Ov005Context {
 } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
 extern void Ov005_RefreshDialogChoice(void),Ov005_UpdateDialogVisibility(void);
-extern void PlaySound(unsigned int,unsigned int);
 void Ov005_CancelExitFromTouch(void) {
     if(data_ov005_0205b80c->menuState>=6)return;
     data_ov005_0205b80c->dialogChoice=0;

@@ -4,10 +4,12 @@
  * sets the +0x40 height to owner+0x78 - (actor's +0x384)->+0x13c + 0x1000, seeds the +0x18 lift
  * with 0xa000 up, builds the +0x24 velocity as 0x28000 along normalised (dir + side), clears the
  * +0x14 timer and moves the node to 020d1f60. */
+
+#include "game/engine.h"
+
 struct v3 { int x, y, z; };
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
-extern int  RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void VEC_CrossProduct(void *a, void *b, void *d);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);

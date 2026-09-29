@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct UiLayoutPos {
     int nX;
@@ -41,7 +42,6 @@ extern void *Ov025_FindEntryById(int nCtx, int nId);                      /* Fin
 extern void Ov025_ReleaseTwoSlotsEx(int nCtx, void *pEntry, UiLayoutPos *pPos); /* Ov008_SetEntryPos */
 extern int  Ov025_PixelToTileCell(u16 *pCol, u16 *pRow, unsigned int nX, unsigned int nY);    /* Ov008_PixelToTileCell */
 extern int  Ov025_PlaceDraggedNode(Ov008MenuContext *pCtx, int nArg);        /* drop the dragged node */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern void Ov025_ResetGridDrag(Ov008MenuContext *pCtx, int nArg);        /* grid reset */
 extern void Ov025_EnterMenuState(Ov008MenuContext *pCtx, int nMode);
 extern void Ov025_UpdateMenuButton5(int nArg);                                /* Ov008_UpdateMenuButton5 */

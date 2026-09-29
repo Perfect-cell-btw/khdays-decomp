@@ -4,6 +4,7 @@
  * the main engine (0201e374) and the other screen's to the sub engine (0201e3cc). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023Tween {
     int  nStart;              /* 0x00 */
@@ -26,8 +27,6 @@ typedef struct Ov023SceneRoot {
 } Ov023SceneRoot;
 
 extern void Ov023_StepInterpolation(Ov023Tween *pTween);                /* Ov023_StepTween */
-extern void SetMasterBrightnessMain(int nLevel);                              /* set the main fade */
-extern void SetMasterBrightnessSub(int nLevel);                              /* set the sub fade */
 extern Ov023SceneRoot data_ov023_0208a784;
 
 void Ov023_ApplyFades(void)

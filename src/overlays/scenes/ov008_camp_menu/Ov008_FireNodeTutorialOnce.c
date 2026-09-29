@@ -8,12 +8,12 @@
  * CALL, and the calls chain directly into one another. Written with `& 0xffff` and intermediate
  * locals, the whole dataflow lands in the caller where mwcc is free to reuse it; nested, it
  * comes out as the original has it. */
+
+#include "game/engine.h"
+
 extern int Ov008_GetCtxObject9630(void);
-extern int GameState_GetField(int event, int bits);
 extern int Ov008_FindFirstThresholdRow(unsigned int sel);
 extern unsigned short Ov008_GetTableValue(int node);
-extern int GameState_IsFlagSet(int flag);
-extern void GameState_SetFlag(int flag);
 
 int Ov008_FireNodeTutorialOnce(void) {
     int id;

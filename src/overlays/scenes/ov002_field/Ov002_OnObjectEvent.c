@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov107Object Ov107Object;
 
@@ -28,8 +29,6 @@ typedef struct {
 
 extern Ov002ObjectContext *data_ov002_0207fa14;
 
-extern int Session_GetLocalPlayerIndex(void);     /* Session_GetLocalPlayerIndex */
-extern int Session_IsActive(void);     /* Session_IsActive */
 extern unsigned int Ov002_BuildSessionCommand(int nKind, unsigned short *pBuf);
 extern void Ov002_RebuildObjectEventParts(int nSlotIndex);
 

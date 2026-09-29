@@ -1,11 +1,11 @@
-extern void func_02020904(void);
+#include "game/engine.h"
+
 extern void CARD_UnlockBackup(int lock);
 extern int Ov000_EmitCommandAndStoreHandle(int a, int *out, int b);
 extern void MI_CpuFill8(void *dst, int value, unsigned size);
 extern int Ov000_BackupWrite(int off, void *buf, unsigned size);
 extern void CardUnlockAfterKeyShare(int lock);
 extern void OS_WaitVBlankIntr(void);
-extern void func_020208f0(void);
 extern unsigned short data_0204be10;
 extern void *data_0204be14;
 

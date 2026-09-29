@@ -3,6 +3,7 @@
  * object. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*OverlayCallback)(void);
 
@@ -21,8 +22,6 @@ typedef struct {
 extern u8 data_ov000_0205abd0[];
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_CreateSceneContext(void);
-extern void SetMasterBrightnessMain(int value);
-extern void SetMasterBrightnessSub(int value);
 extern u32 Loader_RequestFile(const void *data, int id);
 extern void Ov000_EnterListScene(void);
 

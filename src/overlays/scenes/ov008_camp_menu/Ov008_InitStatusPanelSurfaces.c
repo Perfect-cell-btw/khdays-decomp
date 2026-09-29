@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SURFACE_COUNT 6
 #define VRAM_SLOT_MAIN 0x18
@@ -51,7 +52,6 @@ extern const TileSurfaceCfg data_ov008_0208f688;
 extern const char data_ov008_020907f0[];                                  /* "UI/cm/str/status_&.s.z" */
 extern int   Ov008_ResetEntry(int nSlot);                              /* Ov008_ResetEntry: slot handle */
 extern void *Ov008_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
-extern void  TileSurface_InitAndUpload8bpp(TileSurface *pSurface, const TileSurfaceCfg *pCfg); /* TileSurface_InitAndUpload8bpp */
 extern void  Ov008_MarkSlotUsed(int nSlot);                              /* Ov008_MarkSlotUsed */
 extern void  Ov008_VarTable_Load(void *pLoader, const char *pPath);       /* Ov008_Set_5c4c */
 

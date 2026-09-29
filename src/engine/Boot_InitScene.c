@@ -13,12 +13,8 @@
  * as UNSIGNED and the same two cases become 0 and 0xfffffffe, so 0 is tested first and the
  * chain comes out in the ROM's order. The numeric ordering is not an obstacle -- it is the
  * knob. */
-extern void FileLoader_Init(void);
-extern void SoundSys_Start(int a);
-extern void FSi_BindCardTransfer(int a);
-extern void Scene_ClearPending(void);
-extern void Scene_RequestPending();
-extern int Scene_StepAndContinue(void);
+
+#include "game/engine.h"
 
 void *Boot_InitScene(void) {
     unsigned int state;

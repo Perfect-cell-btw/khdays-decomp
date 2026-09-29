@@ -6,7 +6,9 @@
  * scroll counter (the second half's surface base is +0x4a80). Flush both command lists at +0x9500 and
  * +0x954c (020554e4), finalize (0204ffe4), and return the resulting page handle at +0x9614.
  */
-extern void func_020362ec(unsigned short *p);
+
+#include "game/engine.h"
+
 extern void Ov008_RunModeCallback(void);
 extern void Ov008_UpdateWidgetLayerDefault(int surface, int scroll);
 extern void Ov008_TickSelectionWidget(void *cmdlist);

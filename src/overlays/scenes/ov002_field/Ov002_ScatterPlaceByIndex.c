@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct MtxFx33 {
     int a[9];
@@ -14,8 +15,6 @@ extern VecFx32 data_ov002_0207ef80[];
 extern VecFx32 data_ov002_0207ef80_offsets[];
 extern s16 data_0203d210[];             /* kSinCosTable */
 
-extern int QueryActiveStateOrDelegate(void);         /* the local peer */
-extern int LoadGlobalU16At0(void);
 extern void MTX_Identity33_(MtxFx33 *pMtx);
 extern void MTX_RotY33_(MtxFx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pVec, const MtxFx33 *pMtx,

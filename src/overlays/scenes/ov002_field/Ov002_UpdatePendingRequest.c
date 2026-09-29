@@ -16,13 +16,10 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int  Session_IsReady(void);
-extern unsigned short  GetGlobalU16At6(void);
 extern u16  Ov002_BuildSessionCommand(int kind, void *out);
-extern int  MsgQueue_Contains(int slot);
-extern int  Session_GetLocalPlayerIndex(void);
-extern void MsgQueue_SendGate(int a, void *b, int c);
 extern void Ov002_TickGameplayState(void);
 extern int  data_ov002_0207fa00;
 

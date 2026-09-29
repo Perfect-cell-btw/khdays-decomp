@@ -2,9 +2,9 @@
  * queues action 2 and ends the step. */
 
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale();
-extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
 

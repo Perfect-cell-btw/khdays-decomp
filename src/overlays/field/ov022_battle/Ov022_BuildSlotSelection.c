@@ -3,6 +3,7 @@
  * was found. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022SelectionResult {
     u32 selectionFlags00;
@@ -19,7 +20,6 @@ typedef struct Ov022SelectionResult {
 
 extern int func_ov022_020881d8(void);
 extern int Ov022_IsInputAllowedForActiveSlot(void);
-extern int Slot_EvalPackedParam(int slot, int parameter);
 extern int Ov022_CollectActorCandidates(u32 *selectionFlags, int slot);
 extern void Ov022_EncodeSelectionResult(u8 *output, Ov022SelectionResult *selection);
 

@@ -2,6 +2,7 @@
 /* The descriptor the caller fills in for one element class. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     const char *pName;              /* +0x00 */
@@ -14,7 +15,6 @@ extern u8 data_0204c240;
 
 extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
-extern void Utf8_ToUcs2(const char *pNarrow, u16 *pWide);
 extern int Wcslen(const u16 *pWide);
 extern void *NNSi_FndAllocFromDefaultExpHeap(int nSize);
 extern void StrNCopy16(u16 *pDst, const u16 *pSrc, int nLen);

@@ -2,6 +2,7 @@
  * in its bucket and sets its height per mode. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int kind;
@@ -25,10 +26,8 @@ extern int Ov002_PlaceElementNode(void *obj, int node, PlaceParams *out,
                                 int paramC, int angle, int flag);
 extern void Ov002_BuildSpawnPosition(VecFx32 *out, const VecFx32 *pos,
                                  const PlaceParams *params);
-extern void Actor_SetVecAndSyncChild(int *ptr, VecFx32 *src);
 extern void Ov002_PushBucketNode(int idx, int *node);
 extern int FX_Mul(int a, int b);
-extern void Actor_SetBindingByte(char *p, int i, char v);
 extern void Ov014_TickHeightMotion(void);
 extern unsigned char data_0204c240;
 

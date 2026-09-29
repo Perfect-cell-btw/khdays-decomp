@@ -8,6 +8,7 @@
  * mode 2. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct InputCoords {
     u16 x;   /* 0x0 */
@@ -22,8 +23,6 @@ typedef struct InputLog {
 } InputLog;
 
 extern InputLog *data_ov008_02090f00;
-extern int  Session_GetLocalPlayerIndex(void);
-extern int  Session_Exists(void);
 extern int  Ov008_IsSessionReady(void);
 extern void Ov008_SendMenuMessage(int mode);
 

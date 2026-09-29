@@ -18,12 +18,13 @@
  * Every path then re-arms the timer with a uniform value between the two bounds at ctx[0]+0x224
  * and +0x228 (ctx[0x1a] = lo + rand(|hi - lo| + 1)) and reports whether +0x1c7 is no longer -1. */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned char b0 : 1;
     unsigned char rest : 7;
 } Bits8;
 
-extern int RandNextScaled();
 extern signed char Ov002_GetCtxModeByte(void);
 
 int Ov227_ChooseMove(int self, int dist) {

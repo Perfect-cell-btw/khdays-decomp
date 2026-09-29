@@ -5,6 +5,7 @@
  * and moves the node to 020d2628. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -13,7 +14,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int FX_Sqrt(int x);
-extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void Ov278_StrafeTick(void);
 
 void Ov278_ApproachTick(int *node) {

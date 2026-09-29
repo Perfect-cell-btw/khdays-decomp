@@ -3,17 +3,14 @@
  * session state on. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void Gfx_Reset2DEngines(void);
-extern void Res_TearDownBlock(void);
-extern int Game_PollSceneAlive(void);
 extern void Ov105_RunScriptedStepState3(void);
 extern void Ov105_WH_Finalize(void);
 extern u16 *GXx_SetMasterBrightness_(u16 *reg, int brightness);
 extern int Ov008_Link_GetField4F0(void);
 extern u16 Ov105_GetState(void);
 extern u16 Ov105_GetStatusLow(void);
-extern void func_0202362c(int value);
 extern void func_02003948(u32 value);
 
 void *Ov008_MissionInitVideoScene(void) {

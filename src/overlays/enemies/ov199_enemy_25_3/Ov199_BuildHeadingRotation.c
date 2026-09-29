@@ -19,12 +19,14 @@
  *    a reloc-name mismatch, not a byte mismatch.
  *  - `mtx` declared BEFORE `aim` so the frame is aim=sp+0, mtx above it.
  */
+
+#include "game/engine.h"
+
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
 extern int VEC_Normalize(void *a, void *d);
 extern void MTX_RotY33_(void *mtx, int sin, int cos);
 extern void MTX_MultVec33(void *a, void *mtx, void *d);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, void *src);
 extern short data_0203d210[];
 
 int Ov199_BuildHeadingRotation(int *self, int vx, int vy, int vz, int flag) {

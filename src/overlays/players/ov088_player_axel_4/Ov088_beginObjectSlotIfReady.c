@@ -2,8 +2,9 @@
  * words, records the attack variant, and switches to state 0x21 unless the variant needs the two
  * effect streams and they are still busy; returns the state result. */
 
+#include "game/engine.h"
+
 extern int data_ov088_020bc360;
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_AreStreamsIdle(int x);
 extern int Ov022_ActorSetState(int this, int tag);
 

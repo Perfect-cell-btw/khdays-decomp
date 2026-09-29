@@ -1,6 +1,7 @@
 /* Fills the pose message (gauge flags, part visibility bits, HP, action) and sends it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_00[2];
@@ -31,7 +32,6 @@ typedef struct {
 
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern int List_First(void *listObj);
-extern int List_Next(int *listObj);
 extern void Ov107_SendPoseMessage(int self, Msg *msg, int arg);
 
 void Ov107_AiState_SendPose(int self, Msg *msg, int arg3)

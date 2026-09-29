@@ -6,10 +6,11 @@
  * advances, goes idle when the tracks finish, raises the flag while the timer is at most 0x3000
  * and, past it in mode 0x31, drops bit 49 of the actor flags, hides the node and runs the
  * slot's finish handler. */
+
+#include "game/engine.h"
+
 extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                          /* Sequence_UpdateTracks */
 extern void BindAnimTrack(void *animation, int track, void *table, short mode); /* BindAnimTrack */
-extern int Session_GetLocalPlayerIndex(void);
-extern void SceneNode_Disable(void *node);                                          /* SceneNode_Disable */
 extern void Ov079_PlayVoiceAndBindAnims(char *self, char *slot);
 
 /* Raises bit 33 of the +0x46c flags on the local player. */

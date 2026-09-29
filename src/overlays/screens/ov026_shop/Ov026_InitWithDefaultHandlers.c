@@ -1,8 +1,9 @@
 /* Zero a 0xc-byte record, then set its +4/+8 handler slots from the source pair, falling back to
  * the default handlers 020342e8 / 020343cc when a slot is null. */
+
+#include "game/engine.h"
+
 extern void MI_CpuFill8(void *dst, int val, int size);
-extern void MsgDb_FetchRecord(void);
-extern void DispatchByNodeKind(void);
 void Ov026_InitWithDefaultHandlers(int param_1, int param_2) {
     int v;
     MI_CpuFill8((void *)param_1, 0, 0xc);

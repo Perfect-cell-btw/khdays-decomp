@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define REACTION_KIND 0xb
 #define REACTION_TAG 0xc0
@@ -48,7 +49,6 @@ struct ReactionCtx {
 
 extern struct ActorSlot *Ov022_CreateChannel(struct ReactionCtx *pCtx, int nKind,
                                              int nTag, int nSubKind, int nSize);
-extern void RegisterSeqAndInit(u16 *pFlags, void *pSeq, int nMode, int nTracks);
 
 void Ov022_CreateReactionSlot(struct ReactionCtx *pCtx, void *pSeq, int nSubKind,
                          const struct ReactionTemplate *pTpl)

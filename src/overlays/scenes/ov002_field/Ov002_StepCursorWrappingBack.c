@@ -2,9 +2,11 @@
  * the new index to Ov002_MoveCursorTo and play the move sound. Mirror of
  * Ov002_StepCursorWrapping. func_02020400 is the signed-divide helper and must be
  * called by address -- `%` emits _s32_div_f, which this project does not define. */
+
+#include "game/engine.h"
+
 extern long long func_02020400(int a, int b);
 extern void Ov002_MoveCursorTo(int index);
-extern void PlaySound(int a, int b);
 
 extern char *data_ov002_0207f624;
 

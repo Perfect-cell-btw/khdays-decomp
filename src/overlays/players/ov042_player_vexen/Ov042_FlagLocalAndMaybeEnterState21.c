@@ -2,7 +2,8 @@
  * whether the slot is ready and switches to state 0x21 unless that variant's effect stream is still
  * busy; returns the state result. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern int Ov022_IsSlotReady(int a);
 extern int Ov022_AreStreamsIdle(int a);
 extern int Ov022_ActorSetState(int self, int state);

@@ -2,9 +2,9 @@
  * segment; returns the count. */
 
 #include "game/actor.h"
+#include "game/engine.h"
 
 extern void *List_First(void *listHead);
-extern void *List_Next(void *listHead);
 extern int Ov107_HitShape_TestSegment(void *criteria, void *query, int flags);
 
 int Ov107_CollectSegmentOverlaps(Actor *owner, void *query, void **results) {

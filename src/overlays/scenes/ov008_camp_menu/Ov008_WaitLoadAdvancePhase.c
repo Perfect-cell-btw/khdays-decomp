@@ -6,11 +6,11 @@
  * transition is still running (02034014(1)) wait; if the manager is live and its sub-struct is still
  * busy (02033cc8) wait; else finalize (02050b20) and reset to phase 0.
  */
+
+#include "game/engine.h"
+
 extern void Ov008_HandlerA_Call2(int obj);
 extern void Ov008_HandlerB_Call2(int obj);
-extern void RequestQueue_SetOrPushKind3(int a);
-extern int SoundStrm_HasPlaybackPos(int a);
-extern int IsSubStructValidAndReady(void);
 extern void Ov008_SetCtxField9614(void);
 extern void Ov008_SetCtxField95cc(int phase);
 extern int data_ov008_02090f04[];

@@ -7,6 +7,7 @@
  * wrapper copies (ov269_3930 idiom); `+ (v - v)` is the documented random copy artifact. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
@@ -20,7 +21,6 @@ typedef struct {
     Fx24 pos[3];        /* +0x5 */
 } PosMsg;
 
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov253_020d498c;
 extern void Ov253_TurnEnter(void);

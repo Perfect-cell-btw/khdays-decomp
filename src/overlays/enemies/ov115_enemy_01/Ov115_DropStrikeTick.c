@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -51,7 +52,6 @@ extern void Srt_SetTranslation(void *transform, VecFx32 *pos);
 extern void Ov107_BuildAndSendUpdate(struct Ov115Owner *owner, int a, int id, VecFx32 *pos);
 extern int Ov107_CollectSegmentOverlaps(struct Ov115Owner *owner, struct SweepQuery *query, int *out);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov115Owner *a, struct Ov115Owner *b, int kind, const VecFx32 *push, int z);
-extern void Task_MarkFinished(int *node);
 extern const PosMsg data_ov115_020ceb54;
 extern const PosMsg data_ov115_020ceb62;
 extern const VecFx32 data_02042264;

@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002NodePair {
     u16 a;
@@ -27,7 +28,6 @@ typedef struct Ov002TaskNode {
     u8 bMode;
 } Ov002TaskNode;
 
-extern int GameState_GetField(int a, int b);         /* read one progress pair */
 extern int Ov002_SetLapRunning(int bStart, int nLap);
 extern void Ov002_NodeFinishLap(void);
 extern void Ov002_ReleaseNodePairs(void);

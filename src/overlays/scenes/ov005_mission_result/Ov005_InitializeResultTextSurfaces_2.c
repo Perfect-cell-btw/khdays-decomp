@@ -1,6 +1,7 @@
 /* Initialize the result font and two text surfaces sharing the selected row buffer. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct FontInfo { char data[12]; } FontInfo;
 typedef struct TileSurface { char data[60]; } TileSurface;
@@ -20,9 +21,7 @@ typedef struct Ov005ResultContext {
 extern Ov005ResultContext *data_ov005_0205b810;
 extern char data_ov005_0205b5f4[];
 extern void MI_CpuFill8(void *,u8,u32);
-extern void Resource_BindByName(FontInfo *,const char *);
 extern void *Ov005_FindResultRowBuffer(int,int *);
-extern void TileSurface_InitAndUpload8bpp(TileSurface *,TileSurfaceCfg *);
 extern void *G2_GetBG2ScrPtr(void),*G2S_GetBG2CharPtr(void);
 extern void MIi_CpuClearFast(u32,void *,u32);
 void Ov005_InitializeResultTextSurfaces_2(void) {

@@ -8,13 +8,13 @@
  * handler 020cd458 takes over. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern int FX_Sqrt(int x);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov184_BeginLunge(void);
 extern const VecFx32 data_02042258;

@@ -17,9 +17,9 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov002_GetCtxTableByte(int slot);
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int a);
 extern char *Ov002_GetListEntry(int index);
 

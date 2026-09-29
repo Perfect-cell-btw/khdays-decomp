@@ -1,6 +1,6 @@
 /* Releases the eight emitter objects' sequences. */
 
-extern void ReleaseField74AndCleanup(void *);
+#include "game/engine.h"
 
 void Ov063_ReleaseChildArray8(char *obj) {
     int i = 0;

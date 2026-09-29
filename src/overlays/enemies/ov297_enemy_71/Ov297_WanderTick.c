@@ -16,6 +16,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 
@@ -24,8 +25,6 @@ extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov297_AcquireTargetGapAndAngle(int *node);
 extern void Ov297_UpdateHeadingVector(int *node);
-extern unsigned int Rand16NextScaled(unsigned int range);
-extern int RandNextScaled(int range);
 extern int func_020050b4(int x, int z);
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);

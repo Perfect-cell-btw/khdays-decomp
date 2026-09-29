@@ -2,11 +2,12 @@
  * the active window sweeps the ground, pushing what it touches; when the model's animation ends
  * picks a random wait, queues action 2 and clears the step handler. */
 
+#include "game/engine.h"
+
 struct bf { unsigned b : 8; };
 extern void Ov156_ProbeGroundBelowNode(void *state, void *p);
 extern long long FX_DivFx64c(int a, int b);
 extern void Ov156_GroundSweep(void *state, int a, int b, void *p);
-extern int RandNextScaled(int);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 
 void Ov156_stTimedInterpPhases(int *node) {

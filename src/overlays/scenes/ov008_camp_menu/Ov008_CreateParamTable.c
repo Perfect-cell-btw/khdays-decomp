@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define LIST_COUNT      5
 #define BIT_ARRAY_COUNT 2
@@ -53,7 +54,6 @@ extern void  Ov008_InitSlotFromSource(Ov008ParamRecord *pRecord, void *pRaw, int
 extern void  Ov008_BuildSlotPacketA(Ov008ParamRecord *pRecord, void *pRaw, int nIndex);   /* item list record */
 extern void  Ov008_BuildSlotPacketB(Ov008ParamRecord *pRecord, void *pRaw, int nIndex);   /* recipe record */
 extern void  Ov008_FillRewardRecord(Ov008ParamRecord *pRecord, void *pRaw, int nIndex);   /* reward record */
-extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern void  Ov008_RefreshShopUnlockParams(void);                                  /* post-load pass */
 
 void Ov008_CreateParamTable(void)

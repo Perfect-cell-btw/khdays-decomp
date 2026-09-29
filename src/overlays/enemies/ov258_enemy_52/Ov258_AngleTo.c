@@ -2,9 +2,9 @@
  * made positive when `absolute` is set. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int func_020050b4(int x, int z);
-extern int Fx_Acos(int cosine);
 extern const short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)

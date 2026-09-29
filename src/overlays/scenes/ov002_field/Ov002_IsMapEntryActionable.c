@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RootContext {
     char pad0000[0x8ba8];
@@ -24,11 +25,9 @@ typedef struct Ov002ListEntry {
 
 extern Ov002RootContext *data_ov002_0207fa00;
 
-extern int QueryActiveStateOrDelegate(void);                 /* the local peer */
 extern int Ov022_GetEntryField66(int nPeer);
 extern Ov002ListEntry *Ov002_GetListEntry(int nIndex);   /* one of 0x40 */
 extern int Ov002_GetCtxTableByte(int nCtxIndex);
-extern int GameState_GetField(int nId, int nSlot);
 
 /* Whether the wanted entry of the local peer's kind is one this screen may act
  * on right now.

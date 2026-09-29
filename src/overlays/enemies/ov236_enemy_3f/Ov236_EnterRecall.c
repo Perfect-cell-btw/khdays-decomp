@@ -1,6 +1,8 @@
 /* Recall entry: once both riders' +0xad bytes (+4 / +8 children) are clear, the two children
  * get their four channels (0, 1, 2, 4) bound with (1, 1) and the node moves to 020d615c. */
-extern void SetSubitemState(void *child, int cmd, int arg, int flag);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov236_RecallWait(void);
 

@@ -2,6 +2,7 @@
  * child models, registers them and enqueues them with the shared framework. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct ChildIds {
     int values[2];
@@ -59,11 +60,7 @@ extern void Ov147_Event_ReverseVelocityOnce(void);
 
 extern void *Ov107_PackTextureHandle(struct Obj *owner, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
-extern void RegisterSubscriberSlot(struct Subitem *subscriber, struct Subitem *item);
-extern void SetSubitemState(struct Subitem *item, int state, int zero, int enabled);
-extern void RefreshObjectCallbacks(struct Subitem *item, int value);
 extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
-extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 
 void Ov147_InitSubActor(struct Obj *self)

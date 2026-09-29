@@ -1,6 +1,7 @@
 /* Advance result counters, honor completion requests, and update the result display. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Tween { char data[28]; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int duration, currentValue, fromValue, toValue; } Ov005ResultTween;
@@ -34,7 +35,6 @@ extern void Ov005_ZeroStartedCounterDurations(void), Ov005_StartAndZeroAllCounte
 extern void Ov005_UpdateResultLabels(void), Ov005_UpdateResultRewardIndicators(void), Ov005_DrawResultValues(void);
 extern int Ov005_SampleResultCounters(void);
 extern void Tween_Start(Tween *), Ov005_SelectAndShowResultSprite(int, unsigned int);
-extern void ForwardToHandlerOrCurrentObject(int, int, int), PlaySound(int, int);
 extern void *Ov005_FindEntryById(Ov005SpriteManager *, int);
 extern void Ov005_SetEntrySlotsVisible(Ov005SpriteManager *, void *, int);
 extern void Ov005_ReleaseTwoSlots_2(Ov005SpriteManager *, void *);

@@ -1,16 +1,13 @@
 /* Count newly reached reward thresholds and return the last valid threshold. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct MsgDbRecordHeader { short nSlot,nDbId; int nField04,nField08; } MsgDbRecordHeader;
 typedef struct MsgDbRewardThresholdRecord { MsgDbRecordHeader header; int threshold; } MsgDbRewardThresholdRecord;
 typedef struct Ov005Config { char unknown00[0x34]; int rewardBases[3]; int rewardTotals[3]; unsigned int rewardScales[3]; } Ov005Config;
 extern Ov005Config data_ov005_0205b85c;
 extern int Ov005_ScaleByPercent(int,int);
-extern int MsgDb_LoadDb(unsigned int,int);
-extern int MsgDb_FetchRecord(MsgDbRewardThresholdRecord **,int,unsigned int,int);
-extern int DispatchByNodeKind(MsgDbRewardThresholdRecord **);
-extern int ResSlot_Release_2(int);
 u8 Ov005_CountRewardThresholdGains(int *outMaximum) {
     u8 index;
     u8 previousCount;

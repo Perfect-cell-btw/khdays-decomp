@@ -1,10 +1,10 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern VecFx32 data_ov002_0207e19c;
 extern int data_ov002_0207f628;
 
-extern int func_02023c40(void);
 extern void Scene_DrawNode(int pTarget);
 
 /* Reset the tracked offset to its default and kick the follower, but only

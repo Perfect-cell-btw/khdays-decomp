@@ -1,5 +1,7 @@
 /* Fades both screens out over 16 frames and then finishes the scene. */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned char pad0000[0x1774];
     int nFadeTicks;
@@ -11,9 +13,6 @@ typedef struct {
 extern Ov003RootContext *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov105_WM_GetLinkLevel(void);
 extern void Ov003_UpdateLayers(int a);
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
-extern void Scene_RequestPending(int a, int b);
 extern void Ov003_AdvanceAnims(int a);
 
 int Ov003_SceneStateFadeIn(void) {

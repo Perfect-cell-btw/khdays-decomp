@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { VecFx32 v[16]; } OffsetTable;
@@ -15,8 +16,6 @@ extern void MTX_RotY33_(Mtx33 *m, int s, int c);
 extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);         /* ScaleVec3Fx12 */
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int Session_RandNextScaled(int n);                                        /* Session_RandNextScaled */
-extern int Session_RandNext(void);                                         /* Session_RandNext */
 extern void Ov068_ResolveHitPositionRaised(VecFx32 *src, VecFx32 *out);
 extern void Ov068_SpawnEffectWithVariant(char *self, char *rig, VecFx32 *src);
 extern short data_0203d210[];

@@ -26,6 +26,7 @@
  * the last two words overwritten for the main-menu list geometry in state 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int f0;
@@ -43,7 +44,6 @@ extern void Ov008_SortListByKey(int obj);
 extern int  Ov008_GetCtxBlock954c(void);
 extern int  Ov008_PackSlotTag(int tag);
 extern void Ov008_LoadLayoutResource(int block, int ref);
-extern u32  GameState_GetField(int a, int b);
 extern void Ov008_MainMenu_InitPanelContext(u32 *node, int a);
 extern void Ov008_MenuCursor_MoveToSlotNoAnim(int *node, int v);
 extern void Ov008_MainMenu_SetupToolbar(int obj);

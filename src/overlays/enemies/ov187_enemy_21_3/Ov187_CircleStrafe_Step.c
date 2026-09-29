@@ -3,6 +3,7 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -28,7 +29,6 @@ extern VecFx32 data_02042264;
 extern Actor *Ov107_FindNearestObject(Actor *owner, int *pDistSq);
 extern int FX_Sqrt(int x);
 extern void Ov187_LookAtQuat(struct Ov185ActionState *state, VecFx32 *pos);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_CrossProduct(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);

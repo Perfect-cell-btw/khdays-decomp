@@ -14,10 +14,10 @@
  * 0x78787879 is /136. Kept unfolded -- the intermediates can overflow. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov224_MeasureTargetGap(int self, int kind);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
-extern int RandNextScaled(int n);
 extern int func_02020400(int a, int b);
 extern void Ov224_AiLeapWindup(void);
 

@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -22,15 +23,11 @@ typedef struct GameRuntimeContext {
 extern u8 data_0204c240;
 extern Ov022Context *data_ov022_020b2e60;
 
-extern int func_02023c40(void);
 extern void Ov002_UpdateHudRecord(int id, int slot, int payload);
 extern u64 OS_GetTick(void);
 extern void Ov022_NotifyRowsAndFlag(void);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_SetOrClearFlag200(int object, int enabled);
-extern void RequestQueue_SetOrPushKind3(int event);
-extern void SoundMgr_SetListenersEnabled(int enabled);
-extern void GameState_SetField(int field, int width, int value);
 
 extern void *Ov022_ExpireTimerThenNextStep(void);
 extern void *func_ov022_02083844(void);

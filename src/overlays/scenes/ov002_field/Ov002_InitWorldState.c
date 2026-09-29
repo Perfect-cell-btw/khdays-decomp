@@ -2,6 +2,7 @@
  * state. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int radialX;                   /* +0x00 */
@@ -57,9 +58,6 @@ extern Ov002WorldState *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_UpdateCameraDistance(int selector);
 extern int Ov002_Camera_GetPresetHeight(int selector);
 extern int Ov002_GetCameraDistance(int selector);
-extern int GameState_GetField(int field, int kind);
-extern void Projection_LoadDefaults(unsigned int *state);
-extern int func_02023bf0(void);
 extern void Ov002_Camera_SetAnchor(int actor, const VecFx32 *origin);
 extern void Ov002_Camera_UpdateFollow(void);
 

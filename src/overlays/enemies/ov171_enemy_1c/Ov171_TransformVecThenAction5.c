@@ -1,8 +1,9 @@
 /* AI step: sends the carry dash update (0x140, mode 5), sets the dash velocity along its rotation,
  * adjusts its stance and continues with the dash tick. */
 
+#include "game/engine.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *tmp);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov171_CarryDashTick(void);
 

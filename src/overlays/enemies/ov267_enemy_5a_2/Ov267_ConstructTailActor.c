@@ -7,6 +7,7 @@
  * and gives the ROM's store order. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*Callback)(void);
 
@@ -19,7 +20,6 @@ typedef struct {
 extern void Ov267_CenterTickPublishPose(void);
 extern void Ov267_CreateAiTask_2(void);
 extern void Ov267_TryCommitPending190(void);
-extern PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 
 void Ov267_ConstructTailActor(char *self)

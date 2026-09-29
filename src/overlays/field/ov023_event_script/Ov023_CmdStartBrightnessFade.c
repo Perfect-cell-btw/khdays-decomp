@@ -6,6 +6,7 @@
  * for Ov023_CmdStepBrightnessFade (02084cc4) and 0 returned. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];
@@ -21,10 +22,6 @@ typedef struct Ov023ScriptCtx {
     Ov023EventBlock *pEvent;  /* 0x128 */
 } Ov023ScriptCtx;
 
-extern int  func_0201e428(void);                                    /* the current fade level */
-extern int  ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);   /* ScriptVm_ReadOperandInt */
-extern void SetMasterBrightnessMain(int nLevel);                              /* set the main brightness */
-extern void SetMasterBrightnessSub(int nLevel);                              /* set the sub brightness */
 extern void Slot48_StoreAtCurrentIndex(Ov023ScriptCtx *pCtx, void *pCmd);        /* ScriptVm_RequeueCommand */
 
 int Ov023_CmdStartBrightnessFade(Ov023ScriptCtx *pCtx, u8 *pOperand)

@@ -2,11 +2,12 @@
  * shared tick to the animation-argument pass (3aec), and while the +0x2644 record's +0x30
  * sub-object is idle raises bit 16 of both 64-bit flag words (+0x464, +0x46c) on the local
  * player's session. Then the 3828 pass and 020ad588 run. */
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
+
+#include "game/engine.h"
+
 extern int Ov022_GetGlobal34(void);
 extern void Ov043_PushAnimArg(char *self, int tick);
 extern int Ov022_AreStreamsIdle(char *sub);
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern void Ov043_DriveScriptNode(char *self);
 extern void func_ov022_020ad588(char *self);
 

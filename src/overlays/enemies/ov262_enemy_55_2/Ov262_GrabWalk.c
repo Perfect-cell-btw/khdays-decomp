@@ -8,11 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void Ov262_SetFacingAnchor(void *anchor, VecFx32 *dir, const VecFx32 *pos);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, const VecFx32 *src);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -2,8 +2,8 @@
  * (-1 or +1) into the facing byte at +0x48, then register the sidestep think callback. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov277_CircleDecision(void);
 

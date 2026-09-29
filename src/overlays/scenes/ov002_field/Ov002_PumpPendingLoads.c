@@ -19,10 +19,11 @@
  * list move.
  */
 
+#include "game/engine.h"
+
 extern void *NNS_FndGetNextListObject(void *pList, void *pObj);
 extern void NNS_FndRemoveListObject(void *pList, void *pObj);
 extern void NNS_FndAppendListObject(void *pList, void *pObj);
-extern int Obj_IsIdFree(int nId);   /* Obj_IsIdFree in Ghidra */
 extern int Loader_RequestFile(char *pName, int nKind);
 
 extern int data_ov002_0207f608;   /* the pending list, done list at +0xc */

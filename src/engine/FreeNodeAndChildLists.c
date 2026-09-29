@@ -1,7 +1,8 @@
 /* Frees a record node's two child buffers and, unless marked static, the node itself; returns
  * whether there was a node. */
 
-extern void FreeAndClearIfNonNeg();
+#include "game/engine.h"
+
 extern void NNSi_FndFreeFromDefaultHeap();
 int FreeNodeAndChildLists(int *param_1)
 {

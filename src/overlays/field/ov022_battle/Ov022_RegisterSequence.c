@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SCENE_BIT 4
 #define SEQ_ENABLED 1
@@ -22,8 +23,6 @@ struct Actor;
 extern u8 data_0204c240;
 
 /* RegisterSeqAndInit */
-extern void RegisterSeqAndInit(void *pSequence, const char *pszDescriptor,
-                          int bEnabled, int nClassId);
 /* BindAnimTrack */
 extern void BindAnimTrack(void *pSequence, int nSlot, void *pTrack,
                           int nArg);

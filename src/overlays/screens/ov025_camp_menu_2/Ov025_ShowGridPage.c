@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define GRID_ROWS   8
 #define GRID_COLS   5
@@ -98,7 +99,6 @@ extern void  Ov025_ResolveTextureParams(int *pParams, int *pTexture);           
 extern Ov008LiftedCell *NNS_FndGetNextListObject(void *pList, void *pObject);
 extern void  Ov025_RebuildGridHits(Ov008MenuContext *pCtx);                /* Ov008_RebuildGridHits */
 extern int   Ov025_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep); /* move the cursor */
-extern void  PlaySound(int nKind, int nSound);                       /* PlaySound */
 
 void Ov025_ShowGridPage(Ov008MenuContext *pCtx, int nPage, int bSound)
 {

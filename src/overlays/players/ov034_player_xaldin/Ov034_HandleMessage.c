@@ -7,12 +7,11 @@
  * and sets the fall speed; 0x25 tells 0x32. Each accepted message returns its step. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(char *self);
 extern int Ov022_IsSlotReady(char *context);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
-extern void SceneNode_Enable(void *node);                                          /* SceneNode_Enable */
 extern char *data_ov034_020b5660;
 extern void Ov034_IdleStep(void);
 extern void Ov034_StepAndCheckTimer(void);

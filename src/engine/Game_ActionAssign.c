@@ -17,6 +17,8 @@
  * evaluates a resolved slot to a scalar; GameState_SetField takes three u16 args.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     short kind;
     short pad;
@@ -24,8 +26,6 @@ typedef struct {
 } OperandSlot;
 
 extern OperandSlot *ScriptVm_ResolveOperand(void *st, void *operand);
-extern int  ScriptVm_ReadOperandInt(void *st, OperandSlot *slot);
-extern void GameState_SetField(unsigned int a, unsigned int b, unsigned int c);
 
 int Game_ActionAssign(void *st, short *operand)
 {

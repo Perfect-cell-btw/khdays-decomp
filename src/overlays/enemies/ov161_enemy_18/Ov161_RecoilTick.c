@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ListNode {
     void *item;
@@ -24,7 +25,6 @@ struct Bits40 { int b0 : 1, b1 : 1; };
 struct Flags17a { unsigned char b0 : 1; };
 
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Div(int a, int b);

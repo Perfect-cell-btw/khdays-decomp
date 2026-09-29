@@ -2,8 +2,7 @@
  * +0x3c task list, outside move 0xb the +0x4bc one too; then the base teardown runs (020c7ca4). */
 
 #include "game/enemy_common.h"
-
-extern void TaskList_FinishByTag(void *taskList, void *handle);
+#include "game/engine.h"
 
 void Ov260_Teardown(char *self)
 {

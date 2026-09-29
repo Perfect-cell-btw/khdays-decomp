@@ -1,8 +1,10 @@
 /* Set sub-node 4 of the context's widget at +0x610 to the full Q12 value when
  * enabling and to zero when disabling, then refresh it. Does nothing with no
  * context installed. */
+
+#include "game/engine.h"
+
 extern void Anim_SetFrameWrapped(void *node, int slot, int value);
-extern void SceneNode_Enable(void *node);
 
 extern char *data_ov002_0207f628;
 

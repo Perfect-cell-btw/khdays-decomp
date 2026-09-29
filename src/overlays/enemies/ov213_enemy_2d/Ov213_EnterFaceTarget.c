@@ -3,13 +3,13 @@
  * to state+0x28 and, unless the +8 flag byte is set, plays pose 0x17 and hands off to 020ceeb8. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct m4 { int w[4]; };
 struct S213 { char pad[0x28]; struct m4 dst; struct m4 src; };
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
 extern int  func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(void *dst, void *k, int angle);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov213_AiEnterSubState9(void);
 extern int  data_02042264;

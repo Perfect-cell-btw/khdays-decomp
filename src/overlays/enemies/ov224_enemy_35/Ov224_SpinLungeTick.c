@@ -7,12 +7,14 @@
  * down by (state[0x12]*timer)/1024. Then emit the transformed forward vector {0,0,reach} through
  * the matrix into state[6..8] (0202f384) and re-tick via 020d4950.
  */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *a, void *b);
 extern void Quat_FromTwoVectors(void *out, void *axis, void *in);
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void Ov224_ProjectileTick(int self, int a, int b);
 extern int  data_02042258;
 

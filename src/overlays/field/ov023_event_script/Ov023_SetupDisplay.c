@@ -9,6 +9,7 @@
  * 02010e80 3 / 1, 0201133c, 02011174 0x8000 / 1). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u16 *const REG_DISP3DCNT = (volatile u16 *)0x04000060;
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
@@ -16,9 +17,6 @@ static volatile u16 *const REG_BG0CNT = (volatile u16 *)0x04000008;
 static volatile u16 *const REG_BG1CNT = (volatile u16 *)0x0400000a;
 static volatile u32 *const REG_DISPCNT_SUB = (volatile u32 *)0x04001000;
 
-extern int  func_0201e428(void);                                    /* the main fade level */
-extern void SetMasterBrightnessMain(int nLevel);                              /* set the main fade */
-extern void SetMasterBrightnessSub(int nLevel);                              /* set the sub fade */
 extern void GX_SetBankForTex(int nBank);
 extern void GX_SetBankForTexPltt(int nOffset);
 extern void GX_SetBankForBG(int nBank);

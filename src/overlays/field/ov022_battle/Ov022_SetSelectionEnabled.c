@@ -2,6 +2,7 @@
  * plays the on/off sound. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022ModeContext {
     unsigned int flags0;
@@ -14,11 +15,8 @@ typedef struct Ov022ModeContext {
 
 extern u8 data_0204be04;
 extern Ov022ModeContext *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
-extern void *GetEntryField20ByIndex(int index);
 extern void Ov002_RefreshCaptionWidget(int mode);
 extern void Ov022_UpdateSelectionController(void);
-extern void PlaySound(int handle, int mode);
 extern void func_ov022_020847f0(void);
 extern void Ov022_ClearMaskBitsAndReset(void *state, int mask);
 extern void Ov022_ClearWords124And128(void *subsystem);

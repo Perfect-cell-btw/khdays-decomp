@@ -7,7 +7,9 @@
  * first two halfword loads before either store, which is the shape mwcc gives a 6-byte
  * struct assignment and not the shape it gives element-by-element copies (those pair each
  * load with its own store, in the opposite order). */
-extern int   Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern unsigned short *Ov008_GetSharedRecord(void);
 extern void  Ov008_RecordInputCoords(unsigned short *init);
 extern void  Ov008_SetCtxField9678(int page);

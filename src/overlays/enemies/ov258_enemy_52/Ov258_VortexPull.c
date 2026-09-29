@@ -3,12 +3,12 @@
  * axis (cross product added), into its +0xe4 velocity. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int b0 : 1; int b1 : 1; } Bits;
 typedef struct { unsigned short lo : 8; unsigned short hi : 8; } Flags16;
 
 extern int *List_First(void *list);
-extern int *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

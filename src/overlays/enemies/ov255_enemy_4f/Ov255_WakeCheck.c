@@ -3,10 +3,10 @@
  * sub-state is requested (+0x1c7). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Flags60 { u16 lo : 8; u16 hi : 8; };
 
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int RandRange(int lo, int hi)

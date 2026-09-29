@@ -2,6 +2,7 @@
  * three children and requests its resources. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Box {
     int xmin;
@@ -42,7 +43,6 @@ extern void Ov299_AttachThreeSubNodesThenFinalize_2(void);
 extern void Ov299_Slot38_StoreValue(void);
 extern void Ov299_CreateRegistryEntryAndLink(void);
 extern int Ov299_AllocInitObject3ac(struct Ov299Actor *self);
-extern void Res_RequestIdPair(int id);
 
 void Ov299_Actor_InitCallbacksAndChildren(struct Ov299Actor *self)
 {

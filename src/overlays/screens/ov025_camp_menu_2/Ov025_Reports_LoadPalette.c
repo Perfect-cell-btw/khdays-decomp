@@ -6,6 +6,7 @@
  * (GX_LoadBG3Char); the file is freed again (NNSi_FndFreeFromDefaultHeap). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 
@@ -66,7 +67,6 @@ typedef struct Ov025ReportsSet {
 extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA */
 extern u32   Ov025_PackSlotTag(int nMember);                      /* Ov008_PackSlotTag */
 extern void *Archive_LoadFile(u32 nTag, int nHeap);                    /* Res_Open */
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *pCell, void *pFile, int nScreen, int nChar, int nPalette); /* Res_LoadSpriteSet */
 extern void  GX_LoadBGPltt(const void *pSource, u32 nOffset, u32 nSize);
 extern void  GX_LoadBG3Char(const void *pSource, u32 nOffset, u32 nSize);
 extern void  NNSi_FndFreeFromDefaultHeap(void *pBlock);

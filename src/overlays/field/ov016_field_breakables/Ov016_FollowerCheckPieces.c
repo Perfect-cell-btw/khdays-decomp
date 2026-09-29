@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016Piece Ov016Piece;
 
@@ -30,7 +31,6 @@ extern int  Ov002_Event_GetField18(void);                    /* record set state
 extern int  Ov002_GetCtxTableByte(int nBucket);             /* bucket -> seat slot */
 extern Ov016Owner *Ov002_GetPieceOwner(int nSlot);        /* seat owner */
 extern void *List_First(void *pList);                  /* List_First */
-extern void *List_Next(void *pList);                  /* List_Next */
 extern int  Ov016_FollowerPieceHolds(Ov016Piece *pPiece, VecFx32 *pFrom, int nRange, VecFx32 *pAt, int nAngle, int nCone);
 
 int Ov016_FollowerCheckPieces(Ov016Follower *pSelf, VecFx32 *pFrom, VecFx32 *pAt)

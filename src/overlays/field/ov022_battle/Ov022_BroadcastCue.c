@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Entry {
     unsigned long long nFlags;   /* 0x00, a 64 bit flag word */
@@ -34,9 +35,6 @@ struct CuePacket {
 extern struct CuePacket *data_ov022_020b2ea4;
 
 extern int func_ov022_02083f0c(void);
-extern u16 QueryActiveStateOrDelegate(void);
-extern struct Entry *GetEntryField20ByIndex(unsigned int nState);
-extern int Session_GetLocalPlayerIndex(void);
 extern void func_ov022_02088428(unsigned int nState, int nKind);
 extern void func_ov022_02088218(unsigned int nState, VecFx32 *pPos);
 extern void func_ov022_02088280(unsigned int nState, int nAngle);
@@ -44,7 +42,6 @@ extern int Ov002_GetBit0OfField38IfValid(int nRecord);
 extern void Ov002_Camera_SetOrbitAngle(int nRecord, int nAngle);
 extern void Ov002_Camera_SetAnchor(int nRecord, VecFx32 *pPos);
 extern int Ov002_PollSession(void);
-extern void func_02031384(int nGate, void *pBody, int nSize);
 
 #define ENTRY_REPLIES 0x100
 #define CUE_GATE 2

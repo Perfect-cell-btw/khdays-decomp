@@ -31,6 +31,8 @@
  * Ov002Owner; it is the unwinding counterpart of Ov002_StepRosterSlotPhase.
  */
 
+#include "game/engine.h"
+
 /* The object a roster slot owns; only its phase nibble is read here. */
 typedef struct Ov002Owner {
     char pad0000[0xf8];
@@ -47,8 +49,6 @@ typedef struct Ov002SessionBlock {
 
 extern char *data_ov002_0207fa00;
 
-extern int QueryActiveStateOrDelegate(void);
-extern void *GetEntryField20ByIndex(int nSlot);
 extern int Ov022_GetEntryField66(int nSlot);
 extern void func_ov022_02087298(int nSlot);
 extern void Ov022_CleanupEntry(int nSlot);

@@ -1,9 +1,10 @@
+#include "game/engine.h"
+
 extern int Ov002_GetPanelRequestBlock(void);
 extern int Ov002_World_IsFlagBitSet(int bit);
 extern void Ov002_SetPanelField003c(int a);
 extern void Ov002_SetSeatFlag(int a, int b);
 extern int Ov002_GetPanelField018c(void);
-extern void GameState_SetField(int id, int a, unsigned int b);
 extern void Ov002_ClearCurrentCaption(void);
 extern void Ov002_ReleaseBattleViewFocus(void);
 

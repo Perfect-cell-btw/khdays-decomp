@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern long long func_02020400(int nValue, unsigned char nUnit);
 extern /* Retire a timed element.
@@ -18,9 +19,6 @@ extern /* Retire a timed element.
  * with the shift down by 15 after it, and the index term has to sit on the
  * left of the or so it is evaluated first. */
 void Ov002_RebindAnimTracks(short *pTable, int nTime, int nMode);
-extern void SceneNode_Disable(u16 *pNode);
-extern int GameState_GetField(int nId, int nSlot);
-extern void GameState_SetField(unsigned int nId, unsigned int nSlot, unsigned int wState);
 
 /* Retire a timed element.
  *

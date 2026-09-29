@@ -1,8 +1,7 @@
 /* Sends the player's state message (kind 0xc, sub-kind 3) with its current value; stores the
  * message handle. */
 
-extern int QueryActiveStateOrDelegate(void);
-extern unsigned short func_02031384(int a, void *b, int c);
+#include "game/engine.h"
 
 union marshal_0208a624 {
     unsigned int raw;

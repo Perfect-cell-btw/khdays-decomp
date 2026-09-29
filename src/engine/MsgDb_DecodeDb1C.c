@@ -9,8 +9,9 @@
  *  - the success path is reached by a goto, so the local `return 0` stays inline and the
  *    store block goes out of line -- that is the ROM's `bne ->ok ; movs r0,#0 ; pop`
  *    layout. Written as a plain if/else mwcc inlines the success block instead. */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, int size, int kind, int keep);
+
+#include "game/engine.h"
+
 extern int data_0204c238;
 
 int MsgDb_DecodeDb1C(int *rec_out, unsigned int index, int keep) {

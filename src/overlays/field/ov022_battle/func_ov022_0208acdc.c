@@ -1,9 +1,9 @@
 /* Spawns an effect at a position when the current sub-object belongs to the local player's group.
  */
 
-extern int QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(unsigned int arg0);
-extern void Slot_Spawn(unsigned int arg0, unsigned int arg1, unsigned int *arg2, int arg3);
 
 void func_ov022_0208acdc(int arg0, unsigned int *arg1, unsigned int arg2) {
     if (*(int *)(arg0 + 0xc) < 0) {

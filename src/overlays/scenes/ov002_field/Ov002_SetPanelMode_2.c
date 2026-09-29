@@ -9,6 +9,9 @@
  * done BEFORE the field is written, then the panel is relaid out. Switching to
  * mode 0 raises scene event 0x4f; switching to any other mode plays the cancel
  * sound, but only when Ov002_RunShutdownHook reports the panel unlocked. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x2c];
     int nPanelMode;         /* +0x2c */
@@ -20,7 +23,6 @@ extern void Ov002_RepaintPanelRows(void);
 extern int Ov002_ForwardToSubDc(int event);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern int Ov002_RunShutdownHook(void);
-extern void PlaySoundChecked(int a, int id);
 
 extern Ov002ModeContext *data_ov002_0207f618;
 

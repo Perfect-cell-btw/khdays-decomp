@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov022TypeTwoTarget {
     VecFx32 position;
@@ -68,9 +69,7 @@ typedef struct Ov022SelectorContext {
 extern const s16 data_0203d210[];
 
 extern Ov022SelectorContext *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
 extern VecFx32 *func_ov022_020881f8(int index);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern int Ov022_TestLineOfSight(int index, const VecFx32 *position);
 extern Ov022TypeTwoTarget *Ov002_TriggerEntryActive(void *entry);

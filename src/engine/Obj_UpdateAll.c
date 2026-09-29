@@ -8,8 +8,8 @@
  * paused, the frame counter ([2]) advances.
  */
 
-extern int  func_0202362c(int arena);      /* enter/leave scoped allocator arena */
-extern int  Obj_Destroy(int *obj);        /* Obj_Destroy: returns the successor */
+#include "game/engine.h"
+
 extern int  data_0204c058[];
 
 void Obj_UpdateAll(int paused)

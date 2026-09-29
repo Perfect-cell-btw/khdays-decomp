@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov234Transform {
     int words[11];
@@ -31,9 +32,6 @@ struct Ov234Actor {
 
 extern u8 data_0204c240;
 
-extern int QueryActiveStateOrDelegate(void);
-extern int GameState_GetField(int, int);
-extern void GameState_SetField(int, int, int);
 extern void SrtTransform_SetIdentity(struct Ov234Transform *);
 extern void Srt_SetTranslation(struct Ov234Transform *, const VecFx32 *);
 extern void Ov002_AddMissionTally(int, int, int);

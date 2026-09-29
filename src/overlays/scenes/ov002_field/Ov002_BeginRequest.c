@@ -4,10 +4,12 @@
  * success it latches the busy byte, dispatches the request kind, and if the
  * follow-up state is 1 hands the ov022 handle on to Ov002_SetOrClearFlag200.
  * Every path reports 0. */
+
+#include "game/engine.h"
+
 extern int Ov002_GetRootField8b68Alt(void);
 extern int Ov002_SetLeaveRequest(int a);
 extern void Ov002_SetRosterHighlight(void *self, int kind, int a);
-extern void func_02020878(char arg0);
 extern int Ov002_GetPhaseWord(void);
 extern int func_ov022_02083f0c(void);
 extern int func_ov022_02083f5c(void);

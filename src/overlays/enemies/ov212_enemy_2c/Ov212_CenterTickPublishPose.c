@@ -26,6 +26,7 @@
  * is the round-toward-zero correction. Do not simplify it to a shift. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int v[11];
@@ -41,7 +42,6 @@ typedef struct {
     Pose44 pose;
 } DstObj;
 
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, const void *q, const VecFx32 *v);
 extern void Ov107_ProcessObjectTick(int obj, int a);
 
 void Ov212_CenterTickPublishPose(int obj, int a) {

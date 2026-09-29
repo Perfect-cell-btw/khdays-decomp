@@ -21,6 +21,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ShotDesc {
     unsigned int nFlags;             /* 0x00 */
@@ -66,7 +67,6 @@ extern void ScaleVec3Fx12(int nScale, const VecFx32 *pVec,
 extern void VEC_MultAdd(int nScale, const VecFx32 *pVec,
                         const VecFx32 *pAdd, VecFx32 *pOut);
 /* the difficulty mode */
-extern int func_02023c40(void);
 
 #define FX32_ONE 0x1000
 #define DOT_LIMIT -0xa00

@@ -1,8 +1,8 @@
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 
-extern int QueryActiveStateOrDelegate(void);
 extern void SetIndexedSlot(void *obj, int slot, void *cb);
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov234_DispatchSubStateByte(void);

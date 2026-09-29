@@ -1,11 +1,12 @@
 /* Per-frame update: draws the charge effect, updates and draws the effect nodes, and sets bit 16 of
  * the local player's two 64-bit flag words while either effect stream is busy. */
 
+#include "game/engine.h"
+
 extern void Ov055_PickChargeLevelAndDraw(int self);
 extern void Ov055_ForwardWithHeaderOffset(int a, int b, int c);
 extern void Ov055_ForwardPlus14IfFlag694(int a, int b);
 extern int Ov022_AreStreamsIdle(int a);
-extern int Session_GetLocalPlayerIndex(void);
 extern int data_ov055_020b7740;
 
 void Ov055_UpdateAimAndFlagLocal(int self) {

@@ -1,7 +1,7 @@
 /* Host only: when a charge is requested and the actor is free to act, arms the charge with its
  * parameter; always clears the request. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
 
 struct Flags020ad358 { char pad0[0x464]; unsigned long long f464; };
 

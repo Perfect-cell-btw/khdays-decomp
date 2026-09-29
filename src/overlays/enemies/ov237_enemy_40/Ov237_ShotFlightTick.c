@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;
 
@@ -23,7 +24,6 @@ extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov107_FindNearestObject(int actor, int kind);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int func_020050b4(int x, int z);
 extern int FX_Div(int value, int denom);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);

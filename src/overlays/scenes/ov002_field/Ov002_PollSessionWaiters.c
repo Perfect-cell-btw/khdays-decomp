@@ -2,6 +2,7 @@
 /* One waiting entry: its first word is the poll it answers with. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002Waiter {
     int (*pfnPoll)(struct Ov002Waiter *pSelf);   /* +0x00 */
@@ -17,9 +18,7 @@ typedef struct Ov002SessionCtx {
 } Ov002SessionCtx;
 
 extern Ov002SessionCtx *NNSi_FndGetCurrentRootHeap(void);
-extern int Session_IsReady(void);
 extern int Ov002_IsLeaveFinished(void);
-extern int GameState_IsFlagSet(int nFlag);
 extern void Ov002_ClaimEventHandle(int nId);
 extern int Ov002_GetRetryCallbackIfBusy(void);
 

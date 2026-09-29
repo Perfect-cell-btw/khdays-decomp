@@ -19,8 +19,8 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int GetEntryField20ByIndex(int index);
 extern VecFx32 *func_ov022_020881f8(int index);
 extern int EntityMgr_RunRayCast(int handle, VecFx32 *from, VecFx32 *dir, int mask);
 

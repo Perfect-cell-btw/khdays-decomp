@@ -11,13 +11,14 @@
  * The +0x60 update uses the BITFIELD form because the ROM has the `lsl #0x10 ; lsr #0x10` trunc
  * pair -- see the discriminator table in codegen-cracks.md. */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned short lo : 8;
     unsigned short hi : 8;
 } Hw60;
 
 extern void ScaleVec3Fx12(int speed, void *a, void *b);
-extern void Vec3TransformViaTempMtx(void *out, void *a, void *b);
 extern void Ov224_ProjectileTick(int self, int a, int b);
 
 void Ov224_Projectile_FlightTick(int self) {

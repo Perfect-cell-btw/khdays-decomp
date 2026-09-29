@@ -1,6 +1,8 @@
 /* Loads the three lock-on marker sprites from the archive, sets their sizes, priorities and alpha,
  * and clears their tween. */
 
+#include "game/engine.h"
+
 typedef struct Ov022DisplayRecord {
     char pad00[4];
     unsigned short width;
@@ -16,7 +18,6 @@ typedef struct Ov022DisplayGroup {
     char tween[0x1c];
 } Ov022DisplayGroup;
 
-extern int Archive_GetMember(int *list, int group, int index);
 extern void Ov002_SetSlotKeyAndRebind(Ov022DisplayRecord *record, int resource, int mode);
 extern void Tween_Clear(void *tween);
 

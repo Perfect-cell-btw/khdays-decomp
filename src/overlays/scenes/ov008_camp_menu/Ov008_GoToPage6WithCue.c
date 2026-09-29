@@ -1,8 +1,9 @@
 /* Arms the cue request, targets page 6 and plays the confirm sound. */
 
+#include "game/engine.h"
+
 extern int *Ov008_GetCueRequest(void);
 extern void Ov008_SetTargetSlot(int arg0, int arg1);
-extern void PlaySound(int arg0, int arg1);
 
 void Ov008_GoToPage6WithCue(void)
 {

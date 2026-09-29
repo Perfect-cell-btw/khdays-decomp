@@ -40,6 +40,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct CollCastParams {
     VecFx32 *origin;
@@ -63,13 +64,9 @@ typedef struct HitSnapshot {
     int w[38];
 } HitSnapshot;
 
-extern int IsField1cEqualData42910(int groundKind);
-extern int IsField1cEqualData42940(int groundKind);
 extern void *GetTrackEntryBase(int idx);
 extern CollisionHit *Collision_CastNearest(void *world, CollCastParams *params);
 extern CollisionHit *Collision_RunRayCast(void *world, CollCastParams *params);
-extern void Vec3ScaleAddQ27(fx32 s, const VecFx32 *a, const VecFx32 *b, VecFx32 *c);
-extern void VecFx32FromVecS16(int model, short *face, int *normal);
 extern int FX_Div(int numerator, int denominator);
 extern int FX_Sqrt(int x);
 

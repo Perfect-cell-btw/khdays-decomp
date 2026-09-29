@@ -15,9 +15,11 @@
  * it into the shift-and-carry sequence itself, and writing the shifts by hand is not what
  * the ROM did.
  */
+
+#include "game/engine.h"
+
 extern void ScaleVec3Fx12(int t, const int *src, int *dst);
 extern void Ov182_SwingSweep(int *ctx, int kind);
-extern int RandNextScaled();
 extern void SetIndexedSlot(int *self, int action, void *cb);
 extern const short data_0203d210[];
 

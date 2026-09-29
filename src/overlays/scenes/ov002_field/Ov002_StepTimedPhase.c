@@ -3,6 +3,7 @@
  * of the context carries the total, the run, the split and the laps. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int nFlags;             /* 0x00 */
@@ -26,8 +27,6 @@ extern long long OS_GetTick(void);   /* the 64-bit tick counter */
 /* The MSL divide.  The tree calls it by address rather than letting mwcc emit
  * its own _ll_sdiv reference. */
 extern long long func_02020368(long long nValue, unsigned int nDiv, int nUnused);
-extern int Session_IsReady(void);         /* Session_IsReady */
-extern int Session_IsActive(void);         /* Session_IsActive */
 extern unsigned int Ov002_BuildSessionCommand(int nKind, unsigned short *pBuf);
 extern void Ov002_ApplyTimerCommand(int nCommand, int nDelta);
 

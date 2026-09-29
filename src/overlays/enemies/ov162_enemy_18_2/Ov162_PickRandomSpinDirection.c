@@ -5,8 +5,8 @@
  * mvnne/moveq comes first. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int  RandNextScaled();
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov162_StrafeThenReact(void);
 

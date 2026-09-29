@@ -1,6 +1,8 @@
 /* Advances a selection to the next enabled part after the target node in the object's part list;
  * returns whether one was found. */
 
+#include "game/engine.h"
+
 typedef struct Ov022NodeFlags {
     unsigned int lowByte : 8;
     unsigned int rest : 24;
@@ -24,7 +26,6 @@ typedef struct Ov022SelectionState {
 } Ov022SelectionState;
 
 extern Ov022TraversalNode *List_First(void *list);
-extern Ov022TraversalNode *List_Next(void *list);
 
 int Ov022_WalkTraversalNode(Ov022SelectionState *state,
                         Ov022TraversalNode *targetNode, int active)

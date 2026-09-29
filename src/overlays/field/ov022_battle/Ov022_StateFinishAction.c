@@ -2,6 +2,7 @@
  * gameplay hub when input is free. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -19,9 +20,6 @@ extern u8 data_0204be04;
 
 extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_Scene_IsIdle(void);
-extern int func_02023c40(void);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern int Ov002_IsInputBlocked(void);
 
 extern void *func_ov022_0208310c(void);

@@ -19,6 +19,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u32 f0, f4, f8, fc; } Block4;
 
@@ -29,7 +30,6 @@ extern int  Ov008_PackSlotTag(int tag);
 extern void Ov008_LoadBlockProcessAndFree(int ctx, char *name, int id);
 extern int  Ov008_GetContext(void);
 extern void func_ov008_0205475c(int ctx, void *resName);
-extern int  GameState_IsFlagSet(int flag);
 extern int  Ov008_FindEntryById(int ctx, int id);
 extern void Ov008_SetEntrySlotsVisible(int ctx, int entry, int a);
 extern void Ov008_ReleaseTwoSlots(int ctx, int entry);

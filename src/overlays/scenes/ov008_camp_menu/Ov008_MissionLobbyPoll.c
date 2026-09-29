@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Ov008_MissionLobbyPoll -- Ov008_MissionLobbyPoll: one poll of the mission
  * lobby's transfer state; returns the next state handler (0207aa40 once a
  * transfer (+0x4f4) is pending, after which field 28 of the global block is
@@ -26,13 +27,8 @@ typedef struct Ov008SlotInfo {
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
-extern void  CopyToSlotTable8(Ov008SlotInfo *pInfo, int nSlot);      /* register a slot info */
 extern int   Ov008_MenuEntryToSlot(int nEntry);                     /* Ov008_MenuEntryToSlot */
-extern u32   Session_GetLocalPlayerIndex(void);                                 /* Session_GetLocalPlayerIndex */
-extern int   Session_IsReady(void);                                 /* Session_IsReady */
 extern void  Ov008_MissionResolveDuplicateIds(void);                           /* lobby refresh */
-extern void  MsgQueue_SendGate(int nGate, void *pBuf, int nSize);     /* MsgQueue_SendGate */
-extern void  StoreToGlobalPtr4Field28(int nValue);                           /* StoreToGlobalPtr4Field28 */
 extern void *Ov008_RefreshListView(void);                           /* next lobby state */
 
 static inline void Ov008_ForwardJoinedSlots(MissionContext *pCtx)

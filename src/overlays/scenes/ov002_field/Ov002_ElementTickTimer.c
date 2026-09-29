@@ -2,6 +2,7 @@
 /* The queue record this element hands to the collector. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned char bTag;             /* +0x00 */
@@ -13,8 +14,6 @@ typedef struct {
 } Ov002TimeoutRecord;
 
 extern int Ov002_GetModuleScale(void);
-extern short Session_GetLocalPlayerIndex(void);
-extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_RecordElementHit(char *pElement, Ov002TimeoutRecord *pRecord,
                                int nKind);
 extern void Ov002_SetFrameOnActiveTracks(u16 *pTable, int nTime);

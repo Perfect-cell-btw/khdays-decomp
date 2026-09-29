@@ -7,8 +7,8 @@
  * bit 16 in both words, and the common post-update runs. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
 extern void Ov002_WidgetScrollCommit(char *channel, char *config, int heading, int frame);
 extern int func_ov022_020923dc(char *emitter, int slot);
 extern void Ov095_GetAttackAnchor(char *self, int side, VecFx32 *out);
@@ -18,7 +18,6 @@ extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(void *attach, int tick);
 extern void Ov022_InvokeCallback24IfBit0(void *attach);
 extern int Ov022_AreStreamsIdle(void *attach);
-extern int Session_GetLocalPlayerIndex(void);
 extern void func_ov022_020ad588(char *self);
 
 void Ov095_UpdateAnchorsAndChannels(char *self)

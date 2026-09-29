@@ -1,7 +1,9 @@
 /* The early path returns `result`, not the literal 0 it holds: returning the variable
  * keeps it live in a callee-saved register across the call (the ROM keeps it in r4 and
  * ends with `mov r0,r4`). `return 0;` there lets mwcc fold it away, 4 B short. */
-extern int Session_IsReady(void);
+
+#include "game/engine.h"
+
 int Ov022_IsEnabledAndFlag100Set(unsigned short *arg0) {
     int result = 0;
     if (Session_IsReady() == 0) return result;

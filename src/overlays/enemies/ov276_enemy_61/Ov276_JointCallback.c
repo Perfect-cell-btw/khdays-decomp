@@ -4,12 +4,12 @@
  * joint, its translation becomes that of the +0x444 transform. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct MtxFx43 { int m[9]; VecFx32 t; };
 
 extern int func_02016320(void *renderObj, struct MtxFx43 *out, void *b, int joint);
 extern void Srt_SetTranslation(void *transform, VecFx32 *pos);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 
 void Ov276_JointCallback(int item, int actor)

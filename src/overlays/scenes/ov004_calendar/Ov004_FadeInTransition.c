@@ -1,6 +1,7 @@
 /* Fades the calendar in and, when done, sets the rolling speed from the number of days to roll. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned char opaque0000[0xaf8];
@@ -18,7 +19,6 @@ typedef struct {
     int tweenProgressFx16;
 } Ov004Context;
 extern Ov004Context *data_ov004_02051384;
-extern void SetMasterBrightnessMain(int brightness);
 extern u64 OS_GetTick(void);
 extern long long func_02020400(int numerator, int denominator);
 

@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Pieces {
@@ -13,7 +14,6 @@ struct Ov252Pieces {
     struct { VecFx32 at; char pad[0x20]; } rec[4];
 };
 
-extern int RandNextScaled(int bound);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 

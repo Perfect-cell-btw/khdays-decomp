@@ -22,6 +22,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 *pKeys;                         /* +0x00 */
@@ -54,10 +55,6 @@ extern void NNS_FndInitList(void *pList, int nLinkOffset);
 extern void NNS_FndAppendListObject(void *pList, void *pObject);
 extern void MI_CpuFill8(void *pDst, int nValue, unsigned int nSize);
 extern long long func_02020400(int nNum, int nDen);
-extern void MsgDb_LoadDb(int nSlot, int nFont);
-extern void MsgDb_FetchRecord(int *pOut, int nSlot, unsigned int nKey, int nFont);
-extern void ResSlot_Release_2(int nSlot);
-extern void DispatchByNodeKind(int *pRecord);
 
 extern int Ov002_GetPanelField0058(void);
 extern void Ov002_InitResourceRecord(void *pSet, const void *pTable);

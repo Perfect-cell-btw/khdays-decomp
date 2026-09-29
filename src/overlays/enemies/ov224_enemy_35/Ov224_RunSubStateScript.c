@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -23,7 +24,6 @@ struct hw60 { unsigned short lo : 8, hi : 8; };
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern void Ov107_BuildAndSendUpdate(char *owner, int id, int mode, void *at);
-extern void func_02031384(int to, void *msg, int size);
 extern void func_ov107_020c0b90(char *actor, int a, VecFx32 v, int b);
 extern void Ov224_SetModeAndResetCounters(char *self, int hold);
 extern const VecFx32 data_02041dc8;

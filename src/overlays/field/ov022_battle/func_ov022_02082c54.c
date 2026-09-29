@@ -1,8 +1,9 @@
 /* Records the local player's group, requests a save for it, runs the frame without input and moves
  * to the pause menu. */
 
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(unsigned int arg0);
 extern void Ov002_Link_RequestSave(int arg0);
 extern void Ov022_UpdateCameraAndViews(int arg0);

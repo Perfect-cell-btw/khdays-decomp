@@ -4,6 +4,7 @@
  * registers past 0x30. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*Ov000StateFn)(void);
 
@@ -23,12 +24,9 @@ extern void Ov000_FadeStateHookNoOp(void);
 extern void Camera_CommitMatricesEx(void *bounds, int right, int left, int top,
                           int bottom);
 extern void Scene_DrawNode(void *renderNode);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void G2x_SetBlendBrightness_(u32 registerAddress, int planeMask,
                                     int brightness);
 extern void Table_TailCallWithEntry(int first, int second);
-extern int SoundStrm_HasPlaybackPos(int processor);
 extern void func_02023ad0(void *handle);
 extern void Ov000_BootDispatch(void);
 

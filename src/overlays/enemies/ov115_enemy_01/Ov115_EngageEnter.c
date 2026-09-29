@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Pair { u16 self, kind; };
 struct Msg6 { struct Pair id; u16 target; };
@@ -17,7 +18,6 @@ struct Ov115Templates { u8 impactPairs[4]; struct Msg6 engageMsg; };
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void func_02031384(int channel, void *msg, int len);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern const struct Ov115Templates data_ov115_020ceb70;
 extern void Ov115_SteerCircleAttack(int *node);

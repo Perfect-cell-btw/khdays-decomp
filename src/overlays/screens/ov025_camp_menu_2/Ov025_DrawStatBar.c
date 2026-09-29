@@ -1,6 +1,8 @@
 /* Enqueue a bar-graph draw for column param_3: read its value (clamped to 0..100) and, if
  * positive, look up the column's colour record and hand everything to the bar renderer. */
-extern int Load2DArrayU8_2(int a, int idx);
+
+#include "game/engine.h"
+
 extern int Ov025_GetVarRecordByIndex(int obj, unsigned int idx);
 extern void Ov025_AddListEntry(int p1, int a, int b, int c, int d, int e, int f, int g, int h, int i);
 extern unsigned int data_ov025_020b44a0[];

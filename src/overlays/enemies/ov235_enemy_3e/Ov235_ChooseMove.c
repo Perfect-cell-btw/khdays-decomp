@@ -54,15 +54,14 @@
  *    the size to 928). Note this is a SECOND local holding ctx[0] alongside `owner`: `owner` is a
  *    snapshot taken earlier, so the two are not interchangeable to the compiler. */
 
+#include "game/engine.h"
+
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const int *a, const int *b, int *dst);
 extern int func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(int *dst, const int *a, int angle);
 extern int VEC_Normalize(const int *v, int *unit);
 extern int func_02020400(int a, int b);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
-extern int RandNextScaled();
-extern void Vec3TransformViaTempMtx(int *dst, const int *a, const int *b);
 extern int VEC_DotProduct(const int *a, const int *b);
 extern int data_02041dc8[];
 extern int data_02042258[];

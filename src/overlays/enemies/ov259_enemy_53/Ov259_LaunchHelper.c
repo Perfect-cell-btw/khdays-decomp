@@ -5,12 +5,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Flags40 { int b0 : 1; int b1 : 1; };
 
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
-extern void Vec4_Normalize(Quat *q, Quat *out);
 extern void Srt_SetRotationQuat(char *srt, Quat *q);
 extern void Ov259_HelperStartFlight(int flight, VecFx32 *dir, int heading);
 extern const VecFx32 data_02042240;

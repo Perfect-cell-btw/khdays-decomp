@@ -2,6 +2,7 @@
  * pose. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002MissionMember {
     char padding000[4];
@@ -44,9 +45,6 @@ extern Ov022EntrySystem data_ov022_020b2e78;
 extern u8 data_0204c240;
 extern Ov002MissionMember data_0204c678[];
 
-extern Ov022ActorEntry *GetEntryField20ByIndex(int index);
-extern int GameState_IsFlagSet(u32 flagId);
-extern void GameState_SetField(u32 fieldId, u32 width, u32 value);
 extern void Ov022_SetSlotClaim(Ov022ActorEntry *entry, int enabled, int named);
 extern u32 func_ov022_020a0870(u32 *entry, int state);
 

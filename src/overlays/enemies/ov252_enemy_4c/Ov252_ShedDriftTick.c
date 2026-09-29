@@ -8,10 +8,10 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern unsigned int RandNextScaled(int bound);
 extern int Ov252_DropReward(int *node, int param);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);

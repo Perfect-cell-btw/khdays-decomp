@@ -1,14 +1,13 @@
+#include "game/engine.h"
+
 extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_StepPeerObjectLoading(void);
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int);
 extern void Ov002_ReadRosterSeat(int a, int b, int *out);
 extern void Ov002_RunSeatHooks(void);
 extern void Ov002_ClearListA(int id);
-extern int Session_IsActive(void);
 extern int Ov002_GetSeatBudget(int id);
 extern int Ov002_GetSeatBudgetScaled(int id);
-extern void Req_SetPendingFields(int a, int b, int c);
 extern void Ov002_SetSessionBusy(int mode);
 extern void Ov022_StateEnterGameplay(void);
 extern unsigned char data_0204be04;

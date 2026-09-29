@@ -17,6 +17,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RootContext {
     char pad0000[0x8db7];
@@ -25,8 +26,6 @@ typedef struct Ov002RootContext {
 
 extern Ov002RootContext *data_ov002_0207fa00;
 
-extern int Session_IsActive(void);                 /* a session is running */
-extern int Session_GetLocalPlayerIndex(void);                 /* this machine's player index */
 extern void Ov002_FlushPendingPeerNotices(void);          /* flush the pending notices */
 extern void Ov002_UpdateLocalPeerReadyNotice(unsigned int nSlot, int bValue);
 

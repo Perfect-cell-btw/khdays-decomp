@@ -9,6 +9,7 @@
  * Res_LoadSpriteSet takes five args; resource-cell layout matches Ov008_SetupMenuBgCells. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;
@@ -22,8 +23,6 @@ typedef struct Ov008ResourceCell {
 extern u32   Ov025_PackSlotTag(int subfile);
 extern u32   Ov025_PackHandleTag(int subfile);
 extern void *Archive_LoadFile(u32 handle, int heapId);
-extern int   func_02024e5c(void);
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *cell, void *resource, int a, int b, int c);
 extern void  GetResourceSubBlock_CHAR2(void *resource, Ov008CharacterBlock **block);
 extern void  GX_LoadBGPltt(const void *source, u32 offset, u32 size);
 extern void  GX_LoadBG3Char(const void *source, u32 offset, u32 size);

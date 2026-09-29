@@ -12,6 +12,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -22,8 +23,6 @@ struct PathEntry {
     int kind;
 };
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, VecFx32 *in);
-extern int queryTableEntry(int item, int channel);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);

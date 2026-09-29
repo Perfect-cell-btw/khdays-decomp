@@ -11,13 +11,12 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_TickSessionRequest(void);
 extern void Ov002_EnterState2AndBlankIds(void);
 extern void Ov002_SetSceneObjectsActive(int bActive);
-extern int LoadGlobalS8At0(void);
-extern void func_02020878(int nValue);
 extern void Ov002_SetLazyClassEnabled(int bEnabled);
 extern void Ov002_SessionTick(void);
 

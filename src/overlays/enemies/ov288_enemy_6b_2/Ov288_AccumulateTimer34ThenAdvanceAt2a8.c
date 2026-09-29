@@ -2,7 +2,8 @@
  * of the high flag byte, sets the alpha to its minimum, rolls the 10% variant flag (+0x38c), posts
  * pose 0 and installs the wait-for-animation step. */
 
-extern unsigned int RandNextScaled(int);
+#include "game/engine.h"
+
 extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void SetIndexedSlot();
 extern void Ov288_AiStep_QueueAction2OnAnimEnd(void);

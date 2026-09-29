@@ -2,9 +2,11 @@
  * It compiles to the `popne {r3,pc}` at +0x34, which is reached only via the `beq` above
  * it, so it can never fire; mwcc reuses the flags rather than re-comparing. Dropping it
  * compiles 4 B short. Do not "simplify" it away. */
+
+#include "game/engine.h"
+
 extern void Ov025_ApplyModeWidgets2(int obj, int arg);
 extern void Ov025_SwitchMenuTab(int obj, int col);
-extern void PlaySound(int a, int b);
 
 void Ov025_RefreshPageOrNotifyToggle_2(int param_1) {
     if (*(int *)(param_1 + 0x158) != 0) {

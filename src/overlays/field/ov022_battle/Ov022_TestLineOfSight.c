@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov022Actor {
     char pad_0000[0x66];
@@ -14,14 +15,10 @@ typedef struct CollisionHit {
     int distance0c;
 } CollisionHit;
 
-extern int QueryActiveStateOrDelegate(void);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern VecFx32 *func_ov022_020881f8(int index);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern CollisionHit *EntityMgr_RunSphereCastSimple(int group, const VecFx32 *origin,
                                     const VecFx32 *direction, int mask);
-extern void Vec3ScaleAddQ27(int distance, const VecFx32 *direction,
-                          const VecFx32 *origin, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *vector);
 
 int Ov022_TestLineOfSight(int index, const VecFx32 *position)

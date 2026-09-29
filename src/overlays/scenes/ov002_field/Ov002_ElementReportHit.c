@@ -2,6 +2,7 @@
 /* The 12 byte event this path posts to the element's owner. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned char bKind;            /* +0x00 */
@@ -12,7 +13,6 @@ typedef struct {
     unsigned char pad0a[2];
 } Ov002ElementEvent;                /* 0x0c */
 
-extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_MatchPackedMask(int nLimit, int nA, int nB);
 extern int Ov002_RecordElementHit(char *pElement, Ov002ElementEvent *pEvent,
                                int nSize);

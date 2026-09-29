@@ -1,6 +1,7 @@
 /* Loads the reward menu's two fonts and sets up its four text surfaces. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct FontInfo {char data[12];} FontInfo;
 typedef struct TileSurface {char pad0[40];int nUnk28;char pad2c[16];} TileSurface;
@@ -9,9 +10,7 @@ typedef struct Ov005Context {char pad0[0x4ad8];FontInfo fonts[2];TileSurface sur
 extern Ov005Context *data_ov005_0205b80c;
 extern char data_ov005_0205b558[],data_ov005_0205b570[];
 extern void MI_CpuFill8(void *,u8,u32);
-extern void Resource_BindByName(FontInfo *,const char *);
 extern void *Ov005_GetRowBuffer(int,int *);
-extern void TileSurface_InitAndUpload4bpp(TileSurface *,TileSurfaceCfg *);
 extern void *G2S_GetBG2ScrPtr(void);
 extern void *G2S_GetBG2CharPtr(void);
 extern void MIi_CpuClearFast(u32,void *,u32);

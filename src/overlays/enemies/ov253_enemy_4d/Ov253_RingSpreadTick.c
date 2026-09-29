@@ -6,6 +6,7 @@
  * the body accepts (020cceb0) gets a kind-3 hit of strength 0x10. After 4.0 the node ends. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cylinder;
 
@@ -17,7 +18,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const VecFx32 *push, int z);
-extern void Task_MarkFinished(int *node);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042258;

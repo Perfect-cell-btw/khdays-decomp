@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -41,7 +42,6 @@ struct AiState {
 };
 
 extern u8 data_0204c240;
-extern int MsgQueue_SendGate(int channel, u16 *msg, u16 size);
 extern void Ov107_AiState_OnSyncMessage(struct AiState *self, PosMsg7 *msg, int size);
 
 static inline void PackFx24(Fx24 *dst, int v) {

@@ -14,9 +14,8 @@
  * built with mvns (~0x62); the two Slot48_StoreAtCurrentIndex calls share the return-0 tail.
  */
 
-extern void func_0202ba44(int angle);
-extern int  Obj_IsIdFree(int arg);
-extern void TailForwardTrackEntry_2(int id, int obj, int a, int b);
+#include "game/engine.h"
+
 extern void Slot48_StoreAtCurrentIndex(int param_1, int angle);
 
 int Game_ActionTurnHandler(int param_1, int param_2)

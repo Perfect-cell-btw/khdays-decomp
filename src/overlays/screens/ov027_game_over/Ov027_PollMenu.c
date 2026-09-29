@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
@@ -118,10 +119,7 @@ typedef struct Ov027Scene {
     u8   font[0xc];           /* 0x624 */
 } Ov027Scene;                 /* 0x630 */
 
-extern int   func_0201e428(void);                                   /* a fade is running */
 extern void  Ov027_MoveCursor(int *pCursor);                     /* Ov027_MoveCursor */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
-extern void  GameState_SetField(int nFlag, int nValue, int nArg);        /* GameState_SetFlag */
 extern void  Ov027_BlinkPanelSlot(int nSlot);                        /* Ov027_BlinkPanelSlot */
 /* khdays: shared-bss */
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */

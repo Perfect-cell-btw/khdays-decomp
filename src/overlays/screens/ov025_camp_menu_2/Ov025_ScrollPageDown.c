@@ -9,6 +9,7 @@
  * ctx+0x14 dirty. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int  data_ov025_020b575c;
 
@@ -22,7 +23,6 @@ extern int  Ov025_FindEntryById(int root, int id);
 extern void Ov025_SetEntrySlotsVisible(int root, int entry, int vis);
 extern void Ov025_ApplyControlValue(int a);
 extern void Ov025_ScrollMenuMoveTo(int ctx, int bound, int b, int c);
-extern void PlaySound(int a, int b);
 
 void Ov025_ScrollPageDown(void)
 {

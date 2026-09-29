@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     void *pVariantA; /* +0x00  item i+1  */
@@ -32,8 +33,6 @@ typedef struct {
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void *Archive_LoadFile(u32 address, int mode);
 extern void *Ov000_GetVarRecordByIndex(void *object, int variant);
-extern void Res_LoadSpriteSet(void *slot, void *resource, int first, int second,
-                          int third);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 
 void Ov000_FillListRows(void) {

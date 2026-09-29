@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c248[];              /* [1] gates showing ranks at all */
@@ -7,7 +8,6 @@ extern u8 data_0204c248[];              /* [1] gates showing ranks at all */
 extern void MI_CpuFill8(void *pDst, int nValue, int nSize);
 extern int Ov002_IsSessionOpen(void);           /* Ov002_IsSessionOpen */
 extern int func_ov022_020882f8(void);           /* how many seats are in */
-extern int GameState_IsFlagSet(int nFlag);
 
 /* Ranks the seats that are in by their figure and writes one rank byte each
  * into aRank, which is four bytes long.

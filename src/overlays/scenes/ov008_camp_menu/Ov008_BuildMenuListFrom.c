@@ -8,6 +8,7 @@
  * finalizing (func_02053464). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct NNSFndList {
     u16   numObjects;
@@ -26,8 +27,6 @@ extern void NNS_FndInitList(NNSFndList *list, int offset);
 extern void Ov008_InitRecordContext(void *self, int a);
 extern void Ov008_BuildMenuGrid(void *self, void *entries, NNSFndList *list, void *arg);
 extern void Ov008_RebuildViewAndCountCells(void *self, void *entries, NNSFndList *list);
-extern void GameState_SetFlag(int id);
-extern void func_020235bc(int id);
 extern void Ov008_ReleaseHandleGridAndList(void *self, void *entries, NNSFndList *list);
 extern void func_ov008_02053464(void *self);
 

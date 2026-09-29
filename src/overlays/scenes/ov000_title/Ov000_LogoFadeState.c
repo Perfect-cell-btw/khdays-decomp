@@ -11,13 +11,12 @@
  *                                   Ov000_LogoFadeState2.
  * Otherwise it increments the counter and stays (returns 0). */
 
+#include "game/engine.h"
+
 typedef void *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  Ov000_FadeStateHookNoOp(void);
-extern void  Gfx_EnqueueTableCmdAtC(int id, void *player, int, int);
-extern void  SetMasterBrightnessMain(int brightness);
-extern void  SetMasterBrightnessSub(int brightness);
 extern void  Ov000_LogoFadeState2(void);
 
 StateFn Ov000_LogoFadeState(void) {

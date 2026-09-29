@@ -2,6 +2,7 @@
  * variant under its heading, then uploads the text. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_0000[0x20];
@@ -13,7 +14,6 @@ typedef struct {
 
 extern Ov000SubSceneContext *data_ov000_0205ac28;
 
-extern void Obj_InvokeInnerVtable4(void *object);
 extern void *Ov000_GetVarRecordByIndex(void *source, unsigned int index);
 extern void Ov000_DrawWithShadow_2(void *object, int x, int y, int mode,
                                 void *record, int palette);

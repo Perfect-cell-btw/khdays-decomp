@@ -25,8 +25,8 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void  Gfx_Reset2DEngines(void);
 extern void *G2_GetBG1ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);

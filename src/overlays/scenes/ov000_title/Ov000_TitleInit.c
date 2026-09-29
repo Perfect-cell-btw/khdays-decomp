@@ -9,10 +9,11 @@
  * Ov000_FreshBootGfxSetup for the real logo setup. Heap word indices:
  *   [0x1311] re-enter flag, [0x1313] boot sub-mode, [0x1317] mode-5 flag. */
 
+#include "game/engine.h"
+
 typedef void *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void  Gfx_Reset2DEngines(void);
 extern int   Ov000_InitSaveSystem(void);
 extern int   Ov000_BackupAccessGate(int mode);
 extern void  MI_CpuFill8(void *dst, int val, int size);

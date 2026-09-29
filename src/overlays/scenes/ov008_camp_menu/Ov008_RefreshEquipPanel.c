@@ -2,6 +2,7 @@
  * the stat bars and the item list, then uploads the page's surfaces. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u16 h0, h1, h2, h3, h4, h5; u32 w; } Ov008WeaponStat;
 typedef struct { int a[22]; } Ov008StatColTable;
@@ -23,8 +24,6 @@ extern void  Ov008_ForEachNode(int self);
 extern int   Ov008_GetLocalPlayerStatB(void);
 extern int   Ov008_GetVarRecordByIndex(int base, int id);
 extern void  Ov008_AddListEntry(int p1, int a, int b, int c, int d, int e, int f, int g, int h, int i);
-extern void  MsgDb_FetchRecord(int *rec, int a, int b, int c);
-extern void  DispatchByNodeKind(int *rec);
 extern int   NNS_FndGetNextListObject(void *list, int prev);
 extern void  Ov008_DrawStatBar(int root, int *self, int idx, int val);
 extern void  Ov008_UpdateScrollGauge(void *p);

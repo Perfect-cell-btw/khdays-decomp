@@ -2,7 +2,8 @@
  * field66 and that field is not -1. Drives track 10 with value 0, then 3 if bit1 of byte[0x134] is
  * set, notifies entry+8, then 3 again. */
 
-extern int QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(int state);
 extern void NNS_G3dMdlSetMdlCullMode(int a, int b, int c);
 extern void func_ov022_0208ffe8(int a);

@@ -7,6 +7,9 @@
  * The main path lives INSIDE the guard so that its `return 0` shares the tail
  * block the ROM branches to at +0xbc; written as an early `return 0` mwcc emits a
  * second epilogue instead. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x30];
     int nHandle;               /* +0x30 */
@@ -20,11 +23,9 @@ extern int Ov002_StepRosterSlotRelease(int index);
 extern int Ov002_GetCodeOwnerSlot(int handle);
 extern void Ov002_FormatWorldPath(int handle, void *out);
 extern int func_ov022_020882f8(void);
-extern int QueryActiveStateOrDelegate(void);
 extern void Ov002_WriteSessionMarker(int index, int a, int *out, int d, void *buf, int f);
 extern void Ov002_RefreshSessionMarkerDestinations(void);
 extern void Ov002_SetRosterSlotTargets(int a, int b);
-extern void SoundMgr_SetListenersEnabled(int a);
 extern void Ov022_PollBattleEntry(void);
 
 void *Ov022_EndSceneForEachPlayer(void) {

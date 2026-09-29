@@ -7,13 +7,12 @@
  * in the countdown test: >= 0 here vs > 0 there.) */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int v[4];
 } Xform;
 
-extern int Angle_TurnToward(int a, int b, int c, int *state);
-extern void QuatFromAxisAngle(Xform *out, const Xform *src, int v);
 extern void Quat_FromTwoVectors(Xform *out, const Xform *src, int rig);
 extern void Quat_Multiply(Xform *out, const Xform *a, const Xform *b);
 extern void Srt_SetRotationQuat(int dst, const Xform *x);

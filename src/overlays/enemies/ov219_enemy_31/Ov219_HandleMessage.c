@@ -6,9 +6,9 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend, int weight, void *payload);
-extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Ov107_AiState_OnMessage(int actor, u8 *msg, int param);
 
 void Ov219_HandleMessage(int actor, u8 *msg, int param)

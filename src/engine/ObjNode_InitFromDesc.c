@@ -20,8 +20,9 @@
  * had this function parked.
  */
 
+#include "game/engine.h"
+
 extern void MI_CpuFill8(void *dst, int data, unsigned int size);
-extern void Obj_LoadResourceNode(void *obj, char *name);
 
 int ObjNode_InitFromDesc(char *obj, int *desc)
 {

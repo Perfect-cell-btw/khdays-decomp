@@ -11,9 +11,10 @@
  * Ghidra carries the object as Ov002BufferSet.
  */
 
+#include "game/engine.h"
+
 extern char *data_ov002_0207f618;
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
-extern void ForwardToHandlerOrCurrentObject(int a, int b, int c);
 
 void Ov002_DestroyBufferSet(void) {
     char *self = data_ov002_0207f618;

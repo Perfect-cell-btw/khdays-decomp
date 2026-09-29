@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov173ActionState {
     int pOwner;
@@ -43,7 +44,6 @@ union ImpactSlot { struct ImpactPair sPair; u8 aModes[2]; };
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void Ov107_BuildAndSendUpdate(char *actor, int id, u8 mode, void *anchor);
 extern const u8 data_ov174_020d28e8[];
-extern int RandNextScaled(int bound);
 
 int Ov174_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
 {

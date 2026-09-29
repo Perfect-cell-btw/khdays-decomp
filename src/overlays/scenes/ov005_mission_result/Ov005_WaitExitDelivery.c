@@ -1,6 +1,8 @@
 /* Waits until the exit message has been delivered (host) or answered (clients, resending
  * meanwhile), then finishes the exit. */
 
+#include "game/engine.h"
+
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitClientMessage { unsigned char playerIndex; char text[22]; } Ov005ExitClientMessage;
 typedef struct Ov005ExitTask {
@@ -11,9 +13,6 @@ typedef struct Ov005ExitTask {
     Ov005ExitClientMessage clientMessage;
 } Ov005ExitTask;
 extern Ov005ExitTask *NNSi_FndGetCurrentRootHeap(void);
-extern unsigned Session_GetLocalPlayerIndex(void);
-extern int MsgQueue_Contains(unsigned);
-extern unsigned MsgQueue_SendGate(int,const void *,unsigned);
 extern void *Ov005_FinishExit(void);
 ExitTaskState Ov005_WaitExitDelivery(void) {
     Ov005ExitTask *task=NNSi_FndGetCurrentRootHeap();

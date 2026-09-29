@@ -1,9 +1,9 @@
 /* Runs the frame and prepares the fade out: captures the current brightness (or waits for the
  * scene); returns the step that advances after the pause. */
 
+#include "game/engine.h"
+
 extern void Ov022_UpdateCameraAndViews(int a);
-extern int func_0201e428(void);
-extern int func_0201e438(void);
 extern int Ov002_Scene_IsIdle(void);
 extern void Ov002_ResetCameraFraming(void);
 extern void Ov002_Scene_SetFlagBit3(void);

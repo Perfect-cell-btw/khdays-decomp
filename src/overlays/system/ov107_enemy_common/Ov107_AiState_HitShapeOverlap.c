@@ -18,6 +18,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct Segment {
     VecFx32 p0;
@@ -56,7 +57,6 @@ typedef struct AiState {
 } AiState;
 
 extern HitShape **List_First(void *list);
-extern HitShape **List_Next(void *list);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Normalize(VecFx32 *source, VecFx32 *destination);

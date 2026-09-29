@@ -8,12 +8,12 @@
  * sub-state 2. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
 extern void Ov153_RelayoutAndStoreVec(int item, void *anchor, VecFx32 *dir);
 extern const VecFx32 data_02042258;

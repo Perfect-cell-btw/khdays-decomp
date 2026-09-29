@@ -1,7 +1,8 @@
 /* When visible rebinds the node's animation and enables it. */
 
+#include "game/engine.h"
+
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
-extern void SceneNode_Enable(unsigned short *p);
 
 void Ov015_PlayAnimIfVisible(int this_, short *arg1, int arg2, int arg3) {
     unsigned short flags = *(unsigned short *)(this_ + 0x12);

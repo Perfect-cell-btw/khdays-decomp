@@ -1,7 +1,9 @@
 /* Announce the object's state. In a session that is a 6-byte message 3 carrying
  * the state byte from +0x3f; solo, there is nobody to tell, so the state is just
  * written straight to +0x2c. */
-extern int Session_IsActive(void);
+
+#include "game/engine.h"
+
 extern void Ov002_RecordElementHit(void *self, void *message, int size);
 
 typedef struct {

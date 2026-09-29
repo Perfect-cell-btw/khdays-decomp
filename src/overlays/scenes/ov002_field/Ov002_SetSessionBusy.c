@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 typedef struct {
     int nFlags;                         /* +0x00, bit 1 armed, bit 2 busy */
     int nRate;                          /* +0x04 */
@@ -6,7 +8,6 @@ typedef struct {
 
 extern Ov002Session *data_ov002_0207fa08;
 
-extern int Session_IsReady(void);
 extern void Ov002_ReportElapsed(void);
 
 /* Set or clear the busy bit and notify, but only while the session is ready

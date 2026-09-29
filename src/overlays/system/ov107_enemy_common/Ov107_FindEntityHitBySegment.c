@@ -1,6 +1,8 @@
 /* First active entity of the manager, other than self, one of whose shapes overlaps the segment;
  * shape out optional. */
 
+#include "game/engine.h"
+
 typedef struct Ov107ListNode {
     int field0;
     struct Ov107ListNode *next;
@@ -38,7 +40,6 @@ typedef struct Ov107SubObj {
 typedef struct Ov107Query Ov107Query;
 
 extern void **List_First(void *list);
-extern void **List_Next(void *list);
 extern int Ov107_HitShape_TestSegment(void *node, Ov107Query *query, void *pOutContact);
 
 void *Ov107_FindEntityHitBySegment(Ov107SubObj *self, Ov107Query *query, void **out)

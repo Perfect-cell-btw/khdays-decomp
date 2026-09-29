@@ -10,6 +10,7 @@
  * bit 15).  The four panel entries of data_ov025_020b4370 give the positions +0x21c. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct UiLayoutPos {
     int  x;                   /* 0x00 */
@@ -44,7 +45,6 @@ extern void  Ov025_ReleaseTwoSlotsEx_3(int nCtx, void *pEntry, int nValue); /* O
 extern UiLayoutPos *Ov025_GetEntryBlock2c(int nCtx, void *pEntry);    /* Ov008_GetEntryPos */
 extern void  Ov025_ApplyOffsetSum(int nCtx, void *pEntry, UiLayoutPos *pOffset); /* Ov025_SetEntryOffset */
 extern void  Ov025_ReleaseTwoSlots(int nCtx, void *pEntry);           /* Ov025_ReleaseTwoSlots */
-extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 extern void  Ov025_ReleaseTwoSlotsEx_2(int nCtx, void *pEntry, int nCell); /* Ov025_SetEntryCell */
 extern void  MI_CpuCopy8(const void *pSrc, void *pDst, u32 nSize);
 extern void  Ov025_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible); /* SetEntrySlotsVisible */

@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct PanelInitConfig {
     int objectType;                         /* 0x00 */
@@ -42,13 +43,8 @@ static inline int Ov044_GetBoneBase(char *object)
 }
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int, int, int, void *, int);
 extern void OS_SPrintf(void *, const char *, const char *);
-extern void TailForwardTrackEntry(int, void *, int, int);
-extern int ArrayEntryPtrD0(int);
-extern void Actor_InitEntityLink(void *, int);
 extern int NNS_G3dGetResDictIdxByName(void *, void *);
-extern int GameState_IsFlagSet(int);
 extern void Ov022_InitActor(void *);
 
 extern void Ov030_ApplyModeChange(void);

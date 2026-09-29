@@ -6,16 +6,15 @@
  * Ov001_SetupDisplayRegs DISPCNT setup, Ov001_InitTouchPanel misc, Ov001_SeedMathRandContexts RNG
  * seed). */
 
+#include "game/engine.h"
+
 extern void BootInitHookNoOp(void);
 extern void GX_Init(void);
 extern void OS_InitTick(void);
 extern void RTC_Init(void);
 extern void StoreGlobalPairAt118(int a, int b);
 extern void GX_DispOff(void);
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
 extern void GfxQueue_Configure(void *p, int n);
-extern void Boot_InitVBlank(void);
 extern void OS_EnableIrqMask(int mask);
 extern void func_ov001_0204cf5c(void);
 extern void Ov001_ClearVideoMemory(void);

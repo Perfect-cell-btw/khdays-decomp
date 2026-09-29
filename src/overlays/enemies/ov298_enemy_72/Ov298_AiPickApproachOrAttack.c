@@ -2,12 +2,12 @@
  * approaching (far or not ready) or attacking. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct b2 { unsigned char b0:1, b1:1; };
 
 extern void ScaleVec3Fx12(int s, int dst, int src);
 extern int Ov298_AcquireTargetGapAndAngle(void *param);
-extern unsigned int Rand16NextScaled(unsigned int range);
 extern void SetIndexedSlot(int obj, int idx, int cb);
 
 void Ov298_AiPickApproachOrAttack(int *this)

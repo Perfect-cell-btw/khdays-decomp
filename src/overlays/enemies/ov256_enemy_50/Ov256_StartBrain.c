@@ -1,7 +1,9 @@
 /* Start of the ov256 actor's brain: move 1 is current and none pending (+0x1c6 = 1, +0x1c7 = -1), the
  * idle time +0x50 is rolled between the +0x224 / +0x228 bounds, +0xc points at the +0xb0 anchor and
  * the three slots take the think (020cd430), watch (020cd8f0) and facing (020cd740) handlers. */
-extern int RandNextScaled(int n);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_AiDispatchAction(void);
 extern void Ov256_EnterState(void);

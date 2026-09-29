@@ -2,6 +2,7 @@
  * lands (with a sound) and redraws the list. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Tween {
     int mode,duration,from,to;
@@ -28,7 +29,6 @@ extern Ov005Context *data_ov005_0205b80c;
 extern Ov005Config data_ov005_0205b85c;
 extern void Ov005_UpdateRewardPosition(void);
 extern void Ov005_StartStatusTween(int);
-extern void PlaySound(int,int);
 extern void Ov005_RenderTextSurface(int);
 static inline int IsTweenDone(Tween *tween) {return tween->complete;}
 static inline int AdvanceStatusStep(void) {

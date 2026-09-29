@@ -15,13 +15,13 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef int (*Fn)(void);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);
 extern int  Ov002_Link_IsFlag8(void);
 extern int  Ov002_PollSessionReady(void);
-extern int  Session_IsActive(void);
 extern void Ov002_SetLazyClassEnabled(int a);
 extern void Ov002_EnterDialogSceneIfAllowed(void);
 extern u8   data_0204be04;

@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*OverlayCallback)(void);
 
@@ -26,8 +27,6 @@ extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Camera_CommitMatricesEx(void *bounds, int right, int left, int top,
                            int bottom);
 extern void Scene_DrawNode(void *object);
-extern void SetMasterBrightnessSub(int value);
-extern void SetMasterBrightnessMain(int value);
 extern u64 OS_GetTick(void);
 extern void Ov000_TickMenuLoop(void);
 

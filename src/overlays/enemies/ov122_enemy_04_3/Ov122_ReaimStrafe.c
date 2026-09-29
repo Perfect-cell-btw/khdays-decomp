@@ -7,8 +7,8 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern void Vec3TransformViaTempMtx(void *dst, void *src, VecFx32 *v);
 extern void ScaleVec3Fx12(int a, void *b, void *c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov122_AiPauseTick(void);

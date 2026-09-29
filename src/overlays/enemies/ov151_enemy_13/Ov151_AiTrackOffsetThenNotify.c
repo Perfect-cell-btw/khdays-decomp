@@ -1,8 +1,9 @@
 /* Follows the owner-relative offset; when the watched flag clears sends the notify message and
  * queues action 2. */
 
+#include "game/engine.h"
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov151_020cec34[];

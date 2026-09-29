@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016PeerMessage {
     u8   nType;               /* 0x00: 3 */
@@ -53,9 +54,7 @@ typedef struct Ov016Kickable {
     VecFx32 delta;            /* 0x64c */
 } Ov016Kickable;
 
-extern int  Session_GetLocalPlayerIndex(void);                                      /* Session_GetLocalPlayerIndex */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
-extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);           /* Actor_SetVecAndSyncChild */
 extern int  Ov002_StepKnockback(void *pPiece, void *pSpeeds, VecFx32 *pOutDelta); /* knockback step */
 extern int  Ov016_KickableAckPeer(Ov016Kickable *pSelf, int nPeer);     /* Ov016_KickableAckPeer */
 extern VecFx32 data_02041dc8;                                         /* kVecZero */

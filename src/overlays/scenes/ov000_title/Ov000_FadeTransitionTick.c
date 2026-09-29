@@ -2,6 +2,7 @@
  * ticks the widgets. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*OverlayCallback)(void);
 
@@ -25,8 +26,6 @@ typedef struct {
 
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Tween_Sample(void *tween, int *value);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void Ov000_TickSelectionWidget(void *object);
 extern void Ov000_UpdateWidgetLayerDefault(void *object, int value);
 extern void Ov000_StartMovieFromMenuRow(void);

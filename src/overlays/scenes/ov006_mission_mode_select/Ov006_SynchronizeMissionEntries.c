@@ -1,20 +1,16 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 
 /* Builds the mission member entries from the session's connected players (or the forced default)
  * and exchanges them with the peers before the entry sync. */
 
 typedef void (*MissionCallback)(void);
 
-extern u16 GetGlobalU16At6(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern int Ov006_MenuSlotToEntry(int entry);
 extern int Ov006_CanAdvancePastIntro(void);
-extern int Session_IsReady(void);
-extern u32 Session_GetLocalPlayerIndex(void);
-extern int MsgQueue_SendGate(int type, u16 *payload, u16 size);
-extern void StoreToGlobalPtr4Field28(int state);
 extern void Ov006_UpdateAndGetIdleHandler(void);
 extern void Ov006_UpdateMissionEntrySynchronization(void);
 

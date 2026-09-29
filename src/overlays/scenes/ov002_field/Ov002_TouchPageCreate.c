@@ -19,6 +19,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SlotContext {
     int hResource;
@@ -36,7 +37,6 @@ extern void MI_CpuFill8(void *pDest, u8 nValue, u32 nSize);
 extern void NNS_FndInitList(void *pList, u16 nOffset);
 extern void Ov002_QueuePageCue(int nId, int nX, int nY, int nWidth, int nHeight,
                                 int nHeldId, void *pHandler);
-extern int Session_GetLocalPlayerIndex(void);
 extern int InstantiateClass(int *pResource, int nArg);
 extern void Ov002_LoadCueTable(void);
 

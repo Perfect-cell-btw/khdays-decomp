@@ -2,6 +2,7 @@
  * sequence number, clears two transient flags (restored later) and writes the slot. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009SaveSlot {
     u16 profileValue;
@@ -29,11 +30,6 @@ typedef struct Ov009SaveContext {
     u8 flag18c9;
 } Ov009SaveContext;
 
-extern int GameState_GetField(int field, int kind);
-extern void GameState_SetField(int field, int kind, unsigned int value);
-extern int Rand16NextScaled(unsigned int range);
-extern int GameState_IsFlagSet(int flag);
-extern void func_020235bc(int flag);
 extern int Ov009_CommitSaveToSlot(int slot);
 
 int Ov009_CommitSaveFields(Ov009SaveContext *ctx, int slot)

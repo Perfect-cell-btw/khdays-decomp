@@ -3,16 +3,14 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int QueryActiveStateOrDelegate(void);
 /* Collision world id of that player's track entry, or -1 when it has none. */
 extern int Ov022_GetEntryField66(int nPlayer);
 /* Cast a ray through one world id; returns the shared hit record, or 0. */
 extern int *EntityMgr_RunCastSimple(int nWorldId, VecFx32 *pOrigin, VecFx32 *pDir,
                           void *pExclude);
 /* out = origin + t * dir, in fx32. */
-extern void Vec3ScaleAddQ27(int t, const VecFx32 *dir, const VecFx32 *origin,
-                          VecFx32 *out);
 
 /* Cast a ray from pOrigin along pDir and write the contact point to pOut.
  *

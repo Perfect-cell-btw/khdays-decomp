@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ROW_LIST_COUNT 7
 #define GRID_W 0x20
@@ -47,9 +48,7 @@ extern void Ov025_SetTagTrackerNodeArmed(int nOwner, int nEntry, int bArmed);   
 extern void Ov025_SweepElements(int nBlock);                              /* clear the element list */
 extern void func_ov025_020b0814(void *pList);                             /* destroy the list */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
-extern void ZeroHalfThenFree(void *hResource);                               /* ZeroHalfThenFree */
 extern Ov008CueRequest *Ov025_GetCueRequest(void);                        /* Ov008_GetCueRequest */
-extern void SetMasterBrightnessMain(int nBrightness);                               /* SetMasterBrightnessMain */
 extern void Ov025_ClearSlotBit(int nSlot);                               /* Ov008_ClearSlotBit */
 extern void Ov025_ApplyControlValue(int nValue);                              /* Ov008_ApplyControlValue */
 extern void Ov025_SetActivePage(int nValue);

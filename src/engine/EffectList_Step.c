@@ -1,6 +1,9 @@
 /* Runs every entry of the current effect list (data_0204c22c): with the list's +0x6c request clear
  * the +0x68 state resets; inside the effect arena (data_0204c02c, func_0202362c) each of the +8
  * entries (+4 array, 12 bytes each) is stepped by CmdPacket_Dispatch; the request is then consumed. */
+
+#include "game/engine.h"
+
 typedef struct {
     char data[0xc];
 } EffectEntry;
@@ -16,7 +19,6 @@ typedef struct {
 
 extern EffectList *data_0204c22c;
 extern int data_0204c02c;
-extern int func_0202362c(int arena);
 extern void CmdPacket_Dispatch(EffectEntry *entry);
 
 void EffectList_Step(void)

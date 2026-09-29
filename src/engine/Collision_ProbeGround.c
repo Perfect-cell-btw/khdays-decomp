@@ -2,6 +2,7 @@
  * point (or the position) in out. Returns 1 on a hit. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Entry {
     char pad_0000[8];
@@ -15,7 +16,6 @@ typedef struct Hit {
 
 extern Entry *CollModel_FindEntry(void *cont, void *key);
 extern Hit *Collision_CastRay(void *world, VecFx32 *from, VecFx32 *dir);
-extern void Vec3ScaleAddQ27(int s, const VecFx32 *dir, const VecFx32 *from, VecFx32 *out);
 
 int Collision_ProbeGround(void *cont, void *key, void *out) {
     Entry *entry = CollModel_FindEntry(cont, key);

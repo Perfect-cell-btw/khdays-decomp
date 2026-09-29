@@ -11,6 +11,7 @@
  * mov r1,r0 after the poll call. Return type is u8 (caller Ov000_TickLoadScene). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000PageSlot {
     int base;
@@ -43,7 +44,6 @@ extern Ov000LoadContext *data_ov000_0205ac24;
 extern void Ov000_MarkSceneReady(int slot);
 extern int  Ov000_PollSaveCheck(void);
 extern void Ov000_RecordLoadResult(int slot, int result);
-extern int  GameState_GetField(int a, int b);
 
 u8 Ov000_UpdateLoadState(int slot)
 {

@@ -1,8 +1,10 @@
 /* The single-case switch is deliberate: two plain `if (...) return;` guards let mwcc
  * if-convert the second into the first (ldreq/cmpeq, 4 B short). The ROM emits two
  * separate `popne {r3,pc}` early returns, and the switch is what reproduces that. */
+
+#include "game/engine.h"
+
 extern void Ov008_PlaceElementByVariant(int obj, int old_value, int new_value);
-extern void PlaySound(int a, int b);
 
 void Ov008_StepSelectionBackward(int param_1) {
     int old = *(int *)param_1;

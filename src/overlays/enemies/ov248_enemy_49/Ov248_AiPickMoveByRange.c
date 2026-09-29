@@ -22,12 +22,12 @@
  *   - the cooldown guard is written the positive way round so `return 0` lands out-of-line at
  *     the end, which is what the ROM's `bgt` does. */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned short lo : 8;
     unsigned short hi : 8;
 } Hw60;
-
-extern int RandNextScaled(int n);
 
 int Ov248_AiPickMoveByRange(int self, int range) {
     int *ctx;

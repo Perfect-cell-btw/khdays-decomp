@@ -2,11 +2,11 @@
  * with the character and activates it; the local player also gets a short rumble. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 extern void func_ov022_020ad44c(void *out, int self);
-extern int Session_GetLocalPlayerIndex(void);
 
 void Ov103_BindAnimsAndFaceOwner(int self, char *blk) {
     VecFx32 v;

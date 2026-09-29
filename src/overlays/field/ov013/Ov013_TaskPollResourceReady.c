@@ -1,6 +1,8 @@
 /* Task step: waits until the kind's resources are all released (with a timeout), then starts a lap
  * with the task's callbacks; returns -2 while waiting. */
 
+#include "game/engine.h"
+
 typedef struct TaskNode TaskNode;
 typedef int (*TaskCallback)(TaskNode *node);
 
@@ -18,7 +20,6 @@ struct TaskNode {
     char padding1a[2];
 };
 
-extern int Load2DArrayU8(int kind, int index);
 extern int Ov002_SetLapRunning(int kind, int requestedId);
 extern int Ov002_NodeFinishLap(TaskNode *node);
 extern int Ov002_NodeGetResult(TaskNode *node);

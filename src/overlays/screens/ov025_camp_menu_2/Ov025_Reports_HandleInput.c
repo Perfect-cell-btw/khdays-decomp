@@ -15,6 +15,7 @@
  * held entry and the records are read through the page, not copied. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025TouchPoint {
     u16  wX;                  /* 0x00 */
@@ -86,7 +87,6 @@ extern void  Ov025_CopySourceBlock(Ov025TouchInput *pTouch);          /* Ov008_R
 extern int   Ov025_PointInBox_2(const Ov025TouchInput *pPos, const u8 *pBox); /* Ov025_PointInBox */
 extern void  Ov025_Reports_DragKnob(const Ov025TouchPoint *pTouch);    /* Ov025_Reports_DragKnob */
 extern u32   Ov025_QueryItemFlags(u32 nItem, u32 bSet);              /* Ov025_QueryItemFlags */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov025_Reports_RefreshCurrentEntry(void);                             /* Ov025_Reports_RefreshRows */
 extern void  Ov025_Reports_HighlightRows(void);                             /* Ov025_Reports_HighlightRows */
 extern void  Ov025_Reports_DrawRowTexts(void);                             /* Ov025_Reports_DrawRowTexts */

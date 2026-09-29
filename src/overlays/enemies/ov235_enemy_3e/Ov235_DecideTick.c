@@ -3,10 +3,10 @@
  * sub-state -- 0xc below 40, 9 below 80, else 2 -- and the tick ends. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int RandRange(int lo, int hi)

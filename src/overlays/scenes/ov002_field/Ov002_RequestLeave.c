@@ -1,7 +1,9 @@
 /* Request the leave: raise bit 8 of the leave flags at +0x8b64 and report that
  * the request took. A solo machine can always leave; in a session it can only
  * leave once the peer check clears. */
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern int Ov002_GetRootField8b68Alt(int slot);
 
 typedef struct {

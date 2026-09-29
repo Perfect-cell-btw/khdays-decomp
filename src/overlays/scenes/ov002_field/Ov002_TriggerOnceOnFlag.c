@@ -2,8 +2,8 @@
  * counter at +0x8ca4 is positive, and updates the rate panel in mode 4 unless flag 0x20e8 is set;
  * returns whether flag 0x2086 is set. */
 
-extern int GameState_IsFlagSet(int flag);
-extern int GameState_SetFlag(int flag);
+#include "game/engine.h"
+
 extern int Ov002_RunShutdownHook(void);
 extern void func_ov022_02083fa4(int a);
 extern void Ov002_UpdateRatePanel(void);

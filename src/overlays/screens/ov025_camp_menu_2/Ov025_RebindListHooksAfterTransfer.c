@@ -5,6 +5,7 @@
  * without the list closing. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MenuContext {
     u8   pad_0000[0x30];
@@ -24,7 +25,6 @@ extern void  Ov025_SetTargetSlot(int nEntry, int nTarget);          /* Ov008_Set
 extern void  Ov025_GridMenuConfirm(void);
 extern void  Ov025_MenuKeyUp(void);
 extern void  Ov025_MenuKeyDown(void);
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern Ov008ListHooks data_ov025_020b4d4c;
 
 void Ov025_RebindListHooksAfterTransfer(void)

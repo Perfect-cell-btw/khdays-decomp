@@ -2,6 +2,7 @@
  * input, transfer chunk or acknowledgement in the menu context. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;
@@ -72,9 +73,7 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern Ov008MenuContext *data_ov008_02090f00;
-extern u32 Session_GetLocalPlayerIndex(void);
 extern int Ov008_IsSessionReady(void);
-extern int GameState_IsFlagSet(u32 flagId);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 #define context data_ov008_02090f00

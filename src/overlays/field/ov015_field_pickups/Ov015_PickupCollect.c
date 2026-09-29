@@ -8,12 +8,10 @@
  * spin 0x1e000) and 0 is reported.  The collected bit (bit 1 of +0x14d) is set either way. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern u8   data_0204c240;                                          /* session bits */
-extern void GameState_SetFlag(int nFlag);                               /* GameState_SetFlag */
 extern void Ov002_ParkSpareEntry(void *pPiece);                      /* report a collected piece */
-extern int  GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
-extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);         /* GameState_SetField */
 extern void Ov015_StoreArgsRunTwoSubActionsIfFlag4(void *pPickup, void *pSequence, int nArg, int nSpin, int nRise); /* Ov015_StoreArgsRunTwoSubActionsIfFlag4 */
 extern void Ov002_SetKeyNodeVisible(int nKey, int bShow, int nPriority); /* show / hide a keyed object's node */
 

@@ -1,5 +1,6 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Add(VecFx32 *dst, VecFx32 *a, VecFx32 *b);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
@@ -9,7 +10,6 @@ extern void MTX_MultVec33(VecFx32 *a, int *mtx, VecFx32 *out);
 extern int FX_Div(int a, int b);
 extern void ScaleVec3Fx12(int scale, VecFx32 *src, VecFx32 *dst);
 extern void VEC_MultAdd(int t, VecFx32 *a, VecFx32 *b, VecFx32 *out);
-extern int func_02023c40(void);
 
 /* Approach-solver: advance the approach timer (+4 += param_4), take the target
  * offset, blend the current facing toward it with a rotation-limited step whose

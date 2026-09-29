@@ -29,6 +29,9 @@
  *    v2=sp+0.
  *  - the final state byte is re-read after the store and compared to -1 signed (`ldrsb`).
  */
+
+#include "game/engine.h"
+
 extern int Ov107_FindNearestObject(int obj, int out);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int Ov176_FaceTargetGetClearance(int self, void *out);
@@ -36,7 +39,6 @@ extern void ScaleVec3Fx12(int s, void *v, void *d);
 extern void VEC_CrossProduct(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
-extern int RandNextScaled();
 extern int Ov176_IsChildInactive(int self);
 extern int data_02042264;
 

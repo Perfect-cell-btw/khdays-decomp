@@ -7,6 +7,7 @@
  * advances -- at four the node is released (0203c640). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov253Joints { int cur[1]; int next[3]; };
 
@@ -19,7 +20,6 @@ extern void Quat_FromTwoVectors(void *rotation, const VecFx32 *from, const VecFx
 extern void Srt_SetTranslation(void *srt, const VecFx32 *translation);
 extern void Srt_SetScaleUniform(void *srt, int scale);
 extern void Srt_SetRotationQuat(void *srt, const void *rotation);
-extern void Task_MarkFinished(int *node);
 extern const VecFx32 data_02042264;
 
 static inline int Ov253_Grey(int v) {

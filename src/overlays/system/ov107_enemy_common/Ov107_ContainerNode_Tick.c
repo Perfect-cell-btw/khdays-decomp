@@ -1,5 +1,7 @@
 /* Container node tick: runs the callbacks of the active children and sums the finished ones. */
 
+#include "game/engine.h"
+
 typedef struct Ov107_9784_Entry {
     char pad[0xc];
     void (*callback)(struct Ov107_9784_Entry *entry, int b);
@@ -19,7 +21,6 @@ typedef struct Ov107_9784_Self {
 } Ov107_9784_Self;
 
 extern int List_First(void *listHead);
-extern int List_Next(void *listHead);
 extern int Ov107_Region_CountFlaggedMembers(void *entry);
 extern void Ov107_Region_TickChildren(void *self, int b);
 extern void ObjList_Update(void *ptr, int b);

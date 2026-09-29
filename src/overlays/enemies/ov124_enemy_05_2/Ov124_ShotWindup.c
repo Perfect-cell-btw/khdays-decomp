@@ -7,11 +7,11 @@
  * and the state ends. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov124_FindTarget(int actor, int mode);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, const VecFx32 *src);
 extern void Ov124_StoreVec3ThenSetupAndSetHw60(int shot, void *from, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;

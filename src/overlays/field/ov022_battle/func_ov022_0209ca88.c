@@ -1,6 +1,7 @@
 /* Host only: steps the actor's overlay animation while it is flagged. */
 
-extern short Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern void Sequence_UpdateTracks(unsigned short *arg0, int arg1);
 void func_ov022_0209ca88(int arg0) {
     unsigned int *p;

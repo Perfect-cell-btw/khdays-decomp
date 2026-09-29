@@ -18,6 +18,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
@@ -41,7 +42,6 @@ extern int Ov107_CollectSphereOverlaps(struct Ov269Owner *owner, Sphere *sphere,
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, VecFx32 *push, int z);
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Msg20 data_ov270_020d68a8;
 extern const VecFx32 data_ov270_020d6864;

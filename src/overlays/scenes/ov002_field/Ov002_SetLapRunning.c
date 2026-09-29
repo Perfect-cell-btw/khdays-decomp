@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002TickCtx {
     int nFlags;
@@ -13,7 +14,6 @@ typedef struct Ov002TickCtx {
 
 extern Ov002TickCtx *data_ov002_0207fa08;
 
-extern int Session_IsReady(void);          /* session ready */
 extern int Ov002_AdvanceSlotPhase(int nCommand);
 
 /* Starts or stops one of the two lap timers.  bStart picks the verb; nLap picks

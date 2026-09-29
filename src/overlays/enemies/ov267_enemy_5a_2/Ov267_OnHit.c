@@ -10,6 +10,7 @@
  * positive. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct HitWord { unsigned int lo : 16, hi : 16; };
 
@@ -17,7 +18,6 @@ extern int Ov267_IsState6cActive(int *state, int a);
 extern int Ov107_CalcHitDamage(int self, unsigned int *hit);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void Ov267_SetMode70(int *state, int a);
-extern int RandNextScaled(int bound);
 
 int Ov267_OnHit(int self, int param, unsigned int *hit) {
     int *state = *(int **)(self + 0x214);

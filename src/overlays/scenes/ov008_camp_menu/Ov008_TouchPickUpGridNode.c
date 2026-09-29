@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define WIDGET_INFO  100
 #define WIDGET_ICON  0x4a
@@ -59,7 +60,6 @@ extern int  Ov008_DrawPageBElement(int nMode, int nA, int nB);               /* 
 extern void Ov008_PageB_UploadSurface154(void);                                    /* grid refresh */
 extern int  Ov008_GetItemDescriptionForMember(int *pList, Ov008ShapeEntry *pNode);      /* text index of a node */
 extern void Ov008_RepaintTextRow(Ov008MenuContext *pCtx, int nRow, int nText, int nColour); /* Ov008_RepaintTextRow */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 
 void Ov008_TouchPickUpGridNode(void)
 {

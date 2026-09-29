@@ -18,6 +18,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SEQ_TRACKS 5
 
@@ -53,7 +54,6 @@ struct ActorSlot {
 };
 
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
-extern void RegisterSeqAndInit(u16 *pFlags, void *pSeq, int nMode, int nTracks);
 
 void Ov022_BindSlotParts(struct ActorSlot *pSlot, void *pSeq, int nFirst,
                          int nSecond)

@@ -8,6 +8,7 @@
  * and the state advances to cdbd4. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct b8 { unsigned int b : 8; };
 extern int Ov107_FindNearestObject(int obj, int out);
@@ -16,7 +17,6 @@ extern int func_020050b4(int x, int z);
 extern void Ov157_ProbeGroundBelowNode(int *state, int *p);
 extern long long FX_DivFx64c(int a, int b);
 extern void Ov157_GroundSweep(int *state, int lo, int hi, int *p);
-extern int RandNextScaled(int mul);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int Ov157_ChargeAimedShotState;
 void Ov157_ChargeWindup(int *self) {

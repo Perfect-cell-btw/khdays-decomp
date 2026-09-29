@@ -4,6 +4,7 @@
  * tiles (0202ff8c).  Part of the detail screen setup 020b00f0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileSurfaceCfg {
     u32  nUnk00;
@@ -26,7 +27,6 @@ typedef struct Ov025ReportDetailPage {
 extern Ov025ReportDetailPage *Ov025_GetPageB(void);            /* Ov025_GetPageB */
 extern void *Ov025_GetCtxBlock968c(void);                             /* Ov025_GetCtxBlock968c */
 extern int   Ov025_LookupEntry(int nSlot);                        /* Ov025_ResetEntry: slot handle */
-extern void  TileSurface_InitAndUpload4bpp(void *pSurface, TileSurfaceCfg *pCfg);   /* TileSurface_InitAndUpload4bpp */
 extern TileSurfaceCfg data_ov025_020b4978;
 
 void Ov025_ReportDetail_SetupSurface(void)

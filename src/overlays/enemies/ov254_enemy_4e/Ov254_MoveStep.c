@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct AiState {
     u16 field_00;
@@ -79,7 +80,6 @@ extern void VEC_Add(int *a, int *b, int *out);
 extern CollisionHit *Collision_CastSphere(void *collision, VecFx32 *origin,
                                     VecFx32 *direction, int radius);
 extern int VEC_Normalize(VecFx32 *source, VecFx32 *destination);
-extern void ScaleVec3Fixed27(int factor, int *in, int *out);
 extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin,
                                     VecFx32 *direction);
 extern void Srt_SetTranslation(void *dst, const void *src);

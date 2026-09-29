@@ -11,12 +11,12 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int data_ov002_0207f624;
 extern u16 data_0204c190;
 
 extern void EnqueueObjGfxCommand(void *pSurface);
-extern void PlaySound(int nId, int nKind);
 
 extern void Ov002_SelectEntryByKey(int nKey);
 extern void Ov002_FillMapRows(int a, int b, int c, int d, int e);

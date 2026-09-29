@@ -1,9 +1,8 @@
 /* Enables the sound listeners, records the local player's pending object, flags the dispatcher,
  * runs the frame and resets the camera; returns the roster step. */
 
-extern void SoundMgr_SetListenersEnabled(int arg0);
-extern int QueryActiveStateOrDelegate(void);
-extern int GetEntryField20ByIndex(unsigned int arg0);
+#include "game/engine.h"
+
 extern void func_ov022_020884ec(unsigned int arg0);
 extern void Ov022_SetBit3OnPtr20(int arg0, int arg1);
 extern void Ov022_UpdateCameraAndViews(int arg0);

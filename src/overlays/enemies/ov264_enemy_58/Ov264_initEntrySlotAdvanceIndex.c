@@ -1,9 +1,10 @@
 /* Fills the next entry of the ring (+0x90, 0x38-byte entries) with the default sizes, the position
  * and a fixed rotation, then advances the ring index modulo its count. */
 
+#include "game/engine.h"
+
 struct v3 { int x, y, z; };
 
-extern void QuatFromAxisAngle(void *a, void *b, int c);
 extern long long func_02020400(int a, unsigned b);
 extern int data_02042270[];
 

@@ -3,11 +3,10 @@
  * bit 1 is cleared and the cursor advances modulo the +0x8c ring size. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int kind; char pad4[0x14]; int a; int value; int c; char pad24[8]; VecFx32 pos; } Particle;
 typedef struct { char *owner; int next; } Emitter;
-
-extern int RandNextScaled(int bound);
 
 void Ov237_EmitSpark(Emitter *emitter, VecFx32 *pos, int value)
 {

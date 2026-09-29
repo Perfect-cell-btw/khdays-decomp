@@ -17,11 +17,10 @@
  * target>=0 block (table address, loaded kind, the 0xb46f6 offset, the -1 constant) colour
  * differently: the -1 takes r1 and the kind is pushed out to ip. With const, the kind lands
  * in r1 and the -1 in lr, as in the ROM. Nothing else in this function is sensitive to it. */
+
+#include "game/engine.h"
+
 extern char *data_0204c234;
-extern void SoundMgr_ExpireRequests(void);
-extern void SoundMgr_PopQueued(void);
-extern void StoreU16FieldAndRefresh(unsigned int param_1);
-extern void SoundMgr_StopBgm(int arg);
 extern void NNS_SndPlayerStopSeq(void *ptr, int arg);
 extern int NNS_SndPlayerReadVariable(int *param_1, int param_2, short *param_3);
 extern int *SoundMgr_PeekQueued(int i);
@@ -29,8 +28,6 @@ extern int NNS_SndArcPlayerStartSeq(void *ptr, int arg);
 extern int NNS_SndPlayerWriteVariable(void *obj, int a, int b);
 extern void NNS_SndPlayerMoveVolume(void *obj, int param_1, int param_2);
 extern int NNS_SndPlayerCountPlayingSeqByPlayerNo(int index);
-extern void ScriptPool_FreeSlot(void *ptr);
-extern void Sound_UpdateSpatial(int param_1);
 extern void NNS_SndMain(void);
 extern const unsigned char data_02042124[48];
 

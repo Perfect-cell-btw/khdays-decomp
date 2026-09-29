@@ -3,10 +3,11 @@
  * pose from the sub-object's flag byte at +0x4a4, drain any pending entry, and
  * only when Ov002_GetPanelField018c says the step is complete either hand off to
  * Ov002_DrawRecordLine (flag set) or finish and post the same event. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern int Ov002_ResolveSelectedPanel(void);
 extern void Ov002_ReleaseBattleViewFocus(void);
-extern void GameState_SetField(int event, int a, int b);
 extern void Ov002_SetPanelField003c(int pose);
 extern void Ov002_SetSeatFlag(int a, int b);
 extern int Ov002_World_IsFlagBitSet(int a);

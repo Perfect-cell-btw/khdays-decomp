@@ -11,12 +11,12 @@
  * because the bitfield form adds a truncation the ROM does not have here. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo:8, hi:8; };
 struct b8 { unsigned int b:8; };
 struct quat { int q[4]; };
 extern void Quat_FromTwoVectors(struct quat *out, const VecFx32 *from, void *basis);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, VecFx32 *basis, const void *v);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov160_DashTick(void);

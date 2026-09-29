@@ -6,9 +6,8 @@
  * in +0x50 and sub-state 8 is requested. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward(int cur, int target, int step, int *out);
-extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, int *quat);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;

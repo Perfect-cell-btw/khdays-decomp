@@ -9,6 +9,7 @@
  * `+ (dist - dist)` is the documented copy artifact of RandNextScaled (`add r6,r0,#0`). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
@@ -18,7 +19,6 @@ extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov178_IsChildInactive(int node);
-extern int RandNextScaled(int bound);
 extern int data_02042264;
 
 void Ov178_CircleTick(int node)

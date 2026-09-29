@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
 extern int Ov002_FindKeyIndex(int id);
 extern void Ov002_SetKeyNodeVisible(int id, int a, int b);
 

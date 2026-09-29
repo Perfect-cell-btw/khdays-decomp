@@ -1,7 +1,7 @@
 /* Host only: adds a positive value to a player's mission tally (kind 5). */
 
-extern short Session_GetLocalPlayerIndex(void);
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 extern void Ov002_AddMissionTally(int arg0, int arg1, int arg2);
 void func_ov022_02088984(int arg0, int arg1) {
     if (Session_GetLocalPlayerIndex() != 0) return;

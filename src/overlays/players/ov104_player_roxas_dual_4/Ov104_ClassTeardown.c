@@ -1,9 +1,10 @@
 /* Class pfnMethod: frees the archive binding and resource tables, then destroys the root objects.
  */
 
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern unsigned char data_0204c240;
-extern void FreeAllResourceTables(void *);
 extern void NNSi_FndFreeFromDefaultHeap(void *);
 extern void Ov002_FreeResourceTables(void *, void *);
 extern void Ov104_ReleaseChannelAndFreeSubObject(void *);

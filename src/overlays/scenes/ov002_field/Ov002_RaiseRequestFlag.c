@@ -5,13 +5,15 @@
  * (base = *(int*)&data_ov002_0207fa00): sub-op 0 sets bit 2 and kicks the audio cue
  * GameState_SetFlag(0x2087); sub-op 1 sets bit 6. Any other sub-op is ignored.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     unsigned char _0;
     unsigned char subOp;   /* +1 */
 } Ov002Cmd;
 
 extern int data_ov002_0207fa00;
-extern void GameState_SetFlag(int cueId);
 
 void Ov002_RaiseRequestFlag(Ov002Cmd *cmd)
 {

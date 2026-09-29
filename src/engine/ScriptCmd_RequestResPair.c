@@ -1,7 +1,6 @@
 /* Script command: reads two operands and requests the resource pair. */
 
-extern int ScriptVm_ReadOperandInt(void *a, void *b);
-extern void Res_RequestIdPair(int x);
+#include "game/engine.h"
 
 int ScriptCmd_RequestResPair(void *p, char *buf)
 {

@@ -2,9 +2,11 @@
  * delay is drawn between the +0x224 and +0x228 bounds, each of the four +0x458 parts whose own
  * bit 0 is clear gets its +0x1cc hook called with 0, as does the +0x460 single; the sub-state
  * takes the +0x1c9 byte and the node slot is released. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov253_HoldTick(int *node) {

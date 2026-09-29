@@ -3,7 +3,8 @@
  * Ov022_ActorSetState with mode 0 or 2 depending on bit 2 of obj+0x24. On success clears bit 13 of
  * the obj[0] flag word and returns the Ov022_ActorSetState result. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern int Ov022_ActorSetState(int obj, int mode);
 
 int Ov022_TryAdvanceAndClearBit13(int obj) {

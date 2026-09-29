@@ -9,10 +9,10 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov256_PickTarget(int *node);
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void GameState_SetField(int field, int width, int value);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_TickBrace(void);

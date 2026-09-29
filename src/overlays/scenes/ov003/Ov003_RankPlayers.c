@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 wSortValue;
@@ -38,7 +39,6 @@ extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int nSize);
 extern void NNSi_FndFreeFromDefaultHeap(void *pMemory);
 extern void Util_QuickSortWithWork(void *pBase, int nCount, unsigned int nWidth,
                           int (*pCompare)(const void *, const void *), void *pWork);
-extern unsigned int Session_GetLocalPlayerIndex(void);
 extern int Ov003_ComparePlayerScores(const void *pLeft, const void *pRight);
 
 /* Authorized single-instruction exception; this source is not pure C. */

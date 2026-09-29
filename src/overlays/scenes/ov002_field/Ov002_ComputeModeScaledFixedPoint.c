@@ -7,8 +7,10 @@
  * product (factor * scale + 0x800) >> 12, evaluated in 64 bits (smull) with 0x800 rounding before
  * the 12-bit shift.
  */
+
+#include "game/engine.h"
+
 extern int func_02023bf0(void);
-extern int func_02023c40(void);
 
 int Ov002_ComputeModeScaledFixedPoint(void)
 {

@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define FLAG_ITEM_MENU_SEEN 0x200b
 #define FLAG_TIER_BASE      0x3c2b
@@ -65,8 +66,6 @@ extern void  Ov008_ForEachListNode(int nCtx, int nMode);                  /* Ov0
 extern void  Ov008_LoadItemCounts(void);
 extern void *Ov008_FindEntryById(int nCtx, int nId);                    /* FindEntryById */
 extern void  Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
-extern int   GameState_IsFlagSet(int nFlag);                                  /* GameState_IsFlagSet */
-extern u32   GameState_GetField(int nField, int nBits);                      /* GameState_GetField */
 extern int   Ov008_GetSlideTableValue(int nId);
 extern void  Ov008_ArmUnseenMarkers(void);                                 /* Ov008_ArmUnseenMarkers */
 extern void  Ov008_DispatchMenuInput(void);                                 /* menu dispatcher */

@@ -1,6 +1,7 @@
 /* Destroys the six part instances and the model instance, then the base object. */
 
-extern void DestroyInstance(int *param_1);
+#include "game/engine.h"
+
 extern void Ov107_DestroyObject(int param_1);
 
 struct Elem8 {

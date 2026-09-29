@@ -5,13 +5,12 @@
  * brightness of both screens fades in (0..0x1f), holds (0x20..0x3a), fades out
  * (0x3b..0x5a), then resets and advances. */
 
+#include "game/engine.h"
+
 typedef void *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  Ov000_FadeStateHookNoOp(void);
-extern void  Gfx_EnqueueTableCmdAtC(int id, void *player, int, int);
-extern void  SetMasterBrightnessMain(int brightness);
-extern void  SetMasterBrightnessSub(int brightness);
 extern void  Ov000_LogoFadeState3(void);
 
 StateFn Ov000_LogoFadeState2(void) {

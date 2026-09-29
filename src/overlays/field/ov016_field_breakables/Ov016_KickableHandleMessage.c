@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016KickableKindRow {
     void *pfnStep;            /* 0x00 */
@@ -80,7 +81,6 @@ extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern int  Ov002_GetModuleScale(void);                                    /* frame delta */
 extern int  FX_Div(int nNumerator, int nDenominator);
 extern void ScaleVec3Fx12(int nScale, const VecFx32 *pVec, VecFx32 *pOut); /* ScaleVec3Fx12 */
-extern int  Session_GetLocalPlayerIndex(void);                                          /* Session_GetLocalPlayerIndex */
 extern Ov016KickableKindRow data_ov016_02082748[];                        /* per-kind rows */
 
 void Ov016_KickableHandleMessage(Ov016Kickable *pSelf, Ov016KickableMessage *pMessage)

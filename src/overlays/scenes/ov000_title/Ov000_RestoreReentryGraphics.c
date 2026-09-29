@@ -5,10 +5,10 @@
  * (load Archive_LoadFile, resolve GetResourceSubBlock_CHAR2, DC_FlushRange, GX_LoadBG0Char, free).
  * No-op tail when heap[2] is absent. */
 
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  Bg_LoadPaletteForScreen(int, void *, void *, int, int);
-extern void  Gfx_EnqueueTableCmdAt14(int, void *, int, int);
-extern void  Gfx_EnqueueTableCmdAtC(int, void *, int, int);
 extern void *Archive_LoadFile(unsigned int addr, int mode);
 extern void  GetResourceSubBlock_CHAR2(void *handle, void **out);
 extern void  DC_FlushRange(void *addr, int len);

@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 bCommandKind;
@@ -20,10 +21,8 @@ typedef struct {
 extern Ov002RootContext *data_ov002_0207fa00;
 extern u8 data_0204c240;
 
-extern short Session_GetLocalPlayerIndex(void);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
-extern u32 Rand16NextScaled(u32 nRange);
 extern u32 Ov002_BuildSessionCommand(int nCommand,
                                Ov002PathPointCommand *pCommand);
 

@@ -1,7 +1,8 @@
 /* Registers the texture data of the indexed entity record's model (0x184 bytes each) of the entity
  * manager. */
 
-extern void func_0202ba68();
+#include "game/engine.h"
+
 extern int data_0204c208;
 
 void func_0202ba44(int arg0) {

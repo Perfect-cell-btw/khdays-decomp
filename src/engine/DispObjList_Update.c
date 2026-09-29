@@ -6,6 +6,7 @@
  * base[0x4634] and hands over to OamBuffer_Flush(base, arg). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define REG_BLDALPHA    (*(vu16 *)0x04000052)
 #define REG_DB_BLDALPHA (*(vu16 *)0x04001052)
@@ -22,7 +23,6 @@ static inline void G2S_ChangeBlendAlpha(int eva, int evb)
 struct Flags { unsigned f0 : 1, f1 : 1, f2 : 1; };
 extern void DispObj_WriteOam(int base, int entry);
 extern void NNS_G2dTickCellAnimation(unsigned int *p, int size);
-extern void OamBuffer_Flush(void *p, int x);
 
 void DispObjList_Update(int base, int arg)
 {

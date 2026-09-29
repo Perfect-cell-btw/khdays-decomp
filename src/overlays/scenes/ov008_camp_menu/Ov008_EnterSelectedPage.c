@@ -4,9 +4,11 @@
  * (heap+0x92/0x96/0x9a/0x9e) and hands off to Ov008_CommitSelectedPage. Otherwise it only proceeds
  * once the current page's option count (high nibble of heap+0x1e) reaches 3, clearing the
  * transition marker (heap+0x172) before handing off; below 3 it stays (returns 0). */
+
+#include "game/engine.h"
+
 extern void  Ov008_UpdateCursorSprite(void);
 extern int   Ov008_IsSessionReady(void);
-extern void  GameSession_SetSyncEnabled(int a);
 extern char *data_ov008_02090f00;
 extern void  Ov008_CommitSelectedPage(void);
 

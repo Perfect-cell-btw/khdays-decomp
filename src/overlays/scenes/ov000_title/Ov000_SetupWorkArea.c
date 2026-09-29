@@ -14,13 +14,14 @@
  *
  * THUMB -- verify with --thumb. */
 
+#include "game/engine.h"
+
 extern void *data_0204be14;
 extern void *data_0204be18;
 
 extern void *MI_CpuFill8(void *dst, unsigned char v, unsigned int n);
 extern void MIi_CpuClear16(unsigned short v, void *dst, unsigned int n);
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int v, void *dst, unsigned int n);
-extern void GameState_SetField(int id, int kind, int flag);
 
 void Ov000_SetupWorkArea(int slot) {
     data_0204be18 = (char *)data_0204be14 + 0x18;

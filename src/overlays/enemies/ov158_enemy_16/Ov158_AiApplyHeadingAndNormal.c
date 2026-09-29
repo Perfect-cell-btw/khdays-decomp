@@ -7,13 +7,12 @@
  * neutral constant. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int v[4];
 } Ov158_Xform;
 
-extern int Angle_TurnToward(int a, int b, int c, int *state);
-extern void QuatFromAxisAngle(Ov158_Xform *out, const Ov158_Xform *src, int v);
 extern void Quat_FromTwoVectors(Ov158_Xform *out, const Ov158_Xform *src, int rig);
 extern void Quat_Multiply(Ov158_Xform *out, const Ov158_Xform *a, const Ov158_Xform *b);
 extern void Srt_SetRotationQuat(int dst, const Ov158_Xform *x);

@@ -1,10 +1,10 @@
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct bitguard { unsigned char b0 : 1; };
 
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
-extern int QueryActiveStateOrDelegate(void);
 
 /* Per-frame knockback slide: while the node is airborne (+0x17a bit0) and the
  * timer (+0x64) is live, drop the position (y -= 0x400) and push it to the render

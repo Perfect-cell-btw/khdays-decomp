@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 typedef int (*Ov002PhaseProc)(void);
 
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern unsigned short Ov002_BuildSessionCommand(int nKind, void *pOut);
 extern int Ov002_StepSessionMenu(void);
 extern int Ov002_WaitSessionMenuRequest(void);

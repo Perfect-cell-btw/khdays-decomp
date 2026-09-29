@@ -1,8 +1,9 @@
 /* MsgDb decoder for db 0x19: bounds-check index, alloc a 0x48 record (kind 0x19),
  * store index + elem[0..3] (note +0x1c/+0x18 order), then copy 5 pairs from elem+0x10
  * into rec+0x20/+0x34 (stride 4). elem = entry[8] + index*0x38 (table + 0x19*0x14). */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, int size, int kind, int keep);
+
+#include "game/engine.h"
+
 extern int data_0204c238;
 int MsgDb_DecodeDb19(int *rec_out, int index, int keep) {
     int elem;

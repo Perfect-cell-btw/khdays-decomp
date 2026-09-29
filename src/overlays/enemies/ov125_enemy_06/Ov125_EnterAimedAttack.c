@@ -6,10 +6,10 @@
  */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(void *dst, void *k, int angle);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov125_AimedAttackTick(void);
 extern int  data_02042264;

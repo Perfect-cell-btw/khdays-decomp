@@ -1,8 +1,10 @@
 /* Single-case switch: two plain `if (...) return;` guards get if-converted into one
  * predicated chain (ldreq/cmpeq); the ROM emits two separate popne. Same shape as
  * ov008 02068588/020685d0. */
+
+#include "game/engine.h"
+
 extern void Ov025_PlaceElementByVariant(int *obj, int old, int now);
-extern void PlaySound(int a, int b);
 
 void Ov025_StepSelectionBackward(int *param_1) {
     int old = *param_1;

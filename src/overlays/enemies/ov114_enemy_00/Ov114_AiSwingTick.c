@@ -2,8 +2,10 @@
  * falls in [0x555, 0x800) (latched by the +0x49 byte), set the latch, run ov244_020d1d68, and
  * unless the busy byte at *(child+0xc) is set, pick a landing point at (child)+0x4c = base(+0x224)
  * + rand(|+0x228 - +0x224| + 1) and mark sub-state 2. Always dispatch with no handler. */
+
+#include "game/engine.h"
+
 extern void Ov114_PerformSwingSweep(int a, int b);
-extern int RandNextScaled(int a);
 extern int SetIndexedSlot(int a, int b, void *handler);
 void Ov114_AiSwingTick(int param_1) {
     int child = *(int *)(param_1 + 4);

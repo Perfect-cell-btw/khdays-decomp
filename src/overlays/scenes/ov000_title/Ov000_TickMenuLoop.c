@@ -29,6 +29,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void         *StateFn;
 
@@ -57,15 +58,12 @@ extern unsigned short data_0204c190;
 
 extern Ov000MenuContext *NNSi_FndGetCurrentRootHeap(void);
 extern void      Ov000_FadeStateHookNoOp(void);
-extern void      func_020362ec(void *image);
 extern int       Ov000_StepMenuSelection(void *input, int selection, int group);
-extern void      SetMasterBrightnessSub(int brightness);
 extern void      G2x_SetBlendAlpha_(u32 reg, int a, int b, int c, int d);
 extern void      Ov000_RefreshMenuLayout(void);
 extern void      Ov000_RegisterLogoObjects(void);
 extern void      Camera_CommitMatricesEx(void *bounds, int a, int b, int c, int d);
 extern void      Scene_DrawNode(void *node);
-extern void      PlaySound(int a, int b);
 extern long long OS_GetTick(void);
 extern unsigned long long func_02020368(unsigned long long value, unsigned int divisor,
                                         int arg3);

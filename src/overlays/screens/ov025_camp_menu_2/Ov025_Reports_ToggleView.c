@@ -1,7 +1,8 @@
 /* When reports exist toggles the view and refreshes the current report. */
 
+#include "game/engine.h"
+
 extern int Ov025_GetPageA();
-extern int PlaySound();
 extern int Ov025_Reports_RefreshCurrentEntry();
 
 void Ov025_Reports_ToggleView(int arg0) {

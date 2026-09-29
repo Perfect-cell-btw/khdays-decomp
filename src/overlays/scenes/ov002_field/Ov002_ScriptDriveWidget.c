@@ -3,7 +3,9 @@
  * halfword, hence the lsl/lsr pairs rather than an `and`); the third is passed
  * whole to Ov002_RefreshActiveSlots alongside whatever the first call returns.
  * Always reports 1. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern int Ov002_List_ScaleEntryTag(int a, int b);
 extern void Ov002_RefreshActiveSlots(int handle, int c);
 

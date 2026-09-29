@@ -1,4 +1,5 @@
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 /* Ov006_MissionMenuOpenTick -- Mission Mode: menu-open tick, returns the next scene state (0 = stay).
  * While the scene is locked out (obj+0x4e8) it drives the sound and waits for the intro
  * jingle latch at obj+0x49c to clear, then clears the pending transition at obj+0x2c.
@@ -7,7 +8,6 @@
 extern void Ov006_TickCardTransferScene(void);
 extern int  Ov006_IsSceneState4(void);
 extern void Ov006_MissionUpdateInputTransition(void);
-extern void GameSession_SetSyncEnabled(int a);
 extern void Ov006_UpdateAndGetIdleHandler(void);
 extern void Ov006_UpdateSelectionConfirmationState(void);
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)

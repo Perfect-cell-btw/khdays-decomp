@@ -16,11 +16,9 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef unsigned int   uint;
-
-extern int  Session_IsReady(void);
-extern uint func_02031384(int a, void *b, u16 c);
 
 uint Ov002_BuildSessionCommand(int param_1, u16 *param_2)
 {

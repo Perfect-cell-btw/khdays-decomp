@@ -19,13 +19,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov039_GetBandStepCount(char *self);
-extern int Session_RandNext(void);
 extern void Ov039_PushAttackEvents(char *self);
 extern void func_ov022_020ad28c(char *self, char *at, int effect, int arg);
 extern void Anim_SetFrameWrapped(char *anim, int track, int frame);

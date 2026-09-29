@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 unknown_00[0x18];
@@ -44,7 +45,6 @@ extern Ov000SharedContext *data_ov000_0205ac3c;
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_InitResourceRecord(void *object, const void *config);
 extern void StreamReader_InitU16(void *resource, void *shared_resource);
-extern void TileSurface_InitAndUpload4bpp(void *surface, const TileSurfaceCfg *config);
 extern void *Ov000_GetVarRecordByIndex(void *object, int variant);
 
 void Ov000_InitSceneSurfaces(void) {

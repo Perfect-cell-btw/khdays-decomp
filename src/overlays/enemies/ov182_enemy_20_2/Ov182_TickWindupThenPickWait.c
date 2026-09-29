@@ -2,8 +2,9 @@
  * the model's animation ends, picks a random wait between the actor's limits at +0x224 and +0x228,
  * queues action 2 and clears the step handler. */
 
+#include "game/engine.h"
+
 extern void Ov182_SwingSweep(int a, int b, int c);
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 
 void Ov182_TickWindupThenPickWait(int *self) {

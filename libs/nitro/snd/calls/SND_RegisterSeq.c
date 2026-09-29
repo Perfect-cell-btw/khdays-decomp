@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 extern void *ResCache_FindSlot(int a, int b);
 extern int Archive_LoadFile(int a, int b);
 extern void strcpy(void *dst, int src);
-extern int func_02023650(void);
 
 extern int data_0204bbfc[];
 

@@ -1,6 +1,8 @@
 /* Begin the timed phase: mark it running and start the timer. A solo machine has
  * no phase to time, so it reports done straight away. */
-extern int Session_IsReady(void);
+
+#include "game/engine.h"
+
 extern int Ov002_StepTimedPhase(void);
 
 typedef struct {

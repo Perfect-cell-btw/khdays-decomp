@@ -1,9 +1,10 @@
 /* Advances the charge effect and the six slots; while any of them is active, sets bit 16 of the
  * local player's two 64-bit flag words. */
 
+#include "game/engine.h"
+
 extern void Ov084_DriveChargeSequence(int a, char *b, int c);
 extern int Ov084_TickStateReturnDone(int a, int b);
-extern int Session_GetLocalPlayerIndex(void);
 
 void Ov084_UpdateSlotsAndFlagLocal(int self, char *blk, int arg) {
     int i;

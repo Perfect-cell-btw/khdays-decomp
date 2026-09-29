@@ -7,6 +7,7 @@
  * per frame), while the goal's +0x3c0..+0x3c8 scale follows 3/4 of the timer capped at 1.5. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov245Actor { char pad[0x394]; int slots[3]; };
 
@@ -15,10 +16,7 @@ extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);
-extern int RandNextScaled(int scale);
 extern void Ov245_InvokeHookAndRearm(int item, void *anchor, const VecFx32 *dir);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const int *quat, const VecFx32 *in);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;
 extern const VecFx32 data_02042264;

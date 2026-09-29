@@ -28,12 +28,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int owner, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Div(int num, int den);
-extern int RandNextScaled();
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov150_PoseAdvanceUnlessField14AtLeast80(void);

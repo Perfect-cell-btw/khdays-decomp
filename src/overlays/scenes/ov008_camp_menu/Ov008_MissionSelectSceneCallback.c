@@ -1,9 +1,10 @@
 /* Scene callback: returns the idle callback when the session is alive, finalises the wireless
  * session on an error state, and returns nothing otherwise. */
 
+#include "game/engine.h"
+
 typedef void (*SceneCallback)(void);
 
-extern int Game_PollSceneAlive(void);
 extern void Ov105_WH_Finalize(void);
 extern void Ov008_MissionSceneIdleCallback(void);
 

@@ -1,6 +1,8 @@
 /* Clears the first entry of record `a` whose {id, value} pair equals *key.  The id half is
  * compared unsigned (ldrh) and the value half signed (ldrsh). */
-extern int Slot_CalcRangeCap18(int a);
+
+#include "game/engine.h"
+
 extern unsigned char data_0204c678[];
 
 void Slot_ClearMatchingEntry(int a, short *key) {

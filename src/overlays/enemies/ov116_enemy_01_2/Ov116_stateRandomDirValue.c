@@ -2,8 +2,8 @@
  * the actor's limits at +0x224 and +0x228; installs the circling step. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov116_CircleTick(void);
 void Ov116_stateRandomDirValue(int *node) {

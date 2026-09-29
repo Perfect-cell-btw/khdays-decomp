@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Bit6 { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1, b4 : 1, b5 : 1, b6 : 1; };
@@ -31,7 +32,6 @@ extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
-extern int RandNextScaled(int bound);
 /* Defined taking kind as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, VecFx32 *push, int z);

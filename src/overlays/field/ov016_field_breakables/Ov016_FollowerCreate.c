@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016FollowerDef Ov016FollowerDef;
 
@@ -42,7 +43,6 @@ typedef struct Ov016Follower {
 extern Ov016Follower *Ov002_ClaimPoolEntry(Ov016FollowerDef *pClass, int nSlot); /* take a piece from the class table */
 extern int   Ov002_PlaceElementNode(void *pPiece, void *pNode, int *pPlace, int nSlot, int nKind,
                                  int nParamA, int nParamB, int nParamC, int nFacing, int nFlag); /* place the node */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, const VecFx32 *pVec);        /* Actor_SetVecAndSyncChild */
 extern void  Ov002_PushBucketNode(int nBucket, void *pPiece);              /* register the piece */
 extern void *Ov016_FollowerStep(Ov016Follower *pSelf);                   /* Ov016_FollowerStep */
 extern const VecFx32 data_02041dc8;                                       /* the zero vector */

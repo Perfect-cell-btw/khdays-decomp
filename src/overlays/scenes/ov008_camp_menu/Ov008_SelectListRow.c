@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define VISIBLE_ROWS  8
 #define TRACK_END     0x7f
@@ -45,7 +46,6 @@ extern int  Ov008_ScrollMenuRowsTo(Ov008MenuContext *pCtx, int nRow, int nFirst,
 extern Ov008InventoryItem *NNS_FndGetNthListObject(void *pList, int nIndex);        /* List_GetNthObject */
 extern void Ov008_SetBitInBitset(Ov008MenuContext *pCtx, int nItemId);     /* Ov008_SetBitInBitset */
 extern void Ov008_RefreshInventoryRows(Ov008MenuContext *pCtx, int nRowBase, int nFirst); /* rebuild the visible rows */
-extern int  GameState_IsFlagSet(int nFlag);                                     /* GameState_IsFlagSet */
 extern void *Ov008_FindEntryById(int nCtx, int nId);                      /* FindEntryById */
 extern void Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible);    /* SetEntrySlotsVisible */
 extern int  Ov008_TestBitInBitset(Ov008MenuContext *pCtx, int nItemId);     /* TestBitInBitset */

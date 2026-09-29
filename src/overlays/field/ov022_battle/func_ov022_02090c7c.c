@@ -1,6 +1,6 @@
 /* Initialises a shot record: registers its sequence and resets its state. */
 
-extern void RegisterSeqAndInit(unsigned short *arg0, unsigned int *arg1, int arg2, int arg3);
+#include "game/engine.h"
 
 void func_ov022_02090c7c(unsigned char *arg0, int arg1, unsigned int *arg2, unsigned char arg3) {
     RegisterSeqAndInit((unsigned short *)(arg0 + 0x28), arg2, 1, arg1 + 7);

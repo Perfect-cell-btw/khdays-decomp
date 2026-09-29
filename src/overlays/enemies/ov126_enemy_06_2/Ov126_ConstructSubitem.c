@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     VecFx32 vPos;
@@ -42,10 +43,6 @@ typedef struct {
 
 extern void *Ov107_PackTextureHandle(int owner, int index);
 extern void *CreateSubitemInstance0xB4(void *item);
-extern void RegisterSubscriberSlot(void *subscriber, void *item);
-extern void SetSubitemState(void *item, int state, int zero, int enabled);
-extern void RefreshObjectCallbacks(void *item, int value);
-extern Ov125PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(Capsule *req);
 extern void Ov126_OnDespawn(void);
 extern void Ov126_TickAndSyncModelXform(void);

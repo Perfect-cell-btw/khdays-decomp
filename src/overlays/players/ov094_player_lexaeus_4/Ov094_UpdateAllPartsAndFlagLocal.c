@@ -1,12 +1,13 @@
 /* Ticks all ov094 scene-part state machines and publishes local-player flags after charge begins.
  */
 
+#include "game/engine.h"
+
 extern void Ov094_StepCharge(int a, int b, int c);
 extern void Ov094_UpdateTracksWhileActive(int a, int b, int c);
 extern void Ov094_DriveSwingSequence(int a, int b, int c);
 extern void Ov094_PlaceChargeEffect(int a, int b, int c);
 extern void Ov094_TickChargeStateGuarded(int a, int b, int c);
-extern int Session_GetLocalPlayerIndex(void);
 
 void Ov094_UpdateAllPartsAndFlagLocal(int self, char *blk, int arg) {
     int any = 0;

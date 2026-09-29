@@ -2,9 +2,11 @@
  * the callee untouched, so it costs no instruction and is invisible in the
  * disassembly. Its only trace is that r1 is unavailable as a scratch register,
  * which shifts every other allocation up by one. */
+
+#include "game/engine.h"
+
 /* Is entry `index` of the secondary table live? The probe reports the entry
  * itself, which is normalised to a plain 0/1 here. */
-extern int BitArray_TestBit(void *entry, int arg);
 
 typedef struct {
     char pad0000[0x200];

@@ -7,6 +7,9 @@
  * field widths and every field after them shifted -- five members of the family
  * were blocked by that single assumption.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     int nField04;            /* +0x04 */
@@ -22,9 +25,6 @@ typedef struct {
     char pad1d[3];
 } Ov014EmitParams;          /* 0x20 */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov014_CreatePool(int nCount, Ov014EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

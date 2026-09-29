@@ -2,6 +2,7 @@
  * space for every icon, and places the reward list quads. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005TextureResource {void *resource;u32 textureKey,paletteKey;} Ov005TextureResource;
 typedef struct Ov005MenuQuad {char data[36];} Ov005MenuQuad;
@@ -12,7 +13,6 @@ extern char data_ov005_0205b50c[];
 extern void NNS_GfdInitFrmTexVramManager(int,int);
 extern void NNS_GfdInitFrmPlttVramManager(int,int);
 extern void *Archive_LoadFile(const char *,int);
-extern void Obj_RelocateSections(void *,int);
 extern u32 func_02010f7c(int,int,int);
 extern u32 func_020111c0(int,int,int);
 extern void Ov005_InitializeMenuQuad(Ov005MenuQuad *,short,short,short,short);

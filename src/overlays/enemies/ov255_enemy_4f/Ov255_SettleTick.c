@@ -4,12 +4,12 @@
  * object's +0x5c) and the path point is closer than 8.0; else 2 -- and the tick ends. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Bits5c { int b0 : 1, b1 : 1; };
 
 extern int Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int RandRange(int lo, int hi)

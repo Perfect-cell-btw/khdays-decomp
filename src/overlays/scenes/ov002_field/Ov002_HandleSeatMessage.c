@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SeatState {
     u16 hFlags;                 /* 0x00 */
@@ -17,9 +18,7 @@ typedef struct Ov002SeatMsg {
 extern Ov002SeatState *data_ov002_0207fa04;
 
 /* Non-zero once the link session is up and running the seats itself. */
-extern int Session_IsReady(void);
 /* The mask of seats the session currently holds. */
-extern unsigned short GetGlobalU16At6(void);
 
 /* Handle one seat message.
  *

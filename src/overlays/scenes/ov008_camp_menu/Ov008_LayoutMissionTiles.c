@@ -22,6 +22,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define FIELD_MISSION_STATUS 0x28e4
 #define TILE_COUNT     12
@@ -57,7 +58,6 @@ extern int   Ov008_GetCtxObject9630(void);                                  /* O
 extern int   Ov008_GetStateByte14f0(int nGroup);                            /* mission count of a group */
 extern long long OS_GetTick(void);                                    /* GetTick64 */
 extern int   Ov008_GetMenuByte14F3(void);                                  /* cleared mission count */
-extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern int   Ov008_FindActiveEntryByTag(int nOwner, u32 nTag);                  /* ov008_FindActiveEntryByTag */
 extern void  Ov008_SetTagTrackerNodeArmed(int nOwner, int nEntry, int bArmed);    /* SetTagTrackerNodeArmed */
 extern void  Ov008_SetTagValueDup(int nOwner, u32 nTag, short nX, short nY); /* Ov008_SetTagValueDup */

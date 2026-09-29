@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8
@@ -62,7 +63,6 @@ extern Ov008Message15Record *Ov008_FindBestSpareItemForNode(Ov008MenuContext *pC
 extern int  Ov008_PlaceNodeOnPage(Ov008MenuContext *pCtx, Ov008Message15Record *pRecord, u32 nPage, u32 nCol, u16 nRow); /* place at cell */
 extern void Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, int nDelta); /* Ov008_BumpRowCounter */
 extern void EnqueueObjGfxCommand(void *pQueue);                                  /* EnqueueObjGfxCommand */
-extern void DispatchByNodeKind(Ov008Message15Record **ppRecord);               /* DispatchByNodeKind */
 extern void Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                  /* Ov008_RebuildGridHits */
 
 int Ov008_FillCursorCellFromSpares(Ov008MenuContext *pCtx)

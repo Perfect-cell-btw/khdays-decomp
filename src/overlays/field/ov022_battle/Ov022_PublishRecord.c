@@ -1,7 +1,9 @@
 /* Copy the record into this machine's own 16-byte slot of the shared block. The
  * slot index is a THREE-BIT field in the low bits of the halfword at +0xc.
  * Clients other than the host have nothing to write. */
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 
 extern char *data_ov022_020b2ea4;

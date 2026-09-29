@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionList Ov008MissionList;
 
@@ -22,7 +23,6 @@ extern int Ov008_GetNextMissionEntry_5(u32 nMissionId);                         
 extern void Ov008_MissionListSelectFirstOpen(Ov008MissionList *pList);                /* Ov008_MissionListSelectFirstOpen */
 extern Ov008MissionListEntry *Ov008_GetNextMissionEntry(Ov008MissionListEntry *pEntry); /* Ov008_GetNextMissionEntry */
 extern u16 Ov008_GetCurrentListId(void);                                    /* mission entry count */
-extern int GameState_GetField(int nField, int nBits);                         /* GameState_GetField */
 extern void Ov008_MissionListSelectRow(Ov008MissionList *pList, u32 nWord, int nTarget);
 
 void Ov008_MissionListSelectCurrent(Ov008MissionList *pList)

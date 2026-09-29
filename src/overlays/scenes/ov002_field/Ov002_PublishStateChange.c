@@ -2,10 +2,10 @@
  * kind 0x15 from the host, 0x14 from a client -- and an unassigned reply
  * (0xffff) reports failure. Outside a session it is posted locally as event
  * data instead. Reports 1 unless the link request came back unassigned. */
-extern int Session_IsActive(void);
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern int Ov002_BuildSessionCommand(int kind, void *message);
-extern void GameState_SetField(int a, int b, unsigned int c);
 
 int Ov002_PublishStateChange(int a, int b, int c) {
     unsigned char message[8];

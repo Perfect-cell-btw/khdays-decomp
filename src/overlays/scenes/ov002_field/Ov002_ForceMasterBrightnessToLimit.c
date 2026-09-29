@@ -2,10 +2,8 @@
  * The stored level survives only when it is already fully dark (-16) or fully
  * bright (+16); anything in between is forced to fully dark. Gfx_Reset2DEngines then
  * commits the change. */
-extern int func_0201e428(void);
-extern void SetMasterBrightnessMain(int ev);
-extern void SetMasterBrightnessSub(int ev);
-extern void Gfx_Reset2DEngines(void);
+
+#include "game/engine.h"
 
 void Ov002_ForceMasterBrightnessToLimit(void) {
     int ev = func_0201e428();

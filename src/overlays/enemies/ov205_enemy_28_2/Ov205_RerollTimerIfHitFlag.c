@@ -1,7 +1,8 @@
 /* AI step: once the actor is active, picks a random wait between the actor's limits, makes the
  * stored action (+0x1c9) pending and clears the step handler. */
 
-extern int RandNextScaled(int range);
+#include "game/engine.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
 void Ov205_RerollTimerIfHitFlag(int node)

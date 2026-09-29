@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define GRID_PAGES   3
 #define PAGE_SLOTS   40
@@ -60,9 +61,7 @@ typedef struct GameState {
 
 extern GameState *data_0204be18;
 extern Ov008MenuContext *Ov008_GetMenuContext(void);                      /* Ov008_GetMenuContext */
-extern void GameState_SetFlag(int nFlag);                                    /* GameState_SetFlag */
 extern void Ov008_BuildActionPage(Ov008MenuContext *pCtx, int nMode);      /* enter a grid menu mode */
-extern void PlaySound(int nKind, int nSound);                        /* PlaySound */
 extern void Ov008_ClearGridMenu(Ov008MenuContext *pCtx);                 /* Ov008_ClearGridMenu */
 extern void MIi_CpuCopy16(const void *pSrc, void *pDst, u32 nSize);
 extern void Ov008_LoadGridFromSave(Ov008MenuContext *pCtx);                 /* place the equipped items */

@@ -1,6 +1,7 @@
 /* Sets the local player's lock bits and arms the state. */
 
-extern int Session_GetLocalPlayerIndex();
+#include "game/engine.h"
+
 extern int Ov022_ActorSetState();
 
 int Ov032_ArmPlayerLock(int *r0)

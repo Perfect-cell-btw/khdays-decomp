@@ -7,13 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int *dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
 extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov204_stateAcquireTransform(int *node);
 

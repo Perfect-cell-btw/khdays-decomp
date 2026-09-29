@@ -9,13 +9,12 @@
  * otherwise to state 2. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 
 void *Ov043_LandingStep(char *self)

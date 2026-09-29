@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define STATE_LIST 0
 #define STATE_GRID 1
@@ -46,7 +47,6 @@ typedef struct Ov008MenuContext {
 
 extern u16  data_0204c18c;                                                /* held keys */
 extern int  Ov025_PlaceDraggedNode(Ov008MenuContext *pCtx, int nArg);        /* drop the dragged node */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern void Ov025_EnterMenuState(Ov008MenuContext *pCtx, int nState);      /* Ov008_EnterMenuState */
 extern int  Ov025_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep); /* move the cursor */
 extern void Ov025_ResetGridDrag(Ov008MenuContext *pCtx, int bRestore);    /* Ov008_ResetGridDrag */

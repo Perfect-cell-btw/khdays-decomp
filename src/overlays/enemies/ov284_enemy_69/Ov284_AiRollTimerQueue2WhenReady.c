@@ -1,6 +1,7 @@
 /* When the animation ends and the ready flag is set rolls the move timer and queues action 2. */
 
-extern unsigned int RandNextScaled(unsigned int range);
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int *a, int i, int v);
 
 typedef struct { unsigned char enabled : 1; } EnabledFlag;

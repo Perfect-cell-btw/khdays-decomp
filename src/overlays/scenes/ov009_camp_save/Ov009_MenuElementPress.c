@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009SaveContext {
     int variant;
@@ -13,7 +14,6 @@ typedef struct Ov009SaveContext {
 
 extern void Ov009_PlaceElementByVariant(Ov009SaveContext *element, int oldVariant,
                                 int newVariant);
-extern void PlaySound(int bank, int event);
 extern u16 data_0204c18c;
 
 /* Commit the pressed form of a two-state menu element. State 0 changes the

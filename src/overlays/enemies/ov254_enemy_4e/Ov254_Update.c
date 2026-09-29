@@ -8,11 +8,10 @@
  * track position. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(int a, void *b);
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern const VecFx32 data_02042264;

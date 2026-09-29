@@ -4,6 +4,7 @@
  * entry points at (both are creature instances; effects are matched by id). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Combatant {
     u16 flags;              /* +0x00 */
@@ -50,7 +51,6 @@ typedef struct StatusNode {
 
 extern EffectEntry *List_First(BlockList *list);
 extern int          List_RemoveByHandle(BlockList *list, EffectEntry *handle);
-extern EffectEntry *List_Next(BlockList *list);
 extern void         Ov107_Region_UnlinkChild(void *self, Combatant *target);
 
 /* Clamp v into [lo, hi]. The upper bound is unsigned: with a signed bound the

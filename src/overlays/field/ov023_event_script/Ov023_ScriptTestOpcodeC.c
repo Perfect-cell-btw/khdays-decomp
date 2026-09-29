@@ -1,4 +1,5 @@
-extern short LoadGlobalU16At0(void);
+#include "game/engine.h"
+
 extern int Ov023_GetScriptState(void);
 /* Script predicate: true (0) only if the current opcode is 0xc and func_02084018 is non-zero. */
 int Ov023_ScriptTestOpcodeC(void) {

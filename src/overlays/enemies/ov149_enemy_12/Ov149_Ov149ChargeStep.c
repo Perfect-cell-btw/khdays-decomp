@@ -26,6 +26,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 struct Msg {
     u16 h[7];
@@ -59,7 +60,6 @@ extern int VEC_Mag(const VecFx32 *v);
 extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, VecFx32 *in, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int RandNextScaled();
 extern void *Ov107_FindNearestObject(void *actor, int mode);
 extern int Ov107_CollectSphereOverlaps(void *a, VecFx32 *at, void **out);
 extern int Ov107_InvokeHitCallback(void *victim, void *actor, void *owner, int mode,

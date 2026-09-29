@@ -1,5 +1,7 @@
 /* Grows the calendar logo's scale towards full size with a slowing step. */
 
+#include "game/engine.h"
+
 typedef struct Ov004Context {
     char pad_0000[0x5544];
     int objectHandles[3];
@@ -9,7 +11,6 @@ typedef struct Ov004Context {
 } Ov004Context;
 
 extern Ov004Context *data_ov004_02051384;
-extern void SlotTable_SetEntryPair(void *manager, int objectHandle, int value, int scale);
 
 void Ov004_StepLogoScale(void) {
     data_ov004_02051384->objectScale += data_ov004_02051384->scaleStep;

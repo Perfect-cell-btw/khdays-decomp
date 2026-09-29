@@ -4,10 +4,10 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Flag17a { u8 b0 : 1; };
 
-extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern int Ov259_Helper_IsHeld(int rig);
 
 void Ov259_DrawPrePass(char *self)

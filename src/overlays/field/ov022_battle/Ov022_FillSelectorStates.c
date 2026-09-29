@@ -2,6 +2,8 @@
  * the setup arguments, acquires the player's overlay slot and creates its controller, then applies
  * the configured limits and metadata flags to the player's entry. */
 
+#include "game/engine.h"
+
 typedef int (*Ov022InitCallback)(void *object);
 
 typedef struct Ov022CameraRoot {
@@ -50,11 +52,8 @@ typedef struct Ov022PlayerEntry {
 } Ov022PlayerEntry;
 
 extern Ov022CameraRoot *NNSi_FndGetCurrentRootHeap(void);
-extern int Session_IsActive(void);
 extern int func_ov022_020882f8(void);
-extern int LoadGlobalU16At0(void);
 extern int Ov029_AcquireOverlaySlot(int index, int group);
-extern Ov022PlayerEntry *GetEntryField20ByIndex(int index);
 extern int InstantiateClass(void *classData, int argument);
 
 extern unsigned char data_02042a1d;

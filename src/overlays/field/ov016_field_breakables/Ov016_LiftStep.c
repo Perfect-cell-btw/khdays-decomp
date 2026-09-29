@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016LiftMessage {
     u8   nType;               /* 0x00 */
@@ -52,11 +53,8 @@ static inline int FX_Mul(int a, int b)
     return (int)(((long long)a * b + 0x800) >> 12);
 }
 
-extern int  GameState_GetField(int nField, int nBit);                       /* GameState_GetField */
-extern int  Session_GetLocalPlayerIndex(void);                                      /* Session_GetLocalPlayerIndex */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern int  Ov002_GetModuleScale(void);                                /* frame delta */
-extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);           /* Actor_SetVecAndSyncChild */
 extern void Scene_DrawNode(void *pNode);                               /* Scene_DrawNode */
 
 void *Ov016_LiftStep(Ov016Lift *pSelf)

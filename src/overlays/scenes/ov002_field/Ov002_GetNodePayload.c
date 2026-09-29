@@ -1,4 +1,3 @@
-extern int GameState_GetField(int nId, int nSlot);
 
 /* Hand back the node's payload when it is visible, not suppressed, and its
  * state query does not report the blocking bit. Slot 2 skips the query.
@@ -9,6 +8,9 @@ extern int GameState_GetField(int nId, int nSlot);
  * the mask lives inside the else arm, not in the shared test: the original
  * branches straight past the and on the slot-2 path, so the join compares a
  * plain variable against zero. */
+
+#include "game/engine.h"
+
 char *Ov002_GetNodePayload(char *pNode)
 {
     unsigned char nSlot;

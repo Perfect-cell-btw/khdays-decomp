@@ -3,6 +3,7 @@
  * that finish. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef union Ov008DisplayFlags {
     u32 raw;
@@ -25,9 +26,7 @@ extern void CP_SaveContext(void *context);
 extern void CPi_RestoreContext(void *context);
 extern void Tween_Sample(void *value, void *state);
 extern int Ov025_GetCtxField95cc(void);
-extern void SetMasterBrightnessSub(int brightness);
 extern int Ov025_IsContextMode4(void);
-extern void SetMasterBrightnessMain(int brightness);
 extern void *NNS_FndGetNextListObject(void *list, void *previous);
 extern void Ov025_ListRemoveAndFree(void *node);
 

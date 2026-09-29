@@ -11,6 +11,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
@@ -20,8 +21,6 @@ extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
 extern void Ov259_LaunchHelper(int helper, int climb, VecFx32 *dir, int heading);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);

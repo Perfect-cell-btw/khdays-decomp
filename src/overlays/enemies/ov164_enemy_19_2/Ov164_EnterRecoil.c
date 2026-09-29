@@ -11,8 +11,8 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern void func_02031384(int a, void *p, int c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov164_TickRecoil(void);
 extern unsigned short data_ov164_020d2c88[];

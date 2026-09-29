@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016KickableDef {
     u8 pad_00[0x58];
@@ -39,10 +40,6 @@ typedef struct Ov016Kickable {
 } Ov016Kickable;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);         /* Actor_SetVecAndSyncChild */
-extern int   GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
 extern void  Ov016_SetAnim(Ov016Kickable *pSelf, int nTrack, int nWord624, int nWord620); /* Ov016_KickableSetAnim */
 
 void Ov016_KickableStart(Ov016Kickable *pSelf)

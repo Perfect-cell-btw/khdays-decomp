@@ -20,6 +20,8 @@
  * THUMB.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     short kind;
     short pad;
@@ -43,8 +45,6 @@ typedef struct {
     char        pad1[0x578 - 0x128];
     OperandSlot slot;   /* +0x578: per-state scratch slot for resolved literals */
 } ScriptVmState;
-
-extern int GameState_GetField(int lo, int hi);
 
 OperandSlot *ScriptVm_ResolveOperand(ScriptVmState *st, OperandCmd *cmd)
 {

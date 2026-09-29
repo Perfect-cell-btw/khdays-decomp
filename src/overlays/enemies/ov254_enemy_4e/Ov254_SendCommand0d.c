@@ -2,10 +2,9 @@
  * byte through the shared queue (02031384, channel 1). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Msg14 { u16 h[7]; };
-
-extern void func_02031384(int channel, void *msg, int size);
 
 void Ov254_SendCommand0d(int *self, int arg)
 {

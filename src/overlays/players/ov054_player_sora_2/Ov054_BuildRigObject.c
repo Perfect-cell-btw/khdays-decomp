@@ -2,6 +2,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct InitConfig {
     int type;
@@ -17,11 +18,6 @@ struct OpenParams { int enabled, limit, scale, unused0c, unused10; };
 struct RigHeader { int unused, rig; };
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int, unsigned short, int, void *, int);
-extern void TailForwardTrackEntry(int, void *, int, int);
-extern int LoadGlobalU16At0(void);
-extern int ArrayEntryPtrD0(int);
-extern void Actor_InitEntityLink(void *, int);
 extern int NNS_G3dGetResDictIdxByName(void *, void *);
 extern void Ov022_InitActor(void *);
 

@@ -25,6 +25,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Quat {
     fx32 q[4];
@@ -57,7 +58,6 @@ typedef struct DropNode {
 
 extern const VecFx32 data_02042264;                                       /* kVecUp */
 extern int   Ov107_FindNearestObject(int nActor, int nArg);
-extern void  Task_MarkFinished(DropNode *pNode);                           /* Task_MarkFinished */
 extern int   Ov160_ProbeGround(DropState *pState, VecFx32 *pStep, VecFx32 *pNormal, fx32 nY);
 extern void  Quat_FromTwoVectors(Quat *pOut, const VecFx32 *pFrom, const VecFx32 *pTo);
 extern void  Srt_SetRotationQuat(char *pSrt, const Quat *pRot);              /* Srt_SetRotationQuat */

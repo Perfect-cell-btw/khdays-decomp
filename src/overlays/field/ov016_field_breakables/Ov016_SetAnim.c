@@ -1,9 +1,9 @@
 /* Stores the animation type and parameters and, when visible, rebinds and enables it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
-extern void SceneNode_Enable(u16 *p);
 
 void Ov016_SetAnim(char *self, int type, int field624, int field620) {
     u16 flags;

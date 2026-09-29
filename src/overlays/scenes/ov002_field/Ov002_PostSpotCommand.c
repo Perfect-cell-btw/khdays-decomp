@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 typedef struct Ov002Stage {
     unsigned char aPad[0x4e];
     unsigned short wPitch;              /* +0x4e */
@@ -22,10 +24,7 @@ typedef struct Ov002SpotCmd {
 extern Ov002Stage *data_ov002_0207fa28[];
 
 extern int func_02020400(int nNumerator, int nDenominator);
-extern int Session_IsReady(void);
 extern void Ov002_ActivateSpotFromCommand(int nId, void *pCmd, int nSize);
-extern void MsgQueue_SendGate(int nType, void *pCmd, int nSize);
-extern unsigned short func_02031384(int nType, void *pCmd, int nSize);
 
 int Ov002_PostSpotCommand(int nPos, int nA, unsigned char bB, int nMode)
 {

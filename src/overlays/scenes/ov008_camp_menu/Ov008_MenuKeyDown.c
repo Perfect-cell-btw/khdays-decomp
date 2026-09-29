@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define KEY_DOWN   0x80
 #define SOUND_MOVE 0x35
@@ -36,7 +37,6 @@ extern void Ov008_CopySourceBlock(void *pOut);                              /* t
 extern int  Ov008_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep);
 extern long long func_02020400(int nNum, int nDen);                       /* _s32_div_f: remainder in the high word */
 extern int  Ov008_SelectListRow(Ov008MenuContext *pCtx, int nPage);       /* switch page */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 
 void Ov008_MenuKeyDown(Ov008MenuContext *pCtx)
 {

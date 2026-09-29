@@ -2,7 +2,9 @@
  * re-acquired (Ov265_AcquireTarget); by the +0x20 distance the owner requests sub-state 5/6/8 with
  * thresholds 35/85 (closer than 3.0), 50/85 (closer than 5.0) or 35/50 (farther). When a
  * sub-state was requested the +0x24 delay is re-rolled in [+0x224, +0x228] and 1 is returned. */
-extern int RandNextScaled(int n);
+
+#include "game/engine.h"
+
 extern void Ov265_AcquireTarget(int *node);
 
 static inline int RandRange(int low, int high)

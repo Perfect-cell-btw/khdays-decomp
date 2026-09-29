@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define FLAGS_BIT36 0x1000000000ULL
 
@@ -64,10 +65,7 @@ extern const struct ObjectParams data_ov022_020b24fc;
 extern u8 data_ov022_020b2930[];
 extern u8 data_ov022_020b2bdc[];
 
-extern int Session_RandNext(void);
 extern int FX_Mul(int nValue, int nScale);
-extern void RegisterSeqAndInit(struct SeqBlock *pBlock, void *pSeq, int nMode,
-                          int nGroup);
 extern void BindAnimTrack(struct SeqBlock *pBlock, int nTrack, u8 *pStore,
                           int nArg);
 extern void Anim_SetFrameWrapped(struct SeqBlock *pBlock, int nTrack, int nFrame);

@@ -1,10 +1,11 @@
 /* Returns the cached slot for the file (adding a reference), or starts loading it into a new slot;
  * returns 1 when it was already cached. */
 
+#include "game/engine.h"
+
 extern void *ResCache_FindSlot(int a, int b);
 extern int Loader_RequestFile(int a, int b);
 extern void strcpy(void *dst, int src);
-extern int func_02023650(void);
 
 extern int data_0204bbfc[];
 

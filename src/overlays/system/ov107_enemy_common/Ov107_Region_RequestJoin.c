@@ -1,10 +1,9 @@
 /* Marks a pending join of the member and posts the join request (message 4, kind 1). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u16 f0; u8 f2; u8 f3; } LocalBuf;
-
-extern void func_02031384(int id, LocalBuf *buf, int count);
 
 void Ov107_Region_RequestJoin(char *self, char *other) {
     LocalBuf buf = {0, 0, 0};

@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -23,7 +24,6 @@ typedef struct { VecFx32 center; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern const VecFx32 data_02042258;
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
 extern void VEC_Add(const void *a, const void *b, void *out);

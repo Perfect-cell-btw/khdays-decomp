@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
@@ -121,7 +122,6 @@ typedef struct Ov027Scene {
 } Ov027Scene;                 /* 0x630 */
 
 extern void  Ov027_MoveCursor(int *pCursor);                     /* Ov027_MoveCursor */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov027_EnqueueDisplayList(Ov027Panel *pPanel);              /* Ov027_EnqueuePanel */
 extern void  Ov027_BlinkPanelSlot(int nSlot);                        /* Ov027_BlinkPanelSlot */
 /* khdays: shared-data */

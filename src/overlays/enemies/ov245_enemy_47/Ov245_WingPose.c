@@ -2,13 +2,15 @@
  * +0x384 body's +0x5c into the wing's +0x5c, builds the +0x4d0 angle rotation about 02042270
  * (0202f188), combines it with the +0x450 anchor's +4 rotation (0202ef54) into the wing's +0x30
  * placement (0203c9d0) and sets its translation to the anchor's +0x14 (0203ca30). */
+
+#include "game/engine.h"
+
 struct Bit1 { int bit0 : 1, bit1 : 1; };
 struct Ov245Wings {
     char pad[0x388];
     int wings[2];
 };
 
-extern void QuatFromAxisAngle(void *out, void *tbl, int angle);
 extern void Quat_Multiply(void *out, void *a, void *b);
 extern void Srt_SetRotationQuat(int placement, void *rotation);
 extern void Srt_SetTranslation(int placement, void *translation);

@@ -9,14 +9,14 @@
  * ARM.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad000[0x38];
     void (*pfnDone)(void);
 } Ov002PageContext;
 
 extern Ov002PageContext *data_ov002_0207f634;
-
-extern void PlaySound(int a, int b);
 
 extern int Ov002_CancelQueuedLoads(void);
 extern int Ov002_RequestCaption(int nMode, int nTake);

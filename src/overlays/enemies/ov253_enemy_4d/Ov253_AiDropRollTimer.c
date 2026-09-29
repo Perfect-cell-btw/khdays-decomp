@@ -1,6 +1,8 @@
 /* Unless the busy byte at *(child+0x8) is set, pick a landing point at (child)+0x2c =
  * base(+0x224) + rand(|+0x228 - +0x224| + 1), mark sub-state 2 and dispatch with no handler. */
-extern int RandNextScaled(int a);
+
+#include "game/engine.h"
+
 extern int SetIndexedSlot(int a, int b, void *handler);
 void Ov253_AiDropRollTimer(int param_1) {
     int child = *(int *)(param_1 + 4);

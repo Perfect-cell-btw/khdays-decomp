@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
@@ -126,7 +127,6 @@ typedef struct Ov027SessionInfo {
     u16  nRoom;               /* 0x02: the room number */
 } Ov027SessionInfo;
 
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov027_DrawPanelSlotShifted(Ov027Panel *pPanel, int nSlot, int nShift); /* Ov027_DrawPanelSlotShifted */
 /* khdays: shared-bss */
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */

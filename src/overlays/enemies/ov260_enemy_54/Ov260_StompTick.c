@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Shards { char pad[0x434]; int shards[15]; };
@@ -24,7 +25,6 @@ struct BoxQuery {
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void Ov260_AttackSweep(int *state, int kind, void *sphere, void *cyl, void *seg);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern int RandNextScaled(int n);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov260_InvokeHookAndRearm2(int shard, VecFx32 *at);

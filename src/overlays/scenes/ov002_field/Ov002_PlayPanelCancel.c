@@ -2,6 +2,9 @@
  * AND the panel has a target at +0x1a8 -- the ROM folds both guards into one
  * predicated chain. Ov002_PanelStepCursor has the final say. Sibling of
  * Ov002_PlayPanelConfirm, which is the same shape against Ov002_PanelAdvanceCursor. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x1a8];
     int pTarget;            /* +0x1a8 */
@@ -9,7 +12,6 @@ typedef struct {
 
 extern int Ov002_GetPanelField018c(void);
 extern int Ov002_PanelStepCursor(void);
-extern void PlaySound(int a, int b);
 
 extern Ov002PanelContext *data_ov002_0207f614;
 

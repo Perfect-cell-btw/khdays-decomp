@@ -1,10 +1,9 @@
 /* Starts an object's current sub-state: flags the local player's entry, resets the sub-state's
  * target, runs the sub-state's entry handler and decrements its level counter (outside replay). */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern void func_ov022_0208a6b0(int obj);
-extern int Load2DArrayU8(int kind, int idx);
-extern void ClampAndStoreLevelEntry(int kind, int idx, int v);
 extern void *data_ov022_020b2a20[];
 extern int data_0204be04;
 

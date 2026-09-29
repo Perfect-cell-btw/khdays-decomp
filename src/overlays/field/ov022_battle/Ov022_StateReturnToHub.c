@@ -2,6 +2,7 @@
  * field 0x20e6. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -16,11 +17,6 @@ extern u8 data_0204be04;
 extern Ov022Context *data_ov022_020b2e60;
 
 extern void Ov022_UpdateCameraAndViews(int mode);
-extern int func_02023c40(void);
-extern void StoreToGlobalPtr4Field28(int value);
-extern void GameState_SetField(int field, int width, int value);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void *Ov022_EndKeySharingSession(void);
 
 Ov022StateCallback Ov022_StateReturnToHub(void)

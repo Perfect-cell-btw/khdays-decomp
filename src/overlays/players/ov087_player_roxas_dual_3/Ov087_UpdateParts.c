@@ -5,8 +5,8 @@
  * reports idle and the actor's flag 0x10000 is clear. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void (*data_ov087_020b9b28[])(char *pGroup, char *pPart, int nArg);
 
 void Ov087_UpdateParts(char *pGroup, int nArg)

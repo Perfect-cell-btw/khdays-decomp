@@ -4,10 +4,10 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct flags16 { unsigned short lo : 8; unsigned short hi : 8; };
 
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov260_IdleEntry(int *node)

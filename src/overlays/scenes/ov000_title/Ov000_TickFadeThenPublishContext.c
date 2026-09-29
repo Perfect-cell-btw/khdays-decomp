@@ -4,6 +4,7 @@
  * 0x4cb5), which is independent corroboration that 16 is the range and not a coincidence. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef int (*OverlayCallback)(void);
 
@@ -18,8 +19,6 @@ extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
 extern OverlayContext *data_ov000_0205ac20;
 extern u8 data_ov000_0205ab94[];
 extern void Scene_DrawNode(void *object);
-extern void SetMasterBrightnessMain(int value);
-extern void SetMasterBrightnessSub(int value);
 extern void Ov000_TeardownTitleScene(void);
 extern void *InstantiateClass(const void *descriptor, int argument);
 extern int Ov000_FinishMoviePlayback(void);

@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[4];
@@ -22,8 +23,6 @@ typedef struct {
 
 extern Ov002PageContext *data_ov002_0207f634;
 extern u8 data_0204c240;
-
-extern void PlaySoundChecked(int a, int b);
 
 extern int Ov002_CancelQueuedLoads(void);
 extern int Ov002_Ctx_FindActiveEntryByTag(int nTag);

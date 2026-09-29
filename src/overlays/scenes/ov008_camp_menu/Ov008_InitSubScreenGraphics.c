@@ -1,8 +1,8 @@
 /* Resets the texture VRAM managers and configures DISPCNT and the BG layers for the sub screen. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void  Gfx_Reset2DEngines(void);
 extern void  NNS_GfdResetFrmTexVramState(void);
 extern void  NNS_GfdInitFrmTexVramManager(int a, int b);
 extern void  NNS_GfdResetFrmPlttVramState(void);

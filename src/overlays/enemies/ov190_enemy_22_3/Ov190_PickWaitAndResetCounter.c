@@ -2,8 +2,8 @@
  * posts pose 2, clears the timer and installs the approach step. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov190_AimApproachAndDispatch(void);
 

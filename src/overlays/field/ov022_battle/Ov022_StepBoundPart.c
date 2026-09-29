@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct SlotShot {
     u8 nState;                       /* 0x00 */
@@ -82,7 +83,6 @@ struct MoveProbe {
 extern int func_ov022_0208a9ac(int nRadius, int nPending, int nTimer);
 extern void ScaleVec3Fx12(int nFactor, VecFx32 *pSrc,
                           VecFx32 *pDst);
-extern int func_02023c40(void);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart,

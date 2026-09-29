@@ -1,9 +1,10 @@
 /* Runs the frame and picks the next step from the context state: fade out, nothing, or ending the
  * key sharing session. */
 
+#include "game/engine.h"
+
 extern void func_ov022_02083f0c(void);
 extern void Ov022_UpdateCameraAndViews(int arg0);
-extern void StoreToGlobalPtr4Field28(int arg0);
 extern int data_ov022_020b2e60;
 extern void Ov022_StepCameraInputThenNextState(void);
 extern void Ov022_EndKeySharingSession(void);

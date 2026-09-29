@@ -6,12 +6,12 @@
  * (kind 6) spawns at the +4 anchor from the +0x384 model and the node moves to 020d0d8c. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct m4 { int w[4]; };
 struct blk11 { int w[11]; };
 struct Bits394 { unsigned int b0 : 1; };
 struct Ov273ActorPose { char pad[0xa0]; struct blk11 bones; };
-extern void QuatFromAxisAngle(void *dst, void *k, int angle);
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Quat_Multiply(void *out, void *a, void *b);

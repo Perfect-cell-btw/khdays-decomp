@@ -1,10 +1,12 @@
 /* Sub-scene state after 020829b4: stays put while bit 0 of the root flags is set; otherwise, when
  * 0208cc58 reports a pending request, 02082b10(0) handles it, and once bit 2 is set the game-state
  * field 0x2080 (5 bits) becomes 0x1b and the scene moves on to 02082a3c. */
+
+#include "game/engine.h"
+
 extern unsigned int *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov026_Shop_IsClosed(void);
 extern void Ov026_SetMenuFlag4(int a);
-extern void GameState_SetField(int field, int width, int value);
 extern void Ov026_SubSceneIdleHandler(void);
 
 int Ov026_SubSceneWait(void)

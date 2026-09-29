@@ -1,8 +1,9 @@
 /* Unless busy builds action page 4 and plays the confirm sound. */
 
+#include "game/engine.h"
+
 extern char *Ov008_GetMenuContext(void);
 extern void Ov008_BuildActionPage(void *context, int arg1);
-extern void PlaySound(int arg0, int arg1);
 
 void Ov008_OpenActionPage4(void)
 {

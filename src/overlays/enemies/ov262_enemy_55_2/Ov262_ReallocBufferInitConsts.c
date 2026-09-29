@@ -1,6 +1,8 @@
 /* Replaces the object's data with a copy of the source and installs the four action request
  * callbacks. */
 
+#include "game/engine.h"
+
 typedef void (*Callback262)(void);
 
 typedef struct {
@@ -17,7 +19,6 @@ typedef struct {
     void *data;
 } Obj262;
 
-extern void FreeInstanceMemory(void *ptr);
 extern void *CallocInstance(int size);
 extern void MI_CpuCopy8(void *src, void *dst, int size);
 extern void Ov262_RequestAction2(void);

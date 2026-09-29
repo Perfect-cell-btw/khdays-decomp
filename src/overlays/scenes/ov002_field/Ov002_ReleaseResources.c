@@ -1,6 +1,8 @@
 /* Releases the field resources: detaches and frees the actor node and unloads the actor overlay
  * when one is loaded, frees the two buffers and resets the entry table. */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x18];
     int nodeId;     /* +0x18, -1 when none */
@@ -18,7 +20,6 @@ typedef struct {
 
 extern Ov107Node *func_ov107_020c9848(void);
 extern void func_ov107_020c9c1c(int nodeId);
-extern void UnloadActorOverlay(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void Ov002_ResetEntryTable(void);
 

@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RosterSlot {
     VecFx32 vecBase;                   /* +0x00 */
@@ -30,7 +31,6 @@ typedef struct Ov002RootContext {
 
 extern Ov002RootContext *data_ov002_0207fa00;
 
-extern int Session_GetLocalPlayerIndex(void);                     /* local player index */
 extern void strcpy(unsigned int *pDst, unsigned int *pSrc);
 
 /* Apply a roster slot a peer sent us.  The host ignores it -- only a machine

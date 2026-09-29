@@ -5,6 +5,7 @@
  * (020d09c8) and a longer one plays pose 0 (looping) under the dwell handler 020d0994. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Waypoint {
     int pad[3];
@@ -12,7 +13,6 @@ struct Waypoint {
     unsigned int uChance;
 };
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov243_CountdownTimer2cThenPose6(void);
 extern void Ov243_NextWaypoint(void);

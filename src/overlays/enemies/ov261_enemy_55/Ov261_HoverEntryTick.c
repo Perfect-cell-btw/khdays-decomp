@@ -4,9 +4,9 @@
  * ends with sub-state 4. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void Ov261_SetFacingAnchor(void *anchor, void *pos, int *target);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov261_HoverEntryTick(int *node)

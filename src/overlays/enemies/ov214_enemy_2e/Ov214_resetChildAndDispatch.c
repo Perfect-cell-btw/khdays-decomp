@@ -1,7 +1,7 @@
 /* Refreshes and dispatches the child's callbacks (+0x420), then runs the shared object tick. */
 
-extern void RefreshObjectCallbacks(void *p, int arg);
-extern void DispatchObjectCallbacks(void *p, int a);
+#include "game/engine.h"
+
 extern void Ov107_ProcessObjectTick(void *this, int a);
 
 void Ov214_resetChildAndDispatch(char *this, int param2) {

@@ -6,6 +6,7 @@
  * Ov000_PushSubWidgetValue and latches nextState=action. No-ops when nothing is pending. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000Marker {
     int position;
@@ -34,8 +35,6 @@ extern Ov000MarkerSceneContext *data_ov000_0205ac24;
 extern u16 data_0204c190;
 
 extern void Ov000_PlaceCursorByMode(int enabled, int mode);
-extern void PlaySound(int soundGroup, int soundId);
-extern int func_02020904(void);
 extern void Ov000_UpdateMenuMarkers(
     int positionEnabled, int groupEnabled, int primaryEnabled);
 extern void Ov000_ArmAutoAdvanceTimer(int mode);

@@ -1,5 +1,6 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002Piece Ov002Piece;
 
@@ -13,7 +14,6 @@ extern VecFx32 *func_ov022_020881f8(int nPeer);        /* where the peer is */
 extern int Ov002_Event_GetField18(void);
 extern Ov002Owner *Ov002_GetPieceOwner(int nSlot);
 extern Ov002Piece **List_First(void *pList);     /* first */
-extern Ov002Piece **List_Next(void *pList);     /* next */
 extern int Ov002_PieceAnswersForPoint(Ov002Piece *pPiece, const VecFx32 *pPos, int nArg);
 
 /* Asks every piece the peer owns whether it answers for the peer's position,

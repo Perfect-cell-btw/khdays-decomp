@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 id; u16 arg; } Msg4;
@@ -32,7 +33,6 @@ typedef void (*MsgHook)(int owner, Msg4 *msg, int size);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern int func_02020400(int num, int den);
-extern void QuatFromAxisAngle(Quat *q, const VecFx32 *axis, int angle);
 extern void Ov277_AttachWithPose(int part, VecFx32 *at, Quat *q);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov277_WaitNibbleTick(void);

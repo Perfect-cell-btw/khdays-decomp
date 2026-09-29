@@ -3,10 +3,10 @@
  * the node to 020cf3d8. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov253_IdleTick(void);
 

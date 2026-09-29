@@ -4,12 +4,13 @@
  * Ov118_LookAtQuat takes THREE arguments -- Ghidra shows a fourth, which is the
  * leftover in r3. Passing it costs a callee-saved register and 32 B.
  * `target = obj[1] = f(...)` in that order: the ROM stores the raw r0. */
+
+#include "game/engine.h"
+
 extern int  Ov107_FindNearestObject(int obj, int *out);
 extern int  FX_Sqrt(int x);
-extern int  RandNextScaled();
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov118_LookAtQuat();
-extern void Vec3TransformViaTempMtx();
 extern void VEC_CrossProduct();
 extern void ScaleVec3Fx12();
 extern char data_02042258[];

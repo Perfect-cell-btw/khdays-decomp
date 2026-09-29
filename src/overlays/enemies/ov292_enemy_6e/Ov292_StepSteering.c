@@ -14,17 +14,15 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern int func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(void *quat, const VecFx32 *axis, int angle);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *mtx, const VecFx32 *v);
 extern long long func_02020400(int num, int den);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042258;

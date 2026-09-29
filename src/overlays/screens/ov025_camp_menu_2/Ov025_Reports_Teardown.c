@@ -8,6 +8,7 @@
  * the 3D offset is reset (G3X_SetHOffset). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ReportsEntry {
     u16  nId : 9;             /* 0x00 bits 0-8 */
@@ -50,7 +51,6 @@ extern void *G2_GetBG1ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);
 extern void  MIi_CpuClearFast(u32 nValue, void *pDst, u32 nSize);
-extern void  GameState_SetField(int nField, int nBits, u32 nValue);      /* GameState_SetField */
 extern void  G3X_SetHOffset(int nOffset);
 
 void Ov025_Reports_Teardown(void)

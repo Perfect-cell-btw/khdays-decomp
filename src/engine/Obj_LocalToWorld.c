@@ -2,9 +2,9 @@
  * flagged). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void Vec3TransformViaTempMtx(VecFx32 *in_vec, void *unused, VecFx32 *out_vec);
 
 typedef struct {
     char pad_00[0x10];

@@ -2,8 +2,7 @@
  * and, when flag 8 is set, restores the saved position; always returns 1. */
 
 #include "nitro/fx_types.h"
-
-extern void StoreField74ThenForward();
+#include "game/engine.h"
 
 int ClearFlag20InitChildAndSyncTransform2(int this_, int arg1, int arg2, int arg3) {
     if (arg1 != 0) {

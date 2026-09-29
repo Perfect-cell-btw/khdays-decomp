@@ -4,10 +4,9 @@
  * bits of both DISPCNT registers, and re-enables the LCD via POWCNT1. Returns 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void Ov008_PageTeardown(int a);
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
 
 int Ov008_TeardownMenu2D(void) {
     Ov008_PageTeardown(0);

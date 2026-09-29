@@ -2,6 +2,7 @@
  * leaves (3/4). */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct Msg {
     char pad0[2];
@@ -20,9 +21,6 @@ typedef struct Ov107 {
     char pad[0xf8];
     unsigned int field_f8;
 } Ov107;
-
-extern unsigned int Session_GetLocalPlayerIndex(void);
-extern void func_02031384(int cmd, Msg *msg, unsigned short val);
 
 void Ov107_Region_OnSyncMessage(Ov107 *self, Msg *msg, int arg2)
 {

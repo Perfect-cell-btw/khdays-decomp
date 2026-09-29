@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } SrtTransform;
@@ -17,7 +18,6 @@ typedef union { int words[3]; u8 bytes[12]; } Packed;
 struct Pair { int res; int handle; };
 struct Ov259 { char pad[0x430]; struct Pair pairs[13]; };
 
-extern void QuatFromAxisAngle(Quat *q, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *forward, const VecFx32 *direction);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern void Srt_SetRotationQuat(SrtTransform *t, const Quat *q);

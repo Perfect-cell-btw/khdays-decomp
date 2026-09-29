@@ -1,4 +1,5 @@
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SessionMarker {
     VecFx32 place;
@@ -17,12 +18,10 @@ typedef struct Ov002SessionActorFlags {
 } Ov002SessionActorFlags;
 
 extern char *data_ov002_0207fa00;
-extern unsigned short QueryActiveStateOrDelegate(void);
 extern char *strcpy(char *pDest, const char *pSource);
 extern int Ov002_GetCtxTableByte(int nDestination);
 extern int Ov002_FindCodeOwner(int nCode, int *pSlot, int *pDestination);
 extern int func_ov022_020882f8(void);
-extern Ov002SessionActorFlags *GetEntryField20ByIndex(int nPlayer);
 extern void Ov002_ResolveNamedPlacement(const char *pName, int nSlot,
     VecFx32 *pPlace, int *pExtra, int nPlayer);
 

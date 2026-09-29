@@ -9,11 +9,10 @@
  * the {0,1} / {2,3} (0x22 hits) mode picked by the +0x4e parity, which then flips. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct HitWord { unsigned int lo : 16, hi : 16; };
 
-extern int RandNextScaled(int n);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
 extern int VEC_DotProduct(const void *a, const VecFx32 *b);
 extern int Ov107_CalcHitDamage(char *self, unsigned int *hit);
 extern void Ov107_BuildAndSendUpdate(char *self, int id, int mode, void *at);

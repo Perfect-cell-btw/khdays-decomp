@@ -2,7 +2,9 @@
  * and +0x228 bounds, the +0xc point is the actor's +0xb0 pose, the +0x58 sound bank is 0x180 with a
  * +0x460 partner (else 0x17b), +0x56 is cleared to -1 and the three brain slots get 020cd748 (0),
  * 020cdbb8 (1) and 020cd9b0 (2). */
-extern int RandNextScaled(int bound);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_MoveDispatch(void);
 extern void Ov258_AiFinishWithParts(void);

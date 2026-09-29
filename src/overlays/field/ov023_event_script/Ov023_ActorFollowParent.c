@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct MtxFx43 {
     int  a[12];               /* 0x00 */
@@ -34,7 +35,6 @@ extern void  Ov023_ActorSampleTrack(Ov023Actor *pActor, VecFx32 *pOut); /* Ov023
 extern void  MTX_Identity43_(MtxFx43 *pMtx);
 extern void  MTX_RotY43_(MtxFx43 *pMtx, int nSin, int nCos);
 extern void  MTX_MultVec43(const VecFx32 *pVec, const MtxFx43 *pMtx, VecFx32 *pOut);
-extern void  Actor_SetVecAndSyncChild(Ov023Entity *pEntity, VecFx32 *pPos);   /* Entity_SetPositionNow */
 extern const short data_0203d210[];                                 /* FX_SinCosTable_: sin, cos pairs */
 
 /* Give an entity a heading unless it is locked (bit 5 of its flags). */

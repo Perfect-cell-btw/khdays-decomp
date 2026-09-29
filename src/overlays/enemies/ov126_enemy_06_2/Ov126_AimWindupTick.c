@@ -10,6 +10,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Add(void *a, void *b, void *out);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
@@ -17,9 +18,7 @@ extern int *func_ov107_020c9848(void);
 extern int FX_Div(int num, int den);
 extern void Srt_SetTranslation(void *p, void *v);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
-extern void Vec3TransformViaTempMtx(void *out, void *pose, void *k);
 extern void Quat_FromTwoVectors(void *dst, void *src, void *m);
-extern void Vec4_Normalize(void *out, void *in);
 extern void Srt_SetRotationQuat(void *pose, void *q);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int data_02042258;

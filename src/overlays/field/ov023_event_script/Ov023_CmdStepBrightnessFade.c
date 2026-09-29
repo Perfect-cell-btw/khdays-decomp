@@ -6,6 +6,7 @@
  * count reaches the frame count, else 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];
@@ -24,9 +25,6 @@ typedef struct Ov023ScriptCtx {
 /* The quotient is the low half of the helper's long long return; writing `/` emits _s32_div_f,
  * which is not linkable here. */
 extern long long func_02020400(int nNumerator, int nDenominator);
-extern void SetMasterBrightnessMain(int nLevel);                              /* set the main brightness */
-extern void SetMasterBrightnessSub(int nLevel);                              /* set the sub brightness */
-extern int  LoadGlobalU16At0(void);                                    /* the global mode halfword */
 extern void Ov023_PushTween(int nIndex, int nTarget, int nDuration); /* Ov023_PushTween */
 
 int Ov023_CmdStepBrightnessFade(Ov023ScriptCtx *pCtx)

@@ -9,11 +9,11 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov252_GuardSweep(int *node);
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern unsigned int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_CruiseTick(void);
 

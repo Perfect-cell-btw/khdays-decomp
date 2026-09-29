@@ -9,11 +9,10 @@
  * a cleared +0x58. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
-extern void SceneNode_Enable(void *node);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_IsSlotReady(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);

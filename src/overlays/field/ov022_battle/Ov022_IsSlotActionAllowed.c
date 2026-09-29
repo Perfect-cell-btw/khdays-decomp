@@ -3,8 +3,9 @@
  * allows states 0 and >=10 (result 1) and denies 1..9. A final gate forces 0 when bit 4 or bit 13
  * of the 64-bit flag word at *(obj+0x58) is set. */
 
+#include "game/engine.h"
+
 extern int func_ov022_0209029c(int obj, unsigned int idx);
-extern int Load2DArrayU8(int kind, unsigned int idx);
 
 int Ov022_IsSlotActionAllowed(int obj, unsigned int idx) {
     int *flags = *(int **)(obj + 0x58);

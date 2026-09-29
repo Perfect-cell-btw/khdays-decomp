@@ -1,6 +1,6 @@
 /* Sends an object state message (kind 9, sub-kind 2) with its owner, group and index. */
 
-extern unsigned short func_02031384(int a, void *b, int c);
+#include "game/engine.h"
 
 struct marshal_0209190c {
     unsigned char b0_1 : 2;

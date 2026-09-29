@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct AimRecord {
     u8 nKind;                    /* 0x00 */
@@ -35,9 +36,6 @@ struct AimMessage {
     u32 nRange : 8;              /* bits 23 to 30 */
     u32 nSpare : 1;              /* bit 31 */
 };
-
-extern int Session_IsReady(void);
-extern void MsgQueue_SendGate(int nGate, void *pMessage, int nSize);
 
 #define MESSAGE_GATE 10
 

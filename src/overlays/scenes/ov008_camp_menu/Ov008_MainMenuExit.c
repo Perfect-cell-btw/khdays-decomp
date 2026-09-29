@@ -6,22 +6,17 @@
  *   action 8 -> enter game: copy the selected save slot's 4-word config (overwriting word[1]
  *     with Ov008_CountOccupiedSlots), CopyConfig16 it, and switch to scene 2 (ov002/gameplay).
  * Clears the menu-heap guard afterward so it fires only once. */
+
+#include "game/engine.h"
+
 struct Cfg4 { int w[4]; };
 extern char *data_ov008_02090f00;
 extern int  Ov008_GetCtxField9678(void);
 extern void Ov008_TeardownMenu2D(void);
 extern void Ov008_ReleaseMenuUi(void);
-extern void RequestQueue_SetOrPushKind3(int frames);
-extern int  Session_Exists(void);
-extern void GameSession_SetSyncEnabled(int a);
 extern void ClearGlobalArrayInt(int flag);
 extern void Ov008_TickKeySharingShutdown(void);
-extern int *Session_GetSlotTable(void);
 extern int  Ov008_CountOccupiedSlots(void);
-extern void func_02031600(struct Cfg4 *cfg);
-extern void Scene_RequestPending(int scene, int arg);
-extern void ReleaseServiceInstance(void);
-extern void PartyState_ResetBuffers(void);
 extern void func_02003948(int mode);
 
 void Ov008_MainMenuExit(void) {

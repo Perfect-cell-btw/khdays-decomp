@@ -1,6 +1,8 @@
 /* Loads ov024 (MobiClip), installs its stream source interface into the root context and calls its
  * entry hook. */
 
+#include "game/engine.h"
+
 typedef void (*Ov002OverlayHook)(void);
 typedef unsigned int FSOverlayID;
 
@@ -15,7 +17,6 @@ typedef struct {
 } Ov002RootContext;
 
 extern Ov002RootContext *data_ov002_0207fa00;
-extern void LoadOverlaySync(int processor, int overlayId);
 extern void Ov024_MobiClip_InstallStreamSourceVtbl(Ov002OverlayHook *hook);
 
 void Ov002_EnterOverlay24(void)

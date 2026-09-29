@@ -5,6 +5,7 @@
  * scene rather than this context. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 first;
@@ -32,13 +33,8 @@ typedef struct {
 } Ov006RootContext;
 
 extern Ov006RootContext *data_ov006_02056664;
-extern void Slot_UnlinkAll(void *object);
-extern void Obj_Release(void *object);
 extern void Ov006_SweepElements(void *object);
 extern void Ov006_ReleaseThreeBuffers(void *object);
-extern void FontResource_Destroy(void *object);
-extern void TileTextRenderer_Destroy(void *object);
-extern void ZeroHalfThenFree(void *resource);
 extern void MIi_CpuClear16(int value, void *destination, unsigned size);
 extern void NNSi_FndFreeFromDefaultHeap(void *memory);
 

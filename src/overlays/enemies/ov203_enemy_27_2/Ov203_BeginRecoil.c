@@ -1,6 +1,7 @@
 /* Ov203_BeginRecoil: recoil entry of the ov202 enemy (x2), variant of the matched ov132 sibling (+0x60 bit 6 cleared before the +0x3e0 bit-0 clear; the zero vector is a const extern so its load hoists above the stores). */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct v3 { int a, b, c; };
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
@@ -8,7 +9,6 @@ struct pair { unsigned short a, b; };
 
 extern unsigned short data_ov203_020d67e4[];
 extern const struct v3 data_02041dc8;
-extern void func_02031384();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov203_ThrowChargeTick(void);
 

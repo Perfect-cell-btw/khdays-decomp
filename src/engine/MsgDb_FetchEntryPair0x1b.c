@@ -17,8 +17,9 @@
  *     word (`asrs r0, r1, #0x1f`) and the add gains an instruction.
  * The destination is two 32-bit stores, not a 64-bit one: `*(long long *)(rec + 0x10) = acc`
  * makes mwcc build a second base register for the high word (+4 bytes). */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, int size, int kind, int keep);
+
+#include "game/engine.h"
+
 extern int data_0204c238;
 
 int MsgDb_FetchEntryPair0x1b(int *rec_out, int index, int keep) {

@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int *data_ov002_0207f9fc;
 extern char data_ov002_0207eefc[];
@@ -32,7 +33,6 @@ extern void Ov002_BuildHudRecordSurfaces(void);
 extern int Ov002_GetPanelField005c(void);
 extern int Ov002_Ctx_FindActiveEntryByTag(int nTag);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int hNode, int nArg);
-extern void PlaySound(int nBank, int nCue);
 extern void Ov002_TakePageIntoSubObject(void);
 extern void Ov002_UploadPageToSubBg2Char(void);
 extern void Ov002_RunSceneStateHandler(void);

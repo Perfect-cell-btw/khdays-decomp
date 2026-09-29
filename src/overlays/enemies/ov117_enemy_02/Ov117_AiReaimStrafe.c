@@ -7,12 +7,10 @@
 
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
-extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
-extern int QuatFromAxisAngle();
 extern int Srt_SetRotationQuat();
-extern int RandNextScaled();
 extern int SetIndexedSlot();
 
 extern int data_020420f8;

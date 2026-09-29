@@ -4,10 +4,10 @@
  * data_ov253_020d4910 axes and the best-facing one becomes the actor's +0x451 side. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov253Axes { VecFx32 v[4]; };
 
-extern int Angle_TurnToward(int heading, int target, int rate, int *state);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern const struct Ov253Axes data_ov253_020d4910;
 extern const short data_0203d210[];

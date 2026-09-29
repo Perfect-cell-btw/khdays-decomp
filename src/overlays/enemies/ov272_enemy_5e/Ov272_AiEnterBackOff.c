@@ -1,7 +1,9 @@
 /* Set the target rate (+0x2c = owner_rate*30/10), play the anim (ov107 mode 1,1), pick a
  * landing point at (child)+0x50 = base(+0x224) + rand(|+0x228 - +0x224| + 1) and register the handler. */
+
+#include "game/engine.h"
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern int RandNextScaled(int a);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov272_BackOffTick(int);
 void Ov272_AiEnterBackOff(int param_1) {

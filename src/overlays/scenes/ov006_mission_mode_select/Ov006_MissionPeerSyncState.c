@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 
 #pragma opt_dead_assignments off
 /* Ov006_MissionPeerSyncState -- synchronize Mission Mode peer names and
@@ -16,7 +17,6 @@ typedef struct {
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern u16 data_ov006_02056600[];
 
-extern int Game_PollSceneAlive(void);
 extern void Ov105_SetParamWord8(u32 value);
 extern void Game_ReadLocalProfile(MissionSelectionBuffer *buffer);
 extern u16 *StrCopy16(u16 *dst, const u16 *src);

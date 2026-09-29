@@ -3,6 +3,7 @@
  * Ov000_DispatchLogoAction. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000ModeSelectContext {
     u8 pad_0000[0x14];
@@ -20,7 +21,6 @@ typedef struct Ov000ModeSelectContext {
 extern Ov000ModeSelectContext *data_ov000_0205ac28;
 extern u16 data_0204c190;
 
-extern void PlaySound(int soundGroup, int soundId);
 extern void Ov000_DispatchLogoAction(int marker, int mode);
 extern u64 OS_GetTick(void);
 extern void Ov000_ModeSelect_ShowGroup(int mode);

@@ -3,9 +3,8 @@
  * slot block and let the base class finish. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern void DestroyInstance(void *handle);
-extern void FreeInstanceMemory(void *block);
 extern void Ov107_DestroyObject(void *self);
 
 typedef struct {

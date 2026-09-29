@@ -6,7 +6,9 @@
  * The first operand is biased by -0x10 before use, which is why it is computed
  * into a local rather than passed inline.
  */
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
+
+#include "game/engine.h"
+
 extern void Ov023_PushTween(int a, int b, int c);
 extern void Ov106_PushTransitionTarget(int a, int b);
 

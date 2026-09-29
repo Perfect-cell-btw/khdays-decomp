@@ -29,6 +29,8 @@
  *    args sharing uVar13; Ov008_StoreWordAt0x4a50 takes (ctx, callback-pointer).
  */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned short b0:1, b1:1, b2:1, b3:1, b4:1, b5:1, b6:1, b7:1,
                    b8:1, b9:1, b10:1, b11:1, b12:1, b13:1, b14:1, b15:1;
@@ -36,8 +38,6 @@ typedef struct {
 typedef struct { unsigned int w[7]; } W7;
 
 extern int Ov008_IsSessionReady(void);
-extern int GameState_IsFlagSet(int flag);
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov008_GetPlayerRecord(int slot);
 extern int Ov008_IsBusy(void);
 extern int Ov008_AreSelectedMenuSlotsReady(void);
@@ -55,7 +55,6 @@ extern void Ov008_SwapParamOverrides(int ui, int entry);
 extern void Ov008_PushSubitemSet(int ui, int entry, int val);
 extern void Ov008_Menu_PositionSelector();
 extern void Ov008_DrawMenuValue(int ctx);
-extern int GameState_GetField(int a, int b);
 extern int Ov008_GetSlideTableValue(int a);
 extern void Ov008_HandleMenuEntrySelection(void);
 extern int data_ov008_0208e958;

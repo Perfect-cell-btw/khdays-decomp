@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 typedef struct {
     u32 header;
     u8 payload[0x50];
@@ -8,13 +9,11 @@ typedef struct {
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
-extern int Game_PollSceneAlive(void);
 extern void Game_ReadLocalProfile(MissionSelectionBuffer *buffer);
 extern void StrCopy16(void *selection_block, void *payload);
 extern int Ov008_GetPeerTileUploadPending(int value);
 extern void Ov008_UploadSlotTiles(int mode, void *send_block, u32 size);
 extern void Ov008_MissionUpdateInputTransition(void);
-extern void GameSession_SetSyncEnabled(int value);
 extern int Ov008_MissionIsTransitionDone(void);
 extern int Ov008_SendPacket(const void *payload, u32 payload_size);
 extern void Ov008_UpdateSelectionConfirmationState(void);

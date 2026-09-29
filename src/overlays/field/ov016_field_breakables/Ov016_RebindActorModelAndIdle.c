@@ -1,7 +1,6 @@
-extern int Ov002_GetCtxTableByte(int slot);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
+#include "game/engine.h"
 
-extern void Actor_SetBindingByte(void *p, int a, int b);
+extern int Ov002_GetCtxTableByte(int slot);
 
 /* Rebinds the actor model and restarts its idle animation. */
 void Ov016_RebindActorModelAndIdle(char *self) {

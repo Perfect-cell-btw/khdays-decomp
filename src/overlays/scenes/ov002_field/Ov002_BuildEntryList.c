@@ -12,8 +12,8 @@
  * between the two adds, which is why the original is passed to that call through a saved copy.
  */
 
-extern int ScriptVm_ReadOperandInt(void *a, void *b);
-extern void *ByteCode_ResolveOperand(void *a, void *entry);
+#include "game/engine.h"
+
 extern void Ov002_SetNameTable(int count, void **items);
 
 int Ov002_BuildEntryList(void *a, char *table) {

@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -111,9 +112,7 @@ extern int Ov107_CalcHitDamage(struct Obj *, struct HitPacket *);
 extern struct Manager *func_ov107_020c9848(void);
 extern int FX_Inv(int);
 extern void ScaleVec3Fx12(int, VecFx32 *, VecFx32 *);
-extern u32 RandNextScaled(u32);
 extern int func_02020400(int, int);
-extern u16 func_02031384(int, const void *, u16);
 /* Both templates are within ov107's .rodata range. */
 struct FourBytes { u8 bytes[4]; };
 struct ReactionConstants { struct FourBytes masks, values; u8 field_08[8]; };

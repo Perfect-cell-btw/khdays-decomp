@@ -1,6 +1,7 @@
 /* Refreshes the shared panel for the indexed player's entry when it exists. */
 
-extern int GetEntryField20ByIndex();
+#include "game/engine.h"
+
 extern void Ov022_RefreshSharedPanel();
 void Ov022_CleanupEntry(int arg0) {
     int e = GetEntryField20ByIndex(arg0);

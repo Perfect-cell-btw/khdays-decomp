@@ -8,15 +8,13 @@
  * "ready" callback; otherwise returns the "wait" callback.
  */
 
+#include "game/engine.h"
+
 typedef void (*SceneCallback)(void);
 
-extern unsigned short Session_GetLocalPlayerIndex(void);
 extern int Slot4_GetIfOccupied(unsigned int index);
 extern void Ov008_SetupMenuDisplay(void);
 extern void Ov008_LoadMenuUi(void);
-extern int Session_Exists(void);
-extern void GameSession_SetSyncEnabled(int enable);
-extern void PartyState_ResetBuffers(void);
 extern void Ov008_ResetPartyMemberAndLayout(int value, int b);
 extern void Ov008_RefreshGameplayRulesFromState(void);
 extern int Ov008_Link_IsLocal(void);

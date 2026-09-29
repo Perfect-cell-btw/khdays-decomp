@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008PanelContext {
     u8   pad_0000[0xa8];
@@ -32,7 +33,6 @@ extern const char data_ov008_02090e44[];                                  /* "te
 extern const char data_ov008_02090e5c[];                                  /* "text/font_eu_08.nftr" */
 extern const char data_ov008_02090e74[];
 extern const char data_ov008_02090e8c[];                                  /* "UI/shop/shp_&.s.z" */
-extern void  Resource_BindByName(void *pFont, const char *pName);               /* Resource_BindByName */
 extern void  Ov008_UploadTileSurface(void *pSurface, int nX, int nY, int nWidth, int nHeight, int nRows, void *pVram, int nUnk1c, void *pPixels); /* Ov008_UploadTileSurface */
 extern void  Ov008_VarTable_Load(void *pLoader, const char *pPath);       /* Ov008_Set_5c4c */
 extern void *Ov008_GetVarRecordByIndex(void *pRecords, int nIndex);             /* GetVarRecordByIndex */

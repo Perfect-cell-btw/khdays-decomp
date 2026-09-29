@@ -14,8 +14,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern void SceneNode_Enable(void *node);                                              /* SceneNode_Enable */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                   /* Anim_SetFrameWrapped */
 extern void func_ov022_020ad44c(VecFx32 *out, char *self);
 extern void Ov022_MarshalNetworkRecord(char *self, int record, VecFx32 *at, int scale,

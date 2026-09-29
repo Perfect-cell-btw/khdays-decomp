@@ -1,7 +1,7 @@
 /* Draws a text item twice for a one-pixel drop shadow: first at (x+1, y+1) with palette 1, then at
  * (x, y) with the caller's palette; the size selects the glyph pool. */
 
-extern int Text_DrawDirectional_2();
+#include "game/engine.h"
 
 void Ov025_DrawWithShadow(int a, int b, int c, int d, int e, int sel) {
     int pool;

@@ -7,18 +7,17 @@
  * over it (DC_FlushRange), copy it to sub-BG3 char base 0x7000
  * (GX_LoadBG1Char), then free the transient load handle. */
 
+#include "game/engine.h"
+
 typedef void *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  Ov000_FadeStateHookNoOp(void);
-extern void  Gfx_EnqueueTableCmdAtC(int id, void *player, int, int);
 extern void *Archive_LoadFile(unsigned int addr, int mode);
 extern void  GetResourceSubBlock_CHAR2(void *handle, void **out);
 extern void  DC_FlushRange(void *addr, int len);
 extern void  GX_LoadBG1Char(void *src, int offset, int size);
 extern void  NNSi_FndFreeFromDefaultHeap(void *handle);
-extern void  SetMasterBrightnessMain(int brightness);
-extern void  SetMasterBrightnessSub(int brightness);
 extern void  Ov000_HandoffState(void);
 
 StateFn Ov000_LogoFadeState3(void) {

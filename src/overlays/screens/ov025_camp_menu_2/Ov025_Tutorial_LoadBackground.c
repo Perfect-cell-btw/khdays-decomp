@@ -6,6 +6,7 @@
  * member's own character block (GX_LoadBG3Char); the files are freed again. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 
@@ -23,7 +24,6 @@ extern void *Ov025_GetPageA(void);                             /* Ov008_GetPageA
 extern u32   Ov025_PackSlotTag(int nMember);                      /* Ov008_PackSlotTag */
 extern u32   Ov025_PackHandleTag(int nSubFile);                     /* Ov008_PackLocalisedTag */
 extern void *Archive_LoadFile(u32 nTag, int nHeap);                    /* Res_Open */
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *pCell, void *pFile, int nScreen, int nChar, int nPalette); /* Res_LoadSpriteSet */
 extern void  GetResourceSubBlock_CHAR2(void *pFile, Ov008CharacterBlock **ppBlock); /* GetResourceSubBlock_CHAR2 */
 extern void  DC_FlushRange(const void *pAddress, u32 nSize);
 extern void  GX_LoadBGPltt(const void *pSource, u32 nOffset, u32 nSize);

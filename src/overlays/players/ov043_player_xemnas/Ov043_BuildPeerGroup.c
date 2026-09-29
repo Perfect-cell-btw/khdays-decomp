@@ -10,9 +10,11 @@
  * declared at the top so mwcc keeps the offset in r4 across the calls (the ROM's early
  * `ldr r4,[pc]`).
  */
+
+#include "game/engine.h"
+
 extern int NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void Ov022_TakeChannelBlock(int a, int b, int c);
-extern int Slot_EvalPackedParam(int a, int b);
 extern void Ov022_PublishGroupUpdateFixed(int a, int b, unsigned int key, void *d);
 
 typedef struct {

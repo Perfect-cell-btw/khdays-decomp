@@ -22,11 +22,10 @@
  *   - `i * sizeof(int)` en vez de `i * 4`: con `* 4` mwcc crea una variable de induccion y gasta
  *     un callee-saved de mas; con el sizeof recalcula el desplazamiento como hace el ROM.
  */
+
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int id, int mask, int a, void *params, int b);
-extern void TailForwardTrackEntry(int id, void *tbl, int n, int p);
-extern int  ArrayEntryPtrD0(int id);
-extern void Actor_InitEntityLink(void *dst, int src);
 extern int  NNS_G3dGetResDictIdxByName(void *node, void *desc);
 extern void Ov022_InitActor(void *obj);
 

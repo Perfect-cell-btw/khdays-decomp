@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned long long qwStart;         /* +0x00 */
@@ -32,8 +33,6 @@ extern void Ov002_AdvanceGaugeSlot(int nIndex, Ov002FadeSlot *pSlot);
 extern void Ov002_RunPresetCallbacks(int nHandle, int nIndex, unsigned int nValue,
                                 void *pfnDraw, int bEmpty);
 extern int Ov002_RunShutdownHook(void);
-extern void PlaySoundChecked(int nBank, int nSound);
-extern void ForwardToHandlerOrCurrentObject(int nBank, int nSound, int nFlag);
 
 void Ov002_SetGaugeSlotShown(int nIndex, unsigned int bOn) {
     char *ctx = data_ov002_0207f618;

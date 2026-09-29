@@ -10,6 +10,7 @@
  * Resource-cell / character-block layout matches Ov008_SetupMenuBgCells. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;
@@ -26,7 +27,6 @@ extern void *Ov008_GetCtxBlock954c(void);
 extern u32   Ov008_PackSlotTag(int subfile);
 extern u32   Ov008_PackHandleTag(int subfile);
 extern void *Archive_LoadFile(u32 handle, int heapId);
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *cell, void *resource, int a, int b, int c);
 extern void  GetResourceSubBlock_CHAR2(void *resource, Ov008CharacterBlock **block);
 extern void  GXS_LoadBGPltt(const void *source, u32 offset, u32 size);
 extern void  GXS_LoadBG3Char(const void *source, u32 offset, u32 size);

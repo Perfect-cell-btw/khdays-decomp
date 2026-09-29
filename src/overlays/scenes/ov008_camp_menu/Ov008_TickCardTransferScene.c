@@ -1,9 +1,9 @@
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Per-frame scene tick: scene state 1 finalises the card transfer (clear owner +0x49c) once
  * Ov105_RunScriptedStepState3 is ready; states 0 and 3 idle; any other state advances via
  * Ov105_WH_Finalize. */
 
-extern int Game_PollSceneAlive(void);
 extern int Ov105_RunScriptedStepState3(void);
 extern void Ov105_WH_Finalize(void);
 

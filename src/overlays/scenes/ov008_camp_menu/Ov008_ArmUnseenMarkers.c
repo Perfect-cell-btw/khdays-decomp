@@ -2,8 +2,8 @@
  * whenever the shared game-state bit at +0x9b0 is set, arm a fifth. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int GameState_IsFlagSet(int flagId);
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */
     u8  nText;                /* 0x02 */

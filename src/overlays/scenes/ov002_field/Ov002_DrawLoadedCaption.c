@@ -13,6 +13,8 @@
  * THUMB.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad000[0xc0];
     char textCtx[0xc];
@@ -29,10 +31,7 @@ extern const char data_ov002_0207ecb4[];
 
 extern void GetResourceSubBlock_CHAR(int nId, void **ppOut);
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
-extern void Resource_BindByName(void *pFont, const char *pName);
-extern void FreeFieldAt8(void *pFont);
 extern int NNSi_G2dFontGetStringWidth(int nFont, int nFontAlt, void *pText, int *pOut);
-extern void Text_DrawWithShadow(void *pCtx, int a, int b, int c, void *pText, int d);
 
 extern void Ov002_DestroyOwnedEntry(void *pNode, int nMode);
 extern void *Ov002_Field_GetWordB4(void);

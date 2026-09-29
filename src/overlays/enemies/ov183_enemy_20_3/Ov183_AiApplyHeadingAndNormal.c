@@ -1,7 +1,7 @@
 /* Turns toward the heading, composes it with the surface-normal tilt and applies it. */
 
-extern int Angle_TurnToward();
-extern int QuatFromAxisAngle();
+#include "game/engine.h"
+
 extern int Quat_FromTwoVectors();
 extern int Quat_Multiply();
 extern int Srt_SetRotationQuat();

@@ -3,6 +3,7 @@
  * sub-objects. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Ov082Actor {
     char pad000[8];
@@ -38,7 +39,6 @@ struct Ov082Controller {
 
 extern int func_ov022_02083f0c(void);
 extern void Ov002_StoreVAndToggleBit25(int handle, int a, int b);
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_FollowGroundRumble(struct Ov082Actor *actor);
 extern void Ov022_PlayEntityVoice(struct Ov082Actor *actor, int cue, int mode);
 extern void Ov082_SpawnEmitters(struct Ov082Controller *self);

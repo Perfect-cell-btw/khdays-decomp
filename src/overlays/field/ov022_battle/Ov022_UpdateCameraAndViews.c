@@ -3,6 +3,7 @@
  * animations and applies the scene scale to the views. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022Context {
     u16 flags;
@@ -15,16 +16,12 @@ extern u8 data_0204be04;
 
 extern int func_ov022_02083f0c(void);
 extern u32 func_ov022_02088338(void);
-extern int QueryActiveStateOrDelegate(void);
 extern void Ov002_ReaimActor(int actor, int mode);
 extern int Ov022_GetEntryField66(int index);
 extern void Ov002_RenderLinkSeatEntries(void);
-extern void Render_DrawViewLists(int index);
 extern u32 func_ov022_0208848c(void);
 extern void Ov002_UpdatePeerAnimationsAndExit(int worldId, int scale, int enabled);
 extern void Ov002_FlushPendingObjectCommands(void);
-extern int LoadGlobalU16At0(void);
-extern void Render_ApplyFactorToViews(u32 mask, int scale);
 
 void Ov022_UpdateCameraAndViews(int mode)
 {

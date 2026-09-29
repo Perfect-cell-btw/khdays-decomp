@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[2];
@@ -38,7 +39,6 @@ typedef struct {
 
 extern Ov002CrawlCtx *data_ov002_0207f624;
 
-extern void Obj_ForwardInnerPayload(void *pCtx, int nX, int nY, int nFlags, int nChar);
 extern unsigned short NNS_G2dFontFindGlyphIndex(Ov002Font *pFont, int nChar);
 extern void *NNS_G2dFontGetCharWidthsFromIndex(Ov002Font *pFont, int nGlyph);
 

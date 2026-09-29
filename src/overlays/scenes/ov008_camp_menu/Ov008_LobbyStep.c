@@ -29,6 +29,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define MEMBER_COUNT   4
 #define STATE_LOBBY    5
@@ -82,7 +83,6 @@ extern const Ov008LobbyCaptions data_ov008_0208fc8c;
 extern void  Ov008_LobbyNextStepNoOp(void);                                  /* next lobby step */
 extern u16   Ov008_GetLocalPlayerIndex(void);                                  /* local member index */
 extern int   Ov008_CountPlayers(void);
-extern void  func_020362ec(u16 *pHeader);
 extern void  Ov008_GetMissionRowInfo(int nRow, MissionMenuRow *pOut);
 extern int   Ov008_CanConfirmMissionMenu(void);                                  /* is host */
 extern int   Ov008_ResolveMissionSelection(int nIcon);                             /* cursor of an icon */
@@ -92,7 +92,6 @@ extern int   Ov008_MissionIsEntryActive(void);                                  
 extern int   Ov008_UpdateMissionMemberSelectionInput(MissionMenuRow *aRows, int *pnCursor);  /* move the cursor */
 extern void  Ov008_MissionArmCursorRequest(MissionMenuRow *pRow);
 extern void  Ov008_Link_RequestLeave(int nIcon);                             /* commit the icon */
-extern u32   Session_GetLocalPlayerIndex(void);                                        /* Session_GetLocalPlayerIndex */
 extern void  Ov008_MissionScene_SetMode(int nValue);                            /* Ov008_Fn_18a0 */
 extern void  Ov008_MissionSetModelPose(int nIcon);
 extern void  Ov008_MissionSetSlotVisible(int bOn);
@@ -101,7 +100,6 @@ extern void  Ov008_SetMissionCursorSelection(int nSelection);
 extern void  Ov008_MissionApplyParameterRow(int nIcon);                             /* refresh the icon list */
 extern void  Ov008_SetTitleWord(int nSlot, int bSet);
 extern void  Ov008_SetMissionRowSlotValue(int nSlot, int nIcon, int bVisible);
-extern void  PlaySound(int nBank, int nSound);                       /* PlaySound */
 extern int   Ov008_Link_Poll(void);                                  /* lobby result */
 extern void  Ov008_RequestMenuState(int nState, int bAnimate, int nValue);  /* Ov008_RequestMenuState */
 extern void  Ov008_ResetTextLayers(void);                                  /* Ov008_ResetTextLayers */

@@ -1,8 +1,9 @@
 /* When page B is free, clears the target slot and the selection flags with a sound. */
 
+#include "game/engine.h"
+
 extern int Ov025_GetPageA();
 extern int Ov025_PageB_IsBusyOrInactive();
-extern void PlaySound();
 extern void Ov025_SetTargetSlot();
 
 void Ov025_ResetIfNotBusy(void) {

@@ -35,6 +35,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     void *pScreen;
@@ -71,7 +72,6 @@ typedef struct {
 } Ov002PanelCtx;
 
 extern void *Archive_LoadFile(unsigned int nHandle, int nHeap);
-extern void Res_LoadSpriteSet(SpriteResSet *pSet, void *pArc, int a, int b, int c);
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
 extern void Ov002_PrintHelpPage(int nPage, int *pCursor);
 extern void NNS_G2dGetUnpackedPaletteData(void *hRes, void *pOut);

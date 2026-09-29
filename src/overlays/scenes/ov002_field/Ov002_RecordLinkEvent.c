@@ -1,7 +1,8 @@
 /* Record a link event in the byte at +0x8dc2. Event 0x1a replaces it wholesale
  * with the layer's own status; event 0x19 raises just the reporting peer's bit.
  * Anything else is ignored. */
-extern unsigned short GetGlobalU16At6(void);
+
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x8dc2];

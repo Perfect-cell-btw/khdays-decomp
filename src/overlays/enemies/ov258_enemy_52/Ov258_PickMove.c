@@ -6,9 +6,9 @@
  * +0x55 and returns 1. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int Ov258_AcquireTarget(int *node, int face);
-extern int RandNextScaled(int bound);
 
 int Ov258_PickMove(int *node)
 {

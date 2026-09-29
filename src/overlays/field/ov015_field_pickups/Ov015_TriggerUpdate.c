@@ -6,8 +6,8 @@
  * again, otherwise the trigger is marked fired (+0x50 = 1).  Always returns 8. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int GameState_GetField(int nField, int nBit);                   /* GameState_GetField */
 extern int Ov002_MatchPackedMask(int nMatch, int nMaskHi, int nMaskLo); /* packed hi / lo mask match */
 extern int Ov002_SetLeaveRequest(int bOn);                         /* arm / clear the leave request */
 extern int Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */

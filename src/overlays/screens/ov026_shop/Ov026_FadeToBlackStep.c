@@ -1,6 +1,6 @@
+#include "game/engine.h"
+
 extern char *data_ov026_02091368;
-extern void SetMasterBrightnessMain(int value);
-extern void SetMasterBrightnessSub(int value);
 extern void Ov026_RefreshPanelDisplay(void);
 
 /* Fade-to-black step: 12 frames from full brightness to black, then reports -2 (done). */

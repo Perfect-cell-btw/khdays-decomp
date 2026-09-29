@@ -1,13 +1,13 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 
 /* Age every row, compact rows[4] once a row reaches 600 ticks, and take the ov105 scene branch when
  * the compaction empties the list. 600 is the expiry threshold in ticks; the row stride is the
  * MissionRecord 0xc0 established by the first hand-off. */
 
 extern u8 data_ov006_020561c8[];
-extern int Game_PollSceneAlive(void);
 extern void Ov105_SetParamWord8(u32 value);
 extern void Ov105_WH_StartScan(void (*callback)(const MissionRecord *),
                                 void *data, int value);

@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016HitInfo {
     VecFx32 position;         /* 0x00 */
@@ -58,7 +59,6 @@ typedef struct Ov016Kickable {
     u8   nAckMask;            /* 0x61d */
 } Ov016Kickable;
 
-extern int  GameState_GetField(int nField, int nBit);                                  /* GameState_GetField */
 extern void Ov002_PushSpotOutToRange(void *pPiece, Ov016HitInfo *pHit, int nRange, VecFx32 *pOut); /* pull a spot towards its member */
 extern void Ov002_BuildSpreadOffset(VecFx32 *pDir, int nLength, int nStep, VecFx32 *pOut);      /* spread offset */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind);        /* queue a message on the piece */

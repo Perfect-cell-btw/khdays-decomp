@@ -1,12 +1,13 @@
 /* Updates all five ov077 scene parts and raises the actor local flags after the li_e0 controller
  * becomes active. */
 
+#include "game/engine.h"
+
 extern void Ov077_UpdateChargeSequence(int a, int b, int c);
 extern void Ov077_UpdateTracksWhileActive(int a, int b, int c);
 extern void Ov077_DriveSwingSequence(int a, int b, int c);
 extern void Ov077_UpdateChargeEmitter(int a, int b, int c);
 extern void Ov077_TickChargeStateGuarded(int a, int b, int c);
-extern int Session_GetLocalPlayerIndex(void);
 
 void Ov077_UpdateAllPartsAndFlagLocal(int self, char *blk, int arg) {
     int any = 0;

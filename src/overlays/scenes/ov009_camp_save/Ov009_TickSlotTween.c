@@ -1,6 +1,7 @@
 /* Pulses the selected save slot's brightness back and forth with a tween. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009TweenFlags {
     unsigned int pad0 : 2;
@@ -25,7 +26,6 @@ extern void Tween_Configure(
 );
 extern void Tween_Start(void *tween);
 extern void Tween_Sample(void *tween, int *value);
-extern void ClampToRange0to16At0x4628(int manager, int value);
 
 void Ov009_TickSlotTween(Ov009SaveContext *ctx)
 {

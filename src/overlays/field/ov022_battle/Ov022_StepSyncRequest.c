@@ -12,6 +12,7 @@
 /* Ov022SyncRequest: one of the twelve 0x38-byte requests */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct SyncRequest {
     u8 bWaiting : 1;             /* 0x00 bit 0 */
@@ -41,10 +42,7 @@ struct SyncSession {
 extern struct SyncSession *data_ov022_020b2eb8;
 
 extern int Ov022_ActivateSyncRequest(struct SyncRequest *pReq);
-extern int Session_IsReady(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_SendSyncRequest(struct SyncRequest *pReq);
-extern unsigned short GetGlobalU16At6(void);
 
 void Ov022_StepSyncRequest(struct SyncRequest *pReq)
 {

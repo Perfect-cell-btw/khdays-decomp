@@ -1,9 +1,8 @@
 /* Returns the target when the object is armed and the player is within range 0xc. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-int QueryActiveStateOrDelegate(void);
-int GetEntryField20ByIndex(int idx);
 int Ov022_ForwardArg1(int arg0, int arg1);
 
 typedef struct {

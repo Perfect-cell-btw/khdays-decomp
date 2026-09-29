@@ -2,6 +2,7 @@
  * owned sound when its slots allow it, others are forwarded; returns whether it was applied. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022Actor {
     u64 statusFlags;
@@ -16,11 +17,9 @@ typedef struct Ov022ActionContext {
     Ov022Actor *actor;
 } Ov022ActionContext;
 
-extern int Slot_AllEntriesFilled(int actorId);
 extern void Ov022_DriveOwnedSound(Ov022Actor *actor, int parameter,
                                 int amount, int enabled);
 extern int func_ov022_020882f8(void);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern int Ov022_ForwardArg1(Ov022Actor *actor, int amount);
 
 u32 Ov022_ApplyActorAction(Ov022ActionContext *context, int parameter,

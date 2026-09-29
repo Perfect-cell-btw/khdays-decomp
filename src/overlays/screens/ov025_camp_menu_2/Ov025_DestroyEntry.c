@@ -1,7 +1,8 @@
 /* Destroys a layout object: clears it as the current one, unlinks its two slots, removes it from
  * the list and frees it. */
 
-extern void Slot_UnlinkIfLinked();
+#include "game/engine.h"
+
 extern void NNS_FndRemoveListObject();
 extern void NNSi_FndFreeFromDefaultHeap();
 

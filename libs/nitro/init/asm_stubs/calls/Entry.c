@@ -1,5 +1,7 @@
 /* NitroSDK original assembly (libraries/init/src/crt0.c: _start). */
 
+#include "game/engine.h"
+
 extern void func_02000a78(void);
 extern void func_020009fc(void);
 extern void INITi_CpuClear32_0x0200093c(void);
@@ -8,7 +10,6 @@ extern void func_01ff8148(void);
 extern void _fp_init(void);
 extern void NitroStartUp(void);
 extern void __call_static_initializers(void);
-extern void main(void);
 extern unsigned char data_027e0000[];   /* SDK_AUTOLOAD_DTCM_START */
 
 #define HW_CACHE_LINE_SIZE               0x20

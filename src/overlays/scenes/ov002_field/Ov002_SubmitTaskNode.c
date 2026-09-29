@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002ReqPair {
     int n00;
@@ -52,7 +53,6 @@ typedef struct Ov002ReqTriple {
     int n08;
 } Ov002ReqTriple;
 
-extern int Session_IsReady(void);         /* session ready */
 extern int Ov002_CreateTaskNodeWW(int a, int b);
 extern int Ov002_AllocScriptCallback(int a, int b, int c, int d);
 extern int Ov002_CreateTaskNodePath(int a, int b, int c, void *pBlock,

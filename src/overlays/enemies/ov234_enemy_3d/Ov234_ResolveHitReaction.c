@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 static inline void Ov234Vec3_Set(VecFx32 *vec, int x, int y, int z)
 {
@@ -71,8 +72,6 @@ extern void Ov107_BuildAndSendUpdate(struct Ov234Actor *, int, u16, int);
 extern void ScaleVec3Fx12(int, VecFx32 *, VecFx32 *);
 extern int func_020050b4(int, int);
 extern int VEC_Normalize(VecFx32 *, VecFx32 *);
-extern unsigned RandNextScaled(unsigned);
-extern int Rand16NextScaled(int);
 extern void func_ov107_020c0b90(struct Ov234Object *, int,
                                 VecFx32, int);
 

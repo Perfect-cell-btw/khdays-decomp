@@ -4,9 +4,11 @@
  * zeroing the speed when it lands. Once the byte the +0xc pointer refers to clears, the next
  * +0x4c delay is rolled in [+0x224, +0x228] of the actor, sub-state 2 is requested and the
  * state ends with no successor. */
+
+#include "game/engine.h"
+
 extern void ScaleVec3Fx12(int t, const int *src, int *dst);
 extern int Ov277_PerformSwingSweep(int *ctx, int kind);
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *self, int action, void *cb);
 extern const short data_0203d210[];
 

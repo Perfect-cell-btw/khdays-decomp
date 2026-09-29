@@ -7,6 +7,7 @@
  * bitfield members so the compiler emits the lsl/lsr bit extracts. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008Flags5c6 {
     u16 pad0 : 5;
@@ -22,8 +23,6 @@ typedef struct EdObj {
 } EdObj;
 
 extern void   Ov008_Menu_ToggleDetailPanel(int a);
-extern void   PlaySound(int a, int b);
-extern void  *GameState_IsFlagSet(int id);
 extern EdObj *Ov008_GetSharedRecord(void *x);
 extern void   Ov008_PrimeSubSceneFromCursor(int a);
 

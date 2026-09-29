@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -49,7 +50,6 @@ struct Ov151ShotState {
     int nClock;                 /* +0x38 */
 };
 
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Quat *quat, const VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_FindNearestObject(struct Ov151Owner *owner, int mode);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
@@ -57,7 +57,6 @@ extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Quat_FromTwoVectors(struct Quat *out, const VecFx32 *forward, VecFx32 *direction);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Slerp(struct Quat *out, int t, struct Quat *from, struct Quat *to);
-extern void Vec4_Normalize(struct Quat *out, struct Quat *in);
 extern int Ov107_CollectSphereOverlaps(void *item, VecFx32 *sphere, int *out);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov151Owner *a, void *item, int kind, const VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(struct Ov151Owner *owner, int a, int id, VecFx32 *at);

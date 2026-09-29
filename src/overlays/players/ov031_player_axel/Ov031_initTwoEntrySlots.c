@@ -2,7 +2,8 @@
  * sequence for the owner's palette slot and records its index; then creates the actor's
  * sub-objects. */
 
-extern void RegisterSeqAndInit(void *a, void *b, int c, int d);
+#include "game/engine.h"
+
 extern void Ov031_ActorCreateSubObjects(int a);
 extern int data_ov031_020b4dc0;
 extern int data_ov031_020b4d5c;

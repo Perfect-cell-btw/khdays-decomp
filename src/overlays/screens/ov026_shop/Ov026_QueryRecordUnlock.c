@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define RECORD_KIND_RECIPE 2
 #define RECORD_KIND_REWARD 3
@@ -47,8 +48,6 @@ typedef struct GameState {
 extern Ov008ParamTable *data_ov026_0209136c;
 extern GameState *data_0204be18;
 extern void BitArray_SetBit(void *pBits, u32 nBit);                        /* BitArray_SetBit */
-extern int  BitArray_TestBit(void *pBits, u32 nBit);                        /* BitArray_TestBit */
-extern int  GameState_IsFlagSet(int nFlag);                                    /* GameState_IsFlagSet */
 
 #pragma push
 #pragma opt_lifetimes off

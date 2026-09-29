@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionList {
     u8  pad_000[0x40];
@@ -32,7 +33,6 @@ typedef struct GameMode {
 extern GameMode data_0204c240;
 extern u8 data_0204c300[];
 extern void Ov008_ShowMissionListInfoPanel(Ov008MissionList *pList, int bExpand);   /* detail panel slide */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern void Ov008_SetTargetSlot(int nEntry, int nTarget);                 /* Ov008_SetTargetSlot */
 
 void Ov008_MissionListBack(Ov008MissionList *pList)

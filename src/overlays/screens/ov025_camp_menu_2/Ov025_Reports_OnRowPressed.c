@@ -8,6 +8,7 @@
  * rows refreshed (020a076c) before the page's request 0 is issued (020b07dc). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */
@@ -78,7 +79,6 @@ extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA
 extern int   Ov025_GetField84Bit1(int nCtx, void *pEntry);           /* Ov008_EntryPressed */
 extern u32   Ov025_QueryItemFlags(u32 nReport, u32 bMark);           /* Ov025_Reports_QueryFlags */
 extern void  Ov025_Reports_HighlightRows(void);                             /* Ov025_Reports_HighlightRows */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov025_Reports_RefreshCurrentEntry(void);                             /* Ov025_Reports_RefreshRows */
 extern void *func_ov025_020b07dc(void);                          /* Ov025_Reports_Request0 */
 

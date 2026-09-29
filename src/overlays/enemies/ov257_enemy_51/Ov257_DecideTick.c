@@ -8,6 +8,7 @@
  * hit picks one of 5, 6 and 7. Otherwise a target 4.0 away brings 4. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 struct Bits5c { int b0 : 1, b1 : 1; };
@@ -15,9 +16,7 @@ struct Bits5c { int b0 : 1, b1 : 1; };
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int n);
 extern int func_02020400(int num, int den);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042264;

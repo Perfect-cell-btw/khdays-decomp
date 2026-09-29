@@ -1,6 +1,7 @@
 /* Script command: scales a list entry's tag by the operands; returns 1. */
 
-extern int ScriptVm_ReadOperandInt(void *a, void *b);
+#include "game/engine.h"
+
 extern void Ov002_List_ScaleEntryTag(int a, int b);
 extern void Ov017_RegisterHookNoOp(void);
 

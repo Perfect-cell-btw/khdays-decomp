@@ -14,8 +14,8 @@
  *     compares register-to-register; a literal -1 compiles to `cmn r0,#1` and no register. */
 
 #include "game/actor.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int bound);
 extern int SetIndexedSlot(int self, int idx, void *handler);
 
 void Ov253_EnterReaction(int self) {

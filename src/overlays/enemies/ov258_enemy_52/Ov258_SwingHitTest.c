@@ -3,13 +3,13 @@
  * to 1.0 each way (kind 4, effect 1) through 020cd104. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern int Ov258_AcquireTarget(int *node, int face);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *segment, VecFx32 *push, int once, int effect, int kind);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;

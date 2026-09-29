@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008SelCtx {
     s16 nSelection;     /* 0x00 */
@@ -28,7 +29,6 @@ extern void *Ov025_GetPageItem(int nListId, int nSelection);        /* item ring
 extern int  Ov025_MenuEntrySubCount(int nIndex);                         /* item max count */
 extern int  Ov025_ClampWrapIndex(int nValue, int nMin, int nMax);     /* ClampWrapIndex */
 extern int  Ov025_FindSelectableItem(s16 nFrom, int nStep);               /* next selectable item, -1 if none */
-extern void PlaySound(int nKind, int nSound);                    /* PlaySound */
 extern void Ov025_RefreshMenuPage(void);                               /* menu refresh */
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

@@ -3,6 +3,7 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -26,7 +27,6 @@ extern void SetIndexedSlot(void *node, int idx, void *value);
 extern int FX_Sqrt(int x);
 extern void Ov186_LookAtQuat(struct Ov185ActionState *state, VecFx32 *pos,
                                 int nDist, int nRadius);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 

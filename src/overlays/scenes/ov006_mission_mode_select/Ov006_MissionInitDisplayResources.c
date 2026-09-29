@@ -3,6 +3,7 @@
  * state 0xb. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_0000[8];
@@ -12,8 +13,6 @@ typedef struct {
 
 extern Ov006RootContext *data_ov006_02056664;
 
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void Ov006_SetBgLayout(void *resources);
 extern void Ov006_UploadTextCells(void *resources);
 extern void Ov006_RebindBgLayers(void *resources);

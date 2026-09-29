@@ -1,11 +1,12 @@
 /* Drops one reference; at zero releases the resource (packed 'HPAK' group or G3D resource), frees
  * its memory and clears the slot. Returns 1 when freed. */
 
+#include "game/engine.h"
+
 typedef struct ResGroup ResGroup;
 
 extern void ResGroup_Release(ResGroup *state);
 extern void NNS_G3dResDefaultRelease(void *pResData);
-extern int func_02023728(int resGroup, int *heap);
 
 struct S {
     unsigned short field_00;

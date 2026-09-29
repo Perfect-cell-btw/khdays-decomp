@@ -1,4 +1,5 @@
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { char pad0[0x24]; VecFx32 pos; } Probe;
 
@@ -6,7 +7,6 @@ extern void Obj_RenderModel(int a, int b);
 extern int func_02016320(int a, Probe *out, int b, int c);
 extern int VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Mag(void *v);
-extern int SetSubitemState(void *a, int b, short c, int d);
 extern VecFx32 data_02041dc8;
 
 /* Re-probe the world and refresh the cached aim point (and its byte-identical twins). Sibling

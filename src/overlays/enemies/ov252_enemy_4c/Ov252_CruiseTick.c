@@ -21,6 +21,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
@@ -28,7 +29,6 @@ typedef struct { int v[3]; } Offs3;
 
 extern void Ov252_GuardSweep(int *node);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern int RandNextScaled(int bound);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);

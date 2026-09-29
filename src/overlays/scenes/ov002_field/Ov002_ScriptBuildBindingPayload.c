@@ -1,10 +1,9 @@
 /* Ov002_ScriptBuildBindingPayload: expand tagged script operands into binding words. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct ScriptVmOperand {u16 nType,pad2;u32 nValue;} ScriptVmOperand;
-extern int ScriptVm_ReadOperandInt(void *,ScriptVmOperand *);
-extern int ScriptVm_ReadOperandFx32(void *,ScriptVmOperand *);
 extern u32 Ov002_List_ScaleEntryTag(int, int);
 extern void Ov002_DriveBinding(int,int,u32 *,int);
 extern int Ov002_ClaimSlotSeat(int,void *);

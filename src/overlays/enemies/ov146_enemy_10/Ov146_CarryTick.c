@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Xform;
@@ -17,8 +18,6 @@ struct XformHost { char pad[0xa0]; Xform xf; };
 struct VelHost { char pad[0xf0]; VecFx32 vel; };
 struct Hw60 { u16 lo : 8, hi : 8; };
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *q, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *forward, const VecFx32 *direction);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);

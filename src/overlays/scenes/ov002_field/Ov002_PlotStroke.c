@@ -40,6 +40,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PenTable {
     u32 aPens[4];
@@ -67,7 +68,6 @@ extern Ov002SlotEntry data_ov002_0207f9a0[];
 extern Ov002SlotContext *data_ov002_0207f99c;
 extern const Ov002PenTable data_ov002_0207e434;
 
-extern u16 Session_GetLocalPlayerIndex(void);
 extern int func_ov002_0206373c(void);
 extern int Ov002_GetCueEntry(int nStep);
 extern int Ov002_GetCueEntryValue(int nStep);

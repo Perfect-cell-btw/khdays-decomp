@@ -10,6 +10,7 @@
  * 020804d4), leaves the room (bit 3 of +0x12) and records the player (+0x1b8).  Always 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov017Item {
     u8   pad_000[0x12];
@@ -40,11 +41,9 @@ typedef struct Ov017PlayerActor {
     Ov017PlayerSub *pSub;     /* 0x4ec */
 } Ov017PlayerActor;
 
-extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
 extern int   Ov002_Hud_IsPanelOpen(void);                               /* a panel is open */
 extern int   Ov002_GetRootField8b68Alt(void);                               /* a scene change is pending */
 extern int   Ov002_RunShutdownHook(void);                               /* the shutdown hook's verdict */
-extern Ov017PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
 extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
 extern Ov017KeyEntry *Ov002_GetRootField8d14(int nIndex);              /* entry index -> entry */
 extern void  Ov022_Member_ShowSpotMessage(int nPlayer, int nKey, int nSpawnId); /* announce the item */

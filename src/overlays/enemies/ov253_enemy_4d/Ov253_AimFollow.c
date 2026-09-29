@@ -4,8 +4,8 @@
  * rotation is then rebuilt to face that point (0202ed60). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

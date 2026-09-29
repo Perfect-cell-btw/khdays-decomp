@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PageChars {char header[16];int nCharSize;void *pCharData;} Ov002PageChars;
 typedef struct BgPlttSrc {int nFormat,n_pad;u32 dwSize;void *pData;} BgPlttSrc;
@@ -16,12 +17,10 @@ extern Ov005Config data_ov005_0205b85c;
 extern Ov005ResultContext *data_ov005_0205b810;
 extern char data_ov005_0205b5a4[];
 extern void *Archive_LoadFile(const char *,int);
-extern void Res_LoadSpriteSet(SpriteResSet *,void *,int,int,int);
 extern void GXS_LoadBGPltt(const void *,u32,u32);
 extern void GXS_LoadBG0Char(const void *,u32,u32);
 extern void GXS_LoadBG1Char(const void *,u32,u32);
 extern void GXS_LoadBG3Char(const void *,u32,u32);
-extern int func_02024e5c(void);
 extern int GetResourceSubBlock_CHAR2(void *,Ov002PageChars **);
 extern void NNSi_FndFreeFromDefaultHeap(void *);
 void Ov005_LoadResultBackgroundGraphics(void) {

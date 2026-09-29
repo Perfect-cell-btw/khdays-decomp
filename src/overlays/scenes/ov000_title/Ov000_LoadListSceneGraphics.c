@@ -5,6 +5,7 @@
  * clears a 0x40 span of BG2 char and fills the sub-screen map with 0xc8. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000CharacterBlock {
     u8 pad_0000[0x10];
@@ -44,11 +45,8 @@ extern const char data_ov000_0205aba8[];
 
 extern Ov000ListGraphicsContext *NNSi_FndGetCurrentRootHeap(void);
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
-extern int func_02024e5c(void);
 extern void OS_Terminate(void);
 extern void *Archive_LoadFile(u32 handle, int heapId);
-extern void Res_LoadSpriteSet(Ov000ResourceCell *cell, void *resource,
-                         int screenIndex, int characterIndex, int paletteIndex);
 extern void GX_LoadBGPltt(const void *source, u32 offset, u32 size);
 extern void GetResourceSubBlock_CHAR2(void *resource, Ov000CharacterBlock **block);
 extern void DC_FlushRange(const void *address, u32 size);
@@ -61,7 +59,6 @@ extern void GXS_LoadBG3Char(const void *source, u32 offset, u32 size);
 extern void *G2_GetBG2CharPtr(void);
 extern void MIi_CpuClearFast(
     u32 value, void *destination, u32 size);
-extern void ZeroHalfThenFree(void *container);
 
 #define OV000_ARCHIVE_MASK 0x00fffffc
 #define OV000_SUBFILE(base, index) \

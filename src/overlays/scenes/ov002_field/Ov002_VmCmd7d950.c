@@ -9,6 +9,9 @@
  *     because the tag test intervenes between the fetch and the use.
  * See tools/gen_vm_emit.py and the family notes for both.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     int nField04;            /* +0x04 */
@@ -27,9 +30,6 @@ typedef struct {
     char pad1b[1];
 } Ov002EmitParams1c;         /* 0x1c */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov002_CreateTravelClass(int nCount, Ov002EmitParams1c *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

@@ -1,7 +1,8 @@
 /* Computes the chip gauge damage of an object from its owner's ability 0x52, its hit count and
  * maximum HP (at least 1), overridden by the battle mode settings in mode 4. */
 
-extern int Slot_EvalPackedParam(int kind, int b);
+#include "game/engine.h"
+
 extern int data_0204c240;
 extern int data_0204c248;
 

@@ -1,7 +1,9 @@
 /* Recall wait: unless the kind is 9, requires both riders' (+0x3b4 / +0x3b8) +0x1ac flag bit 1;
  * then the two children get channels 0 / 1 / 2 / 4 bound with (2, 0) and the node moves to
  * 020d6250. */
-extern void SetSubitemState(void *child, int cmd, int arg, int flag);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov236_FinishWhenAnimsEnd(void);
 

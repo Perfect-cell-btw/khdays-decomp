@@ -11,12 +11,12 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207f624;
 extern void Ov002_SelectEntryByKey(int key);
 extern long long Ov002_FillMapRows(int a, int b, int c, int d, int e);
 extern void Ov002_HudTeardownToState5(long long value);
-extern void PlaySound(int a, int b);
 
 u32 Ov002_DismissIfState4(u32 fallback) {
     u32 result = 1;

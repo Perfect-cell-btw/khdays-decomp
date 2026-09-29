@@ -1,4 +1,5 @@
-extern int LoadGlobalU16At0(void);
+#include "game/engine.h"
+
 extern void Ov022_LoadSceneResources(void);
 extern void func_ov022_02083cfc(void);
 extern void Ov022_SetupRenderState(void);

@@ -4,10 +4,10 @@
  * +0x3be / +0x3d2 thresholds copied to +0x3bc / +0x3d0) and runs the base removal (020c7b70). */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct ListNode { int item; };
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern void Ov107_HandleRegionEvent(int self, int list);
 
 void Ov236_RemoveFromDrawList(int self, int list) {

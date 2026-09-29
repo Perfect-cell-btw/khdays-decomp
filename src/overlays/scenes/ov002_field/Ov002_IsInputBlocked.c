@@ -2,7 +2,9 @@
  * and yes while either of bits 1 and 7 of the context's flag word is set.
  * Otherwise Ov002_AdvancePhase decides. The flag word is read ONCE and both
  * bits tested against the same register. */
-extern int Session_IsReady(void);
+
+#include "game/engine.h"
+
 extern int Ov002_AdvancePhase(void);
 
 extern int *data_ov002_0207fa08;

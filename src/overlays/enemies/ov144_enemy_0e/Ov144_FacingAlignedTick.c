@@ -1,7 +1,9 @@
 /* Facing check of the ov144 enemy (and its byte-identical twin): once the +0x30 yaw is within
  * 0x1ac of the +0x34 target yaw (angle between them through the cosine of the difference), the
  * actor's +0x3f4 flag is raised and the tick hands off to cd5b8. */
-extern int Fx_Acos(int c);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov144_AdvanceTick(int *node);
 extern short data_0203d210[];

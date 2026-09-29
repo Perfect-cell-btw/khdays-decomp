@@ -14,9 +14,11 @@
  * is actually AT the join before looking for a codegen lever. Three branches converging on the
  * same address is what a common tail looks like, and a common tail is a statement in the source.
  */
+
+#include "game/engine.h"
+
 extern int func_ov022_02083f0c(void);
 extern void Ov002_StoreVAndToggleBit25(int a, int b, int c);
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_FollowGroundRumble(int self);
 extern void func_ov022_020ad588(int self);
 

@@ -6,6 +6,7 @@
  * (02084aa4) and uploaded as 4bpp tiles (0202ff8c). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileSurfaceCfg {
     u32  nUnk00;
@@ -61,7 +62,6 @@ extern void  OS_SNPrintf(char *pBuffer, int nSize, const char *pFormat, ...);
 extern void  Ov025_InitResourceRecord(void *pText, const char *pszPath); /* Ov008_Set_5c4c */
 extern void *Ov025_GetCtxBlock968c(void);                             /* Ov008_GetCtxBlock968c */
 extern int   Ov025_LookupEntry(int nSlot);                        /* Ov008_ResetEntry: slot handle */
-extern void  TileSurface_InitAndUpload4bpp(void *pSurface, TileSurfaceCfg *pCfg);   /* TileSurface_InitAndUpload4bpp */
 extern TileSurfaceCfg data_ov025_020b4250;
 extern const char *data_ov025_020b4220[];                           /* "rpt", "enm" */
 extern char  data_ov025_020b523c[];                                 /* "UI/cm/str/%s_&.s.z" */

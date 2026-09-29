@@ -2,6 +2,7 @@
  * the gameplay hub step. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -23,9 +24,7 @@ extern Ov022Context *data_ov022_020b2e60;
 extern void Ov002_SubmitEnabledRowMask(void);
 extern GameRuntimeContext *func_ov107_020c9848(void);
 extern void Ov002_SetCurrentSlotFlag1(int enabled);
-extern int GameState_IsFlagSet(unsigned int flagId);
 extern void Ov002_UpdateAnySlotBusyFlag(void);
-extern void func_02020878(char value);
 extern void *Ov022_StateGameplayHub(void);
 
 Ov022StateCallback Ov022_StateEnterGameplay(void)

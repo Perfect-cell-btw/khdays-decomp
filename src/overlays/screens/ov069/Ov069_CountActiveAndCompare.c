@@ -1,7 +1,8 @@
 /* Counts the set game-state flags 9-0x408, records the count and returns whether it reaches the
  * value. */
 
-extern int GameState_IsFlagSet(int i);
+#include "game/engine.h"
+
 extern void Ov002_SetRootField85ac(int a, int count);
 
 int Ov069_CountActiveAndCompare(unsigned int arg) {

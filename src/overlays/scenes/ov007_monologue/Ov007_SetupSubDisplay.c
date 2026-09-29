@@ -1,6 +1,5 @@
-extern void SetMasterBrightnessMain(int level);
-extern void SetMasterBrightnessSub(int level);
-extern void Gfx_Reset2DEngines(void);
+#include "game/engine.h"
+
 extern void GX_SetGraphicsMode(int a, int b, int c);
 extern void GX_SetBankForBG(int bank);
 extern void GX_SetBankForBGExtPltt(int bank);

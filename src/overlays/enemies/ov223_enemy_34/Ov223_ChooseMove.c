@@ -33,12 +33,13 @@
  * folding: the RNG returns long long, so the addend survives as a real add. Same mechanism as the
  * `+ (v - v)` copy artifact (deferred-ties.md). */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned char b0 : 1;
     unsigned char rest : 7;
 } Bits8;
 
-extern int RandNextScaled();
 extern signed char Ov002_GetCtxModeByte(void);
 
 int Ov223_ChooseMove(int self, int dist) {

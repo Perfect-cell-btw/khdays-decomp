@@ -1,7 +1,7 @@
 /* Returns a player's flag 0x10000 (0 in mode 0x2a or without an actor). */
 
-extern unsigned short LoadGlobalU16At0(void);
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 unsigned int func_ov022_020886f8(int arg0) {
     int p;
     if (LoadGlobalU16At0() == 0x2a) return 0;

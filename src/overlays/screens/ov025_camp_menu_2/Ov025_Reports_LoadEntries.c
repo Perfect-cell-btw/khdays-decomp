@@ -3,6 +3,7 @@
  * enemy mode, copy them into the second half of the allocation. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct DbName { short id; short pad; };
 
@@ -52,19 +53,13 @@ typedef struct Ov025Page {
 } Ov025Page;
 
 extern Ov025Page *Ov025_GetPageA(void);
-extern u32 GameState_GetField(int field, int bits);
 extern void *Archive_LoadFile(u32 path, int heap);
-extern void MsgDb_LoadDb(int db, int heap);
 extern int OS_SNPrintf(char *dst, int cap, const char *fmt, ...);
 extern u32 Ov025_PackSlotTag(int member);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 size);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern void Res_LoadSpriteSet(SpriteResSet *out, void *file, int screen, int character, int palette);
 extern int Ov025_IsFlagRowFree(int index);
-extern void MsgDb_FetchRecord(void **out, int db, int index, int heap);
-extern void DispatchByNodeKind(void **out);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
-extern void ResSlot_Release_2(int db);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 
 extern char data_ov025_020b5250[];

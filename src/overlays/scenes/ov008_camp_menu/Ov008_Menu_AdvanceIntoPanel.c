@@ -17,13 +17,13 @@
  * for N=27), matching the ROM's lsl/lsr pair rather than a tst mask.
  */
 
+#include "game/engine.h"
+
 extern void Ov008_Menu_RefreshSlotPanel(void);
 extern void Ov008_Menu_RefreshSubitemGrid(void);
 extern void Ov008_Menu_UpdateDirectionalPrompt(int obj);
-extern int GameState_IsFlagSet(int flag);
 extern int Ov008_GetPlayerRecord(int slot);
 extern void Ov008_PrimeSubSceneFromCursor(int arg);
-extern void StampByteAndInvokeSubStructAt(int a, int b);
 extern void Ov008_SetTargetSlot(int slot, unsigned int dur);
 extern void Ov008_Menu_RenderScenePanels(int obj);
 extern int data_ov008_02090f1c;

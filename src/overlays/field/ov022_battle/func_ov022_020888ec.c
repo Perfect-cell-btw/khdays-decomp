@@ -1,7 +1,6 @@
 /* Host only: sets or clears a player's flags 0x80 and 0x1000000. */
 
-extern int Session_GetLocalPlayerIndex(void);
-extern int GetEntryField20ByIndex(int a);
+#include "game/engine.h"
 
 void func_ov022_020888ec(int param_1, int param_2) {
     unsigned int *puVar2;

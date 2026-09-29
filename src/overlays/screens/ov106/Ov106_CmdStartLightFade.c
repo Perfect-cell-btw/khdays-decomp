@@ -9,6 +9,7 @@
  * callees, verified byte-exact in this overlay. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];
@@ -24,7 +25,6 @@ typedef struct Ov023ScriptCtx {
     Ov023EventBlock *pEvent;  /* 0x128 */
 } Ov023ScriptCtx;
 
-extern int  ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);   /* ScriptVm_ReadOperandInt */
 extern int  Ov106_GetGateValue(int nLight);                        /* Ov023_GetLightLevel */
 extern void Ov106_SetGateValue(int nLevel, int nLight);            /* Ov023_SetLightLevel */
 extern void Slot48_StoreAtCurrentIndex(Ov023ScriptCtx *pCtx, void *pCmd);        /* ScriptVm_RequeueCommand */

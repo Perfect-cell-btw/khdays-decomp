@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MenuContext {
     u8   pad_0000[0x8];
@@ -42,7 +43,6 @@ extern void Ov025_BeginMenuModeSwitch(Ov008MenuContext *pCtx, int nMode);
 extern void Ov025_EnterMenuState(Ov008MenuContext *pCtx, int nMode);
 extern void Ov025_UpdateMenuButton5(int nArg);                                /* Ov008_UpdateMenuButton5 */
 extern void Ov025_RebuildGridHits(Ov008MenuContext *pCtx);                  /* Ov008_RebuildGridHits */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern void Ov025_GridMenuConfirm(void);
 extern void Ov025_MenuKeyUp(void);
 extern void Ov025_MenuKeyDown(void);

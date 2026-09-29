@@ -3,12 +3,12 @@
  * otherwise, and posts the request to the loader thread; returns the destination buffer. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int *Loader_PopFreeRequest(void);
 extern void FS_InitFile(void *file);
 extern void FSi_WaitForCardThread(void);
 extern int Archive_OpenSubfileByHandle(void *file, u32 id);
-extern u32 Archive_SubfileIsCompressed(u32 param_1);
 extern int strlen(const char *s);
 extern char *Msg_BuildLangPath(char *name);
 extern int FS_OpenFile(void *file, const char *path);

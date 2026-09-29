@@ -4,6 +4,7 @@
  * point each back at this node. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*Callback)(void);
 
@@ -52,8 +53,6 @@ extern void *GetTrackEntryBase(int idx);
 extern EffectNode *ModelNode_New(void);
 extern void List_Init(List28 *list);
 extern EffectNode *CreateSubitemInstance0xB4(void *modelName);
-extern int RegisterSubscriberSlot(EffectNode *group, EffectNode *child);
-extern void SetSubitemState(EffectNode *node, u16 track, short blend, unsigned char value);
 typedef struct Ov107Global {
     char pad00[0x88];
     int field_88;              /* 0x88 */

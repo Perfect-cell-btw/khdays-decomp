@@ -11,8 +11,8 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void *func_ov022_020881f8(int player);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern int Ov002_GetPanelField0134(void);

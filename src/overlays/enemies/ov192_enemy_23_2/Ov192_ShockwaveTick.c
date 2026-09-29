@@ -5,9 +5,9 @@
  * +0x2c speed and at 0xa00 the sub-state drops to 0 with the slot cleared. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int *List_First(void *list);
-extern int *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

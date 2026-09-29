@@ -22,6 +22,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*Ov011StateFn)(void);
 
@@ -49,10 +50,6 @@ extern Ov011Globals data_ov011_0205e960;
 extern Ov011StateFn data_ov011_0205e8b4[];
 extern volatile u16 data_0204c190;
 
-extern int  func_0201e428(void);
-extern void SetMasterBrightnessMain(int brightness);
-extern int  func_0201e438(void);
-extern void SetMasterBrightnessSub(int brightness);
 extern void GX_DispOff(void);
 extern void DispCnt_ApplyPendingMode(void);
 extern int  PM_SetLCDPower(int a);

@@ -1,8 +1,8 @@
 /* Turns the heading toward its target (Angle_TurnToward), orients the model, counts down +0x34 and
  * hands the velocity to the node (+0xf0). */
 
-extern int Angle_TurnToward();
-extern int QuatFromAxisAngle();
+#include "game/engine.h"
+
 extern int Quat_FromTwoVectors();
 extern int Quat_Multiply();
 extern int Srt_SetRotationQuat();

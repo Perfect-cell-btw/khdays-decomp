@@ -1,9 +1,10 @@
 /* Plays looping anim 0, clears the velocity, rolls the walk time and installs the walk tick. */
 
+#include "game/engine.h"
+
 typedef struct { int w[3]; } Blk12;
 
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
-extern int RandNextScaled(unsigned int mul);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov283_WalkTick(void);
 extern Blk12 data_02041dc8;

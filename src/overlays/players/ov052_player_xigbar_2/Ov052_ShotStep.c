@@ -11,6 +11,7 @@
  * with the flag). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;
@@ -30,7 +31,6 @@ struct FireParams {
     int pad1c[4];
 };
 
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern void Ov022_StepAnchorDelta(char *self, VecFx32 *pOut);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void MTX_RotY33_(Mtx33 *m, int nSin, int nCos);
@@ -38,7 +38,6 @@ extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, struct FireParams *p);
-extern void SceneNode_Enable(int *p);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_ActorSetState(char *self, int nMode);
 extern int data_ov052_020b80c0;

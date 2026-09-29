@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008SelCtx {
     u8  pad_0000[0x4c];
@@ -15,7 +16,6 @@ typedef struct Ov008SelCtx {
 } Ov008SelCtx;
 
 extern Ov008SelCtx *Ov008_GetMenuContext(void);                    /* Ov008_GetMenuContext */
-extern void GameState_SetField(int nField, int nBits, unsigned int nValue);      /* GameState_SetField */
 
 void Ov008_SaveItemCounts(void)
 {

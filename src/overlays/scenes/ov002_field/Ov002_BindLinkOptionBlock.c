@@ -2,6 +2,7 @@
  * external roster entry or every available entry. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002LinkCtx {
     u8 gap0000[0x13];
@@ -12,8 +13,6 @@ typedef struct Ov002LinkCtx {
 extern Ov002LinkCtx *data_ov002_0207fa10;
 
 extern int func_ov022_020882f8(void);
-extern char *GetEntryField20ByIndex(int nIndex);
-extern u16 QueryActiveStateOrDelegate(void);
 
 void Ov002_BindLinkOptionBlock(int bApplyAll, u8 nValueA, u8 nValueB,
                          u8 nValueC, int bEnabled)

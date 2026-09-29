@@ -17,10 +17,9 @@
  * argument rather than held across the copy call.
  */
 
-extern int Session_GetLinkMode(void);
+#include "game/engine.h"
+
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int n);
-extern void dispatchByObjTypeBits(int hdr, int size);
-extern int MsgQueue_Enqueue(int type, int size, unsigned short *hdr);
 
 typedef struct {
     unsigned short f0:1;

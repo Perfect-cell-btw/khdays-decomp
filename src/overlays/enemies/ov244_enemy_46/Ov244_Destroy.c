@@ -1,7 +1,7 @@
 /* Destroys the model and the two attached instances, frees the table, then the base object. */
 
-extern int DestroyInstance();
-extern int FreeInstanceMemory();
+#include "game/engine.h"
+
 extern int Ov107_DestroyObject();
 
 struct Elem {

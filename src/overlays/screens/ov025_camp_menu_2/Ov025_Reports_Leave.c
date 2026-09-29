@@ -1,7 +1,8 @@
 /* Plays the cancel sound, targets slot 0 and clears the report flag. */
 
+#include "game/engine.h"
+
 extern int Ov025_GetPageA();
-extern int PlaySound();
 extern int Ov025_SetTargetSlot();
 
 void Ov025_Reports_Leave(int arg0) {

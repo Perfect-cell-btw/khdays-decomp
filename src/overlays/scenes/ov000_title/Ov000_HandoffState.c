@@ -18,15 +18,14 @@
  * `and r0,r2,#0xff` serve both the compare and the call.
  */
 
+#include "game/engine.h"
+
 typedef void *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  Ov000_BeginCardTransfer(int a);
 extern int   Ov000_PollSaveLoad(void);
-extern int   GameState_GetField(int, int);
 extern void  InstantiateClass(void *classDesc, int arg);
-extern void  SetMasterBrightnessMain(int brightness);
-extern void  SetMasterBrightnessSub(int brightness);
 extern char  data_ov000_0205a9c0[];
 extern void  Ov000_MenuFadeInState(void);
 

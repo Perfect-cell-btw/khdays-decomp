@@ -23,6 +23,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define TAB_BUY      0
 #define TAB_SELL     1
@@ -92,7 +93,6 @@ extern Ov008PanelContext *data_ov008_02090fac;
 extern GameState *data_0204be18;
 extern u8    data_ov008_02090eb0[];                                      /* "sold out" text */
 extern u8    data_ov008_02090eb8[];                                      /* locked recipe text */
-extern int   func_02024e5c(void);                                        /* LoadGlobalShort_0204c1ec */
 extern int   Ov008_PanelAlpha(Ov008ParamRecord *pRecord);             /* stock cap */
 extern char  Ov008_CountSpareItemsOfChild(Ov008ParamRecord *pRecord);             /* Ov008_CountSpareItemsOfChild */
 extern int   Ov008_AreRequirementsMet(Ov008ParamRecord *pRecord);             /* Ov008_AreRequirementsMet */

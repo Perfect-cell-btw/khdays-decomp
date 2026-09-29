@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PackedTallyPacket {
     u8 nOp;
@@ -30,8 +31,6 @@ extern Ov002RootContext *data_ov002_0207fa00;
 extern Ov002DayClock data_0204c240;
 extern Ov002TallyRules data_0204c248;
 extern void Ov002_ApplyTally(Ov002TallyRequest *);
-extern u32 Session_GetLocalPlayerIndex(void);
-extern int Session_IsReady(void);
 extern void Ov002_PauseMissionScene(int);
 
 /* Apply flag-selected tally amounts and unpack five three-bit session ids.

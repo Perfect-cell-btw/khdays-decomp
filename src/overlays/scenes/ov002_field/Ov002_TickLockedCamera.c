@@ -1,9 +1,8 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
-extern void *func_02023bf0(void);   /* the active scene */
 
 extern VecFx32 *func_ov022_020881f8(int player);
 extern int func_ov022_02083f5c(void);

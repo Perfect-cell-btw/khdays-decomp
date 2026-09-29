@@ -8,12 +8,12 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 v[5]; } Spots5;
 typedef struct { VecFx32 v[4]; } Corners4;
 typedef struct { unsigned f : 8; } B8;
 
-extern int RandNextScaled(int n);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);

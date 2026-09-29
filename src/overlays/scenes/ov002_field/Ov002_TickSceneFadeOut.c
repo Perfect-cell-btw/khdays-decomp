@@ -13,12 +13,11 @@
  * register, which is what makes the guard a predicated early return.
  */
 
+#include "game/engine.h"
+
 typedef void (*Ov002StateFn)(void);
 
-extern int func_02023c40(void);        /* frame-rate flag, 1 when running 60Hz */
 extern void Ov002_UpdateSceneFrame(void); /* per-frame scene update */
-extern void VBlank_UnregisterCallback(int nSlot, void *pArg);  /* drop a VBlank callback */
-extern void SetMasterBrightnessSub(int nLevel); /* master brightness, sub screen */
 extern void Ov002_GetBootModeStep(void); /* the state entered once faded out */
 
 extern char data_ov002_0207e850[];     /* the VBlank callback's cookie */

@@ -5,6 +5,7 @@
  * clamping) and the cursor sound plays (02033b78 0 / 0). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];
@@ -54,7 +55,6 @@ typedef struct Ov025ScrollList {
 
 extern int   func_02020400(int nNum, int nDen);                     /* _s32_div_f */
 extern void  Ov025_ScrollList_SetKnob(Ov025ScrollList *pList, int nKnob, int nScroll, int bClampCursor); /* Ov025_ScrollList_SetKnob */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 
 void Ov025_ScrollList_PageStep(Ov025ScrollList *pList, int nDir)
 {

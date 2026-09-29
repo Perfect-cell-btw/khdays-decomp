@@ -1,24 +1,15 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern u8 data_0204c240;                /* g_modeAndDayClock */
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_TickSessionRequest(void);  /* Ov002_TickSessionRequest */
-extern void SetGameMode(int nArg);  /* SetGameMode */
 extern void Ov002_DropLinkSession(void);  /* Ov002_DropLinkSession */
-extern void UnloadOverlaySync(int nArg0, int nArg1);  /* UnloadOverlaySync */
 extern void Ov002_ClearRosterRow(void);  /* Ov002_ClearRosterRow */
-extern void EntityManager_ReleaseViews(void);  /* EntityManager_ReleaseViews */
-extern void GameState_SetFlag(int nFlag);  /* GameState_SetFlag */
-extern void EntityManager_ResetSingleton(void);  /* EntityManager_ResetSingleton */
 extern void Ov002_ResetNineSlots(void);  /* Ov002_ResetNineSlots */
 extern void Ov002_ScheduleRetry(void);  /* Ov002_ScheduleRetry */
-extern void Scene_RequestPending(int nKind, int nArg);  /* PushSceneRequest */
-extern int GameState_IsFlagSet(int nFlag);  /* GameState_IsFlagSet */
-extern void func_020235bc(int nFlag);  /* DispatchToHandler */
-extern int GameState_GetField(int nField, int nWidth);  /* GameState_GetField */
-extern void RequestQueue_SetOrPushKind3(int nArg);  /* RequestQueue_SetOrPushKind3 */
 
 extern void *Ov002_PickNextPhase(void);
 extern void *Ov002_RunPendingCallbacks(void);

@@ -4,12 +4,13 @@
  * then the two secondary channels at +0xda8 (0x164 apart) are driven from their configs at
  * +0x2c54 (0x54 apart) with the heading at +0x2aba and the frame, and the common post-update
  * runs. */
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
+
+#include "game/engine.h"
+
 extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(void *attach, int tick);
 extern void Ov022_InvokeCallback24IfBit0(void *attach);
 extern int Ov022_AreStreamsIdle(void *attach);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_WidgetScrollCommit(char *channel, char *config, int heading, int frame);
 extern void func_ov022_020ad588(char *self);
 

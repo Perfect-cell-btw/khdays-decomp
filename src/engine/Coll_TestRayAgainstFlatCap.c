@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct CollisionObject { u8 pad00[0x2c]; VecFx32 position2c; s32 radius38,height3c; } CollisionObject;
 typedef struct CollCastState {
@@ -11,7 +12,6 @@ typedef struct CollCastState {
  u8 pad60[0x74-0x60]; s32 nRadius,nNearestHit;
 } CollCastState;
 extern s64 FX_GetDivResultFx64c(void);
-extern void Vec3ScaleAddQ27(s32,const VecFx32*,const VecFx32*,VecFx32*);
 #define MUL(a,b) ((s32)(((s64)(a)*(b)+0x800)>>12))
 static inline void WaitDivider(void) { while(*(volatile u16*)0x04000280&0x8000) {} }
 static inline void StartDivide(s32 numerator,s32 denominator) {

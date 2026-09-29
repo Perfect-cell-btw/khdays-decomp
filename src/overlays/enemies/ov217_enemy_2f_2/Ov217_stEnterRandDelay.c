@@ -2,9 +2,9 @@
  * limits at +0x224 and +0x228 and installs the steer-toward-target step. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov217_loadDefaultPoseVecs();
-extern int RandNextScaled(int);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov217_SteerTowardTarget(void);
 

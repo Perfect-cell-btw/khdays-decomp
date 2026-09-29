@@ -1,6 +1,7 @@
 /* Picks a random guard entry (one fewer when flagged) and arms the actor's guard window with it. */
 
-extern int Session_RandNextScaled(unsigned int a);
+#include "game/engine.h"
+
 extern void Ov022_ArmGuardWindow(int a, unsigned int *b, int c);
 extern void Ov022_SpendGuardOnHit(int a, unsigned int *b, int c);
 

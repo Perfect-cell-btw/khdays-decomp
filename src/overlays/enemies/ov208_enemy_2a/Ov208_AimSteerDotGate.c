@@ -7,13 +7,15 @@
  * positive return. Once expired, if dot(aim, w) <= 0 keep waiting; otherwise clear *(state[1])+0xa8 and
  * hand off to the 020d1afc state.
  */
+
+#include "game/engine.h"
+
 extern int  Ov208_PickBestFacingNode(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *in, void *out);
 extern int  func_020050b4(int x, int z);
 extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern int  VEC_DotProduct(void *a, void *b);
 extern void Ov208_FaceTargetFireReadyC(void);

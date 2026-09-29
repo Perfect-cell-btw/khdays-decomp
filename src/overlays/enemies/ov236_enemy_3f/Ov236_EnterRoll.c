@@ -4,10 +4,10 @@
  * is rand(0x2001) + 2.0. The node moves to 020cfc64. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Bits52 { unsigned char b0 : 1, b1 : 1, b2 : 1; };
 typedef void (*LaunchHook)(int part, int arg);
-extern int  RandNextScaled(int bound);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov236_RollTick(void);
 

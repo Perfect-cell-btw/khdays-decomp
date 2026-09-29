@@ -10,9 +10,9 @@
  * One of five byte-identical siblings. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void ScaleVec3Fx12(int a, void *b, void *c);
-extern int RandNextScaled();
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern short data_0203d210[];
 

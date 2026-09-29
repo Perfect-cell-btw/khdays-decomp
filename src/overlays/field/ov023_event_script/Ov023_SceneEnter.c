@@ -6,6 +6,7 @@
  * context +4.  Moves on to the first-frame gate Ov023_SceneFirstFrame (02082a44). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023SceneContext {
     u16  nStatus;             /* 0x00 */
@@ -24,7 +25,6 @@ typedef struct Ov023MainArgs {
 } Ov023MainArgs;
 
 extern Ov023SceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void  Session_GetSlotTable(void);                /* Session_GetSlotTable */
 extern void  strcpy(void *pDst, const void *pSrc);            /* copy a request record */
 extern void *InstantiateClass(void *pClass, void *pArgs);               /* InstantiateClass */
 extern int   Ov023_FirstFrameGate(void);                              /* Ov023_SceneFirstFrame */

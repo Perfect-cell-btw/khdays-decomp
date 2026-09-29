@@ -27,6 +27,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ROW_HEIGHT     16
 #define WINDOW_ROWS    8
@@ -84,8 +85,6 @@ extern int   Ov025_DrawListWindow(Ov008ScrollMenu *pMenu, int nTop, int bFinal, 
 extern void  Ov025_LayoutScrollGauge(Ov008ScrollMenu *pMenu, int nPos);      /* Ov008_LayoutScrollGauge */
 extern void  Ov025_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible);  /* SetEntrySlotsVisible */
 extern Ov008ListNode *NNS_FndGetNthListObject(void *pList, int nIndex);          /* List_GetNthObject */
-extern void  MsgDb_FetchRecord(Ov008TextRecord **ppRecord, int nDb, u32 nIndex, int nSlot); /* MsgDb_FetchRecord */
-extern void  DispatchByNodeKind(Ov008TextRecord **ppRecord);                  /* release a raw db record */
 extern int   Ov025_DrawPageBElement(int nMode, int nA, u32 nText);          /* cursor mode / text request */
 extern void *Ov025_GetVarRecordByIndex(void *pRecords, int nIndex);            /* GetVarRecordByIndex */
 extern u16   Ov025_GetMenuMsgDbId(void);                                  /* text db of the page */

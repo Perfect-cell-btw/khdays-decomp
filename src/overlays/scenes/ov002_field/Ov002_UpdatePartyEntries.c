@@ -18,13 +18,13 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u16 a, b, c, d; } Head;
 
 extern int  data_ov002_0207fa00;
 extern unsigned long long Ov002_GetTimeoutTicks(void);
 extern int  func_02020368(unsigned long long value, unsigned int divisor, int arg3);
-extern int  GetEntryField20ByIndex(int i);
 extern int  Ov022_GetEntryField12(int i);
 extern int  func_ov022_020886f8(int i);
 extern int  Ov002_TestRosterSlotGroundRay(int i);

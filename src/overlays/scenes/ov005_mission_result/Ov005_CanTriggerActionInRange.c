@@ -2,7 +2,7 @@
  * lies in its range (+6..+8), and the game-state flag its kind names (+0x15) is set when it has
  * one. */
 
-extern int GameState_GetField(int arg0, int arg1);
+#include "game/engine.h"
 
 int Ov005_CanTriggerActionInRange(int entry, unsigned int value) {
     int kind;

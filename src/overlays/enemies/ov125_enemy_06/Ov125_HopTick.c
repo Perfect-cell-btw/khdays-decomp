@@ -4,15 +4,16 @@
  * blend) requested and the landing think callback registered. Otherwise the pose at +0x68 is
  * spun by the hop rate (30 x rate x 0.196) times the +0x4c count about the +0x40 axis and
  * renormalised. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Owner { char pad[0x3a0]; int nodes[2]; };
 
 extern void Ov107_BuildAndSendUpdate(int owner, int anim, int mode, int blend);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern int func_02020400(int a, int b);
-extern void QuatFromAxisAngle(void *dst, void *axis, int angle);
 extern void Quat_Multiply(void *out, void *a, void *b);
-extern void Vec4_Normalize(void *out, void *in);
 extern void Ov125_LaunchTick(void);
 
 static inline int FX_Mul(int a, int b)

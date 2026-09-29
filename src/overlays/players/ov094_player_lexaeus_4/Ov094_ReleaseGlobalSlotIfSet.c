@@ -1,8 +1,9 @@
 /* Clears *arg1=0; if the slot at *globalData+0x2c2c+0x550 is nonzero, releases it via
  * SoundSeqHandle_Stop and clears it. */
 
+#include "game/engine.h"
+
 extern int data_ov094_020bc240;
-extern void SoundSeqHandle_Stop();
 
 void Ov094_ReleaseGlobalSlotIfSet(int this_, int arg1) {
     int *base = (int *)(data_ov094_020bc240 + 0x2c2c);

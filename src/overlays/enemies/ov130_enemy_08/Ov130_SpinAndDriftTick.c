@@ -18,11 +18,10 @@
  *    the destination is used once -- the ROM gives lr to the two-use value. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern int Angle_TurnToward(int a, int b, int c, void *d);
-extern void QuatFromAxisAngle(void *out, void *a, int b);
 extern void Quat_FromTwoVectors(void *out, void *a, void *b);
 extern void Quat_Multiply(void *out, void *a, void *b);
 extern void Srt_SetRotationQuat(void *a, void *b);

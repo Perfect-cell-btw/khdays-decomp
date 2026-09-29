@@ -5,10 +5,9 @@
  * gives the ROM's stack layout. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct quat { int x, y, z, w; };
-extern int  Angle_TurnToward();
-extern void QuatFromAxisAngle();
 extern void Quat_FromTwoVectors();
 extern void Quat_Multiply();
 extern void Srt_SetRotationQuat();

@@ -16,6 +16,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int w[4]; } Quat;
@@ -37,13 +38,10 @@ extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042264;
 extern const Cmd14 data_ov257_020d3294;

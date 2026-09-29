@@ -4,15 +4,14 @@
  * +0xf0 velocity mirrors it. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042264;

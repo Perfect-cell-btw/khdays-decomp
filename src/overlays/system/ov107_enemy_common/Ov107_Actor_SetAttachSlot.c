@@ -13,6 +13,7 @@
  * what lets mwcc schedule its loads past the stores into the slot record. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad_00[0x5c];
@@ -46,8 +47,6 @@ typedef struct {
 } SlotKindInfo;
 
 extern ActorManager *func_ov107_020c9848(void);
-extern void DestroyInstance(CreatedItem *item);
-extern void FreeInstanceMemory(void *p);
 extern void *CallocInstance(unsigned int size);
 extern CreatedItem *CreateSubitemInstance0xB4(unsigned int handle);
 

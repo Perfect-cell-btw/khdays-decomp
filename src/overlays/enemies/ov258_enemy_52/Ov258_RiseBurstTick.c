@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 
@@ -12,7 +13,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Task_MarkFinished(int *node);
 
 void Ov258_RiseBurstTick(int *node)
 {

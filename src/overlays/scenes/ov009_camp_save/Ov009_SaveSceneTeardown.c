@@ -1,11 +1,10 @@
 /* Tears the save scene down: blanks both screens and turns the displays off. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void *data_ov009_020563e0;
 extern void Ov009_PageTeardown(int mode);
-extern void SetMasterBrightnessMain(int value);
-extern void SetMasterBrightnessSub(int value);
 
 #define REG_DISPCNT (*(volatile u32 *)0x04000000)
 #define REG_DISPCNT_SUB (*(volatile u32 *)0x04001000)

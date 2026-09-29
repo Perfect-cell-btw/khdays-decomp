@@ -8,10 +8,10 @@
  * ARM.
  */
 
+#include "game/engine.h"
+
 extern void BindAnimTrack(void *pWidget, int nSlot, void *pNode, int nFlags);
 extern void Anim_SetFrameWrapped(void *pWidget, int nSlot, int nValue);
-extern void SceneNode_Enable(void *pWidget);
-extern void SceneNode_Disable(void *pWidget);
 
 void Ov002_RewindWidget(void *pWidget, int bHold)
 {

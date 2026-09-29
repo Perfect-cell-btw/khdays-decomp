@@ -4,9 +4,11 @@
  * transform and copies it into the shadow slot, then registers the three step
  * callbacks. Same routine as the matched ov178 entry, with a second vector
  * pointer where that one stores a null. */
+
+#include "game/engine.h"
+
 struct bf { unsigned b : 8; };
 struct blk16 { int a, b, c, d; };
-extern void Obj_SetFourWords(void *p, int a, int b, int c, int d);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov292_DispatchSubStateByte(void);
 extern void Ov292_stateSetFlagsClearBit(void);

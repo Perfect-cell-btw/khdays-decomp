@@ -8,9 +8,10 @@
  * when it ran, 0 when the manager is null or the entry is inactive.
  */
 
+#include "game/engine.h"
+
 extern int *data_0204c22c;
 extern int data_0204c02c;
-extern int func_0202362c(int list);
 extern void CmdPacket_Dispatch(int entry, int base);
 
 int List_TryInvokeEntry(int param_1)

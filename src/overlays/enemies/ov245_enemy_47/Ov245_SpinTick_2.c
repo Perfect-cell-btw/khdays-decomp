@@ -3,11 +3,10 @@
  * velocity loses 15.6 % per 1/30 s slice of the frame. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);

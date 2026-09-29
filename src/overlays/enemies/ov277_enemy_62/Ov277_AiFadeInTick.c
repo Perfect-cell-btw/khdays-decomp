@@ -2,8 +2,9 @@
  * byte clears, picks a random range between the limits at +0x224/+0x228, queues action 2 and clears
  * the step handler. */
 
+#include "game/engine.h"
+
 extern int FX_Div();
-extern int RandNextScaled();
 extern int SetIndexedSlot();
 
 void Ov277_AiFadeInTick(int *s)

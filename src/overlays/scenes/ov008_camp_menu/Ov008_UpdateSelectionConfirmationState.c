@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Synchronises the mission selection confirmations with the peers: sends the local entry, collects
  * theirs and, once every entry is confirmed, starts the lobby transfer. */
 
@@ -8,12 +9,7 @@ typedef void (*MissionCallback)(void);
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern int Ov008_IsSceneState4(void);
-extern int Session_IsReady(void);
-extern u16 GetGlobalU16At6(void);
 extern void Ov008_RefreshSelectionSendBlock(void);
-extern int MsgQueue_SendGate(int type, u16 *payload, u16 size);
-extern u32 Session_GetLocalPlayerIndex(void);
-extern void StoreToGlobalPtr4Field28(int state);
 extern void Ov008_MissionIdleStateNoOp(void);
 extern void Ov008_MissionLobbyStartTransfer(void);
 

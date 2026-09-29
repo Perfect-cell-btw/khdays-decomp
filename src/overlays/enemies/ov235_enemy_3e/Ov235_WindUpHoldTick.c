@@ -6,8 +6,8 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern int Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);

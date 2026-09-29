@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -43,7 +44,6 @@ struct Ov151ShotState {
     int nHits;                  /* +0x38 */
 };
 
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, const VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int Collision_CastSphere(void *collision, void *from, VecFx32 *dir, int radius);

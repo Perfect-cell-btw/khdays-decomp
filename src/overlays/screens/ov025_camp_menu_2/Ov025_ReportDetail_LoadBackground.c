@@ -9,6 +9,7 @@
  * screen filled with tile 0xa0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ReportsEntry {
     u16  nId : 9;             /* 0x00 bits 0-8 */
@@ -69,7 +70,6 @@ typedef struct Ov008ResourceCell {
 extern u32   Ov025_PackSlotTag(int nMember);                      /* Ov025_PackSlotTag */
 extern u32   Ov025_PackHandleTag(int nSubFile);                     /* Ov025_PackLocalisedTag */
 extern void *Archive_LoadFile(u32 nTag, int nHeap);                    /* Res_Open */
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *pCell, void *pFile, int nScreen, int nChar, int nPalette); /* Res_LoadSpriteSet */
 extern void  GetResourceSubBlock_CHAR2(void *pFile, Ov008CharacterBlock **ppBlock); /* NNS_G2dGetUnpackedCharacterData */
 extern void  GXS_LoadBGPltt(const void *pSrc, u32 nOffset, u32 nSize);
 extern void  GXS_LoadBG3Char(const void *pSrc, u32 nOffset, u32 nSize);

@@ -7,6 +7,7 @@
  * beyond the owner's +0x2d8 leash sub-state 2 is requested. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Bits40 { int b0 : 1, b1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -18,7 +19,6 @@ extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Quat_FromTwoVectors(void *q, const VecFx32 *from, const VecFx32 *to);
-extern void Vec4_Normalize(void *q, void *out);
 extern int Ov279_DecideAttackByDistanceRoll(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];

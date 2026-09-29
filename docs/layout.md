@@ -74,12 +74,13 @@ Still to do, in this order:
     callback, the running pass `slot`). Its state block is the creator's own type, so the members
     are declared through `AI_TASK_FIELDS(StateType)`: 713 enemy sources declare their task as
     `struct X { AI_TASK_FIELDS(TheirState) };` and read `pState`/`slot` without casts.
-  - the first function prototypes: `game/enemy_common.h` declares, as they are defined, the
-    125 enemy-framework (ov107) functions whose types a header can provide; 4,486 sources dropped
-    their 5,505 local `extern` copies of them for it. Where a caller passes another type than the
-    definition takes (an actor held as an `int`, its own view of a vector), the argument carries
-    a cast. `tools/sharedecls.py` does this for a module: it writes the header from the
-    definitions and keeps a source only if it still compiles to the same bytes.
+  - function prototypes, declared once per module as they are defined: `game/enemy_common.h`
+    (125 functions of the enemy framework, ov107; 2,653 sources include it) and `game/engine.h`
+    (642 functions of the main module; 3,938 sources). Where a caller passes an int that is a
+    game object, the argument names it with a cast (`(Actor *)`). A source that would need a
+    cast to a basic type (`(void *)`, `(int)`) keeps its own declarations until its code holds
+    that value with a real type. `tools/sharedecls.py` does this for a module: it writes the
+    header from the definitions and keeps a source only if it still compiles to the same bytes.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
   the prototypes of every other module and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per

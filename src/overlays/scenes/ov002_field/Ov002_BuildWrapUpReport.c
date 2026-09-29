@@ -1,9 +1,9 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;   /* the ov002 root context */
 
-extern char *Session_GetSlotTable(void);  /* its +4 is the slot count */
 extern char *Slot4_GetIfOccupied(int nSlot);  /* Slot4_GetIfOccupied */
 
 /* Fills the wrap-up report the session board hands to the results side.

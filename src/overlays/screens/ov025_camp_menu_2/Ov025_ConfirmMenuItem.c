@@ -9,6 +9,9 @@
  *    not need help, and helping it is what cost the 24 bytes.
  * This function also takes NO parameters; it had four. (2026-07-17)
  */
+
+#include "game/engine.h"
+
 /* Ov025_ConfirmMenuItem -- confirm the highlighted main-menu item, ov008.
  * Looks up the active menu record (Ov025_GetPageA); its two targets are a sub-menu
  * (rec+0x8c) and a scene (rec+0x90). When only the scene target is set, tears the menu down
@@ -22,12 +25,9 @@ extern void Ov025_SetCtxField9678(int a);
 extern void Ov025_SetCtxField967c(int a);
 extern void Ov025_SetCtxObject9630(int a);
 extern void Ov025_SetCtxObject9634(int a);
-extern int  GameState_IsFlagSet(int flag);
 extern void Ov025_ArmCueRequest(int a, int b, int c);
-extern void GameState_SetFlag(int flag);
 extern void Ov025_SetGlobalConfigAndInit(int a);
 extern void Ov025_SetTargetSlot(int a, int b);
-extern void PlaySound(int a, int b);
 
 void Ov025_ConfirmMenuItem(void) {
     int rec = Ov025_GetPageA();

@@ -1,5 +1,7 @@
 /* Notifies each tracked child whose visible flag changed (1 shown, 0 hidden). */
 
+#include "game/engine.h"
+
 typedef void (*Callback)(void *self, int param);
 
 typedef struct {
@@ -17,7 +19,6 @@ typedef struct {
 } Entity;
 
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 
 void Ov107_Region_SyncChildVisibility(void *self)
 {

@@ -12,7 +12,9 @@
  * scene label is not. The offsets and logic below are this function's -- the code is
  * byte-identical to the rep.
  */
-extern void Slot_SetFlagBit1(int list, int idx);
+
+#include "game/engine.h"
+
 extern void Slot_ClearFlagBit1(int list, int idx);
 extern int *data_ov008_02090fa4;
 

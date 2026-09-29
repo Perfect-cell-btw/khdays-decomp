@@ -7,15 +7,13 @@
  * the rate up to 0xf000, and the rate is recorded at +0x580. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int q[4]; } Quat;
 typedef struct { unsigned short lo : 8, hi : 8; } Hw60;
 
 extern void Ov267_GrabPhaseMachine(int *state);
-extern int Angle_TurnToward(int cur, int target, int step, int done);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, const VecFx32 *in);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int *Collision_CastRay(void *world, VecFx32 *origin, VecFx32 *dir);
 extern int Ov267_CheckState6c(int *state, int a);

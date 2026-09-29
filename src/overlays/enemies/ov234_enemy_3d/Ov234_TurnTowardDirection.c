@@ -4,6 +4,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Ov234VecBlock {
     VecFx32 vector;
@@ -76,9 +77,6 @@ extern const VecFx32 data_02042264;
 extern const VecFx32 data_02041dc8;
 extern const short data_0203d210[];
 
-extern int Angle_TurnToward(int, int, int, int);
-extern void QuatFromAxisAngle(VecFx32 *,
-                         const VecFx32 *, int);
 extern void Srt_SetRotationQuat(VecFx32 *, VecFx32 *);
 extern int VEC_DotProduct(VecFx32 *, VecFx32 *);
 extern void ScaleVec3Fx12(int, VecFx32 *, VecFx32 *);

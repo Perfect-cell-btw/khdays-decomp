@@ -1,5 +1,6 @@
 /* Unlinks and releases every node of the intrusive doubly linked list. */
-extern void FreeInstanceMemory(void *node);
+
+#include "game/engine.h"
 
 void NNSi_FndDestroyDoubleList(int *list) {
     int *node = (int *)list[4];

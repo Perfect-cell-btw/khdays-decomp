@@ -7,6 +7,7 @@
  * cleared (02020878 0).  Ov023_StepDialog (02083e08) drives it from there. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov023Scene {
     u8   pad_00000[0x10c];
@@ -27,7 +28,6 @@ typedef struct Ov023SceneRoot {
 extern void  G2x_SetBlendBrightness_(int nBldCnt, int nPlanes, int nBrightness);
 extern void *InstantiateClass(const void *pClass, void *pArg);         /* InstantiateClass */
 extern void  Ov002_HudPage_SetDialogCallbacks(void *pPostMessage, void *pQuery); /* set the ov002 dialog hooks */
-extern void  func_02020878(char bValue);                            /* set the global byte 0204bd85 */
 extern void  Ov023_PostMessageBox(int nA, int nB);                   /* Ov023_PostMessageBox */
 extern int   Ov023_DialogFlagBit2(void);                             /* Ov023_QueryDialogFlag */
 extern Ov023SceneRoot data_ov023_0208a784;

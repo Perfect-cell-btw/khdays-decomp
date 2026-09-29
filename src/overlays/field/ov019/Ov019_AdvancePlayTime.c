@@ -1,10 +1,10 @@
-extern int GameState_GetField(int query, int kind);
-extern int GameState_SetField(int query, int kind, int value);
-extern int func_02023c40(void);
 
 /* Advance the play-time counter (key 0x20b7) by 2, or 3 in the faster mode; when
  * it reaches the mode's cap (0x3b / 0x77) reset it to 0 and report a rollover
  * (return 1), otherwise store the new value and return 0. */
+
+#include "game/engine.h"
+
 int Ov019_AdvancePlayTime(void) {
     int t = GameState_GetField(0x20b7, 8);
     int mode = GameState_GetField(0x82 << 6, 5);

@@ -1,6 +1,8 @@
 /* Unless the gate byte at *(child+0x48) is set, pick a landing point at (child)+0x64 =
  * base(+0x224) + rand(|+0x228 - +0x224| + 1), mark sub-state 2 and dispatch. */
-extern int RandNextScaled(int a);
+
+#include "game/engine.h"
+
 extern int SetIndexedSlot(int a, int b, void *handler);
 void Ov185_AiRollTimerQueue2(int param_1) {
     int child = *(int *)(param_1 + 4);

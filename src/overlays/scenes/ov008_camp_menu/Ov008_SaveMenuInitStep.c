@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SLOT_COUNT   3
 #define STEP_DONE    3
@@ -56,7 +57,6 @@ extern void *G2_GetBG3ScrPtr(void);
 extern void  MIi_CpuClearFast(u32 nValue, void *pDst, u32 nSize);
 extern void  Ov008_VarTable_Load(void *pLoader, const char *pPath);       /* Ov008_Set_5c4c */
 extern u8    Ov008_StepSaveSlotLoad(Ov008SaveMenu *pMenu, int nSlot);        /* Ov008_StepSaveSlotLoad */
-extern u32   GameState_GetField(int nField, int nBits);                        /* GameState_GetField */
 extern void  Ov008_LoadMenuBgWithVariantChars(void);                                   /* Ov008_LoadMenuBgWithVariantChars */
 extern void  Ov008_SaveMenu_BuildLayout(Ov008SaveMenu *pMenu);
 extern void  Ov008_SaveMenu_BuildTextSurfaces(Ov008SaveMenu *pMenu);

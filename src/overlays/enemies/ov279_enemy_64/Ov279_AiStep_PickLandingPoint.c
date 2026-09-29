@@ -1,7 +1,9 @@
 /* Play the anim (ov107 mode 3,1), pick a landing point at (child)+0x50 = base(+0x224) +
  * rand(|+0x228 - +0x224| + 1), then register the handler. */
+
+#include "game/engine.h"
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern int RandNextScaled(int a);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov279_IdleFloatTick(int);
 void Ov279_AiStep_PickLandingPoint(int param_1) {

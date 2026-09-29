@@ -2,6 +2,7 @@
  * candidate list); returns whether one was selected. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022LowByte16 {
     unsigned short lowByte : 8;
@@ -51,15 +52,12 @@ extern Ov022RuntimeConfig data_0204c248;
 extern u8 data_0204c240;
 
 extern Ov022SelectionController *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
 extern void *func_ov022_020881f8(int index);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern int Ov022_ScoreCandidateByFacing(u32 *selectionFlags, int index, int distance);
 extern int Ov022_ScoreCandidateByDistance(u32 *selectionFlags, int index, int distance);
 extern Ov022Candidate **List_First(void *list);
 extern int Ov022_ScoreCandidatePart(u32 *selectionFlags, int index,
                                Ov022Candidate *candidate, int distance);
-extern Ov022Candidate **List_Next(void *list);
 
 int Ov022_RefreshSelectionCandidates(void)
 {

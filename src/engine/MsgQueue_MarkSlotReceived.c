@@ -10,12 +10,12 @@
  * walks a pointer from ctx+0xc reading the handle at +4 (== slot[i].handle), while
  * the matched slot pointer is recomputed as ctx+0x10 + i*6. flags |= 1<<bit is
  * written without a (u8) cast so mwcc fuses `orr rD, rN, #1, lsl bit`. */
+
+#include "game/engine.h"
+
 typedef struct { unsigned short handle; unsigned short size; unsigned char type; unsigned char flags; } MsgSlot;
 
 extern char *data_0204c230;
-extern unsigned short Session_GetLocalPlayerIndex(void);   /* Session_GetLocalPlayerIndex */
-extern int Session_IsReady(void);              /* Session_IsReady */
-extern unsigned short GetGlobalU16At6(void);   /* expected-ack mask */
 
 void MsgQueue_MarkSlotReceived(unsigned int handle, unsigned int playerIndex, unsigned int bit)
 {

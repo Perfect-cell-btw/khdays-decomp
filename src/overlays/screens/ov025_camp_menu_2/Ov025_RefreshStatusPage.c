@@ -7,6 +7,7 @@
  * case is absent here. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u16 h0, h1, h2, h3, h4, h5; u32 w; } Ov025WeaponStat;
 typedef struct { int a[22]; } Ov025StatColTable;
@@ -27,8 +28,6 @@ extern int  *NNS_FndGetNthListObject(void *list, int key);
 extern void  Ov025_ProcessAllAtField1cc(int self);
 extern int   Ov025_GetMenuMsgDbId(void);
 extern void  Ov025_AddListEntry(int p1, int a, int b, int c, int d, int e, int f, int g, int h, int i);
-extern void  MsgDb_FetchRecord(int *rec, int a, int b, int c);
-extern void  DispatchByNodeKind(int *rec);
 extern int   NNS_FndGetNextListObject(void *list, int prev);
 extern void  Ov025_DrawStatBar(int root, int *self, int idx, int val);
 extern void  Ov025_UpdateScrollGauge(void *p);

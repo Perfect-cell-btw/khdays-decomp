@@ -2,6 +2,9 @@
  * link phases 7 and 8..13 -- the ROM tests 7 on its own and folds the 8..13 span
  * into one unsigned range check. +0x8b58 is the phase word Ov002_GetPhaseWord
  * reads. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad0000[0x8b58];
     int nPhase;                 /* +0x8b58 */
@@ -10,7 +13,6 @@ typedef struct {
 } Ov002RootContext;
 
 extern int InstantiateClass(const void *cls, int params);
-extern void func_02020878(int a);
 
 extern Ov002RootContext *data_ov002_0207fa00;
 extern char data_02042734[];

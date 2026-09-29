@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002Rng {
     int nSeed;
@@ -33,7 +34,6 @@ typedef struct Ov002SpotHolder {
 
 extern Ov002SpotHolder data_ov002_0207fa28;
 
-extern int BitArray_TestBit(void *pBits, unsigned int nIndex);  /* bit test */
 extern void Ov002_ReleaseSlotOwner(char *pRow);   /* release the row's owner */
 extern Ov002Spawned *Ov002_BuildSpawnRow(int nIndex, int a1, int a2, int a3,
                                          const VecFx32 *pPlace, int a5,

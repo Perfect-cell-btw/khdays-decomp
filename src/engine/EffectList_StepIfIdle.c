@@ -1,7 +1,8 @@
 /* Steps the effect list when the root heap owner is idle; returns 0. */
 
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void  EffectList_Step(void);
 
 int EffectList_StepIfIdle(void) {
     void **h = (void **)NNSi_FndGetCurrentRootHeap();

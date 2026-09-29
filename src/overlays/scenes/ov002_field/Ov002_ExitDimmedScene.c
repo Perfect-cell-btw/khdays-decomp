@@ -13,6 +13,9 @@
  *
  * Finally it clears bits 13-15 of the SUB engine's DISPCNT (0x04001000) -- Win0,
  * Win1 and OBJWin -- and nulls the context slot the scene was published in. */
+
+#include "game/engine.h"
+
 typedef struct {
     char pad00[0x3c];
 } TileSurface;
@@ -46,7 +49,6 @@ extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void FreeAllListNodeSubBuffers(TileSurface *s);
 extern void Ov002_FreeResourceRecordBuffer(int *p);
 extern void func_02023ad0(void *obj);
-extern void ZeroHalfThenFree(void *p);
 
 extern char *data_ov002_0207f62c;
 

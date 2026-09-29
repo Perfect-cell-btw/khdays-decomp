@@ -1,6 +1,7 @@
 /* When the watched flag clears rolls the move timer and queues action 2. */
 
-extern int RandNextScaled();
+#include "game/engine.h"
+
 extern int SetIndexedSlot();
 
 void Ov183_AiRollTimerQueue2(unsigned char *obj) {

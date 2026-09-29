@@ -6,6 +6,7 @@
 #pragma thumb on
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 revision;
@@ -41,8 +42,6 @@ typedef struct {
     NNSG3dResDict dict;     /* 0x3c */
 } NNSG3dResTex;
 
-extern void InstallHandlerPairByFlag(int flag);
-extern void G3dRes_DefaultSetup(void *file);
 extern NNSG3dResTex *NNS_G3dGetTex(void *file);   /* NNS_G3dGetTex */
 
 static inline void *GetResDataByIdx(const NNSG3dResDict *dict, u32 idx)

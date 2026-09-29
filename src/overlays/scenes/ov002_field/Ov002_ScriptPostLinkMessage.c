@@ -2,7 +2,9 @@
  * SIGNED halfword first -- a zero there means "no sender", encoded as -2, and
  * the operand is not resolved at all. Clears the pending slot at +0x12c and
  * reports 3. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern void Ov002_UpdateHudRecord(int a, int b, int c);
 
 int Ov002_ScriptPostLinkMessage(char *self, char *args) {

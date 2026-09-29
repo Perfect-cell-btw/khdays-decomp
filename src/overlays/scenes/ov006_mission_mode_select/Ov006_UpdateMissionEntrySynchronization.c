@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 
 /* Synchronises the chosen mission members with the peers: writes the chosen characters to the slot
  * table (resolving duplicates), sends and confirms the entries, then moves on. */
@@ -13,18 +14,9 @@ typedef struct {
 } MissionResourceSlot;
 
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern void CopyToSlotTable8(void *record, int index);
 extern int Ov006_MenuEntryToSlot(int characterId);
-extern u32 Session_GetLocalPlayerIndex(void);
 extern int Ov006_CanAdvancePastIntro(void);
-extern int Session_IsReady(void);
 extern void Ov006_MissionResolveDuplicateIds(void);
-extern int MsgQueue_SendGate(int type, u16 *payload, u16 size);
-extern u16 GetGlobalU16At6(void);
-extern u16 func_02031384(int type, void *payload, u16 size);
-extern int MsgQueue_Contains(u32 handle);
-extern void GameSession_SetSyncEnabled(int active);
-extern void StoreToGlobalPtr4Field28(int state);
 extern void Ov006_GetIdleHandlerGated(void);
 extern void Ov006_UpdateAndGetIdleHandler(void);
 

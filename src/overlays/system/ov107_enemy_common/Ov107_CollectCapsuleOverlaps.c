@@ -2,9 +2,9 @@
  * of the position. */
 
 #include "game/actor.h"
+#include "game/engine.h"
 
 extern int List_First(void *list);
-extern int List_Next(void *list);
 extern int Capsule_ClosestToBox(void *a, void *b, int c, int d, int e, int f);
 extern int FX_Sqrt(int x);
 

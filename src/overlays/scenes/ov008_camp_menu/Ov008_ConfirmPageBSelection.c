@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008PageB {
     int nFlagBase;            /* 0x000 */
@@ -29,8 +30,6 @@ extern int Ov008_IsEntryBusyOrInactive(void);                      /* Ov008_IsEn
 extern short Ov025_Res_GetCount(void *pList);             /* list scroll total */
 extern void Ov008_SetTargetSlot(int nEntry, int nTarget);  /* Ov008_SetTargetSlot */
 extern void Ov008_SetGlobalConfigAndInit(int nEntry);               /* Ov008_SetGlobalConfigAndInit */
-extern void GameState_SetFlag(int nFlag);                      /* GameState_SetFlag */
-extern void PlaySound(int nKind, int nSound);          /* PlaySound */
 extern int data_ov008_02090a54[];                          /* page flag bases */
 
 void Ov008_ConfirmPageBSelection(void)

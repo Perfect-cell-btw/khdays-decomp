@@ -9,12 +9,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct q4 { int a, b, c, d; };
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
 extern void Quat_FromTwoVectors(void *out, void *fwd, void *dir);
-extern void Vec4_Normalize(void *dst, void *src);
 extern VecFx32 data_02042258;
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov272_DecayOffsetGiveUpLatch(void);

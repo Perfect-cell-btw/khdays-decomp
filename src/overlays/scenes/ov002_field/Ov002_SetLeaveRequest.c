@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RootContext {
     char pad0000[0x8b64];
@@ -24,7 +25,6 @@ typedef struct Ov002RootContext {
 
 extern Ov002RootContext *data_ov002_0207fa00;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov002_GetRootField8b68Alt(void);
 extern int Ov002_CanAcceptSlotRequest(void);
 

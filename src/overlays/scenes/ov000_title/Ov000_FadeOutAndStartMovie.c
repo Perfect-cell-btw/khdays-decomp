@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 typedef void *StateFn;
@@ -22,11 +23,7 @@ extern u32 OVERLAY_12_ID[1];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void Scene_DrawNode(void *p);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
-extern int  SoundStrm_HasPlaybackPos(int arg);
 extern void Ov000_TeardownTitleScene(void);
-extern void LoadOverlaySync(int target, FSOverlayID id);
 extern void *InstantiateClass(void *classDesc, int arg);
 extern void *data_ov000_0205ac20;
 extern int  data_ov012_0205c2bc;

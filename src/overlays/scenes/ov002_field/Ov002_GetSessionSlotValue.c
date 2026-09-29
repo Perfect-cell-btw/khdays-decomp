@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int nHandle;                /* +0x00 */
@@ -16,7 +17,6 @@ typedef struct {
     int aValues[9];             /* +0x08 */
 } Ov002SessionSlot;
 
-extern int Session_IsReady(void);
 extern char *data_ov002_0207fa00;
 
 u16 Ov002_GetSessionSlotValue(int slot, int index) {

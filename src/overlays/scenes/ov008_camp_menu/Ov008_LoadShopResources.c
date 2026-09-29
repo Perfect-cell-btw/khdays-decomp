@@ -14,6 +14,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define HEAP_FILE   0xe
 #define CELL_MASK   0x00fffffc
@@ -65,7 +66,6 @@ extern char data_ov008_02090e08[];                                /* "ui/shop/sh
 extern int   Msg_OpenContainerAndReadHeader(const char *pPath, int nHeap);         /* Msg_OpenContainerAndReadHeader */
 extern void  Ov008_Container_Init(void *pTracker, const Ov008SurfaceConfig *pConfig);
 extern void *Archive_LoadFile(u32 nHandle, int nHeap);               /* Archive_LoadFile */
-extern void  Res_LoadSpriteSet(SpriteResSet *pSet, void *pFile, int nScreen, int nChar, int nPalette); /* Res_LoadSpriteSet */
 extern void  GX_LoadBGPltt(const void *pSrc, u32 nOffset, u32 nSize);
 extern void  GetResourceSubBlock_CHAR2(void *pFile, Ov008CharacterBlock **ppBlock); /* GetResourceSubBlock_CHAR2 */
 extern void  DC_FlushRange(const void *pAddress, u32 nSize);

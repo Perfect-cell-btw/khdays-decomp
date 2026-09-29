@@ -2,6 +2,8 @@
  * handlers, loads the marker panels and ov029, sets up each player's state and the header limits;
  * returns the scene dispatch step. */
 
+#include "game/engine.h"
+
 typedef struct Ov022InitHeader {
     short values[13];
 } Ov022InitHeader;
@@ -40,9 +42,7 @@ extern void func_ov022_020b145c(void);
 extern void Ov022_RegisterHandlerC(void);
 extern void Ov022_RegisterHandler10(void);
 extern void Ov022_LoadMarkerPanel(void *object, int index);
-extern void LoadOverlaySync(int processor, int overlayId);
 extern void Ov022_FillSelectorStates(unsigned int *input);
-extern int Header_InitWithLimits(short *object, short *limits);
 extern int Ov022_TickSceneDispatch(void);
 
 Ov022SceneCallback Ov022_ResetCameraState(unsigned int *input)

@@ -4,9 +4,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int func_020050b4(int x, int z);
-extern int Fx_Acos(int c);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern const short data_0203d210[];
 

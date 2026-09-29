@@ -1,6 +1,7 @@
 /* Unloads an overlay and frees its slot in the overlay table. */
 
-extern void UnloadOverlaySync();
+#include "game/engine.h"
+
 extern int data_ov029_020b3200[];
 void Ov029_ReleaseOverlaySlot(int param_1)
 {

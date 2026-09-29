@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 extern void Ov002_GetModuleScale(char *self);
 extern int Ov002_GetRootField8b68Alt(void);
 extern void Ov002_StreamFormattedLine(void *desc, char *out);
-extern int Session_IsActive(void);
 extern void Ov002_SetRootField8b41(int mask);
 extern int Ov002_GetRootField8b41(void);
 extern void Ov002_SetRootField8b40(void);

@@ -23,11 +23,10 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int v[4]; } Xform;
 
-extern void QuatFromAxisAngle(Xform *out, const Xform *src, int angle);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, const Xform *x, const VecFx32 *src);
 extern void Ov198_RunPreDispatchHook(int node, int arg, VecFx32 *dir);
 extern Xform data_02042264;
 extern const short data_0203d210[];

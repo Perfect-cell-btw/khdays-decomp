@@ -3,11 +3,12 @@
  * frame falls back below 4.0 the cycle restarts (+0x65). Once the +0xc idle byte clears and the owner
  * is grounded (+0x17a bit 0), mode 3 fires at the +4 point, the +0x4c cooldown is re-rolled in
  * [+0x224, +0x228], +0x50 clears and sub-state 2 is requested. */
+
+#include "game/engine.h"
+
 struct Bits17a { unsigned char b0 : 1; };
 
-extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int RandRange(int lo, int hi)

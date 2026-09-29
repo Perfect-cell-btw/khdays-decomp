@@ -6,13 +6,13 @@
  * clear, bit 1 of the actor's +0x394 is raised and the node moves to 020d1208. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int FX_Div(int num, int den);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Quat_FromTwoVectors(void *rotation, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

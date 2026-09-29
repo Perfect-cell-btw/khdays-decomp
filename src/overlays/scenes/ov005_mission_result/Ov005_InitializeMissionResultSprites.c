@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005SpriteManager {char data[0x4a80];} Ov005SpriteManager;
 typedef struct Ov005ResultContext {u32 resultArchive,localizedResultArchive;char unknown08[76];Ov005SpriteManager spriteManager;} Ov005ResultContext;
@@ -26,7 +27,6 @@ extern void Ov005_SetEntrySlotsVisible(Ov005SpriteManager *,void *,int);
 extern void Ov005_DrawResultNumber(int,int,int,int);
 extern void Ov005_SelectAndShowResultSprite(int,int);
 extern void Ov005_SetResultSpritePixelOffset(int,int,int);
-extern int GameState_IsFlagSet(u32);
 extern int func_02020400(int,int);
 static inline void ShowEntry(int id) {
     Ov005_SetEntrySlotsVisible(&data_ov005_0205b810->spriteManager,

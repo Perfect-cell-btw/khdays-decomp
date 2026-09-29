@@ -2,6 +2,7 @@
 /* One seat row of the session board, as the readers at 0206bdcc see it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SeatRow {
     int nHandle;
@@ -23,7 +24,6 @@ typedef struct Ov002SeatSourceRow {
 extern char *data_ov002_0207fa00;
 
 /* Non-zero once the link session is up and feeding the board itself. */
-extern int Session_IsReady(void);
 
 /* Fill the session board's seat rows from a local table.  With the link
    session up the board is already being fed from the wire, so only the

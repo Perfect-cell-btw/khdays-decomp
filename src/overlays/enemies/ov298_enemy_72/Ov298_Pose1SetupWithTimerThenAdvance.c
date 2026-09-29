@@ -2,9 +2,9 @@
  * continues with the wander tick. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov298_AcquireTargetGapAndAngle(void *node);
-extern int Rand16NextScaled(unsigned int);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov298_WanderTick(void);
 

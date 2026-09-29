@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PartOwnerTagFields {
     u8 nGroupIndex,nSlotIndex; unsigned short wReserved;
@@ -38,7 +39,6 @@ extern int Ov107_Spawner_AddSlot(Ov107Object *,u8,u8,int,s8,u32);
 extern void Ov107_SetPartBinding(Ov107Object *,int,int);
 extern void Ov107_Spawner_FreeDataBlocks(Ov107Object *);
 extern void Ov002_StartSlotAnim(int,int,int,VecFx32 *,int);
-extern int Session_IsActive(void);
 
 void Ov002_RebuildObjectEventParts(u8 nSlotIndex)
 {

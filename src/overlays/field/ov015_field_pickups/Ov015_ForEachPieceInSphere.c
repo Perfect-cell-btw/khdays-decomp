@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct SphereFx32 {
     VecFx32 center;
@@ -39,7 +40,6 @@ typedef int (*Ov015PieceInSphereFn)(int nIndex, Ov015Piece *pPiece, Ov015PartNod
 extern int  Ov002_Event_GetField18(void);                                  /* record set state */
 extern Ov015Owner *Ov002_GetPieceOwner(int nSlot);                      /* seat owner */
 extern void *List_First(void *pList);                                /* List_First */
-extern void *List_Next(void *pList);                                /* List_Next */
 extern int  Ov002_PieceAnswersForPoint(Ov015Piece *pPiece, const VecFx32 *pPos, int nArg); /* piece answers for a position */
 extern int  Ov107_HitShape_TestSphere(void *pShape, const SphereFx32 *pSphere, int nMode); /* shape meets a sphere */
 

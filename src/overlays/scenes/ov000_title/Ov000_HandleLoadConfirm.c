@@ -28,6 +28,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000GameSave {
     u32 aData[0x1cac / 4];
@@ -55,7 +56,6 @@ extern u16 data_0204c190;
 extern u8  data_ov000_0205ab00[];
 extern Ov000GameSave *data_0204be18;
 
-extern void  PlaySound(int a, int id);
 extern void  Ov000_PlaceCursorByMode(int mode, int row);
 extern void  Ov000_UpdateMenuMarkers(int a, int b, int c);
 extern void  Ov000_PushSubWidgetValue(int a);
@@ -63,8 +63,6 @@ extern void  Ov000_MarkSceneReady(int page);
 extern u32  *Msg_OpenContainerAndReadHeader(u8 *name, int heap);
 extern void *Archive_LoadFile(u32 handle, int heap);
 extern void  NNSi_FndFreeFromDefaultHeap(void *p);
-extern void  ZeroHalfThenFree(u32 *hdr);
-extern void  GameState_SetFlag(int id);
 
 void Ov000_HandleLoadConfirm(void)
 {

@@ -9,6 +9,7 @@
  * the shared entry contexts are reset (02084ab4) and the first BG1 tile cleared. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */
@@ -25,7 +26,6 @@ static volatile u16 *const REG_BG3CNT = (volatile u16 *)0x0400000e;
 static volatile u16 *const REG_POWCNT1 = (volatile u16 *)0x04000304;
 static volatile DisplayRegisters *const SUB_DISPLAY = (volatile DisplayRegisters *)0x04001000;
 
-extern void  Gfx_Reset2DEngines(void);                                   /* GX_Init */
 extern void *G2_GetBG1ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);

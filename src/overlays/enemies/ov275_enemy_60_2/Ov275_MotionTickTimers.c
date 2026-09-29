@@ -8,12 +8,11 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int v[4]; } Xform;
 
 extern int Ov002_GetStateWord(void);
-extern int Angle_TurnToward(int a, int b, int c, int *state);
-extern void QuatFromAxisAngle(Xform *out, const Xform *src, int v);
 extern void Srt_SetRotationQuat(int dst, const Xform *x);
 extern Xform data_02042264;
 extern VecFx32 data_02041dc8;

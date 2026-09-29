@@ -1,9 +1,8 @@
 /* Ov203_MotionTick: motion tick of the ov202 enemy (x2), variant of the matched ov163 sibling: the +0xc angle only advances while the actor's +0x1c4 bit 1 is clear. */
 
 #include "game/actor.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward();
-extern int QuatFromAxisAngle();
 extern int Quat_FromTwoVectors();
 extern int Quat_Multiply();
 extern int Srt_SetRotationQuat();

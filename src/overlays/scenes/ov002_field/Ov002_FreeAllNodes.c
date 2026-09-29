@@ -1,6 +1,7 @@
+#include "game/engine.h"
+
 extern void *NNS_FndGetNextListObject(void *list, void *obj);
 extern void Ov002_RemoveAndFreeNode(void *obj);
-extern void VBlank_UnregisterCallback(int a, void *b);
 
 extern int data_ov002_0207f60c;
 extern char data_ov002_0207e8a8[];

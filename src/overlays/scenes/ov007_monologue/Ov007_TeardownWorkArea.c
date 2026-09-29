@@ -1,10 +1,8 @@
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov007_FreeResourceRecordBuffer(void *p);
-extern void TileTextRenderer_Destroy(void *p);
-extern void FontResource_Destroy(void *p);
-extern void Obj_Release(void *p);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
-extern void ZeroHalfThenFree(void *p);
 extern int data_ov007_0204d3c0;
 extern int data_ov007_0204d420;
 

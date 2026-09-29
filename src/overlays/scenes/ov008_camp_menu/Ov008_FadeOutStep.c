@@ -1,6 +1,6 @@
-extern char *data_ov008_02090fac;
-extern void SetMasterBrightnessSub(int value);
+#include "game/engine.h"
 
+extern char *data_ov008_02090fac;
 
 /* Fade-out step: same ramp as Ov026_FadeInStep but driving the brightness negative. */
 int Ov008_FadeOutStep(void) {

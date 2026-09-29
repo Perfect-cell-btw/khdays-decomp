@@ -2,8 +2,9 @@
  * count (table + 0x1d*0x14 + 0xc = +0x250), alloc a 0xdc record (kind 0x1d), then
  * store index + elem[0..2] and copy 24 pairs (stride 8) from elem+0xc into rec+0x1c.
  * elem = entry[8] + index*0xcc. *rec_out is re-read per store. */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, int size, int kind, int keep);
+
+#include "game/engine.h"
+
 extern int data_0204c238;
 int MsgDb_DecodeDb1D(int *rec_out, int index, int keep) {
     int elem;

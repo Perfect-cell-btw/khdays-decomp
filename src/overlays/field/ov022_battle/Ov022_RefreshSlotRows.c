@@ -1,6 +1,8 @@
 /* Refreshes the battle slot rows from the players' nodes: records each node's position, group and
  * heading, and updates the saved masks and state bits of the root. */
 
+#include "game/engine.h"
+
 typedef struct Ov022BitByte {
     unsigned char bit0 : 1;
     unsigned char bit1 : 1;
@@ -63,12 +65,9 @@ typedef struct Ov022SlotRow {
 } Ov022SlotRow;
 
 extern Ov022Root *NNSi_FndGetCurrentRootHeap(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern int func_ov022_02087344(void);
-extern void List_TryInvokeEntry(int index);
 extern int func_ov022_02083f0c(void);
 extern void func_ov022_0208a1fc(void);
-extern int LoadGlobalU16At0(void);
 extern void func_ov022_02087a70(void);
 extern int Ov022_GetGlobalPlus14(void);
 extern void Ov002_Camera_SetMode(int actor, int mode, int modeData);
@@ -76,7 +75,6 @@ extern void Ov022_LoadNodeFromResource(Ov022Node *node, int rowIndex);
 extern void Ov022_StepPartnerSlot(
     Ov022Node *node, Ov022Node *primaryNode, unsigned int flags);
 extern void func_ov022_020ad474(Ov022Node *node);
-extern int QueryActiveStateOrDelegate(void);
 extern void func_ov022_02087298(int index);
 extern void func_ov022_02088428(int index, int field66);
 extern void Ov002_ReleaseWorldMusic(int field66);
@@ -196,5 +194,4 @@ void Ov022_RefreshSlotRows(int unused)
     }
     func_ov022_0208a1a4();
 }
-
 

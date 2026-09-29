@@ -9,11 +9,11 @@
  * One of three byte-identical siblings. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *a, void *b);
 extern void Ov191_RelayoutAndStoreVec(int obj, void *p, VecFx32 *v);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

@@ -1,6 +1,7 @@
 /* Hides a player's render entity, stops its sound and clears its group. */
 
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 extern void Entity_SetVisible(int arg0, int arg1);
 extern void SNDi_ProcessEntryAlt(int arg0);
 void func_ov022_02087298(int arg0) {

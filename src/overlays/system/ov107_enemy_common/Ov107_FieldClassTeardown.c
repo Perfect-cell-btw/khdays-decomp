@@ -2,14 +2,12 @@
  * and clears the instance. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { void *f0; void *f4; void *f8; } Step;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void ZeroHalfThenFree(void *p);
-extern void FreeInstanceMemory(void *p);
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 extern void NNSi_FndDestroyDoubleList(void *list);
 extern void ClearGlobalArrayInt(int a);
 

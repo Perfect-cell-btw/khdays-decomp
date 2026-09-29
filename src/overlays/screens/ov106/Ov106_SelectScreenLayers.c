@@ -1,8 +1,10 @@
 /* Choose the ov106 screen layers: while field 0x248c is clear, layer 0 shows unless +0x8e48 is set and
  * layer 1 hides (plus layer 1 of the second group); otherwise the layer selected by +0x8e48 shows and
  * the other hides. */
+
+#include "game/engine.h"
+
 extern char *data_ov106_020b8b60;
-extern int GameState_IsFlagSet(int flag);
 extern void Ov002_SetSlotFlag1(int index, int flag);
 extern void Ov002_FireSlotHook(int nA, int nB);
 

@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 extern int GX_ResetBankForSubOBJ();
 extern int GX_ResetBankForSubBG();
 extern int GX_SetBankForTex(int);
@@ -7,7 +9,6 @@ extern int GXS_SetGraphicsMode(int);
 extern void GX_SetGraphicsMode(int a, int b, int c);
 extern int NNS_GfdResetFrmTexVramState(void);
 extern int NNS_GfdInitFrmTexVramManager(int a, int b);
-extern int SetGameMode(int a);
 
 extern char data_0204c214[];
 

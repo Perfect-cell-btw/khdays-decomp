@@ -4,8 +4,7 @@
  * through the byte formatter Fx64_FormatText. */
 
 #include "nitro/types.h"
-
-extern void Fx64_FormatText(s64 value, int precision, char *pIntText, char *pFracText);
+#include "game/engine.h"
 
 static inline void WidenText(u16 *pDst, const char *pSrc)
 {

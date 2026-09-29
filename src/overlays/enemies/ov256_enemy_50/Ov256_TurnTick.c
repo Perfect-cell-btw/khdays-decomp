@@ -5,9 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern int RandNextScaled(int n);
 extern int Ov256_PickTarget(int *node);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);

@@ -1,5 +1,7 @@
 /* Build the sprite request (mirroring facing), kick anim 5, then dispatch. */
-extern void func_02031384(int a, void *req, int b);
+
+#include "game/engine.h"
+
 extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int data_ov244_020d3724;

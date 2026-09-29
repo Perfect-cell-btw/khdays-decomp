@@ -10,6 +10,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct bf { unsigned b : 8; };
 
@@ -19,7 +20,6 @@ extern int func_020050b4(int x, int z);
 extern void Ov192_ProbeGroundBelowNode(int *node, VecFx32 *out);
 extern long long FX_DivFx64c(int num, int denom);
 extern void Ov192_BoxSweepPush(int *node, long long t, VecFx32 *at);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov192_ChargeAimedShotState(void);
 

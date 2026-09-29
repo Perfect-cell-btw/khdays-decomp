@@ -12,8 +12,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);

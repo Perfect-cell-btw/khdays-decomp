@@ -3,8 +3,7 @@
  * value above 0x4000 forces sub-state 5, and the call reports 1 when a sub-state is pending. */
 
 #include "nitro/types.h"
-
-extern int RandNextScaled(int bound);
+#include "game/engine.h"
 
 int Ov219_IdleCountdown(int *node, int value)
 {

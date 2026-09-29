@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016LiftDef {
     u8 pad_00[0x68];
@@ -47,7 +48,6 @@ typedef struct Ov016Lift {
 extern Ov016Lift *Ov002_ClaimPoolEntry(Ov016LiftDef *pClass, int nSlot);   /* take a piece from the class table */
 extern int   Ov002_PlaceElementNode(void *pPiece, void *pNode, int *pPlace, int nSlot, int nKind,
                                  int nParamA, int nParamB, int nParamC, int nFacing, int nFlag); /* place the node */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);              /* Actor_SetVecAndSyncChild */
 extern void  Ov002_List_SetBit(int nBucket, int nMode);
 extern void  Ov002_PushBucketNode(int nBucket, void *pPiece);              /* register the piece */
 extern void *Ov016_LiftStep(Ov016Lift *pSelf);                       /* Ov016_LiftStep */

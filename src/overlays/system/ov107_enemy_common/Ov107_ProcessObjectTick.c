@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int w;
@@ -124,9 +125,7 @@ extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *source, VecFx32 *destination);
 extern void ScaleVec3Fx12(int factor, VecFx32 *source, VecFx32 *destination);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
-extern int MsgQueue_SendGate(int type, u16 *data, u16 size);
 extern void Quat_FromTwoVectors(Quat *out, VecFx32 *forward, VecFx32 *direction);
-extern void Srt_SetTranslationXYZ(int *out, int a, int b, int c);
 extern int Srt_SetRotationQuat(void *out, void *in);
 extern void Srt_SetScaleXYZ(void *out, int a, int b, int c);
 

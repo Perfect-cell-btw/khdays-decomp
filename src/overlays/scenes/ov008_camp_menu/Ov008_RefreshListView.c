@@ -1,11 +1,10 @@
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Once per open (guard +0x48 within the 0x4a0 buffer): if the session is ready, run the ready
  * hook and blit the 0x1c-entry list at +8; otherwise blit the 6-entry fallback list at +0x40.
  * Either way clear the 4-byte header at +0. */
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
-extern int Session_IsReady(void);
 extern void Ov008_MissionResolveDuplicateIds(void);
-extern void MsgQueue_SendGate(int cmd, void *buf, int n);
 
 int Ov008_RefreshListView(void) {
     if (MISSION_CONTEXT->localMode == 0) {

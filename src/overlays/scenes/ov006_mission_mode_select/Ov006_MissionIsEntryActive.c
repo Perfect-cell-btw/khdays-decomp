@@ -1,9 +1,9 @@
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 /* Ov006_MissionIsEntryActive -- Mission Mode: is the highlighted menu entry already the active one?
  * True while the scene is locked out (obj+0x4e8 set). Otherwise compares the current
  * selection (obj+0x4e4) against the entry id of the cursor row (obj+0x4b0, stride 6);
  * row 0 always counts as a match. */
-extern int Session_GetLocalPlayerIndex(void);
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 
 #define OBJ ((int *)data_ov006_020565e4.pContext)

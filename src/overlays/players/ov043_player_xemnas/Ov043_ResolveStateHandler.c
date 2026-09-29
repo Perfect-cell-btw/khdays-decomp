@@ -8,7 +8,9 @@
  * initial zero (r5) as its source, and with the assignment first mwcc emits the `mov r5,#0`
  * at the top of the function (the ROM's second instruction) instead of after the switch
  * compare. */
-extern int func_02023c40(void);
+
+#include "game/engine.h"
+
 extern void Ov043_HoverStep(void);
 extern void Ov043_ChargeStep(void);
 extern void Ov043_LandingStep(void);

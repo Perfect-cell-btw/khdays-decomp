@@ -5,8 +5,8 @@
  */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int  RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov210_AiPickMove(void);
 

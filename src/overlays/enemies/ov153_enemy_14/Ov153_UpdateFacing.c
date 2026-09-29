@@ -4,11 +4,10 @@
  * the actor's +0x124 up vector, and the product goes to the actor's +0xa0 orientation. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Quat { int a, b, c, d; };
 
-extern int Angle_TurnToward(int cur, int target, int rate, int mode);
-extern void QuatFromAxisAngle(struct Quat *out, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(struct Quat *out, const VecFx32 *fwd, VecFx32 *dir);
 extern void Quat_Multiply(struct Quat *out, const struct Quat *a, const struct Quat *b);
 extern void Srt_SetRotationQuat(int dst, struct Quat *src);

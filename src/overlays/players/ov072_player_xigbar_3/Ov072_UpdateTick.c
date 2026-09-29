@@ -4,12 +4,12 @@
  * the local player's session. Bit 2 of the +0x2c30 flags pins the frame at 0x1d000; the two
  * +0xdac animation blocks are wound to it on channels 0/1 while it is inside their length.
  * Finally 020ad588 runs. */
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
+
+#include "game/engine.h"
+
 extern int Ov022_GetGlobal34(void);
 extern void Ov072_HandleMessage(char *self, int tick);
 extern int Ov022_AreStreamsIdle(char *sub);
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
-extern int Anim_GetLengthQ12(void *animation, int track);
 extern void Anim_SetFrameWrapped(void *animation, int channel, int frame);
 extern void func_ov022_020ad588(char *self);
 

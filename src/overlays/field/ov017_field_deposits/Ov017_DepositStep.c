@@ -24,6 +24,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x58];
@@ -74,15 +75,11 @@ typedef struct Ov017Deposit {
 extern int   Ov002_GetModuleScale(void);                               /* frame delta */
 extern int   Ov017_DepositAdvanceFrame(Ov017Deposit *pSelf, void *pNode, int nDelta, int bLoop); /* Ov017_DepositAdvanceFrame */
 extern int   Ov017_DepositAdvanceCrackFrame(Ov017Deposit *pSelf, void *pNode, int nDelta, int bLoop); /* Ov017_DepositAdvanceCrackFrame (the loop flag is ignored) */
-extern void  GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
-extern void  ReleaseNodeResources(void *pNode);                              /* release the node's resources */
 extern void  Ov017_StoreArgsRunTwoSubActionsIfFlag4(Ov017Deposit *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov017_DepositPlayAnim */
 extern void  Ov017_StoreArgsRunTwoSubActionsIfFlag4_2(Ov017Deposit *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov017_DepositPlayCrackAnim */
-extern u32   Session_RandNextScaled(int nRange);                               /* Session_RandNextScaled */
 extern int   Ov002_GetRootField8d94(void);                               /* the drop multiplier */
 extern void  Ov002_SpawnAllDrops(const u8 *aAmount, int nCtxIndex, const VecFx32 *pPlace); /* spawn the drops */
 extern void  Ov002_SetFieldBit0(void *pPiece, int nMode);            /* retire a piece */
-extern int   func_02023c40(void);                                     /* frame-rate flag, 1 when running 60Hz */
 extern void  Scene_DrawNode(void *pNode);                              /* Scene_DrawNode */
 extern void *Ov002_DoneTick(void *pPiece);                       /* terminal state */
 extern u8    data_0204c240;                                           /* session bits */

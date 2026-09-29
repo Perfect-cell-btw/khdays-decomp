@@ -8,6 +8,7 @@
  * the +0x64 pose with bit 1 of its flag byte raised. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct PoseIds {
     int values[3];
@@ -68,12 +69,8 @@ extern void Ov244_ActivateEntryIfFlagged(void);
 extern void *Ov107_PackTextureHandle(struct Obj *owner, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern void Srt_SetScaleUniform(void *srt, int scale);
-extern void RegisterSubscriberSlot(struct Subitem *subscriber, struct Subitem *item);
-extern void SetSubitemState(struct Subitem *item, int state, int zero, int enabled);
-extern void RefreshObjectCallbacks(struct Subitem *item, int value);
 extern void *CallocInstance(int size);
 extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
-extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 
 void Ov244_ItemConstruct(struct Obj *self)

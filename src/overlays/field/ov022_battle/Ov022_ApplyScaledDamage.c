@@ -1,7 +1,8 @@
 /* Host only: applies damage scaled by the attacker's rate (percent) to the target and marks it hit.
  */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern void Ov022_ApplyDamageAndFlagHit(int obj, int v, int mode);
 extern int data_0204c678;
 

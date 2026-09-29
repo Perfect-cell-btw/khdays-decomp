@@ -7,8 +7,8 @@
  * picked the idle time is rolled between the +0x224 / +0x228 bounds and 1 is returned, else 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int n);
 extern int Ov256_PickTarget(int *node);
 
 #define CLAWS_IDLE(a) (*(int *)(*(int *)((a) + 0x43c) + 0x394) == 0 && *(int *)(*(int *)((a) + 0x440) + 0x394) == 0 && \

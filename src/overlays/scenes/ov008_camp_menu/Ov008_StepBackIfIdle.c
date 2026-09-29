@@ -1,6 +1,8 @@
 /* Twin of Ov008_StepForwardIfIdle that starts the transition with mode -1. */
+
+#include "game/engine.h"
+
 extern void Ov008_MissionMenuStep(int obj, int mode);
-extern void PlaySound(int a, int b);
 
 void Ov008_StepBackIfIdle(int param_1) {
     if (*(int *)(param_1 + 0x158) == 0 && *(int *)(param_1 + 0x180) == 0 &&

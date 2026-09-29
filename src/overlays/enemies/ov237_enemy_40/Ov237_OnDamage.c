@@ -8,13 +8,13 @@
  * picks the first pair). Returns 1 (0 when down or separating). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u8 a, b; } Pair2;
 typedef struct { short v[3]; } Chance3;
 typedef struct { Pair2 heavy; Pair2 light; Chance3 chance; } Ov237HurtTmpl;
 typedef struct { unsigned lo : 16; unsigned hi : 16; } HitWord;
 
-extern int RandNextScaled(int bound);
 extern int Ov107_CalcHitDamage(char *self, char *hit);
 extern void Ov107_BuildAndSendUpdate(char *actor, int bank, int variant, int at);
 extern const Ov237HurtTmpl data_ov237_020d1b34;

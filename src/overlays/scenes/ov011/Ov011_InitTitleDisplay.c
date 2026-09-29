@@ -4,6 +4,7 @@
  * engine on the top screen. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define reg_GX_DISPCNT      (*(REGType32v *)0x04000000)
 #define reg_G2_BG0CNT       (*(REGType16v *)0x04000008)
@@ -17,9 +18,6 @@
 #define reg_G2S_DB_BG2CNT   (*(REGType16v *)0x0400100c)
 #define reg_G2S_DB_BG3CNT   (*(REGType16v *)0x0400100e)
 
-extern void Gfx_Reset2DEngines(void);
-extern void SetMasterBrightnessMain(int nBrightness);
-extern void SetMasterBrightnessSub(int nBrightness);
 extern void GX_SetBankForBG(int nBank);
 extern void GX_SetBankForOBJ(int nBank);
 extern void GX_SetBankForBGExtPltt(int nBank);

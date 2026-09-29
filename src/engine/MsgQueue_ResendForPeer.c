@@ -16,11 +16,10 @@
  * an external call), so it is written as the project's one-line inline-asm helper.
  */
 
+#include "game/engine.h"
+
 static inline unsigned int Clz(unsigned int x) { asm { clz x, x } return x; }
 
-extern int IsKind1Or4(int id);
-extern int Session_GetLocalPlayerIndex(void);
-extern void MsgQueue_SendGate(int type, unsigned char *hdr, unsigned int size);
 extern int *data_0204c230;
 
 typedef struct {

@@ -8,6 +8,7 @@
  * (+0x388) is reserved from the +0x64 pose with bit 1 of its flag byte raised. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct PoseIds {
     int values[4];
@@ -77,11 +78,8 @@ extern void Ov268_Model_ReapplyTracks(void);
 
 extern void *Ov107_PackTextureHandle(struct Obj *owner, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
-extern void RegisterSubscriberSlot(struct Subitem *subscriber, struct Subitem *item);
-extern void RefreshObjectCallbacks(struct Subitem *item, int value);
 extern int InsertSortedEntryWithKey(struct Subitem *item, int set, const char *name);
 extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
-extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 
 void Ov268_ItemConstruct(struct Obj *self)

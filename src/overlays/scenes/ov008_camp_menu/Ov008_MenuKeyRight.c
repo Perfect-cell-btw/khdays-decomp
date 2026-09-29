@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define KEY_RIGHT  0x10
 #define SOUND_MOVE 0x35
@@ -40,7 +41,6 @@ extern void Ov008_EnterMenuState(Ov008MenuContext *pCtx, int nMode);
 extern void Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                  /* Ov008_RebuildGridHits */
 extern void Ov008_DisableRowBlock(void);                                    /* Ov008_DisableRowBlock */
 extern void Ov008_RefreshEquipPanel(void *pPanel);                            /* Ov008_RefreshEquipPanel */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 
 void Ov008_MenuKeyRight(Ov008MenuContext *pCtx)
 {

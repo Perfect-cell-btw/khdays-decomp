@@ -1,7 +1,9 @@
 /* If the "can act" hw60 bit 0 is set, pick a random hold time between the min (*node+0x224) and max
  * (*node+0x228), store it in node[10], enter the hold state (1), and register the think callback. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov237_StartRandomHold(int param_1) {

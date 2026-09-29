@@ -13,6 +13,7 @@
  * name in a local shared by the three OS_SPrintf calls (as the ov008 twin). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ModelActor {
     u8   pad_000[0x18];
@@ -48,13 +49,10 @@ typedef struct Ov025ModelParams {
 } Ov025ModelParams;
 
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
-extern int   func_02023c40(void);                                   /* LoadGlobalU8_0204c058: frame-rate flag */
-extern void  Projection_LoadDefaults(Ov025ModelActor *pActor);                /* Projection_LoadDefaults */
 extern void  Camera_CommitMatrices(Ov025ModelActor *pActor);                /* Camera_CommitMatrices */
 extern void  NNS_GfdGetFrmTexVramState(void *pMatrix);
 extern void  GFXi_SaveStateTo(void *pState);
 extern int   OS_SPrintf(char *pBuffer, const char *pszFormat, ...);
-extern void  RegisterSeqAndInit(void *pSequence, const char *pszPath, int nA, int nHeap); /* RegisterSeqAndInit */
 extern void  BindAnimTrack(void *pSequence, int nTrack, void *pBlend, int nArg); /* BindAnimTrack */
 extern void  NNS_G3dRenderObjSetCallBack(void *pController, void *pCallback, int nA, int nB, int nC); /* Obj_SetValueAndTwoBytes */
 extern void  Ov025_RefreshMatchingMatrices(int nNode);                        /* the matrix re-read callback */

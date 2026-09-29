@@ -1,6 +1,7 @@
 /* Returns the address of a player's position, or a default vector when the player has no actor. */
 
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 extern int data_02041dc8;
 int func_ov022_020881f8(int arg0) {
     int e = GetEntryField20ByIndex(arg0);

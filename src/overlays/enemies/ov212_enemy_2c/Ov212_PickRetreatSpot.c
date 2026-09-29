@@ -31,13 +31,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
-extern int RandNextScaled();
 extern VecFx32 *List_First(void *list);
-extern VecFx32 *List_Next(void *list);
 extern void SetIndexedSlot(int self, int slot, void *cb);
 
 void Ov212_PickRetreatSpot(int self) {

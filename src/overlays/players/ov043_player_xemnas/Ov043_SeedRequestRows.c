@@ -4,11 +4,11 @@
  * counter is cleared. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 v[4]; } VecTable4;
 typedef struct { int n[4]; } IntTable4;
 
-extern int func_02023c40(void);
 extern const VecTable4 data_ov043_020b57a4;
 extern const IntTable4 data_ov043_020b576c;
 extern const IntTable4 data_ov043_020b577c;

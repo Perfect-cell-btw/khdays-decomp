@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Vecx32_4 { int x, y, z, w; };
 struct Quat { int a, b, c, d; };
@@ -24,7 +25,6 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void Quat_FromTwoVectors(struct Quat *dst, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Slerp(struct Quat *dst, int t, const struct Quat *a, const struct Quat *b);
-extern void Vec3TransformViaTempMtx(void *dst, void *quat, void *vec);
 extern int Ov107_CollectSphereOverlaps(void *item, void *sphere, void *out);
 extern int Ov107_InvokeHitCallback(void *hit, int actor, void *item, int mode, void *push, int z);
 extern void func_ov107_020c0b90(void *item, int a, VecFx32 v, int b);

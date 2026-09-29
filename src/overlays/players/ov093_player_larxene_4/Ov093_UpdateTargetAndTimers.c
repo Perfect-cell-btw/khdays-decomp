@@ -6,8 +6,8 @@
  * reports activity on an idle session, bit 49 of the +0x464 flags is raised. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int func_ov022_02083f0c(void);
 extern int Ov022_GetGlobal34(void);
 extern void Ov002_StoreVAndToggleBit25(int a, int b, int c);

@@ -1,13 +1,13 @@
 /* Whether a menu page is unlocked: some need a progress level, two need a key item. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct GameState {
     u8 pad0000[0x810];
     u8 itemCounts[0x1ca];
 };
 
-extern int GameState_GetField(int field, int index);
 extern struct GameState *data_0204be18;
 
 int Ov008_IsMenuPageUnlocked(unsigned int page)

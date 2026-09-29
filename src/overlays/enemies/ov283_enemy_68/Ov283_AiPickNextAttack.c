@@ -5,7 +5,8 @@
  * The roll goes through the inlined RandRange(lo, hi) wrapper that ov114's callers spell out
  * by hand (`lo + RandNextScaled(|hi - lo| + 1)`). With lo == 0 the inliner leaves `0 + roll`
  * behind, which is the ROM's bare `add r0, r0, #0` between the call and the compare. */
-extern unsigned int RandNextScaled(unsigned int range);
+
+#include "game/engine.h"
 
 static inline int RandRange(int lo, int hi)
 {

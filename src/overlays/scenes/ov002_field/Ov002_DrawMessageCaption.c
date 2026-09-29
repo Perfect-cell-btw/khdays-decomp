@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[0xfc];
@@ -23,7 +24,6 @@ extern int data_0204c254;
 extern const int data_ov002_0207e3a0[];
 
 extern void TileSurface_SetCurrentItem(void *pCtx, int nStyle, int nFlags);
-extern void Text_DrawWithShadow(void *pCtx, int a, int b, int c, void *pText, int d);
 
 extern int Ov002_GetVarRecordByIndex(void *pMsg, int nId);
 extern void Ov002_VariadicMapForward(void *pMsg, int nKind, char *pOut, int nSize,

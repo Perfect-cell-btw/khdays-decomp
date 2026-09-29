@@ -22,13 +22,13 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int owner, int a);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *a, const VecFx32 *b);
 extern int Ov228_AiPickMoveByRange(int self, int range);
 extern void SetIndexedSlot(int self, int action, void *cb);
-extern int RandNextScaled(int n);
 
 void Ov228_AiIdleTick(int self) {
     int *ctx;

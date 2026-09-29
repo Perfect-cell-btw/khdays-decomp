@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov015PlayerActor {
     u8  pad_000[0x4ec];
@@ -38,7 +39,6 @@ typedef struct Ov015Spot {
     void *pOwner;             /* 0x54 */
 } Ov015Spot;
 
-extern Ov015PlayerActor *GetEntryField20ByIndex(int nPlayer);                       /* the player's actor */
 extern int  Ov022_ForwardArg1(void *pActor, int nState);                 /* actor in interaction state */
 extern void func_ov022_020ad5f4(void *pActor, u16 nState, int bOn);        /* set / clear an interaction state */
 extern int  Ov015_SpotDefFindNearestFreeEntry(Ov015Spot *pSpot, Ov015SpotDef *pDef, VecFx32 *pFrom, u32 nTable, int nRange, u16 *pVisited, int nDepth); /* nearest free entry */

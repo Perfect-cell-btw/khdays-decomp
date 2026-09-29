@@ -4,11 +4,11 @@
  * becomes next. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned f : 8; } B8;
 typedef struct { unsigned short lo : 8; unsigned short hi : 8; } flags16;
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov252_RecoverTick(int *node)

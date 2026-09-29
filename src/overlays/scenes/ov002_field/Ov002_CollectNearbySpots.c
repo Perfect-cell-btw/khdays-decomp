@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SpotActionOwner Ov002SpotActionOwner;
 struct Ov002SpotActionOwner {
@@ -51,13 +52,10 @@ typedef struct Ov002SpotHolder { char pad000[4]; Ov002SpotStage *pStage; } Ov002
 extern Ov002SpotHolder data_ov002_0207fa28;
 extern int Ov002_RunShutdownHook(void);
 extern int Ov002_GetCtxTableByte(int);
-extern u32 Session_GetLocalPlayerIndex(void);
 extern u32 func_ov022_020886f8(int);
 extern int VEC_Distance(const VecFx32 *, const VecFx32 *);
-extern int Slot_AllEntriesFilled(int);
 extern void Ov022_Member_ShowSpotMessage(int, u32, int);
 extern int Ov002_PostSpotCommand(Ov002Spawned *, int, u8, int);
-extern int Session_IsActive(void);
 extern void Ov002_PlaySlotActionSound(Ov002SpotActionOwner *, int);
 
 static inline u16 RandRange(Ov002Rng *pRng, u16 nLimit)

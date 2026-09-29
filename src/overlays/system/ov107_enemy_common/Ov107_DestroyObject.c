@@ -1,6 +1,8 @@
 /* Destroys an enemy object: its instance, its registry entry, its part list and lists, its eight
  * attached nodes, and the base node. */
 
+#include "game/engine.h"
+
 typedef struct Self68ec {
     char pad00[0x3c];
     void *field_3c;
@@ -14,13 +16,9 @@ typedef struct Self68ec {
     void *arr350[8];
 } Self68ec;
 
-extern void DestroyInstance(void *obj);
 extern void *FindListEntryByField4(void *this_, int arg1);
-extern void Task_MarkFinished(void *p);
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 extern void func_ov107_020c3190(void *obj);
-extern void FreeInstanceMemory(void *p);
 extern void NNSi_FndDestroyDoubleList(void *list);
 extern void Ov107_DestroyNode(void *self);
 

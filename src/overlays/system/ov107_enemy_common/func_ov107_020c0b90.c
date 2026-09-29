@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -32,8 +33,6 @@ struct MsgOwner {
     char pad0[2];
     u16 id;             /* +0x2 */
 };
-
-extern int MsgQueue_SendGate(int channel, u16 *msg, u16 size);
 
 static inline void PackFx24(Fx24 *dst, int v) {
     dst->hi = ((u32)v >> 16 & 0x7f) | ((u32)v >> 24 & 0x80);

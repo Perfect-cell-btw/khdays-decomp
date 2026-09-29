@@ -9,11 +9,11 @@
  * fixes the colouring (r2/r3/r4/ip). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void ScaleVec3Fx12(int a, void *b, void *c);
-extern int RandNextScaled();
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern short data_0203d210[];
 

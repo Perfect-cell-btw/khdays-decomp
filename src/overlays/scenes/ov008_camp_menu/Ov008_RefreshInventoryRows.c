@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ROW_COUNT       8
 #define WIDGET_ROW_BASE 400
@@ -73,7 +74,6 @@ extern Ov008TextureEntry *Ov008_FindEntryBy1BasedTag(Ov008MenuContext *pCtx, u32
 extern void  Ov008_GetTextureParams(int *pParams, int *pTexture);           /* Ov008_GetTextureParams */
 extern void  Ov008_UploadTileSlot(Ov008MenuContext *pCtx, int nRow, void *pText, int nColour); /* Ov008_UploadTileSlot */
 extern void  Ov008_DrawRowCountDigits(Ov008MenuContext *pCtx, int nRow, int nPlaced, int nOwned); /* draw the counts */
-extern int   GameState_IsFlagSet(int nFlag);                                   /* GameState_IsFlagSet */
 extern void *Ov008_FindEntryById(int nCtx, int nId);                     /* FindEntryById */
 extern void  Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible);  /* SetEntrySlotsVisible */
 extern int   Ov008_TestBitInBitset(Ov008MenuContext *pCtx, int nItemId);   /* TestBitInBitset */

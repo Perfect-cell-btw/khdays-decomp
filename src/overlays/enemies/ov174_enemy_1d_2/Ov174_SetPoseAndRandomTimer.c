@@ -1,7 +1,8 @@
 /* State step: posts tag 1, starts a random timer and installs the hover step. */
 
+#include "game/engine.h"
+
 extern void Ov107_PostTagUpdate();
-extern int RandNextScaled();
 extern void SetIndexedSlot();
 extern void Ov174_HoverBobTick();
 

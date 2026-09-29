@@ -1,7 +1,9 @@
 /* Ov008_Shop_HideCells -- re-register the mission grid's 14 cell sprites, ov008.
  * Through the shared object manager (base+0xbfb0), re-adds the two header cells (base+0xc57c,
  * base+0xc580) and the 12 mission-slot cells (base+0xc584 + i*4) via Slot_UnlinkIfLinked. */
-extern void Slot_UnlinkIfLinked(int *mgr, int obj);
+
+#include "game/engine.h"
+
 extern int  data_ov008_02090fac;
 
 void Ov008_Shop_HideCells(void) {

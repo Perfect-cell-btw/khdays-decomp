@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov022_ValidateTargetRef(char *self);
 extern VecFx32 *func_ov022_020ad0c0(char *self);
@@ -17,7 +18,6 @@ extern int VEC_Mag(const VecFx32 *v);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern char *EntityMgr_RunSphereCastSimple(int group, const VecFx32 *origin, const VecFx32 *disp, int radius);
-extern void Vec3ScaleAddQ27(int t, const VecFx32 *disp, const VecFx32 *origin, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov058_FireStoredShot(char *self, char *shot, int bCharged);          /* Ov039_FireStoredShot */
 

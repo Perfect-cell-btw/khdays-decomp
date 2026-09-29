@@ -5,6 +5,7 @@
  * state 1 (+0xc8). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ReportsRow {
     void *pTitle;             /* 0x00: entry 0x33 + row */
@@ -45,7 +46,6 @@ typedef struct Ov025ReportsPage {
 extern Ov025ReportsPage *Ov025_GetPageA(void);                /* Ov008_GetPageA */
 extern void  MI_CpuFill8(void *pDst, u8 nValue, u32 nSize);
 extern int   Ov025_GetCtxField9768(void);                             /* Ov008_GetCtxField9768 */
-extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 
 void Ov025_Reports_InitPage(void)
 {

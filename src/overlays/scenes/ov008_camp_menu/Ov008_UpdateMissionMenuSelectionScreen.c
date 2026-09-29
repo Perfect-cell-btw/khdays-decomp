@@ -2,6 +2,7 @@
  * draws the option text rows and cursor; returns the next state. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*MissionState)(void);
 
@@ -30,14 +31,12 @@ extern u16 data_ov008_02090d0c[8];
 
 extern int Ov008_IsMissionMenuExitRequested(void);
 extern void Ov008_MissionMenuHookNoOp(void);
-extern int Game_PollSceneAlive(void);
 extern int Ov008_CanConfirmMissionMenu(void);
 extern int Ov008_IsMissionMenuBusy(void);
 extern int Ov008_ReadMissionMenuAction(void);
 extern int func_01ff8128(void);
 extern int Ov008_TickInputUpdate(void);
 extern void Ov008_RequestMenuState(int state, int arg1, int arg2);
-extern void PlaySound(int bank, int sound);
 extern int Ov008_GetMissionScreenFlag(void);
 extern void Ov008_SetTickSlotByte(int value);
 extern int Ov008_IsSubMenuSceneReady(void);

@@ -7,6 +7,7 @@
  * a repeat and the counter becomes the number of intervals elapsed plus one. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct KeyRepeat {
     u16 mask;                           /* +0x00 */
@@ -21,7 +22,6 @@ extern u32 data_0204c194[];             /* VBlank count at each key's press */
 extern u16 data_0204c18c;               /* keys held */
 extern u16 data_0204c190;               /* keys pressed this frame */
 
-extern int func_02023c40(void);         /* frame-rate mode */
 extern u32 VBlank_GetCount(void);  /* VBlank count */
 extern u32 Math_DivMod(u32 numer, u32 denom);
 

@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002RequestBlock {
     int nPauseObject;       /* -1 while there is nothing to report */
@@ -11,7 +12,6 @@ typedef struct Ov002RequestBlock {
 
 extern char *data_ov002_0207fa00;
 
-extern int QueryActiveStateOrDelegate(void);         /* the local peer */
 extern void Ov002_SetCursorRequest(u16 a, u16 b, u16 c, int nLevel);
 
 /* Forwards the pending request's level.  Does nothing unless the request is

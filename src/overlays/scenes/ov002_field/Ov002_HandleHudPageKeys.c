@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int *data_ov002_0207f9fc;
 extern u16 data_0204c190;
@@ -21,8 +22,6 @@ extern void *Ov002_NextStreamRecord(void *pStream);
 extern void Ov002_ArmScene(u16 nPage);
 extern int Ov002_Field_HasPendingEvent(void);
 extern void Ov002_RequestCaption(int nMode, int nTake);
-extern void GameState_SetFlag(int nEvent);
-extern void PlaySound(int nBank, int nCue);
 
 void Ov002_HandleHudPageKeys(void)
 {

@@ -7,13 +7,13 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int owner, int *out);
 extern void SetIndexedSlot(void *self, int index, void *handler);
 extern int FX_Sqrt(int x);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *out);
 extern int func_020050b4(int dx, int dz);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, const void *table);
 extern void ScaleVec3Fx12(int scale, void *dst, void *src);
 extern const int data_02042258[];
 extern void Ov250_ApproachTick(void);

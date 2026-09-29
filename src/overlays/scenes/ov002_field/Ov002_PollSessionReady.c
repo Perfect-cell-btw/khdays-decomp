@@ -15,11 +15,9 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int  NNSi_FndGetCurrentRootHeap(void);
-extern int  Session_IsActive(void);
-extern int  Session_IsReady(void);
-extern int  Session_GetLocalPlayerIndex(void);
 extern u16  Ov002_BuildSessionCommand(int kind, void *out);
 
 int Ov002_PollSessionReady(void)

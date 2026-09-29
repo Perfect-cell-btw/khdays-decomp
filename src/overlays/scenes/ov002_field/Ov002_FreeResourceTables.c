@@ -21,6 +21,8 @@
  * Ghidra carries this as Ov002_FreeResourceTables over Ov002TableSet.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad0000[0x18];
     void *apBlocks[1];      /* +0x18, one heap block per table */
@@ -29,7 +31,6 @@ typedef struct {
     int nTableCount;        /* +0x50 */
 } Ov002TableSet;
 
-extern void FreeAllResourceTables(void *table);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
 void Ov002_FreeResourceTables(Ov002TableSet *self) {

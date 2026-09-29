@@ -5,8 +5,7 @@
  * register out of the store tail). */
 
 #include "nitro/types.h"
-
-extern u16 GetGlobalU16At6(void);                        /* expected-ack mask of the session */
+#include "game/engine.h"
 
 typedef struct Ov015Chest {
     u8  pad_000[0x464];

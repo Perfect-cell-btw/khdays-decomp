@@ -2,8 +2,8 @@
  * the byte at +0x8b68. Already-set (either 0x10 or 0x20) means the teardown is
  * under way and the call is ignored. Silences input, and in the boot mode gated
  * by bit 2 of data_0204c240 also stops the controller first. */
-extern void Callbacks_SetByte(int a);
-extern void func_02020878(int a);
+
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;
 extern unsigned char data_0204c240;

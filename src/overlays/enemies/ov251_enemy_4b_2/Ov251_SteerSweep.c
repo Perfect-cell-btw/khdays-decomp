@@ -12,11 +12,10 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern void Vec3TransformViaTempMtx(void *out, void *a, void *b);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
 struct Ov250Flags { unsigned char b0 : 1, b1 : 1; };

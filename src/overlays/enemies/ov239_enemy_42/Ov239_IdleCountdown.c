@@ -1,7 +1,8 @@
 /* Idle countdown of the ov239 enemy: the +0x2c timer counts the frame-time down and, once spent,
  * re-arms at random between the actor's +0x224 and +0x228 and requests sub-state 5 (roll below
  * 65 with the target closer than 0x6000) or 6. Returns 1 when a sub-state was requested. */
-extern int RandNextScaled(int range);
+
+#include "game/engine.h"
 
 static inline int RandRange(int low, int high)
 {

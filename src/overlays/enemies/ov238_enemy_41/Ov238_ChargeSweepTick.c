@@ -11,6 +11,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Atk { u8 b0; u8 bits; u8 r2; u8 r3; u16 power; };
@@ -52,10 +53,8 @@ struct ChargeState {
 typedef int (*HitHook)(u16 id, struct HitPacket40 *packet);
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
-extern int RandNextScaled(int bound);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, Sphere *shape, int flag);
 extern int Ov107_AiState_ApplyHit(Actor *obj, int target, struct HitPacket *packet);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

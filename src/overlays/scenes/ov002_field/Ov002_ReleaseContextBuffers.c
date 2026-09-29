@@ -3,10 +3,12 @@
  * through ZeroHalfThenFree and tell Ov002_SetRootWord8a28 channel 2 it is gone, then
  * fill the 0x18-byte table at +0x17 and the 4-byte table at +0x2f with 0xff --
  * 0xff being the empty-slot marker for those tables. */
+
+#include "game/engine.h"
+
 extern int data_ov002_0207fa10;
 
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
-extern void ZeroHalfThenFree(void *handle);
 extern void Ov002_SetRootWord8a28(int arg0, int arg1);
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 

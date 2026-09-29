@@ -4,9 +4,8 @@
  * position (+0x1c) under the same test. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int QueryActiveStateOrDelegate(void);                         /* the local peer */
-extern void *GetEntryField20ByIndex(int nPlayer);                /* the player's actor */
 extern int Ov022_ForwardArg1(void *pActor, int nState); /* the actor is in interaction state nState */
 
 typedef struct Ov015Spot {

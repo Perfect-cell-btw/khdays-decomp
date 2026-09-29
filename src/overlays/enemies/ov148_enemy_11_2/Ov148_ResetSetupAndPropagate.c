@@ -1,8 +1,5 @@
-/* Resets via RefreshObjectCallbacks + DispatchObjectCallbacks(_,1), then Ov107_ProcessObjectTick,
- * then two chained 11-word block copies. */
+#include "game/engine.h"
 
-extern void RefreshObjectCallbacks(void *p, int arg);
-extern void DispatchObjectCallbacks(void *p, int x);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 struct blk11 { int w[11]; };
 void Ov148_ResetSetupAndPropagate(char *obj, int arg2) {

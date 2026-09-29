@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;
@@ -11,19 +12,12 @@ typedef struct { VecFx32 v; int w; } SpawnSeed;
 
 extern void *Ov107_PackTextureHandle(void *self, int slot);
 extern void *CreateSubitemInstance0xB4(void *res);
-extern void RegisterSubscriberSlot(void *list, void *node);
-extern void Snd_RegisterSeqAndBind(void *dst, void *a, void *b, int n);
-extern void MainBlob_ResetSlotRows(void *obj, void *block);
-extern int FindResourceIndexByName(void *obj, const char *name);
-extern void RefreshObjectCallbacks(void *obj, int a);
 extern void Ov107_Actor_SetAttachSlot(void *self, int a, int b, const VecFx32 *v, int e);
 extern void *func_ov107_020c9848(void);
 extern void Ov107_EnqueueValue(void *self, void *obj);
 extern void *JointModel_New(void *res, int n);
 extern void *Ov264_createRegistryEntryStoreField(void *self);
-extern void *List_InsertSorted(void *list, int size, int count);
 extern void *Ov107_CloneResourceTransform(const SpawnSeed *seed);
-extern void Res_RequestIdPair(int id);
 
 extern KindTable data_ov264_020cebc4;
 extern const char data_ov264_020cec2c[];

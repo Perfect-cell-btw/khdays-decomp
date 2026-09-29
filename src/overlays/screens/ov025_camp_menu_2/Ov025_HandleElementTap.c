@@ -1,8 +1,10 @@
 /* React to a tap on a two-state UI element: in state 0, if the phase byte's 0xe0 bits are clear
  * and the element is not already variant 2, switch it to variant 2 and chirp; in state 1, if the
  * pending flag (+0x64) is set, clear it and chirp. */
+
+#include "game/engine.h"
+
 extern void Ov025_PlaceElementByVariant(int *obj, int variant, int state);
-extern void PlaySound(int a, int b);
 extern unsigned short data_0204c18c;
 
 void Ov025_HandleElementTap(int *param_1) {

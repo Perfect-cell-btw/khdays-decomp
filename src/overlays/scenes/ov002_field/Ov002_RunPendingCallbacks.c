@@ -16,12 +16,12 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*CbFn)(int);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);
 extern int  Ov002_BeginTimedPhase(void);
-extern void func_02020878(int a);
 extern void Ov002_Roster_Reset(void);
 extern void Ov002_TryAdvancePhase(void);
 extern u8   data_0204be04;

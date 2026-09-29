@@ -10,6 +10,8 @@
  * THUMB.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     int nMode;
     int nDuration;
@@ -37,7 +39,6 @@ typedef struct {
 extern int data_ov002_0207f628;
 
 extern void Tween_Clear(Ov002Tween *pTween);
-extern void SceneNode_SetFlag40(void *pWidget, int nValue);
 extern void Ov002_RetargetWidget(void *pWidget, unsigned int nFileId, int nKind,
                                 int nParam);
 

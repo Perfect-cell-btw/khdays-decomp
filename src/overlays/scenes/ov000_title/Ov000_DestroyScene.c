@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000DestroyContext {
     u8 pad_0000[0x4c];
@@ -41,7 +42,6 @@ extern void *G2S_GetBG1ScrPtr(void);
 extern void *G2S_GetBG2ScrPtr(void);
 extern void *G2S_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(u32 value, void *dst, u32 size);
-extern void func_020235bc(int id);
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 

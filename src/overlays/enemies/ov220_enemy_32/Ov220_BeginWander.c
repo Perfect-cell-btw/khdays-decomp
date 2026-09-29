@@ -4,10 +4,10 @@
  * is set to +0x224 + rand(|+0x228 - +0x224| + 1) and the tick hands off to the wander state. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int RandNextScaled(int bound);
 extern void Ov220_WanderTick(int *node);
 
 void Ov220_BeginWander(int *node)

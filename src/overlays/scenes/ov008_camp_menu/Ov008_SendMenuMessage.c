@@ -2,6 +2,7 @@
  * its header. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;
@@ -36,9 +37,6 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern Ov008MenuContext *data_ov008_02090f00;
-extern u32 Session_GetLocalPlayerIndex(void);
-extern int MsgQueue_SendGate(int type, u16 *payload, u16 size);
-extern u16 func_02031384(int type, void *payload, u16 size);
 
 void Ov008_SendMenuMessage(u8 mode)
 {

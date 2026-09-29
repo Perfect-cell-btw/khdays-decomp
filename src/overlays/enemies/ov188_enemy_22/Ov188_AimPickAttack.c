@@ -18,12 +18,14 @@
  *    likewise.
  * The state byte is `char` (strb), the counter test is `> 0`.
  */
+
+#include "game/engine.h"
+
 extern int Ov107_FindNearestObject(int obj, int out);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern int func_020050b4(int x, int z);
-extern int RandNextScaled();
 
 void Ov188_AimPickAttack(int *self) {
     int *state = (int *)self[1];

@@ -16,6 +16,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 #define SLOT_OPEN 0xffff
 #define ONE 0x1000
@@ -78,7 +79,6 @@ extern void VEC_Add(VecFx32 *pA, VecFx32 *pB,
 extern void VEC_MultAdd(int nScale, VecFx32 *pA, VecFx32 *pB,
                         VecFx32 *pOut);
 extern int VEC_Normalize(VecFx32 *pOut, VecFx32 *pIn);
-extern int func_02023c40(void);
 extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                                 VecFx32 *pAt, VecFx32 *pDir);

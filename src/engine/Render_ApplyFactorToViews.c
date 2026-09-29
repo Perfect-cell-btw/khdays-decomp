@@ -4,9 +4,9 @@
  * fixed point before dispatching; the +0x64 list passes `scale` through. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int data_0204c208;
-extern unsigned int DetachThenApplyNode(int slot, unsigned int *node, int scale);
 
 void Render_ApplyFactorToViews(unsigned int mask, fx32 scale) {
     int i;

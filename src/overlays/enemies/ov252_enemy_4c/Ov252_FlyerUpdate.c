@@ -15,13 +15,12 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(int a, void *b);
 extern int func_ov022_02083f0c(void);
 extern int Ov252_CheckTarget(int *node, VecFx32 *to, int b);

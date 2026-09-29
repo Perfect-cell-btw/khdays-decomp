@@ -2,6 +2,7 @@
  * rows and starts the scale tweens; updates the cursor with the value. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022RootFlags {
     u32 unknown0 : 2;
@@ -23,7 +24,6 @@ typedef struct Ov022RootContext {
 extern Ov022RootContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Tween_Sample(void *tween, int *value);
 extern void Ov022_BuildPresetRows(void);
-extern void PlaySoundChecked(int a, int b);
 extern void func_ov022_02086d60(int value);
 extern int Ov022_AdvanceFadeStateThenNextStep(void);
 extern int Ov022_StepScaleTweens(void);

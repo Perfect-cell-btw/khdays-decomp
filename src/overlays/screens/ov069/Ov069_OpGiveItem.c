@@ -4,11 +4,8 @@
  * its +0x810 stock byte in the save block (capped at 99) and sets game flag 0x4db + id. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int ScriptVm_ReadOperandInt(void *vm, unsigned short *pc);
-extern unsigned int GameState_GetField(int id, int kind);
-extern void GameState_SetField(int id, int kind, int value);
-extern void GameState_SetFlag(int flag);
 extern char *data_0204be18;
 
 int Ov069_OpGiveItem(void *vm, unsigned short *pc)

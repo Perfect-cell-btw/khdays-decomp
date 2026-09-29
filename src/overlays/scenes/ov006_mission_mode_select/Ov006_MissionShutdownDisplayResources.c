@@ -3,6 +3,7 @@
  * 0xe. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 pad_0000[8];
@@ -18,8 +19,6 @@ extern void Ov006_RebindBgLayers(void *resources);
 extern void Ov006_Menu_SetupSprites(void *resources);
 extern void Ov006_SweepElements(void *display_state);
 extern void Ov006_MissionBuildScreenCells(void *resources);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void Ov006_MissionRequestStateChange(int state, int arg1, int arg2, int arg3, int arg4);
 
 static inline void SetMainVisiblePlanes(int planes) {

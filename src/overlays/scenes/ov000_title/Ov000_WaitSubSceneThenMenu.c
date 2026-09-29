@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 typedef void (*Ov000StateFn)(void);
@@ -36,12 +37,6 @@ typedef struct Ov000SceneContext {
 } Ov000SceneContext;
 
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void SetMasterBrightnessMain(int brightness);
-extern void UnloadOverlaySync(int processor, FSOverlayID overlayId);
-extern int ZeroHalfThenFree(void *resource);
-extern void func_020235bc(int handlerId);
-extern void StoreGlobalShortAt0(int value);
-extern void func_020208f0(void);
 extern Ov000StateFn Ov000_EnterSceneAndLoadResource(const OverlayStartParams *params);
 
 Ov000StateFn Ov000_WaitSubSceneThenMenu(void) {

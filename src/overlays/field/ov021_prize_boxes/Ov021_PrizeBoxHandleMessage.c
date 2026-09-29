@@ -6,6 +6,7 @@
  * nothing. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov021PrizeBoxMessage {
     u8   nType;               /* 0x00: 1 accepted, 2 taken, 3 opened */
@@ -24,7 +25,6 @@ typedef struct Ov021PrizeBox {
     u8   nPrize;              /* 0x1be: index into the class's prize list */
 } Ov021PrizeBox;
 
-extern int  Session_GetLocalPlayerIndex(void);                                      /* Session_GetLocalPlayerIndex */
 extern void Ov002_AddMissionTally(int nPlayer, int nKind, int nCount);  /* post to the mission tally */
 
 void Ov021_PrizeBoxHandleMessage(Ov021PrizeBox *pSelf, Ov021PrizeBoxMessage *pMessage)

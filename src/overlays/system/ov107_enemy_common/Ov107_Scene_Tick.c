@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned pad0 : 1;
@@ -32,9 +33,6 @@ typedef struct {
 } Root;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void List_TryInvokeEntry(int a);
-extern int LoadGlobalU16At0(void);
-extern unsigned int Session_GetLocalPlayerIndex(void);
 
 extern u8 data_0204c058;
 

@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov046StepVectors {
     VecFx32 horizontal;
@@ -66,7 +67,6 @@ struct Ov044Controller4c14 {
  * quiet or the attack bit is clear finish through 020a35f4: mode 0x22 while the shared rig's
  * +0x2d90 counter is still 2 or more, otherwise clear both accumulated vectors and finish with
  * mode 0 (after the +0x664 callback) or 2 depending on the +0x24 bit. */
-extern u32 Session_GetLocalPlayerIndex(void);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(void *context);
 extern void *Ov022_ActorSetState(struct Ov044Actor *actor, int mode);

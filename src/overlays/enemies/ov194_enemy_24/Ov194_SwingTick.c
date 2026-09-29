@@ -18,6 +18,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -38,12 +39,10 @@ struct Ov194Owner {
 };
 
 extern void Ov107_BuildAndSendUpdate(struct Ov194Owner *owner, int a, int id, void *at);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *src, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov194Owner *owner, Sphere *sphere, int *out);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov194Owner *a, struct Ov194Owner *b, int kind, VecFx32 *push, int z);
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov194_020cef74;
 extern const VecFx32 data_02041dc8;

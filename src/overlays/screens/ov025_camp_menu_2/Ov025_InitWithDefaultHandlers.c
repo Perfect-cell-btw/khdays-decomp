@@ -1,9 +1,9 @@
 /* Zero a 0xc-byte record, then set its +4/+8 handler slots from the source pair, falling back to
  * the default handlers MsgDb_FetchRecord / DispatchByNodeKind when a slot is null. */
 
+#include "game/engine.h"
+
 extern void MI_CpuFill8();
-extern int MsgDb_FetchRecord();
-extern int DispatchByNodeKind();
 
 void Ov025_InitWithDefaultHandlers(unsigned int *arg0, unsigned int *arg1) {
     unsigned int v;

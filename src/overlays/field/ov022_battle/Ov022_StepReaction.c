@@ -18,6 +18,7 @@
 /* Ov022ActorSlot */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct ActorSlot {
     u8 pad000[2];
@@ -62,7 +63,6 @@ extern void Ov022_ApplyReactionHit(struct ReactionCtx *pCtx, struct ActorSlot *p
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, int nTrack, u16 *pFlags,
                                 int nBinding);
 extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
-extern int Session_IsReady(void);
 
 int Ov022_StepReaction(struct ReactionCtx *pCtx, int nDelta)
 {

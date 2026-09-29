@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct EmitPair {
     VecFx32 vPosB;
@@ -50,8 +51,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_ScaleRowValues(char *self, int spin, void *a, void *b);
 extern int Ov022_RunReachHandlers(char *self, struct EmitPair *emit, void *params);
-extern int Session_RandNextScaled(int n);                                             /* Session_RandNextScaled */
-extern int Session_RandNext(void);                                              /* Session_RandNext */
 extern void Ov022_SendAimMessage(char *emitter, int slot, struct EffectRecord *rec);
 extern short data_0203d210[];
 

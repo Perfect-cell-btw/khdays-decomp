@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad00[4];
@@ -9,10 +10,7 @@ typedef struct {
 extern Ov002SceneRef data_ov002_0207fa20;
 extern u8 data_0204be04;
 
-extern int Session_GetLocalPlayerIndex(void);                       /* local player index */
-extern unsigned short func_02031384(int nKind, void *pPacket, int nSize);
 extern int Ov002_GetCtxTableByte(int nList);
-extern int GameState_GetField(int wId, int bSlot);
 extern void Ov002_UpdateSpawnedSpots(void);
 
 /* Step the session menu's scene once.

@@ -8,9 +8,8 @@
  * the player action 8 and resets. Both +0x12c rows (stride 0x240) are then advanced. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void ForwardToHandlerOrCurrentObject(int nSound, int nVariant, int nFlag);
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern int func_ov022_02083f0c(void);
 extern void Ov002_Camera_SetMode(int owner, int what, int arg);
 extern void Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);

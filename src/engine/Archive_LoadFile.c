@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad00[0x24];
@@ -37,7 +38,6 @@ extern const u8 data_02041c48[128];
 extern void FS_InitFile(FSFile *file);
 extern void FSi_WaitForCardThread(void);
 extern int Archive_OpenSubfileByHandle(FSFile *file, u32 id);
-extern u32 Archive_SubfileIsCompressed(u32 id);
 extern int strlen(const char *s);
 extern char *Msg_BuildLangPath(char *name);
 extern int FS_OpenFile(FSFile *file, const char *path);

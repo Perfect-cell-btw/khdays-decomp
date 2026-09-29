@@ -2,6 +2,7 @@
  * the new ones; returns the number of changes. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 
@@ -21,10 +22,6 @@ typedef struct Ov009ObjectList {
 extern const Ov009ListConfig data_ov005_0205b3bc;
 extern const u16 data_ov005_0205b3c8[60][2];
 
-extern u32 GameState_GetField(u32 field, int index);
-extern void GameState_SetField(u32 field, int index, u32 value);
-extern void LoadOverlaySync(int processor, int overlay);
-extern void UnloadOverlaySync(int processor, int overlay);
 extern void Ov005_InitObjectWithList(
     Ov009ObjectList *list,
     const Ov009ListConfig *config
@@ -37,7 +34,6 @@ extern int Ov005_IsRangeFullyCleared(
     int minimum,
     int maximum
 );
-extern int BitArray_TestBit(const u16 *bits, int index);
 extern void BitArray_SetBit(u16 *bits, int index);
 
 int Ov005_UpdateCompletionMilestones(void)

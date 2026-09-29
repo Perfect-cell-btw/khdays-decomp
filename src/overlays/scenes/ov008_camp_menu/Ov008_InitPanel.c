@@ -9,14 +9,13 @@
  * store lands between the two calls.) */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void *data_ov008_02090f1c;
-extern int   Session_GetLocalPlayerIndex(void);
 extern void *Slot4_GetIfOccupied(unsigned int a);
 extern void *Ov008_GetSharedRecord(void);
 extern void  Ov008_PrimeSubSceneFromCursor(int a);
 extern int   Ov008_IsSessionReady(void);
-extern int GameState_IsFlagSet(int flag);
 extern void  Ov008_SetBusyFlag(int);
 
 void Ov008_InitPanel(void *arg0, int *arg1)

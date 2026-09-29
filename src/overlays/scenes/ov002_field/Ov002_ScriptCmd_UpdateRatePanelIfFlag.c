@@ -1,6 +1,7 @@
 /* Script command: updates the rate panel when game flag 0x20e8 is set; returns 1. */
 
-extern int GameState_IsFlagSet();
+#include "game/engine.h"
+
 extern int Ov002_UpdateRatePanel();
 
 int Ov002_ScriptCmd_UpdateRatePanelIfFlag(void) {

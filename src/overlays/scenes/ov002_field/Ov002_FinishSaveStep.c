@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
-extern void EntityManager_ResetSingleton(void);
 extern void Ov002_ResetNineSlots(void);
 extern void Ov002_ScheduleRetry(void);
 extern void Ov002_SetLazyClassEnabled(int mode);

@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 extern int Ov002_RunShutdownHook(void);
 extern int func_ov002_0206373c(void);
 extern void Ov002_ClearCharBlock(int);
-extern int Session_GetLocalPlayerIndex(void);
 extern char *data_ov002_0207f99c;
 
 /* Confirms the pending mission once the fade is done, and records the caller's choice when the

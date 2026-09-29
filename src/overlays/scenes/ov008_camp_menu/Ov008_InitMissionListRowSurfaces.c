@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ROW_COUNT       6
 #define CHAR_BASE_FIRST 0x120
@@ -57,7 +58,6 @@ extern int   Ov008_GetCtxObject9634(void);                                   /* 
 extern void *Ov008_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
 extern void *Ov008_GetDescriptor0(void);                                   /* pixel buffer */
 extern int   Ov008_ResetEntry(int nSlot);                              /* Ov008_ResetEntry: slot handle */
-extern void  TileSurface_InitAndUpload8bpp(TileSurface *pSurface, const TileSurfaceCfg *pCfg); /* TileSurface_InitAndUpload8bpp */
 
 void Ov008_InitMissionListRowSurfaces(Ov008MissionList *pList)
 {

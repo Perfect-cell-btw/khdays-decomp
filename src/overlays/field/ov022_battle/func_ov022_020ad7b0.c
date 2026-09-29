@@ -1,6 +1,7 @@
 /* Whether the actor is at a quarter of its HP or less (unless it has ability 0x42). */
 
-extern int Slot_EvalPackedParam(unsigned int arg0, int arg1);
+#include "game/engine.h"
+
 int func_ov022_020ad7b0(int arg0) {
     int r = 0;
     int su = (int)((unsigned int)*(unsigned short *)(arg0 + 0x16) << 10);

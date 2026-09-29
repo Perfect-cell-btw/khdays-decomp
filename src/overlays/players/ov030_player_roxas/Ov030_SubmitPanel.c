@@ -8,7 +8,9 @@
  * and branches into the member path, and the mission arm borrows its value
  * from the suppression flag rather than materialising another 1.
  */
-extern int GameState_IsFlagSet(int flag);
+
+#include "game/engine.h"
+
 extern void func_ov022_0209fb60(int a, int b, int c);
 extern void Ov002_BuildPanelIdSummary(int a, int b, int c);
 extern void Ov002_LoadAnimTables(int a, int b, int c, int d, int e);

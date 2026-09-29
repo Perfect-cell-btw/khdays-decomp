@@ -4,8 +4,8 @@
  * stock is emptied. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int ScriptVm_ReadOperandInt(void *vm, unsigned short *pc);
 extern char *data_0204be18;
 
 int Ov069_OpTakeItem(void *vm, unsigned short *pc)

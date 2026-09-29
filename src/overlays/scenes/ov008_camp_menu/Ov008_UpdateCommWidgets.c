@@ -6,10 +6,9 @@
  * unavailable (< 0) both widgets are disabled via Ov008_SetEntrySlotsVisible(..., 0). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void *Ov008_GetCtxBlock4a80(void);
-extern int   Session_Exists(void);
-extern int   Session_IsActive(void);
 extern int   func_ov105_020bf240(void);
 extern void *Ov008_FindEntryById(void *ctx, int id);
 extern void  Ov008_ReleaseTwoSlotsEx(void *ctx, void *widget, int value);

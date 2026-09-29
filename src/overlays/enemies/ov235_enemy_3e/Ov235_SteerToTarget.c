@@ -8,6 +8,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 
@@ -18,8 +19,6 @@ extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042258;

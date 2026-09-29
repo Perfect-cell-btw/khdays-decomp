@@ -5,14 +5,12 @@
  * 2 and the node ends. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
 extern void Ov259_FaceTarget(int *node);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, Quat *q, const VecFx32 *in);
 extern void Ov259_LaunchHelper(int helper, VecFx32 *pos, VecFx32 *dir, int heading);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042258;

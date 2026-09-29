@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -27,14 +28,12 @@ typedef struct { int w[4]; } Quat;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };
 
 extern const VecFx32 data_02042270;
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
 extern int Ov244_PickNearestMate(int rider);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Slerp(void *out, int t, void *a, Quat *b);
-extern void Vec4_Normalize(void *out, void *in);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Add(const void *a, const void *b, void *out);

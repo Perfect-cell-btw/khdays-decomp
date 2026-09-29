@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*MissionState)(void);
 
@@ -49,11 +50,9 @@ extern MissionMenuContext *data_ov008_02090fa0;
 extern GameState *data_0204be18;
 extern int   Ov008_Link_IsReady(void);                                  /* Ov008_Fn_bb14: ready */
 extern void *InstantiateClass(void *pClass, int nArg);                      /* InstantiateClass */
-extern int   Session_IsReady(void);                                        /* Session_IsReady */
 extern int   Ov008_CountPlayers(void);
 extern void  Ov008_MissionScene_SetMode(int nValue);                            /* Ov008_Fn_18a0 */
 extern void  Ov008_GetMissionRowInfo(int nRow, Ov006RowInfo *pOut);          /* fill a row record */
-extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern void  Ov008_MissionScene_SetByte9520(int nFeatures);
 extern u16   Ov008_GetLocalPlayerIndex(void);                                  /* current row */
 extern void  Ov008_MissionSetModelPose(int nIcon);

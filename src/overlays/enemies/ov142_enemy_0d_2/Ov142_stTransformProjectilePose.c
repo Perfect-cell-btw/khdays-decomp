@@ -2,8 +2,9 @@
  * frame; once the gate byte is clear sends the animation pair from the overlay's table to the
  * actor's event callback, queues action 2 and clears the step handler. */
 
+#include "game/engine.h"
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov142_020d2610[];

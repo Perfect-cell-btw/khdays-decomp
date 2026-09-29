@@ -1,7 +1,8 @@
 /* State after the fade-out: stores the scene change (5, saved value); returns ~1. */
 
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
-extern void Scene_RequestPending(int, int);
 
 int Ov007_RequestSceneChange(void)
 {

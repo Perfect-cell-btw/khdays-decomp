@@ -8,13 +8,15 @@
  * still >= 0x2000, keep waiting. Otherwise clear the *(*state+0x384)+0xa8 flag, set state[0x14] =
  * 0x6000 and hand off to the 020d280c state.
  */
+
+#include "game/engine.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
 extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void Ov210_AimSteerFireWhenReady(void);
 

@@ -1,10 +1,10 @@
 /* MsgDb decoder for db 0x14: bounds-check, alloc a 0x58 record, fetch the string
  * pair, then store index + elem[0..3] and copy 5 pairs (elem[4],elem[5] walking) into
  * rec+0x28/+0x2c. elem = entry[8] + index*0x38 (table + 0x14*0x14). */
-extern int MsgDb_IsLoaded(int db);
-extern int MsgDb_AllocRecord(int *rec_out, int size, int kind, int keep);
+
+#include "game/engine.h"
+
 extern int MsgDb_FetchStringPair(short *rec, void *a, void *b, void *c, void *d, int db, int index, int keep);
-extern void DispatchByNodeKind(int *rec_out);
 extern int data_0204c238;
 int MsgDb_DecodeDb14(int *rec_out, int index, int keep) {
     int *pv;

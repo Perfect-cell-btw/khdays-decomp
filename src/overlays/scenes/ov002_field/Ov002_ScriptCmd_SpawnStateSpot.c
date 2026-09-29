@@ -3,8 +3,9 @@
  * through ByteCode_ResolveOperand -- the split is deliberate, not a transcription slip.
  * Same shape as Ov002_ResolveFourDescriptors, which uses ScriptVm_ReadOperandInt for all
  * four. Always reports success. */
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ByteCode_ResolveOperand(void *self, void *desc);
+
+#include "game/engine.h"
+
 extern void Ov002_SpawnStateSpots(int a, int b, int c, int d);
 
 int Ov002_ScriptCmd_SpawnStateSpot(void *self, char *descs) {

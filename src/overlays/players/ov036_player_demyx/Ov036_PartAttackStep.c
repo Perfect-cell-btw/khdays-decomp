@@ -7,8 +7,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Anim_GetLengthQ12(void *animation, int track);                                 /* Anim_GetLengthQ12 */
 extern void Ov022_ResolveShotHit(char *pGroup, char *pPart, VecFx32 *pos, VecFx32 *dir);
 extern void func_ov022_020ad28c(char *pActor, char *pos, int nSound, int nVariant);
 extern int func_ov022_02091540(void *animation, int dt);

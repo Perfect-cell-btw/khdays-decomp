@@ -3,8 +3,8 @@
  * window 0 bounds and masks. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void Gfx_Reset2DEngines(void);
 extern void GX_SetBankForTex(int bank);
 extern void GX_SetBankForTexPltt(int bank);
 extern void G2x_SetBlendAlpha_(volatile u16 *reg, int firstTarget,

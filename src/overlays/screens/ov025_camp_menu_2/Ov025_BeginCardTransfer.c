@@ -1,7 +1,8 @@
 /* Starts the save-card read of a save slot: resets the card state, records the slot and starts the
  * card thread on that slot's block (0x2018 bytes each). */
 
-extern int func_02020904(void);
+#include "game/engine.h"
+
 extern void Ov025_StartCardThread(int arg0, int arg1, int arg2);
 
 extern unsigned char data_ov025_020b5760[];

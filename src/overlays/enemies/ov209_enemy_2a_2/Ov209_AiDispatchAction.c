@@ -15,6 +15,7 @@
  * byte-in-word. See codegen-cracks.md. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     int x;
@@ -32,7 +33,6 @@ typedef struct {
     unsigned f : 8;
 } B8;
 
-extern void QuatFromAxisAngle(Quaternion *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(int obj, const Quaternion *q);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
 extern VecFx32 data_02042264;

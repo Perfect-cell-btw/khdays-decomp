@@ -4,6 +4,7 @@
  * own 0x1c. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x1c];
@@ -15,8 +16,6 @@ typedef struct {
 
 /* The game-state bit-array accessors: GameState_GetField and GameState_SetField
  * in Ghidra, still linked under their addresses here. */
-extern unsigned int GameState_GetField(unsigned int nOffset, unsigned int nWidth);
-extern void GameState_SetField(unsigned int nOffset, unsigned int nWidth, unsigned int nValue);
 extern long long Math_DivMod(int nNumerator, int nDenominator);
 
 /* Runs one arithmetic step against a game-state field: read the field, fold the

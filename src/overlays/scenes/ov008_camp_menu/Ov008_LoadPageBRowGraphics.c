@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ENTRY_ALT_ARCHIVE 0x10000
 #define ENTRY_MEMBER_MASK 0x1ff
@@ -32,8 +33,6 @@ typedef struct Ov008ScreenBlock    { u8 pad_00[0x08]; u32 nSize; u8 aData[1]; } 
 extern Ov008PageB *Ov008_GetPageB(void);                          /* Ov008_GetPageB */
 extern u32   Ov025_Res_GetEntryOffset(void *pList, int nRow);                /* list entry word */
 extern void *Archive_LoadFile(u32 nArchiveId, int nHeap);                  /* Archive_LoadFile */
-extern void  Obj_RelocateSections(void *pFile, int bEnableDispatch);           /* Obj_RelocateSections */
-extern int   Archive_GetMember(void *pFile, int nMember, int nSub);         /* Archive_GetMember */
 extern int   NNS_G2dGetUnpackedPaletteData(int hMember, Ov008PaletteBlock **ppBlock);   /* GetResourceSubBlock_PLTT */
 extern int   GetResourceSubBlock_CHAR(int hMember, Ov008CharacterBlock **ppBlock); /* GetResourceSubBlock_CHAR */
 extern int   NNS_G2dGetUnpackedScreenData(int hMember, Ov008ScreenBlock **ppBlock);    /* findResourceNRCS */

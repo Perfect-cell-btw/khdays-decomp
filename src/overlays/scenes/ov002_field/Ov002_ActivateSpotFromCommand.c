@@ -5,6 +5,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SpotActionOwner Ov002SpotActionOwner;
 typedef struct Ov022SeatEntry {
@@ -58,10 +59,6 @@ typedef struct Ov002SpotCmd {
 
 extern Ov002SpotHolder data_ov002_0207fa28;
 extern int Ov002_IsSessionOpen(void);
-extern Ov022SeatEntry *GetEntryField20ByIndex(int nSeat);
-extern int Session_IsReady(void);
-extern int Session_IsActive(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov002_PostSpotCommand(Ov002Spawned *, int, u8, int);
 extern void Ov002_PlaySlotActionSound(Ov002SpotActionOwner *, int);
 extern int Ov002_GetSlotTableByte(int);

@@ -5,11 +5,10 @@
  * alternate one when the config's flag at +0x18 is set, fills the handler vtable at +0x664,
  * attaches the scene node, resolves the five bone handles by name, folds the three optional
  * capability bits into the 64-bit flag word and hands the object over. */
+
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int id, int mask, int a, void *params, int b);
-extern void TailForwardTrackEntry(int id, void *tbl, int n, int p);
-extern int  ArrayEntryPtrD0(int id);
-extern void Actor_InitEntityLink(void *dst, int src);
 extern int  NNS_G3dGetResDictIdxByName(void *node, void *desc);
 extern void Ov022_InitActor(void *obj);
 

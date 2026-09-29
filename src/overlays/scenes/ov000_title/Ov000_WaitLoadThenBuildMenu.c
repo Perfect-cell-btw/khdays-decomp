@@ -1,4 +1,5 @@
-extern int Obj_IsIdFree(int h);
+#include "game/engine.h"
+
 extern void Ov000_StartNewGameMode(void);
 extern void Ov000_ModeSelect_InitObjects(void);
 extern void Ov000_SetupLogoTileSurfaces(void);

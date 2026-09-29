@@ -9,14 +9,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct b2 { u8 b0 : 1, b1 : 1; };
 
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
 extern void Scene_DrawNode(void *node);
-extern int func_02023c40(void);
 extern unsigned short Sequence_UpdateTracks(void *node, int tick);
 
 void Ov062_DriveScriptNode(char *self)

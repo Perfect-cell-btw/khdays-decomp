@@ -1,6 +1,8 @@
 /* Mission result display state: draws the stat grid, slides the table in and animates the
  * characters, then waits for input to fade out. */
 
+#include "game/engine.h"
+
 typedef struct Ov003RootTail {
     unsigned char pad0000[0x1774];
     int nStateTicks;
@@ -13,7 +15,6 @@ extern void MIi_CpuClear16(int a, void *b, int c);
 extern void Ov003_DrawStatGrid(void);
 extern void func_02013484(void *a, void *b, int c, int d, int e, int f, int g, int h, int i, int j);
 extern void GFXi_EnqueueCommand(int a, int b, void *p, int n);
-extern unsigned int BuildSlotMask(int p, int a);
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Sequence_UpdateTracks(void *p, int a);
 extern int Ov003_SceneStateFadeOut(void);

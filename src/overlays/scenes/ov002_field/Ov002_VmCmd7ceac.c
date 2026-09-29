@@ -9,6 +9,9 @@
  * a small, otherwise-inexplicable size gap in a generated member is more likely
  * a constant-initialised field than a codegen problem.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     short nField04;          /* +0x04 */
@@ -22,9 +25,6 @@ typedef struct {
     short nField16;          /* +0x16 */
 } Ov002EmitParams;          /* 0x18 */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov002_CreatePieceClass(int nCount, Ov002EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

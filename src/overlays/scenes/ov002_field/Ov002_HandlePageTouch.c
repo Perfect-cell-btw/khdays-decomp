@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*Ov002CueProc)(int nHandle);
 
@@ -50,7 +51,6 @@ extern Ov002CueCtx *data_ov002_0207f99c;
 
 extern void *NNS_FndGetNextListObject(void *pList, void *pObject);
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);
 
 void Ov002_HandlePageTouch(int nSlot, const Ov002TouchInput *pInput)

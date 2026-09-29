@@ -1,11 +1,7 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int QueryActiveStateOrDelegate(void);
-extern int *GetEntryField20ByIndex(int nPlayer);
-extern int func_02023c40(void);     /* frame-rate flag */
-extern int func_020208e0(void);
-extern int Session_GetLocalPlayerIndex(void);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nModel, int nValue);
 extern int FX_Sqrt(int v);
 extern int FX_Div(int a, int b);

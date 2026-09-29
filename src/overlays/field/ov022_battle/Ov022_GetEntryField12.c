@@ -1,6 +1,6 @@
 /* Returns the indexed player's HP (+0x12), or 0 when the player has no entry. */
 
-extern int GetEntryField20ByIndex();
+#include "game/engine.h"
 
 int Ov022_GetEntryField12(int arg0) {
     int e = GetEntryField20ByIndex(arg0);

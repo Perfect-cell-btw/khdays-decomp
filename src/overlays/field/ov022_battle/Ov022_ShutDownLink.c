@@ -3,13 +3,14 @@
  *
  * The handle loop counts UNSIGNED (blo), and the handle array is walked rather
  * than indexed. */
+
+#include "game/engine.h"
+
 extern void func_ov022_020831dc(void *ctx);
 extern void func_02023ad0(int handle);
 extern void Ov002_ReleaseAllSlotObjects(void);
 extern void Ov002_RetirePendingSlotEntries(void);
-extern void EntityMgr_PopVramState(void);
 extern void Ov002_TearDownContext(void);
-extern void SoundMgr_SetListenersEnabled(int slot);
 
 typedef struct {
     int reserved;

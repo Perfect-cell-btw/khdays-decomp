@@ -14,11 +14,12 @@
  * (name, unit); Ghidra's extra r2/r3 args are leftover-register phantoms.
  */
 
+#include "game/engine.h"
+
 typedef struct { int f0; unsigned char pad_04[0x30]; } SceneParam;
 
 extern int  OS_SPrintf(void *buf, const char *fmt, ...);
 extern void *Msg_OpenContainerAndReadHeader(void *name, int unit);
-extern void ZeroHalfThenFree(void *handle);
 extern void Ov008_LoadCharacterWeapon(void *dst, int sceneId, int slot);
 extern SceneParam data_ov008_0208e9c4[];
 extern char data_ov008_02090278[];

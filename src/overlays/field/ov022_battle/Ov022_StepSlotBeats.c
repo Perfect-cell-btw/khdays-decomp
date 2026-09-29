@@ -24,6 +24,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 #define BEAT_THRESHOLD 0x23000
 #define WAIT_HOLD 0x3000
@@ -108,7 +109,6 @@ extern void func_ov022_0208acdc(struct Ov022ReactionCtx *pCtx, struct Ov022Actio
                                 int nReaction);
 extern void func_ov022_0208a6b0(struct Ov022ReactionCtx *pCtx);
 extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
-extern int Session_IsReady(void);
 int Ov022_StepSlotBeats(struct Ov022ReactionCtx *pCtx, int nDelta)
 {
     struct Ov022ActionQuery reqLate;

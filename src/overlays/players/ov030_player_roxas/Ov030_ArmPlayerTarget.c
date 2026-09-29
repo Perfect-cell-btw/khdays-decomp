@@ -1,6 +1,7 @@
 /* Sets the local player's lock bits, stores the target and arms the tracking state. */
 
-extern int Session_GetLocalPlayerIndex();
+#include "game/engine.h"
+
 extern int Ov022_ActorSetState();
 
 int Ov030_ArmPlayerTarget(int *r0, int r1)

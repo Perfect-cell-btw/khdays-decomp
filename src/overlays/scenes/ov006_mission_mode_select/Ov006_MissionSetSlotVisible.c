@@ -2,7 +2,9 @@
  * The slot index lives at OBJ+0x96dc (negative = none) and the 0x8c-byte slot array starts
  * at OBJ+0x4b08; bit 2 of a slot's first word is its visible flag. The slot is registered
  * with or removed from the renderer list at OBJ+0x4a8c either way. */
-extern void Slot_SetFlagBit1(int list, int idx);
+
+#include "game/engine.h"
+
 extern void Slot_ClearFlagBit1(int list, int idx);
 extern int *data_ov006_02056664;
 

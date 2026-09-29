@@ -10,12 +10,12 @@
  * and FX_SinIdx as table[(idx >> 4) << 1]. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern int Ov174_FaceTargetGetClearance(int node, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int func_02020400(int a, int b);
 extern short data_0203d210[];
 

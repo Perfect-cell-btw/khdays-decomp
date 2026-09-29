@@ -1,8 +1,8 @@
 /* When the entity's track object id is free, forwards the track entry to it; returns whether it
  * did. */
 
-extern int Obj_IsIdFree();
-extern void TailForwardTrackEntry_2();
+#include "game/engine.h"
+
 int DispatchTrackEntryIfReady(int param_1, unsigned int param_2)
 {
     if (Obj_IsIdFree(*(int *)(*(int *)(*(int *)(param_1 + 0x128) + 0x28) + 0xc)) != 0) {

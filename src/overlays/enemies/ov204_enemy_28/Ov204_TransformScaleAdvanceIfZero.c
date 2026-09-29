@@ -1,8 +1,9 @@
 /* AI step: sets the velocity from the action resource's offset and scale in the actor's frame; once
  * the scale reaches zero installs the next step. */
 
+#include "game/engine.h"
+
 extern void ScaleVec3Fx12(int factor, void *src, void *dst);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Ov204_Action6IfHitFlagsSet(void);

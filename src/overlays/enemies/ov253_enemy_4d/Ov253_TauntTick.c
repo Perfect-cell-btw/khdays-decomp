@@ -4,11 +4,10 @@
  * random 4.0 and the node moves to 020d0ab8. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hpair { unsigned short a, b; };
 
-extern void func_02031384(int a, void *req, int b);
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct hpair data_ov253_020d4964[];
 extern void Ov253_TauntWaitTick(void);

@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov020Entity {
     char pad00[0x0c];
@@ -29,7 +30,6 @@ struct Ov020Entity {
 };
 
 extern struct Ov020Entity *Ov002_ClaimPoolEntry(int a, int b);
-extern void Projection_LoadDefaults(void *camera);
 extern void Ov002_PushBucketNode(int kind, struct Ov020Entity *entity);
 extern void Ov020_DrawEntity(void);
 

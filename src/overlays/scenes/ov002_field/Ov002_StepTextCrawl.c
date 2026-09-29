@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x48];
@@ -36,7 +37,6 @@ extern Ov002PanelContext *data_ov002_0207f614;
 
 extern u64 OS_GetTick(void);
 extern u64 func_02020374(u64 a, u64 b);
-extern int Obj_ForwardInnerPayload(int *pSurface, int nX, int nY, int nStyle, int nGlyph);
 extern void EnqueueObjGfxCommand(int *pSurface);
 extern void Ov002_RetuneAmbientEmitter(void);
 extern void Ov002_StartPanelFadeIn(void);

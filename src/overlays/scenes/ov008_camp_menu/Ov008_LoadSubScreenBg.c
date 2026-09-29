@@ -9,6 +9,7 @@
  * data_0204be18 is a char* global; `+ 0xee0` reads the pointer then adds the field offset. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;
@@ -24,7 +25,6 @@ extern void  Ov008_BuildMenuListFrom(void *anchor);
 extern int   Ov008_GetLocalPlayerStatC(int arg);
 extern u32   Ov008_PackSlotTag(int subfile);
 extern void *Archive_LoadFile(u32 handle, int heapId);
-extern void  Res_LoadSpriteSet(Ov008ResourceCell *cell, void *resource, int a, int b, int c);
 extern void  GXS_LoadBGPltt(const void *source, u32 offset, u32 size);
 extern void  GXS_LoadBG3Char(const void *source, u32 offset, u32 size);
 extern void  NNSi_FndFreeFromDefaultHeap(void *allocation);

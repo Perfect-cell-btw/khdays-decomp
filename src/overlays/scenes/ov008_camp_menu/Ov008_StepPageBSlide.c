@@ -8,6 +8,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008PageB {
     u8  pad_000[0x10];
@@ -30,7 +31,6 @@ extern Ov008PageB *Ov008_GetPageB(void);                 /* Ov008_GetPageB */
 extern int Ov008_IsEntryBusyOrInactive(void);                         /* Ov008_IsEntryBusyOrInactive */
 extern void Tween_Sample(void *pTween, int *pValue);         /* Tween_Sample */
 extern int Ov008_PageB_GetScrollRow(void);                         /* panel offset >> 12 */
-extern void SetMasterBrightnessSub(int nBrightness);                   /* SetMasterBrightnessSub */
 extern void Ov008_LoadMenuSubBg2(int nWhich);                  /* Ov008_LoadMenuSubBg2 */
 extern void Ov008_PageB_Redraw(void);
 extern void Ov008_PageB_StartScrollReset(void);

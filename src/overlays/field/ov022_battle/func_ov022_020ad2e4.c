@@ -1,8 +1,8 @@
 /* Places a state marker at the actor when it is the local player's and on the local player's side.
  */
 
-extern unsigned short Session_GetLocalPlayerIndex(void);
-extern unsigned short QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(unsigned int arg0);
 extern void Ov022_PlaceStateMarker(int arg0, unsigned int arg1, int arg2, int *arg3);
 

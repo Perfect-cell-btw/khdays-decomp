@@ -9,6 +9,8 @@
  * ARM.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     char pad000[0x94];
     int nNotice;
@@ -21,9 +23,7 @@ typedef struct {
 
 extern int data_ov002_0207f62c;
 
-extern int GameState_GetField(int nField, int nKind);
 extern void EnqueueObjGfxCommand(void *pCtx);
-extern void Draw_ScaledValue(void *pCtx, int nScreenBase, int a, int b, int c);
 
 extern int Ov002_ForwardToSubDc(int nCue);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);

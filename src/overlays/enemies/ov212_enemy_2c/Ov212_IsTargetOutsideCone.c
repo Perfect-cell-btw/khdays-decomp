@@ -14,11 +14,11 @@
  *    emits it, so it stays. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int *Ov107_FindNearestObject(int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int a, int b);
-extern int Fx_Acos(int c);
 extern short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)

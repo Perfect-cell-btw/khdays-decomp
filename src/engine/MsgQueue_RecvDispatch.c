@@ -15,10 +15,9 @@
  * ctx = data_0204c22c (the pool word holds the ctx pointer; used directly).
  */
 
+#include "game/engine.h"
+
 extern int *data_0204c22c;
-extern int Session_GetLocalPlayerIndex(void);
-extern void MsgQueue_MarkSlotReceived(unsigned int handle, unsigned int playerIndex, unsigned int bit);
-extern int MsgQueue_SendGate(int type, unsigned short *hdr, unsigned short size);
 
 typedef struct {
     unsigned char kind:2, ch:3, hi:3;

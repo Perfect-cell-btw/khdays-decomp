@@ -6,8 +6,8 @@
  * (K&R extern), which the ROM tests with `adds r0,r0,#0`. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov194_BeginSwing(void);
 

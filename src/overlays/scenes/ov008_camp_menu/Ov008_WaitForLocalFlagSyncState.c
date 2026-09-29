@@ -2,6 +2,7 @@
  * save slot widget and commits the page. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef union Ov008FlagsByte {
     u8 raw;
@@ -27,9 +28,7 @@ extern Ov008MenuContext *data_ov008_02090f00;
 
 extern void Ov008_UpdateMenuInput(void);
 extern int Ov008_Link_IsLocal(void);
-extern u32 Session_GetLocalPlayerIndex(void);
 extern void Ov008_RefreshSaveSlotWidget(int slot);
-extern void GameSession_SetSyncEnabled(int enabled);
 extern void Ov008_CommitSelectedPage(void);
 
 void *Ov008_WaitForLocalFlagSyncState(void)

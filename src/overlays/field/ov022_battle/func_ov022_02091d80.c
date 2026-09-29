@@ -1,8 +1,7 @@
 /* Sends an object state message (kind 9, sub-kind 1) with its owner, index and value when the
  * session is ready. */
 
-extern int Session_IsReady(void);
-extern unsigned short func_02031384(int a, void *b, int c);
+#include "game/engine.h"
 
 struct marshal_02091d80 {
     unsigned char f0 : 2;

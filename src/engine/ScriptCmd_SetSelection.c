@@ -1,7 +1,7 @@
 /* Script command: when ready stores the selection and applies it; returns 1. */
 
-extern int IsSubStructValidAndReady(void);
-extern void SetSelectionIfChanged(unsigned a);
+#include "game/engine.h"
+
 extern unsigned char data_020425e8;
 
 int ScriptCmd_SetSelection(int param_1, int param_2) {

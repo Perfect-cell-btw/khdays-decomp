@@ -1,6 +1,7 @@
 /* Once the stream has stopped, sets the title state to 5 and returns the title menu step. */
 
-extern int SoundStrm_HasPlaybackPos();
+#include "game/engine.h"
+
 extern int data_ov011_0205e960;
 extern void Ov011_TickTitleMenu();
 

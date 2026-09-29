@@ -1,6 +1,7 @@
 /* Commit menu item quantities and mission flags, then cap the mode-specific reward total. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct GameState {
     char opaque00[0x810];
@@ -35,11 +36,6 @@ extern GameState *data_0204be18;
 extern Ov005Context *data_ov005_0205b80c;
 extern Ov005Config data_ov005_0205b85c;
 extern u32 OVERLAY_28_ID[1];
-extern void GameState_SetFlag(u32);
-extern u32 GameState_GetField(u32,u32);
-extern void GameState_SetField(u32,u32,u32);
-extern void LoadOverlaySync(int,int);
-extern void UnloadOverlaySync(int,int);
 extern int Ov005_StartTouchSampling(void);
 extern int func_ov028_0208b3c0(int (*)(void));
 extern int func_ov028_0208b040(int (*)(void));

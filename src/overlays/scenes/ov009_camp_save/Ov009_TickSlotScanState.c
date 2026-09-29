@@ -2,6 +2,7 @@
  * the save menu's layout and text. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009GameState {
     int value0;
@@ -38,7 +39,6 @@ extern void *G2_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *dst, unsigned int size);
 extern void Ov009_InitResourceRecord(void *resource, const char *path);
 extern int Ov009_TickSaveSlotPrep(Ov009SaveContext *ctx, int slot);
-extern int GameState_GetField(int field, int kind);
 extern void Ov009_LoadMenuBgWithVariantChars(void);
 extern void Ov009_SaveMenu_BuildLayout(Ov009SaveContext *ctx);
 extern void Ov009_SaveMenu_BuildTextSurfaces(Ov009SaveContext *ctx);

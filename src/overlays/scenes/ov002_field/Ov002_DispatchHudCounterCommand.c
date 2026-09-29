@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef s64 (*Ov002EntrySampleFn)(void);
 
@@ -19,7 +20,6 @@ extern void Ov002_CreateAndRestoreHud(void);
 extern void Ov002_CreatePauseObjectOnce(void);
 extern u8 Ov002_AddPanelCounter(u64, int, Ov002EntrySampleFn);
 extern u8 Ov002_AddPanelValue(int);
-extern void GameState_SetField(int, int, unsigned int);
 extern s64 Ov002_GetStartTicks(void);
 extern s64 Ov002_GetEndTicks(void);
 extern s64 Ov002_GetTimeoutTicks(void);

@@ -29,6 +29,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define GRID_PAGES  3
 #define GRID_ROWS   8
@@ -162,7 +163,6 @@ extern void  NNS_FndInitList(NNSFndList *pList, int nLinkOffset);
 extern void  Ov025_InitRecordContext(Ov025GridSummary *pSummary, void *pHooks); /* init a summary */
 extern void  Ov025_BuildMenuGrid(Ov025GridSummary *pSummary, u32 *pCells, NNSFndList *pList, u16 *pGrid); /* fill the summary from a grid */
 extern void  Ov025_RebuildViewAndCountCells(Ov025GridSummary *pSummary, u32 *pCells, NNSFndList *pList); /* RebuildViewAndCountCells */
-extern u32   Session_GetLocalPlayerIndex(void);                                       /* Session_GetLocalPlayerIndex */
 extern SessionSlotInfo *Slot4_GetIfOccupied(int nSlot);                       /* Slot4_GetIfOccupied */
 extern void  Ov002_LoadCharacterWeapon(Ov025WeaponBuf *pOut, int nKind, int nWeaponId); /* Ov025_LoadCharacterWeapon */
 extern void  Ov025_GetPlayerSlotConfig(int *pOutValue, int *pOutKind);        /* read the player's slot config */

@@ -1,10 +1,11 @@
 /* Releases the 3x40 handle grid and every node of the list (DispatchByNodeKind on each), freeing
  * the nodes. */
 
+#include "game/engine.h"
+
 extern int NNS_FndRemoveListObject();
 extern int NNS_FndGetNextListObject();
 extern int NNSi_FndFreeFromDefaultHeap();
-extern int DispatchByNodeKind();
 
 void Ov069_ReleaseHandleGridAndList(int unused, int **a, int *b) {
     int i, j;

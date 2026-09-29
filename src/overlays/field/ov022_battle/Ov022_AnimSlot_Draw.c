@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct MtxFx33 {
     int value[9];
@@ -37,7 +38,6 @@ extern void MTX_RotY33_(MtxFx33 *matrix, int sine, int cosine);
 extern void Gfx_SubmitCachedCommandBlock(void);
 extern void GX_SendFifoWords(unsigned int command, const void *source,
                           unsigned int wordCount);
-extern void Obj_InitChannelsAndRun(void *object);
 
 extern VecFx32 data_02047458;
 extern s16 data_0203d210[];

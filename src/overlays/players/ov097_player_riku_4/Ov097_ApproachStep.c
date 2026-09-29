@@ -22,10 +22,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(char *self);
 extern VecFx32 *func_ov022_020ad0c0(char *self);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -39,7 +39,6 @@ extern int Ov022_IsSlotReady(char *chan);
 extern int Ov022_IsState9Or6WithFlag200(char *chan);
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(char *self);
 extern void func_ov022_020acf14(char *self, int a);
-extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 
 void *Ov097_ApproachStep(char *self)

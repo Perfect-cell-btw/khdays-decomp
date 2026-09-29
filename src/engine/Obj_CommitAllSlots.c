@@ -1,6 +1,6 @@
 /* Flushes the object's OAM buffer and resets its slot count. */
 
-extern void OamBuffer_Flush(void *p, int x);
+#include "game/engine.h"
 
 void Obj_CommitAllSlots(char *arg0) {
     OamBuffer_Flush(arg0, 0);

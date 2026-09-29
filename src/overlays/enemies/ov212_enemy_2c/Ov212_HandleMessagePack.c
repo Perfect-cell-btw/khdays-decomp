@@ -7,13 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
 struct b2 { int b0 : 1, b1 : 1; };
 struct Items { char pad[0x38c]; char *items[16]; };
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, const VecFx32 *in);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_AiState_SendPose(int self, unsigned char *msg, int arg);
 

@@ -1,6 +1,7 @@
 /* Transforms the hit shape (sphere, capsule or box) into world space and refreshes its bounds. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 static inline fx32 FX_Mul(fx32 a, fx32 b) {
     return (int)(((long long)a * b + 0x800) >> 12);
@@ -21,7 +22,6 @@ typedef struct {
 
 extern void Obj_LocalToWorld(VecFx32 *out, XformObj *obj, VecFx32 *in);
 extern void SphereToAABB(int *dst, int *src);
-extern void Vec3TransformViaTempMtx(VecFx32 *in_vec, XformObj *unused, VecFx32 *out_vec);
 extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void Capsule_GetBounds(int *dst, VecFx32 *src);

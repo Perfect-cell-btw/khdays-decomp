@@ -8,14 +8,13 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
 extern int Ov119_PickBestFacingTarget(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int RandNextScaled(int n);
-extern void QuatFromAxisAngle(void *q, const VecFx32 *axis, int angle);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042264;
 extern void Ov119_HoverTick(int *node);

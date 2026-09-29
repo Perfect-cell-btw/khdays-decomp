@@ -6,6 +6,7 @@
  * (Ov025_SetGlobalConfigAndInit 02084830) and the confirm sound plays (02033b78 0 / 1). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];
@@ -53,11 +54,8 @@ typedef struct Ov025ScrollList {
     int  nKnobMax;            /* 0x2e4 */
 } Ov025ScrollList;            /* 0x2e8: the day list view of page B (Ov025_GetPageB) */
 
-extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
-extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
 extern void  Ov025_SetCtxFields9638And963a(int nMission, int nDay);           /* Ov025_SetCtxFields9638And963a */
 extern void  Ov025_SetGlobalConfigAndInit(int nEntry);                       /* Ov025_SetGlobalConfigAndInit */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 
 void Ov025_ScrollList_Confirm(Ov025ScrollList *pList)
 {

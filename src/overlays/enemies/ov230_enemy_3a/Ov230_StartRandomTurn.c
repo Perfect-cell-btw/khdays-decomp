@@ -1,7 +1,9 @@
 /* If the "can retarget" hw60 bit 0 is set, roll a new random turn duration into node[4], enter the
  * turn state (1) and register the think callback. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov230_StartRandomTurn(int param_1) {

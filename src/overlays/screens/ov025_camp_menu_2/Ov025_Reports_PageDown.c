@@ -11,6 +11,7 @@
  * Ov025_Reports_PageUp (s16 old window position, nTop / nCursor / nOldTop order, d before nLast). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */
@@ -65,7 +66,6 @@ extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA
 extern u16   data_0204c18c;                                         /* held keys */
 extern void  Ov025_Reports_HighlightRows(void);                             /* Ov025_Reports_HighlightRows */
 extern u32   Ov025_QueryItemFlags(u32 nItem, u32 bSet);              /* Ov025_QueryItemFlags */
-extern void  PlaySound(int nSound, int nArg);                   /* PlaySound */
 extern void  Ov025_Reports_RefreshCurrentEntry(void);                             /* Ov025_Reports_RefreshRows */
 
 void Ov025_Reports_PageDown(void)

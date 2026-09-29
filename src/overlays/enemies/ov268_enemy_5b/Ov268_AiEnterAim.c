@@ -1,6 +1,8 @@
 /* Clear +0x2c, pick a landing point at (child)+0x3c = base(+0x224) + rand(|+0x228 - +0x224| + 1),
  * play the anim (ov107 mode 9) and register the handler. */
-extern int RandNextScaled(int a);
+
+#include "game/engine.h"
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov268_AiAimStart(int);

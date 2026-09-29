@@ -1,8 +1,10 @@
 /* Only when bit 0 of the u16 flags low byte at *(obj)+0x60 is set: copy the sub-state from
  * *(obj)+0x1c9 into +0x1c7, pick a landing point at (child)+0x6c = base(+0x224) +
  * rand(|+0x228 - +0x224| + 1) and dispatch with no handler. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
-extern int RandNextScaled(int a);
 extern int SetIndexedSlot(int a, int b, void *handler);
 void Ov210_AiStep_ResumeStoredAction(int param_1) {
     int child = *(int *)(param_1 + 4);

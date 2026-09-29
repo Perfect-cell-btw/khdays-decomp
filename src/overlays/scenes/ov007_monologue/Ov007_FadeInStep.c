@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern void SetMasterBrightnessMain(int level);
 extern void Ov007_CopyLine(void *root);
 extern int Ov007_TextWindowFadeIn(void);
 

@@ -1,7 +1,7 @@
 /* Host only: forwards a value to a player's actor. */
 
-extern short Session_GetLocalPlayerIndex(void);
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 extern void func_ov022_020ad838(int arg0, int arg1);
 void func_ov022_020888b8(int arg0, int arg1) {
     int e;

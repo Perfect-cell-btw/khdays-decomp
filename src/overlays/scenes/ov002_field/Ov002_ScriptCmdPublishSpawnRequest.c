@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     short kind;
@@ -27,12 +28,8 @@ typedef struct {
     VecFx32 vPos;                   /* +0x08 */
 } Ov002SessionSpawnCmd;             /* 0x14 */
 
-extern int ScriptVm_ReadOperandInt(void *pContext, OperandSlot *pOperand);
-extern int ScriptVm_ReadOperandFx32(void *pContext, OperandSlot *pOperand);
-extern short Session_GetLocalPlayerIndex(void);
 extern int Ov002_TakeEntryOfKind1(void);
 extern int Ov002_FindKeyEntryIndex(int nKey);
-extern int Session_RandNextScaled(int nRange);
 extern void Ov002_BuildSessionCommand(int nKind, void *pCmd);
 
 /* Script command: read a spawn request out of the command's operands and, on

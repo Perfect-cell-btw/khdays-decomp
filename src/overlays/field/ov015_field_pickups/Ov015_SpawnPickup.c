@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov015PickupKindRow {
     void *pHandlers;          /* 0x00: class handler block of the kind */
@@ -78,8 +79,6 @@ extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern int   Ov002_PlaceElementNode(void *pPiece, void *pNode, int *pPlace, int nSlot, int nKind,
                                  int nParamA, int nParamB, int nParamC, int nFacing, int nFlag); /* place the node */
 extern void  Ov002_BuildSpawnPosition(VecFx32 *pOut, VecFx32 *pPos, int *pPlace);  /* start position */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);                 /* Actor_SetVecAndSyncChild */
-extern u32   RandNextScaled(u32 nRange);                                      /* RandNextScaled */
 extern void  MIi_CpuClear16(u16 nData, void *pDst, u32 nSize);
 extern void  Ov002_PushBucketNode(int nBucket, Ov015Pickup *pPiece);          /* register the piece */
 

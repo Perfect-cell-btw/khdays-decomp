@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define DB_ITEM_LISTS 0x16
 #define DB_SLOT_LISTS 0xe
@@ -41,8 +42,6 @@ typedef struct GameState {
 } GameState;
 
 extern GameState *data_0204be18;
-extern void MsgDb_FetchRecord(Ov008ItemListRecord **ppRecord, int nDbId, int nIndex, int nSlot); /* MsgDb_FetchRecord */
-extern void DispatchByNodeKind(Ov008ItemListRecord **ppRecord);                    /* release the record */
 extern char Ov025_CountGridEntriesForOwner(Ov008MessageCacheContextView *pCtx, int nItemId); /* Ov008_CountGridEntriesForOwner */
 
 Ov008Message15Record *Ov025_FindBestSpareItemForNode(Ov008MessageCacheContextView *pCtx, Ov008TrackedNode *pNode)

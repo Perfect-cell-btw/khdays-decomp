@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005ThresholdRecord {
     char header[12];
@@ -21,12 +22,6 @@ typedef struct Ov005GaugeRange {
     int maximum;
     int value;
 } Ov005GaugeRange;
-
-extern int MsgDb_LoadDb(int database, int heap);
-extern int MsgDb_FetchRecord(Ov005ThresholdRecord **record, int database,
-                       unsigned int index, int heap);
-extern int DispatchByNodeKind(Ov005ThresholdRecord **record);
-extern int ResSlot_Release_2(int database);
 
 void Ov005_CalculateGaugeRange(Ov005GaugeRange *range, int score)
 {

@@ -5,6 +5,9 @@
  * actor radius (+0x80) and 0.25 above the target's +0x78 height is the hover target, eased into
  * +0x10 by a tenth while the +0x13c height is valid. The surface gap decides the next pose:
  * with the +0x6c wait spent, 6 beyond 3.5 else 7; otherwise 6 beyond 8.0 or 7 within 1.0. */
+
+#include "game/engine.h"
+
 struct v3 { int x, y, z; };
 
 static inline int FX_Mul(int a, int b) {
@@ -19,7 +22,6 @@ extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
 extern int  func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(void *dst, void *k, int angle);
 extern struct v3 data_02042258;
 extern int  data_02042264;
 extern const short data_0203d210[];

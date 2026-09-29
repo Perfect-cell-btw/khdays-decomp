@@ -3,8 +3,8 @@
  * and seed a random taunt duration (3 + d1) at +0x2d; then register the think callback. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov238_AiWalkStep(void);
 

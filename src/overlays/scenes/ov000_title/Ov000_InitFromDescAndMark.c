@@ -1,6 +1,6 @@
 /* Inits the node from its descriptor and sets flag bit 2 (+0x4a7c). */
 
-extern int ObjNode_InitFromDesc();
+#include "game/engine.h"
 
 void Ov000_InitFromDescAndMark(char *p, int *desc)
 {

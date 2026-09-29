@@ -1,7 +1,7 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *mtx, VecFx32 *in);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *c);
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, void *d);

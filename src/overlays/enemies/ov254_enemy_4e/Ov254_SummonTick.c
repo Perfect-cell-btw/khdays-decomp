@@ -10,12 +10,12 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int RandNextScaled(int n);
 extern void Ov254_InvokeHookAndRearm(int helper, void *from, VecFx32 *to);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov254_PanelYForPhase(int *state, int a);

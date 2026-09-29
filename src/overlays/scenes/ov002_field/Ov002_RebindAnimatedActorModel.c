@@ -1,7 +1,6 @@
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern int GameState_GetField(int id, int kind);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
-extern void Actor_SetBindingByte(void *p, int i, unsigned char v);
 
 static inline int Ov002_IsAnimated(unsigned short id, unsigned char kind) {
     return (GameState_GetField(id, kind) & 1) != 0;

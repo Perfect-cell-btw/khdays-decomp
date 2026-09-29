@@ -1,7 +1,8 @@
 /* Menu entry widget 1 callback: sets target slot 2 (-1) and plays sound 0. */
 
+#include "game/engine.h"
+
 extern int Ov025_SetTargetSlot();
-extern int PlaySound();
 
 void Ov025_MenuEntry_SetSlot2AndBeep(void) {
     Ov025_SetTargetSlot(2, -1);

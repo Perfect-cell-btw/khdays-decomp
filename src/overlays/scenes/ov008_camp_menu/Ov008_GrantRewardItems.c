@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define ITEM_COUNT_MAX  99
 #define FLAG_ITEM_OWNED 0x4db
@@ -20,7 +21,6 @@ typedef struct GameState {
 } GameState;
 
 extern GameState *data_0204be18;                                       /* g_pTallySource */
-extern void GameState_SetFlag(int nFlag);                                  /* GameState_SetFlag */
 
 static inline void Ov008_AddItemCount(int nItem, int nCount)
 {

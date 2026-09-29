@@ -1,10 +1,10 @@
 /* Ov008_ResetMissionSlotState -- reset the ov008 mission-slot state and set its mode word (obj+2):
  * mode 2 only when the shared flag, Session_IsActive and NOT Session_IsReady all agree; otherwise 1. */
+
+#include "game/engine.h"
+
 extern int  Ov008_GetMenuContext(void);
 extern void MI_CpuFill8(void *dst, int val, unsigned int size);
-extern int  Session_Exists(void);
-extern int  Session_IsActive(void);
-extern int  Session_IsReady(void);
 
 void Ov008_ResetMissionSlotState(void) {
     int *obj = (int *)Ov008_GetMenuContext();

@@ -18,7 +18,8 @@
  *    only this one shows the difference.)
  *  - `int r` must be declared BEFORE the pointer, which colours r->r4 and p->r5 as the ROM does.
  */
-extern int Session_IsReady(void);
+
+#include "game/engine.h"
 
 int Ov022_ShouldForceState(int obj) {
     int r = 0;

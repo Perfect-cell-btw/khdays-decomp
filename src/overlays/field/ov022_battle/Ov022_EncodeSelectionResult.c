@@ -2,6 +2,7 @@
  * the selected part (or the element kind and index for sources). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022Candidate {
     u16 field00;
@@ -29,7 +30,6 @@ typedef struct Ov022SelectionResult {
 } Ov022SelectionResult;
 
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 extern void Ov002_GetElementKindAndIndex(void *source, u8 *output,
                                 u16 *resolvedValue);
 

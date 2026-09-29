@@ -2,6 +2,7 @@
 /* One entry of the tally at the tail of the result. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 wId;                /* 0x00 */
@@ -50,16 +51,10 @@ extern char data_0204c254[];            /* g_ov002PanelThresholds */
 extern Ov002MissionResult data_0204c32c;
 
 extern char *NNSi_FndGetCurrentRootHeap(void);  /* the heap the overlay context lives in */
-extern int Session_GetLocalPlayerIndex(void);                 /* Session_GetLocalPlayerIndex */
 extern void Ov002_FetchPanelMetric(char *pOut);    /* Ov002_FetchPanelMetric */
 extern int Ov002_ScaleValueByModifiers(int nSeat, int nValue);   /* scale by the modifiers */
 extern u64 Ov002_GetTimeoutTicks(void);           /* the configured timeout, in ticks */
-extern int GameState_IsFlagSet(int nFlag);            /* GameState_IsFlagSet */
-extern int GameState_GetField(int nField, int nWidth);            /* GameState_GetField */
-extern void GameState_SetField(int nField, int nWidth, int nVal); /* GameState_SetField */
-extern void ClearGlobalShort4(void);                /* reset the slot cursor */
 extern u16 *Slot_GetEntryIfCounted(int nSeat, int nIndex);   /* one slot entry, or null */
-extern void func_02035a34(int nRecord);         /* clear a record's slot ids */
 
 /* Fills the mission result the results screen reads back in ov005.
  *

@@ -9,11 +9,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int Anim_GetLengthQ12(void *animation, int track);                 /* Anim_GetLengthQ12 */
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov100_020bc1c0;
 

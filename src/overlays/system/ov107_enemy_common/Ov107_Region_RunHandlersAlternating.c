@@ -1,5 +1,7 @@
 /* Runs every child's handler, alternating forward and backward order each frame. */
 
+#include "game/engine.h"
+
 typedef struct HandlerObj {
     char pad[0x20];
     void (*handler)(struct HandlerObj *self);
@@ -13,7 +15,6 @@ typedef struct Ov107 {
 } Ov107;
 
 extern ListItem List_First(void *list);
-extern ListItem List_Next(void *list);
 extern ListItem List_Last(void *list);
 extern ListItem List_Prev(void *list);
 

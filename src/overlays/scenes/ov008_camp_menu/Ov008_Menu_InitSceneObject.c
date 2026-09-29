@@ -1,15 +1,13 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int  MI_CpuFill8(void *dest, int data, int size);
-extern int  func_02023c40(void);
-extern void Projection_LoadDefaults(void *obj);
 extern void Ov008_InitLayoutMetrics(int *obj);
 extern void Camera_CommitMatrices(void *obj);
 extern void NNS_GfdGetFrmTexVramState(void *p);
 extern void GFXi_SaveStateTo(void *p);
 extern int  OS_SPrintf(void *buf, const char *fmt, ...);
-extern void RegisterSeqAndInit(void *seq, void *fmtbuf, int c, int d);
 extern void BindAnimTrack(void *seq, int b, void *track, int d);
 extern void NNS_G3dRenderObjSetCallBack(int a, int b, int c, int d, int e);
 extern void Ov008_Menu_LoadSceneText(int obj, int sceneId, int c);

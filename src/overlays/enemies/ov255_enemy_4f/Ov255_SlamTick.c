@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 lo; u16 hi; } Cmd4;
@@ -29,7 +30,6 @@ extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042264;
@@ -38,7 +38,6 @@ extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov255_020d2b7c;
 extern const Cmd4 data_ov255_020d2b20[];
-extern int RandNextScaled(int n);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 

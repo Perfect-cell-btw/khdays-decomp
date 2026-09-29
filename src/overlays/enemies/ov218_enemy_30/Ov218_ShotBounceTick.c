@@ -9,6 +9,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Bit17a { unsigned char b0 : 1, b1 : 1; };
 struct W8 { unsigned int lo : 8; };
@@ -17,7 +18,6 @@ struct Hw60 { unsigned short lo : 8, hi : 8; };
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int *List_First(void *list);
-extern int *List_Next(void *list);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int Ov107_FindEntityHitBySphere(int owner, VecFx32 *at, int *out);

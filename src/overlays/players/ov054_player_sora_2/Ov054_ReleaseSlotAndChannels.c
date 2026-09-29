@@ -1,7 +1,8 @@
 /* Releases the table slot and frees the sub-object channels. */
 
+#include "game/engine.h"
+
 extern void *data_ov054_020b74a0;
-extern void ReleaseField74AndCleanup(void *p);
 extern void Ov054_freeSubObjectChannels(char *a);
 
 void Ov054_ReleaseSlotAndChannels(char *a) {

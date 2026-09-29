@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016Follower {
     u8 pad_000[0x10];
@@ -46,11 +47,8 @@ extern void Ov016_AdvanceFrame(Ov016Follower *pSelf);
 extern VecFx32 *func_ov022_020881f8(int nSeat);               /* where the seat is */
 extern unsigned short  func_ov022_02088254(int nSeat);                   /* the seat's facing */
 extern int  func_02020400(int nNumerator, int nDenominator);  /* _s32_div_f */
-extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);   /* Actor_SetVecAndSyncChild */
 extern int  Ov002_GetModuleScale(void);                        /* frame delta */
 extern int  Ov016_FollowerCheckPieces(Ov016Follower *pSelf, VecFx32 *pFrom, VecFx32 *pAt);
-extern int  GameState_GetField(int nField, int nBit);               /* GameState_GetField */
-extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);   /* GameState_SetField */
 extern void Ov016_FollowerComplete(Ov016Follower *pSelf);
 extern const short data_0203d210[];                           /* FX_SinCosTable_ */
 

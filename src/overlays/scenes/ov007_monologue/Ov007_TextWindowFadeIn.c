@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern void Text_DrawDirectional(int a, int b, int c, int d, int e, int f);
 extern void Text_UploadTileBuffer(void *p);
 extern int Ov007_AdvanceTextLine(void);
 extern unsigned short data_0204c190;

@@ -3,9 +3,11 @@
  * pending dialog and run the setup, handing back the step at
  * Ov002_TeardownGameplayScene. NNSi_FndGetCurrentRootHeap is called for its side effect
  * only -- the ROM discards r0. */
+
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_TickSessionRequest(void);
-extern void SetGameMode(int a);
 extern void Ov002_UpdatePartyEntries(void);
 extern void Ov002_TeardownGameplayScene(void);
 

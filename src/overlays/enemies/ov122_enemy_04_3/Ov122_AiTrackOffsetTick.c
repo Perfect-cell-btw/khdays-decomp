@@ -1,9 +1,9 @@
 /* Transforms the offset through the owner's matrix and scales it. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(void *src, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *base, void *vec);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void SetIndexedSlot(void *node, int idx, void *next);
 extern void Ov122_CopyVecThenSetupSubActionAndAdvance(void);

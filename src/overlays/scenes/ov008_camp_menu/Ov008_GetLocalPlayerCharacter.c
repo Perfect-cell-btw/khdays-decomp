@@ -1,6 +1,7 @@
 /* Character index of the local player's slot, or 0. */
 
-extern int Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern int *Slot4_GetIfOccupied(int);
 int Ov008_GetLocalPlayerCharacter(void)
 {

@@ -4,11 +4,10 @@
  * the original. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(Quat *a, Quat *out, Quat *b);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);

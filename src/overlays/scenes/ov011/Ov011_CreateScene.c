@@ -18,6 +18,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 typedef void (*Ov011StateFn)(void);
@@ -73,13 +74,9 @@ extern const char data_ov011_0205e8e4[];
 extern const u8 data_ov011_0205e8f0[];
 
 extern Ov011Scene *NNSi_FndGetCurrentRootHeap(void);
-extern void LoadOverlaySync(int processor, FSOverlayID overlayId);
 extern void MI_CpuFill8(void *destination, int value, u32 size);
-extern int GameState_SetFlag(int handlerId);
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
 extern void Ov024_MobiClip_InstallStreamSourceVtbl(Ov011StreamInterface *stream);
-extern void SetMasterBrightnessMain(int brightness);
-extern void SetMasterBrightnessSub(int brightness);
 extern void Ov011_TickMoviePlaybackState(void);
 
 Ov011StateFn Ov011_CreateScene(int nArg)

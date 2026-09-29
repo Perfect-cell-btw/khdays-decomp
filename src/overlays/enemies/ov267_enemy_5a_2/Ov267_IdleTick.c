@@ -28,6 +28,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov267_IsState6cActive(int *ctx, int a);
 extern int Ov267_CheckState6c(int *ctx, int a);
@@ -36,7 +37,6 @@ extern int Ov267_ChooseMove(int self, int dist);
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int slot, void *cb);
 
 void Ov267_IdleTick(int self) {

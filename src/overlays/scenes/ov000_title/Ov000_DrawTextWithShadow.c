@@ -2,18 +2,12 @@
  * in the requested colour. The style (colour + flags) arrives as a by-value struct, which is why
  * the two words are read from the stack rather than held in registers. */
 
+#include "game/engine.h"
+
 typedef struct {
     int color;
     unsigned int flags;
 } DrawTextStyle;
-
-extern void Text_DrawDirectional_2(
-    int context,
-    int x,
-    int y,
-    int color,
-    unsigned int flags,
-    int textHandle);
 
 void Ov000_DrawTextWithShadow(
     int context,

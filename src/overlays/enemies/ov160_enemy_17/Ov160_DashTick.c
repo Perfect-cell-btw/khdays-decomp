@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
@@ -40,7 +41,6 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *v);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int item, Segment *query, int *results);
 extern int Ov107_InvokeHitCallback(int ent, int actor, int item, int mode, const VecFx32 *dir, int flag);
@@ -52,7 +52,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
-extern void Vec4_Normalize(Quat *out, Quat *in);
 extern void Ov107_BuildAndSendUpdate(int item, int id, int mode, void *at);
 extern const VecFx32 data_02042258;
 extern const VecFx32 data_02041dc8;

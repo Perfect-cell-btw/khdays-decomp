@@ -10,6 +10,7 @@
  * random rearm is the Ov178_CircleTick spelling. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -18,9 +19,7 @@ extern int FX_Sqrt(int x);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern const VecFx32 data_02042258;
 

@@ -13,6 +13,7 @@
  * so both read as zero-arg calls here. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct W4 { u32 a, b, c, d; } W4;
 typedef struct Point { int x, y; } Point;
@@ -37,8 +38,6 @@ extern void  Ov008_ReleaseTwoSlotsEx(int obj, int entry, int n);
 extern void  Ov008_SetEntrySlotsVisible(int obj, int entry, int n);
 extern void  Ov008_PushSubitemSet(int obj, int entry, int n);
 extern void  Ov008_ResolveEntryStoreWord(int obj, int id, void *fn);
-extern int   Session_Exists(void);
-extern int   Session_IsActive(void);
 extern void  MI_CpuCopy8(void *dst, void *src, int n);
 
 void Ov008_LayoutMissionEntries(int ctx)

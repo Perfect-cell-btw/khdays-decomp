@@ -15,11 +15,12 @@
  * feeding the 64-bit multiply is bound to its own local, or the multiply's two
  * operands come out the other way round.
  */
+
+#include "game/engine.h"
+
 extern char data_ov002_0207e76c[];
 extern int data_ov002_0207e764[];
 
-extern int QueryActiveStateOrDelegate(void);
-extern int GetEntryField20ByIndex(int nId);
 extern int FX_Div(int nNumerator, int nDenominator);
 
 int Ov002_GetCameraDistance(int nIndex) {

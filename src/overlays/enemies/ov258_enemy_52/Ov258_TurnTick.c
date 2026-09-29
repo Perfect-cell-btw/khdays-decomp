@@ -6,14 +6,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Ov258Vortex { char pad[0x428]; int time; };
 
 extern void Ov258_VortexPull(int *node);
 extern int Ov258_AngleTo(int *node, VecFx32 *dir, int angle, int absolute);
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;

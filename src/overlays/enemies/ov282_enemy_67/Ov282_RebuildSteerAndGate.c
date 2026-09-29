@@ -5,8 +5,10 @@
  * by factor (01ffa724). While the sub-node byte *(u8)state[3] is still set, return; once idle mark
  * *(*state+0x1c7)=0xf and hand off via 0203c634 (cb=0).
  */
+
+#include "game/engine.h"
+
 extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void SetIndexedSlot(int self, int idx, int cb);
 

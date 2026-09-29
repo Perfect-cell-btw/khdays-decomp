@@ -22,6 +22,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000SaveSlot {
     u8  pad_00[0x10];
@@ -63,7 +64,6 @@ typedef struct Ov000MenuContextB {
 extern Ov000MenuContext *data_ov000_0205ac24;
 extern u16 data_0204c190;
 
-extern void PlaySound(int a, int id);
 extern void Ov000_PushSubWidgetValue(int a);
 extern u64  OS_GetTick(void);
 extern void Ov000_PlaceCursorByMode(int mode, int page);

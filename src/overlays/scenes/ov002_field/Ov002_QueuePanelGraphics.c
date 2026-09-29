@@ -20,6 +20,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002DayClock {
     unsigned char nFlags;
@@ -36,7 +37,6 @@ extern short Ov002_Field_GetHalf84(void);
 extern char *Ov002_MakePrimaryVramKey(unsigned int nId);
 extern char *Ov002_MakeSecondaryVramKey(unsigned int nId);
 extern void Ov002_AppendEntry(char *pKey, void *pCallback, int nFlag);
-extern int GameState_GetField(int nWho, int nField);
 extern void Ov002_ConfirmSaveSlot(void);
 extern void Ov002_ShowSlotSummary(void);
 extern void Ov002_ShowPageSpread(void);

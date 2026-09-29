@@ -1,15 +1,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void *Ov002_LookupChannelEntry(char *pChannel);
-extern void Entity_Register(char *pObj, void *pEntry, int nA, int nB);
-extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern int Ov002_GetLastPositiveSlotValue(char *pNode);
-extern int GameState_GetField(int nId, int nSlot);
 extern void Ov002_ElementRetire(char *pElement);
-extern void Obj_SetFlagBit3(char *pObj, int bOn);
-extern void Res_RequestIdPair(int nId);
 
 /* Bring a timed element on screen.
  *

@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_IsLocalPlayerCurrent(void);
 extern int Ov002_Hud_IsPanelOpen(void);
-extern int Session_IsReady(void);
 extern int Ov002_HasLinkIdAssigned(void);
 extern void Ov002_StepSessionEvent(void);
 

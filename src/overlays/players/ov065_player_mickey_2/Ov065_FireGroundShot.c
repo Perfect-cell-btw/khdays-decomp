@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct {
@@ -22,7 +23,6 @@ extern void MTX_RotY33_(Mtx33 *m, int s, int c);
 extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern char *EntityMgr_RunRayCast(unsigned int mask, VecFx32 *from, VecFx32 *dir, void *node);
-extern void Vec3ScaleAddQ27(int t, const VecFx32 *dir, const VecFx32 *from, VecFx32 *out);   /* Vec3ScaleAddQ27 */
 extern void Ov022_SendPlacementMessage(char *self, Params *p);
 extern char *data_ov065_020b7340;
 extern short data_0203d210[];

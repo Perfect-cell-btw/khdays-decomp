@@ -1,6 +1,6 @@
 /* Releases the object's eight child model instances. */
 
-extern void ReleaseField74AndCleanup(void *p);
+#include "game/engine.h"
 
 struct Sub { char data[0x170]; };
 

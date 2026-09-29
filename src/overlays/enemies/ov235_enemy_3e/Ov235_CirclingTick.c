@@ -11,6 +11,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 lo; u16 hi; } Cmd4;
@@ -19,7 +20,6 @@ extern const Cmd4 data_ov235_020d24d0[];
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

@@ -1,8 +1,8 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
-extern int RandNextScaled(int bound);
 
 void Ov008_MissionResolveDuplicateIds(void) {
     int i = 0;

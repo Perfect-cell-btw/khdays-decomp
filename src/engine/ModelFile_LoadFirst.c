@@ -4,6 +4,7 @@
 #pragma thumb on
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 revision;
@@ -25,8 +26,6 @@ typedef struct {
 } NNSG3dResMdlSet;
 
 extern void *Archive_LoadFile(const char *path, int heap);
-extern void InstallHandlerPairByFlag(int flag);
-extern void G3dRes_DefaultSetup(void *file);
 extern NNSG3dResMdlSet *NNS_G3dGetMdlSet(void *file);   /* NNS_G3dGetMdlSet */
 extern void NNS_G3dMdlSetMdlLightEnableFlag(void *mdl, int a, int b);
 extern void *data_0204c20c[];

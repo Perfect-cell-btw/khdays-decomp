@@ -1,7 +1,8 @@
 /* Fire the entry's owner hook once, then latch bit 1 at +0x12 so it never fires
  * again. Skipped entirely when the gate at +0x14/+0x16 reports the entry is not
  * eligible -- only bit 0 of that answer counts. */
-extern int GameState_GetField(int key, int kind);
+
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x10];

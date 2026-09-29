@@ -5,11 +5,10 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct LowByte32 { unsigned bits : 8; };
 
-extern int RandNextScaled(int range);
-extern unsigned int Rand16NextScaled(unsigned int range);
 extern int Ov298_AcquireTargetGapAndAngle(void *node);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);

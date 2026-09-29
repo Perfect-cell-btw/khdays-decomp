@@ -4,11 +4,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef int (*ActorHook)(int actor);
 typedef void (*ActorFinishHook)(int actor, int mode);
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(void *state);
 extern int Ov022_ActorSetState(int actor, int mode);

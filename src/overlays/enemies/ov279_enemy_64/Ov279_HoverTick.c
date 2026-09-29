@@ -6,11 +6,11 @@
  * once the +0x50 delay runs out the tick hands over to Ov279_AiStep_PickLandingPoint. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov279_PickBestFacingTarget(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

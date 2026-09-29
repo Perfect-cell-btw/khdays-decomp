@@ -2,8 +2,9 @@
  * If the UI container is loaded (heap+0x608), detaches its root cell from the object manager
  * (Obj_Release on heap+0x60c), frees the container (ZeroHalfThenFree), and clears both the
  * container slot (heap+0x608) and the root-cell handle (heap+0x5044). */
-extern void  Obj_Release(int *mgr);
-extern void  ZeroHalfThenFree(void *p);
+
+#include "game/engine.h"
+
 extern char *data_ov008_02090f00;
 
 void Ov008_ReleaseMenuUi(void) {

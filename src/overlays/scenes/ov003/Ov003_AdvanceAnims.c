@@ -1,7 +1,8 @@
 /* Advances the result characters' animations, rebinding each finished one to its idle or victory
  * pose. */
 
-extern unsigned int BuildSlotMask(int p, int a);
+#include "game/engine.h"
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Sequence_UpdateTracks(void *p, int a);
 

@@ -6,10 +6,12 @@
  * goes to phase 2; 2 advances and, when done, rebinds in mode 2 (1 without the flag) into
  * phase 3; 3 only advances; 4 advances and on completion releases the sound into phase 1; 5
  * advances into phase 6. */
+
+#include "game/engine.h"
+
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                /* Anim_SetFrameWrapped */
 extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
-extern void SoundSeqHandle_Stop(int handle);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
 

@@ -1,7 +1,8 @@
+#include "game/engine.h"
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov000_List_GetState(void);
 extern void func_02023ad0(int h);
-extern void Gfx_Reset2DEngines(void);
 extern int Ov000_FreshBootGfxSetup(int a);
 extern int data_ov000_0205ac20;
 

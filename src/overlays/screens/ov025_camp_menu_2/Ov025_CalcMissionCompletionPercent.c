@@ -3,6 +3,7 @@
  * not consume it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     const u8 *resourcePath;
@@ -27,7 +28,6 @@ extern void Ov025_InitObjectWithList(Ov008MissionListState *list,
 extern Ov008MissionListEntry *Ov025_FindListObjectWithField10Zero(Ov008MissionListState *list,
                                                   Ov008MissionListEntry *entry);
 extern void Ov025_DestroyMissionList(Ov008MissionListState *list);
-extern int GameState_GetField(int field, int selector);
 extern int func_02020400(int numerator, int denominator);
 
 u16 Ov025_CalcMissionCompletionPercent(void *menuState)

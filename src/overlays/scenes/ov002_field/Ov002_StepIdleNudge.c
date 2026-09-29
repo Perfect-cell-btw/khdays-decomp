@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002IdleNudge {
     u8 nFlags;
@@ -31,15 +32,10 @@ typedef struct Ov002RootContext {
 
 extern Ov002RootContext *data_ov002_0207fa00;
 
-extern int GameState_IsFlagSet(int nFlagId);
 extern int Ov002_IsSessionOpen(void);
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov002_GetRootField8b68(int nIndex);
-extern int func_02023c40(void);
 extern int Ov002_GetPeerByte1(void);
 extern int Ov002_GetPeerByte2(void);
-extern void func_02033770(int nArg, int nKind);
-extern int func_020335c8(void);
 
 void Ov002_StepIdleNudge(void)
 {

@@ -10,8 +10,8 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int  func_0201e428(void);
 extern void Ov002_LazyInitClass(void);
 extern void Ov002_ReleaseObjectService(void);
 extern int  data_ov002_0207fa00;

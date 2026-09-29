@@ -2,11 +2,12 @@
  * is still busy, sets bit 16 of the local player's two 64-bit flag words; then finishes the
  * battle-module update. */
 
+#include "game/engine.h"
+
 extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(int a, int b);
 extern void Ov022_InvokeCallback24IfBit0(int a);
 extern int Ov022_AreStreamsIdle(int a);
-extern short Session_GetLocalPlayerIndex(void);
 extern void func_ov022_020ad588(int a);
 
 void Ov088_initSubObjectsSetU64Flags(int this) {

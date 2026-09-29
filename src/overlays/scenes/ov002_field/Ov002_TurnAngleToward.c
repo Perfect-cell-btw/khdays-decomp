@@ -1,7 +1,8 @@
 /* Turns an angle toward the target by a damped step bounded by the turn limit. */
 
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int func_02023c40(void);
 
 static inline int get_limit(void)
 {

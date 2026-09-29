@@ -2,6 +2,7 @@
  * the summary rows. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009Pair {
     int x;
@@ -37,7 +38,6 @@ extern void        Ov025_InitFromDescAndMark(int object,
 extern void        Ov025_LoadBlockProcessAndFree(int object, const void *resource,
                                       int value);
 extern void        Ov025_StoreWordAt0x4a50(int object, int value);
-extern void        ClampToRange0to16At0x4628(int object, int value);
 extern void        G2x_SetBlendAlpha_(volatile void *reg, int firstTarget,
                                      int secondTarget, int eva, int evb);
 extern int        *Ov025_FindEntryById(int object, int id);

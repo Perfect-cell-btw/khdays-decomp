@@ -3,6 +3,7 @@
  * entry; returns whether it succeeded. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     int   pBuf0;
@@ -17,12 +18,8 @@ extern ResEntry *data_0204c238;
 extern char data_02042a04[];
 extern char data_02042a10[];
 
-extern void  MsgDb_InitTable(void);
-extern int   MsgDb_IsLoaded(int id);
-extern int   ResSlot_Release_2(int id);
 extern void *Msg_OpenContainerAndReadHeader(const char *name, int mode);
 extern void *Archive_LoadFile(u32 addr, int mode);
-extern int   ZeroHalfThenFree(void *p);
 
 int MsgDb_LoadDb(int id, int mode)
 {

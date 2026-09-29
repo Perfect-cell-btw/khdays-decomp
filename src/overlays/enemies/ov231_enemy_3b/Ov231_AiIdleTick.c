@@ -19,11 +19,11 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void Ov231_AcquireTarget(int self);
 extern void Ov231_rotateVecByOwnerYaw(VecFx32 *out, int self, const VecFx32 *ref);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern int Ov231_ChooseAttack(int self);
 

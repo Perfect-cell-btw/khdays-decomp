@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SeatRow {
     char pad0000[0x28];
@@ -18,8 +19,6 @@ typedef struct Ov002RootContext {
 } Ov002RootContext;
 
 extern Ov002RootContext *data_ov002_0207fa00;
-
-extern int Session_IsReady(void);     /* the session is ready */
 
 /* Take the three halfwords a peer sent for one seat into the roster and mark
  * that seat present.  The seat number is the message's second byte and the

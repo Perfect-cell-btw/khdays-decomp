@@ -1,7 +1,8 @@
 /* AI step: once the gate byte is clear, picks a random wait between the actor's limits at +0x224
  * and +0x228, queues action 2 and clears the step handler. */
 
-extern int RandNextScaled(int max);
+#include "game/engine.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
 void Ov165_ConfigSubStateThenAdvanceSlot(int *node) {

@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct MtxFx43 {
     s32 m[12];
@@ -40,10 +41,8 @@ extern void NNS_G3dRenderObjSetCallBack(void *object, void (*callback)(void), in
                           int field24, int field25);
 extern void NNS_G3dRenderObjResetCallBack(void *object);
 extern void MaterialColorScale_SetRgb555(int value);
-extern void Obj_InitChannelsAndRun(void *object);
 extern int func_02016320(void *object, MtxFx43 *matrix, void *unused,
                          int jointId);
-extern void Mtx33_ApplyFixedRotation(MtxFx43 *matrix);
 extern void SceneNode_JointCallback(void);
 
 extern VecFx32 data_02047458;

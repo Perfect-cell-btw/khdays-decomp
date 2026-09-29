@@ -3,8 +3,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int QueryActiveStateOrDelegate(void);
 extern const VecFx32 *func_ov022_020881f8(int index);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 

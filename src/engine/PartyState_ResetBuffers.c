@@ -1,7 +1,8 @@
 /* Clears the four 0x104-byte and two 0x48-byte party buffers and their counters. */
 
+#include "game/engine.h"
+
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
-extern void ClearGlobalShort4(void);
 
 extern unsigned char data_02042a1c[];
 extern unsigned char data_0204c678[];

@@ -9,6 +9,7 @@
 /* TileSurfaceCfg */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct TileSurfaceCfg {
     int nUnk00;                  /* 0x00 */
@@ -37,8 +38,6 @@ struct Scene {
 /* khdays: shared-bss */
 int data_ov011_0205e960 = 0;                                                  /* gOv011Cursor */
 struct Scene *data_ov011_0205e964 = 0;                                         /* gpOv011Scene */
-
-extern int TileSurface_InitAndUpload4bpp(void *pSurface, struct TileSurfaceCfg *pCfg);         /* TileSurface_InitAndUpload4bpp */
 
 int Ov011_InitTitleTileSurface(void *pSurface, int nHeightTiles, void *pVramTarget, int nUnk1c)
 {

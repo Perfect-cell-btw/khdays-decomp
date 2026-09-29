@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 wKey;                           /* +0x00 */
@@ -41,7 +42,6 @@ typedef struct {
 
 extern Ov002PanelSession *data_ov002_0207f620;
 
-extern void PlaySoundChecked(int nId, int nKind);
 extern Ov002PanelSubEntry *NNS_FndGetNthListObject(void *pList, unsigned int nIndex);
 
 extern int Ov002_GetPanelField0058(void);

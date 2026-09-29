@@ -3,8 +3,8 @@
  * 0.25 the owner's sub-state 0 is requested. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;

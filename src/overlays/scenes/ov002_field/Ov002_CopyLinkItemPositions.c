@@ -1,12 +1,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa10;
 extern u8 data_0204c240;                /* g_modeAndDayClock; bit 2 gates this */
 
 extern int Ov002_IsSessionOpen(void);           /* is the tally live */
-extern int QueryActiveStateOrDelegate(void);                 /* the local peer */
 extern int Ov022_GetEntryField66(int nPeer);      /* peer -> kind, or negative */
 
 /* Copies out where each of the local peer's link items sits and returns how

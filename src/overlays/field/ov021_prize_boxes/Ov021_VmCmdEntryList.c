@@ -20,6 +20,9 @@
  *     store. Same lever as Ov002_VmCmdList7d610, so it is not specific to pointer
  *     arithmetic: any statement mwcc is free to move, it moves.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     unsigned char bType;     /* +0x00 */
     char pad01[1];
@@ -42,9 +45,6 @@ typedef struct {
     Ov021Entry aEntries[32]; /* +0x14 -- extent bounded by the 0xd4 frame slot */
 } Ov021EmitParams;           /* 0xd4 */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov021_CreatePrizeBoxClass(int count, Ov021EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov015SeqNode {
     u16  nFlags;              /* 0x00: bit 5 facing locked */
@@ -52,13 +53,7 @@ typedef struct Ov015Chest {
 } Ov015Chest;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);         /* Actor_SetVecAndSyncChild */
-extern void  SceneNode_Enable(void *pNode);                             /* SceneNode_Enable */
-extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
 extern void  Ov015_PlayAnimIfVisible(void *pChest, void *pNode, int nArg, int nTime);
-extern void Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
 
 void Ov015_ChestShow(Ov015Chest *pChest)
 {

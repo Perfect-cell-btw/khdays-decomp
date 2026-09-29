@@ -131,6 +131,19 @@ def split_args(s):
     return out + [cur]
 
 
+class NotInformative(Exception):
+    """A call would need a cast to a basic type (void *, int, char *...): it would say nothing, so
+    the source keeps its own declarations until its code holds that value with a real type."""
+
+
+BASIC_CAST = re.compile(r'^(const\s+)?(void|char|signed char|unsigned char|short|unsigned short|int|'
+                        r'unsigned int|long|unsigned long|u8|u16|u32|s8|s16|s32|unsigned)(\s*\*+)?$')
+
+
+def uninformative(spelled):
+    return BASIC_CAST.match(' '.join(spelled.split())) is not None
+
+
 def cast_arguments(path, text, protos):
     """Where a call passes a pointer (or an int) of another type than the parameter's, cast the
     argument to the parameter type. Returns the new text or None."""
@@ -180,6 +193,8 @@ def cast_arguments(path, text, protos):
                 spelled = T.spell(pt)
                 if '{' in spelled:
                     return
+                if uninformative(spelled):
+                    raise NotInformative(n.name.name)
                 edits.append((n.coord.line, n.name.name, i, spelled))
 
     rw = Calls(cv, None, [])
@@ -274,13 +289,18 @@ def main():
                 removed[rel] = rm
         # arguments of another type than the parameter get a cast (mwcc only warns about an int
         # or another pointer where a pointer is declared; the cast says what the caller passes)
-        casted = 0
+        casted = kept = 0
         for p in list(results):
-            t = cast_arguments(p, results[p], protos)
+            try:
+                t = cast_arguments(p, results[p], protos)
+            except NotInformative:
+                del results[p]      # keeps its own declarations for now
+                kept += 1
+                continue
             if t is not None and t != results[p]:
                 results[p] = t
                 casted += 1
-        print('argument casts in %d sources' % casted)
+        print('argument casts in %d sources; %d keep their declarations (a basic-type cast)' % (casted, kept))
         ok, why = verify(results)
     finally:
         if old is None:

@@ -1,7 +1,8 @@
 /* Plays anim 1, rolls the approach timer and installs the approach tick. */
 
+#include "game/engine.h"
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
-extern int RandNextScaled(unsigned int mul);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov122_AimPickMeleeReaction(void);
 

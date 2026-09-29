@@ -5,8 +5,10 @@
  * factor (01ffa724). While *(u8)state[3] set, return; once idle fire attack 0xc (flag 1), clear
  * state[0xb], kick the child (020c9ee8(*(*state+0x3b8),1,1)) and hand off to the 020d26e0 state.
  */
+
+#include "game/engine.h"
+
 extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int obj, int a, int b);

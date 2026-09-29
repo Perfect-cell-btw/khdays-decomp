@@ -1,8 +1,9 @@
 /* Selects variant 1, targets page 7 and plays the confirm sound. */
 
+#include "game/engine.h"
+
 extern void Ov008_SetCtxField9768(int);
 extern void Ov008_SetTargetSlot(int, int);
-extern void PlaySound(int, int);
 void Ov008_GoToPage7B(void)
 {
     int mode = 7;

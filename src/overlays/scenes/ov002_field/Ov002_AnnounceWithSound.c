@@ -1,7 +1,8 @@
 /* Announces the selection, optionally playing sound 0x11. */
 
+#include "game/engine.h"
+
 extern int Ov002_AnnounceSelection();
-extern int PlaySoundChecked();
 
 void Ov002_AnnounceWithSound(int arg0, int arg1) {
     Ov002_AnnounceSelection(arg0, arg1);

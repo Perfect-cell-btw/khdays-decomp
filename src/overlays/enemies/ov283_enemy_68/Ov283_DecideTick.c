@@ -6,14 +6,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov283_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int Rand16NextScaled(int bound);
-extern int RandNextScaled(int bound);
 
 void Ov283_DecideTick(int *node)
 {

@@ -16,6 +16,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct {
     int m[9];
@@ -23,7 +24,6 @@ typedef struct {
 
 extern int Ov249_MeasureTargetGap(int self);
 extern void SetIndexedSlot(int self, int action, void *cb);
-extern int RandNextScaled(int n);
 extern void Ov249_startAnim(int owner, int a);
 extern void Ov249_AiPickStanceReaction(void);
 extern void Ov249_AiStanceMoveFinish(void);

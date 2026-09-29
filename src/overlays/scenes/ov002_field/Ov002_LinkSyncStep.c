@@ -7,6 +7,9 @@
  * With the slots dirty: broadcast all 0x10 bytes of the table, then drop bit
  * 0x40 of each record -- the "just published" mark. Always ends by clearing the
  * mirror-ready bit, and always reports 0. */
+
+#include "game/engine.h"
+
 typedef struct {
     unsigned char bLocal[4];        /* +0x00 this machine's record */
     unsigned char aPeers[0x10];     /* +0x04 last full broadcast received, 4 records */
@@ -16,9 +19,7 @@ typedef struct {
     unsigned char bMirrorReady : 1; /*       bit 2 */
 } Ov002LinkSyncCtx;
 
-extern int Session_IsReady(void);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
-extern void MsgQueue_SendGate(int channel, const void *src, unsigned int size);
 
 extern Ov002LinkSyncCtx *data_ov002_0207f9f4;
 

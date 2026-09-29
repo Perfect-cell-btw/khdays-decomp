@@ -1,12 +1,13 @@
 /* Ticks all ov057 scene-part state machines and publishes local-player flags after charge begins.
  */
 
+#include "game/engine.h"
+
 extern void Ov057_TickChargeSequence(int a, int b, int c);
 extern void Ov057_UpdateTracksWhileActive(int a, int b, int c);
 extern void Ov057_DriveSwingSequence(int a, int b, int c);
 extern void Ov057_TickForwardEffectSequence(int a, int b, int c);
 extern void Ov057_TickChargeStateGuarded(int a, int b, int c);
-extern int Session_GetLocalPlayerIndex(void);
 
 void Ov057_UpdateAllPartsAndFlagLocal(int self, char *blk, int arg) {
     int any = 0;

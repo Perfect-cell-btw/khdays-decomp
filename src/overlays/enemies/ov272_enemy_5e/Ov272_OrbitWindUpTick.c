@@ -17,6 +17,7 @@
 
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 struct Owner {
     char pad00[0x2c];
@@ -27,7 +28,6 @@ struct AiStateNode {
     AI_TASK_FIELDS(Actor)
 };
 
-extern int RandNextScaled();
 extern void SetIndexedSlot(struct AiStateNode *self, int idx, void *cb);
 extern void Ov272_TickOrbitTarget(void);
 

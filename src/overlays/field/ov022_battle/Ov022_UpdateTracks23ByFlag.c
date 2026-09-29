@@ -1,7 +1,8 @@
 /* When the object belongs to the local player's side, posts its update with its model's culling
  * adjusted for materials 2 and 3. */
 
-extern int QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(int state);
 extern void NNS_G3dMdlSetMdlCullMode(int a, int b, int c);
 extern void func_ov022_0208ffe8(int a);

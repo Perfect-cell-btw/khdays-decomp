@@ -1,5 +1,7 @@
 /* Frees the spawner's eight data blocks and clears their count. */
 
+#include "game/engine.h"
+
 typedef struct {
     void *ptr;
     int val;
@@ -11,8 +13,6 @@ typedef struct Ov107Object {
     unsigned char pad_b2[2];
     Ov107Slot slots[8];
 } Ov107Object;
-
-extern void FreeInstanceMemory(void *p);
 
 void Ov107_Spawner_FreeDataBlocks(Ov107Object *obj)
 {

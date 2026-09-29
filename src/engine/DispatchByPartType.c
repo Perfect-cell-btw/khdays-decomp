@@ -1,10 +1,8 @@
 /* Loads a graphics part by its type (command, pair key A or pair key B), then its palette and
  * tables. */
 
-extern void Cmd_DispatchWithFlag();
-extern void Gfx_DispatchByPairKeyA();
-extern void Gfx_DispatchByPairKeyB();
-extern void DispatchThreeOptionalOpsB();
+#include "game/engine.h"
+
 void DispatchByPartType(int param_1, unsigned short *param_2, int param_3, int *param_4, int param_5, int param_6)
 {
     switch (param_2[3]) {

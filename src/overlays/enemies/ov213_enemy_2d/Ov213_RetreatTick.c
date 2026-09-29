@@ -4,9 +4,9 @@
  * dispatches with a null handler. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern VecFx32 data_02042258;
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void SetIndexedSlot(void *node, int idx, void *value);

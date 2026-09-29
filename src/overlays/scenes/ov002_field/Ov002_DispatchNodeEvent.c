@@ -1,4 +1,4 @@
-extern int GameState_GetField(int nId, int nSlot);
+#include "game/engine.h"
 
 typedef int (*Ov002NodeHandler)(int pNode, int pEvent);
 

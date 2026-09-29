@@ -1,8 +1,7 @@
 /* Sends a sync request message (kind 8) with the local player and the request's values; stores the
  * message handle. */
 
-extern int Session_GetLocalPlayerIndex(void);
-extern unsigned short func_02031384(int arg0, void *arg1, int arg2);
+#include "game/engine.h"
 
 struct marshal_020b0eb8 {
     unsigned char f0 : 3;

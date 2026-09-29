@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 bKind;                           /* +0x000 */
@@ -27,8 +28,6 @@ typedef struct {
 } Ov002PanelSession;
 
 extern Ov002PanelSession *data_ov002_0207f620;
-
-extern void PlaySoundChecked(int nId, int nKind);
 
 extern int Ov002_ClassifyCode(int *pOut, int nIndex);
 extern int Ov002_CountPanelListEntries(void);

@@ -4,11 +4,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov252Slots { char pad[0x640]; struct { int handle; int pad; } slot[0x40]; };
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Task_MarkFinished(int *node);
 
 void Ov252_GemFinishTick(int *node)
 {

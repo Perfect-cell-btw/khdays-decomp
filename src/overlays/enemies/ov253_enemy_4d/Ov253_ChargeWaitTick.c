@@ -2,9 +2,11 @@
  * (30 / 15); once the +8 item's animation is free and the actor's +0x17a bit 0 is set the +0x2c
  * delay is drawn between the actor's +0x224 and +0x228 bounds, sub-state 2 is requested and the
  * node slot released. */
+
+#include "game/engine.h"
+
 struct Bit0 { unsigned char b0 : 1; };
 
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov253_ChargeWaitTick(int *node) {

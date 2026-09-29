@@ -1,7 +1,9 @@
 /* Only while flag 0 (low byte at (*child)+0x60) is set: pick a landing point at
  * (child)+0x44 = base(+0x224) + rand(|+0x228 - +0x224| + 1), copy the sub-state byte
  * +0x1c9 into +0x1c7, then dispatch with no handler. */
-extern int RandNextScaled(int a);
+
+#include "game/engine.h"
+
 extern int SetIndexedSlot(int a, int b, void *handler);
 struct hw60lo_020d0b4c { unsigned short lo : 8; unsigned short hi : 8; };
 void Ov138_PickRandomOffsetThenAdvanceSlot(int param_1) {

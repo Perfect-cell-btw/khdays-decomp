@@ -2,6 +2,7 @@
  * scans the candidate container's list; returns whether one was selected. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022LowByte16 {
     unsigned short lowByte : 8;
@@ -46,8 +47,6 @@ extern u8 data_0204c248[];
 extern u8 data_0204c240;
 
 extern void *func_ov022_020881f8(int index);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
-extern int Slot_EvalPackedParam(int index, int parameter);
 extern int Ov022_ScoreCandidateByFacing(u32 *selectionFlags, int index,
                                int bestDistance);
 extern int Ov022_ScoreCandidateByDistance(u32 *selectionFlags, int index,
@@ -55,7 +54,6 @@ extern int Ov022_ScoreCandidateByDistance(u32 *selectionFlags, int index,
 extern Ov022IteratorNode *List_First(void *list);
 extern int Ov022_ScoreCandidatePart(u32 *selectionFlags, int index,
                                Ov022Candidate *candidate, int bestDistance);
-extern Ov022IteratorNode *List_Next(void *list);
 
 int Ov022_CollectActorCandidates(u32 *selectionFlags, int index)
 {

@@ -1,6 +1,6 @@
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
-extern void Actor_SetBindingByte(void *p, int i, unsigned char v);
 
 /* Rebinds the actor model and picks its idle variant from the owner's kind. */
 void Ov002_RebindActorModelByKind(char *self) {

@@ -1,7 +1,8 @@
 /* Clears bit 1 of the sub-object's flag word at +0x5c, rewrites its four state channels
  * (0, 2, 1, 4) to (0, 0), closes the update, clears the +8 word and re-arms 020cec88. */
-extern void SetSubitemState(void *sub, int channel, short value, int flag);
-extern void RefreshObjectCallbacks(void *sub, int a);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(char *self, int a, void *cb);
 extern void Ov277_PounceRideTick(int);
 

@@ -18,15 +18,14 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
 extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(void *attach, int tick);
 extern void Ov022_InvokeCallback24IfBit0(void *attach);
 extern int Ov022_AreStreamsIdle(void *attach);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_WidgetScrollCommit(char *channel, char *config, int heading, int frame);
 extern int Ov022_IsIndexedRecordBit0Set(char *self, int i);
 extern void BindAnimTrack(char *anim, int track, char *bind, short group);         /* BindAnimTrack */
@@ -34,7 +33,6 @@ extern void Anim_SetFrameWrapped(char *anim, int track, int frame);             
 extern void GX_SendFifoWords(unsigned int cmd, const void *src, unsigned int words); /* GX_SendFifoWords */
 extern void Gfx_SubmitCachedCommandBlock(void);                                                  /* submit the cached block */
 extern void MaterialColorScale_SetRgb555(unsigned int value);
-extern void Obj_InitChannelsAndRun(char *channels);
 extern void func_ov022_020ad588(char *self);
 
 void Ov083_UpdateAnchorsAndChannels(char *self)

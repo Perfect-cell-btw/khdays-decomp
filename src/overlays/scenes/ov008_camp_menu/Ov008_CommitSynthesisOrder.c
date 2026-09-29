@@ -4,6 +4,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define INGREDIENT_COUNT 4
 #define FLAG_ITEM_SEEN_BASE 0x4db
@@ -34,7 +35,6 @@ typedef struct GameState {
 } GameState;
 
 extern GameState *data_0204be18;
-extern void GameState_SetFlag(int nFlag);              /* GameState_SetFlag */
 extern void BitArray_SetBit(u8 *pBits, u32 nBit);     /* BitArray_SetBit */
 
 void Ov008_CommitSynthesisOrder(Ov008RecipeRecord *pRecipe)

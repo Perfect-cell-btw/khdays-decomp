@@ -3,14 +3,13 @@
  * reset and the state moves on to 020b7728. Otherwise the layers are refreshed, the main screen runs
  * its camera step, the frame is committed (02023c30) and a set field 0x20e6 starts the exit (020b8130);
  * the state stays. */
+
+#include "game/engine.h"
+
 extern char *data_ov106_020b8b60;
-extern int Game_RunActionScript(void *script);
-extern void Obj_ResetBothSubBlocksAndArm(void *script);
 extern void Ov002_World_SetPendingEntryOnce(int a);
 extern void Ov106_SelectScreenLayers(void);
 extern void Ov106_CameraStep(void);
-extern void SetGameMode(int a);
-extern unsigned int GameState_GetField(int nField, int nBits);
 extern void Ov106_ArmObject(void);
 extern int Ov106_ApplySlotFlags(void);
 

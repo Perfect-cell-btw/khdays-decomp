@@ -14,9 +14,8 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void GameState_SetField(int field, int a, int val);
-extern int  Session_GetSlotTable(void);
 extern int  Slot4_GetIfOccupied(int index);
 extern u8   data_0204c240;
 extern u8   data_02042a1c;

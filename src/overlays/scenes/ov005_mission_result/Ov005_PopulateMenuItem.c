@@ -2,6 +2,7 @@
  * icon, quantity and new-item state. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov005MenuItemHeader {
     u16 itemId,textureResourceId;
@@ -20,12 +21,9 @@ typedef struct MsgDbItemRecord {
     u16 icon;
 } MsgDbItemRecord;
 extern char *data_ov005_0205b80c;
-extern void MsgDb_FetchRecord(MsgDbItemRecord **,int,unsigned int,int);
-extern void DispatchByNodeKind(MsgDbItemRecord **);
 extern void StrNCopy16(u16 *,const u16 *,int);
 extern u16 *Ov005_GetVarRecordByIndex(void *,unsigned int);
 extern u16 *Ov005_GetItemDescriptionForMember(void *,MsgDbItemRecord *);
-extern int GameState_IsFlagSet(unsigned int);
 static inline int GetIconIndex(MsgDbItemRecord *record) {
     if (record==0 || record->icon==0) return 0;
     return record->icon-1;

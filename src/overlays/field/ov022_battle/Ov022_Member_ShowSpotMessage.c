@@ -1,6 +1,7 @@
 /* For the local member shows the spot's message (with a sound) and arms its timer. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022RosterRow {
     void *owner00;
@@ -25,8 +26,6 @@ typedef struct Ov022EntrySystem {
 
 extern Ov022EntrySystem data_ov022_020b2e78;
 
-extern unsigned int Session_GetLocalPlayerIndex(void);
-extern void PlaySoundChecked(int bank, int sound);
 extern void Ov002_AnnounceWithSound(int resourceId, int enabled);
 
 void Ov022_Member_ShowSpotMessage(int index, unsigned int resourceId, int spot)

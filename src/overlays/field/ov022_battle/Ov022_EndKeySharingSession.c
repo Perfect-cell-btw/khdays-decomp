@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 
@@ -19,7 +20,6 @@ extern u32 OVERLAY_106_ID[1];
 #define FS_OVERLAY_ID_ov106 ((FSOverlayID)(u32) & (OVERLAY_106_ID))
 
 extern void func_02023ad0(int handle);
-extern void UnloadOverlaySync(int target, FSOverlayID id);   /* unload overlay */
 extern int data_ov022_020b2e60[];
 extern unsigned char data_0204be04;
 

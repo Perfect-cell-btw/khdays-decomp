@@ -10,6 +10,7 @@
  * in single-player frames (3c40 == 1) or 0x1000. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;
@@ -21,12 +22,9 @@ struct FlagBits2c30 {
     unsigned char bReleased : 1;
 };
 
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_ov022_0209190c(int item);
-extern void SceneNode_Enable(int *p);
 extern int Ov022_ActorSetState(char *self, int mode);
-extern int func_02023c40(void);
 extern const VecFx32 data_02041dc8;
 
 int Ov032_ChargeTick(char *self)

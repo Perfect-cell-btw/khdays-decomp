@@ -1,6 +1,7 @@
 /* Resolve a message-record pointer from ov008 caches or the generic database. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MessageCacheContextView {
     char unknown0000[0x207c];
@@ -14,7 +15,6 @@ typedef struct Ov008MessageCacheContextView {
 } Ov008MessageCacheContextView;
 
 extern Ov008MessageCacheContextView *Ov008_GetMenuContext(void);
-extern int MsgDb_FetchRecord(int *record, int dbId, u32 index, int selector);
 
 int Ov008_GetMessageRecord(int *record, int dbId, u32 index, int selector)
 {

@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct PartFlags { unsigned int lo : 8; };
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov236_ChargeTick(void);
 

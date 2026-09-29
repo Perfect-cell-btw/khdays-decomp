@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 typedef void (*Ov000StateFn)(void);
@@ -57,9 +58,6 @@ extern int OS_SPrintf(char *destination, const char *format, ...);
 extern char data_ov000_0205abf8[];
 extern void Ov000_TeardownTitle(void);
 extern Ov000SceneContext *data_ov000_0205ac3c;
-extern int GameState_SetFlag(int handlerId);
-extern void StoreGlobalShortAt0(int value);
-extern void LoadOverlaySync(int processor, FSOverlayID overlayId);
 extern char data_ov000_0205ac00[];
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
 extern void strcpy(char *destination, const char *source);

@@ -2,9 +2,8 @@
  * ov024 display teardown, assigns main BG VRAM, and sets BG0/BG1/BG2 control and LCD power routing.
  */
 
-extern void SetMasterBrightnessMain(int level);
-extern void SetMasterBrightnessSub(int level);
-extern void Gfx_Reset2DEngines(void);
+#include "game/engine.h"
+
 extern void Ov024_RunDisplayTeardownSteps(int doMain, int doSub);
 extern void GX_SetGraphicsMode(int a, int b, int c);
 extern void GX_SetBankForBG(int bank);

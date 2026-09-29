@@ -7,13 +7,13 @@
  * down and then rolls sub-state 4 (1/120 or too far) or 5 (1/20). Variant: the ov171 tick only requests sub-state 5 inside the range. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern int Ov171_FaceTargetGetClearance(int node, VecFx32 *out);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int bound);
 extern int func_02020400(int a, int b);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int node, int slot, void *cb);

@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008FlagEntry {
     short nFlag;               /* 0x00: game flag - 9 */
@@ -32,8 +33,6 @@ typedef struct Ov008FlagOwner {
 } Ov008FlagOwner;
 
 #define FLAG_BASE 9
-
-extern int GameState_IsFlagSet(int nFlag);   /* GameState_IsFlagSet */
 
 void Ov025_CountGroupFlagsSet(Ov008FlagOwner *pOwner, u32 nId, int *pnSet, u32 *pnCount)
 {

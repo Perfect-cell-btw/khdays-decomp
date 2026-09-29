@@ -4,6 +4,9 @@
  *   +0x18  payload, 0x1cac bytes -- this IS the game state, and its +0x10 is the
  *          packed flag/bitfield store that GameState_IsFlagSet reads.
  * Block size on the card is 0x2018. */
+
+#include "game/engine.h"
+
 typedef struct {
     unsigned char blockCounter;
     unsigned char slot;
@@ -15,7 +18,6 @@ typedef struct {
 extern int Ov025_ReapTerminatedJobResult(void);
 extern int Ov025_VerifySha1Signature(void *buf);
 extern void Ov025_StartCardThread(int a, int b, int c);
-extern int func_020208f0(void);
 
 extern char *data_0204be14;
 extern char *data_0204be18;

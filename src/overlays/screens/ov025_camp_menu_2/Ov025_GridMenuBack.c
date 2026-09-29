@@ -13,6 +13,7 @@
  * 0x38; 2 / 5 enter grid menu mode 1 / 4 and the other sub modes up to 8 mode 0, with sound 3. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define STATE_LIST   0
 #define STATE_GRID   1
@@ -66,7 +67,6 @@ typedef struct Ov008MenuContext {
 extern Ov008ListHooks data_ov025_020b4d4c;
 extern int   Ov025_CopySourceBlock(Ov000_Input *pIn);                         /* sample the input */
 extern void  Ov025_SetTargetSlot(int nEntry, int nTarget);                  /* Ov008_SetTargetSlot */
-extern void  PlaySound(int nKind, int nSound);                          /* PlaySound */
 extern void  Ov025_ResetGridDrag(Ov008MenuContext *pCtx, int bRestore);     /* Ov008_ResetGridDrag */
 extern void  Ov025_RebuildGridHits(Ov008MenuContext *pCtx);                   /* Ov008_RebuildGridHits */
 extern void  Ov025_EnterMenuState(Ov008MenuContext *pCtx, int nState);       /* Ov008_EnterMenuState */

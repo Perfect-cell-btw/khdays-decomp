@@ -1,5 +1,6 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SessionMarker {
     VecFx32 place;
@@ -25,8 +26,6 @@ extern Ov002MissionMember data_0204c678[];
 extern void Ov002_EmitEntriesForSetBits(void);
 extern void Ov002_ScatterPlaceByIndex(const VecFx32 *pPlace, int nAngle, int nIndex, VecFx32 *pOut);
 extern int Ov002_GetRootField8bae(void);
-extern void PartyMember_RebuildDerived(int nMemberIndex, int nFlags, int nMemberKind, int nLevel);
-extern void PartyMember_RefreshDialogue(int nMemberIndex, int nBehaviorId);
 
 /* Append a member using marker zero as its initial placement, then restore
  * the four halfwords of that member's header in place.

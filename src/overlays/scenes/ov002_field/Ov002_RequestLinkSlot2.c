@@ -3,7 +3,9 @@
  * (flag 8 in the halfword at +0, bit 0 of the byte at +0xa). Reports 1 unless
  * the request came back unassigned. A session that is not ready reports 1
  * without asking. */
-extern int Session_IsReady(void);
+
+#include "game/engine.h"
+
 extern int Ov002_BuildSessionCommand(int slot, void *request);
 
 extern char *data_ov002_0207fa04;

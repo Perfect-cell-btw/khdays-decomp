@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SLOT_COUNT     12
 #define FLAG_SLOT_BASE 0x3bc9
@@ -24,7 +25,6 @@ typedef struct Ov008MissionList {
     u8  nCursorSlot;          /* 0x54 */
 } Ov008MissionList;
 
-extern int  GameState_IsFlagSet(int nFlag);                                     /* GameState_IsFlagSet */
 extern void Ov008_Menu_ForwardToWidgets(int nSlot, u32 nValue, u32 nKind);        /* set a mission slot */
 extern int  Ov008_GetCtxObject9630(void);                                    /* Ov008_GetCtxObject9630 */
 extern int  Ov008_GetCtxObject9634(void);                                    /* page transition active */

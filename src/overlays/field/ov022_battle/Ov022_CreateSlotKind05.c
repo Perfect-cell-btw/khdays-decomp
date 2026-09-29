@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SLOT_KIND 5
 #define SLOT_TAG 0xba
@@ -57,7 +58,6 @@ struct ReactionCtx {
 
 extern struct ActorSlot *Ov022_CreateChannel(struct ReactionCtx *pCtx, int nKind,
                                              int nTag, int nSubKind, int nSize);
-extern void RegisterSeqAndInit(u16 *pFlags, void *pSeq, int nMode, int nTracks);
 
 void Ov022_CreateSlotKind05(struct ReactionCtx *pCtx, void *pSeq, int nSubKind,
                          const struct SlotTemplate *pTpl)

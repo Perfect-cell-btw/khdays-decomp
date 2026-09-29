@@ -1,6 +1,6 @@
 /* When active clears the active/pending bits and releases the entity. */
 
-extern void EntityMgr_UnlinkFromListC(void *ptr);
+#include "game/engine.h"
 
 void Entity_Deactivate(unsigned char *ptr) {
     unsigned char flags = ptr[8];

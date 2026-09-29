@@ -2,6 +2,7 @@
  * shape. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad_0000[0x5c];
@@ -46,10 +47,6 @@ typedef struct {
 
 extern void *Ov107_PackTextureHandle(int owner, int index);
 extern Ov169Subitem *CreateSubitemInstance0xB4(void *item);
-extern void RegisterSubscriberSlot(Ov169Subitem *subscriber, Ov169Subitem *item);
-extern void SetSubitemState(Ov169Subitem *item, int state, int zero, int enabled);
-extern void RefreshObjectCallbacks(Ov169Subitem *item, int value);
-extern Ov169PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *field);
 extern void Ov170_OnDespawn(void);
 extern void Ov170_TickAndSyncModelXform(void);

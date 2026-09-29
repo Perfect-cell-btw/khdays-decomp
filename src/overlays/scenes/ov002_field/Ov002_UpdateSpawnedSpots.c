@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002Vec3 { int x, y, z; } Ov002Vec3;
 typedef struct VecFx16 { s16 x, y, z; } VecFx16;
@@ -69,7 +70,6 @@ extern void VEC_Subtract(const Ov002Vec3 *, const Ov002Vec3 *, Ov002Vec3 *);
 extern void VEC_Add(const Ov002Vec3 *, const Ov002Vec3 *, Ov002Vec3 *);
 extern void VEC_MultAdd(int, const Ov002Vec3 *, const Ov002Vec3 *, Ov002Vec3 *);
 extern int VEC_DotProductFx16(const Ov002Vec3 *, const VecFx16 *);
-extern void Vec3ScaleAddQ27(int, const Ov002Vec3 *, const Ov002Vec3 *, Ov002Vec3 *);
 extern void Ov002_ReleaseSlotOwner(Ov002Spawned *);
 extern void Ov002_PlaceSlotMarkerOnGround(Ov002Spawned *);
 extern Ov002Vec3 *Ov002_GetElementVelocity(Ov002PieceElement *);
@@ -225,7 +225,7 @@ void Ov002_UpdateSpawnedSpots(void)
                         pElement->pOwner->wClassFlags == 0x13) {
                         pRow->pGroundElement = pElement;
                         if (pElement == pOldGround) {
-                            Vec3ScaleAddQ27(pHit->nNearestHit, &vDown, &vOrigin, &vOrigin);
+                            Vec3ScaleAddQ27(pHit->nNearestHit, (const VecFx32 *)&vDown, (const VecFx32 *)&vOrigin, (VecFx32 *)&vOrigin);
                             if (vOrigin.y >= pRow->vPos.y) {
                                 pGroundVelocity = Ov002_GetElementVelocity(pElement);
                                 pRow->vPos.y = vOrigin.y;

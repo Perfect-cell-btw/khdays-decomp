@@ -4,12 +4,12 @@
  * (start at joint i's anchor, +0xc direction to joint i+1, +0x18 length). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct vec4 { int a, b, c, d; };
 struct Ov253Chain { int joints[4]; int f10; int segs[3]; int f20; };
 struct Ov253Chains { char pad[0x3ac]; struct Ov253Chain chain[4]; };
 
-extern void QuatFromAxisAngle(struct vec4 *out, const VecFx32 *axis, int angle);
 extern void Srt_SetTranslation(void *srt, const VecFx32 *translation);
 extern void Srt_SetRotationQuat(void *srt, const struct vec4 *rotation);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

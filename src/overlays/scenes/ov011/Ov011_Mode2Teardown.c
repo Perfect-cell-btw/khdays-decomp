@@ -9,6 +9,7 @@
 /* UiLayoutPos */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct LayoutPos {
     int nX;                      /* 0x00 */
@@ -57,7 +58,6 @@ extern const int data_ov011_0205dd70;                                          /
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void *Archive_LoadFile(u32 nEntry, int nBank);                              /* Archive_LoadFile */
 extern void Slot_SetPosition(void *pManager, int nObject, struct LayoutPos *pPos); /* Slot_SetPosition */
-extern void SoundMgr_PrepareStream(int nEntry, int nFrames);
 
 void Ov011_Mode2Teardown(void)
 {

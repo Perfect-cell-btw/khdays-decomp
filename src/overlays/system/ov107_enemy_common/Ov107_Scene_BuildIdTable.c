@@ -1,9 +1,11 @@
 /* Rebuilds the id -> node lookup table at +0x48: allocates one pointer per registered id
  * (+0x24) and walks the intrusive list at +4, filing each node under the id in its
  * halfword at +2. */
+
+#include "game/engine.h"
+
 extern void *CallocInstance(unsigned int size);
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 extern char *data_ov107_020cbf1c;
 
 void Ov107_Scene_BuildIdTable(void) {

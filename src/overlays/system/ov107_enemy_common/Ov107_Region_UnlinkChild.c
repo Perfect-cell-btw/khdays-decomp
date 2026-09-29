@@ -1,8 +1,9 @@
 /* Removes the child from the region's list, clearing its parent and calling its detach hook. */
 
+#include "game/engine.h"
+
 extern void *List_First(void *list);
 extern int List_RemoveByHandle(void *list, void *handle);
-extern void *List_Next(void *list);
 
 typedef void (*Callback)(void *target, void *self);
 

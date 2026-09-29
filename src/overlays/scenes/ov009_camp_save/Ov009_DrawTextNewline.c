@@ -9,7 +9,8 @@
  * from the previous iteration (one ldrh fewer). The volatile forces the redundant reload; behaviour
  * is identical (a plain `*str`).
  */
-extern int Obj_ForwardInnerPayload(int *ctx, int x, int y, int style, int glyph);
+
+#include "game/engine.h"
 
 void Ov009_DrawTextNewline(int *ctx, int x0, int y, int style, unsigned short *str) {
     int x = x0;

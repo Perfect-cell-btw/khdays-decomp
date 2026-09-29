@@ -6,12 +6,12 @@
  * moves to 020cd98c. Codegen: `+ (v - v)` is the documented random copy artifact. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov253_FindNearestTarget(int self, const VecFx32 *pos, const VecFx32 *dir, int minDot, int maxDist);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov253_AiQueueStoredOnAnimEnd(void);

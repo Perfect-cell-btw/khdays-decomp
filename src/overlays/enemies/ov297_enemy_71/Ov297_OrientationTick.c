@@ -6,9 +6,8 @@
  * whether +0x58 still runs, resetting +0x78 when it changes. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward(int cur, int target, int step, int *out);
-extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, int *quat);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern const VecFx32 data_02042264;

@@ -1,9 +1,9 @@
 /* Requests the resource pairs of the field context's enabled entries (bits of +0x229c, 15 entries),
  * plus pair 0x19 in context modes 4 and 7. */
 
+#include "game/engine.h"
+
 extern signed char Ov002_GetCtxModeByte(void);
-extern void Res_RequestIdPair(int id);
-extern int BitArray_TestBit(void *base, unsigned int bit);
 
 extern int data_ov002_0207fa10;
 extern unsigned char data_ov002_0207e610[];

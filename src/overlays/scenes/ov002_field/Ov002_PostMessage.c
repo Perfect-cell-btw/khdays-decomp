@@ -5,8 +5,9 @@
  * The id parameter is an INT even though the resolver takes an unsigned short:
  * the ROM narrows it at the call site (lsl #16 / lsr #16). Declaring the
  * parameter unsigned short makes the narrowing redundant and drops the pair. */
-extern int Session_IsReady(void);
-extern int Rand16NextScaled(unsigned int id);
+
+#include "game/engine.h"
+
 extern int Ov002_PublishStateChange(void *a, void *b, int tag);
 
 int Ov002_PostMessage(void *a, void *b, int id) {

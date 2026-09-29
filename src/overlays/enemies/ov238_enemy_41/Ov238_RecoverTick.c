@@ -3,10 +3,10 @@
 
 #include "nitro/types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov238_RecoverTick(int *node)

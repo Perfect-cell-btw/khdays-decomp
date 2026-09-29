@@ -30,11 +30,11 @@
  * Ghidra carries this as Ov002_StepRosterSlotPhase over Ov002RosterSlot and Ov002SessionBlock.
  */
 
+#include "game/engine.h"
+
 extern char *data_ov002_0207fa00;
 extern unsigned char data_0204be04;
 
-extern int QueryActiveStateOrDelegate(void);
-extern int GetEntryField20ByIndex(int index);
 extern int Ov002_GetCtxTableByte(int seatId);
 extern void func_ov022_02088428(int index, int seat);
 extern void Ov002_ApplyRosterSlotToNode(int index, void *slot, int value);

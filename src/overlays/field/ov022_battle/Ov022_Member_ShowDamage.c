@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov022SeatEntry {
     char padding000[0x09];
@@ -34,8 +35,6 @@ typedef struct Ov022EntrySystem {
 
 extern Ov022EntrySystem data_ov022_020b2e78;
 
-extern Ov022SeatEntry *GetEntryField20ByIndex(int index);
-extern unsigned int Session_GetLocalPlayerIndex(void);
 extern void Ov022_DriveOwnedSound(Ov022SeatEntry *entry, int value, int id, int delta);
 extern short Ov002_FindNamedValue(int id);
 extern VecFx32 *func_ov022_020881f8(int index);

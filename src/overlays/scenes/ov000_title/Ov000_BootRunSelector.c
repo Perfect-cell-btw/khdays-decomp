@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 
@@ -47,18 +48,11 @@ typedef struct Ov000BootContext {
 } Ov000BootContext;
 
 extern Ov000BootContext *NNSi_FndGetCurrentRootHeap(void);
-extern void func_02031600(Ov000DisplayConfig *config);
-extern void CopyToSlotTable8(Ov000ModeConfig *mode, int arg);
-extern void EnsureServiceInstance(void);
 extern void Ov000_ResetPartyMemberAndLayout(int a, int b);
-extern int  GameState_GetField(int a, int b);
-extern void LoadOverlaySync(int processor, FSOverlayID id);
 extern int  func_ov028_0208b490(int a);
 extern int  func_ov028_0208b120(int a);
 extern int  func_ov028_0208b2e0(int a);
 extern void Ov000_RequestScene11(void);
-extern void UnloadOverlaySync(int processor, FSOverlayID id);
-extern void Scene_RequestPending(int a, int b);
 extern BootModeState data_0204c240;
 
 int Ov000_BootRunSelector(void) {

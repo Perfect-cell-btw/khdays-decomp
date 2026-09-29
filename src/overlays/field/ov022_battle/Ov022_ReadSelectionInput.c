@@ -3,6 +3,7 @@
  * returns whether the selection is active. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022ActiveActor {
     u64 flags0;
@@ -38,24 +39,16 @@ extern int Ov022_IsInputAllowedForActiveSlot(void);
 extern void Ov022_ClearMaskBitsAndReset(void *state, int mask);
 extern void Ov002_RefreshCaptionWidget(int mode);
 extern void Ov002_RetargetPanelSurface(void);
-extern int Session_IsActive(void);
-extern int Session_IsReady(void);
-extern int func_020208e0(void);
-extern int QueryActiveStateOrDelegate(void);
-extern Ov022ActiveActor *GetEntryField20ByIndex(int index);
 extern void Ov022_SetSelectionEnabled(int enabled);
 extern int func_ov022_02088338(void);
 extern void Ov022_UpdateSelectionMarker(void);
-extern int Slot_EvalPackedParam(int index, int parameter);
 extern int Ov022_CollectActorCandidates(void *state, int actorIndex);
 extern void Ov022_UpdateSelectionController(void);
 extern void Ov022_ResetSelectorOrigin(void);
 extern void func_ov022_02085280(void);
-extern int GameState_GetField(int value, int mode);
 extern void *Ov022_PickSelectorTarget(int mask);
 extern int Ov002_Panel_IsMode9(void);
 extern int Ov002_IsObjectFlag2000Set(int object);
-extern int func_02023c40(void);
 extern void Ov002_ReaimActor(int object, int mode);
 
 int Ov022_ReadSelectionInput(void)

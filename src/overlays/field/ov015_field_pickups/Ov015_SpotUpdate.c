@@ -7,9 +7,7 @@
  * +0x180, +0x4ec) and the entry id, then drops the pending bit.  Always returns 0. */
 
 #include "nitro/types.h"
-
-extern int GameState_GetField(int nField, int nBit);                    /* GameState_GetField */
-extern void *GetEntryField20ByIndex(int nPlayer);                          /* the player's actor */
+#include "game/engine.h"
 
 typedef struct Ov015SpotDef {
     u8  pad_000[0x179];

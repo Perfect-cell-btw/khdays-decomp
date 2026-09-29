@@ -1,9 +1,8 @@
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 /* Ov006_FireExitMessage -- fire the Mission Mode-screen exit message 0x200d (dispatch when the input
  * object at ctx+0x4e8 is idle, else forward), run teardown Ov006_FreeSceneBuffers, and drop the
  * context pointer. */
-extern void func_020235bc(int msg);
-extern void GameState_SetFlag(int msg);
 extern void Ov006_FreeSceneBuffers(void);
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 

@@ -7,6 +7,9 @@
  * The tail is a three-way choice, not two: with data_ov005_0205b85c.nOption64
  * set it always runs RequestQueue_SetOrPushKind3(0x14); otherwise Session_IsActive gets to veto,
  * and only if that returns 0 does SetSelectionIfChanged(0x1e) run. */
+
+#include "game/engine.h"
+
 typedef struct {
     void *pObjectA;         /* +0x00 */
     void *pObjectB;         /* +0x04 */
@@ -24,12 +27,8 @@ typedef struct {
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, unsigned char value, unsigned int size);
 extern void Ov005_InitializeGraphics(void);
-extern void MsgDb_LoadDb(int a, int b);
 extern void Ov005_InitializeResultConfiguration(void);
 extern void *InstantiateClass(const void *res, int a);
-extern int RequestQueue_SetOrPushKind3(int a);
-extern int Session_IsActive(void);
-extern void SetSelectionIfChanged(int a);
 extern void Ov005_UpdateMenuExitTransition(void);
 
 extern Ov005SceneContext *data_ov005_0205b808;

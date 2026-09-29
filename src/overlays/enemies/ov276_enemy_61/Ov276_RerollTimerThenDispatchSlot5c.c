@@ -2,8 +2,8 @@
  * (ov107 anim + local sub-pose), and register the handler. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int max);
 extern void Ov276_startAnim(int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov276_AiPickStanceReaction(void);

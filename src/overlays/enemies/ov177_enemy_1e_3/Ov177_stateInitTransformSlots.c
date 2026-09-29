@@ -2,9 +2,10 @@
  * the state at the actor's position (+0x74), sets the initial flag bits, zeroes the rotation and
  * installs the dispatcher, the first action step and the timer step. */
 
+#include "game/engine.h"
+
 struct bf { unsigned b : 8; };
 struct blk16 { int a, b, c, d; };
-extern void Obj_SetFourWords(void *p, int a, int b, int c, int d);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov177_stDispatchByStateByte_ccbcc(void);
 extern void Ov177_stDivStoreField(void);

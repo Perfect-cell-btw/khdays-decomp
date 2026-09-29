@@ -19,6 +19,7 @@
 
 #include "nitro/types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -119,7 +120,6 @@ typedef struct {
 extern int FX_Mul(int a, int b);
 extern ActorManager *func_ov107_020c9848(void);
 extern int Ov002_GetSlotTableByte(int value);
-extern u16 func_02031384(int kind, const void *pCmd, u16 size);
 extern void func_ov022_02088984(int player, int value);
 extern void Ov022_SetPlayerScale(int player, int value);
 extern const Notification data_ov107_020cb628[];

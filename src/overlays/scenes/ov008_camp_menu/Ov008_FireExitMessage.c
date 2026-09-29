@@ -1,9 +1,8 @@
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Ov008_FireExitMessage -- fire the title-screen exit message 0x200d (dispatch when the input
  * object at ctx+0x4e8 is idle, else forward), run teardown Ov008_FreeSceneBuffers, and drop the
  * context pointer. */
-extern void func_020235bc(int msg);
-extern void GameState_SetFlag(int msg);
 extern void Ov008_FreeSceneBuffers(void);
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 

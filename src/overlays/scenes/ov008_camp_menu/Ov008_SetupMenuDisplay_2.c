@@ -7,6 +7,7 @@
  * count from Ov008_GetVarRecordByIndex(p+0x28c, 8). Takes 5 args (arg5 on the stack). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008Setup {
     u8  pad_0000[0x124];
@@ -16,7 +17,6 @@ typedef struct Ov008Setup {
     int field2e0;                  /* 0x2e0 */
 } Ov008Setup;
 
-extern void  Draw_ScaledValue(void *base, int a, int b, int c, int d);
 extern void  Ov008_DrawMenuEntry(Ov008Setup *p, int a, int b);
 extern void  EnqueueObjGfxCommand(void *base);
 extern void  TileSurface_SetCurrentItem(void *base, int target, int update);

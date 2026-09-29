@@ -14,9 +14,9 @@
  * `t->values[idx]`, `t->b08[idx]` -- gives the ROM's addressing for free: one base register,
  * `t + idx` shared by the two byte stores, and the `add rX, t, idx lsl #1` pair rematerialised
  * around the call exactly where the ROM has them. */
-extern int Session_GetLocalPlayerIndex(void);
-extern int RandNextScaled(int max);
-extern unsigned short func_02031384(int a, void *buf, int c);
+
+#include "game/engine.h"
+
 extern int data_ov022_020b2ea4;
 
 struct Buf02089fe8 {

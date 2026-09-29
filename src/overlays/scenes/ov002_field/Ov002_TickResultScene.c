@@ -7,8 +7,10 @@
  * Ov002ResultContext head Ov002_EnterResultScene and Ov002_SnapshotResultReport
  * read. The hooks sit either side of it, so the ROM reaches the poll hook as
  * (result base - 0x14) rather than through its own constant. */
+
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void RequestQueue_SetOrPushKind3(int event);
 extern void Ov002_EnterSceneIfHookAllows(void);
 
 void *Ov002_TickResultScene(void) {

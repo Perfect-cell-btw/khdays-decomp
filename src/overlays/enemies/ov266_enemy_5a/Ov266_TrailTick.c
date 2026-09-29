@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int w[4]; } Quat;
@@ -40,7 +41,6 @@ extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
 extern int *Collision_CastSphereEx(void *collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
 extern int VEC_Mag(const VecFx32 *v);

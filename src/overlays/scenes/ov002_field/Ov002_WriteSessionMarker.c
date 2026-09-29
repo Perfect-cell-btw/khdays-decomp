@@ -2,6 +2,7 @@
 /* One entry of the session screen's marker table. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002SessionMarker {
     VecFx32 place;
@@ -17,11 +18,9 @@ typedef struct Ov002SessionBlock {
 
 extern char *data_ov002_0207fa00;
 
-extern int QueryActiveStateOrDelegate(void);                 /* the active slot */
 extern int Ov002_GetCtxTableByte(int nKind);      /* kind -> table byte */
 extern void Ov002_ResolveNamedPlacement(const char *pName, int nSlot,
                                 VecFx32 *pPlace, int *pOwner, int nIndex);
-extern int GameState_IsFlagSet(int nFlagId);          /* progress flag set */
 extern void Ov002_ScatterPlaceByIndex(VecFx32 *pPlace, int nOwner, int nIndex,
                                 VecFx32 *pOut);
 extern void strcpy(char *pDst, const char *pSrc);

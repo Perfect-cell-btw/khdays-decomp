@@ -3,10 +3,10 @@
  * the count is reported through e700 (kind 1) and the table released; 1 when none is missing. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void Ov002_LoadOffsetTableOnce(int nWhich);
 extern char *Ov002_FindHandlerByKey(int nKey);
-extern int GameState_IsFlagSet(int nFlag);
 extern void Ov002_SetRootField85ac(int a, int count);
 extern void Ov002_FreeRootBuffer0x8d7c(void);
 

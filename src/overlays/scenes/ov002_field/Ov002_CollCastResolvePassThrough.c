@@ -1,11 +1,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void NNSi_FndGetCurrentRootHeap(void);
 /* out = origin + t * disp, in fx32. */
-extern void Vec3ScaleAddQ27(int t, const VecFx32 *disp, const VecFx32 *origin,
-                          VecFx32 *out);
 /* Surface attribute record for one slot id of a hit, or 0. */
 extern int Actor_GetRecord(void *hit, int slotId);
 /* Distance between two points, through the hardware square root. */

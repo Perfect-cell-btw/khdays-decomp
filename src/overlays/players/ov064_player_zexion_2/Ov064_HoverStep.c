@@ -11,17 +11,14 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov064_SpawnNextEffect(char *self, int dt);
-extern void SceneNode_Enable(void *node);                                          /* SceneNode_Enable */
-extern void SceneNode_Disable(void *node);                                          /* SceneNode_Disable */
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_IsSlotReady(char *context);
-extern int Anim_GetLengthQ12(void *animation, int track);                         /* Anim_GetLengthQ12 */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov064_020b7420;

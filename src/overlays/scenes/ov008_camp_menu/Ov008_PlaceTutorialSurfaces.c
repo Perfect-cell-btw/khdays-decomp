@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define SLOT_TUTORIAL 0x1b
 #define PALETTE_TUTORIAL 0xf
@@ -24,7 +25,6 @@ typedef struct Ov008PageB {
 extern Ov008PageB *Ov008_GetPageB(void);                              /* Ov008_GetPageB */
 extern void Ov008_ClearGridRows(int nSlot, int nX, int nY, int nW, int nH); /* Ov008_ClearGridRows */
 extern int Ov008_ResetEntry(int nSlot);                                 /* Ov008_ResetEntry */
-extern void Draw_ScaledValue(TileSurface *pSurface, int hLayer, int nX, int nY, int nPalette); /* Draw_ScaledValue */
 
 void Ov008_PlaceTutorialSurfaces(void)
 {

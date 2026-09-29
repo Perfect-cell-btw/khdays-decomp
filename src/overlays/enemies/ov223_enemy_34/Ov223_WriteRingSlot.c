@@ -4,6 +4,7 @@
  * advances modulo the owner's +0x8c count. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int q[4]; } Quat;
 
@@ -15,7 +16,6 @@ struct Ov223RingEntry {
     VecFx32 vPoint;
 };
 
-extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern const VecFx32 data_02042270;
 

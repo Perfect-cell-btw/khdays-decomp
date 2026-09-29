@@ -8,6 +8,7 @@
  * (p->field10 = p->field8 = 1). The readiness test is a short-circuit `||` guard. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008State {
     int field0;              /* 0x00 */
@@ -26,7 +27,6 @@ extern void  Ov025_ApplyControlValue(int a);
 extern void *Ov025_GetBlock4a80(void);
 extern void *Ov025_FindEntryById(void *ctx, int id);
 extern void  Ov025_SetEntrySlotsVisible(void *ctx, void *widget, int flag);
-extern void  PlaySound(int a, int b);
 extern void  Ov025_ScrollMenuMoveTo(Ov008State *p, int a, int b, int c);
 
 void Ov025_SetupMenuButtons(Ov008State *p)

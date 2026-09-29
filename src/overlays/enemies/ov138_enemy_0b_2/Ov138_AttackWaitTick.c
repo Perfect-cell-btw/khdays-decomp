@@ -4,8 +4,10 @@
  * past 0x23bb the [2..3] pair is sent and phase 2 begins. Once the +4 item is idle (+0xad) the
  * +0x44 delay is re-armed to a random value in [+0x224, +0x228], sub-state 2 is queued and the
  * state ends. */
+
+#include "game/engine.h"
+
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern unsigned short data_ov138_020d2fbc[];
 

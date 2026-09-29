@@ -10,6 +10,7 @@
  * kind 0x11.  The prize box is ov021's box holding one prize of a shuffled list. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov021Prize {
     char  nType;              /* 0x00: 0 item, 1 munny, 2 keyed object, 3 nothing */
@@ -71,8 +72,6 @@ typedef struct Ov021PrizeBoxDef {
 
 extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
-extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
-extern int   Rand16NextScaled(int nRange);                               /* Rand16NextScaled */
 extern void  MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
 extern void Ov021_PrizeBoxHandleMessage(void);
 extern void Ov021_tailDispatch(void);

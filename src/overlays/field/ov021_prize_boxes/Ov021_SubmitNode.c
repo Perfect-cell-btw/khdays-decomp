@@ -1,7 +1,8 @@
 /* Submits the element's render node with its group's table byte. */
 
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern void Render_SubmitNode(void *obj, int index, int p3, void *p4);
 
 void Ov021_SubmitNode(char *self) {
     Render_SubmitNode(self + (0x49 << 2),

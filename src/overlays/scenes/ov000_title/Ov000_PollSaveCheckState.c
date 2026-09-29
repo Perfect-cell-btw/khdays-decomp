@@ -23,6 +23,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000CardSlot {
     u8  pad_00[0x10];
@@ -61,12 +62,10 @@ extern s64  OS_GetTick(void);
 extern s64  func_02020368(u32 nLo, u32 nHi, u32 dLo, u32 dHi);
 extern int  Ov000_PollSaveCheck(void);
 extern unsigned char  Ov000_UpdateLoadState(int step);
-extern void func_020208f0(void);
 extern void Ov000_RefreshSelectionGroupDraw(void);
 extern void Ov000_UpdateNumberDisplays(void);
 extern void Ov000_UpdateMenuMarkers(int a, int b, int c);
 extern void Ov000_PlaceCursorByMode(int mode, int page);
-extern void PlaySound(int a, int id);
 
 void Ov000_PollSaveCheckState(void)
 {

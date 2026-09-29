@@ -4,6 +4,7 @@
  * Ov000_DispatchLogoAction(i, 2). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileSurfaceCfg {
     u8 unknown_00[0x18];
@@ -34,7 +35,6 @@ extern void StreamReader_InitU16(void *resource, void *sharedResource);
 extern void Ov000_InitResourceRecord(void *object, const void *config);
 extern void *G2S_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *destination, u32 size);
-extern void TileSurface_InitAndUpload4bpp(void *surface, const TileSurfaceCfg *config);
 extern void Ov000_DispatchLogoAction(int selector, int argument);
 
 void Ov000_SetupLogoTileSurfaces(void) {

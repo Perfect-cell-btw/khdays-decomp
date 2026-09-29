@@ -11,11 +11,10 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int data_ov002_0207f624;
 
-extern int func_02023c40(void);
-extern int func_02023c50(void);
 extern void FreeAllListNodeSubBuffers(void *pContext);
 
 extern void Ov002_TickTimedEffect(void *pSurface);

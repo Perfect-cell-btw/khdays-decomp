@@ -1,6 +1,8 @@
 /* Set the target rate (+0x28 = owner_rate*30/10), set *(*child)+0x54 = 0x3000, clear +0x14,
  * roll +0x3c = rand(0x3001) + 0x2000 and register the handler. */
-extern int RandNextScaled(int a);
+
+#include "game/engine.h"
+
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov278_ApproachTick(int);
 void Ov278_AiEnterApproach(int param_1) {

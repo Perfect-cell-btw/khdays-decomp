@@ -23,6 +23,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define FLAGS_RESCALE 0x8000000000ULL   /* bit 39: rescale to half the tally */
 #define MODE_MISSION 2
@@ -67,10 +68,7 @@ extern struct StatRow data_0204c680;           /* member 0's stored row */
 /* StatTable_GetLevelRow */
 extern void LevelTable_ReadEntry(int nCharacterId, int nLevel, struct StatRow *pRow);
 /* Slot_EvalPackedParam */
-extern unsigned int Slot_EvalPackedParam(int nId, int nKey);
 /* GameState_IsFlagSet / GameState_SetFlag */
-extern int GameState_IsFlagSet(int nFlag);
-extern void GameState_SetFlag(int nFlag);
 
 void Ov022_ApplyMissionLevelStats(struct Ov022Actor *pActor)
 {

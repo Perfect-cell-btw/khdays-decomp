@@ -1,6 +1,7 @@
 /* Update reward sprite sequences and multiplier indicators as counters finish. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TweenFlags { u32 started:1, paused:1, finished:1, reserved:29; } TweenFlags;
 typedef struct Tween { char unknown00[24]; TweenFlags flags; } Tween;
@@ -19,7 +20,6 @@ typedef struct Ov005ResultContext {
 typedef struct Ov005Config { char unknown00[0x4c]; u32 rewardScales[3]; char unknown58[4]; u8 mode; } Ov005Config;
 extern Ov005ResultContext *data_ov005_0205b810;
 extern Ov005Config data_ov005_0205b85c;
-extern void PlaySound(int, int);
 extern void Ov005_SelectAndShowResultSprite(int, u32);
 extern void Ov005_ShowResultRewardMultiplier(u32, int);
 extern void *Ov005_FindEntryById(Ov005SpriteManager *, int);

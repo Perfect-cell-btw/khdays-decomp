@@ -1,6 +1,7 @@
+#include "game/engine.h"
+
 extern char *Ov025_GetPageA(void);
 extern void Ov025_BeginMenuModeSwitch(char *self, int mode);
-extern void PlaySound(int a, int b);
 extern void Ov025_GridMenuConfirm(void);
 extern void Ov025_MenuKeyUp(void);
 extern void Ov025_MenuKeyDown(void);

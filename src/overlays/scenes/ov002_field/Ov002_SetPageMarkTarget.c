@@ -12,6 +12,8 @@
  * ARM.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     int nTotal;
 } Ov002PageProgress;
@@ -29,7 +31,6 @@ extern int data_ov002_0207f634;
 
 extern long long func_02020400(int nNumerator, int nDenominator);
 extern unsigned long long OS_GetTick(void);
-extern void PlaySoundChecked(int a, int b);
 
 extern int Ov002_GetMissionProgress(void);
 extern int Ov002_Field_GetBlock194(void);

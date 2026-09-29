@@ -14,10 +14,9 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void MI_CpuFill8(void *dst, int val, int size);
-extern u32  GameState_GetField(int field, int a);
-extern void GameState_SetField(int field, int a, u32 val);
 extern int  data_ov002_0207fa00;
 extern int  data_0204be18;
 extern char data_0204c4d8[];

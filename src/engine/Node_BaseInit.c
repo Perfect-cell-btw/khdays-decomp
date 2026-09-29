@@ -1,9 +1,10 @@
 /* Resets the node's flags, callbacks and both transforms, and counts it. */
 
+#include "game/engine.h"
+
 extern void SrtTransform_SetIdentity(void *o);
 extern void Node_BaseOnDestroy(void);
 extern void Node_DefaultHook6C(void);
-extern void Node_ComposeWorldSrt(int *ptr);
 extern int data_0204caa8;
 
 typedef struct {

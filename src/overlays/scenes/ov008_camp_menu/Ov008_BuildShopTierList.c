@@ -5,6 +5,7 @@
  * 0208a55c; the count goes to *pCount and the array is returned. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008ItemDef {
     char pad_00[0x14];
@@ -27,7 +28,6 @@ typedef struct Ov008ShopTable {
 } Ov008ShopTable;
 
 extern Ov008ShopTable *data_ov008_02090fb0;
-extern u32 GameState_GetField(int nField, int nBits);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern int Ov008_GetItemParamWord(int nItemId);

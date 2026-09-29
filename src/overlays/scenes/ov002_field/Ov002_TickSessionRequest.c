@@ -19,14 +19,10 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int  NNSi_FndGetCurrentRootHeap(void);
-extern int  Session_IsActive(void);
-extern int  Session_IsReady(void);
-extern u16  GetGlobalU16At6(void);
-extern int  Session_GetLocalPlayerIndex(void);
 extern u16  Ov002_BuildSessionCommand(int kind, void *out);
-extern int  MsgQueue_Contains(int h);
 
 int Ov002_TickSessionRequest(void)
 {

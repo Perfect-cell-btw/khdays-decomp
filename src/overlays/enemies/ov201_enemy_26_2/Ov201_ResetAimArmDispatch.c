@@ -6,11 +6,12 @@
  * mirror it to state[0x25..0x28]. Pick a random target between *(*state+0x224) and *(*state+0x228)
  * into state[0x20]. Finally arm dispatch slots 1, 0 and 2 with their handlers via 0203c634.
  */
+
+#include "game/engine.h"
+
 struct b8 { unsigned f : 8; };
 struct q4 { int w[4]; };
 
-extern void Obj_SetFourWords(int *quat, int a, int b, int c, int e);
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov201_stateSetFlagsClearBit(void);
 extern void Ov201_AiDispatchAction(void);

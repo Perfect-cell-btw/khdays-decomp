@@ -40,6 +40,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov011GfxTemplate { int a[4][4]; } Ov011GfxTemplate;
 
@@ -48,7 +49,6 @@ extern Ov011GfxTemplate data_ov011_0205dcd0;
 int data_ov011_0205e960 = 0;   /* gOv011Cursor */
 int data_ov011_0205e964 = 0;   /* gpOv011Scene (kept as an int: the earlier candidate reaches the scene by arithmetic) */
 
-extern void Res_LoadSpriteSet(int *slot, int *disp, int a, int b, int c);
 extern int  GFXi_EnqueueCommand(int a, int b, int c, int d);
 extern void Ov011_Window_SetCorners(int a, int b);
 extern void Ov011_BlitPaneTiles(int a, int b, int c, int d);

@@ -5,6 +5,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PeerRow Ov002PeerRow;
 typedef struct Ov002PeerRecord {
@@ -24,9 +25,7 @@ typedef struct Ov002LinkCtx {
 extern Ov002LinkCtx *data_ov002_0207fa10;
 extern char data_ov002_0207f0f4[];
 extern const char *data_ov002_0207f0a4[];
-extern void StoreToGlobalDblPtr(int nContext);
 extern int OS_SPrintf(char *,const char *,...);
-extern void ZeroHalfThenFree(void *);
 extern void *Msg_OpenContainerAndReadHeader(const char *,int);
 extern void Ov002_SetRootWord8a28(int,void *);
 extern void NNSi_FndFreeFromDefaultHeap(void *);

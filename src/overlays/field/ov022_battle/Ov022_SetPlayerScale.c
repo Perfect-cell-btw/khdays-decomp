@@ -1,12 +1,13 @@
 /* Adds to the mission tally for a player's value, scaled by the player's step (5% per step, full at
  * 10) outside replay. */
 
+#include "game/engine.h"
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off
 #pragma opt_lifetimes on
 
-extern int GetEntryField20ByIndex(int player);
 extern void Ov002_AddMissionTally(int slot, int kind, int value);
 extern unsigned char data_0204be04;
 

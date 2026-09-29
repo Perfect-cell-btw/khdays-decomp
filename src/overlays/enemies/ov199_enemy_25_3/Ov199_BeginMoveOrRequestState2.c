@@ -22,6 +22,7 @@
  */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 /* Head of a 5-member family.  Byte-exact.
  *
@@ -45,7 +46,6 @@
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov199_SeedDefaultPoseAndAdvance(int owner, int a);
-extern int  RandNextScaled();
 extern void VEC_Subtract();
 extern void Ov199_ApplyTransformThenReseedIfFree(void);
 

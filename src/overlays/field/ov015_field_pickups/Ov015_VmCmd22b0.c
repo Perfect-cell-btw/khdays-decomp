@@ -10,6 +10,9 @@
  * `nCount` truncates at the assignment (lsls/lsrs straight into r6) because the tag
  * tests intervene between its fetch and its use.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     int nField04;            /* +0x04 */
@@ -26,9 +29,6 @@ typedef struct {
     char pad1d[3];
 } Ov015EmitParams;           /* 0x20 */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov015_CreatePickupClass(int nCount, Ov015EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

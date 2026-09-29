@@ -2,6 +2,7 @@
  * entry's caption (or switches the save page) with a sound. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MenuEntry {
     u8 pad00[0x0c];
@@ -26,7 +27,6 @@ extern void Ov025_ConfigureSlotWithHeight(Ov008MenuEntry *entry);
 extern void *Ov025_GetVarRecordByIndex(void *records, int index);
 extern void Ov025_RepaintTextRow(
     Ov008MenuContext *context, int row, void *text, int mode);
-extern void PlaySound(int arg0, int arg1);
 extern void Ov025_DrawSavePage(
     Ov008MenuContext *context, int savePage);
 

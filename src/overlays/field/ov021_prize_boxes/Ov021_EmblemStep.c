@@ -12,6 +12,7 @@
  * drawn (0202aa9c) while the model is bound.  Returns 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov021EmblemMessage {
     u8   nType;               /* 0x00: 0 = reached */
@@ -35,12 +36,10 @@ typedef struct Ov021Emblem {
 
 extern int   Ov002_GetModuleScale(void);                               /* frame delta */
 extern void  Ov021_TickTimerWriteScaledVec3(Ov021Emblem *pSelf, int nDelta);     /* Ov021_EmblemTickTimer */
-extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
 extern int   Ov021_EmblemFindPlayer(Ov021Emblem *pSelf);                 /* Ov021_EmblemFindPlayer */
 extern int   Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern void  Ov002_AddMissionTally(int nPlayer, int nKind, int nCount); /* post to the mission tally */
 extern void  Ov021_ResetChildrenScoreExceptSelf(Ov021Emblem *pSelf);                 /* Ov021_EmblemResetOthers */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                   /* Obj_SetFlagBit3 */
 extern int   Ov021_EmblemFlyToPlayer(Ov021Emblem *pSelf);                 /* Ov021_EmblemFlyToPlayer */
 extern void  Scene_DrawNode(void *pNode);                              /* Scene_DrawNode */
 extern void *Ov002_DoneTick(void *pPiece);                       /* terminal state */

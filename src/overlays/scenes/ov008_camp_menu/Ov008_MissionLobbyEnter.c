@@ -1,15 +1,13 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 #define GATE_LOBBY  0xd
 #define TARGET_ANY  -1                                  /* signed byte: the ROM materialises it with mvn */
 
 typedef void *(*Ov008StateFn)(void);
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
-extern int Session_IsReady(void);                                   /* Session_IsReady */
-extern u32 Session_GetLocalPlayerIndex(void);                                   /* Session_GetLocalPlayerIndex */
-extern void MsgQueue_SendGate(int nGate, void *pBuf, int nSize);      /* MsgQueue_SendGate */
 extern void *Ov008_MissionLobbyJoin(void);                           /* next lobby state */
 
 void *Ov008_MissionLobbyEnter(void)

@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -17,7 +18,6 @@ extern void Srt_SetRotationQuat(SrtTransform *transform, void *quat);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int variant, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void Ov107_ForwardVisibleEvent(int owner, int flag);
-extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov260_ActorMessageHandler(int owner, unsigned char *command, int arg)

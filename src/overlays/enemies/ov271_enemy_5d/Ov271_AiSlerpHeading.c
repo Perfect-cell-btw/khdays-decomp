@@ -9,10 +9,10 @@
  * Byte-identical twin of Ov200_AiSlerpHeading. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
 extern void Srt_SetRotationQuat(void *a, void *b);
-extern int  RandNextScaled(int mul);
 extern VecFx32 data_02041dc8;
 
 void Ov271_AiSlerpHeading(int *self) {

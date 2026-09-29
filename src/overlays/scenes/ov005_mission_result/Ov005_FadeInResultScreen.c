@@ -1,6 +1,7 @@
 /* Fade in the sub-screen and start the first result-count animation. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Tween { char data[28]; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int value; char unknown20[12]; } Ov005ResultTween;
@@ -18,7 +19,6 @@ typedef struct Ov005ResultContext {
 } Ov005ResultContext;
 extern Ov005ResultContext *data_ov005_0205b810;
 extern u64 OS_GetTick(void), func_02020368(u64, u64);
-extern void SetMasterBrightnessSub(int), Ov005_ConfigureResultTweens(void), Tween_Start(Tween *);
 extern void Ov005_SelectAndShowResultSprite(int, int);
 extern void *Ov005_FindEntryById(Ov005SpriteManager *, int);
 extern void Ov005_ReleaseTwoSlots_2(Ov005SpriteManager *, void *);

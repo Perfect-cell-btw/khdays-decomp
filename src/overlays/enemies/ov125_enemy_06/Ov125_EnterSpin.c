@@ -3,11 +3,13 @@
  * 0x1000/0x2666/0x1000, set bit 0 and drop bits 2/3/7 of the hw60 high byte, raise bit 0 of
  * the +0x388 target's +8 word, seed the +0xc velocity as 0.75 of the +0x390 basis, clear the
  * +0x18 counter and register the spin think callback. */
+
+#include "game/engine.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Quat_FromTwoVectors(void *dst, void *src, int m);
-extern void Vec4_Normalize(void *out, void *in);
 extern void Srt_SetRotationQuat(void *pose, void *q);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);

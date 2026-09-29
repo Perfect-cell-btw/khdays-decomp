@@ -2,9 +2,8 @@
  * base object. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int DestroyInstance();
-extern int FreeInstanceMemory();
 extern int Ov107_DestroyObject();
 
 struct Entry {

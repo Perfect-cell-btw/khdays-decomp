@@ -2,6 +2,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 typedef struct NodeTransform {
     int field_00[4];
@@ -60,7 +61,6 @@ extern long long FX_DivFx64c(int numerator, int denominator);
 extern void Srt_SetTranslation(NodeTransform *dst, VecFx32 *src);
 extern void Ov107_UpdateCollisionSphere(Actor *node);
 extern CollisionHit *Collision_CastRay(void *obj, VecFx32 *origin, VecFx32 *direction);
-extern void RefreshObjectCallbacks(void *obj, unsigned int tick);
 extern const VecFx32 data_02042264;
 
 static inline int scale_by_ratio(long long ratio, int value)

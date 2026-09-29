@@ -1,11 +1,11 @@
 /* Flags the dispatcher, runs the frame, enables the sound listeners and resets the camera; returns
  * the session start step. */
 
-extern int QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern void func_ov022_020884ec(unsigned int arg0);
 extern void Ov022_SetBit3OnPtr20(int arg0, int arg1);
 extern void Ov022_UpdateCameraAndViews(int arg0);
-extern void SoundMgr_SetListenersEnabled(int arg0);
 extern void Ov002_ResetCameraFraming(void);
 extern int data_ov022_020b2e60;
 extern void Ov022_StartSessionThenNextStep(void);

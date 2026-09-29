@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov021PrizeBoxDef {
     u8   pad_00[0x58];
@@ -39,13 +40,8 @@ typedef struct Ov021PrizeBox {
 } Ov021PrizeBox;
 
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
-extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);         /* Actor_SetVecAndSyncChild */
-extern void  SceneNode_Enable(void *pNode);                             /* SceneNode_Enable */
-extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
 extern void  Ov021_StoreArgsRunTwoSubActionsIfFlag4(Ov021PrizeBox *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov021_PrizeBoxPlayAnim */
 extern int   Ov002_GetStateWord(void);                              /* the mission id */
-extern void Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
 
 void Ov021_PrizeBoxStart(Ov021PrizeBox *pSelf)
 {

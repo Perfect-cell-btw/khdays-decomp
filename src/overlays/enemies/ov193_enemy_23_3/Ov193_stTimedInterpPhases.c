@@ -2,11 +2,12 @@
  * the active window sweeps a box that pushes what it touches; when the model's animation ends picks
  * a random wait, queues action 2 and clears the step handler. */
 
+#include "game/engine.h"
+
 struct bf { unsigned b : 8; };
 extern void Ov193_ProbeGroundBelowNode(void *state, void *p);
 extern long long FX_DivFx64c(int a, int b);
 extern void Ov193_BoxSweepPush(void *state, int a, int b, void *p);
-extern int RandNextScaled(int);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 
 void Ov193_stTimedInterpPhases(int *node) {

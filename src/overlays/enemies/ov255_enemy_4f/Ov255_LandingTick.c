@@ -3,10 +3,10 @@
  * +0x54 cooldown is re-rolled in [+0x224, +0x228], +0x58 clears and sub-state 2 is requested. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int RandRange(int lo, int hi)

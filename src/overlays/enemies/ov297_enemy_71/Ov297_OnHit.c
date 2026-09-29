@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
@@ -27,7 +28,6 @@ struct ActorHitEvent {
 struct ModePair { u8 a[2]; };
 struct ModeTable { struct ModePair pair; struct ModePair pair22; };
 
-extern int RandNextScaled(int range);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern const struct ModeTable data_ov297_020d5698;

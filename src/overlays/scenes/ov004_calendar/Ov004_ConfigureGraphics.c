@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     vu16 nBg0Control;
@@ -78,9 +79,6 @@ typedef enum {
     GX_BLEND_PLANEMASK_BD = 0x20
 } GXBlendPlaneMask;
 
-extern void Gfx_Reset2DEngines(void);
-extern void SetMasterBrightnessMain(int nBrightness);
-extern void SetMasterBrightnessSub(int nBrightness);
 extern void GX_SetBankForTex(int nBank);
 extern void GX_SetBankForTexPltt(int nOffset);
 extern void GX_SetBankForBG(int nBank);

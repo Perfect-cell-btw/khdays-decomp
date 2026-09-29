@@ -10,6 +10,7 @@
  * owned (Ov025_QueryItemFlags 0209e820). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionResourceDescriptor {
     const char *pszPath;      /* 0x00: "UI/cm/msl_&.msi.z" */
@@ -49,9 +50,6 @@ typedef struct Ov025DaySpan {
 } Ov025DaySpan;
 
 extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA */
-extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
-extern void  LoadOverlaySync(int nAsync, int nOverlay);               /* LoadOverlaySync */
-extern void  UnloadOverlaySync(int nAsync, int nOverlay);               /* UnloadOverlaySync */
 extern void  Ov025_InitObjectWithList(Ov008MissionListState *pList, Ov008MissionResourceDescriptor *pDescriptor); /* Ov025_InitMissionList */
 extern void  Ov025_DestroyMissionList(Ov008MissionListState *pList);     /* Ov025_ReleaseMissionList */
 extern int   Ov025_Reports_IsDaySpanComplete(Ov008MissionListState *pMissions, Ov008MissionListState *pChallenges, const Ov025DaySpan *pSpan); /* Ov025_Reports_IsDaySpanComplete */

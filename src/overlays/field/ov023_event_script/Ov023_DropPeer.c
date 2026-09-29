@@ -1,7 +1,6 @@
-extern int func_0202bfb8(void);
-extern void Render_ApplyFactorToViews(int mask, int a);
+#include "game/engine.h"
+
 extern void Ov023_ReleaseScreenActors(void);
-extern void Render_DrawViewLists(int id);
 extern void Ov023_HideScreenActors(void);
 extern void Ov023_ReleaseScreenSprites(void);
 extern char *data_ov023_0208a784;

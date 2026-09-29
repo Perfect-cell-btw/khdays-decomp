@@ -3,11 +3,11 @@
  * the +0x1c timer and the +0x32 flag and moves the node to 020cfc60. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hpair { unsigned short a, b; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void func_02031384(int a, void *req, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int data_ov253_020d4964;
 extern void Ov253_ShoutTick(void);

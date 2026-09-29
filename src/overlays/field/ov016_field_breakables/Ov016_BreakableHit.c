@@ -6,6 +6,7 @@
  * answering 0.  Otherwise the hit is refused with 8. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016HitRecord {
     u8 pad_00[0xc];
@@ -28,8 +29,6 @@ typedef struct Ov016Breakable {
     Ov016HitRecord hit;       /* 0x2c8 */
 } Ov016Breakable;
 
-extern int  GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
-extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, u32 nSize);
 

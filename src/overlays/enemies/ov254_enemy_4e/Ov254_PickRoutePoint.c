@@ -5,11 +5,11 @@
  * 0 when the route is empty. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int obj, int flag);
 extern int Ov254_ChooseWaypoint(int *state, int a, int *out);
 extern VecFx32 *List_First(void *list);
-extern VecFx32 *List_Next(void *list);
 
 int Ov254_PickRoutePoint(int *state)
 {

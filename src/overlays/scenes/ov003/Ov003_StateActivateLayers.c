@@ -18,12 +18,13 @@
  *     emits (`rsb r2,r3,#0 ; lsl r2,r2,#3`) -- the multiply never appears and there is nothing to
  *     reduce. The shape of the expression, not the compiler, decides this.
  */
+
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int Ov105_WM_GetLinkLevel(void);
 extern void Scene_DrawNode(void *p);
 extern void Ov003_AccumulateThreeGlobalStats(int i, int v);
-extern void SetMasterBrightnessMain(int a);
-extern void SetMasterBrightnessSub(int a);
 extern int Ov003_SceneStateEnter(void);
 
 int Ov003_StateActivateLayers(void) {

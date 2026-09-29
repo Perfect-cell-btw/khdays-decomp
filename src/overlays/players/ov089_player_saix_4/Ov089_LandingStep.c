@@ -7,13 +7,12 @@
  * otherwise to state 2; a hand-over also drops bit 16 of the +0x46c flags. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 
 void *Ov089_LandingStep(char *self)

@@ -7,6 +7,7 @@
  * OVERLAY_28_ID, loaded from the pool and CSE'd into r4 across both calls. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 
@@ -21,8 +22,6 @@ extern u32 OVERLAY_28_ID[1];
 
 extern Ov023SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void  func_02023ad0(void *pObject);           /* end the key-sharing session */
-extern void  LoadOverlaySync(int nProcessor, FSOverlayID nOverlay);   /* FS_LoadOverlay */
-extern void  UnloadOverlaySync(int nProcessor, FSOverlayID nOverlay);   /* FS_UnloadOverlay */
 extern int   func_ov028_0208b040(void (*pfn)(void));                /* anti-tamper predicates in ov028's encrypted block */
 extern int   func_ov028_0208b490(int nArg);
 extern int   func_ov028_0208b200(void (*pfn)(void));

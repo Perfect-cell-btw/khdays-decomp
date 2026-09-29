@@ -1,6 +1,6 @@
-extern void setDualArrayEntry(int engine, int a, int b);
+#include "game/engine.h"
+
 extern void ClearGlobalArrayInt(int id);
-extern int LoadGlobalU16At0(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern char **data_0204be08;
 

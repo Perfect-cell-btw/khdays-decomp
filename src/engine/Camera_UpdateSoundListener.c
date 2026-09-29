@@ -1,9 +1,9 @@
 /* Feeds the active camera part's position and view direction to the sound listener. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
-extern void SoundMgr_SetListener(VecFx32 *dst, VecFx32 *a, VecFx32 *b);
 
 typedef struct {
     char _00[4];

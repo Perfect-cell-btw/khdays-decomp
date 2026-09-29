@@ -1,8 +1,8 @@
 /* Ov173_BeginWander: ported from the matched ov166 sibling (same enemy family, constants adjusted). */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov173_OrbitTick(void);
 void Ov173_BeginWander(int *node) {

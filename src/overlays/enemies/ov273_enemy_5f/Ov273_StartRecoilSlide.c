@@ -1,6 +1,8 @@
 /* Begin the recoil slide: flag the owner charging bit (*node+0x390), clear the hw60 high-byte
  * "grounded" bit 0x80, roll a random slide duration into node[2], and register the think callback. */
-extern int RandNextScaled();
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov273_AiCountdownToSlam(void);
 

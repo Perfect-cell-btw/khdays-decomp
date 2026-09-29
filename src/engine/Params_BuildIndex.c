@@ -5,6 +5,7 @@
 #pragma thumb on
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct Params {
     unsigned short lo : 4;
@@ -17,10 +18,6 @@ typedef struct {
     u8 mask;            /* 0x24 */
 } TableRec;
 
-extern void MsgDb_LoadDb(int table, int a);
-extern void MsgDb_FetchRecord(TableRec **rec, int table, int index, int a);
-extern void DispatchByNodeKind(TableRec **rec);
-extern int ResSlot_Release_2(int table);
 extern struct Params data_0204c590[];
 
 void Params_BuildIndex(void)

@@ -3,15 +3,14 @@
  * (Ov023_StepDialog); if it declines, play sound 4 and drop the request.
  * Otherwise latch the request in the halfword at data_0204be08+2 -- playing
  * sound 1 only on the transition from 0 -- and post event 0x12. */
+
+#include "game/engine.h"
+
 extern unsigned short data_0204c190;
 extern unsigned short data_0204be08;
 extern unsigned short data_0204be0a;
 
-extern int GameState_IsFlagSet(int flag);
 extern int Ov023_StepDialog(void);
-extern void PlaySoundChecked(int a, int b);
-extern void PlaySound(int a, int b);
-extern short func_02031384(int a, void *b, int c);
 
 void PollAndLatchRequest(void) {
     if ((data_0204c190 & 8) == 0) return;

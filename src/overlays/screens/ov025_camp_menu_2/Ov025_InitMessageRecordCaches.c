@@ -1,6 +1,7 @@
 /* Allocate and populate the five message-record caches used by the main menu. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008Message15Record { char data[0x9c]; } Ov008Message15Record;
 typedef struct Ov008Message1BRecord { char data[0x18]; } Ov008Message1BRecord;
@@ -21,7 +22,6 @@ typedef struct Ov008MessageCacheContextView {
 
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 size);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern int MsgDb_FetchRecord(void **record, int dbId, u32 index, int selector);
 
 void Ov025_InitMessageRecordCaches(Ov008MessageCacheContextView *context)
 {

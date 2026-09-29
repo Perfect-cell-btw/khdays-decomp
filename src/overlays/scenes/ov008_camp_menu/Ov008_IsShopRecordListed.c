@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define CATEGORY_ANY   -1
 #define DAY_FINAL      0x165
@@ -49,7 +50,6 @@ typedef struct GameState {
 extern const u16 data_ov008_0208ff78[];                                 /* day cap per shop page */
 extern Ov008ParamTable *data_ov008_02090fb0;
 extern GameState *data_0204be18;
-extern int GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 
 int Ov008_IsShopRecordListed(Ov008ParamRecord *pRecord, int nSlot, int nCategory, u32 nIndex)
 {

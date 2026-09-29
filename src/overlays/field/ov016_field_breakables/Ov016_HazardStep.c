@@ -11,6 +11,7 @@
  * stays (0). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016HazardDef {
     u8 pad_00[0x70];
@@ -51,7 +52,6 @@ typedef struct Ov016HazardMessage {
 } Ov016HazardMessage;
 
 extern int  Ov002_IsSessionOpen(void);                                /* scene running? */
-extern int  Session_GetLocalPlayerIndex(void);                                      /* Session_GetLocalPlayerIndex */
 extern Ov016ClassTable *Ov002_GetModuleSlot(int nSlot);              /* class table of a slot */
 extern Ov016Piece *Ov002_MulTagAtField4ePlusField54(Ov016ClassTable *pTable, int nIndex); /* piece of a table */
 extern int  Ov016_DeliverHitToTarget(Ov016Hazard *pSelf, Ov016Piece *pTarget); /* Ov016_DeliverHitToTarget */

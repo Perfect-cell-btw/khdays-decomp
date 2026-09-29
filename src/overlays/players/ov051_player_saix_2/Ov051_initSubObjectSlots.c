@@ -2,7 +2,8 @@
  * slots (base+0xc, then 6x stride 0x110) via RegisterSeqAndInit, seeding per-slot counter 0x1c-i.
  * x4 ov033/051/071/089. */
 
-extern void RegisterSeqAndInit();
+#include "game/engine.h"
+
 extern void *data_ov051_020b7380;
 extern void *data_ov051_020b734c;
 extern void *data_ov051_020b7360;

@@ -34,11 +34,13 @@
  *    and returns, leaving the 020521a4 call as the tail (ROM `blt`, not `bge`).
  *  - the UI loop flag is `flag = 0; if (x == 2) flag = 1;`, not `flag = (x == 2)`.
  */
+
+#include "game/engine.h"
+
 extern int data_ov101_020bc0e0;
 
 extern void func_ov101_020bb010(int self);
 extern void Ov101_Activate(int self, int p);
-extern unsigned short Session_GetLocalPlayerIndex(void);
 extern void Ov101_Deactivate(int self, int p);
 extern void Ov022_SetAnimState(int self, int mode);
 extern int Ov002_GetModeBlendFrames(int a, int b, int c);

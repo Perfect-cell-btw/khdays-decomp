@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PieceClass {
     char pad000[0x6c];
@@ -28,7 +29,6 @@ extern int Ov002_AdvanceElementClock(char *pElement, short *pTable, int nDelta,
                                int nFlag, int nLimit, int *pCounter);
 extern void Ov002_SetFieldBit0(char *pElement, int nMode);
 extern void Ov002_RebindAnimTracks(short *pAnim, int nTrack, int nFrame);
-extern void SceneNode_Enable(short *pAnim);
 extern void Scene_DrawNode(short *pAnim);
 
 extern Ov002StateFn Ov002_DoneTick;

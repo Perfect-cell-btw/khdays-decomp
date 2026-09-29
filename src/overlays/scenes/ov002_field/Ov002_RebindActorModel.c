@@ -1,6 +1,6 @@
+#include "game/engine.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
-extern void Render_SubmitNode(void *dst, int id, int a, void *b);
-extern int GameState_GetField(int id, int kind);
 
 /* Rebinds the actor model unless the entity's descriptor says it is a fixed prop. */
 void Ov002_RebindActorModel(char *self) {

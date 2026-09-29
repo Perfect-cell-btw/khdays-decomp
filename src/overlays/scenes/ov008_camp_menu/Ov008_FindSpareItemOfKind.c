@@ -20,6 +20,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define GRID_COLS      5
 #define DB_ITEM_LISTS  0x16
@@ -93,8 +94,6 @@ typedef struct GameState {
 
 extern GameState *data_0204be18;
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
-extern void  MsgDb_FetchRecord(Ov008ItemListRecord **ppRecord, int nDbId, int nIndex, int nSlot); /* MsgDb_FetchRecord */
-extern void  DispatchByNodeKind(Ov008ItemListRecord **ppRecord);             /* release the record */
 extern char  Ov008_CountGridEntriesForOwner(Ov008MenuContext *pCtx, int nItemId);  /* Ov008_CountGridEntriesForOwner */
 
 Ov008Message15Record *Ov008_FindSpareItemOfKind(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode, Ov008Message15Record *pAnchor)

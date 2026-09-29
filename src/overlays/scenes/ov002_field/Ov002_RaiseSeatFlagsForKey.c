@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c240;                /* g_modeAndDayClock; bit 1 blocks this */
@@ -8,8 +9,6 @@ extern int Ov002_GetStateWord(void);           /* the key for this state */
 extern void Ov002_LoadOffsetTableOnce(int nWhich);    /* load the table */
 extern char *Ov002_FindHandlerByKey(int nKey);     /* find the key's row set */
 extern void Ov002_FreeRootBuffer0x8d7c(void);          /* let the table go */
-extern int GameState_IsFlagSet(int nFlag);
-extern void GameState_SetFlag(int nFlag);
 
 /* Raises the flag for every row of the current key whose seat is present.
  *

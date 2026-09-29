@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct VecFx16 { s16 x, y, z; } VecFx16;
 typedef struct CollisionPlane {
@@ -31,8 +32,6 @@ typedef struct CollCastState {
 extern s32 Mem_CompareBytes(const void *left, const void *right, s32 count);
 extern void FX_DivAsync(s32 numerator, s32 denominator);
 extern s64 FX_GetDivResultFx64c(void);
-extern void Vec3ScaleAddQ27(s32 factor, const VecFx32 *direction,
-                         const VecFx32 *origin, VecFx32 *result);
 
 #pragma inline_max_size(1300)
 static inline fx32 PlaneDot(const VecFx16 *normal, const VecFx32 *point)

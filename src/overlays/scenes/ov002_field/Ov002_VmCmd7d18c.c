@@ -6,6 +6,9 @@
  * widths are what the generator reads off the str/strh/strb it sees, and they
  * are why the block is 0x18 rather than 0x1c despite having the same operand
  * count as the wider members. */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     short nField04;          /* +0x04 */
@@ -18,9 +21,6 @@ typedef struct {
     char pad15[3];
 } Ov002EmitParams18;         /* 0x18 */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov002_CreateActorClass(int nCount, Ov002EmitParams18 *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

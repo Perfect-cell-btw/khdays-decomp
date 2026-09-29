@@ -2,9 +2,8 @@
  * column base, runs its init and returns how many columns it uses. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern int Loader_LoadOverlayInfo(void *info, int proc, int id);
-extern int Loader_LoadOverlayImage(int a);
 extern int FS_StartOverlay(void *info);
 extern void FS_EndOverlay(char *overlay);
 extern int FS_UnloadOverlayImage(void *p);

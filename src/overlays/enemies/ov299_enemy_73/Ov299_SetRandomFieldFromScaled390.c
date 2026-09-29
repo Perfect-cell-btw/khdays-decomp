@@ -1,7 +1,8 @@
 /* AI step: rolls a random spawn delay within the actor's range and continues with the spawn timer.
  */
 
-extern int RandNextScaled();
+#include "game/engine.h"
+
 extern void SetIndexedSlot();
 extern void Ov299_SpawnTimerTick();
 

@@ -4,6 +4,9 @@
  * the counter is positive -- the pending slots are cleared and any queued sound
  * stopped. The 0x412 tag-tracker refresh runs unless the global at
  * data_0204c240 has a non-zero value with bit 0 clear. */
+
+#include "game/engine.h"
+
 extern int data_ov002_0207f634;
 extern unsigned char data_0204c240;
 
@@ -13,7 +16,6 @@ extern int NNS_G2dGetUnpackedPaletteData(int block, void *out);
 extern void Ov002_EnqueueAndRecordCommand(int a, int b, int c, int d, int e);
 extern int *Ov002_GetMissionProgress(void);
 extern int Ov002_GetPanelField0058(void);
-extern void ForwardToHandlerOrCurrentObject(int a, int b, int c);
 extern void Ov002_FlushPendingDraw(void);
 extern int Ov002_GetRootField8d18(void);
 extern int Ov002_ForwardToSubDc(int tag);

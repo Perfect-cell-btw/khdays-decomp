@@ -10,15 +10,14 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern int Ov107_FindNearestObject(int owner, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *basis, const VecFx32 *v);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern long long RandNextScaled(int bound);
 static inline int RandRange(int lo, int hi) { return (int)RandNextScaled(hi - lo + 1) + lo; }
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 

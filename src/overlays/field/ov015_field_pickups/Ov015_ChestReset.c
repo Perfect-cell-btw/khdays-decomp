@@ -7,8 +7,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);   /* Actor_SetVecAndSyncChild */
 extern void Ov015_ChestUpdate(void);                        /* Ov015_ChestUpdate */
 
 typedef struct Ov015Chest {

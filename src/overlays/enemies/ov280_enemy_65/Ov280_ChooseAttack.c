@@ -3,7 +3,9 @@
  * thresholds 10/60 (closer than 3.0), 5/6/8/7 at 40/85/95 (closer than 5.0) or 5/6/8 at 25/50
  * (farther). When a sub-state was requested the +0x24 delay is re-rolled in [+0x224, +0x228] and 1
  * is returned. */
-extern int RandNextScaled(int n);
+
+#include "game/engine.h"
+
 extern void Ov280_AcquireTarget(int *node);
 
 static inline int RandRange(int low, int high)

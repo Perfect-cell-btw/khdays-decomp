@@ -9,7 +9,9 @@
  *
  * The comparison is UNSIGNED and the call is on the LEFT: `cap > level`, not `level < cap`.
  * Written the other way round it comes out as a signed `bge` with the operands swapped. */
-extern unsigned int Session_RandNextScaled(int scale);
+
+#include "game/engine.h"
+
 extern void Ov022_ResetStreamCursor(int self);
 extern void func_ov022_0209bec8(unsigned int *self);
 

@@ -1,8 +1,10 @@
 /* Enable or disable the ov106 scene's +0x8bc4 animation: track 4 is set to 1.0 or 0 and the node
  * re-evaluates (0202af1c). No-op without a scene. */
+
+#include "game/engine.h"
+
 extern char *data_ov106_020b8b60;
 extern void Anim_SetFrameWrapped(void *node, int track, int frame);
-extern void SceneNode_Enable(void *node);
 
 void Ov106_SetSceneAnimEnabled(int enable)
 {

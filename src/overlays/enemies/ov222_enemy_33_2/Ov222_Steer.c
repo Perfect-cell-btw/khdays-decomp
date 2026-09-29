@@ -6,6 +6,7 @@
  * without a target). */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Bit0 { unsigned char bit0 : 1; };
@@ -21,7 +22,6 @@ extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int Angle_TurnToward(int cur, int target, int step, int flag);
 extern const short data_0203d210[];
 
 void Ov222_Steer(int *node, int rad)

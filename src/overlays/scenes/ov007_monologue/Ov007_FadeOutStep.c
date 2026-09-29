@@ -1,5 +1,6 @@
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern void SetMasterBrightnessMain(int level);
 extern int Ov007_RequestSceneChange(void);
 
 /* Per-frame brightness ramp-DOWN (level = -frame/2) over 0x20 frames; once it

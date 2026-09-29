@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern u8 data_0204be04;                /* the step is skipped while this is set */
 extern u8 data_0204c240;                /* g_modeAndDayClock */
@@ -13,9 +14,7 @@ extern void Ov002_SetOrClearFlag200(int nArg0, int nArg1);
 extern int Ov002_CloseEvent(int nEventId);   /* Ov002_CloseEvent */
 extern void Ov002_SetSessionActive(int nArg0, int nArg1);
 extern void Ov002_EnterState2AndBlankIds(void);
-extern void func_02020878(int nOn);
 extern void Ov002_ResetAllSlots(void);
-extern char *GetEntryField20ByIndex(int nEntry);         /* the ov022 entry by index */
 /* The second parameter is one the callee ignores: the ROM leaves the flags
    word it has just loaded in r1 across the call, which is how it shows up. */
 extern int func_ov022_020886d0(int nEntry, int nFlags);

@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad00[4];
@@ -13,10 +14,6 @@ extern Ov002SceneRef data_ov002_0207fa20;
  * words, which is why the tree carries two symbols for one table. */
 extern int data_ov002_0207f58c[];
 extern int data_ov002_0207f590[];
-
-extern void UnloadOverlaySync(int nKind, int nHandle);
-extern void LoadOverlaySync(int nKind, int nHandle);
-extern void StoreGlobalArrayEntry(int nId, int nFlags);
 
 /* Give the scene the sub-overlay a panel id asks for.
  *

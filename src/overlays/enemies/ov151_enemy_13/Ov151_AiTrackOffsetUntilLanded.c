@@ -1,9 +1,10 @@
 /* Follows the owner-relative offset with damped velocity; once grounded after the flag clears
  * queues action 2. */
 
+#include "game/engine.h"
+
 struct b1 { unsigned char b : 1; };
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void VEC_Add(void *a, void *b, void *out);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

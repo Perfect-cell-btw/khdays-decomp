@@ -3,6 +3,7 @@
  * end.  Only the flag and the stride are established here. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002LinkEntry {
     char pad0000[0x108];
@@ -26,10 +27,6 @@ typedef struct Ov002LinkCtx {
 
 extern Ov002LinkCtx *data_ov002_0207fa10;
 
-extern void ReleaseField74AndCleanup(void *pOwner);
-extern void Obj_SetFlagBit3(void *pNode, int nValue);
-extern void ReleaseNodeResources(void *pNode);
-extern void Render_ReleaseNodeItem(void *pNode);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 
 /* Empties the link context's three collections and puts their counts back to

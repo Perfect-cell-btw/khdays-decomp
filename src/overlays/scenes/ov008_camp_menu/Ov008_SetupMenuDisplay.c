@@ -4,11 +4,10 @@
  * sub BG1..3 = 2/1/-). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define reg_GX_DISPCNT (*(vu32 *)0x04000000)
 
-extern void Gfx_Reset2DEngines(void);
-extern void SetGameMode(int);
 extern void GX_SetBankForBG(int);
 extern void GX_SetBankForSubBG(int);
 extern void GX_SetBankForOBJ(int);

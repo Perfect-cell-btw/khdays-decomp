@@ -20,8 +20,8 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
-extern void  Gfx_Reset2DEngines(void);
 extern void  GX_DisableBankForOBJExtPltt(void);
 extern void  GX_SetBankForTex(int bank);
 extern void  GX_SetBankForTexPltt(int a);

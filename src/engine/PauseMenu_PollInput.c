@@ -11,6 +11,7 @@
  * or 2 (Callbacks_SetByte) before Callbacks_Run(0). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0xc8];
@@ -35,24 +36,13 @@ extern u8 data_0204bd85;
 extern u8 data_0204be04;
 extern unsigned short data_0204c190;    /* keys pressed this frame */
 
-extern int Session_GetLocalPlayerIndex(void);
-extern int LoadGlobalU16At0(void);
 extern void Ov023_FlushTextBox(void);
-extern void GameState_SetField(int field, int width, int value);    /* GameState_SetField */
-extern int func_0201e438(void);
 extern int Ov023_ScriptTestStatusBit3(void);
-extern int GameState_IsFlagSet(int flag);                             /* GameState_IsFlagSet */
-extern void PollAndLatchRequest(void);
-extern void LatchPendingRequestOnce(void);
-extern int func_020208e0(void);
-extern int func_0201e428(void);
 extern int Ov002_Scene_IsIdle(void);
 extern int Ov002_Field_IsActive(void);
 extern int Ov002_ScenePanel_IsState4(void);
 extern int Ov002_ScenePanel_IsIdle(void);
 extern int Ov002_ScenePanel_IsState3(void);
-extern void Callbacks_SetByte(int step);
-extern void Callbacks_Run(int a);
 
 int PauseMenu_PollInput(void)
 {

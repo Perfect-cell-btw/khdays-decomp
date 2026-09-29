@@ -19,13 +19,12 @@
  *    bit-0 extract. A narrowing cast or a flat mask folds to `and #1`.
  */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned char b0 : 1;
     unsigned char rest : 7;
 } StanceFlags;
-
-extern void SetSubitemState(void *sub, int channel, short value, int flag);
-extern void RefreshObjectCallbacks(void *sub, int a);
 
 void Ov267_PushStanceToChannels(int obj) {
     switch (*(signed char *)(obj + 0x310)) {

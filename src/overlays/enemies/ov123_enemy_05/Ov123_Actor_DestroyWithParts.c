@@ -1,8 +1,8 @@
 /* Destroys the model (+0x384) and both part objects (+0x390), frees the part array and runs
  * Ov107_DestroyObject. */
 
-extern int DestroyInstance();
-extern int FreeInstanceMemory();
+#include "game/engine.h"
+
 extern int Ov107_DestroyObject();
 
 struct Elem {

@@ -1,13 +1,15 @@
 /* Ov002_UpdateLocalPeerReadyNotice (ARM).
  * The boolean conversion before the slot-bit test is present in the ROM.
  */
+
+#include "game/engine.h"
+
 typedef struct Ov002RootContext {
     char pad0000[0x8c8b];
     unsigned char bPeerReadyMask;
 } Ov002RootContext;
 
 extern Ov002RootContext *data_ov002_0207fa00;
-extern unsigned short QueryActiveStateOrDelegate(void);
 extern int Ov002_IsSessionOpen(void);
 extern int Ov022_GetEntryField66(int nSlot);
 extern int func_ov022_020886d0(int nSlot);

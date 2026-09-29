@@ -1,7 +1,8 @@
 /* The stream's current 64-bit timestamp, or 0 when there is no stream. Both
  * halves are read separately and both are zeroed on the null path, which is what
  * a predicated long long return looks like. */
-extern void *GetEntryField20ByIndex(int);
+
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x464];

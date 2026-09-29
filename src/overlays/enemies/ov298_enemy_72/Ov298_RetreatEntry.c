@@ -6,12 +6,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct PointTable { VecFx32 p[15]; };
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);
-extern int RandNextScaled(int range);
 extern int Ov298_ComputeNormalizedDir(int *node, VecFx32 v);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct PointTable data_ov298_020d54f0;

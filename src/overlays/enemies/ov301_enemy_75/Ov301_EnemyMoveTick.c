@@ -3,9 +3,8 @@
  * damping to vx/vz and a clamped ramp to vy, then flags the actor and commits. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int  Angle_TurnToward(int a, int b, int c, int *d);
-extern void QuatFromAxisAngle(int *out, int *tbl, int t);
 extern void Srt_SetRotationQuat(unsigned int *a, int *b);
 extern void ScaleVec3Fx12(int scale, int *src, unsigned int *dst);   /* ScaleVec3Fx12 */
 extern int data_02042264[];

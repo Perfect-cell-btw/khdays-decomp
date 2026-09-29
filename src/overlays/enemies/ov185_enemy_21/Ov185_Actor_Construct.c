@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Obj;
 typedef void (*ObjCallback)(struct Obj *self);
@@ -91,15 +92,12 @@ extern void Ov185_RunSubNodeCallbacksClose(struct Obj *self);
 
 extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
 extern struct CreatedItem *CreateSubitemInstance0xB4(void *item);
-extern int RegisterSubscriberSlot(struct Subscriber *subscriber, struct CreatedItem *item);
 extern void NNS_G3dMdlSetMdlPolygonID(void *config, unsigned int index, unsigned int variant);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *, int, unsigned int, int, int);
-extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Ov107_LoadSpawnRecord(int kind, void *spawner);
 extern void **CallocInstance(int size);
 extern void *Ov185_CreateNamedEntity(void *spawner);
-extern void Res_RequestIdPair(int resourceId);
 
 /*
  * Constructor for the ov185 actor.

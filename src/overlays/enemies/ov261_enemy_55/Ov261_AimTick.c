@@ -6,6 +6,7 @@
  * leaves the /15 quotient in ip instead of the ROM's r6. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
@@ -22,7 +23,6 @@ typedef struct {
 } HoverState;
 
 extern void Ov261_SetFacingAnchor(VecFx32 *anchor, VecFx32 *pos, VecFx32 *target);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, Quat *orient, const VecFx32 *src);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
 extern int VEC_Normalize(const VecFx32 *a, VecFx32 *d);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);

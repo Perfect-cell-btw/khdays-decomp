@@ -1,7 +1,7 @@
 /* Resets the actor's message node, optionally posts a copied message with the value, and arms it
  * (bit 5 by d). */
 
-extern int Obj_ResetSize30(int *p);
+#include "game/engine.h"
 
 typedef struct {
     unsigned short field_00;

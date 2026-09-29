@@ -1,7 +1,8 @@
 /* When the object belongs to the local player's side and is active, copies the inverse camera
  * matrix into it, clears its aim flag and posts its update. */
 
-extern int QueryActiveStateOrDelegate(void);
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(int state);
 extern int *G3d_GetInverseCameraMtx(void);
 extern void MI_Copy36B(int *dst, int *src);

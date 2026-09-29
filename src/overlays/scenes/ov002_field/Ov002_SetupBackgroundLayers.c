@@ -1,6 +1,5 @@
-extern int func_0201e428(void);
-extern void SetMasterBrightnessMain(int nValue);
-extern void SetMasterBrightnessSub(int nValue);
+#include "game/engine.h"
+
 extern void GX_SetBankForBG(int nBank);
 extern void GX_SetBankForBGExtPltt(int nBank);
 extern void GX_SetBankForSubBG(int nBank);

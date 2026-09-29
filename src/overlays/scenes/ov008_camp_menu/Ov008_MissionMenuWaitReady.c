@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void (*MissionState)(void);
 
@@ -56,14 +57,12 @@ extern int   Ov008_GetMissionMenuSelection(void);                               
 extern void  Ov008_SetMissionCursorSelection(int nSelection);
 extern int   Ov008_Link_Poll(void);                                  /* session phase */
 extern int   Ov008_MissionScene_GetState(void);                                  /* wipe sub-state */
-extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern void  Ov008_MissionScene_SetByte9520(int nFeatures);
 extern int   Ov008_CountPlayers(void);
 extern void  Ov008_GetMissionRowInfo(int nRow, Ov006RowInfo *pOut);          /* fill a row record */
 extern void  Ov008_MissionScene_SetMode(int nValue);                            /* Ov008_Fn_18a0 */
 extern void  Ov008_ResetTextLayers(void);                                  /* Ov008_ResetTextLayers */
 extern void  Ov008_FlushTextLayers(void);                                  /* Ov008_FlushTextLayers */
-extern u32   Session_GetLocalPlayerIndex(void);                                        /* Session_GetLocalPlayerIndex */
 extern void  Ov008_MissionScene_SetHalf95C2(int nRow);
 extern void  Ov008_RequestMenuState(int nState, int bAnimate, int nValue);  /* Ov008_RequestMenuState */
 extern void  Ov008_MissionSetModelPose(int nIcon);

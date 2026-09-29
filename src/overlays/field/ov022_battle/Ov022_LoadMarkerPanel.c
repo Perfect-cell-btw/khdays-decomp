@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define KIND_INFO 0
 #define KIND_STATE 1
@@ -55,11 +56,8 @@ extern char data_ov022_020b2e38[];          /* "ba/ef/st_&.p.z" */
 extern void OS_SPrintf(char *pszOut, char *pszFormat, char *pszArg);
 extern char *Msg_BuildLangPath(char *pszPath);                                      /* Msg_BuildLangPath */
 extern void *SND_RegisterSeq(char *pszPath, int nHeap);                         /* archive load */
-extern void InstallHandlerPairByFlag(int bPhase);                                          /* InstallHandlerPairByFlag */
 extern void *ResSlot_Acquire(void *pArchive, int nArg);
-extern int Obj_GetIndirectWord(void *pList, int nKind);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
-extern void *Archive_GetMember(void *pList, int nKind, int nIndex);                 /* Archive_GetMember */
 extern void Ov002_SetSlotKeyAndRebind(struct MarkerSprite *pSprite, void *pResource, int bFirst);
 extern void ResSlot_Release(void *pArchive);
 

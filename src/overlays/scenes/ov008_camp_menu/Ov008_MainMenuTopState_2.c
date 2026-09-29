@@ -2,6 +2,7 @@
  * player records with the peers before entering it. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;
@@ -32,7 +33,6 @@ typedef struct Ov008MenuContext {
     Ov008Message28 outgoingRecord;
 } Ov008MenuContext;
 
-extern u32   Session_GetLocalPlayerIndex(void);
 extern u32   Ov008_GetPlayerMask(void);
 extern void  Ov008_UpdateCursorSprite(void);
 extern int   Ov008_Link_IsLocal(void);

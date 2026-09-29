@@ -3,6 +3,7 @@
  * (data_0204c190) into a mode (2/5/...), restarting the fade as needed. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000SubSceneContext {
     u8 pad_0000[0x14];
@@ -18,7 +19,6 @@ typedef struct Ov000SubSceneContext {
 
 extern Ov000SubSceneContext *volatile data_ov000_0205ac28;
 extern volatile u16 data_0204c190;
-extern void PlaySound(int first, int sound);
 extern void Ov000_DispatchLogoAction(int selector, int argument);
 extern u64 OS_GetTick(void);
 extern void Ov000_SetupWorkArea(int slot);

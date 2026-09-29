@@ -1,6 +1,8 @@
 /* Reward menu tick: updates key repeat and the widgets, runs the current state, draws the frame and
  * uploads the dirty text. */
 
+#include "game/engine.h"
+
 typedef void (*Ov005MenuStateHandler)(void);
 typedef struct Ov005MenuStateTable { Ov005MenuStateHandler states[9]; } Ov005MenuStateTable;
 typedef struct Ov000ResourceTracker { char opaque[76]; } Ov000ResourceTracker;
@@ -17,7 +19,6 @@ typedef struct Ov005Context {
 } Ov005Context;
 extern const Ov005MenuStateTable data_ov005_0205b368;
 extern Ov005Context *data_ov005_0205b80c;
-extern int func_020362ec(MenuLimitHeader *);
 extern void Ov005_TickSelectionWidget(Ov000ResourceTracker *);
 extern void Ov005_UpdateWidgetLayerDefault(Ov005SpriteManager *,int);
 extern void Ov005_DrawMenuFrame(void);

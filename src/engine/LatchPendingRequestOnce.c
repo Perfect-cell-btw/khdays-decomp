@@ -9,13 +9,13 @@
  * duplication is in the original too -- one view reads the block as scalar
  * fields, the other hands it to func_02031384 as a parameter buffer, which is
  * what the _params name records. */
+
+#include "game/engine.h"
+
 extern unsigned short data_0204be08;
 extern unsigned short data_0204be08_params;
 
-extern int Session_GetLocalPlayerIndex(void);
-extern short func_02031384(int a, void *b, int c);
 extern void Ov023_FlushTextBox(void);
-extern void GameState_SetField(int flag, int a, int b);
 
 void LatchPendingRequestOnce(void) {
     char *self = *(char **)((char *)&data_0204be08 + 4);

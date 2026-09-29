@@ -3,6 +3,7 @@
  * Ov014_ActorStepProgress. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad00[0xe0];
@@ -25,10 +26,7 @@ static inline int fx_mul(int a, int b)
 }
 
 extern int Ov002_GetModuleScale(void);
-extern unsigned int GameState_GetField(int, int);
-extern unsigned int Session_GetLocalPlayerIndex(void);
 extern int Ov002_RecordElementHit(Ov014State *, unsigned char *, int);
-extern void Actor_SetVecAndSyncChild(int *, const VecFx32 *);
 extern void Ov014_SetFlag2RunTwoSubActionsIfFlag4(Ov014State *, int);
 extern int Ov014_ActorStepProgress(void);
 

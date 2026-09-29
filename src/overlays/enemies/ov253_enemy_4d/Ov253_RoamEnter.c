@@ -7,11 +7,11 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Ov253Bounds data_ov253_020d49b8;
 extern const short data_0203d210[];

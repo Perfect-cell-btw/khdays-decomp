@@ -3,7 +3,8 @@
  * is taken first. Otherwise, one time in five nothing is picked; within 3.0 of the target half the
  * time the actor steps (move 4, flag +0x5c) queueing move 6/9/10 by a d100 roll, else it picks move 6
  * or 8; within 8.0 move 10 or 8; farther move 10. Returns whether a next move was set. */
-extern int RandNextScaled(int bound);
+
+#include "game/engine.h"
 
 int Ov230_PickMove(int self, int range)
 {

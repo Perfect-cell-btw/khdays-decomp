@@ -1,9 +1,11 @@
 /* Ov253_WaitTick -- wait tick: the +0x18 speed follows twice the frame step (30 / 15);
  * once the +8 item's animation is free the +0x2c delay is drawn between the actor's +0x224 and
  * +0x228 bounds, a cleared sub-state (-1) becomes 2 and the node slot is released. */
+
+#include "game/engine.h"
+
 struct Ov253Sub { char pad[0x1c7]; signed char sub; };
 
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov253_WaitTick(int *node) {

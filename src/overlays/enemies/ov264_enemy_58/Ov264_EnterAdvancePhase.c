@@ -11,12 +11,11 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNext(void);
 extern const short data_0203d210[];
 extern VecFx32 data_02041dc8;
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int c);
-extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov264_stActivateWhenReady(void);
 

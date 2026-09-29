@@ -2,8 +2,10 @@
  * down, and the +0x18 step is rebuilt from the actor's +0xa0 pose transformed by the +0x3ac
  * sub-object's steer vector (scaled by its factor). Once the +4 child's +0xad byte clears, pose
  * 0x14 plays (looping), the sub-object plays 7 and the node moves to 020d159c. */
+
+#include "game/engine.h"
+
 extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int sub, int a, int b);

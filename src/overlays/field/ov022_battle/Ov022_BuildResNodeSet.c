@@ -14,6 +14,7 @@
 /* Ov022ResNodeSet: what this function fills (embedded at request+4) */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct ResNodeSet {
     u16 anCounts[5];             /* 0x00 nodes per group */
@@ -50,7 +51,6 @@ struct LoadRequest {
 #define TEX_MEMBER 7
 #define TAG_BIAS 7
 
-extern void *Archive_GetMember(void *pArchive, int nGroup, int nIndex);   /* Archive_GetMember */
 extern int func_ov022_020b1078(void *pMember);                        /* node count of a member */
 extern void MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern u8 *NNS_G3dGetAnmByIdx(void *pMember, int nIndex);

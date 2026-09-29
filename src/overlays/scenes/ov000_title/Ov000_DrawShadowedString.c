@@ -10,7 +10,8 @@
  *     Same address, same `ldrh`, and the CSE stops.
  *   - `x = x0` is assigned BEFORE the empty-string guard, which is what puts it above
  *     the predicated early return and makes x0 the first parameter saved. */
-extern int Obj_ForwardInnerPayload(void *ctx, int x, int y, int color, int glyph);
+
+#include "game/engine.h"
 
 void Ov000_DrawShadowedString(void *ctx, int x0, int y, int a3, unsigned short *str) {
     int x = x0;

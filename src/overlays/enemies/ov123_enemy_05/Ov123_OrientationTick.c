@@ -5,9 +5,8 @@
  * actor's +0xf0 vector and reset to the zero vector. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(void *dst, void *src, int t);
 extern void Quat_FromTwoVectors(void *dst, void *src, int m);
 extern void Quat_Multiply(void *dst, void *a, void *b);
 extern void Srt_SetRotationQuat(int a, void *b);

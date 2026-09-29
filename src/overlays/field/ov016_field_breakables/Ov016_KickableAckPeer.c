@@ -3,14 +3,13 @@
  * answered, drop the "waiting" bit (bit 4 of +0x61c), clear the mask and report 1. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016Kickable {
     u8 pad_000[0x61c];
     u8 nSyncFlags;            /* 0x61c: bit 4 = waiting for the peers */
     u8 nAckMask;              /* 0x61d: one bit per peer */
 } Ov016Kickable;
-
-extern unsigned short GetGlobalU16At6(void);   /* Session_GetPeerMask */
 
 int Ov016_KickableAckPeer(Ov016Kickable *pSelf, int nPeer)
 {

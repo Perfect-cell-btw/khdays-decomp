@@ -1,6 +1,8 @@
 /* Enter the flinch state, but only while the target lock (node[1]+0xad) is clear: advance the RNG
  * once (to desync), set the reaction state to 2, and re-register the think callback. */
-extern int RandNextScaled();
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov259_EnterFlinch(int param_1) {

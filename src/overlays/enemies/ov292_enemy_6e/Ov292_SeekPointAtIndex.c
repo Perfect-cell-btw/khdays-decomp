@@ -4,9 +4,9 @@
  * than the index. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void *List_First(void *list);
-extern void *List_Next(void *list);
 
 void Ov292_SeekPointAtIndex(char *state)
 {

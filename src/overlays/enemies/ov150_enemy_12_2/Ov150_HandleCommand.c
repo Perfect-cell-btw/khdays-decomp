@@ -11,6 +11,7 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Command {
     u8 pad00[2];
@@ -57,7 +58,6 @@ struct Self {
 };
 
 extern void **List_First(void *list);
-extern void **List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
                          VecFx32 *dst);
 extern int VEC_Mag(const VecFx32 *v);

@@ -14,7 +14,9 @@
  * One more lever: the aim angle is computed into a local BEFORE the node's flag is tested.
  * Computing it inside the guarded block reorders the whole tail.
  */
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
+
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(char *self);
 extern int Ov022_IsSlotReady(char *p);
 extern void Ov089_IdleStep(void);

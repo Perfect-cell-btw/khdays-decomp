@@ -1,6 +1,7 @@
 /* Whether every game flag of the set named by `id` is set: 0x25a covers flags 0x1444..0x144f,
  * 0x25b 0x1450..0x1460 and 0x25c 0x1461..0x1464; any other id (or any clear flag) gives 0. */
-extern int GameState_IsFlagSet(int flag);   /* GameState_IsFlagSet */
+
+#include "game/engine.h"
 
 int Ov069_IsFlagSetComplete(int id)
 {

@@ -4,10 +4,9 @@
  * in +0x90 and replaced by 0xc. The rest restarts at 10.0 and 1 is returned (0 when nothing started). */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { unsigned f : 8; } B8;
-
-extern int RandNextScaled(int bound);
 
 int Ov252_PickMove(int *node)
 {

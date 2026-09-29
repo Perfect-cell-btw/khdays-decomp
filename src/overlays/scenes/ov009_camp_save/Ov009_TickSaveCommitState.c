@@ -2,6 +2,7 @@
  * refreshes the slots and shows the result with a sound. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov009GameState {
     int value0;
@@ -39,11 +40,7 @@ extern void Ov009_SaveMenu_RefreshRows(Ov009SaveContext *ctx);
 extern void Ov009_SaveMenu_UpdateNumbers(Ov009SaveContext *ctx);
 extern void Ov009_SetMenuEntriesVisible(int enabled, int mode);
 extern void Ov009_DrawMenuText(Ov009SaveContext *ctx, int mode);
-extern void PlaySound(int bank, int sound);
-extern void func_020208f0(void);
 extern void Ov009_SetCtxField95fc(int value);
-extern void SetMasterBrightnessMain(int value);
-extern void SetMasterBrightnessSub(int value);
 extern void Ov009_TickPageScroll(Ov009SaveContext *ctx);
 extern void Ov009_UpdateSlotSelectionTargets(Ov009SaveContext *ctx);
 

@@ -7,10 +7,10 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern int RandNextScaled(int range);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov277_BounceTick(int *node);

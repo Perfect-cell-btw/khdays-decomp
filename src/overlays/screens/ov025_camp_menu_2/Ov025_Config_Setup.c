@@ -11,6 +11,7 @@
  * visibility flag reuses the tracker's r5). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008LayoutTemplate {
     u32  words[4];
@@ -53,8 +54,6 @@ extern void  Ov025_ReleaseAllListSlots(int nCtx, int nMode);              /* Ov0
 extern void  Ov025_Config_LoadValues(void);                             /* Ov025_Config_LoadValues */
 extern void *Ov025_FindEntryById(int nCtx, int nId);                /* FindEntryById */
 extern void  Ov025_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
-extern int   GameState_IsFlagSet(int nFlag);                              /* GameState_IsFlagSet */
-extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 extern int   Ov025_GetSlideTableValue(int nIndex);                       /* Ov025_GetTierBase */
 extern Ov008LayoutTemplate data_ov025_020b4148;
 extern Ov008MenuEntryDef data_ov025_020b4f64[];                     /* the menu entry table */

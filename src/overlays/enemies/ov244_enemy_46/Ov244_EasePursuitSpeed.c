@@ -6,8 +6,10 @@
  * clamped to 0x1000. When the gate byte is clear the speed is pinned to 0x1000, a hold time
  * is rolled uniformly between the bounds at +0x224/+0x228, and the action byte at +0x1c7 is
  * set to 2 before re-registering the think callback. */
+
+#include "game/engine.h"
+
 extern int FX_Div(int a, int b);
-extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
 void Ov244_EasePursuitSpeed(int *node) {

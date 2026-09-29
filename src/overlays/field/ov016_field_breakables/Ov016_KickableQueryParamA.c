@@ -2,6 +2,7 @@
  * kickable's GameState bit is set and it is not locked (bit 8 of +0x464); else 0. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov016KickableDef {
     u8 pad_00[0x68];
@@ -17,8 +18,6 @@ typedef struct Ov016Kickable {
     u8 pad_017[0x464 - 0x17];
     u16 nDoorFlags;           /* 0x464: bit 8 = locked */
 } Ov016Kickable;
-
-extern int GameState_GetField(int nField, int nBit);   /* GameState_GetField */
 
 int Ov016_KickableQueryParamA(Ov016Kickable *pSelf)
 {

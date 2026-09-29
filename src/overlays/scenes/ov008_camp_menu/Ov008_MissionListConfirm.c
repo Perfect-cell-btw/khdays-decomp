@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionList {
     int nSelected;            /* 0x000: -1 = none */
@@ -28,7 +29,6 @@ typedef struct Ov008MissionList {
 #define SOUND_CANCEL  3
 
 extern void Ov008_ShowMissionListInfoPanel(Ov008MissionList *pList, int bExpand);   /* detail panel slide */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 extern void Ov008_MissionListSelect(Ov008MissionList *pList);                 /* selection step */
 
 void Ov008_MissionListConfirm(Ov008MissionList *pList)

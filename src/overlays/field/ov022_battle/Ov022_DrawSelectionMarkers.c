@@ -2,6 +2,7 @@
  * focused target and animates them with the activation tween and the target's deadline. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022SelectionPoint {
     int x;
@@ -61,8 +62,6 @@ extern Ov022RootContext *NNSi_FndGetCurrentRootHeap(void);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_ResetViewToDefault(void);
 extern int Ov002_ResourceNodeCallback(Ov022DisplayRecord *record);
-extern int QueryActiveStateOrDelegate(void);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern u64 OS_GetTick(void);
 extern u64 func_02020368(u64 value, u32 divisor, int mode);
 extern int FX_Div(int numerator, int denominator);

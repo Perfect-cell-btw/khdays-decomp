@@ -1,7 +1,6 @@
 /* Rebuilds the parameter index and resets the party buffers. */
 
-extern int Params_BuildIndex();
-extern int PartyState_ResetBuffers();
+#include "game/engine.h"
 
 void PartyState_Reset(void) {
     Params_BuildIndex();

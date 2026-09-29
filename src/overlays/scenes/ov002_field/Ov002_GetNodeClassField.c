@@ -1,4 +1,3 @@
-extern int GameState_GetField(int nId, int nSlot);
 
 /* Same gate as the node-payload accessor, returning the class field at +0x68
  * instead of the node's own payload.
@@ -9,6 +8,9 @@ extern int GameState_GetField(int nId, int nSlot);
  * the mask lives inside the else arm, not in the shared test: the original
  * branches straight past the and on the slot-2 path, so the join compares a
  * plain variable against zero. */
+
+#include "game/engine.h"
+
 int Ov002_GetNodeClassField(char *pNode)
 {
     char *pClass;

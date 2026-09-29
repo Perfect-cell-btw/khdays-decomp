@@ -7,6 +7,7 @@
  * marked dirty (+0x2c4, +0x18). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];
@@ -56,7 +57,6 @@ typedef struct Ov025ScrollList {
 
 extern int   func_02020400(int nNum, int nDen);                     /* _s32_div_f */
 extern void  Ov025_ScrollList_SetKnob(Ov025ScrollList *pList, int nKnob, int nScroll, int bClampCursor); /* Ov025_ScrollList_SetKnob */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov025_ScrollList_PlaceMarkers(Ov025ScrollList *pList);           /* Ov025_ScrollList_PlaceMarkers */
 
 void Ov025_ScrollList_SelectRow(Ov025ScrollList *pList, int nRow, int bSound)

@@ -1,6 +1,7 @@
 /* Fades the calendar out over time and moves to the final phase. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned char opaque0000[0xaf8];
@@ -10,7 +11,6 @@ typedef struct {
 } Ov004Context;
 extern Ov004Context *data_ov004_02051384;
 extern u64 OS_GetTick(void);
-extern void SetMasterBrightnessMain(int brightness);
 
 void Ov004_FadeOutTransition(void)
 {

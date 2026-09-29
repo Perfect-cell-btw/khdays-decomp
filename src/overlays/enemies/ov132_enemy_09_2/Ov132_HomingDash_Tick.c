@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -61,11 +62,8 @@ extern void VEC_Add(FxVec *a, FxVec *b, FxVec *ab);
 extern int VEC_DotProduct(FxVec *a, FxVec *b);
 extern int VEC_Normalize(FxVec *out, FxVec *in);
 extern void ScaleVec3Fx12(int scale, FxVec *in, FxVec *out);
-extern void Vec3TransformViaTempMtx(FxVec *out, Quat *q, const FxVec *in);
 extern void Quat_FromTwoVectors(Quat *out, const FxVec *a, FxVec *b);
 extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
-extern void Vec4_Normalize(Quat *out, Quat *in);
-extern void QuatFromAxisAngle(Quat *out, const FxVec *axis, int angle);
 extern int func_020050b4(int x, int z);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
 extern void *Ov107_FindNearestObject(void *actor, int mode);

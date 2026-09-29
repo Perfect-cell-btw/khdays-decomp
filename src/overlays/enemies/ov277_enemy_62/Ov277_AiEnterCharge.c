@@ -1,6 +1,8 @@
 /* Post a 4-byte sprite request (template halfword-pair with the live tile id), kick anim 5,
  * then dispatch 020d09ac. */
-extern unsigned short func_02031384(int, void *, int);
+
+#include "game/engine.h"
+
 extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int data_ov277_020d36bc;

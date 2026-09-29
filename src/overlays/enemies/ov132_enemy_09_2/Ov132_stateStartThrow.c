@@ -3,6 +3,7 @@
  * flags and installs the throw step. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct v3 { int a, b, c; };
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
@@ -10,7 +11,6 @@ struct pair { unsigned short a, b; };
 
 extern unsigned short data_ov132_020d0d8c[];
 extern struct v3 data_02041dc8;
-extern void func_02031384();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov132_ThrowCharge_Tick(void);
 

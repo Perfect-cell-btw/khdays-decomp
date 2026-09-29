@@ -2,6 +2,7 @@
  * from the progress, and installs each entry's callback. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025LayoutTemplate { u32 words[4]; } Ov025LayoutTemplate;
 extern const Ov025LayoutTemplate data_ov025_020b3894;
@@ -17,7 +18,6 @@ extern void Ov025_ReleaseTwoSlots(int context, void *entry);
 extern void Ov025_ReleaseTwoSlotsEx_2(int context, void *entry, int frame);
 extern void Ov025_SetEntrySlotsVisible(int context, void *entry, int visible);
 extern void Ov025_ResolveEntryStoreWord(int context, int id, void *callback);
-extern int GameState_GetField(int field, int bits);
 extern void Ov025_Hub_InitEntries(void *scene);
 extern void Ov025_Hub_OnEntryHover(void);
 extern void Ov025_MenuEntry_SetSlot2AndBeep(void);

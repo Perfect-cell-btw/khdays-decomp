@@ -21,6 +21,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 aText[0x20];                    /* +0x00 */
@@ -46,10 +47,6 @@ extern Ov002RootContext *data_ov002_0207fa00;
 
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int nSize);
 extern void MI_CpuFill8(void *pOut, int nValue, unsigned int nSize);
-extern void MsgDb_LoadDb(int nSlot, int nFont);
-extern void MsgDb_FetchRecord(int *pOut, int nSlot, int nKey, int nFont);
-extern int ResSlot_Release_2(int nSlot);
-extern void DispatchByNodeKind(int *pRecord);
 extern void StrCopy16(u16 *pOut, const u16 *pIn);
 
 int Ov002_BuildKeyEntryTable(void)

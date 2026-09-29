@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef u64 REGType64;           /* the SDK register type is not volatile */
 
@@ -55,7 +56,6 @@ typedef struct RoomSegment {
 
 extern const short data_0203d210[];     /* FX_SinCosTable_ */
 extern s64 FX_GetDivResultFx64c(void);         /* CP_GetDivResult64 */
-extern void Vec3ScaleAddQ27(fx32 t, const VecFx32 *delta, const VecFx32 *base, VecFx32 *out);
 extern void MTX_Rot22_(MtxFx22 *m, fx32 sinVal, fx32 cosVal);
 
 fx32 RoomBox_HitTop(const RoomBox *box, RoomSegment *seg)

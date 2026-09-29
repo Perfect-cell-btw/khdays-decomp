@@ -14,11 +14,12 @@
  *     explicit extract/reassemble rather than the bitfield form -- and the lo-byte keep must be
  *     `v & ~0xff00` (bic), not `v & 0xff` (and). */
 
+#include "game/engine.h"
+
 typedef struct {
     unsigned f : 8;
 } B8;
 
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
 extern void Ov263_AiEnterStandby(void);
 extern void Ov263_AiDispatchAction(void);

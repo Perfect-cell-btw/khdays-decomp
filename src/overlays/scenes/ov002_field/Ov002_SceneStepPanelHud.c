@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[0xd8];
@@ -27,9 +28,7 @@ typedef struct {
 extern int data_ov002_0207f628;
 extern int data_0204c058;
 
-extern int func_02023c50(void);
 extern long long Math_DivMod(int nNumer, int nDenom);
-extern void PlaySoundChecked(int nBank, int nSound);
 
 extern int Ov002_GetRootField8bc8(void);
 extern void Ov002_DrawHudNumber(int nX, int nY, int nValue);

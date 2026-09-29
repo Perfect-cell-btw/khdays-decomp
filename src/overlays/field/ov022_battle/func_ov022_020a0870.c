@@ -1,6 +1,7 @@
 /* Host only: sets the actor's state and records the result. */
 
-extern short Session_GetLocalPlayerIndex(void);
+#include "game/engine.h"
+
 extern unsigned int Ov022_ActorSetState(unsigned int *arg0, int arg1);
 unsigned int func_ov022_020a0870(unsigned int *arg0, int arg1) {
     unsigned int r = 0;

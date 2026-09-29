@@ -1,7 +1,7 @@
 /* Checks the actor's four ability rows: builds the mask of matching abilities and the amount they
  * grant, when enabled. */
 
-extern int Slot_EvalPackedParam(int kind, unsigned int packedArg);
+#include "game/engine.h"
 
 struct Ov022MatchPair020a22f0 {
     unsigned int packedArg;

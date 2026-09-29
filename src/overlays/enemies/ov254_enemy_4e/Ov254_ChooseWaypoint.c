@@ -4,9 +4,9 @@
  * stored there. Returns 0 for an empty route, else 1. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern VecFx32 *List_First(void *list);
-extern VecFx32 *List_Next(void *list);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *v);
 extern int func_020050b4(int x, int z);

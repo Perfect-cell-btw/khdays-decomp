@@ -2,6 +2,7 @@
  * archives, and computes the gauge range. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Tween {int mode,duration,from,to;long long startTick;unsigned int flags;} Tween;
 typedef struct Ov005ResultTween {Tween tween;int value;char unknown20[12];} Ov005ResultTween;
@@ -22,7 +23,6 @@ extern void Tween_Clear(Tween *);
 extern void Ov005_InitResourceRecord(Ov005TextTable *,const char *);
 extern long long OS_GetTick(void);
 extern void *Msg_OpenContainerAndReadHeader(const char *,int);
-extern void SetMasterBrightnessSub(int);
 extern void Ov005_CalculateGaugeRange(int *,int);
 void Ov005_InitResultResources(void) {
  u8 i;

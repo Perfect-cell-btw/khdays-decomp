@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 struct Sphere { VecFx32 centre; int radius; };
 struct ListNode { void *item; };
@@ -43,7 +44,6 @@ extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, VecFx32 *push, int z);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern struct ListNode *List_First(void *list);
-extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, struct Sphere *shape, int flag);
 extern int Ov107_AiState_ApplyHit(Actor *obj, int target, struct HitPacket *packet);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, int at);

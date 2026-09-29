@@ -7,14 +7,13 @@
  * the emitter at +0x22f8 is busy, otherwise to state 0x25. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov073_FireHeavyBurst(char *self);
-extern void SceneNode_Enable(void *node);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);
 

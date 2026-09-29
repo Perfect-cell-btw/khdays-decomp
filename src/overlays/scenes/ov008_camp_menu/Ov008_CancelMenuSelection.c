@@ -6,6 +6,7 @@
  * the cue (PlaySound(0,4)). See the confirm twin for the addressing-form notes. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008SelCtx {
     u8  pad_0000[0x4c];
@@ -16,7 +17,6 @@ typedef struct Ov008SelCtx {
 
 extern Ov008SelCtx *Ov008_GetMenuContext(void);
 extern int  Ov008_MenuEntrySubCount(int index);
-extern void PlaySound(int a, int b);
 extern int  Ov008_ClampWrapIndex(int a, int b, int c);
 extern void Ov008_RefreshMenuPage(void);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);

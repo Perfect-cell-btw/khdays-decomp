@@ -11,14 +11,13 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000RenderObject Ov000RenderObject;
 
 typedef struct Ov000GlyphRun {
     u16 codes[5];
 } Ov000GlyphRun;
-
-extern void Obj_ForwardInnerPayload(Ov000RenderObject *object, int x, int y, int depth, unsigned int code);
 
 void Ov000_DrawGlyphRunWithShadow(Ov000RenderObject *object, const Ov000GlyphRun *run, int x, int y,
                          int depth) {

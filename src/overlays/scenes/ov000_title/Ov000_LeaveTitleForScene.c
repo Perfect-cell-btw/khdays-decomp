@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef u32 FSOverlayID;
 typedef void *StateFn;
@@ -24,7 +25,6 @@ extern u32 OVERLAY_12_ID[1];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_TeardownTitle(void);
-extern void LoadOverlaySync(int target, FSOverlayID id);
 extern void *InstantiateClass(void *classDesc, int arg);
 extern void *data_ov000_0205ac3c;
 extern int data_ov011_0205e8a0;

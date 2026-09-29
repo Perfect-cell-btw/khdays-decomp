@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Parts { char pad[0x430]; int parts[2]; };
@@ -21,10 +22,8 @@ extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
-extern int RandNextScaled(int n);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern void Ov260_PlacePartSpan(int part, VecFx32 *at, VecFx32 *from, VecFx32 *to);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];

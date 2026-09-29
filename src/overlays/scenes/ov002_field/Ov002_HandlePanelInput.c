@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u8 bKind;           /* +0 */
@@ -48,8 +49,6 @@ extern void Ov002_PanelRepaintListGroup(int nCode);
 extern void Ov002_PanelRepaintSubListGroup(int nColumn);
 extern void Ov002_RedrawPartyStrip(void);
 extern void Ov002_PanelRepaintCachedEntry(void);
-extern void PlaySound(int nBank, int nSound);
-extern void PlaySoundChecked(int nBank, int nSound);
 extern void Ov002_PanelRepaintForKind(int nCode, int nKind, int nFlag);
 
 void Ov002_HandlePanelInput(int nRaw, int nSound) {

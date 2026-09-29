@@ -1,6 +1,7 @@
 #pragma thumb on
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct NNSSndHeap *NNSSndHeapHandle;
 typedef struct { void *player; } NNSSndHandle;
@@ -65,7 +66,6 @@ typedef struct SoundCtx {
 
 extern SoundCtx *data_0204c234;
 extern const char data_020429ec[];      /* default sound archive path */
-extern void SoundMgr_WaitLoaderIfState1(void);
 extern void NNS_SndPlayerStopSeqAll(int mode);
 extern void NNS_SndInit(void);
 extern void NNS_SndArcInit(void *arc, const char *path, NNSSndHeapHandle heap, int bSymbolLoad);   /* NNS_SndArcInit */

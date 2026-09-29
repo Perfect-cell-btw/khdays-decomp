@@ -1,8 +1,9 @@
 /* Switches the menu to a page with items when it is not already there, with a sound. */
 
+#include "game/engine.h"
+
 extern int Ov025_ListHasItems();
 extern void Ov025_Menu_ChangePage();
-extern void PlaySound();
 
 void Ov025_AdvanceSlotIfMatch(int arg0, unsigned int arg1, int arg2, int arg3) {
     int s = *(int *)(arg0 + 0x30);

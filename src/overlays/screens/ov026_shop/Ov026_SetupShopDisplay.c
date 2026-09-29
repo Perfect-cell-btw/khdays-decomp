@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */
@@ -27,9 +28,6 @@ static volatile DisplayRegisters *const MAIN_DISPLAY = (volatile DisplayRegister
 static volatile DisplayRegisters *const SUB_DISPLAY  = (volatile DisplayRegisters *)0x04001000;
 static volatile u16 *const REG_POWCNT1 = (volatile u16 *)0x04000304;
 
-extern void  SetMasterBrightnessMain(int nBrightness);                              /* SetMasterBrightnessMain */
-extern void  SetMasterBrightnessSub(int nBrightness);                              /* SetMasterBrightnessSub */
-extern void  Gfx_Reset2DEngines(void);                                         /* GX_Init */
 extern void  GX_SetBankForTex(int nBank);
 extern void  GX_SetBankForTexPltt(int nBank);
 extern void  GX_SetBankForBG(int nBank);

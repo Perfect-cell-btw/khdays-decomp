@@ -16,15 +16,15 @@
  *     it `unsigned short` truncates at the assignment instead and reorders two
  *     instructions on every member that fetches the count early.
  */
+
+#include "game/engine.h"
+
 typedef struct {
     int nField00;            /* +0x00 */
     int nField04;            /* +0x04 */
     int nField08;            /* +0x08 */
 } Ov016EmitParams;          /* 0xc */
 
-extern int ByteCode_ResolveOperand(void *self, void *desc);
-extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
 extern int Ov016_CreateEntry(int nCount, Ov016EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 

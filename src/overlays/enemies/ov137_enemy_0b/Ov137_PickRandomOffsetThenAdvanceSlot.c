@@ -1,4 +1,5 @@
-extern int RandNextScaled();
+#include "game/engine.h"
+
 extern int SetIndexedSlot();
 
 /* The halfword at +0x60 is a bitfield pair; bit 0 of its low byte gates the step. */

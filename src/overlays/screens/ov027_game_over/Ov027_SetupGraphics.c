@@ -13,6 +13,7 @@
  * BG1 only. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 static volatile u16 *const REG_BG0CNT = (volatile u16 *)0x04000008;
@@ -23,9 +24,6 @@ static volatile u16 *const REG_BLDCNT = (volatile u16 *)0x04000050;
 static volatile u32 *const REG_DB_DISPCNT = (volatile u32 *)0x04001000;
 static volatile u16 *const REG_DB_BG1CNT = (volatile u16 *)0x0400100a;
 
-extern void Gfx_Reset2DEngines(void);                                    /* GX_Init */
-extern void SetMasterBrightnessMain(int nBrightness);                         /* SetMasterBrightnessMain */
-extern void SetMasterBrightnessSub(int nBrightness);                         /* SetMasterBrightnessSub */
 extern void GX_SetBankForLCDC(int nBanks);
 extern void MIi_CpuClearFast(u32 nValue, void *pDst, u32 nSize);
 extern void GX_DisableBankForLCDC(void);
@@ -39,7 +37,6 @@ extern void NNS_GfdInitFrmTexVramManager(int nA, int nB);
 extern void NNS_GfdResetFrmPlttVramState(void);
 extern void NNS_GfdInitFrmPlttVramManager(int nA, int nB);
 extern void Ov002_SetDisplaySwap(int bTop);                          /* ov002: put the display on the top screen */
-extern void SetGameMode(int nMode);                               /* SetGameMode */
 extern void G2x_SetBlendAlpha_(volatile u16 *pReg, int nPlane1, int nPlane2, int nEva, int nEvb);
 extern void GXS_SetGraphicsMode(int nMode);
 extern void GX_SetBankForSubBG(int nBank);

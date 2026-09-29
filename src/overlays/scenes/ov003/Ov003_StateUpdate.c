@@ -1,6 +1,8 @@
 /* Mission result title state: draws the header, pulses the prompt, animates the characters and
  * waits for the A button to move on. */
 
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int Ov105_WM_GetLinkLevel(void);
 extern void Ov003_UpdateLayers(void *p);
@@ -9,7 +11,6 @@ extern int G2S_GetBG0ScrPtr(void);
 extern void func_02013484(int a, void *b, int c, int d, int e, int f, int g, int h, int i, int j);
 extern void Ov003_AdvanceAnims(void *p);
 extern int Ov003_IsGlobalBit0Set(void);
-extern void PlaySoundChecked(int a, int b);
 extern int Ov003_StatePrepare(void);
 extern int Ov003_SceneStateFadeIn(void);
 

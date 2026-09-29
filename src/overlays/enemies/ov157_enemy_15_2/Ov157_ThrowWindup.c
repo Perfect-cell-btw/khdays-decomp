@@ -8,6 +8,7 @@
  * is requested and the state ends. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -17,7 +18,6 @@ extern int func_020050b4(int x, int z);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
 extern void Ov157_RelayoutAndStoreVec(int item, void *from, VecFx32 *dir);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov157_ThrowWindup(int *node)

@@ -1,11 +1,11 @@
+#include "game/engine.h"
+
 extern int GX_SetBankForTex(int);
 extern int NNS_GfdResetFrmTexVramState(void);
 extern int NNS_GfdInitFrmTexVramManager(int a, int b);
 extern int GXS_SetGraphicsMode(int);
 extern void MIi_CpuClearFast(int value, void *dst, int size);
 extern int GX_DisableBankForLCDC(void);
-extern int SubOam_SetupBitmapGrid(void);
-extern int SetGameMode(int a);
 
 extern char data_0204c214[];
 

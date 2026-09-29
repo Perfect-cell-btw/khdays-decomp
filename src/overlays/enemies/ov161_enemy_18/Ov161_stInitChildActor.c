@@ -2,7 +2,8 @@
  * and back pointer, clears its flag bit 1, starts its animation tracks, resets the timer and
  * installs the timer step. */
 
-extern void SetSubitemState(void *child, int cmd, int arg, int flag);
+#include "game/engine.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov161_RenderAtOwnerScaled(void);
 extern void Ov161_TickTimerAdvanceSubState(void);

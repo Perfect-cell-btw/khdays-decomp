@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov008MissionListEntry {
     u8  pad_00[4];
@@ -46,7 +47,6 @@ extern void Ov008_LayoutMissionDots(Ov008MissionList *pList);                 /*
 extern void Ov008_LayoutMissionTiles(Ov008MissionList *pList);                 /* refresh the row texts */
 extern int  func_02020400(int nNum, int nDen);                            /* _s32_div_f */
 extern void Ov008_ScrollListTo(Ov008MissionList *pList, int nPos, int nTarget, int bNow); /* Ov008_ScrollListTo */
-extern void PlaySound(int nKind, int nSound);                         /* PlaySound */
 
 void Ov008_MissionListPage(Ov008MissionList *pList, int nDir)
 {

@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     unsigned pad0 : 1;
@@ -16,7 +17,6 @@ typedef struct {
 } SplitU16;
 
 extern char **List_First(void *listHead);
-extern char **List_Next(void *listHead);
 extern int Ov107_FindNearestObject(void *node, int *out);
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern fx32 VEC_Mag(const int *v);

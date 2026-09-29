@@ -1,7 +1,9 @@
 /* Script opcode: drive Ov002_SetKeyNodeVisible with three operands, the first
  * narrowed differently depending on the boot mode -- bit 2 of data_0204c240
  * takes the SIGNED high halfword, otherwise the unsigned low one. Reports 1. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern void Ov002_SetKeyNodeVisible(int a, int b, int c);
 
 extern unsigned char data_0204c240;

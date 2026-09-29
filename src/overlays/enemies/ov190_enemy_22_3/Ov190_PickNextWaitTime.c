@@ -2,8 +2,8 @@
  * run out, and installs the aim-and-pick step. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov190_AimPickAttack(void);
 

@@ -1,12 +1,10 @@
 /* When the session changed tick or the scene may be interrupted, runs the scene loop (unless
  * blocked); returns 0. */
 
+#include "game/engine.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int Session_IsActive(void);
-extern int Session_IsReady(void);
-extern int Session_IsSceneInterruptible(void);
 extern int func_01ff8138(void);
-extern void Game_RunSceneLoop(void);
 
 typedef struct {
     char _00[0x20];

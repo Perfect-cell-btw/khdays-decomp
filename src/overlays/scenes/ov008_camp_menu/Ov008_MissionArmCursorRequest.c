@@ -1,4 +1,5 @@
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Ov008_MissionArmCursorRequest -- arm a cursor-move request on the menu.
  * Reads the cursor row (0 while the scene is locked out at obj+0x4e8), then fills the
  * request slot for that row: obj+0x4ac is the "row 0 / home" slot and obj+0x4e0 the slot
@@ -13,7 +14,6 @@
  * scene label is not. The offsets and logic below are this function's -- the code is
  * byte-identical to the rep.
  */
-extern int Session_GetLocalPlayerIndex(void);
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 #define OBJ ((int *)data_ov008_02090f24.pContext)

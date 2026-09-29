@@ -6,12 +6,12 @@
  * sub-state 8 and the rest to 5 -- each with the slot cleared. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct v3 { int x, y, z; };
 struct b1 { unsigned char b:1; };
 
 extern void ScaleVec3Fx12(int a, void *b, void *c);
-extern int RandNextScaled(int bound);
 extern int Ov180_IsChildInactive(int node);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 

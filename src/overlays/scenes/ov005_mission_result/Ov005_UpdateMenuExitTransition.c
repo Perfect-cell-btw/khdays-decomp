@@ -1,6 +1,7 @@
 /* Codegen view of the existing Ov002DayClock global; +2 is set for the next scene. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct SceneTransition {u8 flags,submode;u16 transitionValue,parameter;} SceneTransition;
 typedef struct ModeSource {char opaque[8];int mode;} ModeSource;
@@ -19,12 +20,7 @@ extern void Ov005_SubScene_SetFlagC5C(void);
 extern void Ov005_SubScene_Arm(void);
 extern void Ov005_Arm(void);
 extern void Ov005_ClampEquippedItemCounts(void);
-extern void PartyState_ResetBuffers(void);
 extern void Ov005_ResetPartyMemberAndLayout(int,int);
-extern void Scene_RequestPending(int,int);
-extern void func_020235bc(int);
-extern void GameState_SetFlag(int);
-extern unsigned int GameState_GetField(unsigned int,unsigned int);
 int Ov005_UpdateMenuExitTransition(void) {
     int result=0;
     if(Ov005_SubScene_IsIdle())Ov005_SetField4C2C(0);

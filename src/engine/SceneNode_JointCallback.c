@@ -4,6 +4,7 @@
  * state's posScale, then back with invPosScale), billboarded first when the child asks (flag 8). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     s32 m[12];
@@ -34,7 +35,6 @@ typedef struct NNSG3dRS {
 extern SceneNode *data_0204c1f4;
 extern void GX_SendFifoWords(unsigned int command, const void *src, unsigned int words);
 extern void NNS_G3dGetCurrentMtx(MtxFx43 *matrix, int a);
-extern void Mtx33_ApplyFixedRotation(MtxFx43 *matrix);
 
 void SceneNode_JointCallback(NNSG3dRS *rs)
 {

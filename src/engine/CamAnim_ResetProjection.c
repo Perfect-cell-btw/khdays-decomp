@@ -1,7 +1,7 @@
 /* Loads the default projection (fovy sin/cos, aspect, near 1.0, far 1000.0) and clears the camera
  * offsets. */
 
-extern void Projection_LoadDefaults(void *ptr);
+#include "game/engine.h"
 
 void CamAnim_ResetProjection(int *ptr) {
     Projection_LoadDefaults(ptr + 4);

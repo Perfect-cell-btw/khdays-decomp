@@ -6,7 +6,9 @@
  * The two operands are narrowed on the way in (byte and halfword, hence the
  * lsl/lsr pairs rather than an `and`), the same shape as
  * Ov002_ScriptDriveWidget. */
-extern int ScriptVm_ReadOperandInt(void *self, void *arg);
+
+#include "game/engine.h"
+
 extern void *Ov002_List_ScaleEntryTag(int a, int b);
 extern int Ov002_IsAnySlotEnabled(void *entry);
 

@@ -2,6 +2,7 @@
  * draws the markers, or clears the selection when the target is gone. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022SelectionPoint {
     int x;
@@ -40,13 +41,10 @@ typedef struct Ov022SelectionController {
 extern u16 data_0204c190;
 
 extern Ov022SelectionController *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
-extern int Slot_EvalPackedParam(int index, int parameter);
 extern void Ov002_MoveCaret(unsigned int row, int argument);
 extern void Ov022_ClearWords124And128(void *subsystem);
 extern void *Ov002_TriggerEntryActive(Ov022TargetEntry *entry);
 extern void Ov022_SelectSlotAndRestartAnim(void *subsystem, Ov022TargetEntry *entry);
-extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern void Ov022_SetSelectionEnabled(int enabled);
 extern int Ov022_ProjectToScreen(void *target, Ov022SelectionPoint *out);
 extern void Ov022_DrawSelectionMarkers(void *state, const Ov022SelectionPoint *point);

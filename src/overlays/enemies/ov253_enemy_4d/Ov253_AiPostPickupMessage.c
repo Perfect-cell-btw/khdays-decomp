@@ -1,5 +1,7 @@
 /* Build the sprite request (mirroring the object's facing) and dispatch. */
-extern void func_02031384(int a, void *req, int b);
+
+#include "game/engine.h"
+
 extern int SetIndexedSlot(int, int, void *);
 extern int data_ov253_020d4964;
 extern int Ov253_AiPickupFollow(int);

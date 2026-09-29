@@ -8,9 +8,9 @@
  * handed down either as a secondary id (020a3c78, caching the mode) or plainly (020a384c). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void BindAnimTrack(void *p, u16 channel, void *table, short set);
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern void Ov002_Camera_SetMode(int owner, int what, int arg);
 extern int func_ov022_02083f0c(void);
 extern void Ov022_SetAnimState(char *self, int mode);

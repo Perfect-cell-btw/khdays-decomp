@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void *Ov002_GetModuleScale(char *pElement);
 extern int Ov002_AdvanceElementClock(char *pElement, char *pAnim, void *pCtx,
@@ -7,12 +8,8 @@ extern int Ov002_AdvanceElementClock(char *pElement, char *pAnim, void *pCtx,
 extern void Ov002_ParkSpareEntry(void *pElement);
 extern void Ov002_ElementStartTrack(char *pElement, short *pAnim, int nTrack,
                                 int nParamA, int nParamB, int bEffect);
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov002_RecordElementHit(void *pElement, void *pMsg, int nKind);
-extern unsigned int GameState_GetField(int nField, int nWidth);
-extern void GameState_SetField(unsigned int nField, unsigned int nWidth, unsigned int nValue);
 extern void Ov002_SetFieldBit0(char *pElement, int nMode);
-extern void ReleaseNodeResources(char *pObj);
 extern void Scene_DrawNode(u16 *pAnim);
 
 /* Run one step of a line element's second model.

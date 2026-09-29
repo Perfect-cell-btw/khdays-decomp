@@ -7,8 +7,10 @@
  * shift pair with equal counts -- `(u << 0x1d) >> 0x1d` -- into a single `and #7`, and only
  * a real bitfield read keeps the ROM's lsl/lsr pair. The other two fields survive either
  * way because their shift counts differ. */
+
+#include "game/engine.h"
+
 extern int data_ov022_020b2eb8;
-extern void LoadGlobalPtrField70(void);
 
 struct Slot020b0e64 {
     unsigned char bit : 3;

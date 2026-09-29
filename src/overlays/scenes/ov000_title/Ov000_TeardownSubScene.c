@@ -3,6 +3,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov000SubSceneContext {
     void *heapBuffers[4];
@@ -26,7 +27,6 @@ extern void Ov000_ReleaseThreeBuffers(void *sceneBlock);
 extern void Ov000_DestroyAllListObjects(void *objectList);
 extern void Ov000_ReleaseIfMarked(void *objectList);
 extern void Ov000_DestroyObjectsAndRelease(void *objectList);
-extern void ZeroHalfThenFree(void *resource);
 extern void *G2S_GetBG0ScrPtr(void);
 extern void *G2S_GetBG1ScrPtr(void);
 extern void *G2S_GetBG2ScrPtr(void);

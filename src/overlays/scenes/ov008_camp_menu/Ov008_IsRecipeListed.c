@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define CATEGORY_ANY -1
 #define FLAG_ITEM_SEEN_BASE 0x4db
@@ -34,7 +35,6 @@ typedef struct Ov008ParamTable {
 } Ov008ParamTable;
 
 extern Ov008ParamTable *data_ov008_02090fb0;
-extern int GameState_IsFlagSet(int nFlag);                                    /* GameState_IsFlagSet */
 extern int Ov008_IsRewardItemShown(int nItemId);                             /* item shown */
 
 int Ov008_IsRecipeListed(int nCategory, int nIndex)

@@ -3,9 +3,9 @@
  * to a linear scan of its handler list (same list-walk idiom as Ov107_FindChildById). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int List_First(void *list);
-extern int List_Next(void *list);
 
 struct HandlerMgr {
     u32 field_00;

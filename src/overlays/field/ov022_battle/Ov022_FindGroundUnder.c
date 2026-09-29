@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 #define CAST_FLAGS 0xf
 #define CAST_RISE 0x800
@@ -44,8 +45,6 @@ struct Hit {
 
 extern struct Hit *func_0202c208(int nSlotIndex, struct CollCastParams *pQry);
 /* Vec3ScaleAddQ27 is Vec3ScaleAddQ27; it still carries its address name. */
-extern void Vec3ScaleAddQ27(int nFactor, VecFx32 *pDir,
-                          VecFx32 *pOrigin, VecFx32 *pOut);
 
 int Ov022_FindGroundUnder(int nSlotIndex, const VecFx32 *pvecPos,
                         VecFx32 *pvecOut, struct Hit **ppHit)

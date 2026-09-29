@@ -1,8 +1,9 @@
 /* Action entry of the ov115 enemy (and its byte-identical twins): clears bit 1 of the actor's
  * +0x5c flag word, resets state channels 0, 2, 4 and 1 to zero, closes the update, zeroes the
  * +0x18 timer and +0x1c phase of the context and hands off to the attack tick. */
-extern void SetSubitemState(void *sub, int channel, short value, int flag);
-extern void RefreshObjectCallbacks(void *sub, int a);
+
+#include "game/engine.h"
+
 extern void SetIndexedSlot(char *self, int a, void *cb);
 extern void Ov116_DropStrikeTick(int);
 

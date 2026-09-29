@@ -1,13 +1,12 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 #define SCENE_POLL_IDLE 4
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern int func_01ff8128(void);
-extern u16 GetGlobalU16At4(void);                    /* recorded session id */
 extern u16 func_01ff8138(void);    /* current session id */
-extern int Game_PollSceneAlive(void);                    /* Game_PollSceneAlive */
 
 int Ov008_IsMissionGroupStale(void)
 {

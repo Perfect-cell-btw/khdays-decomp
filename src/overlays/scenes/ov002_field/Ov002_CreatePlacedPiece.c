@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov002PlaceParams {int nKind,nParamB,nParamA,nParamC,nAngle;} Ov002PlaceParams;
 typedef struct Ov002PiecePlacementBytes {s8 bPlaceKind,bSlotKind;} Ov002PiecePlacementBytes;
@@ -16,7 +17,6 @@ typedef struct Ov002PieceElement {
 extern Ov002PieceElement *Ov002_ClaimPoolEntry(Ov002PieceClass *,int);
 extern int Ov002_PlaceElementNode(void *,void *,Ov002PlaceParams *,int,int,int,int,int,int,int);
 extern void Ov002_BuildSpawnPosition(VecFx32 *,VecFx32 *,Ov002PlaceParams *);
-extern void Actor_SetVecAndSyncChild(void *,VecFx32 *);
 extern Ov002StateFn Ov002_OnPieceDefeated;
 extern void Ov002_PushBucketNode(int,Ov002PieceElement *);
 extern int Ov002_List_SetBit(int,int);

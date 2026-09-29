@@ -13,8 +13,10 @@
  * pointer must also stay an offset walk (`base + off`, `off += 0x114`); an `blocks[i]`
  * subscript makes mwcc emit a real multiply and costs 8 bytes.
  */
+
+#include "game/engine.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern int func_02023c40(void);
 extern unsigned short Sequence_UpdateTracks(unsigned short *name, int budget);
 
 typedef struct Ov022HeapBlock {

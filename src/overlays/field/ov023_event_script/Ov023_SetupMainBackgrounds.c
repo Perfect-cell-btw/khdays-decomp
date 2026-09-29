@@ -11,6 +11,7 @@
  * (POWCNT bit 15) and the game mode set to 0 (02023c30). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 static volatile u16 *const REG_BG0CNT = (volatile u16 *)0x04000008;
@@ -33,7 +34,6 @@ extern void NNS_GfdResetFrmTexVramState(void);
 extern void NNS_GfdInitFrmTexVramManager(int nA, int nB);
 extern void NNS_GfdResetFrmPlttVramState(void);
 extern void NNS_GfdInitFrmPlttVramManager(int nA, int nB);
-extern void SetGameMode(int nMode);                               /* SetGameMode */
 extern u8   data_0204c240;                                          /* session bits */
 
 void Ov023_SetupMainBackgrounds(void)

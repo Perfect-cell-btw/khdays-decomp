@@ -3,8 +3,8 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();
 extern int SetIndexedSlot();
 
 struct S2 {

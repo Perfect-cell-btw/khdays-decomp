@@ -1,6 +1,6 @@
 /* Sets an SRT's rotation from an axis and angle and marks the rotation as non-identity. */
 
-extern void QuatFromAxisAngle(void *, int *, int);
+#include "game/engine.h"
 
 void Srt_SetRotationAxisAngle(void *param_1, int *arg1, int arg2) {
     QuatFromAxisAngle(param_1, arg1, arg2);

@@ -2,11 +2,9 @@
  * EnqueueGfxCmd0 at +0xc and EnqueueGfxCmd1 at +0x10, otherwise stores Gfd_LoadTexB and
  * Gfd_LoadTexPlttB. */
 
+#include "game/engine.h"
+
 extern char data_0204bbfc[];
-extern void EnqueueGfxCmd0();
-extern void EnqueueGfxCmd1();
-extern void Gfd_LoadTexB();
-extern void Gfd_LoadTexPlttB();
 
 void InstallHandlerPairByFlag(int arg0) {
     if (arg0 == 0) {

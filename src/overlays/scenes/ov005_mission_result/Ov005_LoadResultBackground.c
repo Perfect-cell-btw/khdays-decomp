@@ -1,6 +1,7 @@
 /* Loads the result background's palette and character data for both layers. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct PaletteData {char pad0[8];u32 size;void *data;} PaletteData;
 typedef struct CharacterData {char pad0[16];u32 size;void *data;} CharacterData;
@@ -8,7 +9,6 @@ typedef struct SpriteResSet {void *screen;CharacterData *character;PaletteData *
 typedef struct Ov005Context {u32 resultArchive;} Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
 extern void *Archive_LoadFile(u32,int);
-extern void Res_LoadSpriteSet(SpriteResSet *,void *,int,int,int);
 extern void GX_LoadBGPltt(void *,u32,u32);
 extern void GX_LoadBG3Char(void *,u32,u32);
 extern void GX_LoadBG1Char(void *,u32,u32);

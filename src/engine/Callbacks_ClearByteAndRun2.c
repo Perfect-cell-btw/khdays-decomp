@@ -1,7 +1,6 @@
 /* Clears the callback byte, then runs callback slot 2. */
 
-extern int Callbacks_SetByte();
-extern int Callbacks_Run();
+#include "game/engine.h"
 
 void Callbacks_ClearByteAndRun2(void) {
     Callbacks_SetByte(0);

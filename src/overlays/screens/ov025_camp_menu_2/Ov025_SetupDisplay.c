@@ -5,6 +5,7 @@
  * BG2 2, BG3 3. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 static volatile u16 *const REG_BG0CNT = (volatile u16 *)0x04000008;
@@ -17,8 +18,6 @@ static volatile u16 *const REG_DB_BG1CNT = (volatile u16 *)0x0400100a;
 static volatile u16 *const REG_DB_BG2CNT = (volatile u16 *)0x0400100c;
 static volatile u16 *const REG_DB_BG3CNT = (volatile u16 *)0x0400100e;
 
-extern void  SetMasterBrightnessMain(int nBrightness);                        /* SetMasterBrightnessMain */
-extern void  SetMasterBrightnessSub(int nBrightness);                        /* SetMasterBrightnessSub */
 extern void  GXS_SetGraphicsMode(int nMode);
 extern void  Ov002_SetDisplaySwap(int bTop);                         /* ov002: put the display on the top screen */
 

@@ -6,6 +6,7 @@
  * sound plays (02033b78 0 / 0) and the rows are refreshed (0209e3f8). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */
@@ -51,7 +52,6 @@ typedef struct Ov025TutorialPage {
 
 extern Ov025TutorialPage *Ov025_GetPageA(void);                /* Ov008_GetPageA */
 extern int   Ov025_PageB_IsBusyOrInactive(void);                             /* Ov025_IsPageBBusy */
-extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 extern void  Ov025_Tutorial_Refresh(void);                             /* Ov025_Tutorial_RefreshRows */
 
 void Ov025_Tutorial_CursorUp(void)

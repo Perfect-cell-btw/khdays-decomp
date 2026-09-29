@@ -1,6 +1,6 @@
 /* Sets bit 1 on the object's two slots that are in use. */
 
-extern int Slot_SetFlagBit1();
+#include "game/engine.h"
 
 void Ov005_ReleaseTwoSlots_2(int a, int *b) {
     int i;

@@ -12,8 +12,8 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled(int n);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);

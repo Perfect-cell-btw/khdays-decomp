@@ -13,6 +13,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -68,7 +69,6 @@ extern int Ov107_FindNearestObject(struct Ov293Actor *actor, int mode);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, VecFx32 *out);
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Ov293BoneXform *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);
 extern void Ov107_BuildAndSendUpdate(struct Ov293Actor *actor, int id, int mode, void *anchor);

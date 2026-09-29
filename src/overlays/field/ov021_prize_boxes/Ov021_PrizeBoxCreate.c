@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov021Prize {
     char  nType;              /* 0x00: 0 item, 1 munny, 2 keyed object, 3 nothing */
@@ -64,8 +65,6 @@ typedef struct Ov021PrizeBox {
 extern Ov021PrizeBox *Ov002_ClaimPoolEntry(Ov021PrizeBoxDef *pClass, int nSlot); /* take a piece from the class table */
 extern void  Ov002_PlaceElementNode(void *pPiece, void *pNode, int *aPlace, int nSlot, int nKind, int nA, int nB, int nC, int nFacing, int nOne);
 extern void  Ov002_BuildSpawnPosition(VecFx32 *pStart, VecFx32 *pPos, int *aPlace); /* start position from the placement */
-extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);          /* Actor_SetVecAndSyncChild */
-extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
 extern int   Ov002_TakeEntryOfKind1(void);                               /* take a spawn id from the low band */
 extern void  Ov002_AppendPendingId(int nKey);                           /* request an item's resources */
 extern void  Ov002_PushBucketNode(int nBucket, void *pPiece);          /* register the piece */

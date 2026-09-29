@@ -11,6 +11,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[0xa4];
@@ -25,7 +26,6 @@ typedef struct {
 
 extern int data_ov002_0207f628;
 
-extern int func_02023c40(void);
 extern unsigned short Sequence_UpdateTracks(void *pWidget, int nStep);
 extern void Scene_DrawNode(void *pWidget);
 

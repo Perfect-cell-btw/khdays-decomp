@@ -1,21 +1,19 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern u8 data_0204be04;
 extern const char data_ov002_0207f480[];
 
-extern int QueryActiveStateOrDelegate(void);
 extern void Ov002_SetRosterHighlight(char *pElement, int nIndex, int bOn);
 extern int Ov002_Hud_IsPanelOpen(void);
 extern int Ov002_GetRootField8b68Alt(void);
-extern void func_02020878(int nMode);
 extern void Ov002_SetLeaveRequest(int bOn);
 extern int Ov002_GetPhaseWord(void);
 extern int Ov002_GetRootField8b41(void);
 extern void Ov002_SetRootField8b41(int nBits);
 extern void Ov002_SetRootField8b40(void);
 extern void Ov002_SetSessionActive(int nKind, int nBits);
-extern int GameState_IsFlagSet(int nField);
 extern void Ov002_SubmitRequestRecord(int a, int b, int c, int d);
 extern int func_ov022_02083f0c(void);
 extern int func_ov022_02083f5c(void);
@@ -25,7 +23,6 @@ extern void Ov002_SetOrClearFlag200(int nHandle, int nMode);
 extern void Ov002_Camera_SetMode(int nHandle, int nMode, void *pExtra);
 extern int Ov002_GetPanelRequestBlock(void);
 extern void Ov002_StreamFormattedLine(const char *pName, void *pText);
-extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_BeginSessionTeardown(int nMode);
 extern void Ov002_SetSessionBusy(int nMode);
 extern void Ov002_SetPanelField003c(int nMode);

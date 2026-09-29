@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Vec3
 {
@@ -24,7 +25,6 @@ struct CollisionResult
   int field08;
   int nAlong;
 };
-extern int RandNextScaled(int bound);
 extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
 extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);

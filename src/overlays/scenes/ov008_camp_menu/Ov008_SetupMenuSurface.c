@@ -6,6 +6,7 @@
  * The one-surface counterpart of Ov008_SetupMenuSurfaces (Ov008_SetupMenuSurfaces). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Style28 {
     u8  pad_0000[0x18];
@@ -21,7 +22,6 @@ extern void *Ov008_GetMenuContext(void);
 extern void Ov008_VarTable_Load(void *p, void *tbl);
 extern int  Ov008_GetCtxBlock968c(void);
 extern int  Ov008_ResetEntry(int a);
-extern void TileSurface_InitAndUpload4bpp(void *dst, Style28 *src);
 
 void Ov008_SetupMenuSurface(void)
 {

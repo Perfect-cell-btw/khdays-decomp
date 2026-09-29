@@ -1,6 +1,8 @@
 /* Host exit step: once every connected client has reported, sends the final exit message and waits
  * for its delivery; otherwise keeps asking. */
 
+#include "game/engine.h"
+
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitTask {
     unsigned receivedPlayerMask;
@@ -9,11 +11,8 @@ typedef struct Ov005ExitTask {
     char hostMessage[22];
 } Ov005ExitTask;
 extern Ov005ExitTask *NNSi_FndGetCurrentRootHeap(void);
-extern unsigned Session_PackConnectedPlayerMask(void);
 extern const char *data_ov005_0205b79c[3];
 extern void strcpy(char *,const char *);
-extern unsigned short func_02031384(int,const void *,unsigned);
-extern unsigned MsgQueue_SendGate(int,const void *,unsigned);
 extern void *Ov005_WaitExitDelivery(void);
 ExitTaskState Ov005_UpdateHostExit(void) {
     Ov005ExitTask *task=NNSi_FndGetCurrentRootHeap();

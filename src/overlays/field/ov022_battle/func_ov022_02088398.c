@@ -1,7 +1,7 @@
 /* Host only: delivers a hit to a player's actor; returns the result. */
 
-extern short Session_GetLocalPlayerIndex(void);
-extern int GetEntryField20ByIndex(int arg0);
+#include "game/engine.h"
+
 extern int Ov022_ReceiveHit(int arg0, unsigned int *arg1);
 int func_ov022_02088398(int arg0, unsigned int *arg1) {
     int e;

@@ -1,10 +1,9 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int nPlayer);
-extern void *GetEntryField20ByIndex(int nPlayer);
 extern int Ov002_GetSlotTableByte(int nWorldId);
 extern int Ov002_GetPeerRecordValue(int nSlot);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);

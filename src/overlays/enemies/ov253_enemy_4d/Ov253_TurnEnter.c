@@ -9,10 +9,10 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
-extern int RandNextScaled(int scale);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Ov253Bounds data_ov253_020d49cc;

@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
+#include "game/engine.h"
 /* Ov008_MissionLobbyStartTransfer -- Ov008_MissionLobbyStartTransfer: start the mission
  * lobby's transfer; returns the poll handler (0207a758, after setting
  * +0x4fc and field 28 of the global block to 2) once a transfer started, or
@@ -27,14 +28,9 @@ typedef struct SessionSlotInfo {
 } SessionSlotInfo;
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
-extern u16   GetGlobalU16At6(void);                                 /* lobby slot mask */
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern SessionSlotInfo *Slot4_GetIfOccupied(int nSlot);                 /* Slot4_GetIfOccupied */
 extern int   Ov008_MenuSlotToEntry(int nMemberKind);                /* member kind -> packet target */
-extern int   Session_IsReady(void);                                 /* Session_IsReady */
-extern void  MsgQueue_SendGate(int nGate, void *pBuf, int nSize);     /* MsgQueue_SendGate */
-extern u32   Session_GetLocalPlayerIndex(void);                                 /* Session_GetLocalPlayerIndex */
-extern void  StoreToGlobalPtr4Field28(int nValue);                           /* StoreToGlobalPtr4Field28 */
 extern void *Ov008_MissionLobbyPoll(void);                           /* Ov008_MissionLobbyPoll */
 
 static inline void Ov008_BuildGroupMessage(MissionContext *pCtx)

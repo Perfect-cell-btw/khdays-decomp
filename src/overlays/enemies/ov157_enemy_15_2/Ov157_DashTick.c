@@ -22,6 +22,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/engine.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -110,7 +111,6 @@ extern void SetIndexedSlot(int node, int slot, void *cb);
 extern struct Ov156Actor *Ov107_FindNearestObject(struct Ov156Actor *owner, int mode);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int x, int z);
-extern int Angle_TurnToward(int cur, int want, int step, int *state);
 extern char *Ov107_FindEntityHitBySphere(struct Ov156Actor *owner, VecFx32 *pos, int *shape);
 extern int Ov107_AiState_ApplyHit(char *other, int source, struct HitPacket *packet);
 extern struct CollisionResult *Collision_CastSphereEx(void *collision, VecFx32 *position, VecFx32 *direction, int radius, void *ignore);

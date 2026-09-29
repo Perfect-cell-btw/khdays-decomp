@@ -2,10 +2,12 @@
  * data_0204c208+index*4+{0x64,0x84,0xa4}): run Scene_DrawNode on active nodes,
  * snapshot each active node's +0xb4 vec into +0x168 and run ShadowVolume_Draw, then
  * a second Scene_DrawNode pass, and finally Billboard_DrawList over the +0xa4 list. */
+
+#include "game/engine.h"
+
 extern int data_0204c208;
 extern void Scene_DrawNode(void *);
 extern void ShadowVolume_Draw(void *);
-extern void G3d_ResetGlobalState(void);
 extern void Billboard_DrawList(void *);
 
 struct V3 { int a, b, c; };

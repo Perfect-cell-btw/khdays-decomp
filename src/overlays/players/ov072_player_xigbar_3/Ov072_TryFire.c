@@ -5,13 +5,14 @@
  * restarts the model's animation unless its bit 5 is set, raises bit 1 of the +0x464 word on
  * the local session, clears the six velocity words and reports the state through 020a35f4
  * (after the +0x664 handler when bit 2 of +0x24 is set). */
+
+#include "game/engine.h"
+
 struct ActorBits {
     unsigned char bUnk0 : 1;
     unsigned char bFired : 1;
 };
 
-extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
-extern void SceneNode_Enable(int *p);
 extern int Ov022_ActorSetState(char *self, int mode);
 
 int Ov072_TryFire(char *self)

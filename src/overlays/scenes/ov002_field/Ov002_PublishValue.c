@@ -1,6 +1,7 @@
 /* Publish our own value to the peers: stash it at +0x52 and raise the dirty bit
  * 0x20 at +0x54 so the next send picks it up. Solo sessions have nobody to tell. */
-extern int Session_GetLocalPlayerIndex(void);
+
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x52];

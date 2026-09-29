@@ -5,6 +5,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 enum {
     OV002_METRIC_TIME_LEFT    = 0,  /* the timeout, in hundredths of a second */
@@ -23,7 +24,6 @@ extern u8 data_0204c240;                /* g_modeAndDayClock; bit 2 pins the met
 extern char data_0204c254[];            /* g_ov002PanelThresholds */
 
 extern u64 Ov002_GetTimeoutTicks(void);   /* the configured timeout, in OS ticks */
-extern int Session_GetLocalPlayerIndex(void);         /* Session_GetLocalPlayerIndex */
 /* The two MSL divides.  The tree calls them by address rather than letting
  * mwcc emit its own _ll_sdiv and _s32_div_f references. */
 extern long long func_02020368(long long nValue, unsigned int nDiv, int nUnused);

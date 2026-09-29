@@ -1,7 +1,9 @@
 /* Returns the local player's group (Ov022_GetEntryField66 of the player index
  * QueryActiveStateOrDelegate gives), or -1 when no session is open (the handle at +0x8bcc is -1).
  * The -1 built for that comparison is the value returned. */
-extern int QueryActiveStateOrDelegate(void);
+
+#include "game/engine.h"
+
 extern int Ov022_GetEntryField66(int index);
 
 typedef struct {

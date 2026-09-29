@@ -2,6 +2,7 @@
  * it) and marks it as seen. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov022Candidate {
     char pad_0000[0x19c];
@@ -32,8 +33,6 @@ extern u8 *data_0204be18;
 
 extern Ov022SelectionController *NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_020847f0(void);
-extern int QueryActiveStateOrDelegate(void);
-extern int Slot_EvalPackedParam(int index, int parameter);
 extern void Ov002_ShowEntryLabel(int value21a, int value218, int selectionId, int mode);
 
 void Ov022_UpdateSelectionController(void)

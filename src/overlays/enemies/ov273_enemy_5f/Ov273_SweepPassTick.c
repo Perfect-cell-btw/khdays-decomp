@@ -6,10 +6,12 @@
  * the actor's +0x394 and flags 0x1c in its +0x60 high byte and moves the node to 020d10b0,
  * any other clears the +0x84 byte and moves to 020d0f14. Otherwise the common 020d1364 step
  * runs. */
+
+#include "game/engine.h"
+
 struct v3 { int x, y, z; };
 struct m4 { int w[4]; };
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
-extern void Vec3TransformViaTempMtx(void *out, void *rotation, void *in);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);

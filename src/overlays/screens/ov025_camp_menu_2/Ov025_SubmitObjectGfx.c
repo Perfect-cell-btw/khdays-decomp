@@ -1,10 +1,12 @@
 /* If the object is active (bit0 of +0), push a 3-word fill command (the value at *(+0x28)+0x1c)
  * then the cached command block; palette-swap when bit6 of +4 is set; finally push the 12-word
  * matrix command at +0x10c and submit the object's queued gfx. */
+
+#include "game/engine.h"
+
 extern void GX_SendFifoWords(int cmd, const void *words, int count);
 extern void Gfx_SubmitCachedCommandBlock(void);
 extern void MaterialColorScale_SetRgb555(unsigned int pal);
-extern void Obj_InitChannelsAndRun(void *cmdList);
 
 void Ov025_SubmitObjectGfx(int param_1) {
     if (*(unsigned char *)param_1 & 1) {

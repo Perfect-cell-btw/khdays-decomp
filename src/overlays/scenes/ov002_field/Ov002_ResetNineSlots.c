@@ -9,9 +9,7 @@
  */
 
 #include "nitro/types.h"
-
-extern void EntityMgr_AllocRecords(int n);
-extern void StoreToGlobalIndexedIfSet(int index, int *record);
+#include "game/engine.h"
 
 void Ov002_ResetNineSlots(void)
 {

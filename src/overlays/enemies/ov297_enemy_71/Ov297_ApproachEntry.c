@@ -4,12 +4,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int func_020050b4(int x, int z);
-extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov297_CopyScaleVecSetFlag88ThenAdvance(int *node);
 extern short data_0203d210[];

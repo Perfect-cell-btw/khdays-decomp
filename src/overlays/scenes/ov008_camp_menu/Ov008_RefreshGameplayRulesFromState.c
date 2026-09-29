@@ -2,6 +2,7 @@
  * option fields. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct GameplayThresholds {
     u8 pad_00[4];
@@ -30,7 +31,6 @@ typedef struct GameplayRules {
 
 extern GameplayRules data_0204c248;
 extern GameplayThresholds data_0204c254;
-extern u32 GameState_GetField(int fieldId, int width);
 
 void Ov008_RefreshGameplayRulesFromState(void)
 {

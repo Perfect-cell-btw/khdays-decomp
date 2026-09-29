@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
@@ -18,7 +19,6 @@ extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern unsigned int RandNextScaled(int n);
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);

@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define GLYPH_MISSING   0xffff
 #define ROW_HEIGHT      16
@@ -52,7 +53,6 @@ extern Font *Ov008_GetDescriptor3(void);                                   /* wi
 extern void *Ov008_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
 extern unsigned short   NNS_G2dFontFindGlyphIndex(Font *pFont, u16 nChar);                       /* glyph index of a character */
 extern GlyphInfo *NNS_G2dFontGetCharWidthsFromIndex(Font *pFont, u32 nGlyph);                 /* glyph info */
-extern int   Obj_ForwardInnerPayload(TileSurface *pSurface, int nX, int nY, int nColour, int nGlyph); /* Obj_ForwardInnerPayload */
 
 void Ov008_DrawRowCountDigits(Ov008MenuContext *pCtx, int nRow, int nPlaced, int nOwned)
 {

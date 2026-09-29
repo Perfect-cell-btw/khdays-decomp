@@ -20,11 +20,11 @@
  *
  * (Ghidra renders MsgDb_LoadDb with four arguments here. It takes TWO -- the ROM sets
  * only r0/r1, and there is a call between the first two uses that clobbers r2/r3.) */
+
+#include "game/engine.h"
+
 extern void Ov005_ClearStateFreeLists(int *self);
 extern int Ov005_LookupTypeCode(int a);
-extern int MsgDb_IsLoaded(int db);
-extern void MsgDb_LoadDb(int id, int a);
-extern void ResSlot_Release_2(int id);
 extern void *NNS_FndGetNextListObject(void *list, void *cur);
 extern void MIi_CpuCopy32(const void *src, void *dst, unsigned int n);
 extern void Ov005_LayoutPanelEntry(int *self, int a, void *node, int idx);

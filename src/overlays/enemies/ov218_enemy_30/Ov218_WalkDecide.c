@@ -4,11 +4,10 @@
  * it is 5 on a 68 % roll (else 6). Returns 1 when a next move is set. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 struct Ov218Actor { char pad[0x394]; int partners[2]; };
-
-extern int RandNextScaled(int bound);
 
 int Ov218_WalkDecide(int *node, int dist)
 {

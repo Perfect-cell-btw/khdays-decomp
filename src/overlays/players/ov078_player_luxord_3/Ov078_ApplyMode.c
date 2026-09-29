@@ -16,9 +16,11 @@
  * flagged. A valid id drives the secondary channel (setting bit 0 of +0xf0c first when the
  * unflagged path has +0xf0d set); no id clears that bit and parks the block's slot at -1.
  */
+
+#include "game/engine.h"
+
 extern void func_ov078_020b8d60(char *self);
 extern void Ov078_InitSubActionWithClampedArg(char *chan, int which);
-extern unsigned short Session_GetLocalPlayerIndex(void);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_Camera_SetMode(int owner, int what, int arg);
 extern void Ov022_SetAnimState(char *self, int mode);

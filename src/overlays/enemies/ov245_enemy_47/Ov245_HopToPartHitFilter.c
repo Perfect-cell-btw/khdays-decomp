@@ -9,11 +9,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov245Owner { char pad[0x420]; int parts[3]; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern int RandNextScaled(int scale);
 extern void Ov245_PlanHop(int *state, VecFx32 *target, int step);
 
 int Ov245_HopToPartHitFilter(int self, int a, unsigned int *hit) {

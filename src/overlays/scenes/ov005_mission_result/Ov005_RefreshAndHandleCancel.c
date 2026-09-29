@@ -1,9 +1,10 @@
+#include "game/engine.h"
+
 extern void Ov005_InitInteractiveEntries(void);
 extern void Ov005_HandleDirectionalInput(void);
 extern void Ov005_RenderTextSurface(int layer);
 extern void Ov005_UpdateDialogVisibility(void);
 extern void Ov005_RefreshDialogChoice(void);
-extern void PlaySound(int a, int b);
 extern unsigned short data_0204c190;
 extern char *data_ov005_0205b80c;
 

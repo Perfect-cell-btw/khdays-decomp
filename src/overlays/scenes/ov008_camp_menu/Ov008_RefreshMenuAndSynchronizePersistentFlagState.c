@@ -2,6 +2,7 @@
  * 0x2010 changed, starts syncing it before committing the page. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef union Ov008FlagsByte {
     u8 raw;
@@ -22,8 +23,6 @@ extern void func_02023ad0(int handle);
 extern char *data_0204be18;
 extern void Ov008_BuildMenuListFrom(void *source);
 extern Ov008MenuContext *data_ov008_02090f00;
-extern int GameState_IsFlagSet(int flagId);
-extern void GameSession_SetSyncEnabled(int enabled);
 extern void Ov008_CommitSelectedPage(void);
 extern void Ov008_WaitForLocalFlagSyncState(void);
 

@@ -2,11 +2,12 @@
  * On a hit the cached handle is returned. On a miss a new entry is inserted, the
  * name is duplicated into a fresh allocation, and Msg_OpenContainerAndReadHeader opens the
  * resource with mode 0xb. Returns 0 when the cache itself does not exist. */
+
+#include "game/engine.h"
+
 extern int data_ov107_020cbf1c;
 
 extern int *List_First(void *list);
-extern int *List_Next(void *list);
-extern int *List_InsertSorted(void *list, int a, int b);
 extern int strcmp(char *a, char *b);
 extern unsigned int strlen(const char *s);
 extern void *CallocInstance(unsigned int size);

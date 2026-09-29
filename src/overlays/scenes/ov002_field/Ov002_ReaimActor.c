@@ -4,9 +4,9 @@
  * is set. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void SoundMgr_SetListener(void *from, const VecFx32 *delta, void *out);
 extern void Camera_CommitMatrices(void *actor);
 
 extern unsigned char data_0204be04;
@@ -19,7 +19,7 @@ void Ov002_ReaimActor(char *self, int reaim) {
         VEC_Subtract((VecFx32 *)(actor + 0x14), (VecFx32 *)(actor + 0x20), &delta);
 
         if (data_0204be04 == 0) {
-            SoundMgr_SetListener(actor + 0x20, &delta, actor + 0x2c);
+            SoundMgr_SetListener((VecFx32 *)(actor + 0x20), &delta, (VecFx32 *)(actor + 0x2c));
         }
     }
 

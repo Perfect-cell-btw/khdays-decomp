@@ -22,6 +22,7 @@
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -60,7 +61,6 @@ extern struct Ov134AreaMsg data_ov135_020d1be2;
 extern struct Ov134AreaMsg data_ov135_020d1bd4;
 extern VecFx32 data_02042258;
 
-extern void Vec3TransformViaTempMtx(VecFx32 *dst, int *mtx, VecFx32 *src);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);

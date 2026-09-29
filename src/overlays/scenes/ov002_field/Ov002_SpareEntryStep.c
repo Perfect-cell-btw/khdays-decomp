@@ -1,15 +1,10 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int Ov002_IsSessionOpen(void);
 extern int Ov002_IsPlayerInTriggerRadius(char *pEntry);
-extern unsigned short QueryActiveStateOrDelegate(void);
-extern void *GetEntryField20ByIndex(unsigned int nIndex);
 extern void func_ov022_020ad2e4(void *pEntry, int nMode);
-extern void GameState_SetField(int nField, int nKind, int nValue);
-extern unsigned int GameState_GetField(int nField, int nKind);
-extern int Session_GetLocalPlayerIndex(void);
-extern int Session_IsActive(void);
 extern int Ov002_SetLeaveRequest(int bOn);
 extern void Ov002_StreamFormattedLine(char *pName, void *pText);
 extern void Ov002_SetRootFields8b44And8b48(void *pfnDone, char *pEntry);

@@ -15,6 +15,9 @@
  * func_02020368 takes a long long in r0:r1 -- the divisor 0x1ff6210 against a
  * tick delta shifted left 6 is what turns elapsed ticks into the stored unit.
  */
+
+#include "game/engine.h"
+
 #pragma thumb on
 typedef struct {
     unsigned char blockCounter;
@@ -26,8 +29,6 @@ typedef struct {
 
 extern void CARD_UnlockBackup(int lockId);
 extern void CardUnlockAfterKeyShare(int lockId);
-extern void func_02020904(void);
-extern void func_020208f0(void);
 extern int Ov009_EmitCommandAndStoreHandle(int a, void *buf, int size);
 extern long long OS_GetTick(void);
 extern int func_02020368(long long value, int divisor, int c);

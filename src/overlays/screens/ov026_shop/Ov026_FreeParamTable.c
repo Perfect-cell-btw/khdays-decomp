@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define LIST_COUNT 5
 #define LIST_SHOP  0
@@ -28,7 +29,6 @@ typedef struct Ov008ParamTable {
 } Ov008ParamTable;
 
 extern Ov008ParamTable *data_ov026_0209136c;
-extern void DispatchByNodeKind(void **ppRaw);                              /* release a raw db record */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 
 void Ov026_FreeParamTable(void)

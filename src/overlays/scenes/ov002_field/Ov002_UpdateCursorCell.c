@@ -11,8 +11,9 @@
  * Ghidra carries the two fields as nCursorCellX and nCursorCellY on Ov002LayoutContext.
  */
 
+#include "game/engine.h"
+
 extern char *data_ov002_0207f638;
-extern int QueryActiveStateOrDelegate(void);
 extern void *func_ov022_020881f8(int index);
 extern void Ov002_ScreenToCell(int *out, void *point);
 

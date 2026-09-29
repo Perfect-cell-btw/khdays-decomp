@@ -7,6 +7,7 @@
  * 0x104, byte +3) is 0xe also gets 0x1 once flag 0x208c is set. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct PartyMsgRec {
     char pad00[0x30];
@@ -26,13 +27,6 @@ typedef struct PartyEntry {
     u8 pad04[0x104 - 4];
 } PartyEntry;
 
-extern PartyMember *GetPlayerSlotTableEntry(int idx);
-extern int MsgDb_LoadDb(int db, int mode);
-extern void DispatchByNodeKind(PartyMsgRec **rec_out);
-extern int MsgDb_FetchRecord(PartyMsgRec **rec_out, int db, int arg, int kind);
-extern void ResSlot_Release_2(int db);
-extern int GameState_GetField(int id, int mode);
-extern int GameState_IsFlagSet(int id);
 extern PartyEntry data_0204c678[];
 
 void PartyMember_RefreshDialogue(int slot, int msgArg)

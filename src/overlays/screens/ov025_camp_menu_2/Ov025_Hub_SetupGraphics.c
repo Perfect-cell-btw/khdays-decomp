@@ -9,6 +9,7 @@
  * 95d0 mode becomes 1 (02084ab4) and the first BG1 character tile is cleared. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;     /* 0x00 */
@@ -24,7 +25,6 @@ static volatile DisplayRegisters *const SUB_DISPLAY = (volatile DisplayRegisters
 static volatile u16 *const REG_DISP3DCNT = (volatile u16 *)0x04000060;
 static volatile u16 *const REG_POWCNT1 = (volatile u16 *)0x04000304;
 
-extern void  Gfx_Reset2DEngines(void);                                   /* GX_Init */
 extern void  GX_SetBankForTex(int nBank);
 extern void  GX_SetBankForTexPltt(int nOffset);
 extern void  G3X_SetClearColor(int nColour, int nAlpha, int nDepth, int nPolyId, int bFog);

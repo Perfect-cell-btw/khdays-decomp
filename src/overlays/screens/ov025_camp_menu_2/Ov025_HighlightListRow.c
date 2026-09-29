@@ -12,6 +12,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define VISIBLE_ROWS  8
 #define STATE_DRAG    2
@@ -64,7 +65,6 @@ extern void Ov025_RepaintTextRow(Ov008MenuContext *pCtx, int nRow, int nText, in
 extern void Ov025_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible);    /* SetEntrySlotsVisible */
 extern void Ov025_ReleaseTwoSlotsEx_2(int nCtx, void *pEntry, int nFrame);      /* Ov008_ReleaseTwoSlotsEx */
 extern void Ov025_EnqueueRowPalette(Ov008MenuContext *pCtx, int nRow, int bOn); /* draw / clear a row highlight */
-extern int  GameState_IsFlagSet(int nFlag);                                     /* GameState_IsFlagSet */
 extern int  Ov025_TestBitInBitset(Ov008MenuContext *pCtx, int nItemId);     /* TestBitInBitset */
 
 void Ov025_HighlightListRow(Ov008MenuContext *pCtx, int nRow)

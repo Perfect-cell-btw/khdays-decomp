@@ -1,7 +1,7 @@
+#include "game/engine.h"
+
 extern char *data_ov002_0207fa00;   /* the ov002 root context */
 extern int data_0204c270;           /* g_ov002PromptSelector */
-
-extern int GameState_IsFlagSet(int nFlag);    /* GameState_IsFlagSet */
 
 /* Sets the prompt selector for the phase the screen is entering.
  *

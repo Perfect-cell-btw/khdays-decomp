@@ -2,6 +2,7 @@
  * state (action, results, leave, crawl skip) from the context flags and players. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -17,13 +18,9 @@ extern Ov022Context *data_ov022_020b2e60;
 extern u8 data_0204c240;
 
 extern int func_ov022_02083f0c(void);
-extern int QueryActiveStateOrDelegate(void);
-extern int GetEntryField20ByIndex(int index);
 extern void Ov022_UpdateCameraAndViews(int mode);
 extern int func_ov022_02086ef4(void);
 extern int func_ov022_02086f24(void);
-extern int GameState_IsFlagSet(unsigned int flagId);
-extern int GameState_SetFlag(unsigned int flagId);
 extern void Ov022_SetGlobalC0(void);
 extern int func_ov022_020886d0(int index);
 extern int Ov002_GetRootField8b68Alt(void);
@@ -32,8 +29,6 @@ extern int func_ov022_02088648(void);
 extern int Ov002_IsLeaveFinished(void);
 extern unsigned int func_ov022_02088668(void);
 extern int Ov022_GetEntryField12(int index);
-extern void func_02020878(char value);
-extern void Callbacks_SetByte(int value);
 extern void Ov002_RequestCrawlSkip(void);
 
 extern void *func_ov022_0208310c(void);

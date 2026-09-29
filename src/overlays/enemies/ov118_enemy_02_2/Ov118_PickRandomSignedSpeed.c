@@ -4,8 +4,8 @@
  * and swap the multiply operands. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int  RandNextScaled();
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov118_ChaseTargetOrReposition(void);
 

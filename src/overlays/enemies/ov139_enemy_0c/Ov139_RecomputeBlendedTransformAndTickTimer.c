@@ -1,8 +1,7 @@
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
-extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(int *out, int *tbl, int r);
 extern void Quat_FromTwoVectors(int *out, int *tbl, int v);
 extern void Quat_Multiply(int *out, int *a, int *b);
 extern void Srt_SetRotationQuat(int dst, int *src);

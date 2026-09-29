@@ -12,6 +12,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 struct Ov020WallQuery {
     VecFx32 vOrigin;                    /* 0x00 */
@@ -57,7 +58,6 @@ extern void Ov002_RebindGroupAnimations(const char *name, int a, int b, void *ha
 extern void MIi_CpuClearFast(int value, void *dst, unsigned int size);
 extern int Ov002_GetSlotTableByte(void *handle);
 extern void Ov002_SetWidgetStateByte(int kind, int layer, int a);
-extern void SceneNode_Enable(struct Ov020WallNode *node);
 extern struct TrackEntryGroup *GetTrackEntryBase(int track);
 extern void *FindEntryByExactName(void *entry, const char *name);
 extern void RoomMesh_ForEachPrimOnPoint(void *entry, int a, void *mesh, void *hook, int d);

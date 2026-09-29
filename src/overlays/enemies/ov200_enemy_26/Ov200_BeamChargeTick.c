@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int q[4]; } Quat;
 typedef struct { u16 lo; u16 hi; } Cmd4;
@@ -21,9 +22,7 @@ extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern int FX_Div(int num, int den);
 extern void Srt_SetTranslation(void *p, void *v);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
-extern void Vec3TransformViaTempMtx(void *out, void *pose, void *k);
 extern void Quat_FromTwoVectors(Quat *dst, void *src, VecFx32 *m);
-extern void Vec4_Normalize(Quat *out, Quat *in);
 extern void Srt_SetRotationQuat(void *pose, Quat *q);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern int data_02042258;

@@ -3,8 +3,8 @@
  * the actor's +0x224/+0x228 bounds; then moves the node to 020cdde4. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
-extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov273_IdleTick(void);
 void Ov273_EnterIdle(int *node) {

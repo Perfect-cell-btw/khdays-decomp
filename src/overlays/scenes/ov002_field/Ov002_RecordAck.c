@@ -1,3 +1,5 @@
+#include "game/engine.h"
+
 typedef struct {
     int pad00;
     int aValues[3];                 /* +0x04, indexed by player minus one */
@@ -5,9 +7,6 @@ typedef struct {
 } Ov002AckArg;
 
 extern char *const data_ov002_0207fa00;
-
-extern int Session_GetLocalPlayerIndex(void);
-extern int Session_IsReady(void);
 
 /* Record this player's acknowledgement. The two values are only stored while
  * the session is not yet ready; the ready bit is raised either way. */

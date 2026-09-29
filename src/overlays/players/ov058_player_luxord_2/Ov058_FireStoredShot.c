@@ -8,10 +8,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 p; short a, b, c; short scale; int f14, f18, f1c, f20, f24, f28; } Placement;
 
-extern unsigned Session_RandNextScaled(unsigned);                                       /* Session_RandNextScaled */
 extern void Ov022_SendPlacementMessage(char *, Placement *);
 extern void func_ov022_020ad28c(char *self, VecFx32 *pos, int nCue, int nKind);
 extern short data_0203d210[];

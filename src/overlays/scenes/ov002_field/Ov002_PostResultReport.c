@@ -1,6 +1,7 @@
 /* Post the result report: message 0x1b when there is nothing to report, or the
  * payload parked at +0x10 of the result block followed by message 0x1e. */
-extern void GameState_SetField(int channel, int priority, int message);
+
+#include "game/engine.h"
 
 typedef struct {
     char pad0000[0x10];

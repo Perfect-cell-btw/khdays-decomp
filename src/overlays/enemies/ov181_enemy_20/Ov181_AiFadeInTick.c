@@ -4,9 +4,9 @@
 
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/engine.h"
 
 extern int FX_Div();
-extern int RandNextScaled();
 extern int SetIndexedSlot();
 
 typedef struct {

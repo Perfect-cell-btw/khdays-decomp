@@ -1,6 +1,6 @@
+#include "game/engine.h"
+
 extern char *data_ov008_02090fac;
-extern void SetMasterBrightnessMain(int value);
-extern void SetMasterBrightnessSub(int value);
 extern void Ov008_UpdateTouchState(void);
 extern void Ov008_RefreshPanelDisplay(void);
 extern void Ov008_ShopTabSelectTick(void);

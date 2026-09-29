@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002ScreenCtx {
     char pad000[0xc];
@@ -10,8 +11,6 @@ typedef struct Ov002ScreenCtx {
 extern Ov002ScreenCtx *data_ov002_0207fa18;
 extern char data_ov002_0207f444[];
 
-extern void VBlank_UnregisterCallback(int nSlot, void *pWhat);
-extern void SetMasterBrightnessMain(int nWhich);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void Ov002_World_SetField4(int nMode);
 extern void Ov002_HoldPanelScreen(int nMode, int nArg);

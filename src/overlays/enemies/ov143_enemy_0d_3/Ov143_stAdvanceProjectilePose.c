@@ -2,9 +2,10 @@
  * frame plus the damped push velocity; once the gate byte is clear and the actor touches ground or
  * a wall, queues action 2 and clears the step handler. */
 
+#include "game/engine.h"
+
 struct b1 { unsigned char b : 1; };
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
-extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void VEC_Add(void *a, void *b, void *out);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

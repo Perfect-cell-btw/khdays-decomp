@@ -4,10 +4,10 @@
  * the rig's state pair at +0x2da0 (the +0x2da4 word only when the state was not 2). */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                /* Anim_SetFrameWrapped */
-extern int Session_RandNext(void);                                                  /* Session_RandNext */
 extern char *data_ov055_020b7740;
 
 void Ov055_StartSequenceSlot(char *slot)

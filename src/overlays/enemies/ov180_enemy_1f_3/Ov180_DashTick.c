@@ -7,6 +7,7 @@
  * unflagged actor -- or one that still found targets -- rolls 1-in-5 for sub-state 6, else 5. */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { int w[4]; } Vec4;
 
@@ -17,7 +18,6 @@ extern int Ov107_InvokeHitCallback(int victim, int a, int b, int mode, VecFx32 *
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int obj, int effect, int kind, VecFx32 *pos);
-extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 
 void Ov180_DashTick(int node)

@@ -1,4 +1,5 @@
 /* Advances to the pending scene; returns 0. */
 
-extern void Scene_AdvanceToPending(void);
+#include "game/engine.h"
+
 int Scene_StepAndContinue(void) { Scene_AdvanceToPending(); return 0; }

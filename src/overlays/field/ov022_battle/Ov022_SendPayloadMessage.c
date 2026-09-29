@@ -4,8 +4,8 @@
  *
  * Sibling of func_ov022_02094810 -- same bitfield header, wider payload (a word
  * at +4 rather than a byte at +1) and therefore an 8-byte frame. */
-extern int QueryActiveStateOrDelegate(void);
-extern void MsgQueue_SendGate(int channel, unsigned short *message, int size);
+
+#include "game/engine.h"
 
 struct marshal_020947a4 {
     unsigned char lo2 : 2;

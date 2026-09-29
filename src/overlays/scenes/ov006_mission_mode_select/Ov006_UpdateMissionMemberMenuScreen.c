@@ -26,6 +26,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     u16 id;          /* +0x00  entry id                                    */
@@ -60,8 +61,6 @@ extern MissionMenuContext *data_ov006_02056660;
 extern u16 data_0204c190;
 extern u8 data_ov006_020561d0[];
 
-extern void func_020362ec(void *image);
-extern int PlaySound(int bank, int sound);  /* PlaySound */
 extern u16 Ov006_MissionGetCursorEntry(void);  /* Ov006_MissionGetCursorEntry */
 extern int Ov006_GetMissionMenuSelection(void);  /* Ov006_GetMissionMenuSelection */
 extern int Ov006_CountPlayers(void);  /* Ov006_CountPlayers */

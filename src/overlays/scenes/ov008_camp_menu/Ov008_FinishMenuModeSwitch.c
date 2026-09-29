@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define TWEEN_DONE     0x7fffffff
 #define SLIDE_START    (-0xa0000)
@@ -80,7 +81,6 @@ extern void  Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible);  
 extern int   Ov008_Menu_ChangePage(Ov008MenuContext *pCtx, int nPage);      /* Ov008_Menu_ChangePage */
 extern void  Ov008_PushSubitemSet(int nCtx, void *pEntry, int nValue);     /* Ov008_PushSubitemSet */
 extern int   Ov008_ResetEntry(int nSlot);                              /* Ov008_ResetEntry */
-extern void  Draw_ScaledValue(void *pSurface, int hLayer, int nX, int nY, int nPalette); /* Draw_ScaledValue */
 extern void  Ov008_BuildActionPage(Ov008MenuContext *pCtx, int nArg);       /* list screen refresh */
 extern void  Ov008_MarkSlotUsed(int nSlot);                              /* Ov008_MarkSlotUsed */
 extern void  Tween_Configure(Tween *pTween, int nMode, int nFrom, int nTo, int nFrames); /* Tween_Configure */

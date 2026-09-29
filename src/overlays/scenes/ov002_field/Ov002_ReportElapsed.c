@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct Ov002TickCmd {
     u8 pad0;
@@ -34,7 +35,6 @@ extern Ov002TickCtx *data_ov002_0207fa08;
 extern unsigned long long OS_GetTick(void);
 extern unsigned long long func_02020368(unsigned long long value,
                                         unsigned int divisor, int arg3);
-extern int Session_IsActive(void);
 extern void Ov002_ApplyTimerCommand(int bFlag, u32 nElapsed);
 extern int Ov002_BuildSessionCommand(int nKind, void *pCmd);
 

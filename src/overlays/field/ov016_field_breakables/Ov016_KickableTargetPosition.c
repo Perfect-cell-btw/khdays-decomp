@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov016Kickable {
     u8 pad_000[0x12];
@@ -17,8 +18,6 @@ typedef struct Ov016Kickable {
     u8  pad_466[0x488 - 0x466];
     VecFx32 position;         /* 0x488 */
 } Ov016Kickable;
-
-extern int GameState_GetField(int nField, int nBit);                       /* GameState_GetField */
 
 VecFx32 *Ov016_KickableTargetPosition(Ov016Kickable *pSelf)
 {

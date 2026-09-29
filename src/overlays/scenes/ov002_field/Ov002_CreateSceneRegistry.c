@@ -2,7 +2,9 @@
  * from its class template and park it in data_ov002_0207fa20 -- the registry the
  * ov002 accessor family reaches through ((int *)&data_ov002_0207fa20)[1].
  * Reports 1 = entered. */
-extern void StoreGlobalArrayEntry(int index, int value);
+
+#include "game/engine.h"
+
 extern int InstantiateClass(const void *cls, int a);
 
 extern char data_ov002_0207f484[];

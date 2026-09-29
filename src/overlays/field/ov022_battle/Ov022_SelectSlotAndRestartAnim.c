@@ -1,8 +1,8 @@
 /* Selects a slot for the local player (its sprite depends on whether the object is free) and
  * restarts the selection tween when the slot changes. */
 
-extern int QueryActiveStateOrDelegate(void);
-extern int GetEntryField20ByIndex(int a);
+#include "game/engine.h"
+
 extern int Ov002_IsObjectFree(int a, int b);
 extern void Tween_Configure(int a, int b, int c, int d, int e);
 extern void Tween_Start(int a);

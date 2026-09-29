@@ -1,8 +1,9 @@
 /* Reset the two-word selection state to {0, 1}, then format setting 0x2080's
  * value (query kind 5) into the shared text buffer and close the dialog. */
-extern int GameState_GetField(int id, int kind);
+
+#include "game/engine.h"
+
 extern void OS_SPrintf(char *dst, const char *fmt, int value);
-extern void SetGameMode(int a);
 
 extern int data_0204c270[];
 extern char data_0204c278[];

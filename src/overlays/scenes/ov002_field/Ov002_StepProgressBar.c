@@ -18,6 +18,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct {
     char pad000[0xa0];
@@ -44,7 +45,6 @@ extern int data_ov002_0207f62c;
 
 extern u64 OS_GetTick(void);
 extern int func_02020400(int nNumer, int nDenom);
-extern void ForwardToHandlerOrCurrentObject(int a, int b, int c);
 
 extern Ov002Progress *Ov002_GetMissionProgress(void);
 extern Ov002BarAnim *Ov002_Field_GetBlock194(void);

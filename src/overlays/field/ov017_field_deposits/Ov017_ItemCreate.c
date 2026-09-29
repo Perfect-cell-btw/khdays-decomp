@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct Ov017Item {
     u8   pad_000[0xc];
@@ -33,7 +34,6 @@ typedef struct Ov017Item {
 } Ov017Item;
 
 extern Ov017Item *Ov002_ClaimPoolEntry(void *pClass, int nSlot);      /* take a piece from the class table */
-extern int   Session_GetLocalPlayerIndex(void);                                    /* Session_GetLocalPlayerIndex */
 extern void  Ov002_PushBucketNode(int nBucket, void *pPiece);         /* register the piece */
 extern void *Ov017_ItemStep(Ov017Item *pSelf);                  /* Ov017_ItemStep */
 

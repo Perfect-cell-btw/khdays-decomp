@@ -17,6 +17,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 #define CATEGORY_COUNT 14
 #define KIND_NONE      0
@@ -89,7 +90,6 @@ typedef struct SessionSlotInfo {
 } SessionSlotInfo;
 
 extern const Ov025KindCategoryTable data_ov025_020b3f28;
-extern u32   Session_GetLocalPlayerIndex(void);                                 /* Session_GetLocalPlayerIndex */
 extern SessionSlotInfo *Slot4_GetIfOccupied(int nSlot);                 /* Slot4_GetIfOccupied */
 extern void  Ov002_LoadCharacterWeapon(Ov025WeaponBuf *pOut, int nKind, int nWeaponId); /* Ov025_LoadCharacterWeapon */
 extern int   Ov025_CountChildEntries(Ov025GridSummary *pSummary);     /* count the entries */

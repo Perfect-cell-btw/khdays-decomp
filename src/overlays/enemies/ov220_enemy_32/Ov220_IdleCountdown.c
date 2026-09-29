@@ -4,8 +4,7 @@
  * below 75) or 7; the call reports 1 when a sub-state is pending. */
 
 #include "nitro/types.h"
-
-extern int RandNextScaled(int bound);
+#include "game/engine.h"
 
 int Ov220_IdleCountdown(int *node, int value)
 {

@@ -1,6 +1,8 @@
 /* Replaces the object's entry table (0x14 bytes each) with a copy of the source table and its two
  * values. */
 
+#include "game/engine.h"
+
 typedef struct {
     int word0;
     int word1;
@@ -19,7 +21,6 @@ typedef struct {
 
 extern void MI_CpuCopy8(void *src, void *dst, int size);
 extern void *CallocInstance(int size);
-extern void FreeInstanceMemory(void *ptr);
 
 void Ov243_AllocCopyEntryTable(Obj243 *obj, int unused, Header243 *src)
 {

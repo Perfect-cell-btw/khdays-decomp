@@ -1,8 +1,9 @@
 /* Looks up the head request; if it is already kind 3 the halfword at +2 is overwritten in place,
  * otherwise a new kind-3 request is pushed with the same value. Twelve callers. */
 
+#include "game/engine.h"
+
 extern unsigned char *SoundMgr_PeekQueued(int arg);
-extern void ScriptQueue_Push(int arg0, int arg1, int arg2);
 
 void RequestQueue_SetOrPushKind3(int arg) {
     unsigned char *ptr = SoundMgr_PeekQueued(0);

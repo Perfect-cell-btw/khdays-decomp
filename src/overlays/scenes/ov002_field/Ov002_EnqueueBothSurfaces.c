@@ -1,8 +1,9 @@
 /* Push both of the object's bitmap surfaces to the graphics queue: the one at
  * +0x3c with its own palette from +0x44, and the one at +0x40 with a fixed
  * 0x1e0-byte extent. Either may be absent. */
-extern int func_02024a18(int handle);
-extern int Gfx_BgLayerCommand(int handle);
+
+#include "game/engine.h"
+
 extern void GFXi_EnqueueCommand(int a, int b, int c, int d);
 
 void Ov002_EnqueueBothSurfaces(char *self) {

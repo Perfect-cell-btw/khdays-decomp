@@ -1,4 +1,5 @@
-extern void StoreGlobalByteAt0(int arg);
+#include "game/engine.h"
+
 extern char *data_ov002_0207fa00;
 /* Drop the link session: cancel it, clear the state byte and the id halfword, and mark the slot
  * free (-1). */

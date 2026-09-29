@@ -3,7 +3,8 @@
  * roll and the target closer than 0x3000, a 50% roll sets the +0x5c flag, zeroes the timer and
  * requests sub-state 4 (queueing 6 or, on a first roll of 80 and up, nothing) while the other
  * half requests sub-state 6. Returns 1 when a sub-state was requested. */
-extern int RandNextScaled(int range);
+
+#include "game/engine.h"
 
 static inline int RandRange(int low, int high)
 {

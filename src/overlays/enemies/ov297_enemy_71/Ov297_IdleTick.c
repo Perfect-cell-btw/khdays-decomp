@@ -4,9 +4,10 @@
  * 0x3243) and sub-state 4 requested when still unalerted; the state ends. While the timer
  * runs an alert with the target closer than 0x8d00 raises bits 0-1 of +0x1ae and requests
  * sub-state 3. */
+
+#include "game/engine.h"
+
 extern int Ov297_AcquireTargetGapAndAngle(void *node);
-extern int RandNextScaled(int range);
-extern unsigned int Rand16NextScaled(unsigned int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int RandRange(int low, int high)

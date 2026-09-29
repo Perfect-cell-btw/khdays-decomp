@@ -1,6 +1,6 @@
 /* Reduces a value by a scaled rate (1.5x in the slow mode), not below 0. */
 
-extern int func_02023c40(void);
+#include "game/engine.h"
 
 int func_ov022_0208a9ac(int param_1, int param_2, int param_3) {
     int factor = param_3 / 3 * 3;

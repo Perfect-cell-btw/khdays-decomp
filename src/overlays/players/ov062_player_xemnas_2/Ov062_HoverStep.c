@@ -13,17 +13,16 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_IsSlotReady(char *emitter);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);            /* ScaleVec3Fx12 */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);          /* Anim_SetFrameWrapped */
 extern void Ov022_StepAnchorDelta(char *self, VecFx32 *out);
-extern int func_02023c40(void);                                            /* game mode: 1 = hard */
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov062_AttackBurstTick(char *self);
 extern void *Ov022_ActorSetState(char *self, int state);

@@ -1,8 +1,8 @@
 /* Tear down the four voice slots -- the 0x108-byte streams from +0x20 and the
  * 0x24-byte mixers from +0x440 -- then clear the loaded flag. The flag is
  * cleared whether or not the slots were live. */
-extern void ReleaseField74AndCleanup(void *stream);
-extern void FreeAllResourceTables(void *mixer);
+
+#include "game/engine.h"
 
 void Ov022_TeardownVoices(unsigned char *self) {
     char *stream;

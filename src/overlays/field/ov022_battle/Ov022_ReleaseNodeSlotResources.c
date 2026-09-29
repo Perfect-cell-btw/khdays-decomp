@@ -18,7 +18,8 @@
  *    folding the extract to `tst`, the `(unsigned)` before the final shift keeps it logical, and
  *    `*(unsigned char*)` keeps the load `ldrb` -- reproducing the ROM's `ldrb; lsl; lsrs`.
  */
-extern void SoundSeqHandle_Stop(unsigned int a);
+
+#include "game/engine.h"
 
 void Ov022_ReleaseNodeSlotResources(int param_1, int param_2) {
     int iVar2 = *(int *)(param_1 + 0x6bc);

@@ -1,6 +1,7 @@
 /* Creates the three text surfaces of the save page and draws its captions. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct TileSurfaceCfg {
     u32 field00;
@@ -29,7 +30,6 @@ extern const TileSurfaceCfg data_ov008_0208f510;
 
 extern void *Ov008_GetCtxBlock968c(void);
 extern int Ov008_ResetEntry(int slot);
-extern void TileSurface_InitAndUpload4bpp(void *surface, const TileSurfaceCfg *config);
 extern u16 *Ov008_GetVarRecordByIndex(void *records, int index);
 extern void Ov008_DrawWithShadow(
     void *surface,

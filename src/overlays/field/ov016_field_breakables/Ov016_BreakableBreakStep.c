@@ -7,6 +7,7 @@
  * is rewound to the new track (ov002 0207c618) and enabled (0202af1c).  Returns 0 to stay. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef void *Ov016StateFn(void *pPiece);
 
@@ -33,7 +34,6 @@ extern int  Ov002_GetModuleScale(void);                               /* frame d
 extern void Ov002_SetFrameOnActiveTracks(void *pNode, int nFrame);            /* set the node's frame */
 extern void Scene_DrawNode(void *pNode);                              /* Scene_DrawNode */
 extern void Ov002_RebindAnimTracks(void *pNode, int nTrack, int nFrame); /* rewind a sequence */
-extern void SceneNode_Enable(void *pNode);                              /* SceneNode_Enable */
 extern void Ov002_SetFieldBit0(void *pPiece, int nMode);            /* retire a piece */
 extern Ov016StateFn Ov002_DoneTick;                             /* terminal state */
 

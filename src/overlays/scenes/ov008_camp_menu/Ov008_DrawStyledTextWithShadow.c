@@ -1,7 +1,7 @@
 /* Draws styled text twice for a one-pixel drop shadow (the shadow one layer lower); the style
  * selects the glyph flags. */
 
-extern void Text_DrawDirectional_2(int base, int x, int y, int z, unsigned int flags, int arg);
+#include "game/engine.h"
 
 void Ov008_DrawStyledTextWithShadow(int param_1, int param_2, int param_3, int param_4, unsigned char param_5, int param_6) {
     unsigned int flags;

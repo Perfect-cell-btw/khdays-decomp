@@ -1,6 +1,7 @@
 /* Destroys the model instances, then the base object. */
 
-extern void DestroyInstance(void *);
+#include "game/engine.h"
+
 extern void Ov107_DestroyObject(void *);
 
 struct S {

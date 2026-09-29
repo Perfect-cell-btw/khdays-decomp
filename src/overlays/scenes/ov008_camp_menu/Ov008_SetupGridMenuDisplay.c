@@ -21,6 +21,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */
@@ -39,7 +40,6 @@ static volatile u16 *const REG_POWCNT1 = (volatile u16 *)0x04000304;
 #define REG_BG3CNT_ADDR     0x0400000e
 #define REG_DB_BG1CNT_ADDR  0x0400100a
 
-extern void  Gfx_Reset2DEngines(void);                                         /* GX_Init */
 extern void *G2_GetBG1ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);

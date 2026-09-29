@@ -6,10 +6,9 @@
  * shape, then the base pre-pass runs. */
 
 #include "game/enemy_common.h"
+#include "game/engine.h"
 
 typedef struct { int w[11]; } Pose;
-
-extern void TaskList_FinishByTag(void *taskList, void *handle);
 
 #define LINK(dst, src) (*(Pose *)(*(char **)(self + (dst)) + 0x30) = *(Pose *)(*(char **)(self + (src)) + 4))
 

@@ -1,12 +1,11 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
+#include "game/engine.h"
 
 /* Resolves duplicate character ids among the four mission slots: a slot that just changed to
  * another slot's id reverts to its previous one, and any duplicates left get a random id; then
  * remembers the ids. */
-
-extern int RandNextScaled(int bound);
 
 void Ov006_MissionResolveDuplicateIds(void) {
     int i = 0;

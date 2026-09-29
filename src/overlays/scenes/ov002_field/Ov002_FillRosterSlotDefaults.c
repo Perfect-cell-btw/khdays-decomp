@@ -22,6 +22,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 extern char *data_ov002_0207fa00;
 extern unsigned char data_0204c240;
@@ -29,7 +30,6 @@ extern VecFx32 *func_ov022_020881f8(int index);
 extern unsigned short func_ov022_02088254(int index);
 extern int Ov022_GetEntryField66(int index);
 extern void Ov002_ReadRosterSeat(int seatId, int *unused, void *out);
-extern void Save_StoreSlotTables(void);
 
 void Ov002_FillRosterSlotDefaults(int index) {
     int *slot = (int *)(*(char **)(data_ov002_0207fa00 + 0x8bd0) + index * 0x44);

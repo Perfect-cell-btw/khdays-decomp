@@ -12,6 +12,7 @@
  * induction pointer, the ROM multiplies every iteration. The loop is the `goto test` shape. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 struct PanelSubCfg {
     int flags00;
@@ -39,7 +40,6 @@ struct PanelSubCfg {
 
 extern void *NNSi_FndAllocFromDefaultExpHeap(int nBytes);
 extern void Ov022_TakeChannelBlock(void *pSub, int a, int b);
-extern int Slot_EvalPackedParam(int kind, int property);
 extern void Ov022_PublishGroupUpdate(void *pSub, char *self, int packed, struct PanelSubCfg *pCfg, int a, int b);
 extern void NNS_G3dRenderObjSetCallBack(void *part, void *cb, int ptr, int timing, int opt);
 extern int NNS_G3dGetResDictIdxByName(void *node, void *desc);

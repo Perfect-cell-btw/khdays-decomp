@@ -1,9 +1,9 @@
 /* Destructor: frees the resource tables (+0x388), destroys the model, the child selector, the child
  * and the five part instances, then the base object. */
 
+#include "game/engine.h"
+
 struct row8 { void *p, *q; };
-extern void FreeAllResourceTables(void *p);
-extern void DestroyInstance(void *p);
 extern void Ov107_DestroyObject(void *this);
 
 void Ov264_destroyObjectSlots(char *this) {

@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/engine.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 
@@ -23,7 +24,6 @@ extern int Collision_CastRay(int grid, void *pos, void *vel);
 extern int Collision_CastSphere(int grid, void *pos, void *vel, int radius);
 extern void Srt_SetTranslation(int srt, void *pos);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Task_MarkFinished(int *node);
 
 void Ov252_ShotFlightTick(int *node)
 {

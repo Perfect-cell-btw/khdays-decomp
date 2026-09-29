@@ -6,9 +6,9 @@
  * restarts the cooldown (4.0) and returns 1. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 extern int Ov237_TargetGap(int *node);
-extern int RandNextScaled(int bound);
 
 int Ov237_PickMove(int *node)
 {

@@ -2,6 +2,7 @@
  * resources. */
 
 #include "nitro/types.h"
+#include "game/engine.h"
 
 typedef struct CharacterResourceBlock {
     u8 pad_00[0x10];
@@ -32,9 +33,6 @@ extern const char data_ov009_02056350[];
 
 extern int   Ov009_GetCtxBlock9500(void);
 extern void *Archive_LoadFile(const void *handle, int heapId);
-extern void  Res_LoadSpriteSet(GraphicsResourceCell *cell, void *resource,
-                          int screenIndex, int characterIndex,
-                          int paletteIndex);
 extern void  GX_LoadBGPltt(const void *source, u32 offset, u32 size);
 extern u32   Ov009_PackHandleTag(int index);
 extern void  GetResourceSubBlock_CHAR2(void *resource, CharacterResourceBlock **block);
