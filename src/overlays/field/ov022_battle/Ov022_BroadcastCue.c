@@ -80,6 +80,6 @@ void Ov022_BroadcastCue(unsigned int nOwner, int nKind, VecFx32 *pPos,
     pBody->vecPos = *pPos;
     pBody->nAngle = (short)nAngle;
     if (Ov002_PollSession() != 0 && Session_GetLocalPlayerIndex() != 0) {
-        func_02031384(CUE_GATE, pBody, 0x10);
+        MsgQueue_Post(CUE_GATE, pBody, 0x10);
     }
 }

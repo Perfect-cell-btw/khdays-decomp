@@ -22,5 +22,5 @@ void func_ov022_0208a624(int param_1, int param_2, int param_3, int param_4) {
     m.f.f3 = *(unsigned char *)(iVar3 + 9);
     m.f.f10 = 3;
     m.f.f5 = *(int *)(iVar3 + 0x6bc);
-    *(short *)(param_1 + 0x6c) = func_02031384(0xc, &m, 4);
+    *(short *)(param_1 + 0x6c) = MsgQueue_Post(0xc, &m, 4);
 }

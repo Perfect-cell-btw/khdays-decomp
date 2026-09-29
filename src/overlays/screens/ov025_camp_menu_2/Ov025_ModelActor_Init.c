@@ -75,7 +75,7 @@ void Ov025_ModelActor_Init(Ov025ModelActor *pActor, Ov025ModelParams *pParams)
     void *pDict;
 
     MI_CpuFill8(pActor, 0, 0x528);
-    switch (func_02023c40()) {
+    switch (GetFrameRateMode()) {
     case 0: pActor->nZoom = 0x1000; break;
     case 1: pActor->nZoom = 0xaaa; break;
     case 2: pActor->nZoom = 0x2000; break;

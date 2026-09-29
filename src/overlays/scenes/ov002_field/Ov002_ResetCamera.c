@@ -3,7 +3,7 @@
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int QueryActiveStateOrDelegate(void);
-extern void *func_02023bf0(void);   /* the active scene */
+extern void *Obj_GetCurrent(void);   /* the active scene */
 
 extern VecFx32 *func_ov022_020881f8(int nPlayer);
 extern int func_ov022_02083f5c(void);
@@ -66,6 +66,6 @@ void *Ov002_ResetCamera(void)
     *(int *)(pCam + 0x9c) = 1;
     *(int *)(pCam + 0xb4) = 0x1f;
 
-    Ov002_TickCameraTransition(func_02023bf0());
+    Ov002_TickCameraTransition(Obj_GetCurrent());
     return 0;
 }

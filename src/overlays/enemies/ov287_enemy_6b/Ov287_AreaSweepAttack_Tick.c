@@ -186,7 +186,7 @@ void Ov287_AreaSweepAttack_Tick(struct Node *node)
             clamp = 1;
         }
         ((u8 *)&msg)[4] = (u8)((count + 1) * clamp);
-        func_02031384(1, &msg.h, 0xe);
+        MsgQueue_Post(1, &msg.h, 0xe);
         st->sent054 = 1;
     }
     if (*(u8 *)((char *)st->pOwner + 0xad) != 0) {

@@ -88,7 +88,7 @@ void Ov008_SendMenuMessage(u8 mode)
             return;
         }
         data_ov008_02090f00->message9.header = header;
-        data_ov008_02090f00->messageHandle = func_02031384(0xe, &data_ov008_02090f00->message9, sizeof(Ov008Message2));
+        data_ov008_02090f00->messageHandle = MsgQueue_Post(0xe, &data_ov008_02090f00->message9, sizeof(Ov008Message2));
         return;
     }
 }

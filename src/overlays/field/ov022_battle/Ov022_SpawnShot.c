@@ -142,7 +142,7 @@ int Ov022_SpawnShot(struct ShotPool *pPool, struct SpawnReq *pReq,
     pShot->vecDir.y = nDirY;
     pShot->vecDir.z = nDirZ;
     if ((pDesc->nFlags & DESC_UNSCALED) == 0) {
-        if (func_02023c40() == WIDE_SETTING) {
+        if (GetFrameRateMode() == WIDE_SETTING) {
             nScale = pDesc->nSpeed * 3 / 2;
         } else {
             nScale = pDesc->nSpeed;

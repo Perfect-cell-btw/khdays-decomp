@@ -84,7 +84,7 @@ extern int Session_GetLocalPlayerIndex(void);
 extern int Session_IsReady(void);
 extern int GameState_GetField(int a, int b);
 extern void Callbacks_SetByte(int a);
-extern void func_02020878(int a);
+extern void PauseMenu_SetAllowed(int a);
 extern void PlaySound(int a, int b);
 extern int QueryActiveStateOrDelegate(void);
 extern int *GetEntryField20ByIndex(int a);
@@ -214,7 +214,7 @@ void *Ov002_SessionTick(void)
             } else {
                 Callbacks_SetByte(0);
             }
-            func_02020878(0);
+            PauseMenu_SetAllowed(0);
             Ov002_SetSessionActive(1, pSess->nSlotByte);
             pSess->nSlotByte = 0xff;
             pSess->nMask &= ~0x10;
@@ -242,7 +242,7 @@ void *Ov002_SessionTick(void)
             if ((data_0204c240 & 4) != 0) {
                 Callbacks_SetByte(0);
             }
-            func_02020878(0);
+            PauseMenu_SetAllowed(0);
             if ((data_0204c240 & 4) == 0) {
                 Ov002_SetSessionBusy(1);
             }

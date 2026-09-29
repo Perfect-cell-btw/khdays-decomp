@@ -1,5 +1,5 @@
 /* Loads the list scene's BG graphics. Opens the archive descriptor data_ov000_0205aba8, then picks
- * an alternate BG3 character subfile by variant (func_02024e5c: 1->none, 2->#1, 3->#3, 4->#0,
+ * an alternate BG3 character subfile by variant (GetLanguage: 1->none, 2->#1, 3->#3, 4->#0,
  * 5->#2, else terminate). Loads the main BG palette + (alternate or default) BG3 char + screen from
  * archive subfile #3, and the sub-screen palette/char from subfile #0. Sets graphicsFlags|=4,
  * clears a 0x40 span of BG2 char and fills the sub-screen map with 0xc8. */
@@ -77,7 +77,7 @@ void Ov000_LoadListSceneGraphics(void)
 
     container = Msg_OpenContainerAndReadHeader(data_ov000_0205aba8, 14);
 
-    switch (func_02024e5c()) {
+    switch (GetLanguage()) {
     case 1:
         alternateHandle = 0;
         break;

@@ -5,7 +5,7 @@
 
 extern int ScriptVm_ReadOperandInt(void *, int);
 extern void GameState_SetFlag(int flag);
-extern void func_020235bc(int flag);
+extern void GameState_ClearFlag(int flag);
 extern char *data_0204be18;
 
 int Ov069_MarkCurrentItemEquipped(void *arg0, int arg1)
@@ -31,6 +31,6 @@ int Ov069_MarkCurrentItemEquipped(void *arg0, int arg1)
         }
         row += 0x50;
     }
-    func_020235bc(0x20e1);
+    GameState_ClearFlag(0x20e1);
     return 1;
 }

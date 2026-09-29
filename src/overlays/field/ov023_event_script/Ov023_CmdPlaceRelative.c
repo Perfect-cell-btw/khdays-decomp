@@ -55,7 +55,7 @@ typedef struct Ov023Entity {
 
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
-extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nActor);              /* ScriptVm_ResolveActor */
+extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nActor);
 /* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                            /* Entity_Get */
@@ -85,7 +85,7 @@ int Ov023_CmdPlaceRelative(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     int nActor = ScriptVm_ReadOperandInt(pCtx, pOperand);
     int nReference = ScriptVm_ReadOperandInt(pCtx, pOperand + 1);
     int nOffset = ScriptVm_ReadOperandFx32(pCtx, pOperand + 2);
-    int nEntity = func_02020d10(pCtx, nActor);
+    int nEntity = ScriptVm_ResolveActorIndex(pCtx, nActor);
     VecFx32 vCameraAngle;
     VecFx32 vPos;
     MtxFx43 mtxRot;

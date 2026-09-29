@@ -28,7 +28,7 @@ void *SND_RegisterSeq(int a, int b) {
 
     v = data_0204bbfc[0x14 / 4];
     if (v == 0) {
-        v = func_02023650();
+        v = Heap_GetCurrent();
     }
     p->w8 = v;
     p->wc = Archive_LoadFile(a, b);

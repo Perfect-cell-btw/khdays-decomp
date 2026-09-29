@@ -81,13 +81,13 @@ extern void  DispCnt_ApplyPendingMode(void);
 extern int   PM_SetLCDPower(int a);                /* DispatchNormalizedArg        */
 extern int   PM_GoSleepMode(int a, int b, int c);
 extern int   PM_GetLCDPower(void);
-extern int   func_02020914(void);
+extern int   Sleep_IsAllowed(void);
 extern void  NNS_SndPlayerPauseAll(int flag);
 extern int   SoundMgr_PauseBgm(int flag);
 extern void  OS_Sleep(unsigned int ms);
-extern int  func_0201e428(void);
+extern int  GetMasterBrightnessMain(void);
 extern void  SetMasterBrightnessMain(int brightness);
-extern int  func_0201e438(void);
+extern int  GetMasterBrightnessSub(void);
 extern void  SetMasterBrightnessSub(int brightness);
 
 /* ---- globals ---- */
@@ -197,8 +197,8 @@ int main(void) {
             if (phase != 0) {
                 if (LID_CLOSED == 0 && PM_SetLCDPower(1) != 0) {
                     data_020442a0.phase = 0;
-                    SetMasterBrightnessMain(func_0201e428());
-                    SetMasterBrightnessSub(func_0201e438());
+                    SetMasterBrightnessMain(GetMasterBrightnessMain());
+                    SetMasterBrightnessSub(GetMasterBrightnessSub());
                     DispCnt_ApplyPendingMode();
                 }
             }
@@ -206,7 +206,7 @@ int main(void) {
         }
 
         /* --- scene ended: run fade/teardown transition --- */
-        if (func_02020914() == 0) continue;
+        if (Sleep_IsAllowed() == 0) continue;
         if (LID_CLOSED != 1) continue;
 
         if (data_0204bd84 == 0) NNS_SndPlayerPauseAll(1); else SoundMgr_PauseBgm(1);
@@ -220,7 +220,7 @@ int main(void) {
             DispCnt_ApplyPendingMode();
             data_020442a0.phase = 0;
         }
-        SetMasterBrightnessMain(func_0201e428());
-        SetMasterBrightnessSub(func_0201e438());
+        SetMasterBrightnessMain(GetMasterBrightnessMain());
+        SetMasterBrightnessSub(GetMasterBrightnessSub());
     }
 }

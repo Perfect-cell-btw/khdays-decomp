@@ -18,7 +18,7 @@ typedef struct { int m[9]; } Mtx33;
 
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
-extern void *func_ov107_020c9848(void);
+extern void *Ov107_GetActorManager(void);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *src, VecFx32 *dst);
 extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
@@ -58,7 +58,7 @@ void Ov107_Region_DrawStatusFx(char *self, int action) {
                     src = n->field_2cc != 0 ? (VecFx32 *)n->field_2cc : &n->sphere.center;
                     *g = *src;
 
-                    thread = func_ov107_020c9848();
+                    thread = Ov107_GetActorManager();
                     VEC_Subtract((VecFx32 *)((char *)*(void **)thread + 0x88), g, &result);
                     VEC_Normalize(&result, &result);
                     ScaleVec3Fx12(n->sphere.radius, &result, &result);

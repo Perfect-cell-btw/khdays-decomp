@@ -128,7 +128,7 @@ typedef struct Ov027TextBox {
     u16  nKind;               /* 0x0e */
 } Ov027TextBox;
 
-extern void  func_0202f7fc(void *pFont, const char *pszPath);       /* FontResource_Load */
+extern void  Font_LoadUTF16(void *pFont, const char *pszPath);
 extern void  GFXi_EnqueueCommand(int nCmd, int nDest, const void *pSrc, int nSize);
 extern void  TileTextRenderer_Init(void *pText, int nLayer, void *pFont, Ov027TextBox *pBox); /* TileTextRenderer_Init */
 extern void  CallVirtSlot1(void *pText, int nArg);                  /* TileTextRenderer_Clear */
@@ -143,7 +143,7 @@ void Ov027_InitHintText(void)
 {
     Ov027TextBox box;
 
-    func_0202f7fc(data_ov027_02084364->font, data_ov027_02084344);
+    Font_LoadUTF16(data_ov027_02084364->font, data_ov027_02084344);
     GFXi_EnqueueCommand(0xf, 0x1a0, data_02042958, 0x20);
     box.nX = 0;
     box.nY = 0x14;

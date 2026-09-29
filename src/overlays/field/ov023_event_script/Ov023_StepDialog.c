@@ -67,7 +67,7 @@ int Ov023_StepDialog(void)
         G2x_SetBlendBrightness_(0x04001050, 0xc, data_ov023_0208a784.pScene->nSubBrightness);
         if (data_ov023_0208a784.pScene->nSubBrightness == -16) {
             data_ov023_0208a784.pScene->nDialogState = 0;
-            func_02020878(1);
+            PauseMenu_SetAllowed(1);
             return 0;
         }
         break;

@@ -6,11 +6,11 @@
 
 extern void PackDisplayReg0x400100e(void);
 extern void PackDisplayReg0x400100c(void);
-extern void func_02024088(void);
-extern void func_020240bc(void);
+extern void Bg_WriteSubBg1Cnt(void);
+extern void Bg_WriteSubBg0Cnt(void);
 extern void PackDisplayReg0x400000e(void);
 extern void PackDisplayReg0x400000c(void);
-extern void func_02024148(void);
+extern void Bg_WriteMainBg1Cnt(void);
 extern int G2S_GetBG0ScrPtr;
 extern int G2S_GetBG1ScrPtr;
 extern int G2S_GetBG2ScrPtr;
@@ -60,7 +60,7 @@ void *const data_02041fe0[43] = {
 
     &GX_LoadBGPltt,
 
-    (void *)func_02024148,
+    (void *)Bg_WriteMainBg1Cnt,
 
     0,
 
@@ -96,7 +96,7 @@ void *const data_02041fe0[43] = {
 
     &GX_LoadBGPltt,
 
-    (void *)func_020240bc,
+    (void *)Bg_WriteSubBg0Cnt,
 
     0,
 
@@ -108,7 +108,7 @@ void *const data_02041fe0[43] = {
 
     &GXS_LoadBGPltt,
 
-    (void *)func_02024088,
+    (void *)Bg_WriteSubBg1Cnt,
 
     0,
 

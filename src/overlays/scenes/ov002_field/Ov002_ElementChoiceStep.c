@@ -61,7 +61,7 @@ int Ov002_ElementChoiceStep(char *pElement)
         if (Ov002_Hud_IsPanelOpen() != 0 || Ov002_GetRootField8b68Alt() != 0) {
             Ov002_SetRosterHighlight(pElement, QueryActiveStateOrDelegate(), 0);
             *(u8 *)(pElement + 0x1b6) = 0;
-            func_02020878(1);
+            PauseMenu_SetAllowed(1);
             if (*(signed char *)(pElement + 0x1bb) != 0) {
                 Ov002_SetLeaveRequest(0);
             }
@@ -137,7 +137,7 @@ int Ov002_ElementChoiceStep(char *pElement)
         break;
 
     case 4:
-        func_02020878(1);
+        PauseMenu_SetAllowed(1);
         Ov002_SetRosterHighlight(pElement, QueryActiveStateOrDelegate(), 0);
         Ov002_SetSessionActive(0, 0);
         *(u8 *)(pElement + 0x1b6) = 0;

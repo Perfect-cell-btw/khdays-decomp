@@ -1,5 +1,5 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
 /* The script VM entity table: ctx->world->entities + id * sizeof(Entity). */
@@ -12,7 +12,7 @@ extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 int Ov023_Cmd_PushEntityTween3(int ctx, int args) {
     int entity = ScriptVm_ReadOperandInt(ctx, (void *)args);
     int value = ScriptVm_ReadOperandInt(ctx, (void *)(args + 8));
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     if (id != 0x40) {
         char *p = ArrayEntryPtrD0((unsigned short)id);
         BindAnimTrack(p + 4, 3, p + 0xe4, (short)value);

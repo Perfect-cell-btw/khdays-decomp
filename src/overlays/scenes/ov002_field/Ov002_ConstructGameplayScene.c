@@ -43,7 +43,7 @@ extern int   data_ov002_0207f134;
 extern int  NNSi_FndGetCurrentRootHeap(void);
 extern int  GameState_IsFlagSet(int archiveId);
 extern void Ov002_SetLazyClassEnabled(int enabled);
-extern int  func_02023bf0(void);
+extern int  Obj_GetCurrent(void);
 extern void StoreGlobalArrayEntry(int a, void *b);
 extern int  Session_IsActive(void);
 extern int  Session_GetSlotTable(void);
@@ -81,7 +81,7 @@ extern void Ov002_SetSceneObjectsActive(int active);
 extern int  Ov002_EnsureSceneManager(int sceneId);
 extern void Ov002_StreamFormattedLine(void *a, void *b);
 extern void Ov002_SetRootWord8a28(int a, int b);
-extern int  func_02023c40(void);
+extern int  GetFrameRateMode(void);
 extern void Ov002_SetStateRecordStage(void);
 extern void PartyState_AllocRecord(void);
 extern int  NNSi_FndAllocFromDefaultExpHeap(int size);
@@ -104,7 +104,7 @@ void *Ov002_ConstructGameplayScene(void *param_1)
     if (GameState_IsFlagSet(0x18bd) == 0 && GameState_IsFlagSet(0x18c9) == 0) {
         Ov002_SetLazyClassEnabled(1);
     }
-    *(int *)heap = func_02023bf0();
+    *(int *)heap = Obj_GetCurrent();
     StoreGlobalArrayEntry(2, &data_ov002_0207f134);
     *(int *)(heap + 0x8b58) = -1;
     *(int *)(heap + 0x8b4c) = -1;
@@ -171,7 +171,7 @@ void *Ov002_ConstructGameplayScene(void *param_1)
     Ov002_SetRootWord8a28(0, *(int *)(heap + 4));
     MI_CpuFill8(heap + 0x8d84, 0, 0x18);
     if ((data_0204c240 & 0xc) == 4 && *(u8 *)((char *)&data_0204c248 + 2) != 0) {
-        int v = (func_02023c40() == 1) ? 0x14 : 0x1e;
+        int v = (GetFrameRateMode() == 1) ? 0x14 : 0x1e;
         *(short *)(heap + 0x8d98) = (short)((v << 0xc) >> 0xc);
     } else {
         *(short *)(heap + 0x8d98) = -1;

@@ -89,7 +89,7 @@ extern void Snd_RegisterSeqAndBind(unsigned int *a, int obj, unsigned int *vram,
 extern void BindAnimTrack(int obj, int slot, int a, int b);
 extern void GX_SetBankForSubBG(int a);
 extern unsigned int Archive_LoadFile(unsigned int vram, int heap);
-extern int func_02024e5c(void);                          /* returns HUD-variant flag */
+extern int GetLanguage(void);
 extern void Ov003_LoadCharResource(unsigned int *out, int root, int a, int b, int c); /* LoadCharResource */
 extern void MIi_CpuClear16(int a, int dst, int len);
 extern void Res_LoadSpriteSet(unsigned int *out, int *res, int a, int b, int c);
@@ -254,7 +254,7 @@ int Ov003_SceneInit(int param_1) {
     GX_SetBankForSubBG(4);
     uVar5 = Archive_LoadFile((*(int *)(root + 0x20) + 0x8000U & 0x00fffffcU) << 7 | 0x80000000, 0xe);
     *(unsigned int *)(root + 0xedc) = uVar5;
-    iVar12 = func_02024e5c() == 1;
+    iVar12 = GetLanguage() == 1;
     if (iVar12 != 0) {
         *(unsigned int *)(root + 0xede) = 0;
     } else {

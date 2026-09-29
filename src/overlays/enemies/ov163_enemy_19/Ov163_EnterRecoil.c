@@ -29,7 +29,7 @@ void Ov163_EnterRecoil(int *node) {
     }
     buf = *(Ov163Pair *)(data_ov163_020d0e68 + 2);
     buf.a = *(unsigned short *)(state[0] + 2);
-    func_02031384(4, &buf, 4);
+    MsgQueue_Post(4, &buf, 4);
     Ov107_PostTagUpdate((Actor *)state[0], 7, 1);
     *(int *)(state[0] + 0x3cc) &= ~1;
     *(VecFx32 *)(state + 9) = *(VecFx32 *)data_02041dc8;

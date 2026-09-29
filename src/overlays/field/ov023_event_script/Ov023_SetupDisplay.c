@@ -35,7 +35,7 @@ void Ov023_SetupDisplay(void)
 {
     int nLevel;
 
-    nLevel = func_0201e428();
+    nLevel = GetMasterBrightnessMain();
     if (nLevel != -0x10 && nLevel != 0x10) {
         nLevel = -0x10;
     }

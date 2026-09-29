@@ -77,7 +77,7 @@ void Ov002_SetSessionActive(int bLocal, int nMask)
                     } while (i < func_ov022_020882f8());
                 }
                 if (bLocal == 0) {
-                    func_020235bc(0x20b6);
+                    GameState_ClearFlag(0x20b6);
                 }
             } else {
                 Ov022_Party_SetFrozen(bLocal);
@@ -88,7 +88,7 @@ void Ov002_SetSessionActive(int bLocal, int nMask)
             && ((nMask & 4) != 0 || bLocal == 0)) {
             Ov002_SetCurrentSlotFlag1(bLocal == 0 ? 1 : 0);
             if (bLocal == 0) {
-                pThread = (Ov002Thread *)func_ov107_020c9848();
+                pThread = (Ov002Thread *)Ov107_GetActorManager();
                 if (pThread != 0) {
                     pThread->nWake = 0x1000;
                 }

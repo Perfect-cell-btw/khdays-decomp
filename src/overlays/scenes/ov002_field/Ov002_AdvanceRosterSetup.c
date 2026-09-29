@@ -199,7 +199,7 @@ int Ov002_AdvanceRosterSetup(int nMode)
                     PartyState_CopyEquipTables(1, 1);
                 }
                 if (GameState_IsFlagSet(0x2088) != 0) {
-                    func_020235bc(0x2088);
+                    GameState_ClearFlag(0x2088);
                 }
             } else if (nMode == 0 || nMode == 4 || nMode == 3
                        || (unsigned int)(nMode - 6) <= 2) {

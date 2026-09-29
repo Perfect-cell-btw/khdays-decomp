@@ -50,7 +50,7 @@ void Ov008_ToggleOptionFlag(void)
         } else {
             Ov008_SetTargetSlot(0, NO_TARGET);
         }
-        func_020235bc(FLAG_OPTION);
+        GameState_ClearFlag(FLAG_OPTION);
     }
     if (pCtx->nTransferPending != 0) {
         return;

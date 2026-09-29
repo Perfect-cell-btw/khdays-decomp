@@ -22,5 +22,5 @@ void func_ov022_0208a134(int param_1) {
     }
     m.b345 = param_1;
     m.b012 = 2;
-    func_02031384(0xf, &m, 6);
+    MsgQueue_Post(0xf, &m, 6);
 }

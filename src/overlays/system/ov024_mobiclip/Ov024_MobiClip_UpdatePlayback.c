@@ -47,14 +47,14 @@ extern void GX_DispOff(void);
 extern void DispCnt_ApplyPendingMode(void);
 extern int GXx_GetMasterBrightness_(unsigned int nRegister);
 extern int PM_SetLCDPower(int bResume);
-extern int func_0201e428(void);
+extern int GetMasterBrightnessMain(void);
 extern void SetMasterBrightnessMain(int brightness);
-extern int func_0201e438(void);
+extern int GetMasterBrightnessSub(void);
 extern void SetMasterBrightnessSub(int brightness);
 extern int SoundStrm_HasPlaybackPos(int nChannel);
 extern void Table_TailCallWithEntry(int nChannel, int nFrames);
-extern void func_02031574(int bOn);
-extern void func_02030e64(int bOn);
+extern void MsgQueue_SetMoviePlaying(int bOn);
+extern void Session_SetMoviePlaying(int bOn);
 extern void OS_WaitVBlankIntr(void);
 
 void *Ov024_MobiClip_UpdatePlayback(void)
@@ -101,8 +101,8 @@ void *Ov024_MobiClip_UpdatePlayback(void)
                        && ((KEYS_EXTRA & LID_CLOSED) >> 15) == 0) {
                 if (PM_SetLCDPower(1) != 0) {
                     player->bSuspended = 0;
-                    SetMasterBrightnessMain(func_0201e428());
-                    SetMasterBrightnessSub(func_0201e438());
+                    SetMasterBrightnessMain(GetMasterBrightnessMain());
+                    SetMasterBrightnessSub(GetMasterBrightnessSub());
                     DispCnt_ApplyPendingMode();
                 }
             }
@@ -138,8 +138,8 @@ teardown:
         }
     }
     Obj_ResetBothSubBlocksAndArm(player->obj);
-    func_02031574(0);
-    func_02030e64(0);
+    MsgQueue_SetMoviePlaying(0);
+    Session_SetMoviePlaying(0);
 
     switch (player->nEndReason) {
     case 0:

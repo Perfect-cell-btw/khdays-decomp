@@ -13,7 +13,7 @@ extern void ObjNode_InitFromDesc(int *a, unsigned int *b);
 extern int func_02032444(int *a, int b, int c);
 extern void Slot_SetPosition(int *a, int b, unsigned int *c);
 extern void Slot_SetMode2Bit(int *a, int b, int c);
-extern void func_0202f7fc(int *a, void *b);
+extern void Font_LoadUTF16(int *a, void *b);
 extern void TileTextRenderer_Init(int *a, int b, int *c, unsigned short *d);
 extern void GX_LoadBGPltt(void *a, int b, int c);
 extern void Ov007_FadeInStep(void);
@@ -77,7 +77,7 @@ void *Ov007_SceneInit(int param_1, int param_2, int param_3, int param_4) {
         fr.box[1] = 0xbc000;
         Slot_SetPosition(heap + 0x41f, heap[0x16ad], fr.box);
         Slot_SetMode2Bit(heap + 0x41f, heap[0x16ad], 0);
-        func_0202f7fc(heap + 9, &data_ov007_0204d3f8);
+        Font_LoadUTF16(heap + 9, &data_ov007_0204d3f8);
 
         {
             unsigned short flag = 0;

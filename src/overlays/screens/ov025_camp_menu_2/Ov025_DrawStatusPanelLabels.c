@@ -46,7 +46,7 @@ typedef struct Ov008StatusPanel {
 } Ov008StatusPanel;
 
 extern const Ov008WidgetPairTable data_ov025_020b4390;
-extern int   func_02024e5c(void);                                         /* LoadGlobalShort_0204c1ec */
+extern int   GetLanguage(void);
 extern void *Ov025_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
 extern void *Ov025_GetDescriptor3(void);                                   /* wide glyph set */
 extern int   Ov025_GetBlock4a80(void);                                   /* Ov008_GetCtxBlock4a80 */
@@ -71,7 +71,7 @@ void Ov025_DrawStatusPanelLabels(Ov008StatusPanel *pPanel)
     int nCtx;
 
     pairs = data_ov025_020b4390;
-    nMode = func_02024e5c();
+    nMode = GetLanguage();
     pNarrow = Ov025_GetCtxBlock968c();
     pWide = Ov025_GetDescriptor3();
     if (pPanel->bWide == 0) {

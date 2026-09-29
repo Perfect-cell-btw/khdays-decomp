@@ -14,7 +14,7 @@ int Ov034_SetTimingsAndEnterState21(int *self) {
     if (Session_GetLocalPlayerIndex() == 0) {
         *(long long *)((char *)self + 0x46c) |= 0x10000;
     }
-    blk[5] = (func_02023c40() == 1) ? 0x1333 : 0xccd;
-    blk[6] = (func_02023c40() == 1) ? 0x600 : 0x400;
+    blk[5] = (GetFrameRateMode() == 1) ? 0x1333 : 0xccd;
+    blk[6] = (GetFrameRateMode() == 1) ? 0x600 : 0x400;
     return Ov022_ActorSetState(self, 0x21);
 }

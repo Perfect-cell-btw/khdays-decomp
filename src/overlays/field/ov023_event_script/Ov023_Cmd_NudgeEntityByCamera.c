@@ -1,5 +1,5 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern char *ArrayEntryPtrD0(int index);
 extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 
@@ -12,7 +12,7 @@ extern void Ov023_SetScriptSlotWord(int a, int b);
  * actually uses, then refreshes both HUD panels. */
 int Ov023_Cmd_NudgeEntityByCamera(int ctx, char *args) {
     char *node;
-    int id = func_02020d10(ctx, ScriptVm_ReadOperandInt(ctx, args));
+    int id = ScriptVm_ResolveActorIndex(ctx, ScriptVm_ReadOperandInt(ctx, args));
     if (id != 0x40) {
         node = ArrayEntryPtrD0((unsigned short)id);
         if (Ov002_ScenePanel_IsState3() != 0) {

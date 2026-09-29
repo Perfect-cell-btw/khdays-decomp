@@ -36,7 +36,7 @@ typedef struct {
 
 extern int data_ov002_0207f628;
 
-extern int func_02023c50(void);
+extern int Obj_GetFrameCount(void);
 extern void RegisterSeqAndInit(void *pWidget, unsigned int nFileId, int nSlot,
                           int nKind);
 extern void SceneNode_SetFlag40(void *pWidget, int nValue);
@@ -49,7 +49,7 @@ void Ov002_SceneResetPanelHud(void)
     s = *(Ov002HudScene **)&data_ov002_0207f628;
     s->bHudDirty = 0;
     s->bHudHeld = 0;
-    s->nFadeMask = func_02023c50();
+    s->nFadeMask = Obj_GetFrameCount();
 
     RegisterSeqAndInit(&s->hudWidget,
                   0x80000000 | ((s->nFileBase + 0x8000) & 0xfffffc) << 7,

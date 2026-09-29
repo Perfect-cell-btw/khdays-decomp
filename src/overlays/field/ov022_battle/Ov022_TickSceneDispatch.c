@@ -2,9 +2,9 @@
  * (clients), or steps the replay target, and shows nearby names. */
 
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern int func_02023c40(void);
+extern int GetFrameRateMode(void);
 extern void Ov022_SetGlobalByte(int on);
-extern void func_020362ec(int a);
+extern void KeyRepeat_Step(int a);
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_RefreshSlotRows(int a);
 extern void Ov022_Party_SyncAndUpdate(int a);
@@ -17,8 +17,8 @@ extern int data_0204be04;
 int Ov022_TickSceneDispatch(void) {
     int heap = NNSi_FndGetCurrentRootHeap();
     unsigned int mode;
-    Ov022_SetGlobalByte(func_02023c40() == 1);
-    func_020362ec(heap + 0x4c);
+    Ov022_SetGlobalByte(GetFrameRateMode() == 1);
+    KeyRepeat_Step(heap + 0x4c);
     mode = *(unsigned char *)&data_0204be04;
     if (mode == 0) {
         int t = Session_GetLocalPlayerIndex();

@@ -18,7 +18,7 @@ extern void Gfx_ResetDisplayAndVram(void *p, int a);
 extern void Obj_SetWord8(void *pCamera, int nMode);
 extern void Obj_SetWord4(void *p, int a);
 extern void RegisterNamedTask(int priority, const char *name, void (*callback)(void));
-extern int func_0201e428(void);
+extern int GetMasterBrightnessMain(void);
 extern void NNS_GfdSetFrmTexVramState(ViewRects *p);
 extern void Ov106_SetupView(void);
 extern void Ov106_FrameTask(void);
@@ -38,7 +38,7 @@ void *Ov106_StartScene(char *record)
     Obj_SetWord8(data_ov106_020b8b60 + 0x8b38, *(int *)(data_ov106_020b8b60 + 0x8e4c));
     Obj_SetWord4(data_ov106_020b8b60 + 0x8b38, 0);
     RegisterNamedTask(1, data_ov106_020b8ab4, Ov106_FrameTask);
-    *(int *)(data_ov106_020b8b60 + 0x8e3c) = func_0201e428();
+    *(int *)(data_ov106_020b8b60 + 0x8e3c) = GetMasterBrightnessMain();
     *(int *)(data_ov106_020b8b60 + 0x8e28) = *(int *)(data_ov106_020b8b60 + 0x8e3c);
     rects.v[0] = 0;
     rects.v[1] = 0x20000;

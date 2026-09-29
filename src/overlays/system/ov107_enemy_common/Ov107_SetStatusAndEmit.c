@@ -1,5 +1,5 @@
 /* Stores a status byte at +0x179, and while the node is active (state 1) emits a 4-byte packet
- * {node.id (u16 at +2), 10, status} through func_02031384. */
+ * {node.id (u16 at +2), 10, status} through MsgQueue_Post. */
 
 #include "game/engine.h"
 
@@ -16,5 +16,5 @@ void Ov107_SetStatusAndEmit(int node, unsigned char status) {
         *(unsigned short *)buf = id;
         buf[3] = ((unsigned char *)node)[0x179];
     }
-    func_02031384(4, (unsigned short *)buf, 4);
+    MsgQueue_Post(4, (unsigned short *)buf, 4);
 }

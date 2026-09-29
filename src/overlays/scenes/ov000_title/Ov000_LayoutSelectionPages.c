@@ -44,7 +44,7 @@ extern const int data_ov000_0205a6bc[2];
 extern const int data_ov000_0205a6f4[7];
 extern Ov000LoadContext *data_ov000_0205ac24;
 
-extern int   func_02024e5c(void);
+extern int   GetLanguage(void);
 extern void *Msg_OpenContainerAndReadHeader(const void *data, int id);
 extern void  OS_Terminate(void);
 extern void  Ov000_InitFromDescAndMark(u8 *obj, Ov000LayoutTemplate *tmpl);
@@ -79,7 +79,7 @@ void Ov000_LayoutSelectionPages(void)
     page = 0;
     entry = 0;
     item = 0;
-    switch (func_02024e5c()) {
+    switch (GetLanguage()) {
     case 1:
         break;
     case 2:

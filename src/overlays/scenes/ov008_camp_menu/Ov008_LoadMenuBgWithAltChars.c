@@ -1,10 +1,10 @@
 /* Ov008_LoadMenuBgWithAltChars -- Ov008_LoadMenuBgWithAltChars (240 B, 13 relocs).
  * Loads the main-screen menu background (archive subfile 3) into a resource cell and uploads
- * its BG palette and BG3 character data, then frees the temp. When func_02024e5c() != 1 it
+ * its BG palette and BG3 character data, then frees the temp. When GetLanguage() != 1 it
  * additionally overlays an alternate character bank: unpacks subfile 8 (skipping if the handle
  * is 0), resolves its character block (GetResourceSubBlock_CHAR2), flushes the data cache over it, and
  * uploads it as BG3 characters at offset 0x1000, then frees it. Mode 1 uses only the base BG.
- * Note the func_02024e5c() == 1 test is a materialized bool (moveq/movne/cmp#0) and the early
+ * Note the GetLanguage() == 1 test is a materialized bool (moveq/movne/cmp#0) and the early
  * return fires when it is TRUE, so the alternate path runs for every mode EXCEPT 1.
  * Res_LoadSpriteSet takes five args; resource-cell layout matches Ov008_SetupMenuBgCells. */
 
@@ -46,7 +46,7 @@ void Ov008_LoadMenuBgWithAltChars(void)
         NNSi_FndFreeFromDefaultHeap(resource);
     }
 
-    isMode1 = func_02024e5c() == 1;
+    isMode1 = GetLanguage() == 1;
     if (isMode1) {
         return;
     }

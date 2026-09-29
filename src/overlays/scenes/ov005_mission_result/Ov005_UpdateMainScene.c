@@ -25,7 +25,7 @@ extern void Ov005_DrawMenuFrame(void);
 extern void Ov005_EnqueueDirtyTextBuffers(void);
 void *Ov005_UpdateMainScene(void) {
     Ov005MenuStateTable handlers=data_ov005_0205b368;
-    func_020362ec(&data_ov005_0205b80c->menuLimitHeader);
+    KeyRepeat_Step(&data_ov005_0205b80c->menuLimitHeader);
     Ov005_TickSelectionWidget(&data_ov005_0205b80c->resourceTracker);
     Ov005_UpdateWidgetLayerDefault(&data_ov005_0205b80c->embeddedManager,0);
     handlers.states[data_ov005_0205b80c->menuState]();

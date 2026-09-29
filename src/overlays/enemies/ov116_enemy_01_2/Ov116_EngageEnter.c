@@ -39,7 +39,7 @@ void Ov116_EngageEnter(int *node)
     msg = data_ov116_020d27b0.engageMsg;
     msg.id.self = *(u16 *)(*state + 2);
     msg.target = *(u16 *)(state[3] + 2);
-    func_02031384(4, &msg, 6);
+    MsgQueue_Post(4, &msg, 6);
     Ov107_BuildAndSendUpdate(*state, 0x114, 4, (void *)state[2]);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov116_SteerCircleAttack);
 }

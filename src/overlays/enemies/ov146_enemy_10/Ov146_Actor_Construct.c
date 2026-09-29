@@ -32,7 +32,7 @@ extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern void Snd_RegisterSeqAndBind(void *track, int model, void *resource, int slot);
 extern void MainBlob_ResetSlotRows(int item, void *track);
-extern int func_ov107_020c9848(void);
+extern int Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int action, int a, int b, int scale);
 extern int *List_InsertSorted(void *list, int stride, int max);
@@ -89,7 +89,7 @@ void Ov146_Actor_Construct(char *self)
 
         if (i < 3) {
             item = CreateSubitemInstance0xB4((void *)((ids.id[i] & 0x1ff)
-                | ((((*(int *)(func_ov107_020c9848() + 0x88) + 0x8000) & 0xfffffc) << 7) | 0x80000000)));
+                | ((((*(int *)(Ov107_GetActorManager() + 0x88) + 0x8000) & 0xfffffc) << 7) | 0x80000000)));
         } else {
             item = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));
         }

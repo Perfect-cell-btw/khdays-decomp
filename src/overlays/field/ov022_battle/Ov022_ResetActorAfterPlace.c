@@ -105,7 +105,7 @@ extern void Ov022_ComputeAimPoint(VecFx32 *pOut, struct Actor *pActor);       /*
 extern void Ov107_MoveNodeAndRelayout(struct Sub *pSub, const VecFx32 *pPos);     /* Ov107_MoveNodeAndRelayout */
 extern void Ov022_ActorSetHp(struct Actor *pActor, int nValue);              /* Ov022_ActorSetHp */
 extern u32 Ov002_GetRootField8b64(void);                                           /* Ov002_GetRootField8b64 */
-extern void func_02020878(int nArg);                                            /* StoreGlobalByteAt1_0204bd84 */
+extern void PauseMenu_SetAllowed(int nArg);
 extern void func_ov022_0209190c(void *pChannels);                               /* MarshalStatusTwoByte */
 
 void Ov022_ResetActorAfterPlace(struct Actor *pActor)
@@ -157,7 +157,7 @@ void Ov022_ResetActorAfterPlace(struct Actor *pActor)
     if (Session_GetLocalPlayerIndex() == 0) {
         Ov022_ActorSetHp(pActor, pActor->nHpMax);
         if (pActor->nOwner == Session_GetLocalPlayerIndex() && (Ov002_GetRootField8b64() & 0x80000000) == 0) {
-            func_02020878(1);
+            PauseMenu_SetAllowed(1);
         }
     }
     if (pActor->nModelId == MODEL_2) {

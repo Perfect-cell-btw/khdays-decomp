@@ -79,9 +79,9 @@ void Ov000_DestroyScene(void)
     MIi_CpuClearFast(0, G2S_GetBG2ScrPtr(), 0x800);
     MIi_CpuClearFast(0, G2S_GetBG3ScrPtr(), 0x800);
 
-    func_020235bc(0x200a);
-    func_020235bc(0x200c);
-    func_020235bc(0x200d);
+    GameState_ClearFlag(0x200a);
+    GameState_ClearFlag(0x200c);
+    GameState_ClearFlag(0x200d);
 
     data_ov000_0205ac24 = 0;
 }

@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 /* Defined taking index as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern char *ArrayEntryPtrD0(unsigned short index);
@@ -17,7 +17,7 @@ int Ov023_Cmd_PlayEntityAnimKind1(int ctx, int args) {
     int entity = ScriptVm_ReadOperandInt(ctx, (void *)args);
     int wait = ScriptVm_ReadOperandInt(ctx, (void *)(args + 0x18));
     int value = ScriptVm_ReadOperandFx32(ctx, (void *)(args + 8));
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     char *node = ArrayEntryPtrD0(id);
     EntityMgr_SetTransition(id, 1, value);
     NNS_G3dMdlSetMdlPolygonIDAll(*(int *)(node + 0x7c), 0x3f);

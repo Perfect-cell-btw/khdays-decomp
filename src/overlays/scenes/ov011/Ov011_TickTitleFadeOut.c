@@ -7,7 +7,7 @@
  * the fade end and SoundStrm_HasPlaybackPos(0) is clear, it (optionally) fires VBlank_UnregisterCallback when the
  * mode field is 1 and sets the next state (pScene+4) to 5 or 6 depending on pScene+0x23ac4.
  * Finally it dispatches the current sub-state via data_ov011_0205e8cc[pScene->mode](), and
- * when the mode is 3 forwards pScene+0x28508 to the scene-transition helper func_0203256c.
+ * when the mode is 3 forwards pScene+0x28508 to the scene-transition helper DispObjList_UpdateImmediate.
  *
  * Match idiom (mirrors the tick cb18, opposite of the fade tick c884): access
  * data_ov011_0205e960 BY NAME every time (the ROM reloads the globals pointer on each use;
@@ -32,7 +32,7 @@ extern void SetMasterBrightnessMain(int brightness);
 extern void SetMasterBrightnessSub(int brightness);
 extern int  SoundStrm_HasPlaybackPos(int a);
 extern void VBlank_UnregisterCallback(int a, void *b);
-extern void func_0203256c(void *a);
+extern void DispObjList_UpdateImmediate(void *a);
 
 void Ov011_TickTitleFadeOut(void)
 {
@@ -64,6 +64,6 @@ void Ov011_TickTitleFadeOut(void)
     data_ov011_0205e8cc[*(int *)(data_ov011_0205e960.pScene + 8)]();
 
     if (*(int *)(data_ov011_0205e960.pScene + 8) == 3) {
-        func_0203256c(data_ov011_0205e960.pScene + 0x28508);
+        DispObjList_UpdateImmediate(data_ov011_0205e960.pScene + 0x28508);
     }
 }

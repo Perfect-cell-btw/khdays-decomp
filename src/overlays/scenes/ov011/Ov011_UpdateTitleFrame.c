@@ -52,7 +52,7 @@ extern UiLayoutPos *Slot_GetPositionPtr(Ov011SpriteManager *pManager, int nSlot)
 extern void         Slot_SetPosition(Ov011SpriteManager *pManager, int nSlot, UiLayoutPos *pPos);
 extern void         Slot_SetVisible(Ov011SpriteManager *pManager, int nSlot, int bVisible);
 extern int          Slot_IsVisible(Ov011SpriteManager *pManager, int nSlot);
-extern void         func_0203256c(Ov011SpriteManager *pManager);
+extern void         DispObjList_UpdateImmediate(Ov011SpriteManager *pManager);
 
 void Ov011_UpdateTitleFrame(void)
 {
@@ -96,6 +96,6 @@ void Ov011_UpdateTitleFrame(void)
             }
         }
     }
-    func_0203256c(&data_ov011_0205e964->aManager[0]);
-    func_0203256c(&data_ov011_0205e964->aManager[1]);
+    DispObjList_UpdateImmediate(&data_ov011_0205e964->aManager[0]);
+    DispObjList_UpdateImmediate(&data_ov011_0205e964->aManager[1]);
 }

@@ -36,7 +36,7 @@ typedef struct Ov023ScriptCtx {
 } Ov023ScriptCtx;
 
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
-extern void  func_0202ba44(int nEntity);                            /* Entity_DetachText */
+extern void  EntityMgr_DropTextureImage(int nEntity);
 extern int   Obj_IsIdFree(int nHandle);                            /* the handle is ready */
 extern void  TailForwardTrackEntry_2(int nEntity, Ov023TextBlock *pText, int nA, int nB); /* Entity_AttachText */
 extern void  Ov023_ReleaseSubPanelResource(Ov023Actor *pActor);               /* Ov023_ReleaseActorPanel */
@@ -52,7 +52,7 @@ int Ov023_CmdActorSpeak(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
         if (nActor == -99) {
             nActor = 0;
         }
-        func_0202ba44((u16)-nActor);
+        EntityMgr_DropTextureImage((u16)-nActor);
         return 1;
     }
     if (Obj_IsIdFree(pCtx->pEvent->pText->nHandle) != 0) {

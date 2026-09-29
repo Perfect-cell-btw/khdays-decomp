@@ -6,7 +6,7 @@
  * No-op (returns NULL) while the global busy byte data_0204be04 is set. Otherwise it invokes the
  * callback at heap+0x8b8c with argument heap+0x8bb0 (if present), then begins a timed phase
  * (Ov002_BeginTimedPhase); if that is not ready it returns NULL. On success it clears the global
- * byte (func_02020878(0)), runs Ov002_Roster_Reset, and invokes the second callback at
+ * byte (PauseMenu_SetAllowed(0)), runs Ov002_Roster_Reset, and invokes the second callback at
  * heap+0x8b44 with argument heap+0x8b48 (clearing both fields first), clears heap+0x8da8, and
  * returns Ov002_TryAdvancePhase as the next handler.
  *
@@ -42,7 +42,7 @@ void *Ov002_RunPendingCallbacks(void)
     if (Ov002_BeginTimedPhase() == 0) {
         return 0;
     }
-    func_02020878(0);
+    PauseMenu_SetAllowed(0);
     Ov002_Roster_Reset();
     cb = *(CbFn *)(base + 0x8b44);
     if (cb != 0) {

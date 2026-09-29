@@ -65,7 +65,7 @@ void Ov000_TickMarkerMenuInput(void)
         case 1:
             if (data_ov000_0205ac24->toggle != 0) {
                 if (data_ov000_0205ac24->transitionStep != 0) {
-                    func_02020904();
+                    Sleep_Block();
                 }
                 action = 4;
                 PlaySound(zero, 1);

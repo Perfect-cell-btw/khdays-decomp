@@ -71,7 +71,7 @@ int Ov023_CmdResetStage(Ov023ScriptCtx *pCtx, void *pOperand)
         Ov023_Teardown();
         Ov002_ScheduleRetry();
         Ov023_ResetEntryTable();
-        while (func_0202c57c() != 0) {
+        while (EntityMgr_GetVramStateDepth() != 0) {
             EntityMgr_PopVramState();
         }
         EntityManager_ReleaseViews();

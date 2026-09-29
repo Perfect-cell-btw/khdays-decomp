@@ -18,7 +18,7 @@ extern int CreateRegistryEntry(int param_1, unsigned int param_2, unsigned int p
 extern unsigned int Slot_Spawn(unsigned int param_1, unsigned int param_2, unsigned int *param_3, unsigned int param_4);
 
 int Ov107_CreateSpawnTask(int self, int id, int kind, int enabled, void *node) {
-    int base = *(int *)func_ov107_020c9848();
+    int base = *(int *)Ov107_GetActorManager();
     Ov107Sub *sub;
     int handle = CreateRegistryEntry(*(int *)(base + 0x3c), 0x64, 0x14,
                                 (int)Ov107_Reaction_BranchByOwnerBit0, (int)Ov107_SpawnTaskTeardown,

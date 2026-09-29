@@ -40,7 +40,7 @@ unsigned int Ov002_StepPanelPointer(const void *pCam, const VecFx32 *pIn)
     VecFx32 v;
 
     s = *(Ov002PointerScene **)&data_ov002_0207f628;
-    if (func_02023c40() == 1) {
+    if (GetFrameRateMode() == 1) {
         nStep = 0x1800;
     } else {
         nStep = 0x1000;

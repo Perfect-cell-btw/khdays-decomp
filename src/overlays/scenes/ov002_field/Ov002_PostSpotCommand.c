@@ -45,7 +45,7 @@ int Ov002_PostSpotCommand(int nPos, int nA, unsigned char bB, int nMode)
             MsgQueue_SendGate(5, &cmd, 6);
         }
     } else {
-        if (func_02031384(5, &cmd, 6) == 0xffff) {
+        if (MsgQueue_Post(5, &cmd, 6) == 0xffff) {
             return 0;
         }
     }

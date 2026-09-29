@@ -14,7 +14,7 @@ void Ov002_SetupBackgroundLayers(void)
     volatile unsigned short *reg_bg2cnt = (volatile unsigned short *)0x0400000c;
     volatile unsigned short *reg_bg3cnt = (volatile unsigned short *)0x0400000e;
 
-    if (func_0201e428() != 0x10) {
+    if (GetMasterBrightnessMain() != 0x10) {
         SetMasterBrightnessMain(~0xf);
         SetMasterBrightnessSub(~0xf);
     }

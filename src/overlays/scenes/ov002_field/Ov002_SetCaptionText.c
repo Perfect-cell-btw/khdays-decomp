@@ -42,7 +42,7 @@ extern void Obj_InvokeInnerVtable4(void *pCtx);
 extern void Text_DrawWithShadow(void *pCtx, int a, int b, int c, const void *pText,
                           int d);
 extern int Obj_GetWord18(void *pCtx);
-extern int func_020303bc(void *pCtx, const void *pText);
+extern int TextWindow_GetTextWidth(void *pCtx, const void *pText);
 
 extern int Ov002_GetItemResource(int nId);
 extern void Ov002_SelectEntry(int nId);
@@ -77,7 +77,7 @@ void Ov002_SetCaptionText(const u16 *pText)
         TileSurface_SetCurrentItem(s->textCtx, 0, 0);
         Obj_InvokeInnerVtable4(s->textCtx);
         Text_DrawWithShadow(s->textCtx, 8, 3, 2, pText, 0);
-        s->nWidth = func_020303bc(s->textCtx, pText);
+        s->nWidth = TextWindow_GetTextWidth(s->textCtx, pText);
         Ov002_SetRowValue(0, s->nWidth);
         TileSurface_SetCurrentItem(s->textCtx, nItem, 0);
     } else {

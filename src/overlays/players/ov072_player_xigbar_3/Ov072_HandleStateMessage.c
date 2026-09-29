@@ -79,7 +79,7 @@ void *Ov072_HandleStateMessage(char *self, int msg)
         if (msg == 0x22) {
             (*(void (**)(char *, int))(self + 0x664))(self, 0x2f);
         }
-        *(int *)(self + 0x4b0) = func_02023c40() == 1 ? 0x480 : 0x300;
+        *(int *)(self + 0x4b0) = GetFrameRateMode() == 1 ? 0x480 : 0x300;
         *(int *)(self + 0x2000 + 0xe7c) = 0;
         *(int *)(self + 0x2000 + 0xe80) = 0;
         if (Ov022_ValidateTargetRef(self) != 0 && msg != 0x25) {

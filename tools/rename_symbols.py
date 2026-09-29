@@ -61,6 +61,26 @@ def text_files():
                     yield os.path.join(dirpath, name)
 
 
+def rename_in_indexes(mapping):
+    """Carry the renames into the verifiers' ground truth.
+
+    build/func_index.json (verify_idx) and build/data_index.json (verify_data, and through it
+    refresh_data_receipts) key symbols and relocation targets by name. A DATA table whose
+    relocations point at a renamed function would otherwise fail its receipt: the new name
+    resolves to the address, the old one in the index no longer resolves at all."""
+    import json
+    for name in ('func_index.json', 'data_index.json'):
+        path = os.path.join(ROOT, 'build', name)
+        if not os.path.exists(path):
+            continue
+        index = json.load(open(path))
+        renamed = {}
+        for sym, entry in index.items():
+            entry['relocs'] = [[off, mapping.get(target, target)] for off, target in entry.get('relocs', [])]
+            renamed[mapping.get(sym, sym)] = entry
+        json.dump(renamed, open(path, 'w'))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('table')
@@ -112,16 +132,8 @@ def main():
             changed += 1
             if not args.dry_run:
                 open(path, 'wb').write(new_text.encode('utf-8', 'surrogateescape'))
-    # build/func_index.json (verify_idx's ground truth) keys functions and reloc targets by name
-    index_path = os.path.join(ROOT, 'build', 'func_index.json')
-    if os.path.exists(index_path) and not args.dry_run:
-        import json
-        index = json.load(open(index_path))
-        renamed = {}
-        for name, entry in index.items():
-            entry['relocs'] = [[off, mapping.get(sym, sym)] for off, sym in entry.get('relocs', [])]
-            renamed[mapping.get(name, name)] = entry
-        json.dump(renamed, open(index_path, 'w'))
+    if not args.dry_run:
+        rename_in_indexes(mapping)
     print('renamed %d symbols, moved %d files, rewrote %d files%s'
           % (len(rows), len(moves), changed, ' (dry run)' if args.dry_run else ''))
 

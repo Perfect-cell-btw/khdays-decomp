@@ -58,7 +58,7 @@ void *Ov002_SceneStep(void)
 
             if (*(unsigned int *)(pState + 0x1fc) == 0xffffffff) {
                 *(u16 *)(aPacket + 4) = 0xffff;
-                if (func_02031384(5, aPacket, 6) != 0xffff) {
+                if (MsgQueue_Post(5, aPacket, 6) != 0xffff) {
                     *(unsigned int *)(data_ov002_0207fa20.pContext + 0x1fc) = 0;
                 }
             } else {
@@ -66,7 +66,7 @@ void *Ov002_SceneStep(void)
                 for (nBit = 0; nBit < 0x20; nBit++) {
                     if ((nMask & (1u << nBit)) != 0) {
                         *(u16 *)(aPacket + 4) = (u16)nBit;
-                        if (func_02031384(5, aPacket, 6) == 0xffff) {
+                        if (MsgQueue_Post(5, aPacket, 6) == 0xffff) {
                             break;
                         }
                         *(unsigned int *)(data_ov002_0207fa20.pContext + 0x1fc) &=

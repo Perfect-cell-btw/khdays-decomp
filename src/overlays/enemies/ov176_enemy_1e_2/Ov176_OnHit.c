@@ -105,7 +105,7 @@ int Ov176_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
         ((hit->uFlagsLo & 8) == 0 || (hit->uFlagsLo & 0x80) == 0 || hit->uFlagsHi != 0x80) &&
         (hit->nDamage != 0 || (hit->uFlagsLo & 0x80) == 0)) {
         VEC_Normalize(&state->vHit, &state->vHit);
-        ScaleVec3Fx12((int)(((long long)FX_Inv(*(int *)(func_ov107_020c9848() + 0x40)) * 0xc00 + 0x800) >> 12), &state->vHit, &state->vHit);
+        ScaleVec3Fx12((int)(((long long)FX_Inv(*(int *)(Ov107_GetActorManager() + 0x40)) * 0xc00 + 0x800) >> 12), &state->vHit, &state->vHit);
         *(u8 *)(state->pOwner + 0x1c7) = 0xc;
     }
     if (*(short *)(actor + 0x21a) == 0) {

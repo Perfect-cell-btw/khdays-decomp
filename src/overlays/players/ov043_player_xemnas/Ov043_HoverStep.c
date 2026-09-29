@@ -6,7 +6,7 @@
  * clamped by the turn helper) unless the facing is locked, the enemy moves along it at the owner
  * block's +0xc speed and mode 0x32 is entered; failing that, mode 0x32 is left for 0x2f with the
  * animation and timer wound to 0x18000 and the enemy stays put, and in the air with bit 36 the
- * fall speed is -0x8f (-0xd6 in hard mode). The step is applied on the ground plane, the attack
+ * fall speed is -0x8f (-0xd6 at 20 fps). The step is applied on the ground plane, the attack
  * burst ticks when not sampling, and the actor's hook decides bit 1 of +0x694: becoming active
  * hands over to state 0x22 (finished emitter) or 0x23 (quiet emitter), or in mode 0x2f rewinds
  * the animation and timer to 0x18000. */
@@ -85,7 +85,7 @@ void *Ov043_HoverStep(char *self)
     } else {
         if ((*(int *)(self + 0x24) & 4) == 0) {
             if ((*(unsigned long long *)self & 0x1000000000ULL) != 0) {
-                *(int *)(self + 0x58) = func_02023c40() == 1 ? -0xd6 : -0x8f;
+                *(int *)(self + 0x58) = GetFrameRateMode() == 1 ? -0xd6 : -0x8f;
             }
         }
     }

@@ -6,7 +6,7 @@ extern int SoundBank_Release(int nSlot, int nId);
 extern int SoundBank_Acquire(int nSlot, int nId);
 extern void Slot_Spawn(int nId, int nMode, void *pBlock, int nParam);
 extern void GameState_SetFlag(int nField);
-extern void func_020235bc(int nField);
+extern void GameState_ClearFlag(int nField);
 extern int func_ov022_02083f0c(void);
 extern int func_ov022_02083f5c(void);
 extern void func_ov022_02086818(int nHandle, int nMode);
@@ -59,7 +59,7 @@ void *Ov002_ElementPromptStep(char *pElement)
             *(u8 *)(pElement + 0x1b5) &= ~4;
             if ((*(u8 *)(pElement + 0x1b5) & 0x10) != 0) {
                 *(u8 *)(pElement + 0x1b5) &= ~0x10;
-                func_020235bc(0x20e0);
+                GameState_ClearFlag(0x20e0);
             }
         }
         *(u8 *)(pElement + 0x17) = 1;

@@ -116,7 +116,7 @@ int Ov022_StepFlightPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
             && pOwner->nTag > 0) {
             VEC_Subtract(func_ov022_020ad0c0(pActor), &vecAt, &vecDir);
             VEC_Normalize(&vecDir, &vecDir);
-            if (func_02023c40() == 1) {
+            if (GetFrameRateMode() == 1) {
                 nScale = pOwner->nRate * 3 / 2;
             } else {
                 nScale = pOwner->nRate;

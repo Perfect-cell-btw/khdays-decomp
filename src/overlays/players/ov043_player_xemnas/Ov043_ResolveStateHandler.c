@@ -1,6 +1,6 @@
 /* Resolves the mission enemy's state handler: 0x21 clears the owner block's +0x124 request,
  * enters mode 0x2f through the +0x664 hook and returns the 3e24 tick; 0x22 seeds the block's
- * +0xc speed with 0xf6 (scaled by 1.5 on difficulty 1), clears +4 / +0x124, enters mode 0x30
+ * +0xc speed with 0xf6 (scaled by 1.5 at 20 fps), clears +4 / +0x124, enters mode 0x30
  * and returns the 4168 tick; 0x23 enters mode 0x31 and returns the 43dc tick. Unknown states
  * return no handler.
  *
@@ -35,7 +35,7 @@ void *Ov043_ResolveStateHandler(char *self, int nState)
     case 0x22:
         *(int *)(pBlock + 0xc) = 0xf6;
         pHandler = (void *)&Ov043_ChargeStep;
-        if (func_02023c40() == 1) {
+        if (GetFrameRateMode() == 1) {
             *(int *)(pBlock + 0xc) = FX_Mul(*(int *)(pBlock + 0xc), 0x1800);
         }
         *(int *)(pBlock + 4) = 0;

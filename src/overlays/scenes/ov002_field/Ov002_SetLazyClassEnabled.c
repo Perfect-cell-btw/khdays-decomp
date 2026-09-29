@@ -20,7 +20,7 @@ void Ov002_SetLazyClassEnabled(int param_1)
 {
     int ctx = data_ov002_0207fa00;
 
-    if (func_0201e428() == 0x10) {
+    if (GetMasterBrightnessMain() == 0x10) {
         return;
     }
     if (param_1 != 0) {

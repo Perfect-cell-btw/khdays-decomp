@@ -15,7 +15,7 @@ typedef struct Ov002MarkerRow {
 
 extern char *data_ov002_0207fa14;
 
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern u8 Ov107_AllocSortedEntry(int nHandle, int nId, int nHeight, int nParam);
 extern void Ov107_ContainerNode_Finalize(int nHandle);
 extern void Ov107_SetLookupByte(int nHandle, int nSlot, int nKind);
@@ -52,7 +52,7 @@ void Ov002_UpdateSlotLookup(int nIndex)
 
     pCtx = data_ov002_0207fa14;
     pTable = *(char **)(pCtx + 4);
-    nHandle = *func_ov107_020c9848();
+    nHandle = *Ov107_GetActorManager();
 
     if (nIndex >= 0) {
         nCount = *(u8 *)(pCtx + 0x51);

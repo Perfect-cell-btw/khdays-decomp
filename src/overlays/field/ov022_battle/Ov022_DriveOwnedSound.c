@@ -25,7 +25,7 @@ extern void Ov002_RemoveEntryAndReopen(unsigned int nFirst, unsigned int nSecond
 extern void Ov002_RefreshMemberPanel(void);
 extern void Ov002_AcceptRequestAndNotify(int nMode);
 extern int GameState_GetField(int nEvent, int nFlag);
-extern void func_020359b4(int nHandle, u16 *pPair);
+extern void PartyMember_AddEntryPair(int nHandle, u16 *pPair);
 extern void Slot_ClearMatchingEntry(int nHandle, u16 *pPair);
 
 void Ov022_DriveOwnedSound(struct Owner *pOwner, int nSecond, int nFirst,
@@ -39,7 +39,7 @@ void Ov022_DriveOwnedSound(struct Owner *pOwner, int nSecond, int nFirst,
         if (pOwner->nChannel == Session_GetLocalPlayerIndex()) {
             Ov002_PanelAddSubEntryAndRepaint((u16)nFirst, (u16)nSecond);
         }
-        func_020359b4(pOwner->nHandle, aPair);
+        PartyMember_AddEntryPair(pOwner->nHandle, aPair);
     } else if (nDir < 0) {
         if (pOwner->nChannel == Session_GetLocalPlayerIndex()) {
             Ov002_RemoveEntryAndReopen((u16)nFirst, (u16)nSecond);

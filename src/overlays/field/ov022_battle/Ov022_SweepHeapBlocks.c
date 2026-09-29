@@ -2,7 +2,7 @@
  *
  * The heap header keeps the block count in the top six bits of its first byte and the
  * block array at +0xc (stride 0x114).  For every block still marked in use, hand its name
- * field (+4) to Sequence_UpdateTracks with a budget that depends on func_02023c40 -- 0x1800 when it
+ * field (+4) to Sequence_UpdateTracks with a budget that depends on GetFrameRateMode -- 0x1800 when it
  * reports 1, 0x1000 otherwise -- and clear the in-use byte when the call succeeds.
  *
  * CODEGEN NOTE -- the residue was a straight r9/r10 swap between the byte offset and the
@@ -45,7 +45,7 @@ void Ov022_SweepHeapBlocks(void) {
         do {
             b = (Ov022HeapBlock *)((char *)heap->blocks + off);
             if (b->inUse != 0) {
-                if (func_02023c40() == 1) {
+                if (GetFrameRateMode() == 1) {
                     limit = 0x1800;
                 } else {
                     limit = 0x1000;

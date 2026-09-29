@@ -41,5 +41,5 @@ void Ov023_OpenDialog(void *pArg)
     data_ov023_0208a784.pScene->pDialog = InstantiateClass(data_ov002_0207eee8, pArg);
     Ov002_HudPage_SetDialogCallbacks(Ov023_PostMessageBox, Ov023_DialogFlagBit2);
     data_ov023_0208a784.pScene->nDialogState = 1;
-    func_02020878(0);
+    PauseMenu_SetAllowed(0);
 }

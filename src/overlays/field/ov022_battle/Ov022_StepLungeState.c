@@ -92,7 +92,7 @@ extern u8 data_ov022_020b2eb0;              /* gOv022RecoilPick: picks the fast 
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
 extern int func_ov022_0209d7a4(struct Actor *pActor);                           /* Ov022_IsAnimPastEntry */
 extern int Slot_EvalPackedParam(int nId, int nRule);                                   /* Slot_EvalPackedParam */
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern int FX_Div(int nNum, int nDen);
 extern void ScaleVec3Fx12(int nFactor, VecFx32 *pSrc, VecFx32 *pDst);          /* ScaleVec3Fx12 */
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
@@ -135,7 +135,7 @@ int Ov022_StepLungeState(struct Actor *pActor)
             vecMove.x = -data_0203d210[nTrig];
             vecMove.y = 0;
             vecMove.z = -data_0203d210[nTrig + 1];
-            nSpeed = func_02023c40() == 1 ? LUNGE_FAST : LUNGE_SLOW;
+            nSpeed = GetFrameRateMode() == 1 ? LUNGE_FAST : LUNGE_SLOW;
             nLeft = pActor->nLungeLeft;
             if (nSpeed > nLeft) {
                 pActor->nLungeLeft = 0;

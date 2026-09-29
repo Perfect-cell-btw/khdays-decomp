@@ -44,7 +44,7 @@ void *Ov002_BeginMissionRun(void)
         } else {
             *(u8 *)(ctx + 0x8d0c) &= ~1;
         }
-        func_02020878(1);
+        PauseMenu_SetAllowed(1);
         Ov002_SetLazyClassEnabled(0);
         pfnStep = Ov002_SessionTick;
     }

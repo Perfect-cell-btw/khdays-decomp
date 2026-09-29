@@ -1,5 +1,5 @@
 /* Seeds the two request rows of the node (+0x12c, stride 0x240) from the local tables:
- * each row's +0x214 vector, +0x230 (zero), +0x234 speed -- scaled by 1.5 on difficulty 1 --
+ * each row's +0x214 vector, +0x230 (zero), +0x234 speed -- scaled by 1.5 at 20 fps --
  * and +0x220 value come from data_ov062_020b7fa4 / 576c / 577c by row index, and the +0x23c
  * counter is cleared. */
 
@@ -31,7 +31,7 @@ void Ov062_SeedRequestRows(char *node)
         *(int *)(pRow + 0x230) = tblZero.n[i];
         *(int *)(pRow + 0x234) = tblA.n[i];
         *(int *)(pRow + 0x220) = tblB.n[i];
-        if (func_02023c40() == 1) {
+        if (GetFrameRateMode() == 1) {
             *(int *)(pRow + 0x234) = (int)(((long long)*(int *)(pRow + 0x234) * 0x1800 + 0x800) >> 12);
         }
         *(int *)(pRow + 0x23c) = 0;

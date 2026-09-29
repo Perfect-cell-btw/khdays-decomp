@@ -8,10 +8,10 @@
  *
  * The step is that direction, and for a kind that decays it is scaled again by
  * the speed left after the kind's loss for every whole three frames of age,
- * floored at nothing. On the hard mode both figures are taken one and a half
- * times.
+ * floored at nothing. At 20 fps (frame-rate mode 1) both figures are taken
+ * one and a half times, so the shot covers the same distance per second.
  *
- * Two shapes carry the original's codegen: the hard-mode figures are written as
+ * Two shapes carry the original's codegen: the 20 fps figures are written as
  * an if/else over the whole load, not a load followed by a conditional scaling,
  * and the age is divided into steps before the mode is asked while the fixed
  * point shift stays at the two use sites.
@@ -66,13 +66,12 @@ extern void ScaleVec3Fx12(int nScale, const VecFx32 *pVec,
                           VecFx32 *pOut);
 extern void VEC_MultAdd(int nScale, const VecFx32 *pVec,
                         const VecFx32 *pAdd, VecFx32 *pOut);
-/* the difficulty mode */
 
 #define FX32_ONE 0x1000
 #define DOT_LIMIT -0xa00
 #define DESC_NO_HOME 0x80
 #define DESC_DECAYS 4
-#define MODE_HARD 1
+#define FRAME_RATE_20FPS 1   /* GetFrameRateMode(): 0 = 30 fps, 1 = 20 fps, 2 = 60 fps */
 #define STEP_FRAMES 3
 
 void Ov022_ComputeShotStep(VecFx32 *pOut, struct ReactionCtx *pCtx,
@@ -102,7 +101,7 @@ void Ov022_ComputeShotStep(VecFx32 *pOut, struct ReactionCtx *pCtx,
             VEC_MultAdd(FX32_ONE - pDesc->nBlend, &pShot->vecDir, &vecToTarget,
                         &pShot->vecDir);
             VEC_Normalize(&pShot->vecDir, &pShot->vecDir);
-            if (func_02023c40() == MODE_HARD) {
+            if (GetFrameRateMode() == FRAME_RATE_20FPS) {
                 nScale = pDesc->nSpeed * 3 / 2;
             } else {
                 nScale = pDesc->nSpeed;
@@ -113,13 +112,13 @@ void Ov022_ComputeShotStep(VecFx32 *pOut, struct ReactionCtx *pCtx,
     vecStep = pShot->vecDir;
     if ((pDesc->nFlags & DESC_DECAYS) != 0) {
         nSteps = pShot->nAge / STEP_FRAMES * STEP_FRAMES;
-        if (func_02023c40() == MODE_HARD) {
+        if (GetFrameRateMode() == FRAME_RATE_20FPS) {
             nScale = pDesc->nDecayPerStep * 3 / 2;
         } else {
             nScale = pDesc->nDecayPerStep;
         }
         if (pDesc->nSpeed - (nSteps >> 12) * nScale > 0) {
-            if (func_02023c40() == MODE_HARD) {
+            if (GetFrameRateMode() == FRAME_RATE_20FPS) {
                 nScale = pDesc->nDecayPerStep * 3 / 2;
             } else {
                 nScale = pDesc->nDecayPerStep;

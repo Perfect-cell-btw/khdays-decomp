@@ -504,7 +504,7 @@ extern void MI_CpuFill8(void *dst, u8 data, u32 size);
 extern void OS_GetMacAddress(u8 *macAddress);
 #define OS_GetVBlankCount() (*(volatile u32 *)0x027ffc3c)
 extern void *ExpHeap_AllocOrDefault(u32 size, int align, void **heap);   /* Heap_AllocAligned */
-extern void func_02023728(void *ptr, void *heap);                /* Heap_Free */
+extern void ExpHeap_Free(void *ptr, void *heap);
 extern void *data_0204c024;                                      /* the heap the helper allocates from */
 #define WH_RAND_INIT(x) (sWh.nRand = (u32)(x))
 #define WH_RAND()       (sWh.nRand = sWh.nRand * 69069UL + 12345)
@@ -517,11 +517,11 @@ extern void *data_0204c024;                                      /* the heap the
 void Ov105_WH_FreeBuffers(void)
 {
     if (sWh.pSendBuffer != NULL) {
-        func_02023728(sWh.pSendBuffer, data_0204c024);
+        ExpHeap_Free(sWh.pSendBuffer, data_0204c024);
         sWh.pSendBuffer = NULL;
     }
     if (sWh.pRecvBuffer != NULL) {
-        func_02023728(sWh.pRecvBuffer, data_0204c024);
+        ExpHeap_Free(sWh.pRecvBuffer, data_0204c024);
         sWh.pRecvBuffer = NULL;
     }
 }

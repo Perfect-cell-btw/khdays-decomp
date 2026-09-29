@@ -36,7 +36,7 @@ typedef struct Ov000ListSceneContext {
 } Ov000ListSceneContext;
 
 extern Ov000ListSceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void func_020362ec(void *input);
+extern void KeyRepeat_Step(void *input);
 extern u16 Mem_ReadU16(const void *input);
 extern void Ov000_GetLatestTouchPress(Ov000TouchEntry *touch);
 extern int Ov000_PointInBox(const Ov000TouchEntry *touch,
@@ -62,7 +62,7 @@ Ov000SceneCallback Ov000_TickListSceneInput(void)
     Ov000SceneCallback result = 0;
     Ov000TouchEntry touch;
 
-    func_020362ec(&context->inputSource);
+    KeyRepeat_Step(&context->inputSource);
     context->buttonState = Mem_ReadU16(&context->inputSource);
     Ov000_GetLatestTouchPress(&touch);
 

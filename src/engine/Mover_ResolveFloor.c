@@ -89,7 +89,7 @@ extern void Vec3ScaleAddQ27(fx32 t, const VecFx32 *dir, const VecFx32 *origin, V
 extern void VecFx32FromVecS16(void *model, char *face, VecFx32 *normal);
 extern Rider *GetEntryField20ByIndex(int index);
 extern int IsField1cEqualData42910(FloorObject *obj);     /* sliding floor? */
-extern int func_02023c40(void);         /* frame-rate mode */
+extern int GetFrameRateMode(void);         /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_MultAdd(fx32 a, const VecFx32 *v1, const VecFx32 *v2, VecFx32 *pDest);
@@ -280,7 +280,7 @@ int Mover_ResolveFloor(VecFx32 *pos, Mover *mover, fx32 *fall)
                         }
                         slideDir.y = 0;
                         VEC_Normalize(&slideDir, &slideDir);
-                        ScaleVec3Fx12(func_02023c40() == 1 ? 0x400 : 0xb00, &slideDir, &mover->slide);
+                        ScaleVec3Fx12(GetFrameRateMode() == 1 ? 0x400 : 0xb00, &slideDir, &mover->slide);
                         mover->timer = 0x1800;
                     }
                     if (carried) {

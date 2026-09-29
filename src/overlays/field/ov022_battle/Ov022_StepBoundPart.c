@@ -71,7 +71,7 @@ struct MoveProbe {
 #define SLOT_OPEN 0xffff
 #define MARGIN_LIMIT 0x59a
 #define HIT_RISE 0x200
-#define MODE_HARD 1
+#define FRAME_RATE_20FPS 1   /* GetFrameRateMode(): 0 = 30 fps, 1 = 20 fps, 2 = 60 fps */
 #define STATE_LIVE 2
 #define REACTION_KIND 2
 #define WEIGHT_LIGHT 3
@@ -125,14 +125,14 @@ int Ov022_StepBoundPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
             ScaleVec3Fx12(nScale, &pPart->vecVel, &vecStep);
             if (nScale <= MARGIN_LIMIT) {
                 if (pSlot->nWeight <= WEIGHT_LIGHT) {
-                    if (func_02023c40() == MODE_HARD) {
+                    if (GetFrameRateMode() == FRAME_RATE_20FPS) {
                         nGravity = 0x180;
                     } else {
                         nGravity = 0x100;
                     }
                     vecStep.y = vecStep.y - nGravity;
                 } else {
-                    if (func_02023c40() == MODE_HARD) {
+                    if (GetFrameRateMode() == FRAME_RATE_20FPS) {
                         nGravity = 0x300;
                     } else {
                         nGravity = 0x200;

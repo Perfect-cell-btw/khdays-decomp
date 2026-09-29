@@ -16,7 +16,7 @@ void Ov244_EnterAnim4(int param_1) {
     pp[0] = data_ov244_020d3724[20];
     pp[1] = data_ov244_020d3724[21];
     pp[0] = *(unsigned short *)(*(int *)owner + 2);
-    func_02031384(4, pp, 4);
+    MsgQueue_Post(4, pp, 4);
     *(signed char *)(owner + 9) = 0;
     *(int *)(owner + 0x1c) = 0;
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov244_AiCuedWait);

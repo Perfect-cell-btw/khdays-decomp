@@ -48,7 +48,7 @@ extern void RegisterSubscriberSlot(int a, int b);
 extern int Ov107_CreateNamedResourceBinding(int a, const void *b);
 extern void List_Init(void *pList);
 extern int CallocInstance(int nSize);
-extern int func_ov107_020c9848(void);
+extern int Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(int *self, int a);
 extern void Ov107_Actor_SetAttachSlot(int *self, int nChannel, int b, int c, int nRange);
 extern int List_InsertSorted(void *a, int b, int c);
@@ -90,7 +90,7 @@ void Ov130_ChaserInit(int *self)
     List_Init((void *)&self[0xe6]);
     self[0xe5] = CallocInstance(8);
 
-    nThread = func_ov107_020c9848();
+    nThread = Ov107_GetActorManager();
     *(int *)self[0xe5] =
         CreateSubitemInstance0xB4((aOwnerTag[0] & 0x1ff) |
                       (((*(int *)(nThread + 0x88) + 0x8000) & 0xfffffc) << 7 |

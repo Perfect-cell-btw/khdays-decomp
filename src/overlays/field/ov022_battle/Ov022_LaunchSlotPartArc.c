@@ -83,7 +83,7 @@ struct ReactionCtx {
 
 #define PART_STRIDE 0x150
 #define FLAG_ACTIVE 0x20
-#define MODE_HARD 1
+#define FRAME_RATE_20FPS 1   /* GetFrameRateMode(): 0 = 30 fps, 1 = 20 fps, 2 = 60 fps */
 #define ANGLE_STEP 4
 #define ANGLE_BIAS 0x8000
 #define LAUNCH_RISE 0x1333
@@ -101,7 +101,7 @@ extern void func_ov022_020b15a4(void *pOwner, u16 *pAnim);
 extern int Ov022_ClampReactionForKind10(int nKind, int nReaction);
 extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAt,
                                 int nReaction);
-extern int func_02023c40(void);
+extern int GetFrameRateMode(void);
 extern void ScaleVec3Fx12(int nFactor, struct VecFx32 *pSrc,
                           struct VecFx32 *pDst);
 
@@ -162,7 +162,7 @@ void Ov022_LaunchSlotPartArc(struct ReactionCtx *pCtx)
     pPart->vecVel.x = nSin;
     pPart->vecVel.y = LAUNCH_RISE;
     pPart->vecVel.z = nCos;
-    if (func_02023c40() == MODE_HARD) {
+    if (GetFrameRateMode() == FRAME_RATE_20FPS) {
         nRate = pSlot->nRate * 3 / 2;
     } else {
         nRate = pSlot->nRate;

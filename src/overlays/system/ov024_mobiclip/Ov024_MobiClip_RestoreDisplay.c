@@ -10,13 +10,13 @@ void Ov024_MobiClip_RestoreDisplay(void) {
     int dark = -0x10;
     int level;
 
-    level = func_0201e428();
+    level = GetMasterBrightnessMain();
     if (level != dark && level != 0x10) {
         level = dark;
     }
     SetMasterBrightnessMain(level);
 
-    level = func_0201e438();
+    level = GetMasterBrightnessSub();
     if (level != dark && level != 0x10) {
         level = dark;
     }

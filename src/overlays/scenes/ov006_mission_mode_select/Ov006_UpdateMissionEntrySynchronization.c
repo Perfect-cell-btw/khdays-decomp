@@ -115,7 +115,7 @@ MissionCallback Ov006_UpdateMissionEntrySynchronization(void) {
                     u16 messageHandle;
 
                     context->localEntry.flags.acknowledged = 1;
-                    messageHandle = func_02031384(
+                    messageHandle = MsgQueue_Post(
                         0xd, &data_ov006_020565e4.pContext->localEntry,
                         sizeof(MissionEntry));
                     data_ov006_020565e4.pContext->messageHandle = messageHandle;

@@ -3,7 +3,7 @@
  * shared context (+0x4ad0/+0x4ad8), sets the sub display BG mode (DB_DISPCNT
  * bits 8-12 = 0x1e), initialises the context resource tracker, streams the page
  * palette to sub VRAM, then picks the language-specific character subfile
- * (func_02024e5c: 1 = default charset from the page resource, 2..5 = subfiles
+ * (GetLanguage: 1 = default charset from the page resource, 2..5 = subfiles
  * 1/3/0/2 of the container, 0 = OS_Terminate) and loads it into sub BG1.
  * Finally programs the sub BG scroll pair (0x01e601e3), registers the section
  * resource, invokes the tag callbacks 0..2, kicks the subsystem object at
@@ -102,7 +102,7 @@ void Ov000_LoadPageSubScreenLayer(void)
     Res_LoadSpriteSet(&cell, resource, 0, 0, 0);
     GXS_LoadBGPltt(cell.palette->data, 0, cell.palette->size);
 
-    switch (func_02024e5c()) {
+    switch (GetLanguage()) {
     case 1:
         alternateHandle = 0;
         break;

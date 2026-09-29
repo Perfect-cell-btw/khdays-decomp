@@ -23,7 +23,7 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov114Actor *owner, Sphere *sphere, struct Ov114Actor **out);
 extern int Ov107_InvokeHitCallback(struct Ov114Actor *hit, struct Ov114Actor *a, struct Ov114Actor *b, int kind, const VecFx32 *push, int z);
-extern char **func_ov107_020c9848(void);
+extern char **Ov107_GetActorManager(void);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Ov107_BuildAndSendUpdate(struct Ov114Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern const short data_0203d210[];
@@ -74,7 +74,7 @@ int Ov244_PerformSwingSweep(int *state, int kind)
                 hit = hits[i];
                 pMsg = &msg;
                 flip = kind == 1 ? 1 : 0;
-                if (VEC_DotProduct((VecFx32 *)(*func_ov107_020c9848() + 0x7c), &fwd) > 0) {
+                if (VEC_DotProduct((VecFx32 *)(*Ov107_GetActorManager() + 0x7c), &fwd) > 0) {
                     flip = (flip + 1) & 1;
                 }
                 if (flip == 0) {

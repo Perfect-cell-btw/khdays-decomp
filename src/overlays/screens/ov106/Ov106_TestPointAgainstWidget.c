@@ -13,7 +13,7 @@ extern void Scene_DrawNode(void *widget);
 int Ov106_TestPointAgainstWidget(void *cam, VecFx32 *point)
 {
     VecFx32 pos;
-    int margin = func_02023c40() == 1 ? 0x1800 : 0x1000;
+    int margin = GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
     int hit;
 
     Ov106_ProjectToScreen(&pos, point, cam);

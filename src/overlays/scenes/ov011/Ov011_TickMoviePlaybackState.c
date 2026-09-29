@@ -61,7 +61,7 @@ extern const u8 data_ov011_0205e91c[];
 extern void SetMasterBrightnessMain(int brightness);
 extern void SetMasterBrightnessSub(int brightness);
 extern void ZeroHalfThenFree(void *resource);
-extern void func_020235bc(int handlerId);
+extern void GameState_ClearFlag(int handlerId);
 extern int  func_ov024_02083358(void);
 extern void Table_TailCallWithEntry(int a, int b);
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
@@ -87,7 +87,7 @@ Ov011StateFn Ov011_TickMoviePlaybackState(void)
     SetMasterBrightnessMain(-0x10);
     SetMasterBrightnessSub(-0x10);
     ZeroHalfThenFree(data_ov011_0205e960.pScene->pResource);
-    func_020235bc(0x20e9);
+    GameState_ClearFlag(0x20e9);
     data_ov011_0205e960.pScene->flags.bThreadAvail = func_ov024_02083358();
     if (data_ov011_0205e960.pScene->nArg != 0 &&
         data_ov011_0205e960.pScene->flags.bThreadAvail) {

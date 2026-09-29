@@ -123,5 +123,5 @@ near_opposite:
 blend:
     Vec4_ScaleFx12((unsigned int *)&qaS, (int *)&qaS, scaleA);
     Vec4_ScaleFx12((unsigned int *)&qbS, (int *)&qbS, scaleB);
-    func_0202ef10((int *)out, (int *)&qaS, (int *)&qbS);
+    Quat_Add((int *)out, (int *)&qaS, (int *)&qbS);
 }

@@ -1,5 +1,5 @@
 /* KeyRepeat_Update -- key auto-repeat, MAIN. Clears the repeat mask (+0x00), scales the repeat delay
- * (+0x02) and interval (+0x04) by the frame-rate mode (func_02023c40: 0 -> 2, 1 -> 3, 2 -> 1) and walks
+ * (+0x02) and interval (+0x04) by the frame-rate mode (GetFrameRateMode: 0 -> 2, 1 -> 3, 2 -> 1) and walks
  * the ten keys of the key table (data_0204222c). A key held now (data_0204c18c) that was pressed this
  * frame (data_0204c190) repeats at once and restarts its counter (+0x06 + key * 2); otherwise, once the
  * time since its press (VBlank count minus the per-key press stamp data_0204c194, indexed through
@@ -32,7 +32,7 @@ void KeyRepeat_Update(KeyRepeat *kr)
     int speed;
 
     kr->mask = 0;
-    switch (func_02023c40()) {
+    switch (GetFrameRateMode()) {
     case 0:
         speed = 2;
         break;

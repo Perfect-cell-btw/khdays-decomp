@@ -67,7 +67,7 @@ void Ov002_StepIdleNudge(void)
         if (pNudge->nStage == -1) {
             bFire = 1;
         } else if (pNudge->nStage == 1) {
-            nLimit = (u8)(func_02023c40() == 1 ? 0x3c : 0x5a);
+            nLimit = (u8)(GetFrameRateMode() == 1 ? 0x3c : 0x5a);
             if (pNudge->nTicks < nLimit) {
                 pNudge->nTicks++;
                 if (pNudge->nTicks >= nLimit) {
@@ -78,15 +78,15 @@ void Ov002_StepIdleNudge(void)
         if (bFire == 0) {
             return;
         }
-        func_02033770(Ov002_GetPeerByte1(), 0x1e);
+        SoundMgr_SwitchBgmResume(Ov002_GetPeerByte1(), 0x1e);
         pNudge->nStage = 0;
         return;
     }
 
-    if (func_020335c8() != 0) {
+    if (SoundMgr_IsBgmFadingOut() != 0) {
         return;
     }
     pNudge->nTicks = 0;
-    func_02033770(Ov002_GetPeerByte2(), 0x1e);
+    SoundMgr_SwitchBgmResume(Ov002_GetPeerByte2(), 0x1e);
     pNudge->nStage = 1;
 }

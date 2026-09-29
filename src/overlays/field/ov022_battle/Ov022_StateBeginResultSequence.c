@@ -41,14 +41,14 @@ Ov022StateCallback Ov022_StateBeginResultSequence(void)
         int duration;
 
         context->flags |= 0x10;
-        context->duration = func_02023c40() == 1 ? 0xf0 : 0xa0;
+        context->duration = GetFrameRateMode() == 1 ? 0xf0 : 0xa0;
         Ov002_UpdateHudRecord(-2, -3, 0);
         context->startedAt = OS_GetTick();
         Ov022_NotifyRowsAndFlag();
         Ov002_SetOrClearFlag200(func_ov022_02083f0c(), 1);
 
-        duration = func_02023c40() == 1 ? 0xf0 : 0xa0;
-        runtime = (GameRuntimeContext *)func_ov107_020c9848();
+        duration = GetFrameRateMode() == 1 ? 0xf0 : 0xa0;
+        runtime = (GameRuntimeContext *)Ov107_GetActorManager();
         if (runtime != 0) {
             runtime->pendingValue = duration;
         }

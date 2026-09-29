@@ -6,7 +6,7 @@ extern void Obj_Release(char *p);
 extern void ConstReturn1_2(char *p);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void ReleaseField74AndCleanup(char *p);
-extern int func_02024e5c(void);
+extern int GetLanguage(void);
 extern void GameState_SetField(int id, int a, unsigned int b);
 extern int data_ov000_0205ac20;
 
@@ -23,6 +23,6 @@ void Ov000_TeardownTitleScene(void) {
     ConstReturn1_2(heap + 0x3e8 + 0x4800);
     NNSi_FndFreeFromDefaultHeap(*(void **)(heap + 0x14c));
     ReleaseField74AndCleanup(heap + 0xc);
-    GameState_SetField(0x2011, 3, (unsigned short)func_02024e5c());
+    GameState_SetField(0x2011, 3, (unsigned short)GetLanguage());
     data_ov000_0205ac20 = 0;
 }

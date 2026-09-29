@@ -128,7 +128,7 @@ extern u16   data_0204c190;                                         /* the keys 
 
 void Ov027_PollMenu(void)
 {
-    if (func_0201e428() == 0) {
+    if (GetMasterBrightnessMain() == 0) {
         Ov027_MoveCursor(&data_ov027_02084364->nCursor);
         if (data_0204c190 & 1) {
             PlaySound(0, 1);

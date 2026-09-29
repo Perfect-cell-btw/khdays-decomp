@@ -19,5 +19,5 @@ unsigned short Ov022_MarshalStateHalf12(int obj, int param_2, int *param_3) {
     buf.f3 = *(unsigned char *)(e + 9);
     buf.f10 = (unsigned short)param_2;
     if (param_2 == 0) buf.f5 = *param_3;
-    return func_02031384(0xc, &buf, 4);
+    return MsgQueue_Post(0xc, &buf, 4);
 }

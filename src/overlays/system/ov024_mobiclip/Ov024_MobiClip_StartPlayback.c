@@ -23,8 +23,8 @@ extern u16 *GetBGScreenBaseForLayer(int nLayer);
 extern void Tilemap_FillRect(u16 *pScreen, int nWidth, int nHeight, int nLeft,
                           int nTop, int nStride, int nPalette, int nTile);
 extern void Ov024_TileTextRenderer_SetReady(void *pDecoder, int bEnable);
-extern void func_02031574(int bOn);
-extern void func_02030e64(int bOn);
+extern void MsgQueue_SetMoviePlaying(int bOn);
+extern void Session_SetMoviePlaying(int bOn);
 extern int Ov024_MobiClip_OpenStreams(struct MobiClipOpenRequest *pRequest);
 
 void Ov024_MobiClip_StartPlayback(const char *pszStream0, const char *pszStream1,
@@ -66,8 +66,8 @@ void Ov024_MobiClip_StartPlayback(const char *pszStream0, const char *pszStream1
     Tilemap_FillRect(GetBGScreenBaseForLayer(nLayer + 2), aParams[2], aParams[3], aParams[0],
                   aParams[1], 0x20, aParams[4], 0xe);
     Ov024_TileTextRenderer_SetReady(player + 0x8b4c, 1);
-    func_02031574(1);
-    func_02030e64(1);
+    MsgQueue_SetMoviePlaying(1);
+    Session_SetMoviePlaying(1);
     if (Ov024_MobiClip_OpenStreams(&req) == 0) {
         *(u16 *)(player + 2) |= 2;
     }

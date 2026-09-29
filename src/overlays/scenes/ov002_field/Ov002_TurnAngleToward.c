@@ -6,7 +6,7 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 
 static inline int get_limit(void)
 {
-    return func_02023c40() == 1 ? 0x600 : 0x400;
+    return GetFrameRateMode() == 1 ? 0x600 : 0x400;
 }
 
 static inline int scale_difference(int difference)

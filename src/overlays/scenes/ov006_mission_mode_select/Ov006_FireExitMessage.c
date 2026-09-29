@@ -10,7 +10,7 @@ void Ov006_FireExitMessage(void) {
     if (MISSION_CONTEXT->localMode != 0) {
         GameState_SetFlag(0x200d);
     } else {
-        func_020235bc(0x200d);
+        GameState_ClearFlag(0x200d);
     }
     Ov006_FreeSceneBuffers();
     data_ov006_020565e4.pContext = (void *)(0);

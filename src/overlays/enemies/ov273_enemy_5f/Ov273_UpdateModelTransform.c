@@ -29,7 +29,7 @@ void Ov273_UpdateModelTransform(int self, int delta) {
     }
     at = *(VecFx32 *)(self + 0xb0);
     at.y -= 0x2000;
-    VEC_Subtract((VecFx32 *)(*(char **)func_ov107_020c9848() + 0x88), &at, &dir);
+    VEC_Subtract((VecFx32 *)(*(char **)Ov107_GetActorManager() + 0x88), &at, &dir);
     VEC_Normalize(&dir, &dir);
     ScaleVec3Fx12(0x2000, &dir, &dir);
     VEC_Add(&at, &dir, &at);

@@ -103,7 +103,7 @@ void Ov000_PollSaveCheckState(void)
             data_ov000_0205ac24->nAdvance++;
             data_ov000_0205ac24->bStepDone = 0;
             if (data_ov000_0205ac24->nAdvance >= 3) {
-                func_020208f0();
+                Sleep_Unblock();
                 data_ov000_0205ac24->nCheckState = 2;
                 data_ov000_0205ac24->nIdleTicks = 0;
                 data_ov000_0205ac24->aSlot[data_ov000_0205ac24->nPageIndex].nSlotKind = 0;

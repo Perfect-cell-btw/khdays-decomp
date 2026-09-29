@@ -1,6 +1,6 @@
 /* Ov008_SetupMenuBgCellsAlt -- Ov008_SetupMenuBgCellsAlt (236 B, 16 relocs).
  * Sibling of Ov008_SetupMenuBgCells: loads a menu background and seeds the cell list, but the
- * source archive subfile is chosen by mode -- if func_02024e5c() == 1 it unpacks subfile 0x16
+ * source archive subfile is chosen by mode -- if GetLanguage() == 1 it unpacks subfile 0x16
  * (via 02050f08), otherwise subfile 5 (via 02050f40). The == 1 test is a MATERIALIZED bool
  * (assigned to a local so mwcc emits moveq/movne/cmp#0); writing it directly in the `if` makes
  * mwcc branch straight off the compare and comes out 3 instructions short. Then the shared
@@ -38,7 +38,7 @@ void Ov008_SetupMenuBgCellsAlt(void)
     Ov008ResourceCell cell;
     int isMode1;
 
-    isMode1 = func_02024e5c() == 1;
+    isMode1 = GetLanguage() == 1;
     if (isMode1) {
         resource = Archive_LoadFile(Ov008_PackSlotTag(0x16), 0xe);
     } else {

@@ -33,7 +33,7 @@ extern SpriteMgr *data_ov006_02056664;
 extern void Obj_Release(void *region);
 extern void MI_CpuFill8(void *dest, int val, int size);
 extern void ObjNode_InitFromDesc(void *region, OamReq *req, int z);
-extern void func_0203243c(void *region, unsigned int handle);
+extern void DispObjList_AddResource(void *region, unsigned int handle);
 
 void Ov006_Menu_SetupSprites(int id)
 {
@@ -51,7 +51,7 @@ void Ov006_Menu_SetupSprites(int id)
         req.count = 2; req.f8 = 0; req.fc = 0;
         ObjNode_InitFromDesc(data_ov006_02056664->bufB, &req, 0);
         h = (((data_ov006_02056664->cellSrc1 + 0x8000) & 0x00fffffc) << 7) | 0x80000000;
-        if (h != 0) func_0203243c(data_ov006_02056664->bufB, h);
+        if (h != 0) DispObjList_AddResource(data_ov006_02056664->bufB, h);
         break;
     case 13: case 14:
         req.handle = (((data_ov006_02056664->cellSrc0 + 0x8000) & 0x00fffffc) << 7) | 0x80000002;
@@ -63,12 +63,12 @@ void Ov006_Menu_SetupSprites(int id)
         req.count = 1; req.f8 = 0; req.fc = 0;
         ObjNode_InitFromDesc(data_ov006_02056664->bufA, &req, 0);
         h = (((data_ov006_02056664->cellSrc1 + 0x8000) & 0x00fffffc) << 7) | 0x80000002;
-        if (h != 0) func_0203243c(data_ov006_02056664->bufA, h);
+        if (h != 0) DispObjList_AddResource(data_ov006_02056664->bufA, h);
         req.handle = (((data_ov006_02056664->cellSrc0 + 0x8000) & 0x00fffffc) << 7) | 0x80000002;
         req.count = 2; req.f8 = 0; req.fc = 0;
         ObjNode_InitFromDesc(data_ov006_02056664->bufB, &req, 0);
         h = (((data_ov006_02056664->cellSrc1 + 0x8000) & 0x00fffffc) << 7) | 0x80000001;
-        if (h != 0) func_0203243c(data_ov006_02056664->bufB, h);
+        if (h != 0) DispObjList_AddResource(data_ov006_02056664->bufB, h);
         break;
     }
 }

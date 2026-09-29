@@ -11,7 +11,7 @@ typedef struct { int w[4]; } Quat;
 struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; VecFx32 at; };
 struct G3Glb { char pad[0xc4]; VecFx32 scale; };
 
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void Mtx33_FromQuat(void *mtx, const Quat *q);
 extern void NNS_G3dGlbSetBaseTrans(const VecFx32 *v);
@@ -49,7 +49,7 @@ void Ov255_DrawShakes(char *self)
     int i;
     int off;
 
-    Quat_FromTwoVectors(&q, &data_0204227c, (VecFx32 *)(*func_ov107_020c9848() + 0x7c));
+    Quat_FromTwoVectors(&q, &data_0204227c, (VecFx32 *)(*Ov107_GetActorManager() + 0x7c));
     Mtx33_FromQuat(data_02047428, &q);
     i = 0;
     if (*(int *)(self + 0x8c) > 0) {

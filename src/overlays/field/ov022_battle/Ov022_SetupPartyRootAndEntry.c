@@ -88,7 +88,7 @@ void Ov022_SetupPartyRootAndEntry(void)
     object->root.instance10 = data_ov022_020b2e78.callback00(
         &data_ov022_020b2e80);
     object = (Ov022RootOrEntry *)GetEntryField20ByIndex(1);
-    runtime = (Ov022RuntimeContext *)func_ov107_020c9848();
+    runtime = (Ov022RuntimeContext *)Ov107_GetActorManager();
     if (runtime != 0) {
         object->entry.activeObject4ec = runtime->activeObject30;
     } else {

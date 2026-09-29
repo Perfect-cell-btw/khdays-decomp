@@ -49,7 +49,7 @@ Ov022StateCallback Ov022_StateFinishAction(void)
             completed = 1;
         }
     } else {
-        context->viewX += func_02023c40() == 1 ? 0x3000 : 0x2000;
+        context->viewX += GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
         if (context->viewX >= 0) {
             context->viewX = 0;
             completed = 1;

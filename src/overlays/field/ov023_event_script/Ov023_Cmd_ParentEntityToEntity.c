@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 /* Defined taking index as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern char *ArrayEntryPtrD0(unsigned short index);
@@ -22,8 +22,8 @@ int Ov023_Cmd_ParentEntityToEntity(int ctx, char *args) {
     int e2 = ScriptVm_ReadOperandInt(ctx, args + 8);
     int mode = ScriptVm_ReadOperandInt(ctx, args + 0x18);
     int value = ByteCode_ResolveOperand(ctx, args + 0x10);
-    int id1 = func_02020d10(ctx, e1);
-    int id2 = func_02020d10(ctx, e2);
+    int id1 = ScriptVm_ResolveActorIndex(ctx, e1);
+    int id2 = ScriptVm_ResolveActorIndex(ctx, e2);
     char *tbl;
     EntityMgr_LinkChild((unsigned short)id1, (unsigned short)id2, value);
     Entity_SetVisible((unsigned short)id1, 1);

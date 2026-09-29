@@ -33,7 +33,7 @@ typedef struct Ov023Lobby {
 extern void Ov023_ApplyFades(void);                              /* Ov023_ApplyFades */
 extern void Obj_SetWord8(void *pCamera, int nMode);
 extern char Gfx_ToggleCaptureMode(void *pDual3D);                           /* Dual3D_NextScreen */
-extern int  func_020208e0(void);
+extern int  PauseMenu_GetMode(void);
 extern void Ov023_EnterDisplayMode(void);                              /* Ov023_EnterDisplayMode */
 extern Ov023SceneRoot data_ov023_0208a784;
 extern u8   data_0204c240;                                          /* session bits */
@@ -58,7 +58,7 @@ void Ov023_Dual3DUpdate(void)
         data_ov023_0208a784.pScene->nActiveScreen = data_ov023_0208a784.pScene->nActiveScreen == 0;
         Ov023_ApplyFades();
     }
-    if (data_ov023_0208a784.pScene->nActiveScreen == 0 && func_020208e0() == 0 && (data_0204c240 & 2) && data_0204c254.nState == 0) {
+    if (data_ov023_0208a784.pScene->nActiveScreen == 0 && PauseMenu_GetMode() == 0 && (data_0204c240 & 2) && data_0204c254.nState == 0) {
         Ov023_EnterDisplayMode();
         data_ov023_0208a784.pScene->nDual3DMode |= 0x10;
     }

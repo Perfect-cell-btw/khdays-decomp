@@ -53,7 +53,7 @@ extern Ov008PanelContext *data_ov026_02091368;
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern u32   GameState_GetField(int nField, int nBits);                        /* GameState_GetField */
-extern int   func_02024e5c(void);                                         /* LoadGlobalShort_0204c1ec */
+extern int   GetLanguage(void);
 extern void  Ov026_SetupShopDisplay(void);                                   /* Ov008_SetupShopDisplay */
 extern void  Ov026_LoadShopResources(void);
 extern void  Ov026_InitPanelSlotManagers(void);
@@ -91,7 +91,7 @@ void *Ov026_ShopCreate(void)
     MI_CpuFill8(ctx, 0, CONTEXT_SIZE);
     ctx->bReady = 1;
     ctx->bStoryPast = GameState_GetField(0, STORY_BITS) >= STORY_THRESHOLD;
-    switch (func_02024e5c()) {
+    switch (GetLanguage()) {
     case 1:
         ctx->nShopKind = 1;
         break;

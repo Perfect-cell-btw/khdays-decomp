@@ -111,7 +111,7 @@ Ov022StateCallback Ov022_StateGameplayHub(void)
         }
 
         context->flags |= 0x100;
-        func_02020878(0);
+        PauseMenu_SetAllowed(0);
         if ((data_0204c240 & 4) != 0) {
             Callbacks_SetByte(0);
         }

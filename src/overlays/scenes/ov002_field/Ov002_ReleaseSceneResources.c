@@ -1,7 +1,7 @@
 extern void Render_ReleaseNodeItem(int pSub);
 extern void Loader_SleepIfBusy(void);
 extern void SoundBank_Release(int nA, int nB);
-extern void func_020235bc(int nId);
+extern void GameState_ClearFlag(int nId);
 
 /* Tear down the scene's transient state: stop the sub-object when its owner
  * still has one, then release the two resources flagged in the state byte. */
@@ -18,7 +18,7 @@ void Ov002_ReleaseSceneResources(int pScene)
 
         if ((*(unsigned char *)(pScene + 0x1b5) & 0x10) != 0) {
             *(unsigned char *)(pScene + 0x1b5) &= ~0x10;
-            func_020235bc(0x20e0);
+            GameState_ClearFlag(0x20e0);
         }
     }
 }

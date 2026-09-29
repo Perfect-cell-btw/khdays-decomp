@@ -1,7 +1,7 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 
 extern void Ov023_ActorRotateJoint(void *entity, int a, int *vec, int b, int c);
 
@@ -15,7 +15,7 @@ int Ov023_Cmd_SetEntityAngles(int ctx, char *args) {
     int a = ScriptVm_ReadOperandInt(ctx, args + 0x28);
     int b = ScriptVm_ReadOperandInt(ctx, args + 0x30);
     int c = ByteCode_ResolveOperand(ctx, args + 8);
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     int angles[3];
     angles[0] = x * 0xb6;
     angles[1] = y * 0xb6;

@@ -29,7 +29,7 @@ int Ov002_BeginRequest(unsigned char *self, unsigned char *req) {
 
         self[0x1b6] = 1;
         Ov002_SetRosterHighlight(self, req[0], 1);
-        func_02020878(0);
+        PauseMenu_SetAllowed(0);
 
         if (Ov002_GetPhaseWord() == 1) {
             int handle = func_ov022_02083f0c();

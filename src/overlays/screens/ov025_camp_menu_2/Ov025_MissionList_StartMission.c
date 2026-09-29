@@ -66,7 +66,7 @@ void Ov025_MissionList_StartMission(void)
     data_0204c240.nRoom = pEntry->nWord;
     data_0204c240.nField04 = 0;
     data_0204c240.nField01 = 0x13;
-    func_020235bc(0x18ca);
+    GameState_ClearFlag(0x18ca);
     if (Ov025_GetCtxObject9630() != 0) {
         GameState_SetFlag(0x18ca);
         if (Ov025_GetCtxObject9634() == 0) {

@@ -13,5 +13,5 @@ struct S {
 void Ov082_InitMoveParams(struct S *p) {
     p->field_c = 1;
     p->field_14 = 2;
-    p->field_10 = (func_02023c40() == 1) ? 0x0f46 : 0x0a2f;
+    p->field_10 = (GetFrameRateMode() == 1) ? 0x0f46 : 0x0a2f;
 }

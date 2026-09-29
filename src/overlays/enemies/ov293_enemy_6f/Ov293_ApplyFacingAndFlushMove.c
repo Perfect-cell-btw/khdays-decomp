@@ -44,7 +44,7 @@ struct Node {
     struct State *pState;
 };
 
-extern OvThread *func_ov107_020c9848(void);
+extern OvThread *Ov107_GetActorManager(void);
 extern int Angle_TurnToward(int cur, int target, int step, int *pDone);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
@@ -60,8 +60,8 @@ void Ov293_ApplyFacingAndFlushMove(struct Node *node)
 
     st = node->pState;
     if (data_ov293_020d3660.nActive != 0) {
-        if (data_ov293_020d3660.nLastWake != func_ov107_020c9848()->nWake) {
-            data_ov293_020d3660.nLastWake = func_ov107_020c9848()->nWake;
+        if (data_ov293_020d3660.nLastWake != Ov107_GetActorManager()->nWake) {
+            data_ov293_020d3660.nLastWake = Ov107_GetActorManager()->nWake;
             data_ov293_020d3660.nAccum += node->pScene->nDelta;
             if (data_ov293_020d3660.nAccum > 0x2000) {
                 data_ov293_020d3660.nActive = 0;

@@ -43,7 +43,7 @@ typedef struct Ov023Entity {
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
 extern char *ByteCode_ResolveOperand(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandString */
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
-extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
+extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
 /* The quotient is the low half of the helper's long long return; writing `/` emits _s32_div_f,
  * which is not linkable here. */
 extern long long func_02020400(int nNumerator, int nDenominator);
@@ -76,7 +76,7 @@ int Ov023_CmdPlaceActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     int nZ;
     Ov023Entity *pEntity;
 
-    nActor = func_02020d10(pCtx, ScriptVm_ReadOperandInt(pCtx, pOperand));
+    nActor = ScriptVm_ResolveActorIndex(pCtx, ScriptVm_ReadOperandInt(pCtx, pOperand));
     nMode = ScriptVm_ReadOperandInt(pCtx, pOperand + 1);
     vPos.x = ScriptVm_ReadOperandFx32(pCtx, pOperand + 3);
     vPos.y = ScriptVm_ReadOperandFx32(pCtx, pOperand + 4);

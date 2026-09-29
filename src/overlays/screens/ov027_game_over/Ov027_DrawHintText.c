@@ -122,7 +122,7 @@ typedef struct Ov027GameInfo {
 } Ov027GameInfo;
 
 extern void  CallVirtSlot1(void *pText, int nArg);                  /* TileTextRenderer_Clear */
-extern int   func_02024e5c(void);                                   /* the language */
+extern int   GetLanguage(void);                                   /* the language */
 extern void  Utf8_ToUcs2(const char *pszSrc, u16 *pDst);          /* widen a string */
 extern void  Text_DrawDirectional(void *pText, int nX, int nColour, int nShadow, int nHeight, u16 *pText16); /* TileTextRenderer_Draw */
 extern void  Text_UploadTileBuffer(void *pText);                            /* TileTextRenderer_Flush */
@@ -138,7 +138,7 @@ void Ov027_DrawHintText(void)
 
     if (data_0204c4d8.nGameOvers == 5) {
         CallVirtSlot1(data_ov027_02084364->text, 0);
-        Utf8_ToUcs2(data_ov027_02083f0c[func_02024e5c()], aText);
+        Utf8_ToUcs2(data_ov027_02083f0c[GetLanguage()], aText);
         Text_DrawDirectional(data_ov027_02084364->text, 0x80, 3, 1, 0x10, aText);
         Text_UploadTileBuffer(data_ov027_02084364->text);
     }

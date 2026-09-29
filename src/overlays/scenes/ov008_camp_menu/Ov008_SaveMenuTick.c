@@ -98,7 +98,7 @@ void Ov008_SaveMenuTick(Ov008SaveMenu *pMenu)
             PlaySound(0, SOUND_SAVED);
             pMenu->nPhase = PHASE_DONE;
             Ov008_UpdateMenuButton5(1);
-            func_020208f0();
+            Sleep_Unblock();
             Ov008_SetCtxField95fc(1);
         }
         break;

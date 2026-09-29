@@ -4,8 +4,8 @@
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int QueryActiveStateOrDelegate(void);
 extern int *GetEntryField20ByIndex(int nPlayer);
-extern void *func_02023bf0(void);   /* the active scene */
-extern int func_02023c40(void);     /* frame-rate flag */
+extern void *Obj_GetCurrent(void);   /* the active scene */
+extern int GetFrameRateMode(void);     /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern int Session_IsActive(void);     /* session active */
 
 extern int *func_ov022_020881f8(int nPlayer);
@@ -149,14 +149,14 @@ void *Ov002_TickScriptedCamera(void)
         *(int *)(pCam + 0x4c) = 1;
     }
 
-    func_02023c40();
+    GetFrameRateMode();
     nTimer = *(int *)(pCam + 0xdc)
-             + (func_02023c40() == 1 ? 0xcd : 0x89);
+             + (GetFrameRateMode() == 1 ? 0xcd : 0x89);
     if (nTimer < 0) {
         nTimer = 0;
     } else {
         nTimer = *(int *)(pCam + 0xdc)
-                 + (func_02023c40() == 1 ? 0xcd : 0x89);
+                 + (GetFrameRateMode() == 1 ? 0xcd : 0x89);
     }
     *(int *)(pCam + 0xdc) = nTimer;
 
@@ -235,6 +235,6 @@ void *Ov002_TickScriptedCamera(void)
                         (int *)(pCam + 0x7c), &vAnchor,
                         *(int *)(pCam + 0x80), nStep,
                         *(int *)(pCam + 0x7c));
-    Ov002_TickCameraTransition(func_02023bf0());
+    Ov002_TickCameraTransition(Obj_GetCurrent());
     return pNext;
 }

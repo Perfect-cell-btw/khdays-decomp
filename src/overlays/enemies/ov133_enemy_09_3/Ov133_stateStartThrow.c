@@ -20,7 +20,7 @@ void Ov133_stateStartThrow(char *obj) {
     if (*(unsigned char *)state[0x12] != 0) return;
     buf = *(struct pair *)&data_ov133_020d49cc[2];
     buf.a = *(unsigned short *)(*state + 2);
-    func_02031384(4, &buf, 4);
+    MsgQueue_Post(4, &buf, 4);
     Ov107_PostTagUpdate((Actor *)(*state), 7, 1);
     *(int *)(*state + 0x3cc) &= ~1;
     *(struct v3 *)((char *)state + 0x24) = data_02041dc8;

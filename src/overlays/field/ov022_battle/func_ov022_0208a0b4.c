@@ -26,5 +26,5 @@ void func_ov022_0208a0b4(int param_1, unsigned char param_2, unsigned short para
     m.b2 = param_2;
     m.f345 = param_1;
     m.f012 = 1;
-    func_02031384(0xf, &m, 6);
+    MsgQueue_Post(0xf, &m, 6);
 }

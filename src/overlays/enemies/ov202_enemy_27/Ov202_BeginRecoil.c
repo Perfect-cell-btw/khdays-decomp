@@ -18,7 +18,7 @@ void Ov202_BeginRecoil(char *obj) {
     if (*(unsigned char *)state[0x11] != 0) return;
     buf = *(struct pair *)&data_ov202_020cef64[2];
     buf.a = *(unsigned short *)(*state + 2);
-    func_02031384(4, &buf, 4);
+    MsgQueue_Post(4, &buf, 4);
     Ov107_PostTagUpdate((Actor *)(*state), 7, 1);
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;
     *(int *)(*state + 0x3e0) &= ~1;

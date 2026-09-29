@@ -34,7 +34,7 @@ void Ov002_SetPageReady(int bReady)
     if (Ov002_RunShutdownHook() != 0) {
         return;
     }
-    if (func_020208e0() != 0) {
+    if (PauseMenu_GetMode() != 0) {
         return;
     }
     if (Ov002_Field_IsActive() != 0) {

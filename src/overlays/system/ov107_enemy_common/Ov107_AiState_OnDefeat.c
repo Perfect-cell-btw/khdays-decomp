@@ -118,7 +118,7 @@ typedef struct {
 } ActorManager;
 
 extern int FX_Mul(int a, int b);
-extern ActorManager *func_ov107_020c9848(void);
+extern ActorManager *Ov107_GetActorManager(void);
 extern int Ov002_GetSlotTableByte(int value);
 extern void func_ov022_02088984(int player, int value);
 extern void Ov022_SetPlayerScale(int player, int value);
@@ -140,7 +140,7 @@ void Ov107_AiState_OnDefeat(AiState *self)
         self->field_1a0 != 0) {
         int multiplier = FX_Mul(self->field_1a0->field_68 << 4, self->field_2f8);
         int amount = FX_Mul(multiplier,
-            func_ov107_020c9848()->field_8c) + 0x800;
+            Ov107_GetActorManager()->field_8c) + 0x800;
         ((void (*)(Actor *, int))self->field_25c->pfnOnHit)(self->field_25c, amount >> 12);
     }
 
@@ -163,16 +163,16 @@ void Ov107_AiState_OnDefeat(AiState *self)
         EncodeCoordinate(&message.position[1], y.value);
         z = position.z;
         EncodeCoordinate(&message.position[2], z.value);
-        func_02031384(4, &message, 0xe);
+        MsgQueue_Post(4, &message, 0xe);
     }
 
     if (self->field_1a0 != 0) {
         if (self->field_2f4 > 0) {
             notificationAmount = (FX_Mul(self->field_2f4,
                 self->field_1a0->field_02 << 4) + 0xfff) >> 12;
-        } else if (func_ov107_020c9848()->field_00->field_a8 > 0) {
+        } else if (Ov107_GetActorManager()->field_00->field_a8 > 0) {
             notificationAmount = (FX_Mul(
-                func_ov107_020c9848()->field_00->field_a8,
+                Ov107_GetActorManager()->field_00->field_a8,
                 self->field_1a0->field_02 << 4) + 0xfff) >> 12;
         } else {
             notificationAmount = ((self->field_1a0->field_02 << 4) + 0xfff) >> 12;
@@ -180,7 +180,7 @@ void Ov107_AiState_OnDefeat(AiState *self)
     }
 
     for (i = 0; i < 4; i++) {
-        ActorManager *manager = func_ov107_020c9848();
+        ActorManager *manager = Ov107_GetActorManager();
         PlayerSlot *slot = manager ? manager->slots[i] : 0;
         if (slot != 0 && slot->field_18c != 0) {
             func_ov022_02088984(i, notificationAmount);

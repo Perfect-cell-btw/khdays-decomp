@@ -16,7 +16,7 @@ typedef struct {
     Mat dst;
 } Obj;
 
-extern int *func_ov107_020c9848();
+extern int *Ov107_GetActorManager();
 extern void ScaleVec3Fx12();
 extern void VEC_Add();
 extern void Srt_SetTranslation();
@@ -26,7 +26,7 @@ void Ov268_SnapshotNudgeMatrix(int param_1, int obj) {
     int tmp[3];
 
     ((Obj *)obj)->dst = ((Obj *)obj)->src;
-    ScaleVec3Fx12(-0x25b3, *func_ov107_020c9848() + 0x7c, tmp);
+    ScaleVec3Fx12(-0x25b3, *Ov107_GetActorManager() + 0x7c, tmp);
     VEC_Add(obj + 0x74, tmp, tmp);
     Srt_SetTranslation(obj + 0x3e0, tmp);
     Srt_SetScaleUniform(obj + 0x3e0, 0x14cd);

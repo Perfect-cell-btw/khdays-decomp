@@ -569,7 +569,7 @@ src/overlays/system/ov107_enemy_common/Ov107_FaceReferenceDirection.c:
     complete
     .text       start:0x020c980c end:0x020c9848
 
-src/overlays/system/ov107_enemy_common/func_ov107_020c9848.c:
+src/overlays/system/ov107_enemy_common/Ov107_GetActorManager.c:
     complete
     .text       start:0x020c9848 end:0x020c9858
 
@@ -609,7 +609,7 @@ src/overlays/system/ov107_enemy_common/Ov107_InstantiateFieldClass.c:
     complete
     .text       start:0x020c9c0c end:0x020c9c1c
 
-src/overlays/system/ov107_enemy_common/func_ov107_020c9c1c.c:
+src/overlays/system/ov107_enemy_common/Ov107_VeneerTo_Obj_Destroy.c:
     complete
     .text       start:0x020c9c1c end:0x020c9c24
 

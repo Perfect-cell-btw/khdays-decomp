@@ -60,7 +60,7 @@ struct ReactionCtx {
 
 extern int Session_IsReady(void);
 extern int QueryActiveStateOrDelegate(void);
-extern unsigned short func_02031384(int nPort, struct EndMessage *pMsg, int nSize);
+extern unsigned short MsgQueue_Post(int nPort, struct EndMessage *pMsg, int nSize);
 
 void Ov022_EndPartRun(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                          int nReaction)
@@ -88,5 +88,5 @@ void Ov022_EndPartRun(struct ReactionCtx *pCtx, struct SlotPart *pPart,
         msg.nClass = 4;
     }
     msg.nReaction = (u8)nReaction;
-    pSlot->nOpen = (u16)func_02031384(MSG_PORT, &msg, 4);
+    pSlot->nOpen = (u16)MsgQueue_Post(MSG_PORT, &msg, 4);
 }

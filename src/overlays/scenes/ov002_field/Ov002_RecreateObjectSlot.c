@@ -8,7 +8,7 @@
  * rematerialises slots[idx] after the call where the ROM loads it before" -- it was an
  * evaluation-order problem, not a rematerialisation one.) */
 extern int Ov107_Region_New(int i);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern void Ov107_InitObjectFromSource(int a, int b);
 extern int data_ov002_0207fa14;
 
@@ -18,7 +18,7 @@ void Ov002_RecreateObjectSlot(int i) {
     slots[i] = Ov107_Region_New(i);
     v = slots[i];
     {
-        int h = *func_ov107_020c9848();
+        int h = *Ov107_GetActorManager();
         Ov107_InitObjectFromSource(h, v);
     }
 }

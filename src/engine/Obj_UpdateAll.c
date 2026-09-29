@@ -32,10 +32,10 @@ void Obj_UpdateAll(int paused)
             break;
         default:
             if (paused == 0 || (obj[0] & 4)) {
-                int arena = func_0202362c(obj[7]);
+                int arena = Heap_SetCurrent(obj[7]);
                 int cb = ((int (*)(void))((int *)data_0204c058[1])[5])();
 
-                func_0202362c(arena);
+                Heap_SetCurrent(arena);
                 if (cb != 0) {
                     ((int *)data_0204c058[1])[5] = cb;
                 }

@@ -60,7 +60,7 @@ extern void  Ov023_SetupMainBackgrounds(void);                             /* Ov
 extern void  Ov023_SetupSubBackgrounds(void);
 extern int   Session_IsActive(void);                                   /* Session_IsActive */
 extern void  Ov023_Ov027_LoadGraphics(void *pPanel);                     /* set the sign-in panel up */
-extern int   func_0201e428(void);                                   /* the main fade level */
+extern int   GetMasterBrightnessMain(void);                                   /* the main fade level */
 extern void  Gfx_ResetDisplayAndVram(void *pCamera, int nArg);
 extern void  Obj_SetWord8(void *pCamera, int nMode);
 extern void  Obj_SetWord4(void *pCamera, int nArg);
@@ -105,7 +105,7 @@ void *Ov023_SceneInit(Ov023SceneRequest *pRequest)
     }
     data_ov023_0208a784.pScene->nWord875e4 = 0;
     data_ov023_0208a784.pScene->nWord875e8 = 0;
-    data_ov023_0208a784.pScene->aFade[1].nValue = func_0201e428();
+    data_ov023_0208a784.pScene->aFade[1].nValue = GetMasterBrightnessMain();
     data_ov023_0208a784.pScene->aFade[0].nValue = data_ov023_0208a784.pScene->aFade[1].nValue;
     for (i = 0; i < 2; i++) {
         data_ov023_0208a784.pScene->aFade[i].nElapsed = 0;

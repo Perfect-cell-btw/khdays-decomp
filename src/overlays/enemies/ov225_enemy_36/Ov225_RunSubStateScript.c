@@ -80,7 +80,7 @@ void Ov225_RunSubStateScript(char *self, int *node)
             PACK(msg, scratchY, *(Fx32 *)(self + 0x414), 8);
             PACK(msg, scratchZ, *(Fx32 *)(self + 0x418), 11);
             msg.flag = 0;
-            func_02031384(1, &msg, 0xe);
+            MsgQueue_Post(1, &msg, 0xe);
             }
             func_ov107_020c0b90(self, 9, data_02041dc8, 1);
             *(int *)(self + 0x41c) = 0;

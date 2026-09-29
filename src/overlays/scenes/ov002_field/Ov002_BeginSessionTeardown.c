@@ -22,5 +22,5 @@ void Ov002_BeginSessionTeardown(void) {
     if (data_0204c240 & 4) {
         Callbacks_SetByte(0);
     }
-    func_02020878(0);
+    PauseMenu_SetAllowed(0);
 }

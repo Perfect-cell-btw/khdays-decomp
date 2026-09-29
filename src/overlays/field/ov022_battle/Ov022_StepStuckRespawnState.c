@@ -123,7 +123,7 @@ extern VecFx32 data_ov022_020b26f4[4];       /* kOv022RespawnOffsets, per actor 
 extern short data_0203d210[];                /* kFxSinCosTable: sin, cos pairs */
 extern u8 data_ov022_020b2eb0;               /* gOv022RecoilPick */
 
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern struct PlayerSlot *GetPlayerSlotTableEntry(int nSlot);                             /* GetPlayerSlotTableEntry */
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
 extern void Ov022_StartGroundEffect(struct Actor *pActor);                          /* Ov022_StartGroundEffect */
@@ -176,7 +176,7 @@ int Ov022_StepStuckRespawnState(struct Actor *pActor)
     struct ActorNode *pNode;
     void (*pfnHook)(struct ActorSub *pSub, int nArg);
 
-    nStep = func_02023c40() == 1 ? STALL_FAST : STALL_SLOW;
+    nStep = GetFrameRateMode() == 1 ? STALL_FAST : STALL_SLOW;
     nRet = (int)Ov022_StepStuckRespawnState;
     pSlot = GetPlayerSlotTableEntry((u8)(pActor->nId - 1));
     if (Session_GetLocalPlayerIndex() == 0) {

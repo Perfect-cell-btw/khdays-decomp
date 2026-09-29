@@ -253,7 +253,7 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
                     if (st->nPlanned / 2 > 0) {
                         do {
                             step = FX_Inv(
-                                *(int *)((char *)func_ov107_020c9848() + 0x40));
+                                *(int *)((char *)Ov107_GetActorManager() + 0x40));
                             acc = acc + (int)(((long long)step * -96LL + 0x800) >> 12);
                             st->nDrop = st->nDrop - acc;
                             i++;

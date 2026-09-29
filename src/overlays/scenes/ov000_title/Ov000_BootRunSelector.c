@@ -63,7 +63,7 @@ int Ov000_BootRunSelector(void) {
 
     display.enabled = 1;
     display.visible = 1;
-    func_02031600(&display);
+    Session_StoreSetup(&display);
     mode.enabledMode = 1;
     mode.reserved = 0;
     CopyToSlotTable8(&mode, 0);

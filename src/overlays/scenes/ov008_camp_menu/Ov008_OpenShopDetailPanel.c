@@ -95,7 +95,7 @@ extern void *Ov008_FindEntryById(void *pWidgets, int nId);                  /* F
 extern void  Ov008_SetEntryPos(void *pWidgets, void *pEntry, UiLayoutPos *pPos); /* Ov008_SetEntryPos */
 extern void  Ov008_SetEntrySlotsVisible(void *pWidgets, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
 extern void *Ov008_GetVarRecordByIndex(void *pRecords, int nIndex);               /* GetVarRecordByIndex */
-extern int   func_020303bc(void *pSurface, void *pText);                    /* text width */
+extern int   TextWindow_GetTextWidth(void *pSurface, void *pText);                    /* text width */
 extern void  Slot_SetVisible(int hSlots, int nCell, int bVisible);            /* Slot_SetVisible */
 extern u8    Ov008_CountSpareItemsOfChild(Ov008ParamRecord *pRecord);                /* Ov008_CountSpareItemsOfChild */
 extern void  Slot_ForwardToEntry(int hSlots, int nCell, u32 nFrame);              /* Slot_ForwardToEntry */
@@ -129,7 +129,7 @@ void Ov008_OpenShopDetailPanel(void)
     pPanel->apLabel[0] = Ov008_GetVarRecordByIndex(ctx->textLoader, 0x13);
     pPanel->apLabel[1] = Ov008_GetVarRecordByIndex(ctx->textLoader, 0x16);
     pPanel->apLabel[2] = Ov008_GetVarRecordByIndex(ctx->textLoader, 0x23);
-    pPanel->nTitleWidth = func_020303bc(ctx->detailSurface, pPanel->pRecord->pItemDef->pName);
+    pPanel->nTitleWidth = TextWindow_GetTextWidth(ctx->detailSurface, pPanel->pRecord->pItemDef->pName);
     pos.nY = 0x40000;
     pos.nX = (0x87 - ((pPanel->nTitleWidth + 0x10) >> 1)) << 12;
     pPanel->hTitleCell = Ov008_CreateMissionCell(hSlots, 0, ctx->nCell, pos.nX, pos.nY);

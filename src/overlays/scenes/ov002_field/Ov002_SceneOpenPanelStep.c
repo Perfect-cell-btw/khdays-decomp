@@ -28,7 +28,7 @@ void *Ov002_SceneOpenPanelStep(void)
 
     pNext = 0;
     ctx = *(int **)&data_ov002_0207f624;
-    if (func_02023c40() == 2 && (func_02023c50() & 1) == 1) {
+    if (GetFrameRateMode() == 2 && (Obj_GetFrameCount() & 1) == 1) {
         return 0;
     }
 

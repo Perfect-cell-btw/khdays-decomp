@@ -123,7 +123,7 @@ extern void  Ov026_EnterDetailView(void);                                /* conf
 extern void  Ov026_SelectionTick(void);                                /* next step after a confirm */
 extern void  Ov026_EnterSelectionScreen(void);                                /* cancel handler */
 extern void  Ov026_ShopFadeOutThenSelection(void);                                /* next step after a cancel */
-extern void  func_020362ec(u16 *pSource);
+extern void  KeyRepeat_Step(u16 *pSource);
 extern u16   Mem_ReadU16(const u16 *pSource);                        /* ReadU16 */
 extern void  PlaySound(int nBank, int nSound);                     /* PlaySound */
 extern int   Ov026_RebuildShopList(int bKeep, int bForce);               /* Ov008_RebuildShopList */
@@ -197,7 +197,7 @@ Ov008ShopStep Ov026_ShopListInput(void)
         nLimit = 8;
         break;
     }
-    func_020362ec(&ctx->inputSource);
+    KeyRepeat_Step(&ctx->inputSource);
     nKeys = Mem_ReadU16(&ctx->inputSource);
     if (nKeys & KEY_DOWN) {
         if (pView->nCount > 1) {

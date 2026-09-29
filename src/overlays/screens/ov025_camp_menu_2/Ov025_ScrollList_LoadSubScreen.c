@@ -45,7 +45,7 @@ void Ov025_ScrollList_LoadSubScreen(void)
     Ov008ResourceCell cell;
     int bDefaultLanguage;
 
-    bDefaultLanguage = func_02024e5c() == 1;
+    bDefaultLanguage = GetLanguage() == 1;
     if (bDefaultLanguage) {
         pFile = Archive_LoadFile(Ov025_PackSlotTag(0x14), 0xe);
     } else {

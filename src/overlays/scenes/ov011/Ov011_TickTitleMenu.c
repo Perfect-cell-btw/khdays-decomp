@@ -77,8 +77,8 @@ Ov011StateFn Ov011_TickTitleMenu(void)
                (int)(*(volatile u16 *)0x027fffa8 & 0x8000) >> 0xf == 0 &&
                PM_SetLCDPower(1) != 0) {
         data_ov011_0205e960.pScene->flags &= ~4;
-        SetMasterBrightnessMain(func_0201e428());
-        SetMasterBrightnessSub(func_0201e438());
+        SetMasterBrightnessMain(GetMasterBrightnessMain());
+        SetMasterBrightnessSub(GetMasterBrightnessSub());
         DispCnt_ApplyPendingMode();
     }
 

@@ -11,7 +11,7 @@ void Ov291_RequestSubState6AndLatchTarget(int *this)
     if (*(signed char *)((int)this + 0x1c6) != 0 && *(signed char *)((int)this + 0x1c6) != 6) {
         ((signed char *)this)[0x1c7] = 6;
         {
-            int target = func_ov107_020c9848();
+            int target = Ov107_GetActorManager();
             *(int *)((int)this + 0x3ac) = (target != 0) ? *(int *)(target + 0x2c) : 0;
         }
     }

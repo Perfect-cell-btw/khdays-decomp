@@ -1,4 +1,4 @@
-/* Builds a 4-byte panel-refresh packet and forwards it via func_02031384, but only when bit 2
+/* Builds a 4-byte panel-refresh packet and forwards it via MsgQueue_Post, but only when bit 2
  * of the entry's flags at +0x40 is set; clears that bit afterward. */
 
 #include "nitro/types.h"
@@ -26,6 +26,6 @@ void Ov107_Region_RequestLeave(int obj, int *ent) {
     *(u16 *)&buf[0] = *(u16 *)(obj + 2);
     buf[2] = 3;
     buf[3] = (u8)(*(u16 *)(*(int *)(obj + 0xfc) + 2));
-    func_02031384(4, p, 4);
+    MsgQueue_Post(4, p, 4);
     *(int *)((char *)ent + 0x40) &= ~4;
 }

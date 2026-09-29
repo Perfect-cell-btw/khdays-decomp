@@ -13,7 +13,7 @@ extern void  Ov008_ArmWirelessCallback(int);
 extern int   Session_IsReady(void);
 extern int   Ov008_IsSessionReady(void);
 extern int   Ov008_GetPlayerMask(void);
-extern void  func_020235bc(int event);
+extern void  GameState_ClearFlag(int event);
 extern int   Session_GetLocalPlayerIndex(void);
 extern char *Slot4_GetIfOccupied(int);
 extern void  MI_CpuFill8(void *dst, int val, int size);
@@ -39,8 +39,8 @@ void *Ov008_MainMenuInit(void) {
     if (Ov008_IsSessionReady() != 0) {
         *(unsigned short *)(heap + 0x2c) = Ov008_GetPlayerMask();
     }
-    func_020235bc(0x200a);
-    func_020235bc(0x200c);
+    GameState_ClearFlag(0x200a);
+    GameState_ClearFlag(0x200c);
     sel = Slot4_GetIfOccupied(Session_GetLocalPlayerIndex());
     MI_CpuFill8(init, 0, 6);
     Ov008_BuildMenuListFrom(data_0204be18 + 0xee0);

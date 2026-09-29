@@ -39,7 +39,7 @@ void Ov008_MainMenuExit(void) {
         if (action == 8) {
             cfg = *(struct Cfg4 *)Session_GetSlotTable();
             cfg.w[1] = Ov008_CountOccupiedSlots();
-            func_02031600(&cfg);
+            Session_StoreSetup(&cfg);
             Scene_RequestPending(2, 0);
         }
     } else {

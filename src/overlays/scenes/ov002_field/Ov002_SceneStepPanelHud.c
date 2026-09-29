@@ -42,7 +42,7 @@ void Ov002_SceneStepPanelHud(void)
     unsigned int nDelta;
 
     s = *(Ov002HudScene **)&data_ov002_0207f628;
-    nNow = func_02023c50();
+    nNow = Obj_GetFrameCount();
     nDelta = nNow - s->nFrameStamp;
 
     if (s->bHudDirty != 0) {

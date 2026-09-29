@@ -48,7 +48,7 @@ extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Srt_SetTranslation(int srt, VecFx32 *pos);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
@@ -102,7 +102,7 @@ void Ov244_LeapToCoreTick(int *node)
     struct Msg14 msg;
     FxVec vContact;
     msg = data_ov244_020d36f8;
-    VEC_Subtract((void *)(*func_ov107_020c9848() + 0x88), (void *)state[7], &d);
+    VEC_Subtract((void *)(*Ov107_GetActorManager() + 0x88), (void *)state[7], &d);
     VEC_Normalize(&d, &d);
     ScaleVec3Fx12(0x3000, &d, &d);
     VEC_Add((void *)state[7], &d, &c);

@@ -63,7 +63,7 @@ extern char *Ov022_GetGlobalPlusE0(void);
 extern int func_ov022_020ab350(struct Actor *pActor);
 extern int Ov002_RunShutdownHook(void);
 extern int Session_GetLocalPlayerIndex(void);
-extern int func_020208e0(void);
+extern int PauseMenu_GetMode(void);
 extern int func_ov022_0209029c(short *pMask, int nSlot);
 extern int Load2DArrayU8(int nId, int nSlot);
 extern void Ov002_HudSetSlotValue(int nSlot, int nKind);
@@ -137,7 +137,7 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
         bSuppress = 1;
     }
     if (Session_GetLocalPlayerIndex() == 0 && (data_0204c240 & 4) != 0
-        && func_020208e0() == 2) {
+        && PauseMenu_GetMode() == 2) {
         bSuppress = 1;
     }
     if (pActor->nHp == 0) {

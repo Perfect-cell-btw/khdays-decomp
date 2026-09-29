@@ -21,7 +21,7 @@ extern void Tween_Start(void *object);
 
 void Ov000_ActivateSceneObject(OverlayContext *context) {
     PlaySound(0, 1);
-    func_02020904();
+    Sleep_Block();
     Table_TailCallWithEntry(0, 15);
     Tween_Configure(context->transition_object, 0, 0, 0x1000, 500);
     Tween_Start(context->transition_object);

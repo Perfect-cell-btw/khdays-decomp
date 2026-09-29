@@ -1,7 +1,7 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 
 extern void LoadArrayU8At0ce(int id);
 extern void Ov023_ReadTargetPosition(int ctx, char *args, int id, void *out);
@@ -19,7 +19,7 @@ int Ov023_Cmd_SpawnEntityFollower(int ctx, char *args) {
     int id;
     Ov023Spawn out;
     ScriptVm_ReadOperandFx32(ctx, args + 0x30);
-    id = func_02020d10(ctx, entity);
+    id = ScriptVm_ResolveActorIndex(ctx, entity);
     LoadArrayU8At0ce((unsigned short)id);
     Ov023_ReadTargetPosition(ctx, args, id, &out);
     Ov023_StoreEntityTransform(*(char **)(*(char **)(ctx + 0x128) + 0x440) + id * 0x1a64, &out, b, a);

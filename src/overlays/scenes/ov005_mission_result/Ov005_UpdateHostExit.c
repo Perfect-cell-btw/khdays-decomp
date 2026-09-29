@@ -19,7 +19,7 @@ ExitTaskState Ov005_UpdateHostExit(void) {
     ExitTaskState nextState=0;
     if(task->receivedPlayerMask==Session_PackConnectedPlayerMask()) {
         strcpy(task->hostMessage,data_ov005_0205b79c[0]);
-        task->sendResult=func_02031384(19,task->hostMessage,22);
+        task->sendResult=MsgQueue_Post(19,task->hostMessage,22);
         task->protocolPhase=1;
         nextState=Ov005_WaitExitDelivery;
     } else {

@@ -17,7 +17,7 @@ typedef struct {
 extern Ov002CameraState *data_ov002_0207f600;
 
 void Ov002_ResetCameraFraming(void) {
-    data_ov002_0207f600->fxDistance = func_0201e438() << 12;
+    data_ov002_0207f600->fxDistance = GetMasterBrightnessSub() << 12;
     data_ov002_0207f600->fxHeight = 1 << 12;
     data_ov002_0207f600->fxPitch = 6 << 12;
     data_ov002_0207f600->dwFlags |= 2;

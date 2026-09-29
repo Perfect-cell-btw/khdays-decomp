@@ -43,7 +43,7 @@ extern void *G2_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *destination, unsigned int size);
 extern void Ov000_InitResourceRecord(Ov000MessageArchive *archive,
                                 const char *resourceName);
-extern void func_0202f7fc(Ov000FontResource *font, const char *resourceName);
+extern void Font_LoadUTF16(Ov000FontResource *font, const char *resourceName);
 extern void GX_LoadBGPltt(const void *palette, int offset, int size);
 extern void TileTextRenderer_Init(Ov000TileTextRenderer *renderer, int layer,
                           Ov000FontResource *font,
@@ -83,7 +83,7 @@ void Ov000_SetupBootTextScreen(int mode) {
     MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x600);
 
     Ov000_InitResourceRecord(&messages, data_ov000_0205a9ec);
-    func_0202f7fc(&font, data_ov000_0205aa00);
+    Font_LoadUTF16(&font, data_ov000_0205aa00);
     GX_LoadBGPltt(data_02042958, 0x1a0, 0x20);
 
     frame.destinationX = 1;

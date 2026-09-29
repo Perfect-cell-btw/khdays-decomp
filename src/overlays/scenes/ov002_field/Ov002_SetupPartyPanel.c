@@ -2,7 +2,7 @@ typedef struct { int w[10]; } PanelCfg;
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int value, unsigned size);
-extern int func_02023bf0(void);
+extern int Obj_GetCurrent(void);
 extern int Archive_LoadFile(void *name, int slot);
 extern void NNS_G2dGetUnpackedPaletteData(int handle, char *p);
 extern int Ov002_Hud_GetBlock30(void);
@@ -23,7 +23,7 @@ void *Ov002_SetupPartyPanel(int preloaded) {
     char *self = NNSi_FndGetCurrentRootHeap();
     data_ov002_0207f624 = self;
     MI_CpuFill8(self, 0, 0x7e8);
-    *(int *)(self + 0x6a4) = func_02023bf0();
+    *(int *)(self + 0x6a4) = Obj_GetCurrent();
     if (preloaded == 0) {
         *(int *)(self + 4) = Archive_LoadFile(&data_ov002_0207eb70, 0xe);
         NNS_G2dGetUnpackedPaletteData(*(int *)(self + 4), self + 8);

@@ -128,7 +128,7 @@ void *Ov006_UpdateMissionMemberMenuScreen(void)
     allSame = 0;
     slotVisible = 0;
     resolvedSelection = 0;
-    func_020362ec(data_ov006_02056660->inputHeader);
+    KeyRepeat_Step(data_ov006_02056660->inputHeader);
 
     if (Ov006_CanConfirmMissionMenu() != 0 || cursorEntry == 0xff) {
         Ov006_BlankScreensAndTeardownText();

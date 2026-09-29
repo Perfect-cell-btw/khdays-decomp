@@ -40,7 +40,7 @@ extern char *data_ov008_02090fac;
 extern u16 data_0204c190;                                              /* pressed keys */
 extern GameState *data_0204be18;
 
-extern void func_020362ec(u16 *pWord);        /* pad word unload */
+extern void KeyRepeat_Step(u16 *pWord);
 extern void Ov008_UpdateTouchState(void);                                 /* Ov008_UpdateTouchState */
 extern u16 Mem_ReadU16(u16 *pWord);
 extern void PlaySound(int nKind, int nSound);                      /* PlaySound */
@@ -59,7 +59,7 @@ void *Ov008_ShopConfirmPurchase(void)
     int nItemId;
     GameState *pState;
 
-    func_020362ec((u16 *)(ctx + 0xc0fc));
+    KeyRepeat_Step((u16 *)(ctx + 0xc0fc));
     Ov008_UpdateTouchState();
     Mem_ReadU16((u16 *)(ctx + 0xc0fc));
     if ((data_0204c190 & KEY_CONFIRM_MASK) != 0 || *(int *)(ctx + 0xc118) != 0) {

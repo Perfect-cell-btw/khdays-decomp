@@ -119,7 +119,7 @@ struct AiState {
 extern void Ov107_InitActorNode(u16 *node);
 extern void List_Init(void *list);
 extern void *ObjList_New(void);
-extern ActorManager *func_ov107_020c9848(void);
+extern ActorManager *Ov107_GetActorManager(void);
 extern CreatedItem *CreateSubitemInstance0xB4(u32 handle);
 extern void Ov107_Actor_SetAttachSlot(AiState *self, int slot, unsigned int kind, VecFx32 *pos, int field10);
 
@@ -183,7 +183,7 @@ void func_ov107_020c6624(AiState *self, StateData *data)
     List_Init(self->list_22c);
     List_Init(self->list_260);
     self->field_3c = ObjList_New();
-    self->field_1a8 = CreateSubitemInstance0xB4((((func_ov107_020c9848()->spriteSet_88 + 0x8000)
+    self->field_1a8 = CreateSubitemInstance0xB4((((Ov107_GetActorManager()->spriteSet_88 + 0x8000)
                                       & 0xfffffc) << 7) | 0x80000000 | 6);
     self->field_1a8->flags_5c |= 2;
     self->field_310 = -1;

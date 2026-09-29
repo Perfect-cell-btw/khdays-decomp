@@ -58,7 +58,7 @@ extern u8 data_ov025_020b3c60[];
 
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void Tween_Clear(void *tween);
-extern s32 func_02023c40(void);
+extern s32 GetFrameRateMode(void);
 extern void NNS_GfdGetFrmTexVramState(void *state);
 extern void GFXi_SaveStateTo(void *state);
 extern void Projection_LoadDefaults(void *camera);
@@ -89,7 +89,7 @@ void Ov025_MainMenu_InitPanelContext(Ov008MenuContext *menu, s32 nReserved)
     Tween_Clear(context + 0x484);
     Tween_Clear(context + 0x48b);
 
-    mode = func_02023c40();
+    mode = GetFrameRateMode();
     switch (mode) {
     case 0:
         context[0] = 0x1000;

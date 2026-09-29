@@ -1,13 +1,13 @@
 /* Set up this enemy's three sequence slots (0x10c each from +0x2c5c of the shared object) and its
  * flight parameters: the flight timer at +0x2c58 and +0x2d74 are zeroed, the speed at +0x2d70 set
- * to 0xccd (scaled by 1.5 in hard mode), the three slots register their effect sequences with
+ * to 0xccd (scaled by 1.5 at 20 fps), the three slots register their effect sequences with
  * priority id+7, and the enemy's own emitter at +0x2648 is opened with the 5-word block. */
 
 #include "nitro/types.h"
 
 typedef struct { int w[5]; } Params;
 
-extern int func_02023c40(void);                                                /* game mode: 1 = hard */
+extern int GetFrameRateMode(void);                                                /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);                        /* RegisterSeqAndInit */
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern char *data_ov079_020b9a00;
@@ -25,7 +25,7 @@ void Ov079_SetupSequenceSlots(char *self)
     *(int *)(rig + 8) = 0;
     *(int *)(rig + 0x124) = 0;
     *(int *)(rig + 0x120) = 0xccd;
-    if (func_02023c40() == 1) {
+    if (GetFrameRateMode() == 1) {
         *(int *)(rig + 0x120) = (int)(((long long)*(int *)(rig + 0x120) * 0x1800 + 0x800) >> 12);
     }
     RegisterSeqAndInit((int)(rig + 0xc), data_ov079_020b99b4, 1, *(u8 *)(base + 9) + 7);

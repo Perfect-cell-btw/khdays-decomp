@@ -18,7 +18,7 @@ void *Ov008_Shop_WaitDialogClose(void)
         result = 0;
     }
 
-    func_020362ec(data_ov008_02090fac[0] + 0xc0fc);
+    KeyRepeat_Step(data_ov008_02090fac[0] + 0xc0fc);
     Ov008_UpdateTouchState();
     Ov008_RefreshPanelDisplay();
 

@@ -44,7 +44,7 @@ void Ov005_LoadResultBackgroundGraphics(void) {
     }
     Res_LoadSpriteSet(&resources,archive,-1,characterIndex,-1);
     GXS_LoadBG0Char(resources.pChar->pCharData,0,resources.pChar->nCharSize);
-    if((unsigned int)(func_02024e5c()==1)==0) {
+    if((unsigned int)(GetLanguage()==1)==0) {
         void *extra=Archive_LoadFile(data_ov005_0205b5a4,14);
         GetResourceSubBlock_CHAR2(extra,&extraCharacters);
         GXS_LoadBG1Char(extraCharacters->pCharData,0x3000,extraCharacters->nCharSize);

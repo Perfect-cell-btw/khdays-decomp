@@ -66,9 +66,9 @@ extern Ov022Entry *GetEntryField20ByIndex(uint);
 extern int func_ov022_020881d8(void);
 extern int func_ov022_02088338(void);
 extern int Ov002_ComputeModeScaledFixedPoint(void);
-extern int func_020208e0(void);
+extern int PauseMenu_GetMode(void);
 extern short Session_GetLocalPlayerIndex(void);
-extern int func_02023c40(void);
+extern int GetFrameRateMode(void);
 extern unsigned long long Ov022_GetStreamTimestamp(uint);
 extern void Ov002_ClearPendingOnBoot(void);
 extern void Ov002_EnterArchiveScene(void);
@@ -88,7 +88,7 @@ extern unsigned short func_ov022_02088254(uint);
 extern int func_ov022_020886d0(uint);
 extern int Ov022_IsBit2SetVia0x20(undefined4);
 extern void Ov002_PlaceCameraForFrame(int *,uint *,int *,undefined4 *,int,int,int);
-extern int func_02023bf0(void);
+extern int Obj_GetCurrent(void);
 extern void Ov002_TickCameraTransition(int);
 extern void Ov002_TickLockedCamera(void);
 extern void Ov002_TickCamera(void);
@@ -169,14 +169,14 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
   piVar7[0x2a] = uVar18;
   uVar18 = Ov002_ComputeModeScaledFixedPoint();
   piVar7[0x2b] = uVar18;
-  iVar11 = func_020208e0();
+  iVar11 = PauseMenu_GetMode();
   if ((iVar11 == 2) && (sVar5 = Session_GetLocalPlayerIndex(), sVar5 == 0))
   goto LAB_arm9_ov002__0204d9ac;
   bVar22 = false;
   if ((piVar7[0xf] & 0x20U) == 0) {
     if ((data_0204c18c & 0x100) != 0) {
-      func_02023c40();
-      iVar11 = func_02023c40() == 1;
+      GetFrameRateMode();
+      iVar11 = GetFrameRateMode() == 1;
       if (piVar7[0x36] + iVar11 != 0) {
         iVar11 = 0xcc;
       } else {
@@ -185,7 +185,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
       if (iVar11 < 0) {
         iVar12 = 0;
       } else {
-        iVar11 = func_02023c40() == 1;
+        iVar11 = GetFrameRateMode() == 1;
         if (piVar7[0x36] + iVar11 != 0) {
           iVar12 = 0xcc;
         } else {
@@ -265,7 +265,7 @@ request_input:
         if (0x3000 < (int)uVar18) {
           if (((state->fields.directionMask & 8U) == 0) ||
               (((state->fields.directionMask & 8U) != 0 && (0x6000 < (int)uVar18)))) {
-            iVar11 = func_02023c40();
+            iVar11 = GetFrameRateMode();
             if (iVar11 == 1) {
               iVar11 = 0xf00;
             }
@@ -276,7 +276,7 @@ request_input:
             iVar12 = FX_Div(uVar18,0x4000);
             iVar12 = FX_Mul(iVar12, uVar24);
             if (iVar12 > iVar11) {
-              iVar11 = func_02023c40();
+              iVar11 = GetFrameRateMode();
               if (iVar11 == 1) {
                 uVar14 = 0xf00;
               }
@@ -307,7 +307,7 @@ request_input:
           if ((0x3000 < (int)uVar18) &&
              (((state->fields.directionMask & 4U) == 0 || (((state->fields.directionMask & 4U) != 0 && (0x6000 < (int)uVar18))))))
           {
-            iVar11 = func_02023c40();
+            iVar11 = GetFrameRateMode();
             if (iVar11 == 1) {
               iVar11 = 0xf00;
             }
@@ -318,7 +318,7 @@ request_input:
             iVar12 = FX_Div(uVar18,0x4000);
             iVar12 = FX_Mul(iVar12, uVar24);
             if (iVar12 > iVar11) {
-              iVar11 = func_02023c40();
+              iVar11 = GetFrameRateMode();
               if (iVar11 == 1) {
                 uVar14 = 0xf00;
               }
@@ -353,7 +353,7 @@ request_input:
           }
         }
         if (0x4000 < (int)uVar16) {
-            iVar11 = func_02023c40();
+            iVar11 = GetFrameRateMode();
             if (iVar11 == 1) {
               iVar11 = 0xf00;
             }
@@ -364,7 +364,7 @@ request_input:
             iVar12 = FX_Div(uVar16,0x4000);
             iVar12 = FX_Mul(iVar12, uVar18);
             if (iVar12 > iVar11) {
-              iVar11 = func_02023c40();
+              iVar11 = GetFrameRateMode();
               if (iVar11 == 1) {
                 uVar15 = 0xf00;
               }
@@ -392,7 +392,7 @@ request_input:
         else {
           uVar16 = ~uVar16;
           if (0x4000 < (int)uVar16) {
-            iVar11 = func_02023c40();
+            iVar11 = GetFrameRateMode();
             if (iVar11 == 1) {
               iVar11 = 0xf00;
             }
@@ -403,7 +403,7 @@ request_input:
             iVar12 = FX_Div(uVar16,0x4000);
             iVar12 = FX_Mul(iVar12, uVar18);
             if (iVar12 > iVar11) {
-              iVar11 = func_02023c40();
+              iVar11 = GetFrameRateMode();
               if (iVar11 == 1) {
                 uVar15 = 0xf00;
               }
@@ -470,7 +470,7 @@ input_done:
     uVar18 = VEC_DotProduct((int *)&direction,(int *)&delta);
     if ((int)uVar18 < 0) {
       piVar7[0xe] = piVar7[0xe] | 0x1000000;
-      iVar11 = func_02023c40();
+      iVar11 = GetFrameRateMode();
       if (iVar11 == 1) {
         iVar11 = 0xf00;
       }
@@ -488,7 +488,7 @@ input_done:
 LAB_arm9_ov002__0204d9ac:
   if ((piVar7[0xf] & 0x20U) == 0) {
     if (((piVar7[0xe] & 0x200U) == 0) && ((puVar10->flags & 0x800) == 0)) {
-      iVar11 = func_020208e0();
+      iVar11 = PauseMenu_GetMode();
       if (((iVar11 != 2) || (sVar5 = Session_GetLocalPlayerIndex(), sVar5 != 0)) &&
          (((data_0204c190 & 0x100) != 0 && ((data_0204c190 & 0x200) == 0))))
       {
@@ -511,7 +511,7 @@ LAB_arm9_ov002__0204d9ac:
       uVar20 = uVar20 | 8;
     }
     if (((piVar7[0xe] & 0x200U) == 0) && ((puVar10->flags & 0x800) == 0)) {
-      iVar11 = func_020208e0();
+      iVar11 = PauseMenu_GetMode();
       if (((iVar11 != 2) || (sVar5 = Session_GetLocalPlayerIndex(), sVar5 != 0)) &&
          ((data_0204c190 & 0x200) != 0)) {
         if (piVar7[0x35] <= 0) {
@@ -528,27 +528,27 @@ LAB_arm9_ov002__0204d9ac:
         piVar7[0xe] = piVar7[0xe] & 0xffffbfff;
       }
     }
-    iVar11 = piVar7[0x34] - (func_02023c40() == 1 ? 0xcd : 0x89);
+    iVar11 = piVar7[0x34] - (GetFrameRateMode() == 1 ? 0xcd : 0x89);
     if (iVar11 > 0x1000) {
       iVar11 = 0x1000;
     } else {
-      iVar11 = piVar7[0x34] - (func_02023c40() == 1 ? 0xcd : 0x89);
+      iVar11 = piVar7[0x34] - (GetFrameRateMode() == 1 ? 0xcd : 0x89);
       if (iVar11 < 0) {
         iVar11 = 0;
       } else {
-        iVar11 = piVar7[0x34] - (func_02023c40() == 1 ? 0xcd : 0x89);
+        iVar11 = piVar7[0x34] - (GetFrameRateMode() == 1 ? 0xcd : 0x89);
       }
     }
     piVar7[0x34] = iVar11;
-    iVar11 = piVar7[0x35] - (func_02023c40() == 1 ? 0xcd : 0x89);
+    iVar11 = piVar7[0x35] - (GetFrameRateMode() == 1 ? 0xcd : 0x89);
     if (iVar11 > 0x1000) {
       iVar11 = 0x1000;
     } else {
-      iVar11 = piVar7[0x35] - (func_02023c40() == 1 ? 0xcd : 0x89);
+      iVar11 = piVar7[0x35] - (GetFrameRateMode() == 1 ? 0xcd : 0x89);
       if (iVar11 < 0) {
         iVar11 = 0;
       } else {
-        iVar11 = piVar7[0x35] - (func_02023c40() == 1 ? 0xcd : 0x89);
+        iVar11 = piVar7[0x35] - (GetFrameRateMode() == 1 ? 0xcd : 0x89);
       }
     }
     piVar7[0x35] = iVar11;
@@ -574,7 +574,7 @@ LAB_arm9_ov002__0204d9ac:
     }
   }
   if ((piVar7[0xe] & 0x800U) != 0) {
-    iVar12 = func_02023c40();
+    iVar12 = GetFrameRateMode();
     iVar11 = 0xe39;
     iVar17 = iVar12 == 1 ? 0x1e0 : 0x140;
     if (0xe39 <= (int)(uint)*(ushort *)(piVar7 + 0x28)) {
@@ -591,7 +591,7 @@ LAB_arm9_ov002__0204d9ac:
     }
   }
   else if ((piVar7[0xe] & 0x1000U) != 0) {
-    iVar11 = func_02023c40();
+    iVar11 = GetFrameRateMode();
     uVar18 = 0x1555;
     iVar17 = iVar11 == 1 ? 0x1e0 : 0x140;
     *(ushort *)(piVar7 + 0x28) = *(ushort *)(piVar7 + 0x28) + iVar17;
@@ -655,7 +655,7 @@ LAB_arm9_ov002__0204d9ac:
       piVar7[0x22] = iVar12;
       if (uVar20 != 0)
         goto camera_input_inactive;
-      iVar12 = func_020208e0();
+      iVar12 = PauseMenu_GetMode();
       if (iVar12 == 2) {
         sVar6 = Session_GetLocalPlayerIndex();
         if (sVar6 == 0)
@@ -678,12 +678,12 @@ LAB_arm9_ov002__0204d9ac:
         if (((piVar7[0xe] & 0x10000000U) == 0) &&
            (((data_0204c18c & 0x20) != 0 || ((data_0204c18c & 0x10) != 0))))
         {
-          func_02023c40();
-          iVar11 = piVar7[0x37] + (func_02023c40() == 1 ? 0xcd : 0x89);
+          GetFrameRateMode();
+          iVar11 = piVar7[0x37] + (GetFrameRateMode() == 1 ? 0xcd : 0x89);
           if (iVar11 < 0) {
             iVar11 = 0;
           } else {
-            iVar11 = piVar7[0x37] + (func_02023c40() == 1 ? 0xcd : 0x89);
+            iVar11 = piVar7[0x37] + (GetFrameRateMode() == 1 ? 0xcd : 0x89);
           }
           piVar7[0x37] = iVar11;
           if (iVar11 > 0x333) {
@@ -764,7 +764,7 @@ handler_bool_done:
   piVar19 = piVar7 + 0x1f;
   Ov002_PlaceCameraForFrame
             (piVar7 + 0x1c,(uint *)(piVar7 + 0x19),piVar19,puVar9,piVar7[0x16],iVar11,piVar7[0x1f]);
-  Ov002_TickCameraTransition(func_02023bf0());
+  Ov002_TickCameraTransition(Obj_GetCurrent());
   return local_5c;
 }
 #undef piVar7

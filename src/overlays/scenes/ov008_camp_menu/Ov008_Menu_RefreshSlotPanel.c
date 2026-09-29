@@ -111,7 +111,7 @@ void Ov008_Menu_RefreshSlotPanel(void)
             if (uVar12 == 0 && bit2 != 0) bVar3 = 1;
             if (bVar3) {
                 *(unsigned short *)(data_ov008_02090f1c + 0x5c6) |= 0x100;
-                func_020235bc(0x200c);
+                GameState_ClearFlag(0x200c);
                 Ov008_UpdateMenuButton5(1);
                 Ov008_SetActivePage(1);
                 if (*(unsigned char *)(p1 + 3) == 8) {
@@ -137,8 +137,8 @@ void Ov008_Menu_RefreshSlotPanel(void)
             if (GameState_IsFlagSet(0x200c) != 0) {
                 Ov008_PrimeSubSceneFromCursor(0);
             }
-            func_020235bc(0x200c);
-            func_020235bc(0x200a);
+            GameState_ClearFlag(0x200c);
+            GameState_ClearFlag(0x200a);
             Ov008_SetBusyFlag(0);
             Ov008_UpdateMenuButton5(1);
             Ov008_SetActivePage(1);

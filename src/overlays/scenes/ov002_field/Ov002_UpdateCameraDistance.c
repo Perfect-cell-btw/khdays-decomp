@@ -30,7 +30,7 @@ int Ov002_UpdateCameraDistance(int nIndex) {
     int aAim[3];
     int aTo[3];
     int nOffset = nIndex * 0xc;
-    int nCam = *(int *)(func_02023bf0() + 0x20);
+    int nCam = *(int *)(Obj_GetCurrent() + 0x20);
     int i;
     int nTarget = *(int *)(data_ov002_0207e764 + nOffset);
 

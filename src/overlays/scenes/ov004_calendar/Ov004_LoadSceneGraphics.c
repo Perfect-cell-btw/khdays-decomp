@@ -40,7 +40,7 @@ extern void SlotTable_SetEntryFlag(void *manager, void *object, int arg);
 extern void SlotTable_SetBlendAlpha(void *manager, int value);
 extern void SlotTable_SetMode(void *manager, int enabled);
 extern void ClampToRange0to16At0x4628(void *manager, int value);
-extern void func_0202f7fc(void *textEngine, void *resource);
+extern void Font_LoadUTF16(void *textEngine, void *resource);
 extern void TileTextRenderer_Init(void *tileEngine, int layer, void *textEngine, u16 *rect);
 extern void GX_LoadBGPltt(void *src, int offset, u32 size);
 
@@ -120,7 +120,7 @@ void Ov004_LoadSceneGraphics(void) {
     SlotTable_SetMode((char *)data_ov004_02051384 + 0xb0c, 1);
     ClampToRange0to16At0x4628((char *)data_ov004_02051384 + 0xb0c, 0);
 
-    func_0202f7fc((char *)data_ov004_02051384 + 0x55a0, data_ov004_02051340);
+    Font_LoadUTF16((char *)data_ov004_02051384 + 0x55a0, data_ov004_02051340);
 
     rect[0] = 0;
     rect[4] = 0;

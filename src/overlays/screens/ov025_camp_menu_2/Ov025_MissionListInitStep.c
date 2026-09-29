@@ -55,7 +55,7 @@ extern const char data_ov025_020b5380[];                                  /* "UI
 extern const char data_ov025_020b5398[];                                  /* "UI/cm/str/status_&.s.z" */
 extern const Ov008MissionResourceDescriptor data_ov025_020b458c;
 extern const Ov008MissionResourceDescriptor data_ov025_020b4580;
-extern void func_020235bc(int nFlag);                                     /* GameState_ClearFlag */
+extern void GameState_ClearFlag(int nFlag);
 extern int  Ov025_GetCtxObject95c0(void);                                    /* Ov008_GetCtxObject95c0 */
 extern int  Session_IsActive(void);                                          /* Session_IsActive */
 extern int  Session_IsReady(void);                                          /* Session_IsReady */
@@ -94,7 +94,7 @@ int Ov025_MissionListInitStep(Ov008MissionList *pList)
     bDone = 0;
     switch (pList->nInitStep) {
     case 0:
-        func_020235bc(FLAG_LIST_OPEN);
+        GameState_ClearFlag(FLAG_LIST_OPEN);
         pList->nPendingA = 0;
         pList->nPendingB = 0;
         pList->bEntryGate = Ov025_GetCtxObject95c0() == 2;

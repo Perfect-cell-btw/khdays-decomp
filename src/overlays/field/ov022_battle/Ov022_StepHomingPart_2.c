@@ -124,7 +124,7 @@ int Ov022_StepHomingPart_2(struct ReactionCtx *pCtx, struct SlotPart *pPart,
             ScaleVec3Fx12(pOwner->nTag, &vecDir, &vecDir);
             VEC_MultAdd(ONE - pOwner->nTag, &vecHeading, &vecDir, &vecHeading);
             VEC_Normalize(&vecHeading, &vecHeading);
-            if (func_02023c40() == 1) {
+            if (GetFrameRateMode() == 1) {
                 nScale = pOwner->nRate * 3 / 2;
             } else {
                 nScale = pOwner->nRate;
@@ -138,7 +138,7 @@ int Ov022_StepHomingPart_2(struct ReactionCtx *pCtx, struct SlotPart *pPart,
         pPart->vecVel.y = nFall;
         VEC_Add(&vecAt, &vecStep, &vecAt);
         pPart->anim.vecAt = vecAt;
-        if (func_02023c40() == 1) {
+        if (GetFrameRateMode() == 1) {
             nFallStep = 0x48;
         } else {
             nFallStep = 0x30;

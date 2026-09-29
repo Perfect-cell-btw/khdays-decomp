@@ -39,7 +39,7 @@ typedef struct Ov002SlotTable {
 
 extern Ov002SlotTable *data_ov002_0207fa28[];
 
-extern void func_0202c614(Ov002Owner *pOwner, Ov002Slot *pSlot);
+extern void Entity_DetachNode(Ov002Owner *pOwner, Ov002Slot *pSlot);
 extern void Entity_Deactivate(Ov002Owner *pOwner);
 extern void BitArray_SetBit(int *pFreeBits, int nIndex);
 
@@ -54,7 +54,7 @@ void Ov002_ReleaseSlotOwner(Ov002Slot *pSlot)
         return;
     }
 
-    func_0202c614(pOwner, pSlot);
+    Entity_DetachNode(pOwner, pSlot);
     pOwner = pSlot->pOwner;
     if (pOwner->nRefs == 0) {
         Entity_Deactivate(pOwner);

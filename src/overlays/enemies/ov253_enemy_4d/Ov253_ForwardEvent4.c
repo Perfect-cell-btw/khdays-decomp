@@ -3,17 +3,17 @@
  * The handler must be loaded AFTER the payload call: binding the call's result to a local first is
  * what puts the ROM's `bl` before the `ldr r3,[r4,#0x74]`. Written inline as the callee expression
  * of the indirect call, mwcc loads the handler first and the function is 4 bytes short. */
-extern int func_ov107_020c9848();
+extern int Ov107_GetActorManager();
 extern int func_ov022_02083f0c(void);
 
 void Ov253_ForwardEvent4(int self) {
     int ctx = *(int *)(self + 4);
     int obj;
     int arg;
-    if (*(int *)(func_ov107_020c9848(self) + 0x74) == 0) {
+    if (*(int *)(Ov107_GetActorManager(self) + 0x74) == 0) {
         return;
     }
-    obj = func_ov107_020c9848();
+    obj = Ov107_GetActorManager();
     arg = func_ov022_02083f0c();
     (*(void (**)(int, int, int))(obj + 0x74))(arg, 4, ctx + 0x20);
 }

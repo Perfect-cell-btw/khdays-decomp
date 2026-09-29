@@ -102,8 +102,8 @@ void Ov252_FlyerUpdate(int *node)
             state[0x17] = 0;
         }
     }
-    if (*(int *)(func_ov107_020c9848() + 0x74) != 0) {
-        obj = func_ov107_020c9848();
+    if (*(int *)(Ov107_GetActorManager() + 0x74) != 0) {
+        obj = Ov107_GetActorManager();
         (*(void (**)(int, int, int))(obj + 0x74))(func_ov022_02083f0c(), 9, *(int *)(*state + 0x55c) + 0x14);
     }
     if (state[0x1e] != 0) {

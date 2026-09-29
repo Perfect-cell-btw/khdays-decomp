@@ -2,7 +2,7 @@
 
 #include "nitro/types.h"
 
-extern void func_02023728(u32 a, u32 b);
+extern void ExpHeap_Free(u32 a, u32 b);
 extern void Session_ShutdownHookNoOp(void);
 extern void func_02023ad0(void *p);
 
@@ -29,7 +29,7 @@ void Session_Shutdown(void)
             r5 = 0;
             do {
                 p = (u32 *)(r7 + r6[1] + r5);
-                func_02023728(p[1], (u32)data_0204c024);
+                ExpHeap_Free(p[1], (u32)data_0204c024);
                 r4++;
                 r5 += 0xc;
             } while (r4 < 2);
@@ -37,7 +37,7 @@ void Session_Shutdown(void)
             j++;
         } while (j < (int)r6[2]);
     }
-    func_02023728(r6[1], (u32)data_0204c024);
+    ExpHeap_Free(r6[1], (u32)data_0204c024);
     Session_ShutdownHookNoOp();
     r5 = 0x758;
     r4 = 0;

@@ -7,7 +7,7 @@
  * and that is required, not cosmetic: the ROM's literal pool holds 0x0204be08 in
  * two separate entries, and mwcc emits two only for two distinct symbols. The
  * duplication is in the original too -- one view reads the block as scalar
- * fields, the other hands it to func_02031384 as a parameter buffer, which is
+ * fields, the other hands it to MsgQueue_Post as a parameter buffer, which is
  * what the _params name records. */
 
 #include "game/engine.h"
@@ -31,7 +31,7 @@ void LatchPendingRequestOnce(void) {
     }
 
     data_0204be08 = 1;
-    func_02031384(0x11, (void *)&data_0204be08_params, 2);
+    MsgQueue_Post(0x11, (void *)&data_0204be08_params, 2);
     Ov023_FlushTextBox();
     GameState_SetField(0x2484, 1, 1);
     *(int *)(self + 0xe8) = 1;

@@ -4,7 +4,7 @@
  * one-frame iterator (0x100 B), list (NNSFndList) and buffer (0x1e0 B). Here the seed source is
  * the caller's arg0 (Ov008_BuildMenuGrid's 4th argument) rather than the fixed id table. Between
  * collect passes it dispatches on the iterator's result at +0x2c: non-zero runs GameState_SetFlag,
- * zero runs func_020235bc, both with 0x2010. Ends by collecting (Ov008_ReleaseHandleGridAndList) and
+ * zero runs GameState_ClearFlag, both with 0x2010. Ends by collecting (Ov008_ReleaseHandleGridAndList) and
  * finalizing (func_02053464). */
 
 #include "nitro/types.h"
@@ -41,7 +41,7 @@ void Ov008_BuildMenuListFrom(void *arg0)
     if (*(int *)(f.iter + 0x2c) != 0) {
         GameState_SetFlag(0x2010);
     } else {
-        func_020235bc(0x2010);
+        GameState_ClearFlag(0x2010);
     }
     Ov008_ReleaseHandleGridAndList(f.iter, f.buffer, &f.list);
     func_ov008_02053464(f.iter);

@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern char *ArrayEntryPtrD0(int index);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
@@ -12,7 +12,7 @@ int Ov023_Cmd_SeekEntityAnim(int ctx, int args) {
     int entity = ScriptVm_ReadOperandInt(ctx, (void *)args);
     int wait = ScriptVm_ReadOperandInt(ctx, (void *)(args + 0x18));
     int frame = ScriptVm_ReadOperandFx32(ctx, (void *)(args + 8));
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     NNS_G3dMdlSetMdlAlphaAll(*(int *)(ArrayEntryPtrD0((unsigned short)id) + 0x7c), frame >> 12);
     if (wait == 0) {
         return 1;

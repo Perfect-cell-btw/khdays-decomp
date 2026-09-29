@@ -103,7 +103,7 @@ extern int FX_Atan2(int y, int x);
 extern int VEC_Distance(VecFx32 *pA, VecFx32 *pB);                             /* VEC_Distance */
 extern int func_ov022_020afd0c(struct Actor *pActor, int nY);                   /* IsDeltaOver1000 */
 extern int Ov022_IsState9Or6WithFlag200(u32 *pRun);                                      /* ov022_IsState9Or6WithFlag200 */
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 
 static inline void VEC_Set(VecFx32 *pVec, int x, int y, int z)
 {
@@ -223,7 +223,7 @@ int Ov022_SteerPartnerToPoint(struct Actor *pSelf, struct Actor *pLeader, VecFx3
             nDy = -nDy;
         }
         if (nDy > HEIGHT_FAR || VEC_Distance(&pSelf->vecAim, &pSlot->vecPos) < SLOT_NEAR) {
-            nStep = func_02023c40() == 1 ? STALL_FAST : STALL_SLOW;
+            nStep = GetFrameRateMode() == 1 ? STALL_FAST : STALL_SLOW;
             pSlot->nStall += nStep;
             if (pSlot->pDesc->nStallLimit < pSlot->nStall) {
                 pSlot->nStall = 0;

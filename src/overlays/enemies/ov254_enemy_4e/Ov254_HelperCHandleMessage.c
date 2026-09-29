@@ -13,7 +13,7 @@ extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int 
 extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
 extern void Ov107_UnlinkNodeFromOwner(int sub);
-extern int func_ov107_020c9848();
+extern int Ov107_GetActorManager();
 extern int func_ov022_02083f0c(void);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
@@ -55,8 +55,8 @@ void Ov254_HelperCHandleMessage(char *self, u8 *msg, int arg)
             }
             break;
         case 0xd:
-            if (*(int *)(func_ov107_020c9848() + 0x78) != 0) {
-                obj = func_ov107_020c9848();
+            if (*(int *)(Ov107_GetActorManager() + 0x78) != 0) {
+                obj = Ov107_GetActorManager();
                 (*(void (**)(int, int, int))(obj + 0x78))(func_ov022_02083f0c(), msg[4], 0);
             }
             break;

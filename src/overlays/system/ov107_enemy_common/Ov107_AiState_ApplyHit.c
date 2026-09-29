@@ -109,7 +109,7 @@ typedef struct { MsgHeader hdr; u8 amount; Fx24 pos[3]; } ImpactMsg;
 
 extern int Ov107_BuildAndSendUpdate(struct Obj *, int, int, const FxVec *);
 extern int Ov107_CalcHitDamage(struct Obj *, struct HitPacket *);
-extern struct Manager *func_ov107_020c9848(void);
+extern struct Manager *Ov107_GetActorManager(void);
 extern int FX_Inv(int);
 extern void ScaleVec3Fx12(int, VecFx32 *, VecFx32 *);
 extern int func_02020400(int, int);
@@ -200,7 +200,7 @@ int Ov107_AiState_ApplyHit(struct Obj *obj, struct HitSource *source, struct Hit
     if (obj->field_1d0 != 0) {
         VecFx32 savedNormal;
         savedNormal = packet->normal;
-        ScaleVec3Fx12(FX_Inv(func_ov107_020c9848()->field_40),
+        ScaleVec3Fx12(FX_Inv(Ov107_GetActorManager()->field_40),
                       &packet->normal, &packet->normal);
         if (obj->field_1d0(obj, source, packet) != 0) {
             packet->normal = savedNormal;
@@ -273,7 +273,7 @@ int Ov107_AiState_ApplyHit(struct Obj *obj, struct HitSource *source, struct Hit
                         obj->field_314[i].field_08 > 0 && obj->field_1a0 != 0 &&
                         before > obj->field_314[i].field_00 && obj->field_314[i].field_00 >= after &&
                         RandRange(0, 0x1000) <= obj->field_314[i].field_04) {
-                        struct Manager *manager = func_ov107_020c9848();
+                        struct Manager *manager = Ov107_GetActorManager();
                         accumulated += FX_Mul(FX_Mul(obj->field_1a0->field_50 * obj->field_314[i].field_08,
                                                       manager->field_8c), obj->field_2f8);
                     }
@@ -296,13 +296,13 @@ int Ov107_AiState_ApplyHit(struct Obj *obj, struct HitSource *source, struct Hit
                     PackFx24(&event.pos[1], y.value);
                     z = position.z;
                     PackFx24(&event.pos[2], z.value);
-                    func_02031384(4, &event, sizeof(ImpactMsg));
+                    MsgQueue_Post(4, &event, sizeof(ImpactMsg));
                 }
             }
             if (obj->field_21a == 0) {
                 if (obj->field_179 == 1) {
                     for (i = 0; i < 4; i++) {
-                        struct Manager *manager = func_ov107_020c9848();
+                        struct Manager *manager = Ov107_GetActorManager();
                         struct Obj *observer = manager != 0 ? manager->objects[i] : 0;
                         if (observer != 0 && observer->field_1d4 != 0) {
                             observer->field_1d4(observer, obj);

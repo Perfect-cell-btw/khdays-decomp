@@ -2,7 +2,7 @@
  * words at +0x464 and +0x46c get bit 16; with a cached heading (+0x2abc) the node turns towards
  * it (plus the +0x478 offset, clamped by the turn helper) unless the facing is locked and the
  * enemy moves along it at the rig's speed (+0x2cfc), otherwise it stays; in the air without bit
- * 36 the fall speed is -0x8f (-0xd6 in hard mode); the rapid burst is tried; a quiet emitter at
+ * 36 the fall speed is -0x8f (-0xd6 at 20 fps); the rapid burst is tried; a quiet emitter at
  * +0x22f8 hands over to state 0x25, otherwise the actor's hook runs and becoming active rewinds
  * the animation, clears the timer and raises bit 29; finally a +0x1c state of 5 or 6 hands over
  * to state 0x22. */
@@ -59,7 +59,7 @@ void *Ov053_IdleStep(char *self)
     if ((*(int *)(self + 0x24) & 4) == 0) {
         v = 0;
         if ((*(unsigned long long *)self & 0x1000000000ULL) == 0) {
-            v = func_02023c40() == 1 ? -0xd6 : -0x8f;
+            v = GetFrameRateMode() == 1 ? -0xd6 : -0x8f;
         }
         *(int *)(self + 0x58) = v;
     }

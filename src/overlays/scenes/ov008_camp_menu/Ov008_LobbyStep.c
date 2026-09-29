@@ -137,7 +137,7 @@ Ov008LobbyStep Ov008_LobbyStep(void)
     nLocal = Ov008_GetLocalPlayerIndex();
     nSession = Ov008_CountPlayers();
     nCursor = 0;
-    func_020362ec(data_ov008_02090fa0->inputHeader);
+    KeyRepeat_Step(data_ov008_02090fa0->inputHeader);
     for (i = 0; i < MEMBER_COUNT; i++) {
         Ov008_GetMissionRowInfo(i, &aRow[i]);
     }

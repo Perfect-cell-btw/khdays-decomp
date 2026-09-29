@@ -58,7 +58,7 @@ typedef struct Ov107Global {
     int field_88;              /* 0x88 */
 } Ov107Global;
 
-extern Ov107Global *func_ov107_020c9848(void);
+extern Ov107Global *Ov107_GetActorManager(void);
 
 extern void Ov107_ReleaseEmitterResources(void);
 extern void Ov107_Region_Update(void);
@@ -132,7 +132,7 @@ void Ov107_Region_Init(StatusNode *self, int tableIndex)
     fx->onBusy = Ov107_Region_DrawStatusFx4;
     fx->owner = self;
 
-    fx = CreateSubitemInstance0xB4((void *)((((func_ov107_020c9848()->field_88 + 0x8000)
+    fx = CreateSubitemInstance0xB4((void *)((((Ov107_GetActorManager()->field_88 + 0x8000)
                                   & 0xfffffc) << 7) | 0x80000008));
     self->field_114 = fx;
     RegisterSubscriberSlot(self->group104, fx);

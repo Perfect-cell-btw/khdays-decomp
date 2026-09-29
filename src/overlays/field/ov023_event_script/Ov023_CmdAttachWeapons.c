@@ -45,7 +45,7 @@ typedef struct Ov023WeaponMotionTable {
 } Ov023WeaponMotionTable;
 
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);  /* ScriptVm_ReadOperandInt */
-extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
+extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
 extern Ov023SessionSlot *Slot4_GetIfOccupied(int nSlot);                  /* Session_GetSlotIfOccupied */
 /* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
@@ -83,7 +83,7 @@ int Ov023_CmdAttachWeapons(Ov023ScriptCtx *pCtx, u8 *pOperand)
     nVariant = ScriptVm_ReadOperandInt(pCtx, pOperand + 8);
     resources = data_ov023_02089e10;
     motions = data_ov023_02089eb0;
-    nActor = func_02020d10(pCtx, nActor);
+    nActor = ScriptVm_ResolveActorIndex(pCtx, nActor);
     pSlot = Slot4_GetIfOccupied(nActor);
     if (pSlot == 0) {
         nKind = 0;

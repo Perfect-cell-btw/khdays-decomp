@@ -14,7 +14,7 @@ typedef struct Ov002RefreshWindowState {
 extern Ov002RefreshWindowState *data_ov002_0207f600;
 extern int data_ov002_0207e850;
 
-extern int func_0201e438(void);
+extern int GetMasterBrightnessSub(void);
 extern void Ov002_DrawFlatRect(int nX, int nY, int nWidth,
                                 int nHeight, int nMode);
 extern void Ov002_RefreshWindowCallback(void);
@@ -23,7 +23,7 @@ extern void RegisterNamedTask(int nPriority, void *pName,
 
 void Ov002_InitRefreshWindow(void)
 {
-    data_ov002_0207f600->fxMetric = func_0201e438() << 12;
+    data_ov002_0207f600->fxMetric = GetMasterBrightnessSub() << 12;
     data_ov002_0207f600->nScale = 0x100;
     data_ov002_0207f600->uFlags |= 1;
     data_ov002_0207f600->uFlags &= ~0x10;

@@ -53,7 +53,7 @@ struct Ov125Phase { int cur : 4, next : 4; };
 
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern int FX_Div(int num, int den);
 extern void Srt_SetTranslation(void *p, VecFx32 *v);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, void *k);
@@ -127,7 +127,7 @@ void Ov126_BeamTick(int *node)
 
     VEC_Add((VecFx32 *)(*(int *)(*state + 0x394) + 0x14), (VecFx32 *)(*(int *)(*state + 0x398) + 0x14), &aim);
     ScaleVec3Fx12(0x800, &aim, &aim);
-    ScaleVec3Fx12(-0x100, (VecFx32 *)(*func_ov107_020c9848() + 0x7c), &pull);
+    ScaleVec3Fx12(-0x100, (VecFx32 *)(*Ov107_GetActorManager() + 0x7c), &pull);
     VEC_Add(&aim, &pull, &dir);
     state[0xc] += *(int *)(node[0] + 0x2c);
     t = FX_Div(state[0xc], 0x800);

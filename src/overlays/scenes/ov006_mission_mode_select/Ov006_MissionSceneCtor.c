@@ -34,7 +34,7 @@ extern void GXS_SetGraphicsMode(int a);
 extern void GX_SetGraphicsMode(int a, int b, int c);
 extern int NNS_FndAllocFromDefaultExpHeapEx(int size, int align);
 extern void MIi_CpuClear16(int val, int dst, int size);
-extern void func_0202f7fc(int dst, int desc);
+extern void Font_LoadUTF16(int dst, int desc);
 extern int Msg_OpenContainerAndReadHeader(int path, int mode);
 extern void Ov006_Container_Init(int *dst, struct S5 *src);
 extern void SetMasterBrightnessMain(int a);
@@ -90,8 +90,8 @@ void *Ov006_MissionSceneCtor(int arg) {
         i = i + 1 & 0xff;
     } while (i < 8);
 
-    func_0202f7fc((int)(OBJ + 0x9760), (int)&data_ov006_02056540);
-    func_0202f7fc((int)(OBJ + 0x97ac), (int)&data_ov006_0205655c);
+    Font_LoadUTF16((int)(OBJ + 0x9760), (int)&data_ov006_02056540);
+    Font_LoadUTF16((int)(OBJ + 0x97ac), (int)&data_ov006_0205655c);
     *(int *)OBJ = Msg_OpenContainerAndReadHeader((int)&data_ov006_02056578, 0xe);
     *(int *)(OBJ + 4) = Msg_OpenContainerAndReadHeader((int)&data_ov006_02056588, 0xe);
 

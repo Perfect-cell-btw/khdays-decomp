@@ -41,8 +41,8 @@ void Ov253_AimSetup(int *node) {
     if (aim.y < state[9] + 0x1000) {
         aim.y = state[9] + 0x1000;
     }
-    if (*(int *)(func_ov107_020c9848() + 0x74) != 0) {
-        obj = func_ov107_020c9848();
+    if (*(int *)(Ov107_GetActorManager() + 0x74) != 0) {
+        obj = Ov107_GetActorManager();
         arg = func_ov022_02083f0c();
         (*(void (**)(int, int, VecFx32 *))(obj + 0x74))(arg, 4, (VecFx32 *)(state + 8));
     }

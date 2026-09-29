@@ -59,7 +59,7 @@ void Ov009_TickSaveConfirmState(Ov009SaveContext *ctx)
     case 1:
         sound = ctx->pending;
         if (sound != 0) {
-            func_02020904();
+            Sleep_Block();
             if (Ov009_CommitSaveFields(ctx, ctx->variant) == 0) {
                 ctx->interactionLock = 1;
                 ctx->field244 = 1;

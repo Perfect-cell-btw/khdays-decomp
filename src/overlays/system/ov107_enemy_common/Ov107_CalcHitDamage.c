@@ -70,7 +70,7 @@ struct HitEvent {
     int slot;                           /* +0x20, index into hitTable->aSlots */
 };
 
-extern char *func_ov107_020c9848(void);
+extern char *Ov107_GetActorManager(void);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *rotation, const VecFx32 *in);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int Ov107_CalcDamageScale(Actor *obj, fx32 p1, fx32 p2);
@@ -161,7 +161,7 @@ int Ov107_CalcHitDamage(Actor *self, struct HitEvent *hit)
         if (hit->slot >= 0 && self->hitTable->aSlots[hit->slot].field_02_hi) {
             int index = hit->field_14;
             if (index >= 0) {
-                char *mgr = func_ov107_020c9848();
+                char *mgr = Ov107_GetActorManager();
                 SourceActor *source = mgr != 0 ? ((SourceActor **)(mgr + 0x2c))[index] : 0;
 
                 sourceDir = source->direction;

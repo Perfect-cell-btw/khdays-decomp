@@ -5,7 +5,7 @@
 struct hpair { unsigned short a, b; };
 
 extern void Actor_SetVecAndSyncChild(int node, void *pos);
-extern void func_02031384(int a, void *req, int b);
+extern void MsgQueue_Post(int a, void *req, int b);
 extern void Ov022_ToggleBit13ByMode(int target, int a);
 extern void func_ov022_020ad838(int target, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -24,7 +24,7 @@ void Ov253_CarryTick(int *node) {
     {
         struct hpair buf = data_ov253_020d4964[0];
         buf.a = *(unsigned short *)(*state + 2);
-        func_02031384(4, &buf, 4);
+        MsgQueue_Post(4, &buf, 4);
     }
     Ov022_ToggleBit13ByMode(*(int *)(*(int *)(*state + 0x3bc) + 0x18c), 0);
     func_ov022_020ad838(*(int *)(*(int *)(*state + 0x3bc) + 0x18c), 0);

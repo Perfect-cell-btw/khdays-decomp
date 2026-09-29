@@ -55,7 +55,7 @@ extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int FindResourceIndexByName(int item, const char *name);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
-extern char *func_ov107_020c9848(void);
+extern char *Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(const Capsule *capsule);
@@ -167,7 +167,7 @@ void Ov267_Construct(char *self)
     for (i = 0; i < 10; i++) {
         if (i <= 1) {
             node = CreateSubitemInstance0xB4((void *)((ids.id[i] & 0x1ff)
-                | (((*(int *)(func_ov107_020c9848() + 0x88) + 0x8000) & 0xfffffc) << 7 | 0x80000000)));
+                | (((*(int *)(Ov107_GetActorManager() + 0x88) + 0x8000) & 0xfffffc) << 7 | 0x80000000)));
         } else {
             node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));
         }

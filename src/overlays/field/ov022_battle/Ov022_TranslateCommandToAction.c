@@ -65,7 +65,7 @@ extern u8 data_0204c240;
 extern u8 data_0204be04;
 
 extern int Session_GetLocalPlayerIndex(void);
-extern int func_020208e0(void);
+extern int PauseMenu_GetMode(void);
 extern int func_ov022_020a0814(struct Actor *pActor);
 extern void Ov022_SwapPairedStateFlags(struct Actor *pActor);
 extern int Ov022_IsActionAllowed(u8 *pBlk);
@@ -104,7 +104,7 @@ void Ov022_TranslateCommandToAction(struct Actor *pActor)
     if (Session_GetLocalPlayerIndex() == 0
         && pActor->nOwner == Session_GetLocalPlayerIndex()
         && (data_0204c240 & 4) != 0
-        && func_020208e0() == 2) {
+        && PauseMenu_GetMode() == 2) {
         bLocked = 1;
     }
     if (bLocked != 0) {

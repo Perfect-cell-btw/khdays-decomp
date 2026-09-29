@@ -38,7 +38,7 @@ extern Ov002RunStats data_0204c254;
 
 extern void TileSurface_SetCurrentItem(void *pCtx, int nStyle, int nFlags);
 extern void Text_DrawWithShadow(void *pCtx, int a, int b, int c, void *pText, int d);
-extern int func_020303bc(void *pCtx, void *pText);
+extern int TextWindow_GetTextWidth(void *pCtx, void *pText);
 
 extern void Ov002_EmitMessageLine(void *pSink, unsigned int nId, int bOpen,
                                 int nArg, ...);
@@ -105,6 +105,6 @@ void Ov002_BuildRunSummary(void)
 
     TileSurface_SetCurrentItem(s->textCtx, s->nStyle, 0);
     Text_DrawWithShadow(s->textCtx, 8, 3, 0xc, aText, 0);
-    Ov002_SetRowValue(1, func_020303bc(s->textCtx, aText));
+    Ov002_SetRowValue(1, TextWindow_GetTextWidth(s->textCtx, aText));
     TileSurface_SetCurrentItem(s->textCtx, 0, 0);
 }

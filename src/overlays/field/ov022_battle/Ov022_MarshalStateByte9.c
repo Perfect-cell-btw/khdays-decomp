@@ -22,5 +22,5 @@ void Ov022_MarshalStateByte9(int *obj, unsigned char *param_2) {
     buf.f23 = *(unsigned char *)(e + 9);
     buf.g = (unsigned char)*obj;
     buf.b2 = *(signed char *)(param_2 + 1);
-    func_02031384(9, &buf, 3);
+    MsgQueue_Post(9, &buf, 3);
 }

@@ -1,6 +1,6 @@
 #pragma thumb on
 /* PauseMenu_Frame -- pause menu frame handler, MAIN (THUMB). Closes the menu (sound 3, Callbacks_ClearByteAndRun2)
- * when func_020208e0 reports it inactive or B (bit 3 of the pressed keys) is pressed; while the
+ * when PauseMenu_GetMode reports it inactive or B (bit 3 of the pressed keys) is pressed; while the
  * post-confirm timer (+0xc8) runs it counts down. Otherwise, unless game field 0x2483 is set, it
  * moves the entry cursor (+0xd4, TabPanel_HandleUpDown) and on A (bit 0): entry 0 resumes (closes the
  * menu); a later entry either hands over to the overlay (Ov023_FlushTextBox, +0xe0 set, next step
@@ -34,7 +34,7 @@ typedef struct {
 extern Root0204be08 data_0204be08;
 extern unsigned short data_0204c190;    /* keys pressed this frame */
 
-extern int func_020208e0(void);
+extern int PauseMenu_GetMode(void);
 extern void PlaySound(int a, int b);            /* play menu sound */
 extern void Callbacks_ClearByteAndRun2(void);                    /* close the menu */
 extern int GameState_IsFlagSet(int flag);                 /* GameState_IsFlagSet */
@@ -55,7 +55,7 @@ void PauseMenu_Frame(void)
     TabContext *ctx = data_0204be08.pCtx;
     int i;
 
-    if (func_020208e0() == 0) {
+    if (PauseMenu_GetMode() == 0) {
         PlaySound(0, 3);
         Callbacks_ClearByteAndRun2();
         return;

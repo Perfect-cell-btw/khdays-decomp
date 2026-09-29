@@ -73,6 +73,6 @@ int Ov072_ChargeTick(char *self)
             nRet = Ov022_ActorSetState(self, 2);
         }
     }
-    *(int *)(self + 0x4cc) += func_02023c40() == 1 ? 0x1800 : 0x1000;
+    *(int *)(self + 0x4cc) += GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
     return nRet;
 }

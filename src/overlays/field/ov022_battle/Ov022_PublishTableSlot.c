@@ -2,7 +2,7 @@
  * The table lives at +0x14 of the block held in data_ov022_020b2ea4. A slot is only published
  * when its handle is still 0xffff (free) and the input layer is idle (Session_GetLocalPlayerIndex). The
  * six-byte marshalling record carries the value, the kind byte, a random tag byte and the slot
- * index in a 3-bit field; func_02031384 hands it off and returns the handle to store back.
+ * index in a 3-bit field; MsgQueue_Post hands it off and returns the handle to store back.
  *
  * The park called this an "address-CSE tie": the ROM recomputes `tbl + idx*2` for the guard and
  * again for the final store, where mwcc held it in one register and came out 4 bytes short. The
@@ -57,5 +57,5 @@ void Ov022_PublishTableSlot(int idx, unsigned short param_2, unsigned char param
     t->values[idx] = param_2;
     t->b08[idx] = param_3;
     t->b0c[idx] = buf.b3;
-    t->seq[idx] = (short)func_02031384(0xf, &buf, 6);
+    t->seq[idx] = (short)MsgQueue_Post(0xf, &buf, 6);
 }

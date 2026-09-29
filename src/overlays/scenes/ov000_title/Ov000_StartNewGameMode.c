@@ -88,7 +88,7 @@ void Ov000_StartNewGameMode(void)
     Res_LoadSpriteSet(&cell, resource, 0, 0, 0);
     GXS_LoadBGPltt(cell.palette->data, 0, cell.palette->size);
 
-    switch (func_02024e5c()) {
+    switch (GetLanguage()) {
     case 1:
         alternateHandle = 0;
         break;

@@ -108,7 +108,7 @@ static inline void Ov008_ToggleGridFlag(Ov008MenuContext *pCtx)
         } else {
             Ov008_SetTargetSlot(0, -1);
         }
-        func_020235bc(FLAG_GRID);
+        GameState_ClearFlag(FLAG_GRID);
     }
 }
 

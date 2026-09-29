@@ -33,7 +33,7 @@ Ov002StateFn Ov002_TickSceneFadeOut(void)
         return pNext;
     }
 
-    nStep = func_02023c40() == 1 ? 0xc00 : 0x800;
+    nStep = GetFrameRateMode() == 1 ? 0xc00 : 0x800;
     *(int *)(data_ov002_0207f600 + 4) =
         *(int *)(data_ov002_0207f600 + 4) + nStep;
     Ov002_UpdateSceneFrame();
@@ -49,7 +49,7 @@ Ov002StateFn Ov002_TickSceneFadeOut(void)
         SetMasterBrightnessSub(*(int *)(data_ov002_0207f600 + 8) >> 12);
     }
 
-    nStep = func_02023c40() == 1 ? 0x3000 : 0x1800;
+    nStep = GetFrameRateMode() == 1 ? 0x3000 : 0x1800;
     *(int *)(data_ov002_0207f600 + 8) =
         *(int *)(data_ov002_0207f600 + 8) + nStep;
     if (*(int *)(data_ov002_0207f600 + 8) > 0) {

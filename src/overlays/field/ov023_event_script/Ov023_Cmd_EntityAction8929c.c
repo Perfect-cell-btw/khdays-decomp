@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 
 extern void Ov023_ActorQueueSound(void *entity, int a, int b, int mode, int extra);
 
@@ -11,7 +11,7 @@ int Ov023_Cmd_EntityAction8929c(int ctx, char *args) {
     int b = ScriptVm_ReadOperandInt(ctx, args + 0x10);
     int mode = ScriptVm_ReadOperandInt(ctx, args + 0x18);
     int extra = ScriptVm_ReadOperandInt(ctx, args + 0x20);
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     if (mode == 1) {
         Ov023_ActorQueueSound(*(char **)(*(char **)(ctx + 0x128) + 0x440) + id * 0x1a64,
                             a, b, mode, 0);

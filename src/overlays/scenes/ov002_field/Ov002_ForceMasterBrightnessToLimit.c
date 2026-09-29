@@ -6,7 +6,7 @@
 #include "game/engine.h"
 
 void Ov002_ForceMasterBrightnessToLimit(void) {
-    int ev = func_0201e428();
+    int ev = GetMasterBrightnessMain();
 
     if (ev != -0x10 && ev != 0x10) {
         ev = -0x10;

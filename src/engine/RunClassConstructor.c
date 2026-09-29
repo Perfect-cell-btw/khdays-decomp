@@ -3,7 +3,7 @@
  * descriptor's constructor with `obj` as the current object; the ctor's return becomes the
  * object's initial per-frame state fn (obj+0x14). Descriptor: +0/+2 u16 magics, +4 ctor,
  * +8 method, +0xc auxSize, +0x10 arenaRef. */
-extern int func_0202362c(int arena);
+extern int Heap_SetCurrent(int arena);
 extern void *AllocFromExpHeapWrapper(int size, int arena);
 extern void MI_CpuFill8(void *dst, int val, int n);
 extern void Obj_LinkNode(int obj);
@@ -24,7 +24,7 @@ int *RunClassConstructor(int *obj, unsigned short *desc, int ctorArg) {
     obj[5] = 0;
     obj[6] = *(int *)((char *)desc + 8);
     obj[10] = 0;
-    token = func_0202362c(obj[7]);
+    token = Heap_SetCurrent(obj[7]);
     if (obj[9] == 0) {
         obj[8] = 0;
     } else {
@@ -37,6 +37,6 @@ int *RunClassConstructor(int *obj, unsigned short *desc, int ctorArg) {
     *(int *)(((int *)&data_0204c058)[1] + 0x14) =
         (*(int (**)(int))((char *)desc + 4))(ctorArg);
     ((int *)&data_0204c058)[1] = saved;
-    func_0202362c(token);
+    Heap_SetCurrent(token);
     return obj;
 }

@@ -54,8 +54,8 @@ static inline u16 PriRet(volatile u16 *reg, int p) {
 }
 
 extern Ov010Context *NNSi_FndGetCurrentRootHeap(void);
-extern int func_02023650(void);
-extern void func_0202362c(int value);
+extern int Heap_GetCurrent(void);
+extern void Heap_SetCurrent(int value);
 extern void Gfx_Reset2DEngines(void);
 extern void SetGameMode(int value);
 extern void GX_SetBankForBG(int bank);
@@ -67,7 +67,7 @@ extern void MIi_CpuClearFast(int value, void *dest, int size);
 extern void GX_LoadBGPltt(void *src, int offset, int size);
 extern void Ov010_BindResourceHandle(Ov010Context *context, char *name);
 extern void *Ov010_GetVarRecordByIndex(Ov010Context *context, int flag);
-extern void func_0202f7fc(void *text_engine, char *name);
+extern void Font_LoadUTF16(void *text_engine, char *name);
 extern void TileTextRenderer_Init(void *tile_engine, int layer, void *text_engine, u16 *rect);
 extern void SetMasterBrightnessMain(int value);
 extern void SetMasterBrightnessSub(int value);
@@ -87,8 +87,8 @@ void *Ov010_TitleSceneInit(u32 parameter) {
 
     *(PaletteData *)frame.palette = data_ov010_0204cf88;
 
-    previous_state = func_02023650();
-    func_0202362c(0);
+    previous_state = Heap_GetCurrent();
+    Heap_SetCurrent(0);
 
     {
         register volatile u16 *palette = (volatile u16 *)0x05000000;
@@ -145,7 +145,7 @@ void *Ov010_TitleSceneInit(u32 parameter) {
         context->node = Ov010_GetVarRecordByIndex(context, 0);
     }
 
-    func_0202f7fc(context->text_engine, data_ov010_0204cfc8);
+    Font_LoadUTF16(context->text_engine, data_ov010_0204cfc8);
 
     frame.rect[0] = 0;
     frame.rect[1] = 0;
@@ -167,7 +167,7 @@ void *Ov010_TitleSceneInit(u32 parameter) {
     context->state = 2;
     context->parameter = parameter;
 
-    func_0202362c(previous_state);
+    Heap_SetCurrent(previous_state);
 
     return Ov010_TitleBootStep;
 }

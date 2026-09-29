@@ -43,7 +43,7 @@ void Ov216_SyncSubitemPoseToJoint(int *scene, char *self)
         position = jointXfm.translation;
         SrtTransform_SetIdentity(self + 0x3f4);
         ScaleVec3Fx12(-0x1800,
-                      (const VecFx32 *)(*(char **)func_ov107_020c9848() + 0x7c),
+                      (const VecFx32 *)(*(char **)Ov107_GetActorManager() + 0x7c),
                       &cameraOffset);
         VEC_Add(&position, &cameraOffset, &position);
         Srt_SetTranslation(self + 0x3f4, &position);

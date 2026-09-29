@@ -42,7 +42,7 @@ extern u32  GameState_GetField(int nField, int nBits);                       /* 
 extern void GameState_SetField(int nField, int nBits, int nValue);           /* GameState_SetField */
 extern u32  Rand16NextScaled(unsigned int nRange);                                  /* Rand16NextScaled */
 extern int  GameState_IsFlagSet(int nFlag);                                   /* GameState_IsFlagSet */
-extern void func_020235bc(int nFlag);                                   /* GameState_ClearFlag */
+extern void GameState_ClearFlag(int nFlag);
 extern int Ov008_CommitSaveToSlot(int nSlot);                             /* Ov008_CommitSaveToSlot */
 
 int Ov008_BeginSaveToSlot(Ov008SaveMenu *pMenu, u32 nSlot)
@@ -63,8 +63,8 @@ int Ov008_BeginSaveToSlot(Ov008SaveMenu *pMenu, u32 nSlot)
     GameState_SetField(FIELD_COUNT_LO, 16, (u16)nCount);
     pMenu->bChangedA = GameState_IsFlagSet(FLAG_CHANGED_A);
     pMenu->bChangedB = GameState_IsFlagSet(FLAG_CHANGED_B);
-    func_020235bc(FLAG_CHANGED_A);
-    func_020235bc(FLAG_CHANGED_B);
+    GameState_ClearFlag(FLAG_CHANGED_A);
+    GameState_ClearFlag(FLAG_CHANGED_B);
     nResult = Ov008_CommitSaveToSlot(nSlot);
     pMenu->nCardOp = CARD_OP_TRANSFER;
     return nResult;

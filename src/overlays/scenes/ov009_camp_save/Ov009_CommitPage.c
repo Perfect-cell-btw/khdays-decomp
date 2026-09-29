@@ -20,7 +20,7 @@ extern int data_ov009_020563e4[];
 int Ov009_CommitPage(void) {
     *(unsigned short *)(CTXV + 0x9610) = 0;
     *(int *)(CTXV + 0x95f4) = 1;
-    func_020362ec((unsigned short *)(CTXV + 0x963e));
+    KeyRepeat_Step((unsigned short *)(CTXV + 0x963e));
     Ov009_RunModeCallback();
     if (*(int *)(data_ov009_020563e4[1] + 0x9628) != 0) {
         Ov009_UpdateWidgetLayerDefault(data_ov009_020563e4[1],

@@ -3,7 +3,7 @@
 
 #include "game/engine.h"
 
-extern int func_ov107_020c9848(void);
+extern int Ov107_GetActorManager(void);
 extern int List_First(void *list);
 extern void Ov107_HitShape_UpdateWorld(int v);
 extern void Ov107_MoveNodeAndRelayout(void *self, void *node);
@@ -23,7 +23,7 @@ typedef struct {
 void Ov107_AiState_PostTickBase(char *self)
 {
     if (*(int *)(self + 0x2e8) > 0) {
-        int cooldown = *(int *)(self + 0x2e8) - *(int *)((char *)func_ov107_020c9848() + 0x40) / 30;
+        int cooldown = *(int *)(self + 0x2e8) - *(int *)((char *)Ov107_GetActorManager() + 0x40) / 30;
         *(int *)(self + 0x2e8) = cooldown;
         if (cooldown <= 0) {
             *(int *)(self + 0x2e8) = 0;

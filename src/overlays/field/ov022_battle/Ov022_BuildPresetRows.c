@@ -86,7 +86,7 @@ void Ov022_BuildPresetRows(void)
     context = data_ov022_020b2e74;
     table = data_ov022_020b22a4;
     scaleSource = data_ov022_020b229c;
-    variant = func_02024e5c();
+    variant = GetLanguage();
     if (variant > 0) {
         variant--;
     }

@@ -1,11 +1,11 @@
 /* Ov022_StepFlyingPart -- one frame of a part in flight that chases a target.
  *
  * The part's timer takes the frame delta; past a threshold it starts to fall,
- * harder in hard mode. While the actor still has a valid target and the shot's
+ * harder at 20 fps. While the actor still has a valid target and the shot's
  * homing delay has passed, the velocity is steered toward the target: the flat
  * direction to it and the current flat velocity are both normalised, blended
- * by the shot's blend factor, and rescaled to the shot's speed (half again in
- * hard mode). The part is then moved along its velocity. In state two it also
+ * by the shot's blend factor, and rescaled to the shot's speed (half again at
+ * 20 fps). The part is then moved along its velocity. In state two it also
  * ends its run once the shot's initial power is reached, casts its move ahead
  * and either ends the run on a stop or lands on a hit, and it takes a trail
  * every 0x36000 timer units. The sequence tracks are updated on the way out.
@@ -85,8 +85,8 @@ struct MoveProbe {
 #define SLOT_OPEN 0xffff
 #define HIT_RISE 0x200
 #define FALL_START 0xa000
-#define MODE_HARD 1
-#define GRAVITY_HARD 0x48
+#define FRAME_RATE_20FPS 1   /* GetFrameRateMode(): 0 = 30 fps, 1 = 20 fps, 2 = 60 fps */
+#define GRAVITY_20FPS 0x48
 #define GRAVITY_NORMAL 0x30
 #define FX32_ONE 0x1000
 #define STATE_LIVE 2
@@ -142,8 +142,8 @@ int Ov022_StepFlyingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
         pPart->nTimer = pPart->nTimer + nDelta;
         vecAt = pPart->vecAt;
         if (pPart->nTimer >= FALL_START) {
-            if (func_02023c40() == MODE_HARD) {
-                nGravity = GRAVITY_HARD;
+            if (GetFrameRateMode() == FRAME_RATE_20FPS) {
+                nGravity = GRAVITY_20FPS;
             } else {
                 nGravity = GRAVITY_NORMAL;
             }
@@ -163,7 +163,7 @@ int Ov022_StepFlyingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
             VEC_Normalize(&vecStep, &vecStep);
             ScaleVec3Fx12(pShot->nTag, &vecDir, &vecDir);
             VEC_MultAdd(FX32_ONE - pShot->nTag, &vecStep, &vecDir, &vecStep);
-            if (func_02023c40() == MODE_HARD) {
+            if (GetFrameRateMode() == FRAME_RATE_20FPS) {
                 nScale = (pShot->nRadius * 3) / 2;
             } else {
                 nScale = pShot->nRadius;

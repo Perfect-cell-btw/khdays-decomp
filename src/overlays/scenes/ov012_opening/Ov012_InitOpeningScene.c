@@ -21,12 +21,12 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void LoadOverlaySync(int processor, int overlayId);
 extern void Ov012_ConfigureOpeningDisplay(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern void func_0202f7fc(void *dst, const void *path);
+extern void Font_LoadUTF16(void *dst, const void *path);
 extern void GX_LoadBGPltt(const void *src, int offset, int size);
 extern void GXS_LoadBGPltt(const void *src, int offset, int size);
 extern void *Msg_OpenContainerAndReadHeader(const void *path, int heapId);
 extern void *Archive_LoadFile(u32 archiveEntry, int heapId);
-extern u32 func_02024e5c(void);
+extern u32 GetLanguage(void);
 extern void ZeroHalfThenFree(void *header);
 extern void Res_LoadSpriteSet(SpriteResSet *set, void *archive, int character,
                          int screen, int palette);
@@ -62,7 +62,7 @@ void *Ov012_InitOpeningScene(int alternateMode) {
     *(u8 *)(root + 0x8be0) = 0;
     *(u8 *)(root + 0x8bf0) = 0;
     MI_CpuFill8(workspace + 0x8400, 0, 0x5a4);
-    func_0202f7fc(root + 0x8b40, data_ov012_0205cac0);
+    Font_LoadUTF16(root + 0x8b40, data_ov012_0205cac0);
     GX_LoadBGPltt(&data_ov012_0205c2d0, 0x1a0, 0x20);
     GXS_LoadBGPltt(&data_ov012_0205c2d0, 0x1a0, 0x20);
     *(void **)(root + 0x85a4) = root + 0x8b4c;
@@ -70,7 +70,7 @@ void *Ov012_InitOpeningScene(int alternateMode) {
     archiveEntry = (((u32)header + 0x8000) & 0x00fffffc) << 7 | 0x80000000;
     *(void **)(root + 0x8bf8) = Archive_LoadFile(archiveEntry, 0xe);
     *(void **)(root + 0x8bfc) =
-        Archive_LoadFile(archiveEntry | (func_02024e5c() & 0x1ff), 0xe);
+        Archive_LoadFile(archiveEntry | (GetLanguage() & 0x1ff), 0xe);
     ZeroHalfThenFree(header);
 
     resourceIndex = 0;

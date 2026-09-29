@@ -64,6 +64,6 @@ int Ov000_PollSaveLoad(void) {
 out_busy:
     return 1;
 out_tail:
-    func_020208f0();
+    Sleep_Unblock();
     return ret;
 }

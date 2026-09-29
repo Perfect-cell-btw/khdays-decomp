@@ -26,7 +26,7 @@ extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Scene_DrawNode(void *object);
 extern void SetMasterBrightnessSub(int value);
 extern void Slot_UnlinkAll(void *manager);
-extern void func_0203255c(void *manager);
+extern void DispObjList_UpdateQueued(void *manager);
 extern void Obj_CommitAllSlots(void *manager);
 extern void Obj_Release(void *manager);
 extern void *InstantiateClass(const void *descriptor, int argument);
@@ -50,7 +50,7 @@ OverlayCallback Ov000_TickFadeOutToScene(void) {
         *(volatile u16 *)0x0400100e &= ~3;
 
         Slot_UnlinkAll(context->manager);
-        func_0203255c(context->manager);
+        DispObjList_UpdateQueued(context->manager);
         Obj_CommitAllSlots(context->manager);
         Obj_Release(context->manager);
         SetMasterBrightnessSub(-16);

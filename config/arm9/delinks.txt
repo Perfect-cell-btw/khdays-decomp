@@ -4356,11 +4356,11 @@ src/engine/SetMasterBrightnessSub.c:
     complete
     .text       start:0x0201e3cc end:0x0201e428
 
-src/engine/func_0201e428.c:
+src/engine/GetMasterBrightnessMain.c:
     complete
     .text       start:0x0201e428 end:0x0201e438
 
-src/engine/func_0201e438.c:
+src/engine/GetMasterBrightnessSub.c:
     complete
     .text       start:0x0201e438 end:0x0201e448
 
@@ -4384,7 +4384,7 @@ src/engine/Loader_PopFreeRequest.c:
     complete
     .text       start:0x0201e4c8 end:0x0201e4f0
 
-src/engine/func_0201e4f0.c:
+src/engine/FileLoader_FreeRequest.c:
     complete
     .text       start:0x0201e4f0 end:0x0201e508
 
@@ -4612,7 +4612,7 @@ src/engine/Callbacks_Init.c:
     complete
     .text       start:0x02020834 end:0x02020878
 
-src/engine/func_02020878.c:
+src/engine/PauseMenu_SetAllowed.c:
     complete
     .text       start:0x02020878 end:0x02020888
 
@@ -4628,19 +4628,19 @@ src/engine/Callbacks_SetByte.c:
     complete
     .text       start:0x020208d0 end:0x020208e0
 
-src/engine/func_020208e0.c:
+src/engine/PauseMenu_GetMode.c:
     complete
     .text       start:0x020208e0 end:0x020208f0
 
-src/engine/func_020208f0.c:
+src/engine/Sleep_Unblock.c:
     complete
     .text       start:0x020208f0 end:0x02020904
 
-src/engine/func_02020904.c:
+src/engine/Sleep_Block.c:
     complete
     .text       start:0x02020904 end:0x02020914
 
-src/engine/func_02020914.c:
+src/engine/Sleep_IsAllowed.c:
     complete
     .text       start:0x02020914 end:0x02020928
 
@@ -4712,7 +4712,7 @@ src/engine/LoadGlobalS8At0.c:
     complete
     .text       start:0x02020d04 end:0x02020d10
 
-src/engine/func_02020d10.c:
+src/engine/ScriptVm_ResolveActorIndex.c:
     complete
     .text       start:0x02020d10 end:0x02020d44
 
@@ -4768,7 +4768,7 @@ src/engine/Game_UpdateObjectMotion.c:
     complete
     .text       start:0x020217d4 end:0x02021884
 
-src/engine/func_02021884.c:
+src/engine/ScriptVm_UpdateActiveCamera.c:
     complete
     .text       start:0x02021884 end:0x020218a4
 
@@ -4792,7 +4792,7 @@ src/engine/Slot48_StoreAtCurrentIndex.c:
     complete
     .text       start:0x020219b4 end:0x020219c4
 
-src/engine/func_020219c4.c:
+src/engine/Script_ValueToFx32.c:
     complete
     .text       start:0x020219c4 end:0x020219dc
 
@@ -5072,7 +5072,7 @@ src/engine/GameState_SetFlag.c:
     complete
     .text       start:0x020235a8 end:0x020235bc
 
-src/engine/func_020235bc.c:
+src/engine/GameState_ClearFlag.c:
     complete
     .text       start:0x020235bc end:0x020235d0
 
@@ -5088,11 +5088,11 @@ src/engine/HeapState_Recreate.c:
     complete
     .text       start:0x02023604 end:0x0202362c
 
-src/engine/func_0202362c.c:
+src/engine/Heap_SetCurrent.c:
     complete
     .text       start:0x0202362c end:0x02023650
 
-src/engine/func_02023650.c:
+src/engine/Heap_GetCurrent.c:
     complete
     .text       start:0x02023650 end:0x02023660
 
@@ -5116,7 +5116,7 @@ src/engine/ExpHeap_AllocOrDefault.c:
     complete
     .text       start:0x020236f8 end:0x02023728
 
-src/engine/func_02023728.c:
+src/engine/ExpHeap_Free.c:
     complete
     .text       start:0x02023728 end:0x02023750
 
@@ -5124,7 +5124,7 @@ libs/nitro/nns/calls/NNSi_FndGetAllocatorForDefaultHeap.c:
     complete
     .text       start:0x02023750 end:0x02023768
 
-src/engine/func_02023768.c:
+src/engine/ExpHeap_ResizeBlock.c:
     complete
     .text       start:0x02023768 end:0x02023778
 
@@ -5172,7 +5172,7 @@ src/engine/Instance_ReleaseIfDead.c:
     complete
     .text       start:0x02023bbc end:0x02023bf0
 
-src/engine/func_02023bf0.c:
+src/engine/Obj_GetCurrent.c:
     complete
     .text       start:0x02023bf0 end:0x02023c00
 
@@ -5192,11 +5192,11 @@ src/engine/SetGameMode.c:
     complete
     .text       start:0x02023c30 end:0x02023c40
 
-src/engine/func_02023c40.c:
+src/engine/GetFrameRateMode.c:
     complete
     .text       start:0x02023c40 end:0x02023c50
 
-src/engine/func_02023c50.c:
+src/engine/Obj_GetFrameCount.c:
     complete
     .text       start:0x02023c50 end:0x02023c60
 
@@ -5244,11 +5244,11 @@ src/engine/PackDisplayReg0x400100c.c:
     complete
     .text       start:0x0202405c end:0x02024088
 
-src/engine/func_02024088.c:
+src/engine/Bg_WriteSubBg1Cnt.c:
     complete
     .text       start:0x02024088 end:0x020240bc
 
-src/engine/func_020240bc.c:
+src/engine/Bg_WriteSubBg0Cnt.c:
     complete
     .text       start:0x020240bc end:0x020240f0
 
@@ -5260,11 +5260,11 @@ src/engine/PackDisplayReg0x400000c.c:
     complete
     .text       start:0x0202411c end:0x02024148
 
-src/engine/func_02024148.c:
+src/engine/Bg_WriteMainBg1Cnt.c:
     complete
     .text       start:0x02024148 end:0x0202417c
 
-src/engine/func_0202417c.c:
+src/engine/Bg_WriteMainBg0Cnt.c:
     complete
     .text       start:0x0202417c end:0x020241b0
 
@@ -5388,7 +5388,7 @@ src/engine/Callbacks_RunTableEntryC.c:
     complete
     .text       start:0x020249e4 end:0x02024a18
 
-src/engine/func_02024a18.c:
+src/engine/Gfx_GetBgUploadTarget.c:
     complete
     .text       start:0x02024a18 end:0x02024a28
 
@@ -5440,7 +5440,7 @@ src/engine/Record_EnsureAllocatedAndSetId.c:
     complete
     .text       start:0x02024e34 end:0x02024e5c
 
-src/engine/func_02024e5c.c:
+src/engine/GetLanguage.c:
     complete
     .text       start:0x02024e5c end:0x02024e6c
 
@@ -5832,7 +5832,7 @@ src/engine/StoreField74ThenForward.c:
     complete
     .text       start:0x0202a66c end:0x0202a684
 
-src/engine/func_0202a684.c:
+src/engine/Model_DropTextureImage.c:
     complete
     .text       start:0x0202a684 end:0x0202a6a0
 
@@ -5988,7 +5988,7 @@ src/engine/EntityMgr_SpliceIntoListB.c:
     complete
     .text       start:0x0202b570 end:0x0202b5f8
 
-src/engine/func_0202b5f8.c:
+src/engine/EntityMgr_PushToList.c:
     complete
     .text       start:0x0202b5f8 end:0x0202b628
 
@@ -6052,11 +6052,11 @@ src/engine/Render_ReleaseNodeItem.c:
     complete
     .text       start:0x0202ba18 end:0x0202ba44
 
-src/engine/func_0202ba44.c:
+src/engine/EntityMgr_DropTextureImage.c:
     complete
     .text       start:0x0202ba44 end:0x0202ba68
 
-src/engine/func_0202ba68.c:
+src/engine/EntityRecord_DropTextureImage.c:
     complete
     .text       start:0x0202ba68 end:0x0202ba78
 
@@ -6116,7 +6116,7 @@ src/engine/GetTrackEntryBase.c:
     complete
     .text       start:0x0202bfa0 end:0x0202bfb8
 
-src/engine/func_0202bfb8.c:
+src/engine/EntityMgr_GetResourceCount.c:
     complete
     .text       start:0x0202bfb8 end:0x0202bfcc
 
@@ -6204,7 +6204,7 @@ src/engine/EntityMgr_PopVramState.c:
     complete
     .text       start:0x0202c4b0 end:0x0202c57c
 
-src/engine/func_0202c57c.c:
+src/engine/EntityMgr_GetVramStateDepth.c:
     complete
     .text       start:0x0202c57c end:0x0202c594
 
@@ -6220,11 +6220,11 @@ src/engine/Entity_Deactivate.c:
     complete
     .text       start:0x0202c5e4 end:0x0202c604
 
-src/engine/func_0202c604.c:
+src/engine/Entity_AttachNode.c:
     complete
     .text       start:0x0202c604 end:0x0202c614
 
-src/engine/func_0202c614.c:
+src/engine/Entity_DetachNode.c:
     complete
     .text       start:0x0202c614 end:0x0202c624
 
@@ -6412,7 +6412,7 @@ src/engine/Quat_FromTwoVectors.c:
     complete
     .text       start:0x0202ed60 end:0x0202ef10
 
-src/engine/func_0202ef10.c:
+src/engine/Quat_Add.c:
     complete
     .text       start:0x0202ef10 end:0x0202ef54
 
@@ -6452,7 +6452,7 @@ src/engine/Quat_Slerp.c:
     complete
     .text       start:0x0202f55c end:0x0202f7fc
 
-src/engine/func_0202f7fc.c:
+src/engine/Font_LoadUTF16.c:
     complete
     .text       start:0x0202f7fc end:0x0202f816
 
@@ -6592,7 +6592,7 @@ src/engine/Obj_GetWord18.c:
     complete
     .text       start:0x020303b4 end:0x020303bc
 
-src/engine/func_020303bc.c:
+src/engine/TextWindow_GetTextWidth.c:
     complete
     .text       start:0x020303bc end:0x020303d8
 
@@ -6716,7 +6716,7 @@ src/engine/LoadGlobalPtrField70.c:
     complete
     .text       start:0x02030e50 end:0x02030e64
 
-src/engine/func_02030e64.c:
+src/engine/Session_SetMoviePlaying.c:
     complete
     .text       start:0x02030e64 end:0x02030e7c
 
@@ -6764,7 +6764,7 @@ src/engine/MsgQueue_SendGate.c:
     complete
     .text       start:0x02031258 end:0x02031384
 
-src/engine/func_02031384.c:
+src/engine/MsgQueue_Post.c:
     complete
     .text       start:0x02031384 end:0x02031440
 
@@ -6776,7 +6776,7 @@ src/engine/MsgQueue_MarkSlotReceived.c:
     complete
     .text       start:0x020314a4 end:0x02031574
 
-src/engine/func_02031574.c:
+src/engine/MsgQueue_SetMoviePlaying.c:
     complete
     .text       start:0x02031574 end:0x0203158c
 
@@ -6792,7 +6792,7 @@ src/engine/Session_GetSlotTable.c:
     complete
     .text       start:0x020315f4 end:0x02031600
 
-src/engine/func_02031600.c:
+src/engine/Session_StoreSetup.c:
     complete
     .text       start:0x02031600 end:0x02031618
 
@@ -6832,7 +6832,7 @@ src/engine/SlotTable_InitCellAnim.c:
     complete
     .text       start:0x02031af4 end:0x02031b2c
 
-src/engine/func_02031b2c.c:
+src/engine/DispObjList_GetEngine.c:
     complete
     .text       start:0x02031b2c end:0x02031b50
 
@@ -6856,7 +6856,7 @@ src/engine/Obj_LoadResourceNode.c:
     complete
     .text       start:0x02031d90 end:0x02031df0
 
-src/engine/func_02031df0.c:
+src/engine/DList_UnlinkAndClear.c:
     complete
     .text       start:0x02031df0 end:0x02031e30
 
@@ -6904,7 +6904,7 @@ src/engine/Obj_Release.c:
     complete
     .text       start:0x02032428 end:0x0203243a
 
-src/engine/func_0203243c.c:
+src/engine/DispObjList_AddResource.c:
     complete
     .text       start:0x0203243c end:0x02032444
 
@@ -6928,11 +6928,11 @@ src/engine/Obj_CommitAllSlots.c:
     complete
     .text       start:0x0203253c end:0x0203255c
 
-src/engine/func_0203255c.c:
+src/engine/DispObjList_UpdateQueued.c:
     complete
     .text       start:0x0203255c end:0x0203256c
 
-src/engine/func_0203256c.c:
+src/engine/DispObjList_UpdateImmediate.c:
     complete
     .text       start:0x0203256c end:0x0203257c
 
@@ -7084,7 +7084,7 @@ src/engine/SoundMgr_IsState1.c:
     complete
     .text       start:0x020335a4 end:0x020335c8
 
-src/engine/func_020335c8.c:
+src/engine/SoundMgr_IsBgmFadingOut.c:
     complete
     .text       start:0x020335c8 end:0x020335ec
 
@@ -7104,11 +7104,11 @@ src/engine/SoundMgr_QueueRequest.c:
     complete
     .text       start:0x020336e8 end:0x02033758
 
-src/engine/func_02033758.c:
+src/engine/SoundMgr_SwitchBgm.c:
     complete
     .text       start:0x02033758 end:0x02033770
 
-src/engine/func_02033770.c:
+src/engine/SoundMgr_SwitchBgmResume.c:
     complete
     .text       start:0x02033770 end:0x02033788
 
@@ -7208,7 +7208,7 @@ src/engine/SoundMgr_SetListenersEnabled.c:
     complete
     .text       start:0x020340d0 end:0x02034138
 
-src/engine/func_02034138.c:
+src/engine/SoundMgr_SetSeEnabled.c:
     complete
     .text       start:0x02034138 end:0x02034150
 
@@ -7424,7 +7424,7 @@ src/engine/Slot_GetEntryIfCounted.c:
     complete
     .text       start:0x02035978 end:0x020359b4
 
-src/engine/func_020359b4.c:
+src/engine/PartyMember_AddEntryPair.c:
     complete
     .text       start:0x020359b4 end:0x020359f0
 
@@ -7432,7 +7432,7 @@ src/engine/Slot_ClearMatchingEntry.c:
     complete
     .text       start:0x020359f0 end:0x02035a34
 
-src/engine/func_02035a34.c:
+src/engine/PartyMember_ClearEntryPairs.c:
     complete
     .text       start:0x02035a34 end:0x02035a58
 
@@ -7444,7 +7444,7 @@ src/engine/PartyState_AllocRecord.c:
     complete
     .text       start:0x02035c28 end:0x02035c44
 
-src/engine/func_02035c44.c:
+src/engine/PartyState_FreeRecord.c:
     complete
     .text       start:0x02035c44 end:0x02035c60
 
@@ -7460,7 +7460,7 @@ src/engine/IsArgEqualGlobalHalf4.c:
     complete
     .text       start:0x02035d04 end:0x02035d18
 
-src/engine/func_02035d18.c:
+src/engine/PartyState_SetInteraction.c:
     complete
     .text       start:0x02035d18 end:0x02035d30
 
@@ -7516,7 +7516,7 @@ src/engine/ConstReturn1_2.c:
     complete
     .text       start:0x020362e8 end:0x020362ec
 
-src/engine/func_020362ec.c:
+src/engine/KeyRepeat_Step.c:
     complete
     .text       start:0x020362ec end:0x020362fc
 

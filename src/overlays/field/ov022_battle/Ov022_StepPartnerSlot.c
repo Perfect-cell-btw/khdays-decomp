@@ -231,7 +231,7 @@ struct Actor {
 #define COL_COUNT 4
 #define AID_COUNT 3
 
-#define FRAME_STEP() (func_02023c40() == 1 ? STEP_FAST : STEP_SLOW)
+#define FRAME_STEP() (GetFrameRateMode() == 1 ? STEP_FAST : STEP_SLOW)
 #define CLAMP(v, lo, hi) ((v) > (hi) ? (hi) : ((v) < (lo) ? (lo) : (v)))
 
 extern const VecFx32 data_ov022_020b27c0;   /* kOv022Up */
@@ -255,7 +255,7 @@ extern u8 data_ov022_020b2eb4;              /* gOv022PartnerTick */
 extern u8 data_0204c240;                    /* global flags byte */
 
 extern struct PlayerSlot *GetPlayerSlotTableEntry(int nSlot);                             /* GetPlayerSlotTableEntry */
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern int Ov022_IsInputAllowedForActiveSlot(void);                                           /* Ov022_IsInputAllowedForActiveSlot */
 extern void Ov022_SetBit5OfHalf0IfByte2(struct ReactionCtx *pCtx);                      /* ov022_SetBit5OfHalf0IfByte2 */
 extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
@@ -340,7 +340,7 @@ void Ov022_StepPartnerSlot(struct Actor *pActor, struct Actor *pLeader, u32 nFla
     pActor->nButtons = 0;
     pActor->nFlags &= ~FLAG_BIT61;
     pActor->nCommandKind = COMMAND_REST;
-    pActor->nWalkSpeed = func_02023c40() == 1 ? WALK_FAST : WALK_SLOW;
+    pActor->nWalkSpeed = GetFrameRateMode() == 1 ? WALK_FAST : WALK_SLOW;
     if (Ov022_IsInputAllowedForActiveSlot() != 0) {
         pActor->nButtons2 = 0;
         pSlot->nState = STATE_IDLE;
@@ -375,7 +375,7 @@ void Ov022_StepPartnerSlot(struct Actor *pActor, struct Actor *pLeader, u32 nFla
         pActor->nFlags |= FLAG_BIT61;
         if (Ov022_FindApproachDir(pActor, pLeader, &vecTarget) != 0) {
             VEC_MultAdd(pSlot->pDesc->nReachOuter, &vecTarget, &pActor->vecAim, &vecTarget);
-            pActor->nWalkSpeed = FxMul(func_02023c40() == 1 ? WALK_FAST : WALK_SLOW, 0x800);
+            pActor->nWalkSpeed = FxMul(GetFrameRateMode() == 1 ? WALK_FAST : WALK_SLOW, 0x800);
             if (Ov022_SteerPartnerToPoint(pActor, pLeader, &vecTarget, 1) != 0 || pSlot->pDesc->nRangeNear < nDist) {
                 if ((pLeader->nFlags & FLAG_BIT26) == 0) {
                     Ov022_RequestGuardBreak(pActor);
@@ -389,7 +389,7 @@ void Ov022_StepPartnerSlot(struct Actor *pActor, struct Actor *pLeader, u32 nFla
         vecUp = data_ov022_020b27c0;
         data_ov022_020b2eb4++;
         bNoClimb = 1;
-        if ((u32)func_02023c40() < data_ov022_020b2eb4) {
+        if ((u32)GetFrameRateMode() < data_ov022_020b2eb4) {
             data_ov022_020b2eb4 = 0;
             VEC_Subtract(pPoint, &pActor->vecAim, &vecToLeader);
             VEC_Normalize(&vecToLeader, &vecDir);

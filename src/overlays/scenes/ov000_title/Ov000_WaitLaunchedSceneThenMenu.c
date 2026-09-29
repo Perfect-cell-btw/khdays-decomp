@@ -63,7 +63,7 @@ Ov000StateFn Ov000_WaitLaunchedSceneThenMenu(void) {
     }
     params.first = ctx->firstValue;
     params.second = ctx->secondValue;
-    func_020235bc(0x20e9);
-    func_020208f0();
+    GameState_ClearFlag(0x20e9);
+    Sleep_Unblock();
     return Ov000_EnterSceneAndLoadResource(&params);
 }

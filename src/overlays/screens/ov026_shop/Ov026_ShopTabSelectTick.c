@@ -58,7 +58,7 @@ extern Ov008PanelContext *data_ov026_02091368;
 extern u16 data_0204c190;                                         /* keys pressed */
 extern u8  data_ov026_020910f0[];                                 /* Ov008TabOrder */
 extern Ov008ChoiceBox data_ov026_02091134[];                      /* touch boxes */
-extern void  func_020362ec(u16 *pSource);
+extern void  KeyRepeat_Step(u16 *pSource);
 extern u16   Mem_ReadU16(const u16 *pSource);                   /* ReadU16 */
 extern void  PlaySound(int nKind, int nSound);                /* PlaySound */
 extern void  Ov026_UpdateTouchState(void);                           /* Ov008_UpdateTouchState */
@@ -88,7 +88,7 @@ void *Ov026_ShopTabSelectTick(void)
     ctx = data_ov026_02091368;
     bStoryPast = ctx->bStoryPast;
     bReady = ctx->bReady;
-    func_020362ec(&ctx->inputSource);
+    KeyRepeat_Step(&ctx->inputSource);
     nButtons = Mem_ReadU16(&ctx->inputSource);
     if (nButtons & BTN_UP) {
         PlaySound(0, SOUND_MOVE);

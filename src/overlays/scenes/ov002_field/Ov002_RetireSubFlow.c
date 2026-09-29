@@ -93,8 +93,8 @@ void *Ov002_RetireSubFlow(void)
         break;
     case 0xb:
         if (GameState_IsFlagSet(0x18bd) != 0 || GameState_IsFlagSet(0x18c9) != 0) {
-            func_020235bc(0x18bd);
-            func_020235bc(0x18c9);
+            GameState_ClearFlag(0x18bd);
+            GameState_ClearFlag(0x18c9);
             *(int *)(pScreen + 0xc) = 1;
             if (GameState_GetField(0x2080, 5) == 0x1b) {
                 *(int *)(pScreen + 0x10) =

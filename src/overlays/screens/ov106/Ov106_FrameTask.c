@@ -8,7 +8,7 @@
 
 extern char *data_ov106_020b8b60;
 extern u8 data_0204be04;
-extern int func_020208e0(void);
+extern int PauseMenu_GetMode(void);
 extern int Ov002_World_IsFlagBit2Set(void);
 extern int Ov002_Ui_GetState(void);
 extern int Ov106_GetSlotWord(int param_1);
@@ -17,11 +17,11 @@ extern void Obj_SetWord8(void *pCamera, int nMode);
 extern char Gfx_ToggleCaptureMode(void *request);
 extern void Ov106_StepBrightnessFade(void);
 extern void Ov106_ApplyFadeBlend(void);
-extern void func_02034138(int arg0);
+extern void SoundMgr_SetSeEnabled(int arg0);
 
 void Ov106_FrameTask(void)
 {
-    if (func_020208e0() != 0) {
+    if (PauseMenu_GetMode() != 0) {
         return;
     }
     if (*(int *)(data_ov106_020b8b60 + 0x8e48) == 0) {
@@ -47,5 +47,5 @@ void Ov106_FrameTask(void)
     data_0204be04 = *(int *)(data_ov106_020b8b60 + 0x8e48);
     Ov106_StepBrightnessFade();
     Ov106_ApplyFadeBlend();
-    func_02034138(data_0204be04 == 0);
+    SoundMgr_SetSeEnabled(data_0204be04 == 0);
 }

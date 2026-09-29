@@ -22,7 +22,7 @@ int Ov022_AdvanceFadeStateThenNextStep(void) {
         *(signed char *)(heap + 0xc0) = 5;
         func_ov022_02086d0c(1);
         if (GameState_IsFlagSet(0x20ed) == 0) PlaySoundChecked(0, 0x28);
-        func_020235bc(0x20ed);
+        GameState_ClearFlag(0x20ed);
         r = (int)Ov022_StepSelectionSchedule;
     }
     return r;

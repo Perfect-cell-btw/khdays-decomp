@@ -45,7 +45,7 @@ typedef struct Ov023Entity {
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
 extern char *ByteCode_ResolveOperand(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandString */
-extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
+extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
 /* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
@@ -95,7 +95,7 @@ int Ov023_CmdWarpActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 
     nActor = ScriptVm_ReadOperandInt(pCtx, pOperand);
     pEntity = ArrayEntryPtrD0((u16)nActor);
-    nActor = func_02020d10(pCtx, nActor);
+    nActor = ScriptVm_ResolveActorIndex(pCtx, nActor);
     if (pCtx->pEvent->pActors != 0) {
         if (pCtx->pEvent->pActors[nActor].pResource != 0) {
             Ov023_DetachActorModel(&pCtx->pEvent->pActors[nActor]);

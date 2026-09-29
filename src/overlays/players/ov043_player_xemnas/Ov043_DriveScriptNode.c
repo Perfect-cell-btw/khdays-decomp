@@ -5,7 +5,7 @@
  * re-pins the node while unheld (raising the held bit), binds channel 2 in mode 1, winds it and
  * latches bit 0 once the frame passes 0xc000. Whenever the node is live it is re-registered
  * for a flagged actor (+0x694 bit 0), and outside those two modes it is stepped at 0x1800
- * (difficulty 1) or 0x1000 until it completes, which retires it. */
+ * (20 fps) or 0x1000 until it completes, which retires it. */
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
@@ -66,7 +66,7 @@ void Ov043_DriveScriptNode(char *self)
     if (bActive != 0) {
         return;
     }
-    if (Sequence_UpdateTracks(pNode, func_02023c40() == 1 ? 0x1800 : 0x1000) != 0) {
+    if (Sequence_UpdateTracks(pNode, GetFrameRateMode() == 1 ? 0x1800 : 0x1000) != 0) {
         *(u8 *)(pNode + 0x108) = 0;
         *(u8 *)(pNode + 0x109) &= ~2;
     }

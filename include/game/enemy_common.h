@@ -46,6 +46,7 @@ int Ov107_FindChildById(int obj, unsigned short id);
 int Ov107_FindMessageHandler(unsigned int id);
 void Ov107_FollowUntilAnimEnd(char *self);
 int Ov107_ForwardVisibleEvent(void *self, int a2);
+int Ov107_GetActorManager(void);
 short Ov107_GetSlotCount(char *p);
 void Ov107_HitShape_UpdateWorld(unsigned char *self);
 void Ov107_InitActorNode(u16 *node);
@@ -130,8 +131,7 @@ void Ov107_TriggerSphere_NotifyExits(char *self);
 int Ov107_TriggerSphere_TestPlayers(int self);
 void Ov107_UnlinkNodeFromOwner(void *node);
 int Ov107_UpdateCollisionSphere(int node);
+int Ov107_VeneerTo_Obj_Destroy(int obj);
 int Ov107_stAdvanceState_ccedc(int param_1);
-int func_ov107_020c9848(void);
-int func_ov107_020c9c1c(int arg0);
 
 #endif /* GAME_ENEMY_COMMON_H */

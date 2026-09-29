@@ -16,7 +16,7 @@ void Ov277_EnterAnim4(int param_1) {
     pp[0] = data_ov277_020d36bc[20];
     pp[1] = data_ov277_020d36bc[21];
     pp[0] = *(unsigned short *)(*(int *)owner + 2);
-    func_02031384(4, pp, 4);
+    MsgQueue_Post(4, pp, 4);
     *(signed char *)(owner + 9) = 0;
     *(int *)(owner + 0x1c) = 0;
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov277_AiTimedEffectTick);

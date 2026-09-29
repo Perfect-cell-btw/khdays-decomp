@@ -8,7 +8,7 @@ extern int func_02020400(int value, int percent);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
 void Ov107_AiState_LoadResistances(char *self, u32 mask) {
-    int ctx = func_ov107_020c9848();
+    int ctx = Ov107_GetActorManager();
     u32 table = *(u32 *)(ctx + 0x84);
     u32 flags = (((table + 0x8000) & 0xfffffc) << 7) | 0x80000000u | (((u32)0xfffffc >> 15) & mask);
     char *allocBase = (char *)Archive_LoadFile(flags, 0xb);

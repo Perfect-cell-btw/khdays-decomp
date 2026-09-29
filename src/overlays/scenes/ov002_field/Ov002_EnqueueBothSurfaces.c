@@ -10,7 +10,7 @@ void Ov002_EnqueueBothSurfaces(char *self) {
     int surface = *(int *)(self + 0x3c);
 
     if (surface != 0) {
-        GFXi_EnqueueCommand(func_02024a18(*(int *)(self + 0x10)),
+        GFXi_EnqueueCommand(Gfx_GetBgUploadTarget(*(int *)(self + 0x10)),
                             *(int *)(self + 0x44),
                             *(int *)(surface + 0x14),
                             *(int *)(surface + 0x10));

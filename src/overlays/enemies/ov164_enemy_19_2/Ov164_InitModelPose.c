@@ -29,7 +29,7 @@ void Ov164_InitModelPose(Obj *obj, int flag) {
 
     obj->mat = *(Mat *)(obj->src + 4);
 
-    VEC_Subtract((VecFx32 *)(*(char **)func_ov107_020c9848() + 0x88), (VecFx32 *)((char *)&obj->mat + 16), &dir);
+    VEC_Subtract((VecFx32 *)(*(char **)Ov107_GetActorManager() + 0x88), (VecFx32 *)((char *)&obj->mat + 16), &dir);
     VEC_Normalize(&dir, &dir);
     ScaleVec3Fx12(0x800, &dir, &at);
     VEC_Add((VecFx32 *)((char *)&obj->mat + 16), &at, &at);

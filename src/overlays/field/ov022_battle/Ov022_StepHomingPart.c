@@ -49,7 +49,7 @@ struct SlotPart {
 #define SLOT_OPEN 0xffff
 #define DOT_LIMIT 0xa00
 #define FX32_ONE 0x1000
-#define MODE_HARD 1
+#define FRAME_RATE_20FPS 1   /* GetFrameRateMode(): 0 = 30 fps, 1 = 20 fps, 2 = 60 fps */
 #define STATE_LIVE 2
 #define REACTION_KIND 2
 
@@ -99,7 +99,7 @@ int Ov022_StepHomingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                 VEC_MultAdd(FX32_ONE - pOwner->nTag, &pPart->vecVel,
                             &vecToTarget, &pPart->vecVel);
                 VEC_Normalize(&pPart->vecVel, &pPart->vecVel);
-                if (func_02023c40() == MODE_HARD) {
+                if (GetFrameRateMode() == FRAME_RATE_20FPS) {
                     nSpeed = pOwner->nRate * 3 / 2;
                 } else {
                     nSpeed = pOwner->nRate;

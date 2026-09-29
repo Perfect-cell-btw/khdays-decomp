@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern char *ArrayEntryPtrD0(int index);
 
 extern void Ov023_ResolveSpeakerOperands(int ctx, int args, int id, int *kind, char *name);
@@ -13,7 +13,7 @@ int Ov023_Cmd_StartNamedMotion(int ctx, int args) {
     int b = ScriptVm_ReadOperandInt(ctx, (void *)(args + 0x20));
     int kind = -1;
     char name[0x40];
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     name[0] = 0;
     Ov023_ResolveSpeakerOperands(ctx, args, id, &kind, name);
     Ov023_ActorQueueMotion(*(char **)(*(char **)(ctx + 0x128) + 0x440) + id * 0x1a64,

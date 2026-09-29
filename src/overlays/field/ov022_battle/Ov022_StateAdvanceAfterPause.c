@@ -38,8 +38,8 @@ Ov022StateCallback Ov022_StateAdvanceAfterPause(void)
             next = Ov022_EndKeySharingSession;
         }
     } else {
-        context->viewX -= func_02023c40() == 1 ? 0x3000 : 0x2000;
-        context->viewY -= func_02023c40() == 1 ? 0x3000 : 0x2000;
+        context->viewX -= GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
+        context->viewY -= GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
 
         u8 completed = 0;
 

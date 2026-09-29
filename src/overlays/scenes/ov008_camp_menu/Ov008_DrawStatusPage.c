@@ -2,7 +2,7 @@
  * Stats/status menu page render state. Draws six labelled stat fields (record indices 4,7,5,8,6,0xc
  * off ctx+0x58) into the ctx+0x118 layer, then pushes the numeric values through the variadic
  * setter Ov008_DrawPageBElement (ids 1, 9, 0xe, 0x10, 0x14, 0x12, 0x13, 0xf) sourced from the global
- * record at data_0204be18 and from game-state field 0x44e. When LoadGlobalShort (func_02024e5c)
+ * record at data_0204be18 and from game-state field 0x44e. When LoadGlobalShort (GetLanguage)
  * reports state 3 it briefly swaps ctx+0x138 around the fourth draw. A message-record scan
  * (MsgDb_FetchRecord / DispatchByNodeKind) over up to 99 entries computes a remaining count that feeds the
  * final eb64(0xf) call, then it builds the menu list and enqueues the five layer gfx commands.
@@ -19,7 +19,7 @@ extern int   Ov008_GetCtxBlock968c(void);
 extern int   Ov008_GetDescriptor3(void);
 extern int  *Ov008_GetVarRecordByIndex(int base, int id);
 extern void  Text_DrawWithShadow(int dctx, int x, int y, int mode, int rec, int flag);
-extern int   func_02024e5c(void);
+extern int   GetLanguage(void);
 extern int   Ov008_DrawPageBElement(int id, int a, ...);
 extern int   GameState_GetField(int id, int field);
 extern void  MsgDb_FetchRecord(int *rec, int a, int b, int c);
@@ -44,7 +44,7 @@ void Ov008_DrawStatusPage(int ctx)
     Text_DrawWithShadow(ctx + 0x118, 5, 0x17, 0xf2, (int)rec, 1);
 
     rec = Ov008_GetVarRecordByIndex(ctx + 0x58, 8);
-    eq3 = func_02024e5c() == 3;
+    eq3 = GetLanguage() == 3;
     if (eq3)
         *(int *)(ctx + 0x138) = b;
     Text_DrawWithShadow(ctx + 0x118, 0x59, 0x17, 0xf2, (int)rec, 1);

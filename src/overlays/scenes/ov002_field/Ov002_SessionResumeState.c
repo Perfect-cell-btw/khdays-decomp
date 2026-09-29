@@ -45,7 +45,7 @@ extern void Ov002_SetSessionBusy(int a);
 extern int *GetEntryField20ByIndex(int a);
 extern int func_ov022_020886d0(int a);
 extern int Ov022_GetEntryField12(int a);
-extern void func_02020878(int a);
+extern void PauseMenu_SetAllowed(int a);
 extern void Ov002_SessionTick(void);
 
 #pragma opt_propagation off
@@ -81,7 +81,7 @@ void *Ov002_SessionResumeState(void)
              nFlags & 0x10000000) == 0
             && func_ov022_020886d0(nEntry) == 0
             && Ov022_GetEntryField12(0) > 0)) {
-        func_02020878(1);
+        PauseMenu_SetAllowed(1);
     }
 
     pSess->nMask &= ~0x20;

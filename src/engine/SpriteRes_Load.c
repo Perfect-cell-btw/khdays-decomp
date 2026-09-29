@@ -19,7 +19,7 @@ typedef struct PlttUpload {
     void *pData;
 } PlttUpload;
 
-extern int func_02031b2c(unsigned int mapState);
+extern int DispObjList_GetEngine(unsigned int mapState);
 extern void *Archive_LoadFile(char *name, int kind);
 extern void Obj_RelocateSections(void *arc, int kind);
 extern int Archive_GetMember(int arc, int type, int idx);
@@ -41,11 +41,11 @@ void SpriteRes_Load(unsigned int param_1, char *param_2, int *param_3)
     unsigned short *charHdr;
     PlttUpload *pltt;
 
-    func_02031b2c(param_1);
+    DispObjList_GetEngine(param_1);
     arc = Archive_LoadFile(param_2, 0xe);
     param_3[7] = (int)arc;
     Obj_RelocateSections(arc, 1);
-    mode = func_02031b2c(param_1);
+    mode = DispObjList_GetEngine(param_1);
     if (mode == 0)
         member = Archive_GetMember((int)arc, 2, 0);
     else

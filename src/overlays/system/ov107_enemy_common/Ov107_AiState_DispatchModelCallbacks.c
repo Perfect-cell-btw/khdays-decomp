@@ -2,7 +2,7 @@
  */
 
 extern void DispatchObjectCallbacks(int this_, int arg1);
-extern void *func_ov107_020c9848(void);
+extern void *Ov107_GetActorManager(void);
 extern int Ov107_IsBehindView(int ctx, void *extra);
 
 typedef struct {
@@ -37,7 +37,7 @@ void Ov107_AiState_DispatchModelCallbacks(void *self_, int flag) {
     }
 
     {
-        void *thr = func_ov107_020c9848();
+        void *thr = Ov107_GetActorManager();
         int ctx = *(int *)thr;
         int result = Ov107_IsBehindView(ctx, self + 0x74);
         DispatchObjectCallbacks(*(int *)(self + 0x9c), result);

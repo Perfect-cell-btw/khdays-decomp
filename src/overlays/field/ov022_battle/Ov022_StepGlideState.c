@@ -257,7 +257,7 @@ extern int VEC_Mag(VecFx32 *pVec);
 extern void VEC_Normalize(VecFx32 *pIn, VecFx32 *pOut);                         /* VEC_Normalize */
 extern int FX_Atan2(int y, int x);
 extern u32 Ov022_ClampAngleTowardTarget(struct Actor *pActor, u32 nAngle);               /* Ov022_ClampAngleTowardTarget */
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern int VEC_Distance(VecFx32 *pA, VecFx32 *pB);                             /* VEC_Distance */
 extern struct CollSurfaceAttr *Actor_GetRecord(struct CollBlock *pBlock, int nTag);
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
@@ -446,9 +446,9 @@ static inline int FxMulL(int nValue, s64 nScale)
                 pActor->nRecoilDecay = 0;
             }
         }
-        pActor->nRecoil = func_02023c40() == 1 ? pActor->nRecoilDecay * 3 / 2 : pActor->nRecoilDecay;
+        pActor->nRecoil = GetFrameRateMode() == 1 ? pActor->nRecoilDecay * 3 / 2 : pActor->nRecoilDecay;
     } else {
-        pActor->nRecoil = func_02023c40() == 1 ? (-pGlide->nGlideSink * 3) / 2 : -pGlide->nGlideSink;
+        pActor->nRecoil = GetFrameRateMode() == 1 ? (-pGlide->nGlideSink * 3) / 2 : -pGlide->nGlideSink;
     }
     if ((pActor->nFlags2 & FLAG2_BIT19) != 0) {
         nAngle = Ov022_ClampAngleTowardTarget(pActor, (u16)(nAim + pActor->nAngleBias));
@@ -465,7 +465,7 @@ static inline int FxMulL(int nValue, s64 nScale)
                 for (i = 1; i < 3; i++) {
                     pAttr = Actor_GetRecord(&pActor->collLedge, pActor->collLedge.pContacts->aSurfaceSlots[i]);
                     if (pAttr != 0) {
-                        if (func_02023c40() == 1) {
+                        if (GetFrameRateMode() == 1) {
                             nRate = LEDGE_RATE_FAST;
                         } else {
                             nRate = LEDGE_RATE_SLOW;
@@ -477,7 +477,7 @@ static inline int FxMulL(int nValue, s64 nScale)
                 }
             }
         }
-        nRate = func_02023c40() == 1 ? pActor->nStepRate * 3 / 2 : pActor->nStepRate;
+        nRate = GetFrameRateMode() == 1 ? pActor->nStepRate * 3 / 2 : pActor->nStepRate;
         nTrig = ((int)nAngle >> 4) * 2;
         vecDir.x = -data_0203d210[nTrig];
         vecDir.z = -data_0203d210[nTrig + 1];
@@ -557,7 +557,7 @@ static inline int FxMulL(int nValue, s64 nScale)
             if (bLand) {
                 nFloor = pActor->collMain.vecContact.y + LAND_GAP;
                 if (Ov022_IsBlockDone(&pActor->comboBlk) == 0) {
-                    nSink = func_02023c40() == 1 ? pGlide->nGlideSink * 3 / 2 : pGlide->nGlideSink;
+                    nSink = GetFrameRateMode() == 1 ? pGlide->nGlideSink * 3 / 2 : pGlide->nGlideSink;
                     nDist = nFloor - pActor->vecAim.y;
                     nDist = nDist < 0 ? -nDist : nDist;
                     if (nDist < pGlide->nGlideLandReach + nSink) {
@@ -612,7 +612,7 @@ static inline int FxMulL(int nValue, s64 nScale)
         pActor->nStepRate = 0;
         pActor->nMoveRate = data_ov022_020b2eb0 ? MOVE_RATE_FAST : MOVE_RATE_SLOW;
         pActor->nInputMask &= ~INPUT_BIT2;
-        ScaleVec3Fx12(func_02023c40() == 1 ? END_SCALE_FAST : END_SCALE_SLOW, &pActor->vecMotion, &pActor->vecMotion);
+        ScaleVec3Fx12(GetFrameRateMode() == 1 ? END_SCALE_FAST : END_SCALE_SLOW, &pActor->vecMotion, &pActor->vecMotion);
         pActor->nRecoil = 0;
         pActor->bAimedJump = 0;
         if ((pActor->nFlags & FLAG_BIT35) != 0) {

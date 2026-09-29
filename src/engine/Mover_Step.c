@@ -40,7 +40,7 @@ typedef struct Mover {
 
 extern const VecFx32 data_02041dc8;     /* {0, 0, 0} */
 
-extern int func_02023c40(void);         /* frame-rate mode */
+extern int GetFrameRateMode(void);         /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern fx32 VEC_Normalize(const VecFx32 *pSrc, VecFx32 *pDst);      /* VEC_Normalize, returns length */
 extern void ScaleVec3Fx12(fx32 scale, const VecFx32 *v, VecFx32 *out);  /* scale a vector */
@@ -49,7 +49,7 @@ extern void Actor_ResolveMove(VecFx32 *from, VecFx32 *disp, Mover *mover);
 extern int Mover_ResolveFloor(VecFx32 *pos, Mover *mover, fx32 *fall);
 extern int Actor_ResolveGround(VecFx32 *pos, Mover *mover, fx32 *fall);
 
-#define FRAME_STEP() (func_02023c40() == 1 ? 0xcd : 0x89)
+#define FRAME_STEP() (GetFrameRateMode() == 1 ? 0xcd : 0x89)
 #define CLAMP(x, lo, hi) ((x) > (hi) ? (hi) : (x) < (lo) ? (lo) : (x))
 #define FX_MUL(a, b) ((fx32)(((s64)(a) * (b) + 0x800) >> 12))
 
@@ -135,7 +135,7 @@ int Mover_Step(Mover *mover, VecFx32 *pos, int collide)
     if (mover->flags & 0x10) {
         if (mover->speedY != (fx32)0x80000000) {
             int hit;
-            int k = func_02023c40() == 1 ? 0x1800 : 0x1000;
+            int k = GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
             fx32 g = FX_MUL(mover->gravity, k);
 
             hit = 0;

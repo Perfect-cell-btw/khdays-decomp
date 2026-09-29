@@ -23,12 +23,12 @@ int Ov107_ForwardVisibleEvent(void *self, int a2) {
     int a, b, ctx;
 
     if (p != 0 && (p->flags & 4) && ((Flags40 *)((char *)p + 0x40))->flag40) {
-        t = (Thread *)func_ov107_020c9848();
+        t = (Thread *)Ov107_GetActorManager();
         if (t->handler != 0) {
             a = (a2 >= 0) ? a2 : 0;
             b = (a2 >= 0) ? 3 : 0;
 
-            t = (Thread *)func_ov107_020c9848();
+            t = (Thread *)Ov107_GetActorManager();
             ctx = func_ov022_02083f0c();
             (*(void (**)(int, int, int))&t->handler)(ctx, b, a);
         }

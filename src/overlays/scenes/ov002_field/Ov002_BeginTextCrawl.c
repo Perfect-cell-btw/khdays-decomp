@@ -50,7 +50,7 @@ extern void *G2_GetBG3ScrPtr(void);
 extern void MIi_CpuCopy16(void *pSrc, void *pDst, unsigned int nSize);
 extern void TileSurface_InitAndUpload4bpp(int *pSurface, const Ov002SurfaceCfg *pCfg);
 extern void EnqueueObjGfxCommand(int *pSurface);
-extern int func_020303bc(int *pSurface, int nSource);
+extern int TextWindow_GetTextWidth(int *pSurface, int nSource);
 extern void Ov002_SelectEntryByKey(int nKey);
 extern int Ov002_GetItemResource(int nId);
 extern void Ov002_SelectEntry(int nId);
@@ -91,7 +91,7 @@ void Ov002_BeginTextCrawl(void)
     Ov002_SelectEntry(0xb);
 
     ctx->bRowsReady = 1;
-    Ov002_SetRowValue(0, func_020303bc(ctx->aCrawlSurface, ctx->pCrawlText));
+    Ov002_SetRowValue(0, TextWindow_GetTextWidth(ctx->aCrawlSurface, ctx->pCrawlText));
     Ov002_SelectEntryByKey(0);
     ctx->nPanelState = 4;
 }

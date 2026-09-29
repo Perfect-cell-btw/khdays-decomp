@@ -120,7 +120,7 @@ void Ov268_EnemyConstruct(char *self)
         if (i <= 0) {
             unsigned mask = 0xfffffc;
             (*(struct Pair **)(self + 0x40c))[i].res = CreateSubitemInstance0xB4(
-                (((*(unsigned *)(func_ov107_020c9848() + 0x88) + 0x8000) & mask) << 7 | 0x80000000)
+                (((*(unsigned *)(Ov107_GetActorManager() + 0x88) + 0x8000) & mask) << 7 | 0x80000000)
                 | (poses.w[i] & 0x1ff));
         } else {
             (*(struct Pair **)(self + 0x40c))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, poses.w[i]));

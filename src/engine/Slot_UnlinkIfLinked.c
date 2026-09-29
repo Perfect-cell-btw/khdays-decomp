@@ -1,6 +1,6 @@
 /* Unlinks a slot's OAM entry when it is linked and clears its linked bit. */
 
-extern void func_02031df0(void *ptr, void *arg);
+extern void DList_UnlinkAndClear(void *ptr, void *arg);
 
 void Slot_UnlinkIfLinked(int *pPtr, int index) {
     unsigned char *ptr = (unsigned char *)pPtr;
@@ -17,6 +17,6 @@ void Slot_UnlinkIfLinked(int *pPtr, int index) {
         return;
     }
 
-    func_02031df0(ptr, ptr + 4 + offset);
+    DList_UnlinkAndClear(ptr, ptr + 4 + offset);
     *flags &= ~1;
 }

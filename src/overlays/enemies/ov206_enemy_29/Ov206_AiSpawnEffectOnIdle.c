@@ -2,7 +2,7 @@
  * The constants at data_02041dc8 are copied into +0x14 unconditionally. Nothing further happens
  * while the gate byte at *(+0xc) is set.
  * Otherwise the owner is quiesced (mode 3), the progress fields (+0x24/+0x52) cleared, and a
- * 4-byte descriptor is queued through func_02031384 -- built from data_ov206_020d05a8's +4/+6,
+ * 4-byte descriptor is queued through MsgQueue_Post -- built from data_ov206_020d05a8's +4/+6,
  * except the low half is then overwritten with the owner's own id (+2), so only the high half of
  * the global actually survives. Finally the caller's action (+0x20) is dispatched through
  * SetIndexedSlot with Ov206_FallTick as the continuation. */
@@ -15,7 +15,7 @@ typedef struct {
     unsigned short hi;
 } Ov206_EffectDesc;
 
-extern void func_02031384(int a, Ov206_EffectDesc *desc, int n, int v);
+extern void MsgQueue_Post(int a, Ov206_EffectDesc *desc, int n, int v);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern void Ov206_FallTick(void);
 extern VecFx32 data_02041dc8;
@@ -40,7 +40,7 @@ void Ov206_AiSpawnEffectOnIdle(int self) {
     desc.lo = data_ov206_020d05a8[2];
     id = *(unsigned short *)(ctx[0] + 2);
     desc.lo = id;
-    func_02031384(1, &desc, 4, id);
+    MsgQueue_Post(1, &desc, 4, id);
 
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov206_FallTick);
 }

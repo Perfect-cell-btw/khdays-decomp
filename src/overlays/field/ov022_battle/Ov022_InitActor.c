@@ -182,10 +182,10 @@ extern u8 data_0204c254[];                 /* g_ov002PanelThresholds: +0xa/+0xc 
 extern u8 data_0204c240;                   /* g_modeAndDayClock.nModeFlags */
 extern u8 data_0204c248;                   /* Ov002TallyRules.nKind */
 
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern void func_ov022_02097ff0(struct Actor *pActor);                          /* InitField4d0Block */
 extern void Ov022_ApplyMissionLevelStats(struct Actor *pActor);                          /* Ov022_ApplyMissionLevelStats */
-extern struct ActorManager *func_ov107_020c9848(void);                 /* misattributed SDK name: returns gOv107ActorManager */
+extern struct ActorManager *Ov107_GetActorManager(void);
 extern int Slot_EvalPackedParam(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
 extern int Session_IsActive(void);                                                 /* Session_IsActive */
@@ -251,7 +251,7 @@ void Ov022_InitActor(struct Actor *pActor)
     pActor->nSpare694 = 0;
     pActor->nBodyReach = BODY_REACH;
     pActor->pCurAnim = 0;
-    pActor->nAreaFrame = func_02023c40() == 1 ? AREA_FRAME_ALT : AREA_FRAME;
+    pActor->nAreaFrame = GetFrameRateMode() == 1 ? AREA_FRAME_ALT : AREA_FRAME;
     pActor->nAimAngle = -1;
     pActor->nField4e4 = 0xffff;
     func_ov022_02097ff0(pActor);
@@ -261,7 +261,7 @@ void Ov022_InitActor(struct Actor *pActor)
     pActor->nAimMode = 0;
     pActor->nAirTimer = 0;
     nId = pActor->nId;
-    pMgr = func_ov107_020c9848();
+    pMgr = Ov107_GetActorManager();
     pActor->pSub = pMgr != 0 ? pMgr->apPlayers[nId] : 0;
     if (pActor->pSub != 0) {
         nRule = Slot_EvalPackedParam(pActor->nId, RULE_RATE);

@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern char *ByteCode_ResolveOperand(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern int func_020200b4(const char *s);
 extern int strncmp(const char *a, const char *b, int n);
 extern void OS_SNPrintf(char *dst, int n, const char *fmt, const char *a);
@@ -23,7 +23,7 @@ extern char data_ov023_0208a644[];
 int Ov023_Cmd_PlayEntityAnimByName(int ctx, char *args) {
     int entity = ScriptVm_ReadOperandInt(ctx, args);
     char *name = ByteCode_ResolveOperand(ctx, args + 8);
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     char group[0x20];
     char path[0x40];
     char prefix[0x10];

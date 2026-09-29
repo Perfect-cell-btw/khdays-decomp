@@ -56,7 +56,7 @@ void Ov008_LoadMissionMenuGraphics(Ov008MissionMenu *pMenu)
     int bAlt;
     u32 nId;
 
-    bAlt = func_02024e5c() == MODE_ALT;
+    bAlt = GetLanguage() == MODE_ALT;
     if (bAlt) {
         pFile = Archive_LoadFile(Ov008_PackSlotTag(0x14), HEAP_FILE);
     } else {
@@ -71,7 +71,7 @@ void Ov008_LoadMissionMenuGraphics(Ov008MissionMenu *pMenu)
     pOwner = Ov008_GetCtxBlock954c();
     Ov008_WithCharBlock_2(Ov008_PackSlotTag(0x10), GXS_LoadBG0Char);
     Ov008_WithCharBlock_2(Ov008_PackSlotTag(0x11), GXS_LoadBG2Char);
-    bAlt = func_02024e5c() == MODE_ALT;
+    bAlt = GetLanguage() == MODE_ALT;
     if (!bAlt) {
         nId = Ov008_PackHandleTag(7);
         if (nId != 0) {

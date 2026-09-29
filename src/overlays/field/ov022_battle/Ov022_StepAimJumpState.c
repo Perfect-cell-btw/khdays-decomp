@@ -155,7 +155,7 @@ struct Actor {
 
 extern short data_0203d210[];               /* kFxSinCosTable: sin, cos pairs */
 
-extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
+extern int GetFrameRateMode(void);                                                 /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
 extern void Ov022_CopyWord17cTo170(u8 *pBlk);                                      /* ov022_CopyWord17cTo170 */
 extern int VEC_Mag(VecFx32 *pVec);
@@ -195,7 +195,7 @@ static inline int FxMul(int nValue, int nScale)
     int nRate;
 
     nRet = 0;
-    nSpeed = func_02023c40() == 1 ? SPEED_FAST : SPEED_SLOW;
+    nSpeed = GetFrameRateMode() == 1 ? SPEED_FAST : SPEED_SLOW;
     if (Session_GetLocalPlayerIndex() == 0) {
         pActor->nFlags2 |= FLAG2_BIT11;
     }
@@ -287,7 +287,7 @@ static inline int FxMul(int nValue, int nScale)
                 if (Ov022_IsActiveAndCounterZero(pActor->comboBlk) && (pActor->nButtons2 & BUTTON_JUMP) != 0
                     && pActor->nAimAngle != NO_AIM && func_ov022_02092dc8(pActor->reactBlk, 1) != 0) {
                     pActor->bAimedJump = 1;
-                    if (func_02023c40() == 1) {
+                    if (GetFrameRateMode() == 1) {
                         nRate = pActor->nJumpRate * 3 / 2;
                     } else {
                         nRate = pActor->nJumpRate;

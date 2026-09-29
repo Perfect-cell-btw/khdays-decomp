@@ -32,7 +32,7 @@ extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
-extern void *func_ov107_020c9848(void);
+extern void *Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
@@ -76,10 +76,10 @@ void Ov245_CarrierActorInit(int selfArg) {
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
     *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7220);
-    os = func_ov107_020c9848();
+    os = Ov107_GetActorManager();
     ((struct Ov245Self *)self)->slots[0].pItem =
         CreateSubitemInstance0xB4((void *)((((*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc) << 7) | 0x80000000));
-    os = func_ov107_020c9848();
+    os = Ov107_GetActorManager();
     ((struct Ov245Self *)self)->slots[1].pItem =
         CreateSubitemInstance0xB4((void *)((((*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc) << 7) | 0x80000003));
     ((struct Ov245Self *)self)->slots[2].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x1a));

@@ -102,7 +102,7 @@ int Ov002_SendTallyUpdate(void)
         }
     }
 
-    if (func_02031384(7, &cmd,
+    if (MsgQueue_Post(7, &cmd,
                       (u16)((char *)pOut - (char *)cmd.aBody + 2)) != 0xffff) {
         pCtx->nTallyChangedMask = 0;
         pCtx->nTallyPair = 0;

@@ -16,7 +16,7 @@ extern void MainBlob_ResetSlotRows(void *obj, void *block);
 extern int FindResourceIndexByName(void *obj, const char *name);
 extern void RefreshObjectCallbacks(void *obj, int a);
 extern void Ov107_Actor_SetAttachSlot(void *self, int a, int b, const VecFx32 *v, int e);
-extern void *func_ov107_020c9848(void);
+extern void *Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(void *self, void *obj);
 extern void *JointModel_New(void *res, int n);
 extern void *Ov217_createRegistryEntryStoreField(void *self);
@@ -120,7 +120,7 @@ void Ov217_Construct(char *self)
     for (i = 0; i < 5; i++) {
         void *node;
         if (i <= 0) {
-            void *os = func_ov107_020c9848();
+            void *os = Ov107_GetActorManager();
             unsigned int kind = kinds.w[i] & 0x1ff;
             unsigned int addr = (*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc;
             addr = addr << 7;

@@ -24,6 +24,6 @@ void Ov002_CreateOverlayObjectOutsidePhases(void) {
 
     if (phase != 7 && (unsigned int)(phase - 8) > 5) {
         *slot = InstantiateClass(data_02042734, 0);
-        func_02020878(0);
+        PauseMenu_SetAllowed(0);
     }
 }

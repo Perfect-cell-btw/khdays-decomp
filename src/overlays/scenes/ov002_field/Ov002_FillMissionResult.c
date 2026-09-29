@@ -157,5 +157,5 @@ void Ov002_FillMissionResult(void)
             }
         }
     }
-    func_02035a34(0);
+    PartyMember_ClearEntryPairs(0);
 }

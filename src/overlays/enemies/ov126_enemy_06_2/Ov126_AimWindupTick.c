@@ -14,7 +14,7 @@
 
 extern void VEC_Add(void *a, void *b, void *out);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern int FX_Div(int num, int den);
 extern void Srt_SetTranslation(void *p, void *v);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
@@ -36,7 +36,7 @@ void Ov126_AimWindupTick(int *self) {
 
     VEC_Add((void *)(*(int *)(*state + 0x394) + 0x14), (void *)(*(int *)(*state + 0x398) + 0x14), &v);
     ScaleVec3Fx12(0x800, &v, &v);
-    ScaleVec3Fx12(-0x100, (void *)(*func_ov107_020c9848() + 0x7c), &w);
+    ScaleVec3Fx12(-0x100, (void *)(*Ov107_GetActorManager() + 0x7c), &w);
     VEC_Add(&v, &w, &dir);
     state[0xc] += *(int *)(self[0] + 0x2c);
     t = FX_Div(state[0xc], 0x2000);

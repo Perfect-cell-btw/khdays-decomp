@@ -8,7 +8,7 @@ extern void Camera_CommitMatricesEx(int p, int a, int b, int c, int d);
 extern void Scene_DrawNode(unsigned short *p);
 extern void SetMasterBrightnessSub(int n);
 extern void Slot_UnlinkAll(int *p);
-extern void func_0203255c(int *p);
+extern void DispObjList_UpdateQueued(int *p);
 extern void Obj_CommitAllSlots(int p);
 extern void Obj_Release(int *p);
 extern void *InstantiateClass(void *class_desc, int arg);
@@ -60,7 +60,7 @@ int Ov000_BootFadeAndSubScreenSetup(void) {
         bg[3] = bg[3] & ~3;
 
         Slot_UnlinkAll((int *)context->textEngine);
-        func_0203255c((int *)context->textEngine);
+        DispObjList_UpdateQueued((int *)context->textEngine);
         Obj_CommitAllSlots((int)context->textEngine);
         Obj_Release((int *)context->textEngine);
         SetMasterBrightnessSub(-0x10);

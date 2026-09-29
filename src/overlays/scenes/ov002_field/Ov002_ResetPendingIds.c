@@ -15,7 +15,7 @@ void Ov002_ResetPendingIds(const int *pIds, int nCount)
 
     pBlock = *(char **)&data_ov002_0207fa00 + 0x8c94;
 
-    func_02020878(0);
+    PauseMenu_SetAllowed(0);
     Ov002_SetSessionActive(1, 0xff);
     MIi_CpuClear16(0xffff, pBlock + 0x52, 0x10);
 
@@ -30,7 +30,7 @@ void Ov002_ResetPendingIds(const int *pIds, int nCount)
         } while (i < nCount);
     }
 
-    *(int *)(pBlock + 0x64) = func_0201e428() << 12;
+    *(int *)(pBlock + 0x64) = GetMasterBrightnessMain() << 12;
     *(unsigned char *)(pBlock + 0x51) = 0;
     *(unsigned char *)(pBlock + 0x68) = 0;
 }

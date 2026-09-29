@@ -56,7 +56,7 @@ extern void *Ov022_StepChargeSequence(struct Actor *pActor);
 extern void Ov022_EnterState0E(struct Actor *pActor);
 extern void Ov022_StepDownedState(void);
 extern void Callbacks_SetByte(int nArg);
-extern void func_02020878(int nArg);
+extern void PauseMenu_SetAllowed(int nArg);
 extern void Ov022_CopyBlock2c00(struct Actor *pActor);
 extern void *Ov022_ResolveGuardBreakState(struct Actor *pActor);
 extern int Ov022_IsType8AndBit7Set(u8 *pBlk);
@@ -135,7 +135,7 @@ void *Ov022_SelectForcedState(struct Actor *pActor)
                 pNext = Ov022_ActorSetState(pActor, 0x10);
                 if (pActor->nOwner == Session_GetLocalPlayerIndex()) {
                     Callbacks_SetByte(0);
-                    func_02020878(0);
+                    PauseMenu_SetAllowed(0);
                 }
             }
         } else {
@@ -146,7 +146,7 @@ void *Ov022_SelectForcedState(struct Actor *pActor)
                 Ov022_CopyBlock2c00(pActor);
                 pActor->nFlags |= (1ULL << 8);
                 if (((u32)pActor->nFlags & 0x10000) == 0) {
-                    func_02020878(0);
+                    PauseMenu_SetAllowed(0);
                     pNext = Ov022_ResolveGuardBreakState(pActor);
                 } else {
                     pNext = Ov022_ActorSetState(pActor, 0x1c);

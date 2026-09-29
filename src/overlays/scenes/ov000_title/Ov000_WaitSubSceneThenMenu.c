@@ -52,8 +52,8 @@ Ov000StateFn Ov000_WaitSubSceneThenMenu(void) {
     ZeroHalfThenFree(ctx->resource);
     params.first = ctx->firstValue;
     params.second = ctx->secondValue;
-    func_020235bc(0x20e9);
+    GameState_ClearFlag(0x20e9);
     StoreGlobalShortAt0(0);
-    func_020208f0();
+    Sleep_Unblock();
     return Ov000_EnterSceneAndLoadResource(&params);
 }

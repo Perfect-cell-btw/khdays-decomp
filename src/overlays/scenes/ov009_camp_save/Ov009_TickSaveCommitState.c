@@ -89,7 +89,7 @@ void Ov009_TickSaveCommitState(Ov009SaveContext *ctx)
             Ov009_DrawMenuText(ctx, 3);
             PlaySound(0, 0x39);
             ctx->state = 4;
-            func_020208f0();
+            Sleep_Unblock();
             Ov009_SetCtxField95fc(1);
         }
         break;

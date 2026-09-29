@@ -47,7 +47,7 @@ void *Ov002_SceneCrawlStep(void)
     if ((data_0204c190 & 0x83) != 0) {
         Ov002_WaitThenPlayIdle();
     } else {
-        if (func_02023c40() != 2 || (func_02023c50() & 1) == 0) {
+        if (GetFrameRateMode() != 2 || (Obj_GetFrameCount() & 1) == 0) {
             if (Ov002_StepCrawlChar(1) == 0) {
                 if (ctx[0x1f8] > 0) {
                     Ov002_SceneDrawEntryLines();

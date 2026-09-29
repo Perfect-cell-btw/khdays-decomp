@@ -121,7 +121,7 @@ int Ov022_Party_ApplyNetState(void)
         return 0;
     }
 
-    cardResult = func_0202bfb8();
+    cardResult = EntityMgr_GetResourceCount();
     resource = (char *)Ov022_GetGlobalPlus14_2();
     if (*(unsigned char *)(resource + 0xc0) == 0) {
         List_TryInvokeEntry(0);

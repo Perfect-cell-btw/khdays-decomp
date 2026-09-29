@@ -9,7 +9,7 @@ extern unsigned char data_ov000_0205ac2c[];
 extern void *data_0204be14;
 
 void Ov000_BeginCardTransfer(int slot) {
-    func_02020904();
+    Sleep_Block();
     data_ov000_0205ac2c[0] = 0;
     data_ov000_0205ac2c[1] = (unsigned char)slot;
     Ov000_StartCardThread((data_ov000_0205ac2c[1] << 1) * 0x2018 + 0x20,

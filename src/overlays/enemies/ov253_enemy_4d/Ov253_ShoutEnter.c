@@ -17,7 +17,7 @@ void Ov253_ShoutEnter(int *node) {
     struct hpair buf = *(struct hpair *)((char *)&data_ov253_020d4964 + 0x10);
 
     buf.a = *(unsigned short *)(*state + 2);
-    func_02031384(4, &buf, 4);
+    MsgQueue_Post(4, &buf, 4);
     Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     ((struct w8 *)(*(int *)(*state + 0x3b4) + 8))->lo |= 1;
     state[7] = 0;

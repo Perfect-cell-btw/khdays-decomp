@@ -50,8 +50,8 @@ int Ov009_CommitSaveFields(Ov009SaveContext *ctx, int slot)
 
     ctx->flag18bd = GameState_IsFlagSet(0x18bd);
     ctx->flag18c9 = GameState_IsFlagSet(0x18c9);
-    func_020235bc(0x18bd);
-    func_020235bc(0x18c9);
+    GameState_ClearFlag(0x18bd);
+    GameState_ClearFlag(0x18c9);
 
     result = Ov009_CommitSaveToSlot(slot);
     ctx->transferState = 3;

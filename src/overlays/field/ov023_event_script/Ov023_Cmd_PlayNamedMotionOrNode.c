@@ -1,5 +1,5 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern char *ArrayEntryPtrD0(int index);
 extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 
@@ -15,7 +15,7 @@ int Ov023_Cmd_PlayNamedMotionOrNode(int ctx, char *args) {
     int b = ScriptVm_ReadOperandInt(ctx, args + 0x20);
     int kind = -1;
     char name[0x40];
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     char *tbl = *(char **)(*(char **)(ctx + 0x128) + 0x440);
     if (tbl != 0 && *(int *)(tbl + id * 0x1a64 + 0x15e0) != 0) {
         name[0] = 0;

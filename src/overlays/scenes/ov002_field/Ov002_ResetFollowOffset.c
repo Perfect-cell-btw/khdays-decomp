@@ -17,7 +17,7 @@ void Ov002_ResetFollowOffset(void)
     vDefault = data_ov002_0207e19c;
     pOwner = *(int *)&data_ov002_0207f628;
 
-    func_02023c40();
+    GetFrameRateMode();
 
     if (*(int *)(pOwner + 0xe0) != 0) {
         *(VecFx32 *)(pOwner + 0x6b4) = vDefault;

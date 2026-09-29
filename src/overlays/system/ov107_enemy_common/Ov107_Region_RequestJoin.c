@@ -15,7 +15,7 @@ void Ov107_Region_RequestJoin(char *self, char *other) {
     buf.f2 = 1;
     buf.f3 = (u8)*(u16 *)(other + 2);
 
-    func_02031384(4, &buf, 4);
+    MsgQueue_Post(4, &buf, 4);
 
     *(u32 *)(other + 0x40) &= ~4;
 }

@@ -32,7 +32,7 @@ int ResCache_Acquire(int a, Slot_0201f468 **out, int c) {
 
     v = data_0204bbfc[0x14 / 4];
     if (v == 0) {
-        v = func_02023650();
+        v = Heap_GetCurrent();
     }
     p->w8 = v;
     p->wc = Loader_RequestFile(a, c);

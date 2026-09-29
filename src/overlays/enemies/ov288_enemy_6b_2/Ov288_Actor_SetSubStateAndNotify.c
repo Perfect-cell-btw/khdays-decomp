@@ -41,7 +41,7 @@ struct Actor {
     int bias38c;
 };
 
-extern void func_02031384(int channel, void *packet, int len);
+extern void MsgQueue_Post(int channel, void *packet, int len);
 extern void SetSubitemState(void *subitem, int channel, int value, int on);
 extern void RefreshObjectCallbacks(void *subitem, int channel);
 
@@ -66,7 +66,7 @@ void Ov288_Actor_SetSubStateAndNotify(struct Actor *actor, int index, int on)
     ((u8 *)p)[3] = 4;
     ((u8 *)p)[2] = 5;
     packet.arg = (u8)((u8)(index + actor->bias38c * 4) & 0x7f | (u32)(on << 31) >> 24);
-    func_02031384(4, &packet, 0xe);
+    MsgQueue_Post(4, &packet, 0xe);
     SetSubitemState(actor->pSubitem384, 0, (short)index, on);
     biased = (short)(index + actor->bias38c * 4);
     SetSubitemState(actor->pSubitem384, 2, biased, on);

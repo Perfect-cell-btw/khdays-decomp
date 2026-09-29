@@ -26,5 +26,5 @@ void PollAndLatchRequest(void) {
         PlaySound(0, 1);
     }
     (&data_0204be08)[1] = 1;
-    func_02031384(0x12, &data_0204be0a, 2);
+    MsgQueue_Post(0x12, &data_0204be0a, 2);
 }

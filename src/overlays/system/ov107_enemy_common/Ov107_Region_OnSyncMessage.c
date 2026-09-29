@@ -31,7 +31,7 @@ void Ov107_Region_OnSyncMessage(Ov107 *self, Msg *msg, int arg2)
             return;
         }
         msg->field_2 = 2;
-        func_02031384(4, msg, (unsigned short)arg2);
+        MsgQueue_Post(4, msg, (unsigned short)arg2);
     } else if (state == 2) {
         Res *res = (Res *)Ov107_FindMessageHandler(msg->field_3);
         Ov107_InitObjectFromSource((int)self, (int)res);
@@ -45,7 +45,7 @@ void Ov107_Region_OnSyncMessage(Ov107 *self, Msg *msg, int arg2)
             return;
         }
         msg->field_2 = 4;
-        func_02031384(4, msg, (unsigned short)arg2);
+        MsgQueue_Post(4, msg, (unsigned short)arg2);
     } else if (state == 4) {
         Res *res = (Res *)Ov107_FindMessageHandler(msg->field_3);
         Ov107_InvokeSlot0x74((int)self, (int)res);

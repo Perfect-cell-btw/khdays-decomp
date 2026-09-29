@@ -4,7 +4,7 @@
  * Archive_LoadFile, builds cells with Res_LoadSpriteSet(&info, arch, -1, idx, param) and uploads
  * their palette (pPltt->[8]/[0xc]) and BG3 char data (pChar->[0x10]/[0x14]) to the sub engine.
  *   Normal title states {0,1,2,3,10,11,13,14}: main-pack cells idx 1 then idx 0; when
- *     func_02024e5c()!=1 also overlays language pack sub-resource 3 (idx 0 cell).
+ *     GetLanguage()!=1 also overlays language pack sub-resource 3 (idx 0 cell).
  *   Attract states {4,5,6,7}: main-pack cells idx 3, then idx 4, then idx 2; language variant
  *     uses sub-resource 4. Other states do nothing but free the pack. */
 
@@ -45,7 +45,7 @@ void Ov008_UploadTextCells(int state, int p2, int p3, int param4) {
     case 14:
         Res_LoadSpriteSet(&info1, piVar1, -1, 1, 1);
         GX_LoadBGPltt(info1.pPltt->a[3], 0, info1.pPltt->a[2]);
-        iVar2 = func_02024e5c() == 1;
+        iVar2 = GetLanguage() == 1;
         if (iVar2) {
             GX_LoadBG1Char(info1.pChar->a[5], 0, info1.pChar->a[4]);
         } else {
@@ -67,7 +67,7 @@ void Ov008_UploadTextCells(int state, int p2, int p3, int param4) {
     case 7:
         Res_LoadSpriteSet(&info1, piVar1, -1, 3, 3);
         GX_LoadBGPltt(info1.pPltt->a[3], 0, info1.pPltt->a[2]);
-        iVar2 = func_02024e5c() == 1;
+        iVar2 = GetLanguage() == 1;
         if (iVar2) {
             GX_LoadBG1Char(info1.pChar->a[5], 0, info1.pChar->a[4]);
             GX_LoadBG2Char(info1.pChar->a[5], 0, info1.pChar->a[4]);

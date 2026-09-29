@@ -84,7 +84,7 @@ StateFn Ov000_TickMenuLoop(void) {
     cancel = 0;
     Ov000_FadeStateHookNoOp();
     if (ctx->inputReady != 0) {
-        func_020362ec(ctx->inputSource);
+        KeyRepeat_Step(ctx->inputSource);
         ctx->cursorRow[ctx->page] = Ov000_StepMenuSelection(ctx->inputSource,
                                                         ctx->cursorRow[ctx->page],
                                                         ctx->page);

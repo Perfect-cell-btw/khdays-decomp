@@ -8,7 +8,7 @@
  */
 extern void VEC_Add(void *a, void *b, void *out);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern void Srt_SetTranslation(int p, void *v);
 extern void SetSubitemState(int a, int b, int c, int d);
 extern void SetIndexedSlot(int self, int idx, int cb);
@@ -21,7 +21,7 @@ void Ov126_EnterAimSubNode(int *self) {
 
     VEC_Add((void *)(*(int *)(*state + 0x394) + 0x14), (void *)(*(int *)(*state + 0x398) + 0x14), v);
     ScaleVec3Fx12(0x800, v, v);
-    ScaleVec3Fx12(-0x100, (void *)(*func_ov107_020c9848() + 0x7c), w);
+    ScaleVec3Fx12(-0x100, (void *)(*Ov107_GetActorManager() + 0x7c), w);
     VEC_Add(v, w, v);
     *(int *)(state[4] + 0x5c) &= ~2;
     Srt_SetTranslation(state[4] + 4, v);

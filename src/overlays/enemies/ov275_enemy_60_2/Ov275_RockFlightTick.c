@@ -39,7 +39,7 @@ extern int Ov275_TestEntitiesAgainstRect(void *collision, VecFx32 *pos, int *out
 extern int Ov002_DispatchNodeEvent(int obj, BreakReq *req);
 extern int *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
 extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
-extern void func_02031384(int to, void *msg, int size);
+extern void MsgQueue_Post(int to, void *msg, int size);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;
 extern const Cmd14 data_ov275_020d6022;
@@ -188,7 +188,7 @@ void Ov275_RockFlightTick(int *node)
         PACK(msg3, posY, *(Fx32 *)&pos.y, 8);
         PACK(msg3, posZ, *(Fx32 *)&pos.z, 11);
         msg3.id = *(u16 *)(*state + 2);
-        func_02031384(1, &msg3, 0xe);
+        MsgQueue_Post(1, &msg3, 0xe);
     }
     Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     state[9] = 0;

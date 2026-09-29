@@ -20,6 +20,6 @@ void func_ov022_02091d80(unsigned int *param_1, int param_2, int param_3, int pa
         m.f2 = *(unsigned char *)(iVar2 + 9);
         m.g0 = *param_1;
         m.b2 = *(char *)(param_2 + 1);
-        func_02031384(9, &m, 3);
+        MsgQueue_Post(9, &m, 3);
     }
 }

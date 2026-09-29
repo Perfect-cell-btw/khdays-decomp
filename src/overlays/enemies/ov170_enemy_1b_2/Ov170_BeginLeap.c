@@ -53,7 +53,7 @@ void Ov170_BeginLeap(int *node)
         i = 0;
         step = 0;
         for (; i < state[0xd] / 2; i++) {
-            step += FX_Mul(FX_Inv(*(int *)(func_ov107_020c9848() + 0x40)), -0x100);
+            step += FX_Mul(FX_Inv(*(int *)(Ov107_GetActorManager() + 0x40)), -0x100);
             state[0xf] -= step;
         }
         state[0xd] <<= 12;

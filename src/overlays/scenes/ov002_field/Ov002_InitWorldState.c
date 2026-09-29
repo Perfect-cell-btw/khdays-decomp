@@ -136,6 +136,6 @@ void *Ov002_InitWorldState(int enabled)
     tableIndex = ((int)state->orbitAngleB >> 4) * 2;
     state->radialZ = data_0203d210[tableIndex + 1];
 
-    Ov002_Camera_SetAnchor(func_02023bf0(), &data_02041dc8);
+    Ov002_Camera_SetAnchor(Obj_GetCurrent(), &data_02041dc8);
     return (void *)Ov002_Camera_UpdateFollow;
 }

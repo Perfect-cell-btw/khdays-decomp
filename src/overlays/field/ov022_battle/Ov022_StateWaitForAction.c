@@ -26,7 +26,7 @@ extern u8 data_0204be04;
 
 extern int func_ov022_02083f0c(void);
 extern void Ov022_UpdateCameraAndViews(int mode);
-extern int func_020335c8(void);
+extern int SoundMgr_IsBgmFadingOut(void);
 extern int SoundMgr_IsState1(void);
 extern int Ov002_ElementList_IsEmpty(void);
 extern int Ov002_GetRootField8b68Alt(void);
@@ -46,8 +46,8 @@ extern void Ov002_SetSessionActive(int kind, int value);
 extern void Ov022_SetBit3OnPtr20(void *object, int enabled);
 extern void SetMasterBrightnessSub(int brightness);
 extern void Ov002_InitRefreshWindow(void);
-extern int func_0201e428(void);
-extern int func_0201e438(void);
+extern int GetMasterBrightnessMain(void);
+extern int GetMasterBrightnessSub(void);
 
 extern void *func_ov022_0208310c(void);
 extern void *Ov022_StateFinishAction(void);
@@ -72,7 +72,7 @@ Ov022StateCallback Ov022_StateWaitForAction(void)
     if ((context->flags & 8) != 0) {
         return 0;
     }
-    if (func_020335c8() != 0 || SoundMgr_IsState1() != 0) {
+    if (SoundMgr_IsBgmFadingOut() != 0 || SoundMgr_IsState1() != 0) {
         return 0;
     }
     if (Ov002_ElementList_IsEmpty() == 0) {
@@ -111,8 +111,8 @@ Ov022StateCallback Ov022_StateWaitForAction(void)
             Ov002_InitRefreshWindow();
         }
     } else {
-        context->viewX = func_0201e428() << 12;
-        context->viewY = func_0201e438() << 12;
+        context->viewX = GetMasterBrightnessMain() << 12;
+        context->viewY = GetMasterBrightnessSub() << 12;
     }
 
     return Ov022_StateFinishAction;

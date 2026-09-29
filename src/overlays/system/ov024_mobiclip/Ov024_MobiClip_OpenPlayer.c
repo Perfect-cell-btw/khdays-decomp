@@ -37,7 +37,7 @@ struct MobiClipOpenArgs {
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int value, int size);
-extern void func_0202f7fc(void *dst, void *src);
+extern void Font_LoadUTF16(void *dst, void *src);
 extern void GX_LoadBGPltt(const void *src, int offset, int size);
 extern void GXS_LoadBGPltt(const void *src, int offset, int size);
 extern void StoreGlobalArrayEntry(int slot, void *table);
@@ -74,7 +74,7 @@ void *Ov024_MobiClip_OpenPlayer(struct MobiClipOpenArgs *args)
     *(int *)(player + 0x8bd8) = 0;
     *(u8 *)(player + 0x8be0) = 0;
     MI_CpuFill8(player + 0x8598, 0, 0x5a4);
-    func_0202f7fc(player + 0x8b40, data_ov024_02093958);
+    Font_LoadUTF16(player + 0x8b40, data_ov024_02093958);
     GX_LoadBGPltt(data_ov024_02093918, 0x1a0, 0x40);
     GXS_LoadBGPltt(data_ov024_02093918, 0x1a0, 0x40);
     *(char **)(player + 0x85a4) = player + 0x8b4c;

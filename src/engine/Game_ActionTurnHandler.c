@@ -4,7 +4,7 @@
  * Game_RunActionScript). param_1 is the action-system state, param_2 the turn angle.
  *
  * A negative angle is the cancel/finish path: -0x63 is normalised to 0, the residual angle is
- * released via func_0202ba44((-angle) & 0xffff), and it returns 1 (slot done). Otherwise, when the
+ * released via EntityMgr_DropTextureImage((-angle) & 0xffff), and it returns 1 (slot done). Otherwise, when the
  * controlled actor is still active (Obj_IsIdFree on the actor at *(*(state+0x128)+0x28)+0xc), it
  * fires the turn effect TailForwardTrackEntry_2(angle, actor, 0, 0) and applies the rotation via
  * Slot48_StoreAtCurrentIndex(state, -angle) - using -0x63 as the marker when the angle is 0 - and returns 0
@@ -24,7 +24,7 @@ int Game_ActionTurnHandler(int param_1, int param_2)
         if (param_2 == -0x63) {
             param_2 = 0;
         }
-        func_0202ba44(-param_2 & 0xffff);
+        EntityMgr_DropTextureImage(-param_2 & 0xffff);
         return 1;
     }
     if (Obj_IsIdFree(*(int *)(*(int *)(*(int *)(param_1 + 0x128) + 0x28) + 0xc)) != 0) {

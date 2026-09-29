@@ -9,15 +9,15 @@ extern void func_02003948(int result);
  * the slot and signal completion (-2). */
 void Ov010_TeardownWorkArea(void) {
     int *root = NNSi_FndGetCurrentRootHeap();
-    int saved = func_02023650();
+    int saved = Heap_GetCurrent();
 
-    func_0202362c(0);
+    Heap_SetCurrent(0);
     if (*root != 0) {
         TileTextRenderer_Destroy(root + 6);
         FontResource_Destroy(root + 3);
         NNSi_FndFreeFromDefaultHeap(*root);
         *root = 0;
     }
-    func_0202362c(saved);
+    Heap_SetCurrent(saved);
     func_02003948(-2);
 }

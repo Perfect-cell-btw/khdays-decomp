@@ -10,7 +10,7 @@ extern int Ov002_GetRootField8b68Alt(void);
 extern int GameState_IsFlagSet(int nCue);
 extern void Obj_SetField14(int nHandle, void (*pfnStep)(void));
 extern void Callbacks_SetByte(int nValue);
-extern void func_02020878(int nValue);
+extern void PauseMenu_SetAllowed(int nValue);
 extern void Ov002_SessionTick(void);
 
 /* Put the mission scene into its paused state.
@@ -46,5 +46,5 @@ void Ov002_PauseMissionScene(void)
     if ((data_0204c240 & 4) != 0) {
         Callbacks_SetByte(0);
     }
-    func_02020878(0);
+    PauseMenu_SetAllowed(0);
 }

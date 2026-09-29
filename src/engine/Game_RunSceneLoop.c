@@ -65,6 +65,6 @@ void Game_RunSceneLoop(void) {
     GXx_SetMasterBrightness_(0x400106c, 0x10);
     packed = Ov105_GetState() << 16;
     packed |= Ov105_GetStatusLow();
-    func_0202362c(0);
+    Heap_SetCurrent(0);
     func_02003948(packed | 0x80000000);
 }

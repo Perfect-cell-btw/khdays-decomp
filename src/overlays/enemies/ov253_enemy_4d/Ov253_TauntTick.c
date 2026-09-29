@@ -22,7 +22,7 @@ void Ov253_TauntTick(int *node) {
     {
         struct hpair buf = data_ov253_020d4964[1];
         buf.a = *(unsigned short *)(*state + 2);
-        func_02031384(4, &buf, 4);
+        MsgQueue_Post(4, &buf, 4);
     }
     Ov107_PostTagUpdate((Actor *)(*state), 5, 1);
     state[7] = RandNextScaled(0x4001) + 0x4000;

@@ -32,7 +32,7 @@ Ov022StateCallback Ov022_StateReturnToHub(void)
 
     int completed = 0;
 
-    context->viewX += func_02023c40() == 1 ? 0x2000 : 0x1800;
+    context->viewX += GetFrameRateMode() == 1 ? 0x2000 : 0x1800;
     if (context->viewX >= 0x10000) {
         context->viewX = 0x10000;
         completed = 1;

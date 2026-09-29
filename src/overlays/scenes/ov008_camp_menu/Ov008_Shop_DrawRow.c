@@ -112,7 +112,7 @@ void Ov008_Shop_DrawRow(int nRow, Ov008ParamRecord *pRecord)
     ctx = data_ov008_02090fac;
     pSurface = &ctx->textSurface;
     nY = nRow * ROW_HEIGHT;
-    nMode = func_02024e5c();
+    nMode = GetLanguage();
     switch (ctx->nTab) {
     case TAB_BUY:
         nStyle = (pRecord->nPrice <= data_0204be18->nMunny && pRecord->bLevelReached == 0

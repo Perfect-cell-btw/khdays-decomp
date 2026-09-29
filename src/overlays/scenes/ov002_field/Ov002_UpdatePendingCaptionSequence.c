@@ -24,9 +24,9 @@ typedef struct Ov002SessionActorFlags {
 
 extern unsigned char *data_ov002_0207fa00;
 extern int Ov002_Hud_RequestCaption(int nCaptionId);
-extern int func_0201e428(void);
-extern int func_0201e438(void);
-extern int func_02023c40(void);
+extern int GetMasterBrightnessMain(void);
+extern int GetMasterBrightnessSub(void);
+extern int GetFrameRateMode(void);
 extern void SetMasterBrightnessMain(int nBrightness);
 extern void SetMasterBrightnessSub(int nBrightness);
 extern int Ov002_IsGlobalModeZero(void);
@@ -34,7 +34,7 @@ extern void Ov002_SetSessionActive(int bActive, unsigned int nParts);
 extern Ov002SessionActorFlags *GetEntryField20ByIndex(int nIndex);
 extern int func_ov022_020886d0(int nIndex);
 extern int Ov022_GetEntryField12(int nIndex);
-extern void func_02020878(int bEnabled);
+extern void PauseMenu_SetAllowed(int bEnabled);
 
 #pragma opt_propagation off
 int Ov002_UpdatePendingCaptionSequence(void)
@@ -59,15 +59,15 @@ int Ov002_UpdatePendingCaptionSequence(void)
         nSettled = 0;
         nScreen = 0;
         do {
-            nBrightness = (nScreen == 0 ? func_0201e428() : func_0201e438()) << 12;
+            nBrightness = (nScreen == 0 ? GetMasterBrightnessMain() : GetMasterBrightnessSub()) << 12;
             if (nBrightness < 0) {
-                nBrightness += func_02023c40() == 1 ? 0x1800 : 0x1000;
+                nBrightness += GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
                 if (nBrightness >= 0) {
                     nBrightness = 0;
                     nSettled++;
                 }
             } else {
-                nBrightness -= func_02023c40() == 1 ? 0x1800 : 0x1000;
+                nBrightness -= GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
                 if (nBrightness <= 0) {
                     nBrightness = 0;
                     nSettled++;
@@ -81,11 +81,11 @@ int Ov002_UpdatePendingCaptionSequence(void)
         } while (nScreen < 2);
         if (nSettled == 2) {
             pState->bPhase++;
-            pState->nBrightnessFx = func_0201e428() << 12;
+            pState->nBrightnessFx = GetMasterBrightnessMain() << 12;
         }
         break;
     case 2:
-        pState->nBrightnessFx -= func_02023c40() == 1 ? 0x1800 : 0x1000;
+        pState->nBrightnessFx -= GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
         if (pState->nBrightnessFx <= -0x8000) {
             pState->nBrightnessFx = -0x8000;
             pState->bPhase++;
@@ -97,8 +97,8 @@ int Ov002_UpdatePendingCaptionSequence(void)
             pState->bPhase++;
         break;
     case 4:
-        pState->nBrightnessFx = func_0201e428() << 12;
-        pState->nBrightnessFx += func_02023c40() == 1 ? 0x1800 : 0x1000;
+        pState->nBrightnessFx = GetMasterBrightnessMain() << 12;
+        pState->nBrightnessFx += GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
         if (pState->nBrightnessFx >= 0) {
             bBusy = 0;
             pState->nBrightnessFx = 0;
@@ -113,7 +113,7 @@ int Ov002_UpdatePendingCaptionSequence(void)
     if (!bBusy && (nFlags = GetEntryField20ByIndex(0)->dwStateFlags,
                   nEntry = 0, (nFlags & 0x10000000) == 0)
         && !func_ov022_020886d0(nEntry) && Ov022_GetEntryField12(0) > 0)
-        func_02020878(1);
+        PauseMenu_SetAllowed(1);
     return bBusy;
 }
 #pragma opt_propagation on

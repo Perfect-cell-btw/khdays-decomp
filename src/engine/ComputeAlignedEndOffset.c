@@ -6,7 +6,7 @@
 extern int IntArray_Get();
 unsigned int ComputeAlignedEndOffset(int param_1, int *param_2)
 {
-    int a = func_02031b2c(param_1);
+    int a = DispObjList_GetEngine(param_1);
     unsigned int v;
     a = IntArray_Get((int)(param_2 + 0xd), a);
     v = *param_2 + a;

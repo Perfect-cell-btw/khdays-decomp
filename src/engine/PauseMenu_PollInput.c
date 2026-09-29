@@ -3,9 +3,9 @@
  * a first open (+0xe8 clear, root state 1) outside mode bit 1 hands over to the overlay and sets
  * game field 0x2484. With data_0204c240 bit 2 outside mode bit 1 it only runs the pending-request
  * pair (PollAndLatchRequest / LatchPendingRequestOnce) when field 0x248f is set and nothing is open. Otherwise the
- * menu needs data_0204bd85 or field 0x20ef, an idle menu (func_020208e0) and an expired timer
+ * menu needs data_0204bd85 or field 0x20ef, an idle menu (PauseMenu_GetMode) and an expired timer
  * (+0xc8, counted down here); it then reacts to B or a latched request (+0xd8): it is refused while
- * func_0201e428 reports busy (unless mode 0xc without func_0201e438), in mode bit 1 without the
+ * GetMasterBrightnessMain reports busy (unless mode 0xc without GetMasterBrightnessSub), in mode bit 1 without the
  * overlay's permission, and it only latches the request (+0xd8) in mode bit 3 with data_0204be04
  * clear or when an entry (+0xdc) finds none of the three overlay states; a real open pushes step 1
  * or 2 (Callbacks_SetByte) before Callbacks_Run(0). */
@@ -60,7 +60,7 @@ int PauseMenu_PollInput(void)
         }
     }
     if ((data_0204c240 & 4) && !(LoadGlobalU16At0() & 2)) {
-        if ((func_0201e438() == 0 || Ov023_ScriptTestStatusBit3() != 0) && GameState_IsFlagSet(0x248f) != 0
+        if ((GetMasterBrightnessSub() == 0 || Ov023_ScriptTestStatusBit3() != 0) && GameState_IsFlagSet(0x248f) != 0
             && ctx->opened == 0) {
             PollAndLatchRequest();
             LatchPendingRequestOnce();
@@ -70,7 +70,7 @@ int PauseMenu_PollInput(void)
     if (data_0204bd85 == 0 && GameState_IsFlagSet(0x20ef) == 0) {
         return 0;
     }
-    if (func_020208e0() != 0) {
+    if (PauseMenu_GetMode() != 0) {
         return 0;
     }
     if (ctx->timer > 0) {
@@ -78,7 +78,7 @@ int PauseMenu_PollInput(void)
         return 0;
     }
     if ((data_0204c190 & 8) || ctx->request != 0) {
-        if (func_0201e428() != 0 && (LoadGlobalU16At0() != 0xc || func_0201e438() != 0)) {
+        if (GetMasterBrightnessMain() != 0 && (LoadGlobalU16At0() != 0xc || GetMasterBrightnessSub() != 0)) {
             return 0;
         }
         if ((LoadGlobalU16At0() & 2) && Ov002_Scene_IsIdle() == 0) {

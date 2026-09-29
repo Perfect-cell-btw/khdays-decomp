@@ -57,7 +57,7 @@ void *Ov006_MissionInitVideoScene(void) {
         packed = ((u32)high << 16) | low | 0x80000000;
     }
 
-    func_0202362c(0);
+    Heap_SetCurrent(0);
     func_02003948(packed);
     return 0;
 }

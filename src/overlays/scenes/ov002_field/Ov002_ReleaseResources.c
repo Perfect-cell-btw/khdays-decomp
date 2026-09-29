@@ -18,8 +18,8 @@ typedef struct {
     int f78;
 } Ov107Node;
 
-extern Ov107Node *func_ov107_020c9848(void);
-extern void func_ov107_020c9c1c(int nodeId);
+extern Ov107Node *Ov107_GetActorManager(void);
+extern void Ov107_VeneerTo_Obj_Destroy(int nodeId);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void Ov002_ResetEntryTable(void);
 
@@ -29,9 +29,9 @@ void Ov002_ReleaseResources(void) {
     Ov002Res *r = data_ov002_0207fa14;
 
     if (r->nodeId != -1) {
-        func_ov107_020c9848()->f74 = 0;
-        func_ov107_020c9848()->f78 = 0;
-        func_ov107_020c9c1c(r->nodeId);
+        Ov107_GetActorManager()->f74 = 0;
+        Ov107_GetActorManager()->f78 = 0;
+        Ov107_VeneerTo_Obj_Destroy(r->nodeId);
         UnloadActorOverlay();
         r->nodeId = -1;
     }

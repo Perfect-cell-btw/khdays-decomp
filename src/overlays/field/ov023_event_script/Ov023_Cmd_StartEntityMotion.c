@@ -1,5 +1,5 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
 /* The script VM entity table: ctx->world->entities + id * sizeof(Entity). */
@@ -12,6 +12,6 @@ int Ov023_Cmd_StartEntityMotion(int ctx, int args) {
     int entity = ScriptVm_ReadOperandInt(ctx, (void *)args);
     int param = ScriptVm_ReadOperandInt(ctx, (void *)(args + 8));
     Ov023_ActorQueueMotion(*(char **)(*(char **)(ctx + 0x128) + 0x440)
-                        + func_02020d10(ctx, entity) * 0x1a64, 0, -2, param, 0, 0);
+                        + ScriptVm_ResolveActorIndex(ctx, entity) * 0x1a64, 0, -2, param, 0, 0);
     return 1;
 }

@@ -22,5 +22,5 @@ void Ov254_SendCommand0d(int *self, int arg)
     ((u8 *)p)[2] = 5;
     ((u8 *)p)[3] = 0xd;
     ((u8 *)&msg)[4] = arg;
-    func_02031384(1, p, 0xe);
+    MsgQueue_Post(1, p, 0xe);
 }

@@ -59,7 +59,7 @@ void Ov025_MissionList_LoadSubScreen(Ov008MissionList *pList)
     Ov008CharacterBlock *pBlock;
 
     nTracker = Ov025_GetCtxBlock954c();
-    bDefaultLanguage = func_02024e5c() == 1;
+    bDefaultLanguage = GetLanguage() == 1;
     if (bDefaultLanguage) {
         pFile = Archive_LoadFile(Ov025_PackSlotTag(0x14), 0xe);
     } else {
@@ -73,7 +73,7 @@ void Ov025_MissionList_LoadSubScreen(Ov008MissionList *pList)
     }
     Ov025_WithCharBlock(Ov025_PackSlotTag(0x10), GXS_LoadBG0Char);
     Ov025_WithCharBlock(Ov025_PackSlotTag(0x11), GXS_LoadBG2Char);
-    bDefaultLanguage = func_02024e5c() == 1;
+    bDefaultLanguage = GetLanguage() == 1;
     if (!bDefaultLanguage) {
         nAltTag = Ov025_PackHandleTag(7);
         if (nAltTag != 0) {

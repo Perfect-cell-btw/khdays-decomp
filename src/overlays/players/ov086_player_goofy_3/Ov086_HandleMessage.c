@@ -2,8 +2,8 @@
  * and hands over to the hover step. 0x22 arms the attack: the rig's mode (+0x2f84: 2, 3 or 4)
  * picks the pattern index and duration (0x6000 / 0x15000 / 0x27000), the target is refreshed,
  * 0x33 (mode 4) or 0x32 is told, the animation is set to 0x9000, bit 29 is raised, the rig's
- * counter cleared and its speed set to 0x800 (0xc00 in hard mode, scaled by 1.2 in mode 4),
- * the fall speed to 0x180 (0x240 in hard mode), the node turns to face the target unless locked,
+ * counter cleared and its speed set to 0x800 (0xc00 at 20 fps, scaled by 1.2 in mode 4),
+ * the fall speed to 0x180 (0x240 at 20 fps), the node turns to face the target unless locked,
  * and the attack step takes over. 0x23/0x24 tell 0x31/0x30 and hand over to the landing step. */
 
 #include "nitro/types.h"
@@ -62,11 +62,11 @@ void *Ov086_HandleMessage(char *self, int msg)
         *(int *)(self + 0x7b0) = 0x9000;
         *(unsigned long long *)self |= 0x20000000;
         *(int *)(rig + 0x364) = 0;
-        *(int *)(rig + 0x368) = func_02023c40() == 1 ? 0xc00 : 0x800;
+        *(int *)(rig + 0x368) = GetFrameRateMode() == 1 ? 0xc00 : 0x800;
         if (*(int *)(rig + 0x358) == 4) {
             *(int *)(rig + 0x368) = (int)(((long long)*(int *)(rig + 0x368) * 0x1333 + 0x800) >> 12);
         }
-        *(int *)(self + 0x4b0) = func_02023c40() == 1 ? 0x240 : 0x180;
+        *(int *)(self + 0x4b0) = GetFrameRateMode() == 1 ? 0x240 : 0x180;
         if (Ov022_ValidateTargetRef(self) != 0) {
             VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
             if (VEC_Mag(&d) != 0) {

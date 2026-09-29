@@ -1,6 +1,6 @@
 #pragma thumb on
 /* PauseMenu_ConfirmFrame -- pause menu confirmation page (yes / no), MAIN (THUMB). B or an inactive menu
- * (func_020208e0) resets the page cursor (data_02042730, "no" by default) to 1, returns to the
+ * (PauseMenu_GetMode) resets the page cursor (data_02042730, "no" by default) to 1, returns to the
  * pause menu (PauseMenu_Frame) and closes. Otherwise the page cursor moves (TabPanel_HandleUpDown); A (or
  * key bit 1, which forces "no") acts on it: "yes" (0) confirms the pause menu entry (+0xd4) --
  * entry 1 just closes, entry 2 calls into the overlay (Ov002_PauseMissionScene), closes and sets game
@@ -34,7 +34,7 @@ extern unsigned short data_0204c190;    /* keys pressed this frame */
 /* khdays: shared-bss */
 int data_02042730 = 1;                  /* two-tab page cursor */
 
-extern int func_020208e0(void);
+extern int PauseMenu_GetMode(void);
 extern void PlaySound(int a, int b);            /* play menu sound */
 extern void Callbacks_ClearByteAndRun2(void);                    /* close the menu */
 extern void TabPanel_HandleUpDown(int *pIndex);
@@ -54,7 +54,7 @@ void PauseMenu_ConfirmFrame(void)
     TabContext *ctx = data_0204be08.pCtx;
     int i;
 
-    if ((data_0204c190 & 8) || func_020208e0() == 0) {
+    if ((data_0204c190 & 8) || PauseMenu_GetMode() == 0) {
         data_02042730 = 1;
         PlaySound(0, 3);
         setDualArrayEntry(1, PauseMenu_Frame, 0);

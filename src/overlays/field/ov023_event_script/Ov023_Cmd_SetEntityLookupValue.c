@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern char *ArrayEntryPtrD0(int index);
 
 extern long long func_02020400(int a, int b);
@@ -11,7 +11,7 @@ extern void Ov023_SetScrollAndMarkDirty(void *entity, int value);
 int Ov023_Cmd_SetEntityLookupValue(int ctx, int args) {
     int entity = ScriptVm_ReadOperandInt(ctx, (void *)args);
     int name = ScriptVm_ReadOperandInt(ctx, (void *)(args + 8));
-    int id = func_02020d10(ctx, entity);
+    int id = ScriptVm_ResolveActorIndex(ctx, entity);
     unsigned short value = (unsigned short)func_02020400(name << 16, 0x168);
     char *node = ArrayEntryPtrD0((unsigned short)id);
     char *tbl;

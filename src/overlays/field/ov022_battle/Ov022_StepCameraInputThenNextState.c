@@ -20,8 +20,8 @@ int Ov022_StepCameraInputThenNextState(void) {
             Ov002_ResetCameraFraming();
         }
     } else {
-        *(int *)(data_ov022_020b2e60 + 0x1c) = func_0201e428() << 0xc;
-        *(int *)(data_ov022_020b2e60 + 0x20) = func_0201e438() << 0xc;
+        *(int *)(data_ov022_020b2e60 + 0x1c) = GetMasterBrightnessMain() << 0xc;
+        *(int *)(data_ov022_020b2e60 + 0x20) = GetMasterBrightnessSub() << 0xc;
         if (Ov002_Scene_IsIdle() == 0) Ov002_Scene_SetFlagBit3();
     }
     return (int)Ov022_StateAdvanceAfterPause;

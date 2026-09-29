@@ -33,7 +33,7 @@ extern void MainBlob_ResetSlotRows(int item, void *track);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void Ov107_Actor_SetAttachSlot(int self, int a, int b, VecFx32 *lift, int id);
 extern void *CallocInstance(int size);
-extern void *func_ov107_020c9848(void);
+extern void *Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
@@ -81,7 +81,7 @@ void Ov245_ConstructRider(int selfArg) {
     for (i = 0; i < 5; i++) {
         void *node;
         if (i < 2) {
-            void *os = func_ov107_020c9848();
+            void *os = Ov107_GetActorManager();
             unsigned int kind = pools.id[i] & 0x1ff;
             unsigned int addr = (*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc;
             addr = addr << 7;

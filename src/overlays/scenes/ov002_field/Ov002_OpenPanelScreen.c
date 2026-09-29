@@ -197,7 +197,7 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
     data_ov002_0207f614 = ctx;
     MI_CpuFill8(ctx, 0, 0x2c4);
     ctx->nArchiveGroup = (int)Msg_OpenContainerAndReadHeader(data_ov002_0207e91c, 0xe);
-    bLangVariant = func_02024e5c() == 1;
+    bLangVariant = GetLanguage() == 1;
     if (bLangVariant == 0) {
         ctx->nArchiveGroupAlt = (int)Msg_OpenContainerAndReadHeader(data_ov002_0207e92c, 0xe);
     }
@@ -261,7 +261,7 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
     if (ctx->bBg2Is256Colour != 0) {
         pArc = Archive_LoadFile(
             0x80000002 | ((ctx->nArchiveGroup + 0x8000) & 0xfffffc) << 7, 0xe);
-        bLangVariant = func_02024e5c() == 1;
+        bLangVariant = GetLanguage() == 1;
         if (bLangVariant != 0) {
             Res_LoadSpriteSet(&sRes, pArc, 0, 0, 0);
         } else {
@@ -272,7 +272,7 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
     } else {
         pArc = Archive_LoadFile(
             0x80000004 | ((ctx->nArchiveGroup + 0x8000) & 0xfffffc) << 7, 0xe);
-        bLangVariant = func_02024e5c() == 1;
+        bLangVariant = GetLanguage() == 1;
         if (bLangVariant != 0) {
             Res_LoadSpriteSet(&sRes, pArc, 0, 0, 0);
         } else {
@@ -294,7 +294,7 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
         sSlots.pChar = ctx->pCharCopy;
         ctx->hSlotClass = InstantiateClass(data_ov002_0207e9cc, &sSlots);
         sChar.pChar = *(void **)((char *)sRes.pChar + 0x14);
-        bLangVariant = func_02024e5c() == 1;
+        bLangVariant = GetLanguage() == 1;
         if (bLangVariant != 0) {
             sChar.nKey =
                 0x80000005 | ((ctx->nArchiveGroup + 0x8000) & 0xfffffc) << 7;

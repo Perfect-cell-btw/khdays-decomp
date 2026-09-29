@@ -10,7 +10,7 @@ int Ov019_AdvancePlayTime(void) {
     int mode = GameState_GetField(0x82 << 6, 5);
     int inc;
 
-    if (func_02023c40() == 1) {
+    if (GetFrameRateMode() == 1) {
         inc = 3;
     } else {
         inc = 2;

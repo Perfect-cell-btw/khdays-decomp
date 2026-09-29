@@ -12,13 +12,13 @@ extern void DispCnt_ApplyPendingMode(void);
 extern int PM_SetLCDPower(int mode);
 extern void SetMasterBrightnessMain(int brightness);
 extern void SetMasterBrightnessSub(int brightness);
-extern int func_0201e428(void);
-extern int func_0201e438(void);
+extern int GetMasterBrightnessMain(void);
+extern int GetMasterBrightnessSub(void);
 extern void Obj_ResetBothSubBlocksAndArm(void *script);
 extern int Game_RunActionScript(void *script);
 extern void SetWordAt0x588To1(void *script);
-extern void func_02030e64(int value);
-extern void func_02031574(int value);
+extern void Session_SetMoviePlaying(int value);
+extern void MsgQueue_SetMoviePlaying(int value);
 extern int Ov012_IsCounterAt16(void);
 extern void Ov012_ProcessOpeningTimeline(void *context, int delta);
 extern void Ov012_SetHeapFlag8CheckFlag10(void);
@@ -89,8 +89,8 @@ void *Ov012_RunOpeningScene(void) {
                                ((int)(*systemFlags & 0x8000) >> 15) == 0 &&
                                PM_SetLCDPower(1) != 0) {
                         *(u8 *)(context + 0x8be0) = 0;
-                        SetMasterBrightnessMain(func_0201e428());
-                        SetMasterBrightnessSub(func_0201e438());
+                        SetMasterBrightnessMain(GetMasterBrightnessMain());
+                        SetMasterBrightnessSub(GetMasterBrightnessSub());
                         DispCnt_ApplyPendingMode();
                     }
                 } while (Ov024_TickStreamSlots() == 0);
@@ -124,8 +124,8 @@ brightness_only:
 
 cleanup:
     Obj_ResetBothSubBlocksAndArm(context + 4);
-    func_02031574(0);
-    func_02030e64(0);
+    MsgQueue_SetMoviePlaying(0);
+    Session_SetMoviePlaying(0);
     exitSceneId = *(int *)(context + 0x130);
     if (exitSceneId == 0 || (exitSceneId != 1 && exitSceneId == 2)) {
         *(u16 *)context = 2;

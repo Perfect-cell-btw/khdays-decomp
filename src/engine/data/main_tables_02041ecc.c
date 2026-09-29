@@ -8,7 +8,7 @@
 
 typedef void (*GfxCallback)(void);
 
-extern void func_0202417c(void);
+extern void Bg_WriteMainBg0Cnt(void);
 
 /* BG3 as an affine BG (BG3CNT with the wrap bit): Bg_SetMainBg3AffineControl / Bg_SetSubBg3AffineControl. */
 const int data_02041ecc[8] = { 1, 1, 2, 1, 2, 9, 9, 9 };
@@ -37,13 +37,13 @@ const struct {
 const int data_02041f8c[8] = { 4, 5, 6, 7, 20, 21, 22, 23 };
 
 /* Per-BG character-load command ids queued by Gfx_EnqueueTableCmdAtC, then the handler slot that follows
- * the table (func_0202417c) and a terminating zero. */
+ * the table (Bg_WriteMainBg0Cnt) and a terminating zero. */
 const struct {
     int cmd[8];
     GfxCallback handler;
     int end;
 } data_02041fac = {
     { 8, 9, 10, 11, 24, 25, 26, 27 },
-    func_0202417c,
+    Bg_WriteMainBg0Cnt,
     0,
 };

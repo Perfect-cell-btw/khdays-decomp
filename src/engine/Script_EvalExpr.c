@@ -3,7 +3,7 @@
  * (u16 opcodes, 0xf ends it) run on the value stack of the script context (+0x178, 8-byte entries
  * {type, value}; type 0x10 is fixed point, 1 is integer). Opcode 0 pushes the operand that follows
  * (4 halfwords, resolved by ScriptVm_ResolveOperand); 1 negates the top, 2 is logical not; 3..6 are + - * /
- * and 7..12 the comparisons == > < >= <= !=, computed in fixed point (func_020219c4) when either
+ * and 7..12 the comparisons == > < >= <= !=, computed in fixed point (Script_ValueToFx32) when either
  * operand is fixed and in integers (GetField4UnlessState2) otherwise -- arithmetic keeps the operand type,
  * comparisons give an integer; 13 and 14 are && and ||. Returns the value left on top. The fixed
  * point addition adds the lower operand to itself, as in the original. The ROM rereads the opcode
@@ -28,7 +28,7 @@ typedef struct ScriptContext {
 
 extern void MIi_CpuCopy16(const void *src, void *dest, unsigned int size);
 extern ScriptValue *ScriptVm_ResolveOperand(ScriptContext *ctx, u16 *operand);
-extern fx32 func_020219c4(ScriptValue *v);      /* value as fixed point */
+extern fx32 Script_ValueToFx32(ScriptValue *v);      /* value as fixed point */
 extern int GetField4UnlessState2(ScriptValue *v);       /* value as integer */
 extern fx32 FX_Mul(fx32 a, fx32 b);      /* FX_Mul */
 extern fx32 FX_Div(fx32 a, fx32 b);             /* FX_Div */
@@ -40,9 +40,9 @@ extern int func_02020400(int a, int b);         /* integer divide */
         ScriptValue *a = &ctx->stack[sp - 2];                                   \
                                                                                 \
         if (a->type == SCRIPT_FIXED || b->type == SCRIPT_FIXED) {               \
-            fx32 x = func_020219c4(a);                                          \
+            fx32 x = Script_ValueToFx32(a);                                          \
                                                                                 \
-            a->value = (x OP func_020219c4(b)) ? 1 : 0;                         \
+            a->value = (x OP Script_ValueToFx32(b)) ? 1 : 0;                         \
             a->type = SCRIPT_INT;                                               \
         } else {                                                                \
             int x = GetField4UnlessState2(a);                                           \
@@ -85,9 +85,9 @@ ScriptValue *Script_EvalExpr(ScriptContext *ctx, u16 *code)
             ScriptValue *a = &ctx->stack[sp - 2];
 
             if (a->type == SCRIPT_FIXED || b->type == SCRIPT_FIXED) {
-                fx32 x = func_020219c4(a);
+                fx32 x = Script_ValueToFx32(a);
 
-                a->value = x + func_020219c4(a);
+                a->value = x + Script_ValueToFx32(a);
                 a->type = SCRIPT_FIXED;
             } else {
                 int x = GetField4UnlessState2(a);
@@ -103,9 +103,9 @@ ScriptValue *Script_EvalExpr(ScriptContext *ctx, u16 *code)
             ScriptValue *a = &ctx->stack[sp - 2];
 
             if (a->type == SCRIPT_FIXED || b->type == SCRIPT_FIXED) {
-                fx32 x = func_020219c4(a);
+                fx32 x = Script_ValueToFx32(a);
 
-                a->value = x - func_020219c4(b);
+                a->value = x - Script_ValueToFx32(b);
                 a->type = SCRIPT_FIXED;
             } else {
                 int x = GetField4UnlessState2(a);
@@ -121,9 +121,9 @@ ScriptValue *Script_EvalExpr(ScriptContext *ctx, u16 *code)
             ScriptValue *a = &ctx->stack[sp - 2];
 
             if (a->type == SCRIPT_FIXED || b->type == SCRIPT_FIXED) {
-                fx32 x = func_020219c4(a);
+                fx32 x = Script_ValueToFx32(a);
 
-                a->value = FX_Mul(x, func_020219c4(b));
+                a->value = FX_Mul(x, Script_ValueToFx32(b));
                 a->type = SCRIPT_FIXED;
             } else {
                 int x = GetField4UnlessState2(a);
@@ -139,9 +139,9 @@ ScriptValue *Script_EvalExpr(ScriptContext *ctx, u16 *code)
             ScriptValue *a = &ctx->stack[sp - 2];
 
             if (a->type == SCRIPT_FIXED || b->type == SCRIPT_FIXED) {
-                fx32 x = func_020219c4(a);
+                fx32 x = Script_ValueToFx32(a);
 
-                a->value = FX_Div(x, func_020219c4(b));
+                a->value = FX_Div(x, Script_ValueToFx32(b));
                 a->type = SCRIPT_FIXED;
             } else {
                 int x = GetField4UnlessState2(a);

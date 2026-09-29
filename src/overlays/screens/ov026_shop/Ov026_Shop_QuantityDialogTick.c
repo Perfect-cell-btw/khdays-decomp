@@ -146,7 +146,7 @@ extern const Ov008ChoiceBox data_ov026_020910dc[1];                    /* yes bo
 extern const Ov008ChoiceBox data_ov026_020910e0[1];                    /* no box */
 extern void  Ov026_ResetPanelAndRebuildTabs(void);                                /* next step after the dialog */
 extern void  Ov026_UpdateTouchState(void);                                /* Ov008_UpdateTouchState */
-extern void  func_020362ec(u16 *pSource);           /* poll the input source */
+extern void  KeyRepeat_Step(u16 *pSource);           /* poll the input source */
 extern u16   Mem_ReadU16(const u16 *pSource);                        /* ReadU16 */
 extern int   Ov026_CursorInBox(const Ov008ChoiceBox *pBox);          /* Ov008_CursorInBox */
 extern unsigned long long Math_DivMod(u32 nNum, u32 nDen);           /* Math_DivMod: quotient low, remainder high */
@@ -192,7 +192,7 @@ Ov008ShopStep Ov026_Shop_QuantityDialogTick(void)
     nTab = ctx->nTab;
     nCountBefore = pDialog->nCount;
     Ov026_UpdateTouchState();
-    func_020362ec(&ctx->inputSource);
+    KeyRepeat_Step(&ctx->inputSource);
     nPressed = data_0204c190;
     pDialog->nRepeatBits = (pDialog->nRepeatBits << 1) | ((data_0204c18c & KEY_REPEAT_MASK) != 0);
     switch (pDialog->nSelection) {

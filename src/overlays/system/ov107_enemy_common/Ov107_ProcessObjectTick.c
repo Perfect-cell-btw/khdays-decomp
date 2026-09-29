@@ -115,7 +115,7 @@ struct ModePacket { u16 index; u8 kind; u8 mode; };
 
 extern char *Ov107_FindNearestObject(struct AiState *self, int *distance);
 extern int FX_Sqrt(int value);
-extern struct ThreadState *func_ov107_020c9848(void);
+extern struct ThreadState *Ov107_GetActorManager(void);
 extern int Ov107_IsBehindView(void *context, VecFx32 *position);
 extern void Ov107_AiState_ApplyHit(struct AiState *self, void *arg, void *data);
 extern void ObjList_Update(void *owner, int tick);
@@ -157,7 +157,7 @@ void Ov107_ProcessObjectTick(struct AiState *self, int delta)
             /* The explicit target tests preserve the two short-circuit paths. */
             if (self->field_30c < 4 &&
                 (target == 0 || (target != 0 && distance > 0x1e000))) {
-                thread = func_ov107_020c9848();
+                thread = Ov107_GetActorManager();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 4) != (other % 4)) {
                     self->field_30c++;
@@ -165,28 +165,28 @@ void Ov107_ProcessObjectTick(struct AiState *self, int delta)
                 }
             } else if (self->field_30c < 3 &&
                        (target == 0 || (target != 0 && distance > 0x14000))) {
-                thread = func_ov107_020c9848();
+                thread = Ov107_GetActorManager();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 3) != (other % 3)) {
                     self->field_30c++;
                     return;
                 }
             } else if (self->field_30c < 3 && (((struct FlagBytes *)&self->flags60)->low & 1) == 0) {
-                thread = func_ov107_020c9848();
+                thread = Ov107_GetActorManager();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 3) != (other % 3)) {
                     self->field_30c++;
                     return;
                 }
             } else if (self->field_30c < 2 && (((struct FlagBytes *)&self->flags60)->low & 0x80) != 0) {
-                thread = func_ov107_020c9848();
+                thread = Ov107_GetActorManager();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 2) != (other % 2)) {
                     self->field_30c++;
                     return;
                 }
             } else if (self->field_30c < 2 && target != 0 && distance > 0xa000) {
-                thread = func_ov107_020c9848();
+                thread = Ov107_GetActorManager();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 2) == (other % 2)) {
                     self->field_30c++;
@@ -196,9 +196,9 @@ void Ov107_ProcessObjectTick(struct AiState *self, int delta)
         }
     } else if (self->field_004 != 0 && (self->field_1c4 & 0xf) == 0 &&
                (self->field_1ac & 8) == 0 && self->field_30c < 3 &&
-               Ov107_IsBehindView(func_ov107_020c9848()->field_000,
+               Ov107_IsBehindView(Ov107_GetActorManager()->field_000,
                                    &self->field_074) != 0) {
-        thread = func_ov107_020c9848();
+        thread = Ov107_GetActorManager();
         other = thread != 0 ? thread->field_044 : 0;
         if ((self->field_002 % 3) == (other % 3)) {
             self->field_30c++;

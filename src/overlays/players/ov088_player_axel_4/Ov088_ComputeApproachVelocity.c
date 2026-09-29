@@ -37,7 +37,7 @@ void Ov088_ComputeApproachVelocity(VecFx32 *param_1, int param_2, int param_3, i
     VEC_MultAdd(0x1000 - t, &f.v24, &f.v30, &f.v24);
     VEC_Normalize(&f.v24, &f.v24);
     {
-        int mode = func_02023c40();
+        int mode = GetFrameRateMode();
         int sc;
         if (mode == 1) {
             sc = (iVar1[4] * 3) / 2;

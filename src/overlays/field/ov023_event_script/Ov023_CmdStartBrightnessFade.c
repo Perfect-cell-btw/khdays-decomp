@@ -26,7 +26,7 @@ extern void Slot48_StoreAtCurrentIndex(Ov023ScriptCtx *pCtx, void *pCmd);       
 
 int Ov023_CmdStartBrightnessFade(Ov023ScriptCtx *pCtx, u8 *pOperand)
 {
-    pCtx->pEvent->nBrightness = func_0201e428();
+    pCtx->pEvent->nBrightness = GetMasterBrightnessMain();
     pCtx->pEvent->nFadeFrom = pCtx->pEvent->nBrightness;
     pCtx->pEvent->nFadeTo = ScriptVm_ReadOperandInt(pCtx, pOperand) - 16;
     pCtx->pEvent->nFadeFrames = ScriptVm_ReadOperandInt(pCtx, pOperand + 8);

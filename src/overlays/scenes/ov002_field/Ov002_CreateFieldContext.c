@@ -20,13 +20,13 @@ void Ov002_CreateFieldContext(int size) {
         int map;
         LoadActorOverlay();
         *(int *)(self + 0x18) = Ov107_InstantiateFieldClass(size, 0);
-        *(void **)(func_ov107_020c9848() + 0x74) = (void *)&Ov002_Camera_SetMode;
-        *(void **)(func_ov107_020c9848() + 0x78) = (void *)&Ov002_SetValueAndDerive;
+        *(void **)(Ov107_GetActorManager() + 0x74) = (void *)&Ov002_Camera_SetMode;
+        *(void **)(Ov107_GetActorManager() + 0x78) = (void *)&Ov002_SetValueAndDerive;
         Ov002_SetCurrentSlotFlag1(0);
-        scene = *(char **)func_ov107_020c9848();
+        scene = *(char **)Ov107_GetActorManager();
         self += 0x98;
         *(int *)(scene + 0xa8) = *(int *)self;
         map = Ov002_GetRootField8d94();
-        *(int *)(func_ov107_020c9848() + 0x8c) = map;
+        *(int *)(Ov107_GetActorManager() + 0x8c) = map;
     }
 }

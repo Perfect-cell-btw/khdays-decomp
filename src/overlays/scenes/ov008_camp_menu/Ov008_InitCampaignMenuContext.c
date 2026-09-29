@@ -37,7 +37,7 @@ extern void *NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void MI_CpuFill8(void *destination, int value, int size);
 extern void LoadOverlaySync(int async, int overlayId);
 extern void *Msg_OpenContainerAndReadHeader(const char *path, int heapId);
-extern int func_02024e5c(void);
+extern int GetLanguage(void);
 extern void Touch_StartAutoSampling(void);
 extern int InstantiateClass(void *descriptor, void *parent);
 extern void NNS_FndInitList(void *list, int offset);
@@ -75,7 +75,7 @@ void Ov008_InitCampaignMenuContext(int initialMode)
     LoadOverlaySync(0, 0x12e);
     *(void **)(CTX + 0x96b0) =
         Msg_OpenContainerAndReadHeader(data_ov008_02090034, 0xe);
-    isModeOne = func_02024e5c() == 1;
+    isModeOne = GetLanguage() == 1;
     if (isModeOne == 0) {
         *(void **)(CTX + 0x96b4) =
             Msg_OpenContainerAndReadHeader(data_ov008_02090040, 0xe);

@@ -46,7 +46,7 @@ extern s8 data_ov008_0208fef3[];                                  /* per page: m
 extern u8 data_ov008_02090e1c[];                                  /* manager B resource */
 extern u8 data_ov008_02090e30[];                                  /* manager A resource */
 extern void Ov008_InitSubsystemObject(void *pManager, Ov008SlotManagerCfg *pCfg, int nArg, int nSlots); /* InitSubsystemObject */
-extern u32  func_0203243c(void *hSlots, u32 nHandle);              /* ForwardTo_02031d90 */
+extern u32  DispObjList_AddResource(void *hSlots, u32 nHandle);
 extern void Ov008_LoadBlockProcessAndFree(void *pManager, u8 *pResource, int nCount); /* Ov008_LoadBlockProcessAndFree */
 
 void Ov008_InitPanelSlotManagers(void)
@@ -66,14 +66,14 @@ void Ov008_InitPanelSlotManagers(void)
     ctx->hSlotsB = ctx->managerB;
     nSlot = data_ov008_0208fef3[ctx->nPage * 4];
     if (nSlot >= 0) {
-        func_0203243c(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
+        DispObjList_AddResource(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
     }
     Ov008_LoadBlockProcessAndFree(ctx->managerB, data_ov008_02090e1c, 0xf);
     nSlot = data_ov008_0208fef0[ctx->nPage * 4];
     if (nSlot >= 0) {
-        ctx->nCell = func_0203243c(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
+        ctx->nCell = DispObjList_AddResource(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
     } else {
-        ctx->nCell = func_0203243c(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerA, 2));
+        ctx->nCell = DispObjList_AddResource(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerA, 2));
     }
     cfg.handle = CELL_HANDLE(ctx->pContainerA, 1);
     cfg.nSlots = 2;
@@ -85,13 +85,13 @@ void Ov008_InitPanelSlotManagers(void)
     ctx->hSlots = ctx->managerA;
     nSlot = data_ov008_0208fef1[ctx->nPage * 4];
     if (nSlot >= 0) {
-        func_0203243c(ctx->hSlots, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
+        DispObjList_AddResource(ctx->hSlots, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
     }
     Ov008_LoadBlockProcessAndFree(ctx->managerA, data_ov008_02090e30, 0x1b);
     nSlot = data_ov008_0208fef0[ctx->nPage * 4];
     if (nSlot >= 0) {
-        func_0203243c(ctx->hSlots, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
+        DispObjList_AddResource(ctx->hSlots, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
     } else {
-        func_0203243c(ctx->hSlots, CELL_HANDLE(ctx->pContainerA, 2));
+        DispObjList_AddResource(ctx->hSlots, CELL_HANDLE(ctx->pContainerA, 2));
     }
 }

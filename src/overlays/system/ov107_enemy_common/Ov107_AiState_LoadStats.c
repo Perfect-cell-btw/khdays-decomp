@@ -140,7 +140,7 @@ void Ov107_AiState_LoadStats(AiState *self, int recordIndex)
 
     path = *(const Path *)data_ov107_020cb638;
 
-    file = Archive_LoadFile((char *)((((*(u32 *)((char *)func_ov107_020c9848()
+    file = Archive_LoadFile((char *)((((*(u32 *)((char *)Ov107_GetActorManager()
                                               + 0x80) + 0x8000) & 0xfffffc) << 7)
                                 | ((u32)0x8000 << 16)
                                 | (self->field_19c & 0x1ff)), 0xb);

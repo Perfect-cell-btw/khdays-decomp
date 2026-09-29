@@ -15,5 +15,5 @@ void Ov022_SendSyncRequest(int param_1) {
     m.f0 = Session_GetLocalPlayerIndex();
     m.f3 = *(unsigned char *)(param_1 + 1);
     m.f6 = *(unsigned char *)(param_1 + 2);
-    *(short *)(param_1 + 0x36) = func_02031384(8, &m, 1);
+    *(short *)(param_1 + 0x36) = MsgQueue_Post(8, &m, 1);
 }

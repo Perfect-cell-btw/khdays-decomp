@@ -24,7 +24,7 @@ extern void Ov004_ResetPartyMemberAndLayout(int arg, int unused);
 
 int Ov004_StepMissionSelectScene(void) {
     if (Ov004_GetResult() != 0) {
-        func_020235bc(0x18ae);
+        GameState_ClearFlag(0x18ae);
         GameState_SetField(0, 9, (u16)data_ov004_02051380->selectedDay);
 
         data_0204c240.elapsed =

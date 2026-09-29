@@ -25,7 +25,7 @@ typedef struct Ov000BootContext {
 } Ov000BootContext;
 
 extern Ov000BootContext *NNSi_FndGetCurrentRootHeap(void);
-extern void func_020362ec(void *image);
+extern void KeyRepeat_Step(void *image);
 extern u16 Mem_ReadU16(const void *image);
 extern void Ov000_SetPendingMenuId(u16 id);
 extern void Camera_CommitMatricesEx(void *bounds, int left, int right,
@@ -47,7 +47,7 @@ Ov000StateFn Ov000_TickBootTeardown(void) {
     Ov000BootContext *context = NNSi_FndGetCurrentRootHeap();
     int state;
 
-    func_020362ec(context->overlayImage);
+    KeyRepeat_Step(context->overlayImage);
     Ov000_SetPendingMenuId(Mem_ReadU16(context->overlayImage));
     Camera_CommitMatricesEx(context->scrollBounds, 0x3b33, -0x3b33,
                   -0x4d9a, 0x4d9a);

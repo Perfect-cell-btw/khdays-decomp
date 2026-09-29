@@ -17,7 +17,7 @@ typedef struct {
 
 extern void Ov105_WH_SetReceiver(void *callback);
 extern void ReleaseServiceInstance(void);
-extern void func_02031600(void *config);
+extern void Session_StoreSetup(void *config);
 extern void EnsureServiceInstance(void);
 extern int func_01ff8128(void);
 extern void Ov006_MissionPushDisplayConfig(void);
@@ -38,7 +38,7 @@ void Ov006_MissionUpdateInputTransition(void) {
     if (MISSION_CONTEXT->localMode != 0) {
         exit_config.mode = 1;
         exit_config.keycode = 1;
-        func_02031600(&exit_config);
+        Session_StoreSetup(&exit_config);
         EnsureServiceInstance();
     } else {
         if (func_01ff8128() == 0) {
@@ -49,7 +49,7 @@ void Ov006_MissionUpdateInputTransition(void) {
             key_config.mode = 3;
             key_config.rawKeys = key_block->rawKeys;
             key_config.packedKeys = key_block->packedKeys;
-            func_02031600(&key_config);
+            Session_StoreSetup(&key_config);
         }
         EnsureServiceInstance();
         StoreGlobalPtrArray4At0c(0xd, Ov006_MissionApplyEntryUpdate);

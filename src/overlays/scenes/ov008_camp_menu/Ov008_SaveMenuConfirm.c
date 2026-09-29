@@ -75,7 +75,7 @@ void Ov008_SaveMenuConfirm(Ov008SaveMenu *pMenu)
     case PHASE_CONFIRM:
         bYes = pMenu->bConfirmYes;
         if (bYes != 0) {
-            func_02020904();
+            Sleep_Block();
             if (Ov008_BeginSaveToSlot(pMenu, pMenu->nSlot) == 0) {
                 pMenu->nState = 1;
                 pMenu->nSubState = 1;

@@ -11,7 +11,7 @@ void Ov244_AiEnterCharge(int param_1) {
     int owner = *(int *)(param_1 + 4);
     struct hpair buf = *(struct hpair *)&data_ov244_020d3724;
     buf.a = *(unsigned short *)(*(int *)owner + 2);
-    func_02031384(4, &buf, 4);
+    MsgQueue_Post(4, &buf, 4);
     Ov107_PostTagUpdate(*(int *)owner, 5, 0);
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov244_AiChargeStart);
 }

@@ -65,7 +65,7 @@ MissionState Ov006_UpdateMissionMenuOptionScreen(void)
     MissionLabel optionLabels[4];
     u8 optionIndex;
 
-    func_020362ec(data_ov006_02056660->inputHeader);
+    KeyRepeat_Step(data_ov006_02056660->inputHeader);
     buttonBits = data_0204c190;
     if ((buttonBits & 1) != 0) {
         action = 1;

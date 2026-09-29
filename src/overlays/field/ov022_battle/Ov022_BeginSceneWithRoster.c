@@ -75,7 +75,7 @@ Ov022StateCallback Ov022_BeginSceneWithRoster(Ov022InitArgs *args)
     }
     EntityMgr_PushVramState();
     context->flags = 0x16;
-    context->scale = func_02023c40() == 1 ? 0x1800 : 0x1000;
+    context->scale = GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
     context->state = -1;
     Ov002_RefreshSessionMarkerDestinations();
     Ov002_SetSceneScale(context->scale);

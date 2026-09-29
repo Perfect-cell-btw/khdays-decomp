@@ -77,7 +77,7 @@ void *Ov055_IdleStep(char *self)
     if ((*(int *)(self + 0x24) & 4) == 0) {
         v = 0;
         if ((*(unsigned long long *)self & 0x1000000000ULL) == 0) {
-            v = (func_02023c40() == 1) ? -0xd6 : -0x8f;
+            v = (GetFrameRateMode() == 1) ? -0xd6 : -0x8f;
         }
         *(int *)(self + 0x58) = v;
     }

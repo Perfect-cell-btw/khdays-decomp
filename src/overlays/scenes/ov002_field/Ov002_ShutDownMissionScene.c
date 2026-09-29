@@ -33,7 +33,7 @@ extern void DeferredDraw_Release(void);
 extern void FSi_BindCardTransfer(int nArg);
 extern int EntityManager_ReleaseViews(void);
 extern void PartyState_ReleaseNodes(void);
-extern void func_02035c44(void);
+extern void PartyState_FreeRecord(void);
 extern void StoreGlobalArrayEntry(int nIndex, int nValue);
 extern void StoreGlobalByteAt0(int nValue);
 extern void ZeroHalfThenFree(int pBlock);
@@ -75,7 +75,7 @@ void Ov002_ShutDownMissionScene(void)
         *(int *)(ctx + 0x8b4c) = -1;
     }
     if ((data_0204c240 & 4) == 0) {
-        func_02035c44();
+        PartyState_FreeRecord();
     }
     FSi_BindCardTransfer(0);
     PartyState_ReleaseNodes();

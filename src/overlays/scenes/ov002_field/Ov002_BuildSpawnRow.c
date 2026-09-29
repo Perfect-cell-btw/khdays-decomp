@@ -80,7 +80,7 @@ extern u8 data_0204c058;                    /* 0 = easy, 1 = hard, 2 = normal */
 extern void BitArray_ClearBit(u32 *pBits, int nIndex);      /* clear the free bit */
 extern int Ov002_GetCtxTableByte(int nCtxIndex);          /* ctx -> model id */
 extern void Entity_Activate(Ov002SpawnCtx *pCtx, int nList);
-extern void func_0202c604(Ov002SpawnCtx *pCtx, Ov002Spawned *pRow);
+extern void Entity_AttachNode(Ov002SpawnCtx *pCtx, Ov002Spawned *pRow);
 
 /* Fills in the row for one spot and hands it back.  The spot's bit is cleared
    first, so the id is taken as soon as this runs.
@@ -228,6 +228,6 @@ Ov002Spawned *Ov002_BuildSpawnRow(int nSpotId, int nKind, int nTier,
     pRow->nDescC = pDesc->nDescC;
     pRow->nMask = 0x1f;
     pRow->nPhase = 0;
-    func_0202c604(pRow->pCtx, pRow);
+    Entity_AttachNode(pRow->pCtx, pRow);
     return pRow;
 }

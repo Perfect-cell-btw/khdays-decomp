@@ -3,8 +3,8 @@
 
 extern int QueryActiveStateOrDelegate(void);
 extern int *GetEntryField20ByIndex(int nPlayer);
-extern int func_02023c40(void);     /* frame-rate flag */
-extern int func_020208e0(void);
+extern int GetFrameRateMode(void);     /* 0: 30 fps, 1: 20 fps, 2: 60 fps */
+extern int PauseMenu_GetMode(void);
 extern int Session_GetLocalPlayerIndex(void);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nModel, int nValue);
 extern int FX_Sqrt(int v);
@@ -116,12 +116,12 @@ int Ov002_TickCameraTransition(void *pScene)
     pTarget = func_ov022_020881f8(nPlayer);
     pEntry = GetEntryField20ByIndex(nPlayer);
 
-    nLimit = FX_Mul(func_02023c40() == 1 ? 0xc00 : 0x800, 0x10000);
+    nLimit = FX_Mul(GetFrameRateMode() == 1 ? 0xc00 : 0x800, 0x10000);
     if ((pCam->nFlags & 0x20) != 0) {
         nLimit = FX_Mul(nLimit, 0x4000);
     }
     if (pCam->nFocusApproachThreshold > nLimit) {
-        nLimit = func_02023c40() == 1 ? 0xc00 : 0x800;
+        nLimit = GetFrameRateMode() == 1 ? 0xc00 : 0x800;
     }
 
     nTarget = pCam->nTargetEyeHeight;
@@ -131,7 +131,7 @@ int Ov002_TickCameraTransition(void *pScene)
         if (nAbs <= 0x100) {
             pCam->nEyeHeight = nTarget;
         } else {
-            nRate = func_02023c40() == 1 ? 0x900 : 0x600;
+            nRate = GetFrameRateMode() == 1 ? 0x900 : 0x600;
             pCam->nEyeHeight = pCam->nEyeHeight
                                     + FX_Mul(nDelta, nRate);
         }
@@ -144,7 +144,7 @@ int Ov002_TickCameraTransition(void *pScene)
         if (nAbs <= 0x100) {
             pCam->nFocusGroundOffset = nTarget;
         } else {
-            nRate = func_02023c40() == 1 ? 0x900 : 0x600;
+            nRate = GetFrameRateMode() == 1 ? 0x900 : 0x600;
             pCam->nFocusGroundOffset = pCam->nFocusGroundOffset
                                     + FX_Mul(nDelta, nRate);
         }
@@ -249,7 +249,7 @@ int Ov002_TickCameraTransition(void *pScene)
         VEC_MultAdd(pCam->nDist, &vDir, &pCam->vFocus,
                     &vEye);
         pCam->vEyePos = vEye;
-        if (func_020208e0() != 2 || Session_GetLocalPlayerIndex() != 0) {
+        if (PauseMenu_GetMode() != 2 || Session_GetLocalPlayerIndex() != 0) {
             if ((data_0204c190 & 0x40) != 0) {
                 pCam->nTargetYaw = nAngle;
                 pCam->nYaw = nAngle;
@@ -303,7 +303,7 @@ int Ov002_TickCameraTransition(void *pScene)
             Ov022_GetStreamTimestamp(QueryActiveStateOrDelegate());
             if ((pCam->nFlags & 0x2000000) != 0) {
                 nApproach = pCam->nFocusApproachRateOverride;
-            } else if (func_02023c40() == 1) {
+            } else if (GetFrameRateMode() == 1) {
                 nApproach = 0x480;
             } else {
                 nApproach = 0x300;
@@ -336,9 +336,9 @@ int Ov002_TickCameraTransition(void *pScene)
             nAbs = nDelta < 0 ? -nDelta : nDelta;
             if (nAbs > 0x10) {
                 if ((pCam->nFlags & 0x2000000) != 0) {
-                    nApproach = func_02023c40() == 1 ? 0x90 : 0x60;
+                    nApproach = GetFrameRateMode() == 1 ? 0x90 : 0x60;
                 } else {
-                    nApproach = func_02023c40() == 1 ? 0x900 : 0x600;
+                    nApproach = GetFrameRateMode() == 1 ? 0x900 : 0x600;
                 }
                 if (nDelta > 0) {
                     nStep = FX_Mul(nDelta, nApproach);
@@ -430,7 +430,7 @@ int Ov002_TickCameraTransition(void *pScene)
                            + pCam->nShakeRow * 0xc);
         }
         pCam->nShakePhase = pCam->nShakePhase
-                                + (func_02023c40() == 1 ? 0xcd : 0x89);
+                                + (GetFrameRateMode() == 1 ? 0xcd : 0x89);
 
         VEC_Subtract(&pCam->vEyePos, &pCam->vFocus,
                      &vShakeDir);

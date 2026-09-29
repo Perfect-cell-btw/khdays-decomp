@@ -46,7 +46,7 @@ typedef struct {
     char pad_6[2];
 } SlotKindInfo;
 
-extern ActorManager *func_ov107_020c9848(void);
+extern ActorManager *Ov107_GetActorManager(void);
 extern void *CallocInstance(unsigned int size);
 extern CreatedItem *CreateSubitemInstance0xB4(unsigned int handle);
 
@@ -55,7 +55,7 @@ extern const SlotKindInfo data_ov107_020cb9a4[][4];
 
 void Ov107_Actor_SetAttachSlot(Obj *self, int slot, unsigned int kind, VecFx32 *pos, int field10)
 {
-    unsigned int spriteSet = func_ov107_020c9848()->spriteSet_88;
+    unsigned int spriteSet = Ov107_GetActorManager()->spriteSet_88;
     Slot *entry;
     VecFx32 v;
     int resource;

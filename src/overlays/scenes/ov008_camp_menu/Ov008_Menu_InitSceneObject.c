@@ -29,7 +29,7 @@ void Ov008_Menu_InitSceneObject(int *param_1, int *param_2)
     u32 auStack[32];
 
     MI_CpuFill8(param_1, 0, 0x528);
-    switch (func_02023c40()) {
+    switch (GetFrameRateMode()) {
     case 0: param_1[0x6c] = 0x1000; break;
     case 1: param_1[0x6c] = 0xaaa; break;
     case 2: param_1[0x6c] = 0x2000; break;

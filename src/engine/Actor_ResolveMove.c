@@ -64,7 +64,7 @@ extern void VecFx32FromVecS16(int r0, short *r1, int *r2);
 extern void VEC_MultAdd(int scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern HitFull *Collision_RunRayCast(void *world, CollCastParams *params);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
-extern int func_02023c40(void);
+extern int GetFrameRateMode(void);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern HitFull *Collision_CastNearest(void *world, CollCastParams *params);
 
@@ -259,7 +259,7 @@ haveMoveVec:
             self->flags = flags;
         }
 
-        slideScale = (func_02023c40() == 1) ? 0x400 : 0xb00;
+        slideScale = (GetFrameRateMode() == 1) ? 0x400 : 0xb00;
         resolved = 0;
 
         mag = VEC_DotProduct(&heightVec, &faceNormal);

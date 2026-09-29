@@ -82,7 +82,7 @@ void *Ov002_StepSessionEvent(void)
         Ov002_SetSessionActive(0, 0);
         Ov002_EnterState2AndBlankIds();
         Ov002_SetSessionBusy(0);
-        func_02020878(1);
+        PauseMenu_SetAllowed(1);
         pNext = Ov002_SessionTick;
         break;
     case 3:
@@ -99,7 +99,7 @@ void *Ov002_StepSessionEvent(void)
                  nFlags & 0x10000000) == 0
                 && func_ov022_020886d0(nEntry, nFlags) == 0
                 && Ov022_GetEntryField12(0) > 0)) {
-            func_02020878(1);
+            PauseMenu_SetAllowed(1);
         }
         pNext = Ov002_SessionTick;
         break;

@@ -31,14 +31,14 @@ int Ov025_CardTransferStep(void) {
         *(int *)(data_ov025_020b5760 + 4) = rc;
         if (rc != 0) {
             CardUnlockAfterKeyShare(data_0204be10);
-            func_020208f0();
+            Sleep_Unblock();
             return 3;
         }
         data_ov025_020b5760[0] = data_ov025_020b5760[0] + 1;
         done = data_ov025_020b5760[0];
         if (done >= 2) {
             CardUnlockAfterKeyShare(data_0204be10);
-            func_020208f0();
+            Sleep_Unblock();
             return 0;
         }
         Ov025_EmitCommandVariantA((done + (data_ov025_020b5760[1] << 1)) * 0x2018 + 0x20,

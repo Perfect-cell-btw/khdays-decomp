@@ -86,7 +86,7 @@ int Ov022_ReadSelectionInput(void)
         suppressInput = 1;
     }
     if (Session_IsActive() != 0 && Session_IsReady() != 0 &&
-        func_020208e0() == 2) {
+        PauseMenu_GetMode() == 2) {
         suppressInput = 1;
     }
     if (suppressInput != 0) {
@@ -213,7 +213,7 @@ keep_runtime_latch:
         }
     }
 
-    step = func_02023c40() == 1 ? 0x1800 : 0x1000;
+    step = GetFrameRateMode() == 1 ? 0x1800 : 0x1000;
 
     value = context->repeat100 + step;
     if (value > 0xf000) {

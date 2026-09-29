@@ -50,7 +50,7 @@ extern int   LoadGlobalU16At0(void);                                   /* the gl
 extern void  VBlank_UnregisterCallback(int nPriority, const char *pName);      /* remove a named task */
 extern void  Gfx_SetupSubEngine(void *pCamera);
 extern void  Ov023_SetupMainBackgrounds(void);                             /* Ov023_SetupMainBackgrounds */
-extern void  func_02021884(void *pScript);                          /* poll a script stream */
+extern void  ScriptVm_UpdateActiveCamera(void *pScript);
 extern void  Ov023_StepFade(void);                             /* Ov023_StepFade */
 extern int   GameState_IsFlagSet(int nFlag);                              /* GameState_IsFlagSet */
 extern void  Ov023_EnterDisplayMode(void);                             /* Ov023_EnterDisplayMode */
@@ -90,7 +90,7 @@ void *Ov023_SceneRun(void)
             data_ov023_0208a784.pScene->nScript2Running = 0;
         }
     } else {
-        func_02021884(data_ov023_0208a784.pScene->script);
+        ScriptVm_UpdateActiveCamera(data_ov023_0208a784.pScene->script);
     }
     switch (LoadGlobalU16At0()) {
     case 4:

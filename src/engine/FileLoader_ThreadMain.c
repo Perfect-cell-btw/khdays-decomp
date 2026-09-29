@@ -81,7 +81,7 @@ extern void OS_RescheduleThread(void);
 extern void NNS_SndArcLoadSeq(u32 dataId, void *heap);
 extern int NNS_SndArcLoadSeqArc(u32 dataId, void *heap);
 extern int NNS_SndArcLoadBank(u32 waveId, void *heap);
-extern void func_0201e4f0(LoaderRequest *request);
+extern void FileLoader_FreeRequest(LoaderRequest *request);
 
 static inline void FlushLoaded(void *buffer, u32 size)
 {
@@ -199,7 +199,7 @@ void FileLoader_ThreadMain(void *arg)
             OS_RescheduleThread();
             break;
         case 7:
-            func_0201e4f0(req);
+            FileLoader_FreeRequest(req);
             state = 0;
             break;
         }

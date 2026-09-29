@@ -34,8 +34,8 @@ extern u16 *GetBGScreenBaseForLayer(int layer);
 extern void Tilemap_FillRect(u16 *tilemap, int width, int height, int x, int y, int mapWidth,
                              int tile, int palette);
 extern void Ov012_TileTextRenderer_SetReady(void *renderer, int ready);
-extern void func_02031574(int value);
-extern void func_02030e64(int value);
+extern void MsgQueue_SetMoviePlaying(int value);
+extern void Session_SetMoviePlaying(int value);
 extern int Ov024_MobiClip_OpenStreams(MobiClipOpenRequest *request);
 
 void Ov012_StartOpeningMovie(char *streamName)
@@ -72,8 +72,8 @@ void Ov012_StartOpeningMovie(char *streamName)
                      header.destinationX, header.destinationY, 0x20, header.tileBase, 0xe);
 
     Ov012_TileTextRenderer_SetReady(context + 0x8b4c, 1);
-    func_02031574(1);
-    func_02030e64(1);
+    MsgQueue_SetMoviePlaying(1);
+    Session_SetMoviePlaying(1);
 
     if (Ov024_MobiClip_OpenStreams(&request) == 0) {
         *(u16 *)(context + 2) |= 2;

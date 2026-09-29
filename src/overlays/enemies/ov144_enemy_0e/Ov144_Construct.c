@@ -56,7 +56,7 @@ extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int FindResourceIndexByName(int item, const char *name);
 extern void NNS_G3dRenderObjSetCallBack(int renderObj, void *cb, int ptr, int timing, int opt);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(int self, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern int ModelNode_New(void);
@@ -108,7 +108,7 @@ void Ov144_Construct(char *self)
     NNS_G3dRenderObjSetCallBack(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, Ov144_NodeMatrixCallback, 0, 6, 3);
     (*(void (**)(char *, int, int))(self + 0x1dc))(self, 0, 1);
     *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov144_020cdcf8);
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4((void *)((((func_ov107_020c9848()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000007));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4((void *)((((Ov107_GetActorManager()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000007));
     ((struct Bit0 *)(*(int *)(self + 0x388) + 0x5c))->bit0 = 1;
     Ov107_EnqueueValue((int)self, *(int *)(self + 0x388));
     *(int *)(*(int *)(self + 0x388) + 0x5c) |= 2;
@@ -119,7 +119,7 @@ void Ov144_Construct(char *self)
     *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 2));
     RegisterSubscriberSlot(*(int *)(self + 0x398), *(int *)(self + 0x38c));
     *(int *)(*(int *)(self + 0x38c) + 0x5c) |= 2;
-    item = actor->subitem3f8 = (struct Subitem *)CreateSubitemInstance0xB4((void *)((((func_ov107_020c9848()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000000));
+    item = actor->subitem3f8 = (struct Subitem *)CreateSubitemInstance0xB4((void *)((((Ov107_GetActorManager()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000000));
     Ov107_EnqueueValue((int)self, (int)item);
     item->flags5c |= 2;
     p = List_InsertSorted(actor->pool144, 4, 0x64);

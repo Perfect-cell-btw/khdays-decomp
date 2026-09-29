@@ -75,7 +75,7 @@ extern int FindResourceIndexByName(int item, const char *name);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void SrtTransform_SetIdentity(void *shape);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern int *func_ov107_020c9848(void);
+extern int *Ov107_GetActorManager(void);
 extern void Ov107_EnqueueValue(int self, int item);
 extern void NNS_G3dMdlSetMdlPolygonID(void *model, int a, int id);
 extern void Ov107_Actor_SetAttachSlot(int self, int a, int b, struct Lift *lift, int id);
@@ -145,7 +145,7 @@ void Ov276_EnemyConstruct(char *self)
     *(int *)(self + 0x470) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(handle, 0x17), data_ov276_020d2c4c);
     for (i = 0; i < 6; i++) {
         if (i < 1) {
-            int *os = func_ov107_020c9848();
+            int *os = Ov107_GetActorManager();
             unsigned int kind = pools.id[i] & 0x1ff;
             unsigned int addr = (os[0x22] + 0x8000) & 0x00fffffc;
             addr = addr << 7;

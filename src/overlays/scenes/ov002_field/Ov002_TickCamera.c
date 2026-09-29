@@ -4,7 +4,7 @@
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int QueryActiveStateOrDelegate(void);
 extern void *GetEntryField20ByIndex(int nPlayer);
-extern void *func_02023bf0(void);   /* the active actor */
+extern void *Obj_GetCurrent(void);   /* the active actor */
 extern int FX_Div(int a, int b);
 extern short FX_Atan2(int x, int y);
 /* Cosine to angle: a binary search over the shared sin/cos table. The other
@@ -201,7 +201,7 @@ void *Ov002_TickCamera(void)
                                 (int *)(pCam + 0x7c), &vAnchor,
                                 *(int *)(pCam + 0x58), nTmp,
                                 *(int *)(pCam + 0x7c));
-            Ov002_TickCameraTransition(func_02023bf0());
+            Ov002_TickCameraTransition(Obj_GetCurrent());
         }
     } else {
         pObj = func_ov022_020865b4();
@@ -275,7 +275,7 @@ void *Ov002_TickCamera(void)
                                 (int *)(pCam + 0x7c), pTarget,
                                 *(int *)(pCam + 0x58), nTmp,
                                 *(int *)(pCam + 0x7c));
-            Ov002_TickCameraTransition(func_02023bf0());
+            Ov002_TickCameraTransition(Obj_GetCurrent());
         }
     }
     return pNext;

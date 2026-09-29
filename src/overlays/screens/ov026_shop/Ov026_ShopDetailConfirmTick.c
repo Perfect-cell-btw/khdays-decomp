@@ -66,7 +66,7 @@ extern GameState *data_0204be18;
 extern u16 data_0204c190;                                         /* keys pressed */
 extern u8  data_ov026_020910cc[];                                 /* choice 0 box */
 extern u8  data_ov026_020910d0[];                                 /* choice 1 box */
-extern void  func_020362ec(u16 *pSource);
+extern void  KeyRepeat_Step(u16 *pSource);
 extern u16   Mem_ReadU16(const u16 *pSource);                   /* ReadU16 */
 extern void  Ov026_UpdateTouchState(void);                           /* Ov008_UpdateTouchState */
 extern void *Ov026_FindEntryById(void *pWidgets, int nId);        /* FindEntryById */
@@ -98,7 +98,7 @@ void *Ov026_ShopDetailConfirmTick(void)
     pPanel = &ctx->detail;
     pWidgets = ctx->widgets;
     pWidgetsB = ctx->widgetsB;
-    func_020362ec(&ctx->inputSource);
+    KeyRepeat_Step(&ctx->inputSource);
     nButtons = Mem_ReadU16(&ctx->inputSource);
     Ov026_UpdateTouchState();
     if (pPanel->bConfirmed != 0) {

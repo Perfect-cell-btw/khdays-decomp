@@ -20,7 +20,7 @@ void Ov089_activateAndComputeAimAngle(void *this)
     if (!Session_GetLocalPlayerIndex()) {
         *(unsigned long long *)((char *)this + 0x46c) |= 0x10000;
     }
-    *(int *)((char *)this + 0x4b0) = (func_02023c40() == 1) ? 0x240 : 0x180;
+    *(int *)((char *)this + 0x4b0) = (GetFrameRateMode() == 1) ? 0x240 : 0x180;
     if (Ov022_ValidateTargetRef(this) != 0) {
         int t;
         void *r = func_ov022_020ad0c0(this);

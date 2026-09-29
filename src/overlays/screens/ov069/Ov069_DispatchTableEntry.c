@@ -1,7 +1,7 @@
 /* Runs an entry of the condition table and sets or clears a game flag with its result. */
 
 extern void GameState_SetFlag(void *obj);
-extern void func_020235bc(void *obj);
+extern void GameState_ClearFlag(void *obj);
 extern int data_ov069_020baa2c;
 
 void Ov069_DispatchTableEntry(void *obj, int index, int arg3) {
@@ -10,7 +10,7 @@ void Ov069_DispatchTableEntry(void *obj, int index, int arg3) {
         if (fn(arg3)) {
             GameState_SetFlag(obj);
         } else {
-            func_020235bc(obj);
+            GameState_ClearFlag(obj);
         }
     }
 }

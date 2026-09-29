@@ -179,7 +179,7 @@ void *Ov017_DepositStep(Ov017Deposit *pSelf)
         if (pDef->szSeqA[0] != 0) {
             Ov017_DepositAdvanceFrame(pSelf, &pSelf->nSeqFlagsA, nDelta, 1);
         }
-        pSelf->nCooldown += func_02023c40() == 1 ? 0xcd : 0x89;
+        pSelf->nCooldown += GetFrameRateMode() == 1 ? 0xcd : 0x89;
         if ((pSelf->nAnimFlags & 2) && !Ov017_DepositAdvanceCrackFrame(pSelf, &pSelf->nSeqFlagsC, nDelta, 0)) {
             pSelf->nAnimFlags &= ~2;
         }

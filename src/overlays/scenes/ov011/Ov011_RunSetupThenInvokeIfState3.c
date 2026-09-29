@@ -10,5 +10,5 @@ void Ov011_RunSetupThenInvokeIfState3(void) {
     Ov011_RefreshCurrentPhase();
     r1 = *(int *)((char *)&data_ov011_0205e960 + 4);
     if (*(int *)(r1 + 4) != 3) return;
-    func_0203256c(r1 + 0x28508);
+    DispObjList_UpdateImmediate(r1 + 0x28508);
 }

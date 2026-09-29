@@ -47,10 +47,10 @@ int Ov008_CommitSaveToSlot(int slot) {
     long long elapsed;
 
     CARD_UnlockBackup(data_0204be10);
-    func_02020904();
+    Sleep_Block();
     if (Ov008_EmitCommandAndStoreHandle(0, &probe, 1) != 0) {
         CardUnlockAfterKeyShare(data_0204be10);
-        func_020208f0();
+        Sleep_Unblock();
         return 0;
     }
     elapsed = OS_GetTick() - data_0204be1c;

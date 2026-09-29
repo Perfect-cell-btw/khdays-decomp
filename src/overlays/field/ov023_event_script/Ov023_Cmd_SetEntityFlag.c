@@ -1,5 +1,5 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
-extern int func_02020d10(int ctx, int arg);
+extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
 /* The script VM entity table: ctx->world->entities + id * sizeof(Entity). */
@@ -16,6 +16,6 @@ int Ov023_Cmd_SetEntityFlag(int ctx, int args) {
         on = 0;
     }
     Ov023_Window_SetFlag10(*(char **)(*(char **)(ctx + 0x128) + 0x440)
-                        + func_02020d10(ctx, entity) * 0x1a64, on);
+                        + ScriptVm_ResolveActorIndex(ctx, entity) * 0x1a64, on);
     return 1;
 }

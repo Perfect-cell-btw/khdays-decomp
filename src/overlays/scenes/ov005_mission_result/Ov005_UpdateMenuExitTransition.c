@@ -37,7 +37,7 @@ int Ov005_UpdateMenuExitTransition(void) {
         Ov005_ResetPartyMemberAndLayout(0,0);
         if(data_0204c240.flags&4)Scene_RequestPending(0x13,0);
         else if((data_0204c240.flags&2)||(data_0204c240.flags&1)||(data_0204c300[0x4c]&1)) {
-            func_020235bc(0x18ae);
+            GameState_ClearFlag(0x18ae);
             if(data_0204c240.flags&2)GameState_SetFlag(0x18c9);
             else if(data_0204c240.flags&1)GameState_SetFlag(0x18bd);
             data_0204c240.transitionValue=GameState_GetField(0,9)==0x165?10001:10000;
