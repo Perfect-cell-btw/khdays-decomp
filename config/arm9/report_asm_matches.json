@@ -123,7 +123,7 @@
       "mode": "arm",
       "size": 316,
       "source": "libs/nitro/init/asm_stubs/calls/Entry.c",
-      "source_sha256": "b37862ae06199508053b7a28b6fb51f4a066ae0096cab7666230fb4fda1528c8",
+      "source_sha256": "16af2fe1e428ef46270e78ba16257e156ff4bb4c3e4c2c01666c3a9083776114",
       "target_sha256": "2bcf03099ef25046cc7dbcd6f31038bdf85c0440de516c1a14d9499eda0703b9"
     },
     "GX_SendFifo48B": {
@@ -742,7 +742,7 @@
       "mode": "arm",
       "size": 576,
       "source": "src/overlays/scenes/ov003/Ov003_RankPlayers.c",
-      "source_sha256": "d183e711030f931e21af643e6fed18f6a6adfb932f56f3491c42c59e6ea35c42",
+      "source_sha256": "21c675b489ab1a0d8e315ad5e705bff10e87732ce29716c4b6ff287f0a548270",
       "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
     },
     "Ov024_MobiClip_AudioTransformDecode": {
