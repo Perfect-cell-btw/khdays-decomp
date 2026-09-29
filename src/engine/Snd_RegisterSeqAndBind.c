@@ -8,7 +8,10 @@ extern int SND_RegisterSeq(int c, int d);
 extern int ResSlot_Acquire(int h, int flag);
 extern void ModelAnimSet_Bind(int a, int b, int c, int d);
 
-int Snd_RegisterSeqAndBind(int a, int b, int c, int d) {
+int Snd_RegisterSeqAndBind(void *pA, void *pB, void *pC, int d) {
+    int a = (int)pA;
+    int b = (int)pB;
+    int c = (int)pC;
     *(int *)(a + 0xc) = SND_RegisterSeq(c, d);
     ModelAnimSet_Bind(a, b, ResSlot_Acquire(*(int *)(a + 0xc), 1), d);
     return 1;

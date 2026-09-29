@@ -14,8 +14,9 @@
 extern unsigned long long func_02020400(unsigned int value, unsigned int divisor);
 extern void Tilemap_FillRect(unsigned int a, int b, int c, int d, int e, int f, unsigned int g, int h);
 
-void Draw_ScaledValue(int self, unsigned int param_2, int param_3, int param_4, int param_5)
+void Draw_ScaledValue(void *pSelf, unsigned int param_2, int param_3, int param_4, int param_5)
 {
+    int self = (int)pSelf;
     unsigned int width;
     unsigned int q;
     int e = param_5;

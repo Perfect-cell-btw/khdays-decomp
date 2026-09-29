@@ -2,7 +2,8 @@
  * branch, versus SetIndexedSlot(task, task[0x20], next_step) to continue -- see
  * Ov107_SoundFollowTick, which does exactly one or the other. */
 
-void Task_MarkFinished(int *p) {
+void Task_MarkFinished(void *pP) {
+    int *p = (int *)pP;
     if (p) {
         p[9] = 1;
     }

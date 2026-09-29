@@ -6,7 +6,8 @@
  * descending order and what keeps the first pool load below `str r1,[r0]`: writing the
  * fourteen stores as fourteen separate statements makes mwcc hoist the 0xddb literal load
  * one slot higher to widen the load-use gap. */
-void Projection_LoadDefaults(unsigned int *p) {
+void Projection_LoadDefaults(void *pP) {
+    unsigned int *p = (unsigned int *)pP;
     p[0]  = 0x800;
     p[1]  = 0xddb;
     p[2]  = 0x1555;

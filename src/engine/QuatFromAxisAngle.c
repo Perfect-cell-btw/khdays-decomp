@@ -14,8 +14,10 @@
 
 extern const short data_0203d210[];
 
-void QuatFromAxisAngle(int *out, int *axis, int angle)
+void QuatFromAxisAngle(void *pOut, void *pAxis, int angle)
 {
+    int *out = (int *)pOut;
+    int *axis = (int *)pAxis;
     int idx;
     int sin;
 

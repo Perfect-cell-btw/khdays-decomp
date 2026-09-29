@@ -5,7 +5,9 @@
 #pragma thumb on
 extern short *ScriptVm_ResolveOperand(int a, unsigned short *b);
 extern int func_02024e5c(void);
-int ByteCode_ResolveOperand(int param_1, unsigned short *param_2) {
+int ByteCode_ResolveOperand(void *pArg1, char *pArg2) {
+    int param_1 = (int)pArg1;
+    unsigned short *param_2 = (unsigned short *)pArg2;
     int iVar5 = param_1 + 4 + *(int *)(param_1 + 0x124) * 0x48;
     short *puVar1 = ScriptVm_ResolveOperand(param_1, param_2);
     if (*puVar1 == 0x40) {

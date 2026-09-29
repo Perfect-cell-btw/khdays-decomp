@@ -5,7 +5,8 @@
 
 extern unsigned int *CallocInstance(int size);
 
-unsigned int List_InsertSorted(int list, int extra, unsigned int key) {
+unsigned int List_InsertSorted(void *pList, int extra, unsigned int key) {
+    int list = (int)pList;
     unsigned int *slot;
     unsigned int prev;
     unsigned int *node = *(unsigned int **)(list + 4);

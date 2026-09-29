@@ -21,8 +21,9 @@
 
 extern int strlen(const char *s);
 
-int Utf8_ToUcs2(const char *src, u16 *dst)
+int Utf8_ToUcs2(const void *pSrc, u16 *dst)
 {
+    const char *src = (const char *)pSrc;
     int len;
     int i;
     char c;

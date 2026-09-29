@@ -7,7 +7,8 @@ extern int ResSlot_ReleaseResource(void *slot);
 extern void NNSi_FndFreeFromDefaultHeap(int a);
 extern int NNSi_FndGetAllocatorForDefaultHeap(int a);
 
-void FreeAllResourceTables(int *p) {
+void FreeAllResourceTables(char *pP) {
+    int *p = (int *)pP;
     int i, j;
     int last = 0;
     for (i = 4; i >= 0; i--) {

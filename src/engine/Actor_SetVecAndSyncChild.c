@@ -5,7 +5,8 @@
 
 extern void Node_SetPosAndNotify(void *ptr, void *src);
 
-void Actor_SetVecAndSyncChild(int *ptr, VecFx32 *src) {
+void Actor_SetVecAndSyncChild(void *pPtr, VecFx32 *src) {
+    int *ptr = (int *)pPtr;
     if ((ptr[0] & 0x10) == 0) {
         Node_SetPosAndNotify((char *)ptr + 0x110, src);
     }

@@ -13,8 +13,10 @@
 extern int Quat_Length(int *v);
 extern long long FX_InvFx64c(int x);
 
-int Vec4_Normalize(int *q, int *v)
+int Vec4_Normalize(void *pQ, void *pV)
 {
+    int *q = (int *)pQ;
+    int *v = (int *)pV;
     int mag = Quat_Length(v);
 
     if (mag != 0) {

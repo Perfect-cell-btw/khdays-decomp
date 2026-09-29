@@ -4,7 +4,8 @@
 extern unsigned char *List_First(void *ptr);
 extern unsigned char *List_Next(void *ptr);
 
-int TaskList_FinishByTag(void *ptr, int value) {
+int TaskList_FinishByTag(void *ptr, void *pValue) {
+    int value = (int)pValue;
     unsigned char *node;
 
     if (value == 0) {

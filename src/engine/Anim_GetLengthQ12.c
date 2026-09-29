@@ -3,7 +3,8 @@
 
 extern unsigned short **Anim_GetChannelState(unsigned short *, int);
 
-int Anim_GetLengthQ12(unsigned short *r0, int r1) {
+int Anim_GetLengthQ12(char *pR0, int r1) {
+    unsigned short *r0 = (unsigned short *)pR0;
     unsigned short **p;
     p = Anim_GetChannelState(r0, r1);
     if (!p) {

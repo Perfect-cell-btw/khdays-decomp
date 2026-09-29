@@ -4,8 +4,9 @@
  * copy at (x, y, depth). Used by the menu row renderer (Ov008_DrawListEntryRow) for labels. */
 extern void Text_DrawDirectional_2(int dctx, int x, int y, int mode, int style, void *buf);
 
-void Text_DrawWithShadow(int dctx, int x, int y, int depth, void *buf, int shadow)
+void Text_DrawWithShadow(void *pDctx, int x, int y, int depth, void *buf, int shadow)
 {
+    int dctx = (int)pDctx;
     if (shadow != 0)
         Text_DrawDirectional_2(dctx, x + 1, y + 1, depth - 1, 0x209, buf);
     Text_DrawDirectional_2(dctx, x, y, depth, 0x209, buf);

@@ -3,7 +3,8 @@
 
 extern int NNSi_FndFreeFromDefaultHeap();
 
-void FreeFieldAt8(int *p) {
+void FreeFieldAt8(char *pP) {
+    int *p = (int *)pP;
     int a = p[2];
     if (a) {
         NNSi_FndFreeFromDefaultHeap(a);

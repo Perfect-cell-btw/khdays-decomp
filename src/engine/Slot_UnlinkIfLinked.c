@@ -2,7 +2,8 @@
 
 extern void func_02031df0(void *ptr, void *arg);
 
-void Slot_UnlinkIfLinked(unsigned char *ptr, int index) {
+void Slot_UnlinkIfLinked(int *pPtr, int index) {
+    unsigned char *ptr = (unsigned char *)pPtr;
     int offset;
     int *flags;
 

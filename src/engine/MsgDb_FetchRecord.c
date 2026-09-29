@@ -21,7 +21,8 @@ extern int MsgDb_DecodeDb20(int *rec_out, int index, int keep);
 extern int MsgDb_BuildEntryRecord(int *rec_out, unsigned int index, int keep, int db);
 extern int MsgDb_DecodeGenericRecord(int *param_1, int param_2, unsigned int param_3, int param_4);
 
-int MsgDb_FetchRecord(int *rec_out, int db, unsigned int index, int keep) {
+int MsgDb_FetchRecord(void *pRec_out, int db, unsigned int index, int keep) {
+    int *rec_out = (int *)pRec_out;
     switch (db) {
     case 0x15:
         return MsgDb_LoadRecord15(rec_out, index, keep);

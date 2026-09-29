@@ -7,7 +7,8 @@ struct Inner {
     char pad[0x8c - 4];
 };
 
-void Slot_SetVisible(int *base, int index, int value) {
+void Slot_SetVisible(unsigned char *pBase, int index, int value) {
+    int *base = (int *)pBase;
     struct Inner *p;
     if (index < 0) return;
     p = (struct Inner *)((char *)base + 0x7c);

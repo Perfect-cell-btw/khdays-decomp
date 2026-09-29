@@ -2,7 +2,9 @@
 
 extern void Obj_ReplaceRef(int a, int b);
 extern int *List_InsertSorted(int a, int b, int c);
-int RegisterSubscriberSlot(int param_1, int param_2) {
+int RegisterSubscriberSlot(void *pArg1, void *pArg2) {
+    int param_1 = (int)pArg1;
+    int param_2 = (int)pArg2;
     int *p;
     Obj_ReplaceRef(param_2, param_1);
     p = List_InsertSorted(param_1 + 0x88, 4, 0x64);

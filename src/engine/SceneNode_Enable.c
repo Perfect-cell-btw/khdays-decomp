@@ -2,7 +2,8 @@
  * Ov002_SetSceneNodeEnabled(node, on); SceneNode_Disable (SceneNode_Disable) is the "0" arm.
  * Callers configure the node first and enable it last (Ov014_SetFlag2RunTwoSubActionsIfFlag4). */
 
-void SceneNode_Enable(unsigned short *p)
+void SceneNode_Enable(void *pP)
 {
+    unsigned short *p = (unsigned short *)pP;
     *p |= 2;
 }

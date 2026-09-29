@@ -3,7 +3,8 @@
 
 extern void NNS_G2dSetCellAnimationCurrentFrame(int, int);
 
-void Slot_ForwardToEntry(int param_1, int param_2, int param_3) {
+void Slot_ForwardToEntry(void *pArg1, int param_2, int param_3) {
+    int param_1 = (int)pArg1;
     if (param_2 < 0) {
         return;
     }

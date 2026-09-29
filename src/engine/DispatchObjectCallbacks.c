@@ -3,7 +3,8 @@
 
 struct flags_5c { int b0:1; int b1:1; };
 
-void DispatchObjectCallbacks(int this_, int arg1) {
+void DispatchObjectCallbacks(void *pThis_, int arg1) {
+    int this_ = (int)pThis_;
     if (((struct flags_5c *)(this_ + 0x5c))->b1) {
         return;
     }

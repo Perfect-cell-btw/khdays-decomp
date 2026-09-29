@@ -5,8 +5,9 @@ extern void SceneNode_AttachToModelJoint();
 extern void ClearFlag8HandleIfNot10();
 extern void EntityMgr_UnlinkFromListA();
 extern void EntityMgr_UnlinkFromListB();
-void ReleaseNodeResources(int *param_1)
+void ReleaseNodeResources(void *pArg1)
 {
+    int *param_1 = (int *)pArg1;
     if ((*(unsigned char *)(param_1 + 2) & 2) == 0)
         return;
     if ((*(unsigned char *)(param_1 + 2) & 4) != 0)

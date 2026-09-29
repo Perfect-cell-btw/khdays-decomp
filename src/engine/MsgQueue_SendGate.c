@@ -28,8 +28,9 @@ typedef struct {
     unsigned short size:10;
 } MsgHdr;
 
-int MsgQueue_SendGate(int param_1, unsigned short *param_2, unsigned short param_3)
+int MsgQueue_SendGate(int param_1, void *pArg2, unsigned short param_3)
 {
+    unsigned short *param_2 = (unsigned short *)pArg2;
     unsigned short buf[48];
     int doSend;
     int ret;

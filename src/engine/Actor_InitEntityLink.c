@@ -25,8 +25,9 @@
 
 extern VecFx32 data_02041dc8;                      /* kVecZero */
 
-int Actor_InitEntityLink(int *self, int record)
+int Actor_InitEntityLink(char *pSelf, int record)
 {
+    int *self = (int *)pSelf;
     self[0] = record;                              /* +0x000 */
     *(short *)((char *)self + 0x46) = -1;
     self[1] = 0;                                   /* +0x004 flags */

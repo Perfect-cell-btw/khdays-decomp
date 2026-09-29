@@ -3,7 +3,8 @@
  * (a fixed-point downward magnitude), then calls PrioList_Resort to recompute/commit the
  * entry (passing base, entry+4, &base[1], entry). */
 extern void PrioList_Resort(int *a, int *b, int *c, int d);
-void SlotTable_SetEntryVelocity(int *base, int idx, int scale) {
+void SlotTable_SetEntryVelocity(void *pBase, int idx, int scale) {
+    int *base = (int *)pBase;
     char *e4;
     if (idx < 0) {
         return;

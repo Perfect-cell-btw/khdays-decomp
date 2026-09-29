@@ -4,7 +4,8 @@
 extern int data_0204caa8;
 extern void FreeInstanceMemory(int obj);
 
-void DestroyInstance(int *param_1) {
+void DestroyInstance(void *pArg1) {
+    int *param_1 = (int *)pArg1;
     void (*dtor)(int *);
     int cls = *param_1;
     if (cls != 0) {

@@ -15,8 +15,10 @@ extern int NNS_G2dGetUnpackedScreenData(int member, void *out);
 extern int GetResourceSubBlock_CHAR2(int member, void *out);
 extern int NNS_G2dGetUnpackedPaletteData(int member, void *out);
 
-void Res_LoadSpriteSet(unsigned int *param_1, int *param_2, int param_3, int param_4, int param_5)
+void Res_LoadSpriteSet(void *pArg1, void *pArg2, int param_3, int param_4, int param_5)
 {
+    unsigned int *param_1 = (unsigned int *)pArg1;
+    int *param_2 = (int *)pArg2;
     int m;
 
     Obj_RelocateSections(param_2, 0, param_3, param_4);

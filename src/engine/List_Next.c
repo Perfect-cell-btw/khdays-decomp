@@ -1,7 +1,8 @@
 /* Continues an iteration: returns the next element, or NULL at the end. */
 
-int List_Next(int *r0)
+int List_Next(void *pR0)
 {
+    int *r0 = (int *)pR0;
     int *node;
 
     node = (int *)((int *)r0[9])[1];

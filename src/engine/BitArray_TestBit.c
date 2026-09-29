@@ -2,7 +2,8 @@
  * masked word, not a 0/1 flag.  Companion of BitArray_SetBit (set) and BitArray_ClearBit
  * (clear), and it needs the same shift-amount-into-`n` spelling to colour the
  * temporaries the way the ROM does. */
-int BitArray_TestBit(int *bits, int n) {
+int BitArray_TestBit(void *pBits, int n) {
+    int *bits = (int *)pBits;
     int i = n / 32;
     n = 31 - (n & 0x1f);
     return bits[i] & (1 << n);

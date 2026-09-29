@@ -7,7 +7,8 @@ extern int data_0204c208;
 extern void Actor_ArmWithMessage(void *obj, int a, int b, void *c, int d);
 extern int ClearFlag20InitChildAndSyncTransform(void *field, int p2, int p3, int p4);
 
-int Entity_Register(void *obj, int p2, int p3, int p4) {
+int Entity_Register(void *obj, void *pP2, int p3, int p4) {
+    int p2 = (int)pP2;
     if ((*(unsigned char *)((char *)obj + 8) & 1) == 0) {
         Actor_ArmWithMessage(obj, 0, 0, 0, 1);
     }

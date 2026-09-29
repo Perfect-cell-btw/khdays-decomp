@@ -6,7 +6,8 @@ extern void ResSlot_ReleaseResource();
 extern void ResSlot_Release();
 extern void SceneNode_Detach();
 
-void ReleaseField74AndCleanup(int this_) {
+void ReleaseField74AndCleanup(void *pThis_) {
+    int this_ = (int)pThis_;
     FreeAllResourceTables(this_ + 0xe0);
     if (*(int *)(this_ + 0x74) != 0) {
         ResSlot_ReleaseResource(*(int *)(this_ + 0x74));

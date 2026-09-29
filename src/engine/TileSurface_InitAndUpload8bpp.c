@@ -3,6 +3,8 @@
 
 extern int TileSurface_Init();
 
-int TileSurface_InitAndUpload8bpp(int a, int b) {
+int TileSurface_InitAndUpload8bpp(void *pA, void *pB) {
+    int a = (int)pA;
+    int b = (int)pB;
     return TileSurface_Init(a, b, 1, 1);
 }

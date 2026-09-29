@@ -18,8 +18,9 @@ extern void func_01ffb8fc(void *buf, unsigned int *ctx);
 extern unsigned int *data_020475d0;
 extern unsigned short data_027e0654;
 
-void Obj_InitChannelsAndRun(unsigned int *param_1)
+void Obj_InitChannelsAndRun(char *pArg1)
 {
+    unsigned int *param_1 = (unsigned int *)pArg1;
     unsigned int scratch[98];
 
     if ((*param_1 & 0x10) == 0x10) {

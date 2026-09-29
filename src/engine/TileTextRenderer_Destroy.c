@@ -2,8 +2,9 @@
 
 extern int NNSi_FndFreeFromDefaultHeap();
 
-int TileTextRenderer_Destroy(int *r0)
+int TileTextRenderer_Destroy(void *pR0)
 {
+    int *r0 = (int *)pR0;
     NNSi_FndFreeFromDefaultHeap(((int *)r0)[0x2c / 4]);
     return 1;
 }

@@ -1,7 +1,9 @@
 /* Reset the 5 slot rows: id/aux halfwords to -1 and the word field to zero.
  * `v = i = 0` is deliberate -- the ROM materialises the zero once and copies it
  * (mov ip,#0 / mov r2,ip); two separate `= 0` initialisers do not reproduce that. */
-void MainBlob_ResetSlotRows(int param_1, int param_2) {
+void MainBlob_ResetSlotRows(void *pArg1, void *pArg2) {
+    int param_1 = (int)pArg1;
+    int param_2 = (int)pArg2;
     int i, v;
 
     if (param_2 == 0) {

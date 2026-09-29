@@ -4,7 +4,8 @@
 extern int Record_ReleaseSlot(void *ptr);
 extern int FreeNodeAndChildLists(void *ptr);
 
-int DispatchByNodeKind(int **ptr) {
+int DispatchByNodeKind(void *pPtr) {
+    int **ptr = (int **)pPtr;
     unsigned short kind = *(unsigned short *)((char *)ptr[0] + 2);
 
     if (kind < 0x21) {

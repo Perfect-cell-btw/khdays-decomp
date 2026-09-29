@@ -11,7 +11,8 @@ struct Flags { unsigned f0 : 1, f1 : 1, f2 : 1; };
 extern void DispObj_WriteOam(int base, int entry);
 extern void NNS_G2dTickCellAnimation(unsigned int *p, int size);
 
-void Obj_CommitAlphaBlend(int base, int idx) {
+void Obj_CommitAlphaBlend(void *pBase, int idx) {
+    int base = (int)pBase;
     int base4 = base + 4;
     int entry = base4 + idx * 0x8c;
     unsigned int count;

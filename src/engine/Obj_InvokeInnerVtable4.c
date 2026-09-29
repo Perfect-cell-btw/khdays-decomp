@@ -2,7 +2,8 @@
 
 typedef void (*func_02030158_cb)(void *ptr, int value);
 
-void Obj_InvokeInnerVtable4(int *ptr) {
+void Obj_InvokeInnerVtable4(unsigned char *pPtr) {
+    int *ptr = (int *)pPtr;
     int *inner = (int *)ptr[6];
     func_02030158_cb cb = *(func_02030158_cb *)(inner[7] + 4);
 
