@@ -4,7 +4,7 @@
 
 typedef void (*func_020293fc_cb)(void *ptr);
 
-void Node_SetPosAndNotify(unsigned char *ptr, VecFx32 *src) {
+void Node_SetPosAndNotify(unsigned char *ptr, const VecFx32 *src) {
     func_020293fc_cb cb;
 
     *(VecFx32 *)(ptr + 0x2c) = *src;

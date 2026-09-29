@@ -7,11 +7,11 @@ extern int data_ov107_020cbf1c;
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern int *List_InsertSorted(void *list, int a, int b);
-extern int strcmp(char *a, char *b);
+extern int strcmp(const char *a, const char *b);
 extern unsigned int strlen(const char *s);
 extern void *CallocInstance(unsigned int size);
 extern void strcpy(void *dst, const char *src);
-extern int Msg_OpenContainerAndReadHeader(char *name, int mode);
+extern int Msg_OpenContainerAndReadHeader(const char *name, int mode);
 
 int Ov107_OpenCachedResourceByName(const char *name) {
     char *cache = *(char **)&data_ov107_020cbf1c;
