@@ -67,7 +67,7 @@ void Ov267_PickRetreatSpot(int self) {
                         break;
                     }
                 }
-                it = List_Next((void *)(ctx[0] + 0x5e4));
+                it = (VecFx32 *)List_Next((void *)(ctx[0] + 0x5e4));
                 i++;
             }
             best.y = best.y + *(int *)(ctx[0] + 0x80);

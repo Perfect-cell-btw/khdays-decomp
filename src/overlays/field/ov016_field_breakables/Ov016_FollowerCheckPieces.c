@@ -54,7 +54,7 @@ int Ov016_FollowerCheckPieces(Ov016Follower *pSelf, VecFx32 *pFrom, VecFx32 *pAt
         if (Ov016_FollowerPieceHolds(pPiece, pFrom, pSelf->nRange, pAt, pSelf->nAngle, pSelf->nCone)) {
             return 0;
         }
-        ppPiece = List_Next(pOwner->pieceList);
+        ppPiece = (Ov016Piece **)List_Next(pOwner->pieceList);
         pPiece = (ppPiece == 0) ? 0 : *ppPiece;
         nCount++;
     }

@@ -5,8 +5,8 @@
 #include "game/actor.h"
 #include "game/enemy_common.h"
 
-extern void Srt_SetTranslation(void *sub, void *src);
-int Ov107_MoveNodeAndRelayout(Actor *node, VecFx32 *v) {
+extern void Srt_SetTranslation(void *sub, const void *src);
+int Ov107_MoveNodeAndRelayout(Actor *node, const VecFx32 *v) {
     Srt_SetTranslation(&node->srt, v);
     return Ov107_UpdateCollisionSphere((int)node);
 }

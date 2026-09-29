@@ -144,6 +144,23 @@ def uninformative(spelled):
     return BASIC_CAST.match(' '.join(spelled.split())) is not None
 
 
+def store_mismatch(T, a, b):
+    """The cast a value of type a needs to be stored as type b (None when it needs none)."""
+    if a is None or b is None:
+        return None
+    ak, bk = T.kind(a), T.kind(b)
+    if ak not in ('ptr', 'scalar') or bk not in ('ptr', 'scalar') or ak == bk == 'scalar':
+        return None
+    if ak == bk == 'ptr':
+        if T.spell(T.strip(a)) == T.spell(T.strip(b)):
+            return None
+        pa = T.spell(T.strip(a).type).replace('const ', '')
+        pb = T.spell(T.strip(b).type).replace('const ', '')
+        if pa == pb or pb == 'void':
+            return None
+    return T.spell(b)
+
+
 def cast_arguments(path, text, protos):
     """Where a call passes a pointer (or an int) of another type than the parameter's, cast the
     argument to the parameter type. Returns the new text or None."""
@@ -159,11 +176,46 @@ def cast_arguments(path, text, protos):
     T = cv.T
     edits = []  # (line, name, occurrence on the line, arg index, cast)
 
+    rets = []  # (line, name, cast): the returned value stored with another type
+
     class Calls(sc.Rewriter):
         def walk(self, n, parent):
+            if isinstance(parent, sc.c_ast.FuncDef) and n is parent.body:
+                self.cur_ret = T.strip(parent.decl.type).type
             if isinstance(n, sc.c_ast.FuncCall) and isinstance(n.name, sc.c_ast.ID) and n.name.name in protos:
                 self.on_call(n)
+                self.on_return(n, parent)
             super().walk(n, parent)
+
+        def on_return(self, n, parent):
+            fd = T.funcs.get(n.name.name)
+            if fd is None:
+                return
+            tgt = None
+            if isinstance(parent, sc.c_ast.Assignment) and parent.rvalue is n and parent.op == '=':
+                tgt = self.typeof(parent.lvalue)
+            elif isinstance(parent, sc.c_ast.Decl) and parent.init is n:
+                tgt = parent.type
+            elif isinstance(parent, sc.c_ast.Return) and getattr(self, 'cur_ret', None) is not None:
+                tgt = self.cur_ret
+            elif isinstance(parent, sc.c_ast.ExprList):
+                outer = self.parents.get(id(parent))
+                if isinstance(outer, sc.c_ast.FuncCall) and isinstance(outer.name, sc.c_ast.ID):
+                    od = T.funcs.get(outer.name.name)
+                    od = T.strip(od) if od is not None else None
+                    if od is not None and getattr(od, 'args', None):
+                        ps = [x for x in od.args.params if isinstance(x, sc.c_ast.Decl)]
+                        k = [i for i, e in enumerate(parent.exprs) if e is n]
+                        if k and k[0] < len(ps):
+                            tgt = ps[k[0]].type
+            m = store_mismatch(T, T.strip(fd).type, tgt)
+            if m is None:
+                return
+            if '{' in m:
+                return
+            if uninformative(m):
+                raise NotInformative(n.name.name)
+            rets.append((n.coord.line, n.name.name, m))
 
         def on_call(self, n):
             fd = T.funcs.get(n.name.name)
@@ -182,8 +234,10 @@ def cast_arguments(path, text, protos):
                     continue
                 if ak == pk == 'ptr':
                     a_s, p_s = T.spell(T.strip(at)), T.spell(T.strip(pt))
-                    if a_s == p_s or p_s == 'void *' or a_s == 'void *' or p_s.startswith('const void'):
+                    if a_s == p_s or p_s == 'void *' or p_s.startswith('const void'):
                         continue
+                    if a_s in ('void *', 'const void *') and uninformative(p_s):
+                        continue  # C converts it; a cast to a basic type would say nothing
                     base_p = T.spell(T.strip(pt).type).replace('const ', '')
                     base_a = T.spell(T.strip(at).type).replace('const ', '')
                     if base_p == base_a:
@@ -202,9 +256,15 @@ def cast_arguments(path, text, protos):
         rw.run()
     except sc.Skip:
         return None
-    if not edits:
+    if not edits and not rets:
         return None
     lines = text.split('\n')
+    for ln, name, m in rets:
+        occ = list(re.finditer(r'\b%s\s*\(' % re.escape(name), lines[ln - 1]))
+        if len(occ) != 1:
+            return None
+        s = occ[0].start()
+        lines[ln - 1] = lines[ln - 1][:s] + '(%s)' % m + lines[ln - 1][s:]
     by = collections.defaultdict(list)
     for ln, name, i, spelled in edits:
         by[(ln, name)].append((i, spelled))

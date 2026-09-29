@@ -178,10 +178,10 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
                     if (Ov107_HitShape_TestSphere(ln->item, (char *)st->pActor + 0x74, 0) != 0) {
                         goto abort;
                     }
-                    ln = List_Next((char *)obj + 0x22c);
+                    ln = (struct ListNode *)List_Next((char *)obj + 0x22c);
                 }
             }
-            ln = List_Next((char *)world + 0x80);
+            ln = (struct ListNode *)List_Next((char *)world + 0x80);
             obj = ln == 0 ? 0 : (Actor *)ln->item;
         }
         if (st->nPlanned <= 0 || st->nTravelled > st->nPlanned) {
@@ -263,7 +263,7 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
                     best = mag;
                 }
             }
-            ln = List_Next((char *)world + 0x80);
+            ln = (struct ListNode *)List_Next((char *)world + 0x80);
             obj = ln == 0 ? 0 : (Actor *)ln->item;
         } while (obj != 0);
     }

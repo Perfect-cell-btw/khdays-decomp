@@ -1,10 +1,11 @@
 /* Runs an object's control word: notifies a peer hit, queues a point (or parks the value) for the
  * local side, or plays the control record its selector picks from the actor's table. */
 
-#include "game/engine.h"
-
+extern unsigned int *GetEntryField20ByIndex(int kind);
 extern void Ov022_NotifyPeerHit(unsigned int *base, int obj, int a, int b);
+extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int state);
+extern int LoadGlobalU16At0(void);
 extern void Ov106_QueuePoint(int obj);
 extern void Ov002_ParkValue(int obj);
 extern void Ov022_PlayControlRecord(unsigned int *base, int value, int obj);

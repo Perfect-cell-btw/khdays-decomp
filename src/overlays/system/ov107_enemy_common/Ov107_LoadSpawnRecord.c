@@ -94,7 +94,7 @@ int Ov107_LoadSpawnRecord(int id, Output *slot)
     SignedHalfword arrayValue;
     SignedHalfword tailValue;
 
-    manager = func_ov107_020c9848();
+    manager = (Manager *)func_ov107_020c9848();
     mask = 0xfffffc;
     source = (SourceFile *)Archive_LoadFile(
         ((((manager->field_7c + 0x8000) & mask) << 7) | 0x80000000)

@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct Ov239ResourceTransform {
     VecFx32 position;
@@ -72,9 +71,12 @@ typedef struct Ov239Actor {
 extern int Ov107_OpenCachedResourceByName(const void *name);
 extern void *Ov107_PackTextureHandle(Ov239Actor *actor, int kind);
 extern Ov239Subitem *CreateSubitemInstance0xB4(void *packedHandle);
+extern int RegisterSubscriberSlot(void *owner, Ov239Subitem *subitem);
 extern void *Ov107_CreateNamedResourceBinding(void *packedHandle, const void *name);
 extern void Ov107_EnqueueValue(Ov239Actor *actor, Ov239Subitem *subitem);
+extern void **List_InsertSorted(void *pool, int stride, int priority);
 extern void *Ov107_CloneResourceTransform(const Ov239ResourceTransform *transform);
+extern void Res_RequestIdPair(int resourceId);
 
 extern void Ov239_ReleaseSubObjectsAndSlotsThenNotify(void);
 extern void Ov239_PropagateBlockChain(void);

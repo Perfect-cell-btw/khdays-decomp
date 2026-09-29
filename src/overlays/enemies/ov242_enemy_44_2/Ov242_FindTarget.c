@@ -7,7 +7,6 @@
  * +0x80 radius. Returns the best actor or 0. */
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 struct flags40 { int bit0 : 1, bit1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -15,6 +14,7 @@ struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);

@@ -73,7 +73,7 @@ int Ov022_RefreshSelectionCandidates(void)
     context = NNSi_FndGetCurrentRootHeap();
     index = QueryActiveStateOrDelegate();
     func_ov022_020881f8(index);
-    actor = GetEntryField20ByIndex(index);
+    actor = (Ov022Actor *)GetEntryField20ByIndex(index);
 
     context->scanDistance = 0x1e000;
     context->selectedIndex = -1;
@@ -110,7 +110,7 @@ int Ov022_RefreshSelectionCandidates(void)
             result = 1;
         }
 
-        slot = List_Next(listOwner->list80);
+        slot = (Ov022Candidate **)List_Next(listOwner->list80);
         candidate = slot == 0 ? 0 : *slot;
     }
 

@@ -1,6 +1,6 @@
 /* Returns the current frame of an animation channel, or 0 when the channel is unbound. */
 
-#include "game/engine.h"
+extern int *Anim_GetChannelState();
 
 int Anim_GetFrame(char *pR0, int r1) {
     unsigned short *r0 = (unsigned short *)pR0;

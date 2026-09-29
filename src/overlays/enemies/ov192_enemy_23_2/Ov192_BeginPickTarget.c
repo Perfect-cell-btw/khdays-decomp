@@ -9,11 +9,12 @@
 
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
-#include "game/engine.h"
 
 typedef struct { unsigned short a, b; } Pair;
 
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
+extern int RandNextScaled(int bound);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int node, int slot, void *cb);

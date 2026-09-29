@@ -113,7 +113,7 @@ test_part:
             }
         }
 next_part:
-        scan.part = List_Next(candidate->traversal22c);
+        scan.part = (struct Ov022PartNode *)List_Next(candidate->traversal22c);
     }
     return result;
 }

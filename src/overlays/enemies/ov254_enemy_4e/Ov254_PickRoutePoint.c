@@ -36,7 +36,7 @@ int Ov254_PickRoutePoint(int *state)
                 state[0x1b] = (state[0x1b] + 1) % *(int *)(*state + 0x454);
                 return 1;
             }
-            p = List_Next((void *)(*state + 0x434));
+            p = (VecFx32 *)List_Next((void *)(*state + 0x434));
             i++;
         }
     }

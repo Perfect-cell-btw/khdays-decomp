@@ -41,7 +41,7 @@ void Ov212_ConstructTailActor(char *self)
     *(int *)(self + 0x6c) = nHalf;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
-    *(PoolEntry **)(self + 0x388) = List_InsertSorted(self + 0x22c, 0x10, 100);
+    *(PoolEntry **)(self + 0x388) = (PoolEntry *)List_InsertSorted(self + 0x22c, 0x10, 100);
     (*(PoolEntry **)(self + 0x388))->value = Ov107_CloneResourceTransform(self + 0x64);
     (*(PoolEntry **)(self + 0x388))->flags |= 2;
 }

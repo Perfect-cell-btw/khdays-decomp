@@ -11,7 +11,6 @@
  * block with its own `int *self` -- see Ov120_InitializeActor.) */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Ov194Pose {
     VecFx32 position;
@@ -40,11 +39,13 @@ extern void Ov194_OnHit(void);
 extern void Ov194_RequestSubState9IfIdle(void);
 extern void Ov194_Model_SetTrack0(void);
 
+extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern char *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
 extern void *CallocInstance();
+extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();

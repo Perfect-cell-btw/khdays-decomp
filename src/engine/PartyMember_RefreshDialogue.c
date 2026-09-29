@@ -31,7 +31,7 @@ extern PartyEntry data_0204c678[];
 
 void PartyMember_RefreshDialogue(int slot, int msgArg)
 {
-    PartyMember *member = GetPlayerSlotTableEntry(slot - 1);
+    PartyMember *member = (PartyMember *)GetPlayerSlotTableEntry(slot - 1);
     int state;
 
     MsgDb_LoadDb(0x1e, 2);

@@ -2,7 +2,6 @@
  * archive members and sets their sizes, priorities and default values. */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 typedef struct Ov022DefaultValues {
     u32 values[4];
@@ -35,6 +34,7 @@ typedef struct Ov022UiSubsystem {
 
 extern Ov022DefaultValues data_ov022_020b226c;
 
+extern void *Archive_GetMember(void *list, int kind, int index);
 extern void Ov002_SetSlotKeyAndRebind(void *destination, void *resource,
                                 int enabled);
 

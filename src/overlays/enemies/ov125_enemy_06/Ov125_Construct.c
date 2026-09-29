@@ -9,7 +9,6 @@
  * requests resource 0x11b. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int id[9]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
@@ -26,11 +25,13 @@ extern void Ov125_CreateAiTask(void);
 extern void Ov125_RequestSubState9IfIdle(void);
 extern void Ov125_OnHit(void);
 extern void Ov125_Model_SetTrack0(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
 extern int *CallocInstance(int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, int b, int c);
 extern void NNS_G3dMdlSetMdlPolygonIDAll(int anim, int blend);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);

@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 struct Box { VecFx32 min, max; };
 
@@ -82,9 +81,15 @@ extern VecFx32 data_02042264;
 
 extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
+extern void RegisterSubscriberSlot(void *list, struct Subitem *item);
+extern int FindResourceIndexByName(struct Subitem *item, char *name);
+extern void RefreshObjectCallbacks(struct Subitem *item, int value);
+extern void QuatFromAxisAngle(int *out, VecFx32 *axis, int angle);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *self, int index, int a, int b, int scale);
 extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
+extern int *List_InsertSorted(void *pool, int size, int count);
 extern int Ov107_CloneResourceTransform(void *camera);
+extern void Res_RequestIdPair(int id);
 
 void Ov198_InitActor(struct Obj *self)
 {

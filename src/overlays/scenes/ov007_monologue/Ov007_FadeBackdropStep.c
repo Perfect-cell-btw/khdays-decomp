@@ -11,9 +11,8 @@
  *
  */
 
-#include "game/engine.h"
-
 extern int NNSi_FndGetCurrentRootHeap(void);
+extern void CallVirtSlot1(void *p, int b);
 extern void Text_UploadTileBuffer(void *p);
 extern int Ov007_TextWindowFadeIn(void);
 extern unsigned short data_0204c190;

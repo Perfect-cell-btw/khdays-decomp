@@ -2,11 +2,9 @@
  * (body, data_ov255_020d2a08, for the +0x384 rig with the +0x388 binding; head,
  * data_ov255_020d2a94, for the +0x38c rig with +0x390), each rig restarts channel 0 with the loop
  * flag and the head also restarts channel 2. */
-
-#include "game/enemy_common.h"
-
 typedef struct { int id[35]; } MotionTable;
 
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern void Ov255_AppendWorkEntry(int part, void *res, int binding);
 extern void SetSubitemState(int obj, int channel, int a, int b);
 extern MotionTable data_ov255_020d2a08;

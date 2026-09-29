@@ -118,7 +118,7 @@ second_update:
 second_done:
 
     if (context->mode == 1) {
-        Ov022Actor *actor = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+        Ov022Actor *actor = (Ov022Actor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
 
         if (actor->actionState != 0 && actor->deadline >= OS_GetTick()) {
             int ratio;

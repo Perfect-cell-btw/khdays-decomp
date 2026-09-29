@@ -1,11 +1,12 @@
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 extern const short data_ov002_0207e6fc[];
 
 extern int Ov002_GetRootField8bc4(void);
+extern int Session_GetLocalPlayerIndex(void);
 extern int func_ov022_020882f8(void);
+extern void *GetEntryField20ByIndex(int nIndex);
 extern int Ov002_ElementActorInRange(char *pElement, void *pEntry);
 extern int Ov002_GetRootField8d94(void);
 extern void Ov002_AddMissionTally(int nIndex, int nKind, int nValue);
@@ -14,6 +15,7 @@ extern int Ov002_RunShutdownHook(void);
 extern void Ov002_BeginSessionTeardown(int nMode);
 extern void Ov002_DoneTick(void);
 extern int Ov002_IsSessionOpen(void);
+extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int nIndex);
 extern int Ov002_GetSlotTableByte(int nHandle);
 

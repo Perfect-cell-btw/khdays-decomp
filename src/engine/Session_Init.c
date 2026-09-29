@@ -62,7 +62,7 @@ void *Session_Init(void)
     int pos;
 
     data_0204c228 = ctx;
-    src = Session_GetSlotTable();
+    src = (SessionSource *)Session_GetSlotTable();
     ctx->id = src->id;
     if (Session_IsActive() != 0) {
         ctx->memberMask = src->memberMask;

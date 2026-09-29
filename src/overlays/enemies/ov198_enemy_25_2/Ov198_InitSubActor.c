@@ -100,7 +100,7 @@ void Ov198_InitSubActor(struct Obj *self)
         self->slots394[i].child->flags5c |= 2;
     }
 
-    self->poolEntry388 = List_InsertSorted(self->pool22c, 0x10, 0x64);
+    self->poolEntry388 = (struct PoolEntry *)List_InsertSorted(self->pool22c, 0x10, 0x64);
     self->poolEntry388->value = Ov107_CloneResourceTransform(self->camera);
     self->poolEntry388->flags |= 2;
     self->field38c = 0;

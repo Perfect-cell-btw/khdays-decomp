@@ -119,11 +119,11 @@ void Ov218_ShotBurstTick(int *node)
                                     hit = 1;
                                 }
                             }
-                            part = List_Next((char *)obj + 0x22c);
+                            part = (struct ListNode *)List_Next((char *)obj + 0x22c);
                         }
                     }
                 }
-                ln = List_Next((char *)world + 0x80);
+                ln = (struct ListNode *)List_Next((char *)world + 0x80);
                 obj = ln == 0 ? 0 : (Actor *)ln->item;
             } while (obj != 0);
         }

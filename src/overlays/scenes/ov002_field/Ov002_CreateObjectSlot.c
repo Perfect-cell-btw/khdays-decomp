@@ -1,7 +1,6 @@
 /* Create and start the next external object slot, then return its index. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef struct Ov107Object {
     u8 gap0000[0x44];
@@ -24,6 +23,9 @@ typedef struct Ov002ObjectContext {
 
 extern Ov002ObjectContext *data_ov002_0207fa14;
 
+extern Ov107Object *Ov107_CreateMovementNode(void);
+extern void Ov107_InitObjectFromSource(void *pSource, Ov107Object *pObject);
+extern void Ov107_StartObject(Ov107Object *pObject);
 extern void Ov002_OnObjectEvent(void);
 
 int Ov002_CreateObjectSlot(int nSourceIndex)

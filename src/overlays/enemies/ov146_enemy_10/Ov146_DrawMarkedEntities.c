@@ -5,10 +5,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 extern void SrtTransform_SetIdentity(void *srt);
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);
 extern void Srt_SetScaleUniform(void *srt, int scale);
 extern void Srt_SetTranslation(void *srt, const VecFx32 *v);

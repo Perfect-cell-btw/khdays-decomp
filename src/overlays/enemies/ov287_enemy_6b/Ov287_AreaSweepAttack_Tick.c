@@ -135,10 +135,10 @@ void Ov287_AreaSweepAttack_Tick(struct Node *node)
                             func_ov107_020c0b90(st->pActor, 0, hitNormal, 0);
                         }
                     }
-                    part = List_Next((char *)obj + 0x22c);
+                    part = (struct ListNode *)List_Next((char *)obj + 0x22c);
                 }
             }
-            ln = List_Next((char *)world + 0x80);
+            ln = (struct ListNode *)List_Next((char *)world + 0x80);
             obj = ln == 0 ? 0 : (Actor *)ln->item;
         } while (obj != 0);
         return;

@@ -43,7 +43,7 @@ int Ov002_AskPiecesAboutPeer(int nPeer, int nArg)
             if (Ov002_PieceAnswersForPoint(pPiece, &vPos, nArg) != 0) {
                 return 1;
             }
-            ppPiece = List_Next(pOwner->list);
+            ppPiece = (Ov002Piece **)List_Next(pOwner->list);
             pPiece = (ppPiece == 0) ? 0 : *ppPiece;
         }
     }

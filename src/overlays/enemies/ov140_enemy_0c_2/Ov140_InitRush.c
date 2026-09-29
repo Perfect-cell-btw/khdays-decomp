@@ -32,7 +32,7 @@ void Ov140_InitRush(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate((void *)*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)*state, 9, 0);
     if (state[0x11] != 0) {
         VEC_Subtract((void *)state[0x12],
                      (void *)(state[0x11] + 0x190),

@@ -60,7 +60,7 @@ int Ov002_DoPiecesFitAtScale(int nFilter, int nScale)
                         bFits = 0;
                     }
                 }
-                ppPiece = List_Next(pOwner->list);
+                ppPiece = (Ov002Piece **)List_Next(pOwner->list);
                 pPiece = (ppPiece == 0) ? 0 : *ppPiece;
             }
         }

@@ -1,8 +1,10 @@
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
+extern int QueryActiveStateOrDelegate(void);
+extern void *GetEntryField20ByIndex(int nPlayer);
+extern void *func_02023bf0(void);   /* the active actor */
 extern int FX_Div(int a, int b);
 extern short FX_Atan2(int x, int y);
 /* Cosine to angle: a binary search over the shared sin/cos table. The other

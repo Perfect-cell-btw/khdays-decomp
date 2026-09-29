@@ -37,13 +37,13 @@ int Ov022_ScoreCandidateByDistance(u32 *selectionFlags, int index, int bestDista
 
     NNSi_FndGetCurrentRootHeap();
     origin = func_ov022_020881f8(index);
-    actor = GetEntryField20ByIndex(index);
+    actor = (Ov022Actor *)GetEntryField20ByIndex(index);
 
     for (i = 0; i < func_ov022_020882f8(); i++) {
         Ov022Actor *candidate;
 
         if (i != QueryActiveStateOrDelegate()) {
-            candidate = GetEntryField20ByIndex(i);
+            candidate = (Ov022Actor *)GetEntryField20ByIndex(i);
             if (candidate->flags12 != 0 &&
                 candidate->group66 == actor->group66 &&
                 (candidate->flags464 & 0x200000000ULL) == 0) {

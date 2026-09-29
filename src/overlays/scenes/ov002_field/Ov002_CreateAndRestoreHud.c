@@ -133,7 +133,7 @@ void Ov002_CreateAndRestoreHud(void)
 
     pRoot = data_ov002_0207fa00;
     pPause = &pRoot->pause;
-    pSession = Session_GetSlotTable();
+    pSession = (SessionSlotTable *)Session_GetSlotTable();
     params.wInitialValue = 100;
     for (nIndex = 0; nIndex < 4; nIndex++) {
         params.aSlots[nIndex].nId = -1;

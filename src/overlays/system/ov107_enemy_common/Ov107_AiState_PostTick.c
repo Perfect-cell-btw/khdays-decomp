@@ -1,10 +1,9 @@
 /* Latches the ground flag, updates the attached hit shapes while active, and clears the frame's
  * push vector. */
 
-#include "game/engine.h"
-
 extern void *List_First(void *list);
 extern void Ov107_HitShape_UpdateWorld(int v);
+extern void *List_Next(void *list);
 
 typedef struct { int w0, w1, w2; } Word3;
 extern Word3 data_02041dc8;

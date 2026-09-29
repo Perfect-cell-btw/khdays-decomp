@@ -32,7 +32,7 @@ int Ov022_TestLineOfSight(int index, const VecFx32 *position)
     CollisionHit *hit;
     int result = 1;
 
-    actor = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+    actor = (Ov022Actor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
     origin = func_ov022_020881f8(QueryActiveStateOrDelegate());
     VEC_Subtract(position, origin, &direction);
     raisedOrigin = *origin;

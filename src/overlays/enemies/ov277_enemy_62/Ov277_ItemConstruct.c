@@ -109,7 +109,7 @@ void Ov277_ItemConstruct(struct Obj *self)
         self->slots3a4[i].child->flags5c |= 2;
     }
 
-    self->poolEntry38c = List_InsertSorted(self->pool22c, 0x10, 0x64);
+    self->poolEntry38c = (struct PoolEntry *)List_InsertSorted(self->pool22c, 0x10, 0x64);
     self->poolEntry38c->value = Ov107_CloneResourceTransform(self->pose);
     self->poolEntry38c->flags |= 2;
 }

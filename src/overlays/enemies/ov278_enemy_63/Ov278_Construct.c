@@ -13,7 +13,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[10]; } IdTable;
@@ -33,12 +32,14 @@ extern void Ov278_ForwardHitToSubObjects(void);
 extern void Ov278_SyncRiderHitPoints(void);
 extern void Ov278_SetupModelPoses(void);
 extern void Ov278_RenderAtOwnerModel(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int CallocInstance(int size);
 extern void Snd_RegisterSeqAndBind(int a, int b, void *c, int d);
 extern void MainBlob_ResetSlotRows(int a, int b);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Srt_SetScaleXYZ(int srt, int sx, int sy, int sz);
 extern void Srt_SetTranslationXYZ(int srt, int x, int y, int z);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nList, int nValue);

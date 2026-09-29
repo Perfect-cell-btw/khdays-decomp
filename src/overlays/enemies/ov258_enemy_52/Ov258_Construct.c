@@ -9,7 +9,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[43]; } IdTable43;
@@ -28,12 +27,14 @@ extern void Ov258_RemoveItemsFromScene(void);
 extern void Ov258_Update(void);
 extern void Ov258_OnDamage(void);
 extern void Ov258_PlayRigMove(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern void Srt_SetTranslationXYZ(int transform, int x, int y, int z);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *slot, int bank, void *record, int d);
 extern void MainBlob_ResetSlotRows(int rig, void *slot);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int Ov258_New(char *self, int side);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(const Capsule *capsule);

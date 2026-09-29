@@ -9,7 +9,6 @@
  * of +0x18 clear, +0x2c..+0x34 zero, +0x38..+0x3b = -1) that is freed right after. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -41,6 +40,7 @@ extern void Ov261_RefreshAndCopyTwoBlocks(void);
 extern void Ov261_GrabReleaseHook(void);
 extern void Ov261_ReallocBufferInitConsts(void);
 extern void Ov261_Model_SetTrack0(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);

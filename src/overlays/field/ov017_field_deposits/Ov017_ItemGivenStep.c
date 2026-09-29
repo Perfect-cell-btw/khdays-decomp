@@ -73,7 +73,7 @@ void *Ov017_ItemGivenStep(Ov017Item *pSelf)
     if (pSelf->nState == 5 && pSelf->nTimer >= 0xc000) {
         pSelf->nState = 6;
         if (Session_GetLocalPlayerIndex() == 0 && Ov002_IsSessionOpen() != 0) {
-            pActor = GetEntryField20ByIndex(pSelf->nPlayer);
+            pActor = (Ov017PlayerActor *)GetEntryField20ByIndex(pSelf->nPlayer);
             pEntry = Ov002_GetRootField8d14((short)(Ov002_FindKeyEntryIndex((short)pSelf->nItemKey)));
             if (Session_IsActive() != 0) {
                 msgGive.nType = 3;

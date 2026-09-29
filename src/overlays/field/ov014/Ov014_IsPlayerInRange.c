@@ -2,8 +2,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
+extern int QueryActiveStateOrDelegate(void);
+extern void *GetEntryField20ByIndex(int index);
 extern int Ov002_GetCtxTableByte(int arg0);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 

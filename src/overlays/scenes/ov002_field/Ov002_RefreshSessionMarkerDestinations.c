@@ -53,7 +53,7 @@ void Ov002_RefreshSessionMarkerDestinations(void)
             nSlot = Ov002_GetCtxTableByte(nNewDestination);
             if (nSlot != -1) {
                 for (i = 0; i < func_ov022_020882f8(); i++) {
-                    pActor = GetEntryField20ByIndex(i);
+                    pActor = (Ov002SessionActorFlags *)GetEntryField20ByIndex(i);
                     bHasName = pMarkerName != 0;
                     if (i == nLocalPlayer || (pActor->qwFlags & 0x10000ULL) != 0) {
                         if (bHasName) {

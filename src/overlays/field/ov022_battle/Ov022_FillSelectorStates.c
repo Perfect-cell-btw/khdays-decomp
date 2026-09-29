@@ -136,7 +136,7 @@ void Ov022_FillSelectorStates(int *input)
             *(int *)(stateCursor + 4) = args->callback(&data_ov022_020b2e80);
             *rootFlags = (*rootFlags & ~clearBit0Mask) | 1;
             *rootFlags &= ~clearBit4Mask;
-            entry = GetEntryField20ByIndex(index);
+            entry = (Ov022PlayerEntry *)GetEntryField20ByIndex(index);
             if (*(int *)((char *)entry + 0x4ec) != 0 && input[8] != 0 &&
                 Session_IsActive() == 0) {
                 *(int *)(*(int *)((char *)entry + 0x4ec) + 0x1dc) = 0x3c000;

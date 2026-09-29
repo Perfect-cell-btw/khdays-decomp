@@ -32,12 +32,12 @@ int Ov254_ChooseWaypoint(int *state, int nearest, int *outHeading)
             *(VecFx32 *)(state + 6) = *p;
             state[0x1b] = (i + 1) % *(int *)(*state + 0x454);
         }
-        p = List_Next((void *)(*state + 0x434));
+        p = (VecFx32 *)List_Next((void *)(*state + 0x434));
         i++;
     }
     }
     if (outHeading != 0) {
-        for (p = List_First((void *)(*state + 0x434)), i = 0; p != 0; p = List_Next((void *)(*state + 0x434)), i++) {
+        for (p = List_First((void *)(*state + 0x434)), i = 0; p != 0; p = (VecFx32 *)List_Next((void *)(*state + 0x434)), i++) {
             if (i == state[0x1b]) {
                 VEC_Subtract(p, state + 6, &d);
                 *outHeading = func_020050b4(d.x, d.z);

@@ -48,7 +48,7 @@ Ov022StateCallback Ov022_StateBeginResultSequence(void)
         Ov002_SetOrClearFlag200(func_ov022_02083f0c(), 1);
 
         duration = func_02023c40() == 1 ? 0xf0 : 0xa0;
-        runtime = func_ov107_020c9848();
+        runtime = (GameRuntimeContext *)func_ov107_020c9848();
         if (runtime != 0) {
             runtime->pendingValue = duration;
         }

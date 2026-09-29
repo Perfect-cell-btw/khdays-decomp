@@ -64,7 +64,7 @@ int Ov017_ItemHit(Ov017Item *pSelf, u8 *pHit)
         return 0;
     }
     if ((nBits & 1) == 0 && pSelf->nState == 3) {
-        pActor = GetEntryField20ByIndex(pHit[0]);
+        pActor = (Ov017PlayerActor *)GetEntryField20ByIndex(pHit[0]);
         pEntry = Ov002_GetRootField8d14((short)(Ov002_FindKeyEntryIndex((short)pSelf->nItemKey)));
         nFlags = pEntry->nFlags & 0xff;
         nKey = (u16)pEntry->nKey;

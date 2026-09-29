@@ -58,7 +58,7 @@ void Ov022_BroadcastCue(unsigned int nOwner, int nKind, VecFx32 *pPos,
     pPacket = data_ov022_020b2ea4;
     nRecord = func_ov022_02083f0c();
     nState = QueryActiveStateOrDelegate();
-    pEntry = GetEntryField20ByIndex(nState);
+    pEntry = (struct Entry *)GetEntryField20ByIndex(nState);
     if (nState == nOwner) {
         if (Session_GetLocalPlayerIndex() == 0 && pEntry->nHp == 0
             && (pEntry->nFlags & ENTRY_REPLIES) != 0) {

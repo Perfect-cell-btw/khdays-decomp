@@ -70,7 +70,7 @@ void Ov162_RecoilTick(int *node)
                 VEC_Add((VecFx32 *)(obj + 0xe4), &drift, (VecFx32 *)(obj + 0xe4));
             }
         }
-        ln = List_Next(world + 0xa8);
+        ln = (struct ListNode *)List_Next(world + 0xa8);
         obj = ln == 0 ? 0 : (char *)ln->item;
     }
     if (state[0x16] != 0) {

@@ -5,13 +5,13 @@
  * at +0x1b4 wins; with it the nearest of all candidates does. */
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 struct flags40 { int bit0 : 1, bit1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern unsigned char data_0204c240;
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 int Ov191_FindTarget(int self, int *out)

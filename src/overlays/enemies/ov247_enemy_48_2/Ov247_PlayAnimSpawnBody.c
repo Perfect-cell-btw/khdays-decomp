@@ -3,11 +3,9 @@
  * Kinds 6 and 7 then re-arm the emitter through Ov107_CreateNodeBodyTask with the anchor at +0x9c+0x30
  * and mode 5, differing only in the fifth argument (0 for kind 6, 1 for kind 7); the handle comes
  * back into +0x390's +0xc. Any other kind stops after the retune. */
-
-#include "game/enemy_common.h"
-
 extern void SetSubitemState(int rig, int a, short kind, int arg);
 extern void RefreshObjectCallbacks(int rig, int a);
+extern int Ov107_CreateNodeBodyTask(int a, int b, int mode, int anchor, int e, int f);
 
 void Ov247_PlayAnimSpawnBody(int self, int kind, int arg) {
     SetSubitemState(*(int *)(self + 0x388), 0, (short)kind, arg);

@@ -1,9 +1,12 @@
-#include "game/enemy_common.h"
-
 extern char *NNSi_FndGetCurrentRootHeap(void);
+extern void Ov107_ClearGlobalCBB00(void);
 extern void List_Init(char *p);
 extern void StoreGlobalPtrArray4At0c(int slot, void *handler);
 extern int Msg_OpenContainerAndReadHeader(void *name, int slot);
+extern char *Ov107_Pillar_New(int size);
+extern int Ov107_ContainerNode_New(void);
+extern void Ov107_DispatchByType(void);
+extern void Ov107_Scene_Tick(void);
 extern char *data_ov107_020cbf1c;
 extern int data_ov107_020cbab8;
 extern int data_ov107_020cbac4;

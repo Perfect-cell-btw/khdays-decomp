@@ -45,7 +45,7 @@ int Ov022_WalkTraversalNode(Ov022SelectionState *state,
                 goto next_node;
             }
             if (active == 0) {
-                node = List_Next(object->traversal22c);
+                node = (Ov022TraversalNode *)List_Next(object->traversal22c);
             }
             if (node == 0) {
                 break;
@@ -63,7 +63,7 @@ int Ov022_WalkTraversalNode(Ov022SelectionState *state,
             }
 
 next_node:
-            node = List_Next(object->traversal22c);
+            node = (Ov022TraversalNode *)List_Next(object->traversal22c);
         }
     }
     return result;

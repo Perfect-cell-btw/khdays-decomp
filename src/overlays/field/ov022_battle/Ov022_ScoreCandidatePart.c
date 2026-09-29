@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct Ov022LowByte32 {
     unsigned int lowByte : 8;
@@ -29,6 +28,7 @@ typedef struct Ov022OriginLimit {
 } Ov022OriginLimit;
 
 extern VecFx32 *func_ov022_020881f8(int index);
+extern void *GetEntryField20ByIndex(int index);
 extern Ov022PartNode *List_First(void *list);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern int Ov107_HitShape_TestSphere(void *item, const Ov022OriginLimit *limit,
@@ -41,6 +41,7 @@ extern void func_ov022_0208484c(u32 *selectionFlags,
                                 Ov022Candidate *candidate,
                                 Ov022PartNode *node,
                                 const VecFx32 *result);
+extern Ov022PartNode *List_Next(void *list);
 
 int Ov022_ScoreCandidatePart(u32 *selectionFlags, int index,
                          Ov022Candidate *candidate, int bestDistance)

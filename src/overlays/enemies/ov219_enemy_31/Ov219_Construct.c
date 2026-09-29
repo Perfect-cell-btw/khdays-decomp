@@ -11,7 +11,6 @@
  * through `item` so the call result is stored before the copy. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int w[6]; } Bounds;
@@ -28,9 +27,11 @@ extern void Ov219_Model_ReapplyTrack0(void);
 extern void Ov219_RequestState3(void);
 extern void Ov219_RequestSubState9IfNotCurrent(void);
 extern void Ov219_TryBeginSubState10IfIdle(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int resourceId);

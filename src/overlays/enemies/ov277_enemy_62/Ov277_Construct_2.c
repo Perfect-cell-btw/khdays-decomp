@@ -7,7 +7,6 @@
  * pose: +0x388 on the +0x22c list and +0x38c on the +0x144 list; sound 0x112 is loaded. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Ov114Kinds {
     int a;
@@ -29,10 +28,12 @@ extern void Ov277_OnHit(void);
 extern void Ov277_UpdateNodeReservationState2(void);
 extern void Ov277_Model_SetTrack0(void);
 extern void Ov277_MaybeForceSubState5ThenReleaseSubObject(void);
+extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void Srt_SetTranslationXYZ();
 extern void RegisterSubscriberSlot();
 extern void *CallocInstance();
+extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();

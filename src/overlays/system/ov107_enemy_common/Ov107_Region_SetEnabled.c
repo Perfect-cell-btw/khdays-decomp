@@ -1,7 +1,5 @@
 /* Sets the enabled flag and notifies every member. */
 
-#include "game/engine.h"
-
 typedef void (*Callback)(void *self, int param);
 
 typedef struct {
@@ -16,6 +14,7 @@ typedef struct {
 } Entity;
 
 extern void *List_First(void *list);
+extern void *List_Next(void *list);
 
 void Ov107_Region_SetEnabled(void *self, int flag)
 {

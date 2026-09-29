@@ -4,7 +4,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Ov188Transform {
     int words[11];
@@ -38,7 +37,14 @@ extern void Srt_SetTranslation(struct Ov188Transform *transform,
                           const VecFx32 *position);
 extern int Ov107_CreateNodeXformTask(int resource, int node, int kind, int flags,
                                struct Ov188Transform *transform);
+extern int Ov107_CreateNodeBodyTask(int resource, int node, int kind,
+                               struct Ov188Transform *transform, int flags,
+                               int enabled);
+extern int Ov107_CreateSpawnTask(struct Ov188Actor *self, int resourceId,
+                               int kind, int enabled,
+                               struct Ov188Transform *transform);
 extern void TaskList_FinishByTag(int resource, int handle);
+extern void Ov107_UnlinkNodeFromOwner(int handle);
 extern void Ov107_AiState_OnMessage(struct Ov188Actor *self,
                                 struct Ov188Command *command, int arg2);
 

@@ -99,7 +99,7 @@ void Ov022_ResetSelectorOrigin(void)
     invalid = 0;
     index = QueryActiveStateOrDelegate();
     origin = func_ov022_020881f8(index);
-    actor = GetEntryField20ByIndex(index);
+    actor = (Ov022Actor *)GetEntryField20ByIndex(index);
 
     switch (context->type) {
     case 1: {

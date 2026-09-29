@@ -1,7 +1,5 @@
 /* Calls the tick hook of every enabled child. */
 
-#include "game/engine.h"
-
 typedef void (*Callback)(void *self, void *param);
 
 typedef struct {
@@ -12,6 +10,7 @@ typedef struct {
 } Entity;
 
 extern void *List_First(void *list);
+extern void *List_Next(void *list);
 
 void Ov107_Region_TickChildren(void *obj, void *param1) {
     void *node = List_First((char *)obj + 0x44);

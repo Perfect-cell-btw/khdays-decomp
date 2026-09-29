@@ -8,7 +8,6 @@
  * body, and sound 0x12e loads. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { short v[12]; } Order12;
@@ -28,11 +27,13 @@ extern void Ov238_CarrierTeardown(void);
 extern void Ov238_PartnerOnDamage(void);
 extern void Ov238_RebuildAnim(void);
 extern void Ov238_ModelAnimTick(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int RandNextScaled(int bound);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(const Placement *placement);

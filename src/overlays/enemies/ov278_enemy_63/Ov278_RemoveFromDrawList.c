@@ -18,12 +18,12 @@ void Ov278_RemoveFromDrawList(int self, int list) {
     Ov107_InitObjectFromSource(list, *(int *)(self + 0x3b8));
     n = 2;
     for (part = List_First((void *)(*(int *)(self + 0x3b4) + 0x22c)); part != 0;
-         part = List_Next((void *)(*(int *)(self + 0x3b4) + 0x22c))) {
+         part = (struct ListNode *)List_Next((void *)(*(int *)(self + 0x3b4) + 0x22c))) {
         *((unsigned char *)part + 4) = n;
         n++;
     }
     for (part = List_First((void *)(*(int *)(self + 0x3b8) + 0x22c)); part != 0;
-         part = List_Next((void *)(*(int *)(self + 0x3b8) + 0x22c))) {
+         part = (struct ListNode *)List_Next((void *)(*(int *)(self + 0x3b8) + 0x22c))) {
         *((unsigned char *)part + 4) = n;
         n++;
     }

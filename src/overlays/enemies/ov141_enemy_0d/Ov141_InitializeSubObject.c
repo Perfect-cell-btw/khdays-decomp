@@ -109,7 +109,7 @@ void Ov141_InitializeSubObject(struct Ov141SubObj *self)
         self->slots39c[i].child->flags5c |= 2;
     }
 
-    self->poolEntry388 = List_InsertSorted(self->pool22c, 0x10, 0x64);
+    self->poolEntry388 = (struct Ov141PoolEntry *)List_InsertSorted(self->pool22c, 0x10, 0x64);
     self->poolEntry388->value = Ov107_CloneResourceTransform(self->camera);
     self->poolEntry388->flags |= 2;
 }

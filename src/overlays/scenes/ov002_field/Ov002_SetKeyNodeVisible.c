@@ -8,12 +8,11 @@
  * The masked read must come first in the or: written the other way round mwcc
  * emits the shift pair ahead of the load.
  */
-
-#include "game/enemy_common.h"
-
 extern char *data_ov002_0207fa14;
 
 extern int Ov002_FindKeyIndex(int nKey);
+extern void Ov107_OrLowFlags(void *pNode, int nFlag);
+extern void Ov107_TaskClearFlags(void *pNode, int nFlag);
 
 void Ov002_SetKeyNodeVisible(int nKey, int bVisible, int nValue) {
     char *root = data_ov002_0207fa14;

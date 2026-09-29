@@ -10,7 +10,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; } Ray;
@@ -26,6 +25,7 @@ extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern int Ov107_HitShape_IntersectSegment(int shape, Ray *ray, VecFx32 *out);
 
 static inline int FX_Mul(int a, int b)

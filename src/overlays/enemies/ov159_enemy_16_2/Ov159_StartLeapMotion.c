@@ -15,7 +15,7 @@ static inline unsigned short FX_RadToIdx(int rad)
 }
 
 typedef struct Ov159MoveState {
-    void *pOwner;
+    Actor *pOwner;
     unsigned char pad04[4];
     void *pTarget;
     int nHeading;

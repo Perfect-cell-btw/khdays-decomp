@@ -138,14 +138,14 @@ void Ov186_InitEffectActor(struct Obj *self)
     frame.outgoing = 0x1000;
     Ov107_Actor_SetAttachSlot(self, 2, 2, 0);
 
-    self->poolEntry388 = List_InsertSorted(self->pool22c, 0x10, 0x64);
+    self->poolEntry388 = (struct PoolEntry *)List_InsertSorted(self->pool22c, 0x10, 0x64);
 
     {
         result = Ov107_CloneResourceTransform(&frame.work);
         capacity = 0x64;
         self->poolEntry388->value = result;
 
-        slot = List_InsertSorted(self->pool144, 4, capacity);
+        slot = (struct PoolEntry *)List_InsertSorted(self->pool144, 4, capacity);
         result = (slot->value = Ov107_CloneResourceTransform(&frame.work));
         self->poolValue38c = result;
 

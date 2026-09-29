@@ -1,8 +1,12 @@
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
+extern int QueryActiveStateOrDelegate(void);
+extern int *GetEntryField20ByIndex(int nPlayer);
+extern void *func_02023bf0(void);   /* the active scene */
+extern int func_02023c40(void);     /* frame-rate flag */
+extern int Session_IsActive(void);     /* session active */
 
 extern int *func_ov022_020881f8(int nPlayer);
 extern int func_ov022_02083f5c(void);

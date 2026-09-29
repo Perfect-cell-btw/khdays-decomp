@@ -88,7 +88,7 @@ void Ov002_SetSessionActive(int bLocal, int nMask)
             && ((nMask & 4) != 0 || bLocal == 0)) {
             Ov002_SetCurrentSlotFlag1(bLocal == 0 ? 1 : 0);
             if (bLocal == 0) {
-                pThread = func_ov107_020c9848();
+                pThread = (Ov002Thread *)func_ov107_020c9848();
                 if (pThread != 0) {
                     pThread->nWake = 0x1000;
                 }

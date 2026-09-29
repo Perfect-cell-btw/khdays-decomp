@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct Ov107Object Ov107Object;
 typedef struct Ov107Actor Ov107Actor;
@@ -79,6 +78,7 @@ struct Ov107Object {
 };
 
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern int FX_Sqrt(int x);
 extern int Ov107_FindNearestObject(Ov107Actor *actor, int *out);

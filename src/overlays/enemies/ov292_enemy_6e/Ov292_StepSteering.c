@@ -96,7 +96,7 @@ void Ov292_StepSteering(char *state)
         if (i >= *(int *)(state + 0x34)) {
             return;
         }
-        point = List_Next(*(char **)state + 0x394);
+        point = (VecFx32 *)List_Next(*(char **)state + 0x394);
         i++;
     }
 }

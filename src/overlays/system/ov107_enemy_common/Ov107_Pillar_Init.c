@@ -18,7 +18,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct ShapeRequest {
     VecFx32 pos;                 /* 0x00 */
@@ -78,6 +77,7 @@ typedef struct Node {
 } Node;
 
 extern void Ov107_InitActorNode(Node *node);
+extern void **List_InsertSorted(void *list, int payloadSize, unsigned int key);
 extern void *Ov107_Mover_New(ShapeRequest *req);
 extern void Ov107_Pillar_PreTick(void);
 extern void Ov107_SendMessage6(void);

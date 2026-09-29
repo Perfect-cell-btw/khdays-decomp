@@ -143,7 +143,7 @@ void Ov186_Sweep_Step(struct Ov185ActionNode *node)
                         }
                     }
                 }
-                pNode = List_Next(scene->listA8);
+                pNode = (struct ListNode *)List_Next(scene->listA8);
                 target = pNode == 0 ? 0 : pNode->pItem;
             }
             if (bHit == 0 && state->bEffect6d != 0) {

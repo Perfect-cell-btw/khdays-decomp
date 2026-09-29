@@ -22,7 +22,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct TargetList {
     u8  pad00[0x20];
@@ -45,7 +44,9 @@ typedef struct Self {
 } Self;
 
 extern void        *List_First(void *list);
+extern void        *List_Next(void *list);
 extern void         Ov107_MoveNodeAndRelayout(char *node, VecFx32 *v);
+extern int           RandNextScaled(int range);
 extern void          ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
 extern void          VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int           func_02020400(int a, int b);

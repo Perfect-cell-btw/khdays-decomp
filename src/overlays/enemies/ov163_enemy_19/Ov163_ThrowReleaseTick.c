@@ -214,10 +214,10 @@ void Ov163_ThrowReleaseTick(struct Node *node)
                             break;
                         }
                     }
-                    part = List_Next(obj + 0x22c);
+                    part = (struct ListNode *)List_Next(obj + 0x22c);
                 }
             }
-            ln = List_Next((char *)world + 0x80);
+            ln = (struct ListNode *)List_Next((char *)world + 0x80);
             obj = ln == 0 ? 0 : (char *)ln->item;
         }
 

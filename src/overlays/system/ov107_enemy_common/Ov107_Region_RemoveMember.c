@@ -81,7 +81,7 @@ void Ov107_Region_RemoveMember(void *self_, Combatant *target)
                     List_RemoveByHandle(&self->list80, handle);
                     break;
                 }
-                handle = List_Next(&self->list80);
+                handle = (EffectEntry *)List_Next(&self->list80);
             } while (handle != 0);
         }
     } else if (flags & 0x80) {
@@ -92,7 +92,7 @@ void Ov107_Region_RemoveMember(void *self_, Combatant *target)
                     List_RemoveByHandle(&self->lista8, handle);
                     break;
                 }
-                handle = List_Next(&self->lista8);
+                handle = (EffectEntry *)List_Next(&self->lista8);
             } while (handle != 0);
         }
 
@@ -103,7 +103,7 @@ void Ov107_Region_RemoveMember(void *self_, Combatant *target)
                     Combatant *node = handle->owner;
                     node->field_21a = ClampRange(node->field_218, 0, node->field_218);
                     node->field_1c5 &= ~0xf;
-                    handle = List_Next(&self->list80);
+                    handle = (EffectEntry *)List_Next(&self->list80);
                 } while (handle != 0);
             }
 
@@ -120,7 +120,7 @@ void Ov107_Region_RemoveMember(void *self_, Combatant *target)
                     handle->owner->field_40 &= ~4;
                     break;
                 }
-                handle = List_Next(&self->listd0);
+                handle = (EffectEntry *)List_Next(&self->listd0);
             } while (handle != 0);
         }
     }

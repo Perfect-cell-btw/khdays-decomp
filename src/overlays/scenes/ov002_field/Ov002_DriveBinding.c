@@ -1,5 +1,3 @@
-#include "game/enemy_common.h"
-
 typedef struct {
     int pObject;                    /* +0x00 */
     char pad04[0x10];
@@ -15,6 +13,9 @@ typedef struct {
 } Ov002BindingTable;
 
 extern Ov002BindingTable *data_ov002_0207fa14;
+
+extern int Ov107_Spawner_AddDataBlock(int pObject, int nArg, int nExtra);
+extern void Ov107_SetPartBinding(int pObject, int nArg, int nValue);
 
 /* Look up the binding registered under the given id and drive it. */
 void Ov002_DriveBinding(int nId, int nArg, int nExtra, int nMode)

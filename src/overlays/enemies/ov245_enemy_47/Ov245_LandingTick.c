@@ -9,7 +9,6 @@
  * (+0xad) the owner is released (020d4870), sub-state 2 set and the node slot freed. */
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 struct Ov245Query { VecFx32 pos; int w[12]; };
 
@@ -20,6 +19,7 @@ extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const VecFx3
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern int Ov245_FourShape_ResetAiIfReady(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;

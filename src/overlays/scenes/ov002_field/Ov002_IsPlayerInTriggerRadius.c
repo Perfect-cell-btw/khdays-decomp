@@ -1,7 +1,8 @@
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 extern int Ov002_GetCtxTableByte(int slot);
+extern int QueryActiveStateOrDelegate(void);
+extern char *GetEntryField20ByIndex(int);
 extern int VEC_Distance(void *a, void *b);
 
 /* True when the player is within this actor's trigger radius and belongs to the same model. */

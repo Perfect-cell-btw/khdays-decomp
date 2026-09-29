@@ -1,8 +1,9 @@
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
+extern int QueryActiveStateOrDelegate(void);
+extern void *GetEntryField20ByIndex(int nPlayer);
 extern int FX_Sqrt(int v);
 extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);   /* normalise */
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);

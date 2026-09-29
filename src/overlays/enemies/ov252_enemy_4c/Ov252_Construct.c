@@ -13,7 +13,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int min[3]; int max[3]; } Bounds;
@@ -35,11 +34,13 @@ extern void Ov252_HitFilter(void);
 extern void Ov252_RebuildArmour(void);
 extern void Ov252_ModelAnimTick(void);
 extern void Ov252_ShowArmourPiece(char *self, int i, int show);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *track, int model, void *resource, int slot);
 extern void MainBlob_ResetSlotRows(int item, void *track);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(Sphere *sphere);

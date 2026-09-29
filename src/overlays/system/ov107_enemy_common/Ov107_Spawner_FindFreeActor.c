@@ -2,7 +2,6 @@
  * limit, counting it; returns it or 0. */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 typedef struct {
     u8 f0;
@@ -12,6 +11,7 @@ typedef struct {
 } Entry;
 
 extern void *List_First(void *list);
+extern void *List_Next(void *list);
 
 int Ov107_Spawner_FindFreeActor(int self, int index)
 {

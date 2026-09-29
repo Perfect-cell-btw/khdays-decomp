@@ -9,7 +9,6 @@
  * +0x390 parts (Ov201_BuildBeamState kinds 0/1/2) and loads sound 0x157. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[4]; } IdTable;
@@ -26,11 +25,13 @@ extern void Ov201_CreateAiTask(void);
 extern void Ov201_RequestSubState9IfNotCurrent(void);
 extern void Ov201_HandleHit(void);
 extern void Ov201_Model_ReapplyTrack0(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
 extern int *CallocInstance(int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, int b, int c);
 extern int JointModel_New(void *res, int joints);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);

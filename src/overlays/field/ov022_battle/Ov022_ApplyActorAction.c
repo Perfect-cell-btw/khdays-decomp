@@ -68,7 +68,7 @@ dispatch:
     case 13:
         if (func_ov022_020882f8() > 0) {
             do {
-                if (Ov022_ForwardArg1(GetEntryField20ByIndex(i), amount) != 0) {
+                if (Ov022_ForwardArg1((Ov022Actor *)GetEntryField20ByIndex(i), amount) != 0) {
                     result = 0;
                     goto done;
                 }

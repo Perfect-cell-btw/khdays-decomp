@@ -66,7 +66,7 @@ void Ov015_ForEachPieceInSphere(int nSlot, VecFx32 *pCenter, int nRadius, Ov015P
     nIndex = 0;
     while (pPiece != 0) {
         if (Ov002_PieceAnswersForPoint(pPiece, pCenter, -1) != 0) {
-            for (pNode = List_First(pPiece->partList); pNode != 0; pNode = List_Next(pPiece->partList)) {
+            for (pNode = List_First(pPiece->partList); pNode != 0; pNode = (Ov015PartNode *)List_Next(pPiece->partList)) {
                 if ((((Ov015NodeFlags *)&pNode->nFlags)->lowByte & 1) != 0
                     && Ov107_HitShape_TestSphere(pNode->pShape, &sphere, 0) != 0) {
                     if (pfn(nIndex, pPiece, pNode, nArg) == 0) {
@@ -76,7 +76,7 @@ void Ov015_ForEachPieceInSphere(int nSlot, VecFx32 *pCenter, int nRadius, Ov015P
                 }
             }
         }
-        ppPiece = List_Next(pOwner->pieceList);
+        ppPiece = (Ov015Piece **)List_Next(pOwner->pieceList);
         pPiece = (ppPiece == 0) ? 0 : *ppPiece;
         nIndex++;
     }

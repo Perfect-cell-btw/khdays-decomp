@@ -81,7 +81,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
     }
 
     for (itemA = List_First(self->hitShapes); itemA != 0;
-         itemA = List_Next(self->hitShapes)) {
+         itemA = (HitShape **)List_Next(self->hitShapes)) {
         a = *itemA;
         if (!(a->flags & 1)) {
             continue;
@@ -89,7 +89,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
         switch (a->mode) {
         case 0:
             for (itemB = List_First(other->hitShapes); itemB != 0;
-                 itemB = List_Next(other->hitShapes)) {
+                 itemB = (HitShape **)List_Next(other->hitShapes)) {
                 b = *itemB;
                 if (!(b->flags & 1)) continue;
                 if (a->boundsMax.x < b->boundsMin.x) continue;
@@ -163,7 +163,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
             break;
         case 1:
             for (itemB = List_First(other->hitShapes); itemB != 0;
-                 itemB = List_Next(other->hitShapes)) {
+                 itemB = (HitShape **)List_Next(other->hitShapes)) {
                 b = *itemB;
                 if (!(b->flags & 1)) continue;
                 if (a->boundsMax.x < b->boundsMin.x) continue;
@@ -255,7 +255,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
             break;
         case 2:
             for (itemB = List_First(other->hitShapes); itemB != 0;
-                 itemB = List_Next(other->hitShapes)) {
+                 itemB = (HitShape **)List_Next(other->hitShapes)) {
                 b = *itemB;
                 if (!(b->flags & 1)) continue;
                 if (a->boundsMax.x < b->boundsMin.x) continue;

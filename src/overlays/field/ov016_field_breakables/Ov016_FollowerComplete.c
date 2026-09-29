@@ -50,7 +50,7 @@ void Ov016_FollowerComplete(Ov016Follower *pSelf)
             func_ov022_020888b8(0, 1);
             return;
         }
-        ppPiece = List_Next(pOwner->pieceList);
+        ppPiece = (Ov016Piece **)List_Next(pOwner->pieceList);
         pPiece = (ppPiece == 0) ? 0 : *ppPiece;
     }
 }

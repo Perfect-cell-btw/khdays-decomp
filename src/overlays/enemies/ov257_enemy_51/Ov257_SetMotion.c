@@ -4,11 +4,9 @@
  * channel 2. The part table (data_ov257_020d31d4) gives the frame of the four +0x394 parts: -1
  * hides them, otherwise they restart channel 0 at that frame and are shown. The parts are indexed
  * as ((int *)self)[0xe5 + i] (0xe5 * 4 == 0x394) for the ROM's addressing. */
-
-#include "game/enemy_common.h"
-
 typedef struct { int id[34]; } MotionTable;
 
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern void Ov257_AppendWorkEntry(int part, void *res, int binding);
 extern void SetSubitemState(int obj, int channel, short frame, int loop);
 extern MotionTable data_ov257_020d30c4;

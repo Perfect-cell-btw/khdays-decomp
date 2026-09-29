@@ -54,7 +54,7 @@ void Ov022_Member_Reset(int index)
     Ov022EntryRoot *root;
     Ov002MissionMember *member;
 
-    entry = GetEntryField20ByIndex(index);
+    entry = (Ov022ActorEntry *)GetEntryField20ByIndex(index);
     if (entry == 0) {
         return;
     }

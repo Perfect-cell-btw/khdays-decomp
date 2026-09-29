@@ -8,7 +8,6 @@
  */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 struct MobiClipOpenRequest {
     const char *pszStream0;
@@ -20,9 +19,12 @@ struct MobiClipOpenRequest {
 extern int data_ov024_02093a20;
 extern void Ov024_MobiClip_PlayerTick(void);
 extern void Ov024_MobiClip_OpenStreamFromHeader(void *pDecoder, int nLayer, void *pHeader, u16 *aParams);
+extern u16 *GetBGScreenBaseForLayer(int nLayer);
 extern void Tilemap_FillRect(u16 *pScreen, int nWidth, int nHeight, int nLeft,
                           int nTop, int nStride, int nPalette, int nTile);
 extern void Ov024_TileTextRenderer_SetReady(void *pDecoder, int bEnable);
+extern void func_02031574(int bOn);
+extern void func_02030e64(int bOn);
 extern int Ov024_MobiClip_OpenStreams(struct MobiClipOpenRequest *pRequest);
 
 void Ov024_MobiClip_StartPlayback(const char *pszStream0, const char *pszStream1,

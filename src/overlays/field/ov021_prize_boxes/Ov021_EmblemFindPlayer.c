@@ -41,7 +41,7 @@ int Ov021_EmblemFindPlayer(Ov021Emblem *pSelf)
         for (nPlayer = 0; nPlayer < func_ov022_020882f8(); nPlayer++) {
             int nGroup;
 
-            pActor = GetEntryField20ByIndex(nPlayer);
+            pActor = (Ov021PlayerActor *)GetEntryField20ByIndex(nPlayer);
             if ((pActor->nFlags & 0x10000) == 0 && (nGroup = Ov022_GetEntryField66(nPlayer)) >= 0 && pSelf->nBucket == Ov002_GetSlotTableByte(nGroup)) {
                 if (VEC_Distance(func_ov022_020881f8(nPlayer), &pSelf->position) <= nReach) {
                     return nPlayer;

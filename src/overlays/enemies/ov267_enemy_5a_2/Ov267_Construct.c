@@ -17,7 +17,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int w[4]; } Quat;
@@ -49,12 +48,15 @@ extern void Ov267_BoneCallback(void);
 extern void Ov267_ProbeAndCacheHit(void);
 extern void Ov267_RefreshAimPoint(void);
 extern void List_Init(void *list);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int FindResourceIndexByName(int item, const char *name);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
+extern char *func_ov107_020c9848(void);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(const Capsule *capsule);
 extern int Ov107_CloneResourceTransform(const Placement *placement);

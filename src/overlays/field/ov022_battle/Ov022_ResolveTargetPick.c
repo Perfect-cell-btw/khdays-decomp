@@ -11,7 +11,6 @@
  */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 struct ActorSub {
     u8 pad00[4];
@@ -48,8 +47,10 @@ struct Target {                      /* Ov022Actor, pick view */
 
 extern struct Node *Ov107_FindChildById(void *pList, int nId);
 extern void *List_First(u8 *pList);
+extern void *List_Next(u8 *pList);
 extern void *Ov002_List_ScaleEntryTag(int nSlot, int nId);
 extern int Ov002_TriggerEntryActive(void *pEntity);
+extern struct Entry *GetEntryField20ByIndex(int nId);
 extern void MI_CpuFill8(void *pDst, int nValue, unsigned int nSize);
 
 #define PICK_NODE_ITEM 1

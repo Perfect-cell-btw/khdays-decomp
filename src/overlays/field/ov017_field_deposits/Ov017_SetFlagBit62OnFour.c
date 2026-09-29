@@ -1,6 +1,6 @@
 /* Sets flag bit 62 on the four players' actors; returns 1. */
 
-#include "game/engine.h"
+extern int *GetEntryField20ByIndex(int i);
 
 int Ov017_SetFlagBit62OnFour(void) {
     int i;

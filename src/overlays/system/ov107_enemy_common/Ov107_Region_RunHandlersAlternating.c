@@ -32,7 +32,7 @@ void Ov107_Region_RunHandlersAlternating(Ov107 *self)
                 if (obj->handler) {
                     obj->handler(obj);
                 }
-                item = List_Next(list);
+                item = (ListItem)List_Next(list);
             } while (item != 0);
         }
     } else {

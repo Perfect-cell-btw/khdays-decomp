@@ -3,9 +3,6 @@
  * The flag is a SIGNED one-bit bitfield: the ROM extracts it with `lsl #30 / asrs #31`
  * (which yields -1 or 0) and branches on `ne`.  An unsigned bitfield would give lsr, and
  * a plain `& 2` would give a tst. */
-
-#include "game/engine.h"
-
 typedef struct {
     int pad[16];
     signed int b0 : 1;
@@ -13,6 +10,7 @@ typedef struct {
 } Flags;
 
 extern void *List_First(void *list);
+extern void *List_Next(void *list);
 
 int Ov107_Region_CountFlaggedMembers(char *self) {
     int n = 0;

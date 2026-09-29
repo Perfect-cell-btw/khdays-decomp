@@ -70,7 +70,7 @@ void Ov235_GustTick(int *node)
                     VEC_Add(obj + 0xe4, &push, obj + 0xe4);
                 }
             }
-            link = List_Next((void *)(world + 0xa8));
+            link = (ListNode *)List_Next((void *)(world + 0xa8));
             obj = link == 0 ? 0 : (char *)link->item;
         }
     }

@@ -17,7 +17,6 @@
  * `add r0,r0,#0x14 ; str r0,[r6,#0x2cc]`. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Ov149Pose {
     VecFx32 position;
@@ -50,11 +49,13 @@ extern void Ov149_Ov149TickStaggerAndFlipFacing(void);
 extern void Ov149_RequestSubState8IfIdle(void);
 extern void Ov149_Model_SetTrack0(void);
 
+extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
 extern void *CallocInstance();
+extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();

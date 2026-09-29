@@ -78,7 +78,7 @@ void Ov017_ItemHandleMessage(Ov017Item *pSelf, Ov017ItemMessage *pMessage)
         if (Session_GetLocalPlayerIndex() != 0 && pSelf->nPlayer != QueryActiveStateOrDelegate()) {
             break;
         }
-        pActor = GetEntryField20ByIndex(pSelf->nPlayer);
+        pActor = (Ov017PlayerActor *)GetEntryField20ByIndex(pSelf->nPlayer);
         pEntry = Ov002_GetRootField8d14((short)(Ov002_FindKeyEntryIndex((short)pSelf->nItemKey)));
         nSpawn = pSelf->nSpawnId;
         nFlags = pEntry->nFlags & 0xff;

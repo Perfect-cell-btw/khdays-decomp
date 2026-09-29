@@ -3,9 +3,8 @@
  * the stack and is forwarded as the sixth word of the draw call, with a literal
  * 4 wedged in as the fifth.
  */
-
-#include "game/engine.h"
-
+extern void Obj_InvokeInnerVtable4(void *surface);
+extern void Obj_ForwardToSub1c(void *surface, int a, int b, int c, int d, int e);
 extern void EnqueueObjGfxCommand(void *surface);
 
 void Ov002_DrawOnSurface(void *surface, int a, int b, int c, int e) {

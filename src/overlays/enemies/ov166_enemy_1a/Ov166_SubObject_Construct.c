@@ -78,7 +78,7 @@ void Ov166_SubObject_Construct(Ov169Object *self) {
     SetSubitemState(self->subitem_0384, 4, 0, 1);
     SetSubitemState(self->subitem_0384, 1, 0, 1);
     RefreshObjectCallbacks(self->subitem_0384, 0);
-    self->poolEntry_0388 = List_InsertSorted(self->pool_022c, 0x10, 100);
+    self->poolEntry_0388 = (Ov169PoolEntry *)List_InsertSorted(self->pool_022c, 0x10, 100);
     self->poolEntry_0388->value = Ov107_CloneResourceTransform(&self->field_0064);
     self->poolEntry_0388->flags |= 2;
 }

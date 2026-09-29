@@ -15,7 +15,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[2]; } IdTable;
@@ -38,6 +37,7 @@ extern void Ov253_NotifyPartsThenBase(void);
 extern void Ov253_ChainUpdate(void);
 extern void Ov253_CarriedItemUpdate(void);
 extern void Ov253_DrawRingMarkEmpty(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
@@ -47,6 +47,7 @@ extern int FindResourceIndexByName(int item, const char *name);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(PlaceReq *req);
 extern int JointModel_New(void *item, int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int Ov253_CreateRingTask(char *self);
 extern int Ov253_QueueActor_New(char *self);
 extern void Ov107_LoadSpawnRecord(int bank, void *out);

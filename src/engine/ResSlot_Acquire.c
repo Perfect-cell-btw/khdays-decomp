@@ -2,9 +2,8 @@
  * the data (an 'HPAK' pack through Obj_RelocateSections with textures, anything else through
  * G3dRes_DefaultSetup); the use count (+2) grows, and with `withTex` the texture count (+4) too. Returns
  * the resource data (+0xc). Counterpart of ResSlot_ReleaseResource. */
-
-#include "game/engine.h"
-
+extern void Obj_RelocateSections(void *pack, int mode);
+extern void G3dRes_DefaultSetup(void *data);
 extern int data_020427f0;
 
 struct S {

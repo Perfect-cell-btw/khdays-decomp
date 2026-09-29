@@ -14,7 +14,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 struct Segment { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; };
 struct HitWord { u32 lo : 16, hi : 16; };
@@ -34,6 +33,7 @@ struct Ov158HalfByte { u16 lo : 8, hi : 8; };
 struct Ov158Byte8 { u32 lo : 8, rest : 24; };
 
 extern char **List_First(void *list);
+extern char **List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);

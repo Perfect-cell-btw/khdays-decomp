@@ -1,7 +1,6 @@
 /* Unlinks the two arrow cells. */
 
-#include "game/engine.h"
-
+extern void Slot_UnlinkIfLinked(void *arg0, int arg1);
 extern char *data_ov026_02091368[];
 
 void Ov026_Shop_HideArrows(void)

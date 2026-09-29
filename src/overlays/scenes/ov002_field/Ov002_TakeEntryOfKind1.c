@@ -1,10 +1,8 @@
 /* Takes the next free id out of the low band and marks it used by clearing its
  * bit in the stage's free bitmap. A full band reports a negative id, which is
  * handed back untouched. */
-
-#include "game/engine.h"
-
 extern int Ov002_FindFreeSpotId(int kind);
+extern void BitArray_ClearBit(void *owner, int id);
 
 typedef struct {
     char pad0000[0x5c];

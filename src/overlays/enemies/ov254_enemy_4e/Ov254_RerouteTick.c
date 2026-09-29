@@ -64,7 +64,7 @@ void Ov254_RerouteTick(int *node)
         pts[1] = data_02041dc8;
         pts[0] = pts[1];
         for (p = List_First((void *)(*state + 0x434)), i = 0; p != 0;
-             p = List_Next((void *)(*state + 0x434)), i++) {
+             p = (VecFx32 *)List_Next((void *)(*state + 0x434)), i++) {
             if (i == state[0x1b]) {
                 pts[0] = *p;
             }

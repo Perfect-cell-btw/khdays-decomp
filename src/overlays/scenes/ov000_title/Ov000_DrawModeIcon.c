@@ -11,7 +11,6 @@
  */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 typedef struct {
     u8 pad_0000[0x4b04];
@@ -20,6 +19,7 @@ typedef struct {
 } Ov000SubSceneContext;
 
 extern Ov000SubSceneContext *volatile data_ov000_0205ac28;
+extern void Obj_InvokeInnerVtable4(void *object);
 extern void *Ov000_GetVarRecordByIndex(void *object, int variant);
 extern void Ov000_DrawWithShadow_2(void *object, int id, int width, int height,
                                 void *variant, int enabled);

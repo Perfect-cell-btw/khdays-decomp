@@ -20,7 +20,7 @@ void Ov292_SeekPointAtIndex(char *state)
         if (i >= *(int *)(state + 0x34)) {
             break;
         }
-        point = List_Next(*(char **)state + 0x394);
+        point = (VecFx32 *)List_Next(*(char **)state + 0x394);
         i++;
     }
     *(int *)(state + 0x28) = 0;

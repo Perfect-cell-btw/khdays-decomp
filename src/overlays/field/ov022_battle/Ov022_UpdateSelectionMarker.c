@@ -94,7 +94,7 @@ void Ov022_UpdateSelectionMarker(void)
     }
 
     {
-        Ov022Actor *actor = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+        Ov022Actor *actor = (Ov022Actor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
         if ((data_0204c190 & 4) != 0 &&
             (actor->flags0 & 0x1000000ULL) == 0 &&
             (context->flags0 & 4) != 0) {

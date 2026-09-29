@@ -24,7 +24,6 @@
  * bit-identical and none of them move it. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Ov120Pose {
     VecFx32 position;
@@ -57,11 +56,13 @@ extern void Ov121_Actor_OnHit(void);
 extern void Ov121_RequestSubState9IfIdle(void);
 extern void Ov121_Model_SetTrack0(void);
 
+extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern struct Ov120Bone *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
 extern void *CallocInstance();
+extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();

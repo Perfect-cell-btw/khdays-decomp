@@ -4,12 +4,12 @@
  * the actor's +0x311) and is re-initialised. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Flag311 { u8 loop : 1; };
 
 extern void FreeAllResourceTables(void *list);
 extern void NNS_G3dRenderObjInit(int a, int b);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern void Snd_RegisterSeqAndBind(void *list, int b, void *c, int d);
 extern void MainBlob_ResetSlotRows(int item, void *list);
 extern void SetSubitemState(int item, int channel, int a, int b);

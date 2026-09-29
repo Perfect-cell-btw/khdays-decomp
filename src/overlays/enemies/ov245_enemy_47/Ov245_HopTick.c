@@ -16,7 +16,6 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/enemy_common.h"
-#include "game/engine.h"
 
 struct Sphere { VecFx32 centre; int radius; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -48,6 +47,7 @@ extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(int shape, struct Sphere *sphere, int a);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
 extern int Collision_CastRay(int collision, const VecFx32 *from, const VecFx32 *step);

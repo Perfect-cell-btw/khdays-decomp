@@ -49,7 +49,7 @@ void Ov022_Member_ShowDamage(int index, int id, unsigned int value, unsigned int
     int mappedValue;
     VecFx32 position;
 
-    entry = GetEntryField20ByIndex(index);
+    entry = (Ov022SeatEntry *)GetEntryField20ByIndex(index);
     if (entry == 0) {
         return;
     }

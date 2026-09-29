@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct Ov022LowByteBits {
     unsigned short lowByte : 8;
@@ -58,8 +57,11 @@ extern u8 data_0204c248[];
 extern u8 data_0204c240;
 
 extern Ov022SelectorContext *NNSi_FndGetCurrentRootHeap(void);
+extern int QueryActiveStateOrDelegate(void);
+extern Ov022Candidate *GetEntryField20ByIndex(int index);
 extern void *List_Last(void *list);
 extern Ov022Candidate *List_First(void *list);
+extern Ov022Candidate *List_Next(void *list);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern VecFx32 *func_ov022_020881f8(int index);
 extern int func_ov022_02083f0c(void);

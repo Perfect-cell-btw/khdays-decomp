@@ -51,7 +51,7 @@ int Ov015_SpotAssignPlayer(Ov015Spot *pSpot, u8 *pMessage, int nArg2, int nArg3)
     int nEntry;
 
     pDef = pSpot->pDef;
-    pPlayer = GetEntryField20ByIndex(*pMessage);
+    pPlayer = (Ov015PlayerActor *)GetEntryField20ByIndex(*pMessage);
     if (Ov022_ForwardArg1(pPlayer, 0xc) != 0) {
         func_ov022_020ad5f4(pPlayer, 0xc, 0);
         pDef->nPlayer = *pMessage;

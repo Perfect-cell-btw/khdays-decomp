@@ -4,9 +4,6 @@
  * The per-overlay fixed-point values are load-bearing: 0x14cc for the pose, 0x2998 for
  * action zero and 0x1b4c for the remaining actions.  Unlike the nearby ov188/ov190
  * homologs, these values require literal-pool loads and account for the extra 12 bytes. */
-
-#include "game/enemy_common.h"
-
 struct v3 { int a, b, c; };
 struct Box { struct v3 min, max; };
 struct Pose { struct v3 v; int nScale; };
@@ -55,10 +52,12 @@ extern int Ov281_SpawnActorRegistryEntry, func_ov281_020cc63c, func_ov281_020cc6
 extern int Ov281_ReleaseByStateAndPublishPose, Ov281_ProcessHitReaction, Ov281_Model_ReapplyTrack0;
 extern int Ov281_RequestSubState10IfNotCurrent, Ov281_RequestSubState11IfIdle;
 
+extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
+extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern long long Ov107_CloneResourceTransform();

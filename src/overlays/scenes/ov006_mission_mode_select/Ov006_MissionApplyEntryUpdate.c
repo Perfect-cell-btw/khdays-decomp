@@ -1,11 +1,12 @@
 #include "nitro/types.h"
 
 #include "game/ov006_mission_mode_select.h"
-#include "game/engine.h"
 
 /* Applies a mission entry update received over the link: copies the entry in when it changed
  * (unless the block is locked), updates its flags and marks it for redraw. */
 
+extern void Obj_GetWord28(void *instance);
+extern int Session_IsReady(void);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 void Ov006_MissionApplyEntryUpdate(const void *data, u32 size) {

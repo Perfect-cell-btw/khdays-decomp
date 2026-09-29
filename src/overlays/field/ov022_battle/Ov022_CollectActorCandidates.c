@@ -66,7 +66,7 @@ int Ov022_CollectActorCandidates(u32 *selectionFlags, int index)
     Ov022Candidate *candidate;
 
     func_ov022_020881f8(index);
-    actor = GetEntryField20ByIndex(index);
+    actor = (Ov022Actor *)GetEntryField20ByIndex(index);
     bestDistance = 0x9000;
     if (Slot_EvalPackedParam(actor->index9, 0x55) != 0) {
         bestDistance = 0xd800;
@@ -113,7 +113,7 @@ int Ov022_CollectActorCandidates(u32 *selectionFlags, int index)
                 }
             }
 
-            iterator = List_Next(container->list80);
+            iterator = (Ov022IteratorNode *)List_Next(container->list80);
             candidate = iterator == 0 ? 0 : iterator->item;
         }
     }

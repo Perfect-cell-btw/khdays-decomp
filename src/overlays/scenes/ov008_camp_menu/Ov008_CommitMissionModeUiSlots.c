@@ -15,7 +15,6 @@
  * array. */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 typedef struct {
     int x;
@@ -56,7 +55,10 @@ typedef struct {
 
 extern Ov006MissionModeUiView *data_ov008_02090fa4;
 
+extern void Slot_ForwardToEntry(void *slots, int slotId, int entry);
 extern void Slot_SetPosition(void *slots, int slotId, UiLayoutPos *position);
+extern void Obj_CommitAlphaBlend(void *slots, int slotId);
+extern void Obj_CommitAllSlots(void *slots);
 extern int Ov008_IsMissionSelectionEnabled(int selection);
 
 #define PANEL_MAIN(view) ((void *)(view)->mainScreenSlotSet)

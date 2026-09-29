@@ -11,7 +11,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[11]; } IdTable;
@@ -20,6 +19,8 @@ typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 struct Nib { u8 lo : 4, hi : 4; };
 
+extern int Ov107_OpenCachedResourceByName(const char *name);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *res);
 extern char *InsertSortedEntryWithKey(int rig, int kind, const char *name);
 extern void RegisterSubscriberSlot(int subscriber, int item);
@@ -30,6 +31,7 @@ extern void *Ov107_CreateNamedResourceBinding(void *res, const char *name);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(const Capsule *capsule);
 extern int Ov107_CloneResourceTransform(const Placement *placement);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable data_ov235_020d22d0;
 extern const char data_ov235_020d258c[];

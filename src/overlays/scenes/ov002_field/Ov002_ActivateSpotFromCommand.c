@@ -92,7 +92,7 @@ void Ov002_ActivateSpotFromCommand(int nSpotId, Ov002SpotCmd *pCmd, void *pPaylo
     nPackHigh = (u8)(pCmd->bPacked >> 5);
     nPackLow = pCmd->bPacked & 0x1f;
     if (!Ov002_IsSessionOpen()) return;
-    pSeat = GetEntryField20ByIndex(nPackHigh);
+    pSeat = (Ov022SeatEntry *)GetEntryField20ByIndex(nPackHigh);
     pOwner = pSeat->pOwner;
     if (pCmd->bMode == 0) {
         if (!Session_IsReady()) return;

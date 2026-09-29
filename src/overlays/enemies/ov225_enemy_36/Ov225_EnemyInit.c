@@ -11,7 +11,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[8]; } IdTable8;
@@ -40,6 +39,7 @@ extern void Ov225_HandleHit(void);
 extern void Ov225_RebindClip(void);
 extern void Ov225_RequestSubState14IfNotCurrent(void);
 extern void Ov225_RequestSubState15IfIdle(void);
+extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern void Ov225_ArmModelCallback(char *self);
 extern int RegisterSubscriberSlot(int subscriber, int item);
@@ -48,6 +48,7 @@ extern void MainBlob_ResetSlotRows(int obj, void *block);
 extern int FindResourceIndexByName(int item, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(const Sphere *sphere);
 extern int Ov225_Projectile_New(char *self);

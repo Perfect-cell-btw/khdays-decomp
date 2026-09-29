@@ -1,10 +1,10 @@
 /* Ov202_HandleSpawnMessage: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-
-#include "game/enemy_common.h"
-
 extern int Ov202_SpawnChild0cAndBackLink(int, int, int, int);
+extern int Ov107_CreateSpawnTask(int, int, int, int, int);
 extern int Ov107_CreateNodeXformTaskFx24(int, int, int, int, int, int);
+extern void Ov107_ForwardVisibleEvent(int, int);
 extern int Ov202_SpawnChild10AndBackLink(int, int, int, int);
+extern int Ov107_CreateNodeBodyTask(int, int, int, int, int, int);
 extern void Ov107_AiState_OnMessage(int, int, int);
 void Ov202_HandleSpawnMessage(int param_1, int param_2, int param_3, int param_4) {
     int result;

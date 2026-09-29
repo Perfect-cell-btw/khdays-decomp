@@ -4,11 +4,11 @@
  * +0x22c pool slot at +0x384, marked with bit 1; +0x388 (busy) clears. */
 
 #include "nitro/fx_types.h"
-#include "game/engine.h"
 
 typedef struct { unsigned f : 8; } B8;
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
+extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern void *Ov107_Mover_New(const Capsule *capsule);
 extern void func_ov259_020d28c0(void);
 extern void Ov259_Item_TickSyncXform(void);

@@ -1,6 +1,6 @@
 /* Unlinks every slot of the table (0x80 slots). */
 
-#include "game/engine.h"
+extern void Slot_UnlinkIfLinked(void *p, int idx);
 
 void Slot_UnlinkAll(void *p)
 {

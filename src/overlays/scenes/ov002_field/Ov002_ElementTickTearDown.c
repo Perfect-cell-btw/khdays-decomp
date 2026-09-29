@@ -1,17 +1,21 @@
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 typedef void (*Ov002NotifyProc)(char *pBase, int nUnit, int nKind, int nId);
 
 extern int Ov002_GetModuleScale(void);
 extern int Ov002_AdvanceElementClock(char *pElement, u16 *pTable, int nDelta,
                                int nFlag, int nLimit, int *pCounter);
+extern short Session_GetLocalPlayerIndex(void);
 extern int Ov002_IsSessionOpen(void);
 extern int Ov002_HasAssignedPeerId(void);
+extern char *GetEntryField20ByIndex(int nIndex);
 extern int Ov002_FindKeyEntryIndex(int nKey);
 extern char *Ov002_GetRootField8d14(int nIndex);
+extern int GameState_GetField(int nId, int nSlot);
+extern void GameState_SetField(unsigned int nId, unsigned int nSlot, int nValue);
 extern void Ov002_SetFieldBit0(char *pElement, int nFlag);
+extern void ReleaseNodeResources(char *pNode);
 extern void *Ov002_DoneTick(char *pElement);
 
 /* Drive an element that is being taken down.

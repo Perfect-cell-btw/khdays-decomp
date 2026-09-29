@@ -1,9 +1,8 @@
 /* Marks the first task of the list with the given tag (+0x1c) as finished; returns whether one was
  * found (tag 0 never matches). */
 
-#include "game/engine.h"
-
 extern unsigned char *List_First(void *ptr);
+extern unsigned char *List_Next(void *ptr);
 
 int TaskList_FinishByTag(void *ptr, void *pValue) {
     int value = (int)pValue;

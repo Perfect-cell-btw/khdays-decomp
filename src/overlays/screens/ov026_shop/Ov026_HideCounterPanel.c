@@ -14,7 +14,6 @@
  */
 
 #include "nitro/types.h"
-#include "game/engine.h"
 
 #define DIGIT_COUNT   3
 #define TAB_SPECIAL   3
@@ -47,10 +46,12 @@ typedef struct Ov008PanelContext {
 } Ov008PanelContext;
 
 extern Ov008PanelContext *data_ov026_02091368;
+extern void  Slot_UnlinkIfLinked(int *hSlots, int nCell);                       /* Slot_UnlinkIfLinked */
 extern void *Ov026_FindEntryById(void *pManager, int nId);                /* FindEntryById */
 extern void  Ov026_SetEntrySlotsVisible(void *pManager, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
 extern void *Ov026_FindEntryByTag(void *pOwner, int nTag);                 /* ov008_FindEntryByTag */
 extern void  Ov026_TagTracker_InvokeCallback(void *pOwner, void *pEntry);             /* Ov008_TagTracker_InvokeCallback */
+extern void  Obj_InvokeInnerVtable8(void *pSurface, int nX, int nY, int nW, int nH); /* Obj_InvokeInnerVtable8 */
 
 #pragma push
 #pragma opt_common_subs off

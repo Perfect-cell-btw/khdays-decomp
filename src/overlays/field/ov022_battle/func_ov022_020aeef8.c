@@ -9,9 +9,7 @@
  * when the residue is "which register holds a dead-looking value", ask whether the value is the
  * return value first.
  */
-
-#include "game/engine.h"
-
+extern int *GetPlayerSlotTableEntry(int arg0);
 extern int Ov022_FindApproachDir(int arg0, int arg1, unsigned int *arg2);
 
 int func_ov022_020aeef8(int arg0, int arg1, int arg2, int arg3) {

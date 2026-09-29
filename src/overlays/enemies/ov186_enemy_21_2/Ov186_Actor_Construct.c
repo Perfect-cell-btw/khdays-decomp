@@ -165,10 +165,10 @@ void Ov186_Actor_Construct(struct Obj *self)
     }
     Ov107_Actor_SetAttachSlot(self, 2, 2, 0, 0x2000);
 
-    self->poolEntry388 = List_InsertSorted(self->pool22c, 0x10, 0x64);
+    self->poolEntry388 = (struct PoolEntry *)List_InsertSorted(self->pool22c, 0x10, 0x64);
     self->poolEntry388->value = Ov107_CloneResourceTransform(&work);
 
-    slot = List_InsertSorted(self->pool144, 4, 0x64);
+    slot = (struct PoolEntry *)List_InsertSorted(self->pool144, 4, 0x64);
     result = (slot->value = Ov107_CloneResourceTransform(&work));
     self->poolValue38c = result;
 

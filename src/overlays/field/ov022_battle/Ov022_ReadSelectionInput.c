@@ -94,7 +94,7 @@ int Ov022_ReadSelectionInput(void)
         pressed = 0;
     }
 
-    actor = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+    actor = (Ov022ActiveActor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
     if ((actor->flags0 & 0x800ULL) != 0 ||
         (actor->flags464 & 0x400ULL) != 0) {
         if ((context->flags0 & 4) != 0) {
@@ -117,7 +117,7 @@ int Ov022_ReadSelectionInput(void)
     }
 
     if ((context->flags0 & 4) == 0) {
-        actor = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+        actor = (Ov022ActiveActor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
         if ((actor->flags464 & 0x10ULL) == 0 || context->type != 1) {
             if (Ov022_CollectActorCandidates(&context->selectionFlags,
                                     QueryActiveStateOrDelegate()) != 0) {
@@ -205,7 +205,7 @@ keep_runtime_latch:
         }
         if ((context->flags0 & 4) == 0 &&
             Slot_EvalPackedParam(QueryActiveStateOrDelegate(), 0x54) != 0) {
-            actor = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+            actor = (Ov022ActiveActor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
             if ((actor->flags464 & 0x10ULL) != 0 ||
                 (actor->flags464 & 0x1000ULL) != 0) {
                 func_ov022_02085280();

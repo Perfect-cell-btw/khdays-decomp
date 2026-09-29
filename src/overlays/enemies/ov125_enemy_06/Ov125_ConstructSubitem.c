@@ -72,7 +72,7 @@ void Ov125_ConstructSubitem(Ov125Object *self) {
     req.vUp = data_02042240;
     req.nRadius = 0x1000;
     req.nHeight = 0x200;
-    self->poolEntry_0388 = List_InsertSorted(self->pool_022c, 0x10, 100);
+    self->poolEntry_0388 = (Ov125PoolEntry *)List_InsertSorted(self->pool_022c, 0x10, 100);
     self->poolEntry_0388->value = Ov107_Mover_New(&req);
     self->poolEntry_0388->flags |= 2;
 }

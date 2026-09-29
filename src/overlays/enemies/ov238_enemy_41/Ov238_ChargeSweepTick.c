@@ -136,7 +136,7 @@ void Ov238_ChargeSweepTick(int *node)
                 if ((st->mask >> obj->id & 1) == 0 && obj != *(Actor **)(st->pOwner + 0x398) &&
                     (obj->flags60.bits.lo & 1) != 0 && (obj->field_1ac & 7) == 0) {
                     for (part = List_First((char *)obj + 0x22c); part != 0;
-                         part = List_Next((char *)obj + 0x22c)) {
+                         part = (struct ListNode *)List_Next((char *)obj + 0x22c)) {
                         if ((((struct W8 *)((char *)part + 8))->lo & 1) != 0 &&
                             Ov107_HitShape_TestSphere(part->item, &sphere, 0) != 0) {
                             packet2.pPart = part;
@@ -147,7 +147,7 @@ void Ov238_ChargeSweepTick(int *node)
                         }
                     }
                 }
-                ln = List_Next((char *)world + 0x80);
+                ln = (struct ListNode *)List_Next((char *)world + 0x80);
                 obj = ln == 0 ? 0 : (Actor *)ln->item;
             }
         }

@@ -5,7 +5,6 @@
  * track with the +0x311 loop bit, and the other live part resumes at the sampled frame. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef struct { u8 b0 : 1; } Bit0;
 typedef struct { char pad0[0xc]; int bound; char pad10[0x14]; } AnimSlot;
@@ -14,6 +13,7 @@ struct Ov238Rig { char pad[0x394]; AnimSlot slots[2]; };
 extern int Anim_GetFrame(int bank, int track);
 extern void FreeAllResourceTables(AnimSlot *slot);
 extern void NNS_G3dRenderObjInit(int a, int b);
+extern void *Ov107_PackTextureHandle(char *actor, int index);
 extern void Snd_RegisterSeqAndBind(AnimSlot *slot, int bank, void *record, int d);
 extern void MainBlob_ResetSlotRows(int rig, AnimSlot *slot);
 extern void SetSubitemState(int rig, int channel, int a, int b);
