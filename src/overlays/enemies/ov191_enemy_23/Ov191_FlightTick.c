@@ -23,7 +23,6 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 
-typedef struct Vec4 { int x, y, z, w; } Vec4;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {
@@ -76,11 +75,11 @@ struct Ov191FlightState {
 };
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int Ov107_CollectSphereOverlaps(char *item, Vec4 *sphere, struct Ov191Actor **out);
+extern int Ov107_CollectSphereOverlaps(char *item, ActorSphere *sphere, struct Ov191Actor **out);
 extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, char *item, int kind, const VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern struct Ov191Actor *Ov107_FindEntityHitBySphere(struct Ov191Actor *owner, Vec4 *sphere, void *result);
+extern struct Ov191Actor *Ov107_FindEntityHitBySphere(struct Ov191Actor *owner, ActorSphere *sphere, void *result);
 extern int Ov107_AiState_ApplyHit(struct Ov191Actor *target, int value, struct HitCommand *command);
 extern const VecFx32 data_02041dc8;
 extern const PosMsg data_ov191_020d2d8c;
@@ -116,14 +115,14 @@ static inline void SendPos(struct Ov191FlightState *state, PosMsg *msg, const Ve
 void Ov191_FlightTick(int node)
 {
     struct Ov191FlightState *state = *(struct Ov191FlightState **)(node + 4);
-    Vec4 sphere;
+    ActorSphere sphere;
     struct Ov191Actor *hits[4];
     PosMsg msg1;
     int i;
     int n;
 
     ScaleVec3Fx12(state->nSpeed, &state->vDir, &state->vStep);
-    sphere = (*(Vec4 *)&state->pOwner->base.sphere);
+    sphere = state->pOwner->base.sphere;
     if (state->bPartMode == 0) {
         n = Ov107_CollectSphereOverlaps(state->pOwner->pItem38c, &sphere, hits);
         if (n != 0) {

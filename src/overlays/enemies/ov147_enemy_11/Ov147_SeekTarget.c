@@ -7,10 +7,6 @@
 #include "game/actor.h"
 #include "game/ai_task.h"
 
-typedef struct Vec4 {
-    int x, y, z, w;
-} Vec4;
-
 struct AuxData {
     char pad00[0x1c4];
     u8 flags1c4;
@@ -66,7 +62,7 @@ struct Hw60 {
 };
 
 extern const VecFx32 data_02041dc8;
-extern int Ov107_CollectSphereOverlaps(struct Obj *owner, Vec4 *position, struct Obj **results);
+extern int Ov107_CollectSphereOverlaps(struct Obj *owner, ActorSphere *position, struct Obj **results);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(VecFx32 *a, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *a, VecFx32 *out);
@@ -75,7 +71,7 @@ extern int Ov107_InvokeHitCallback(struct Obj *candidate, struct Obj *owner,
 extern void func_ov107_020c0b90(struct Obj *owner, int mode, VecFx32 position, int zero);
 extern void Ov107_BuildAndSendUpdate(struct Obj *owner, int zero, int event, VecFx32 *position);
 extern void SetIndexedSlot(struct Node *node, int action, void *next);
-extern struct Obj *Ov107_FindEntityHitBySphere(struct Obj *owner, Vec4 *position,
+extern struct Obj *Ov107_FindEntityHitBySphere(struct Obj *owner, ActorSphere *position,
                                       void *result);
 extern int Ov107_AiState_ApplyHit(struct Obj *target, int value, struct HitCommand *command);
 extern void *Collision_CastRay(void *collision, VecFx32 *position, VecFx32 *direction);
@@ -87,12 +83,12 @@ void Ov147_SeekTarget(struct Node *node)
 {
     struct State *state = node->pState;
     void *collisionOwner = state->owner->base.pScene;
-    Vec4 origin;
+    ActorSphere origin;
     VecFx32 movement;
     VecFx32 ray;
 
     ((struct Hw60 *)&state->owner->base.flags60.raw)->high &= ~0x80;
-    origin = (*(Vec4 *)&state->owner->base.sphere);
+    origin = state->owner->base.sphere;
 
     if (state->alternateQuery == 0) {
         struct Obj *results[4];
@@ -102,8 +98,8 @@ void Ov147_SeekTarget(struct Node *node)
 
         count = Ov107_CollectSphereOverlaps(state->owner, &origin, results);
         for (i = 0; i < count; i++) {
-            VEC_Subtract((VecFx32 *)((Vec4 *)&results[i]->base.sphere),
-                         (VecFx32 *)((Vec4 *)&state->owner->base.sphere), &direction);
+            VEC_Subtract(&results[i]->base.sphere.center,
+                         &state->owner->base.sphere.center, &direction);
             direction.y = 0;
             VEC_Normalize(&direction, &direction);
             ScaleVec3Fx12(0x800, &direction, &direction);
@@ -153,7 +149,7 @@ void Ov147_SeekTarget(struct Node *node)
         VEC_Subtract(state->position, &state->previousPosition, &movement);
         state->previousPosition = *state->position;
         ray = movement;
-        ray.y -= origin.w;
+        ray.y -= origin.radius;
 
         if (Collision_CastRay(*(void **)((char *)collisionOwner + 0x7c),
                             state->position, &ray) != 0) {

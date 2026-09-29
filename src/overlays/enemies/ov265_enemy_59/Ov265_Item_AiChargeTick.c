@@ -37,10 +37,6 @@
 #define REACTION_HIT 6
 #define REACTION_END 7
 
-typedef struct Vec4 {
-    fx32 a[4];
-} Vec4;
-
 typedef struct Mtx33 {
     fx32 m[9];
 } Mtx33;
@@ -82,7 +78,7 @@ extern long long func_02020400(int nNum, int nDen);                    /* _s32_d
 extern void  MTX_RotY33_(Mtx33 *pMtx, fx32 nSin, fx32 nCos);
 extern void  MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int   FX_Div(int nNumer, int nDenom);                            /* fx32 divide */
-extern int   Ov107_CollectSphereOverlaps(int hWorld, Vec4 *pVolume, HitEntry **apHit);
+extern int   Ov107_CollectSphereOverlaps(int hWorld, ActorSphere *pVolume, HitEntry **apHit);
 extern int   Ov107_InvokeHitCallback(HitEntry *pHit, ChargeActor *pSelf, int hWorld, int nMode, VecFx32 *pDir, int nFlag);
 extern void  func_ov107_020c0b90(int hWorld, int nCmd, VecFx32 vAt, int nFlag);
 extern void  Ov107_BuildAndSendUpdate(ChargeActor *pSelf, int nId, int nReaction, VecFx32 *pAt);
@@ -104,7 +100,7 @@ static inline int Ai_AngleIndex(fx32 nAngle)
 
 void Ov265_Item_AiChargeTick(ChargeNode *pNode)
 {
-    Vec4 volume;
+    ActorSphere volume;
     HitEntry *apHit[4];
     Mtx33 mtx;
     VecFx32 vLocal;
@@ -148,7 +144,7 @@ void Ov265_Item_AiChargeTick(ChargeNode *pNode)
             pState->nProgress += vLocal.z;
         }
     }
-    volume = (*(Vec4 *)&pState->pSelf->base.sphere);
+    volume = pState->pSelf->base.sphere;
     nCount = Ov107_CollectSphereOverlaps(((int)pState->pSelf->base.pPoolEntry), &volume, apHit);
     for (i = 0; i < nCount; i++) {
         nBit = 1 << apHit[i]->nKind;
