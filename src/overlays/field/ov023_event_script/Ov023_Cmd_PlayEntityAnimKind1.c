@@ -1,14 +1,10 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
 extern int ScriptVm_ResolveActorIndex(int ctx, int arg);
-/* Defined taking index as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern char *ArrayEntryPtrD0(unsigned short index);
+extern char *ArrayEntryPtrD0(int index);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
-/* Defined taking id as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern void EntityMgr_SetTransition(unsigned short id, int kind, int value);
+extern void EntityMgr_SetTransition(int id, int kind, int value);
 extern void NNS_G3dMdlSetMdlPolygonIDAll(int anim, int flags);
 
 /* Script command: starts animation kind 1 with operand 1 as its parameter and restarts playback.
@@ -18,8 +14,10 @@ int Ov023_Cmd_PlayEntityAnimKind1(int ctx, int args) {
     int wait = ScriptVm_ReadOperandInt(ctx, (void *)(args + 0x18));
     int value = ScriptVm_ReadOperandFx32(ctx, (void *)(args + 8));
     int id = ScriptVm_ResolveActorIndex(ctx, entity);
-    char *node = ArrayEntryPtrD0(id);
-    EntityMgr_SetTransition(id, 1, value);
+    char *node = ArrayEntryPtrD0((unsigned short)id);
+    /* Written as a mask where another call truncates with a cast: mwcc would otherwise compute the
+     * truncation once and keep it, while the ROM truncates again at each call. */
+    EntityMgr_SetTransition(id & 0xffff, 1, value);
     NNS_G3dMdlSetMdlPolygonIDAll(*(int *)(node + 0x7c), 0x3f);
     if (wait == 0) {
         return 1;

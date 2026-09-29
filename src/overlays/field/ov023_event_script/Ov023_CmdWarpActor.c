@@ -46,14 +46,12 @@ extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperan
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
 extern char *ByteCode_ResolveOperand(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandString */
 extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
 /* The quotient is the low half of the helper's long long return; writing `/` emits _s32_div_f,
  * which is not linkable here. */
 extern long long func_02020400(int nNumerator, int nDenominator);
 extern void  Actor_SetVecAndSyncChild(Ov023Entity *pEntity, VecFx32 *pPos);   /* Entity_SetPositionNow */
-extern void  Entity_SetVisible(u16 nEntity, int bVisible);              /* Entity_SetVisible */
+extern void  Entity_SetVisible(int nEntity, int bVisible);              /* Entity_SetVisible */
 extern int   strncmp(const char *pA, const char *pB, int nCount);
 extern int   func_020200b4(char *pszNumber);                        /* parse a number */
 extern int   FX_Mul(int nA, int nB);                         /* FX_Mul */
@@ -94,7 +92,7 @@ int Ov023_CmdWarpActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     int nIdx;
 
     nActor = ScriptVm_ReadOperandInt(pCtx, pOperand);
-    pEntity = ArrayEntryPtrD0((u16)nActor);
+    pEntity = ArrayEntryPtrD0((u16)((u16)nActor));
     nActor = ScriptVm_ResolveActorIndex(pCtx, nActor);
     if (pCtx->pEvent->pActors != 0) {
         if (pCtx->pEvent->pActors[nActor].pResource != 0) {
@@ -154,6 +152,6 @@ int Ov023_CmdWarpActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
             }
         }
     }
-    Entity_SetVisible((u16)nActor, 1);
+    Entity_SetVisible((u16)((u16)nActor), 1);
     return 1;
 }

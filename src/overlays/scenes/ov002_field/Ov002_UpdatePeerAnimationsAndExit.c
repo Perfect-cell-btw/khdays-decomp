@@ -16,13 +16,9 @@ struct Ov002LinkCtx {
 typedef struct Ov002PeerExitCommand { u8 nKind,nSlot,nExitKey; } Ov002PeerExitCommand;
 extern Ov002LinkCtx *data_ov002_0207fa10;
 extern u8 data_0204be04,data_0204c240;
-/* Defined taking argument 0 as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern void *GetTrackEntryBase(u16);
+extern void *GetTrackEntryBase(int);
 extern u16 Sequence_UpdateTracks(void *,int);
-/* Defined taking argument 1 as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern int Anim_GetLengthQ12(void *,u16);
+extern int Anim_GetLengthQ12(void *, int);
 extern void Anim_SetFrameWrapped(void *,u16,int);
 extern void SceneNode_Enable(void *);
 extern int GameState_IsFlagSet(int);
@@ -48,7 +44,7 @@ void Ov002_UpdatePeerAnimationsAndExit(int nSlot,int nDeltaQ12,int bAllowExit)
     Ov002PeerExitCommand command;
     Ov002LinkCtx *pCtx=data_ov002_0207fa10;
     if(pCtx->apSecondaryHooks[nSlot]) pCtx->apSecondaryHooks[nSlot](pCtx->aHookState[nSlot],nSlot,pCtx,nDeltaQ12);
-    GetTrackEntryBase((u16)nSlot);
+    GetTrackEntryBase((u16)((u16)nSlot));
     if(data_0204be04==0) {
         for(i=0;i<pCtx->nSeatSplit;i++) {
             pEntry=&pCtx->aEntries[i];
@@ -56,7 +52,7 @@ void Ov002_UpdatePeerAnimationsAndExit(int nSlot,int nDeltaQ12,int bAllowExit)
             if((pEntry->bActive&2) && nEnded) {
                 for(j=0;j<5;j++) {
                     if(nEnded&1) {
-                        Anim_SetFrameWrapped(pEntry,(u16)j,Anim_GetLengthQ12(pEntry,(u16)j)-0x1000);
+                        Anim_SetFrameWrapped(pEntry,(u16)j,Anim_GetLengthQ12(pEntry, (u16)((u16)j))-0x1000);
                         nEnded>>=1;
                     }
                 }
@@ -71,7 +67,7 @@ void Ov002_UpdatePeerAnimationsAndExit(int nSlot,int nDeltaQ12,int bAllowExit)
             if((pEntry->bActive&2) && nEnded) {
                 for(j=0;j<5;j++) {
                     if(nEnded&1) {
-                        Anim_SetFrameWrapped(pEntry,(u16)j,Anim_GetLengthQ12(pEntry,(u16)j)-0x1000);
+                        Anim_SetFrameWrapped(pEntry,(u16)j,Anim_GetLengthQ12(pEntry, (u16)((u16)j))-0x1000);
                         nEnded>>=1;
                     }
                 }

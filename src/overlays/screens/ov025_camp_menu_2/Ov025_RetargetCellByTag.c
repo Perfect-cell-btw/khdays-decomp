@@ -12,13 +12,11 @@ extern int  Ov025_GetCtxBlock9500(void);
 /* Defined taking tag as unsigned int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int  Ov025_FindEntryByTag(int list, unsigned short tag);
-/* Defined taking x as int, y as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern void Ov025_Elem_SetPos(int list, int cell, short x, short y);
+extern void Ov025_Elem_SetPos(int list, int cell, int x, int y);
 extern void Ov025_TagTracker_InvokeCallback(int list, int cell);
 
 void Ov025_RetargetCellByTag(unsigned int tag, int x, int y) {
     int list = Ov025_GetCtxBlock9500();
-    Ov025_Elem_SetPos(list, Ov025_FindEntryByTag(list, tag), x, y);
+    Ov025_Elem_SetPos(list, Ov025_FindEntryByTag(list, tag), (short)x, (short)y);
     Ov025_TagTracker_InvokeCallback(list, Ov025_FindEntryByTag(list, tag));
 }

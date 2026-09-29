@@ -47,9 +47,7 @@ typedef struct Ov023WeaponMotionTable {
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);  /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
 extern Ov023SessionSlot *Slot4_GetIfOccupied(int nSlot);                  /* Session_GetSlotIfOccupied */
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
 /* Defined taking nEntity as int, nParent as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  EntityMgr_LinkChild(u16 nEntity, u16 nParent, void *pRes);  /* Entity_Attach */
@@ -90,7 +88,7 @@ int Ov023_CmdAttachWeapons(Ov023ScriptCtx *pCtx, u8 *pOperand)
     } else {
         nKind = pSlot->nMemberKind;
     }
-    ArrayEntryPtrD0((u16)nActor)->wFlags |= 0x10;
+    ArrayEntryPtrD0((u16)((u16)nActor))->wFlags |= 0x10;
     nWeapon = 0;
     ppRes = resources.apRes[nKind];
     pMotion = motions.aMotion[nKind][nVariant];

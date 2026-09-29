@@ -28,15 +28,11 @@ typedef struct Ov025ScrollList {
 } Ov025ScrollList;
 
 extern int   Ov025_GetScrollListCapacity(void);                             /* Ov025_DayTable_Count */
-/* Defined taking nEntry as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern u16   Ov025_GetTableValue(u16 nEntry);                       /* Ov025_DayTable_FirstDay */
-extern u16   Ov025_GetTableValueB(u16 nEntry);                       /* Ov025_DayTable_NameString */
+extern u16   Ov025_GetTableValue(int nEntry);                       /* Ov025_DayTable_FirstDay */
+extern u16   Ov025_GetTableValueB(int nEntry);                       /* Ov025_DayTable_NameString */
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
-/* Defined taking nFirstDay as int, nLastDay as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern int   Ov025_MissionList_HasVisibleInDays(u16 nFirstDay, u16 nLastDay);      /* Ov025_HasVisibleMissionInDays */
+extern int   Ov025_MissionList_HasVisibleInDays(int nFirstDay, int nLastDay);      /* Ov025_HasVisibleMissionInDays */
 extern const u16 *Ov025_GetVarRecordByIndex(void *pStrings, int nIndex);  /* Ov025_GetString */
 
 void Ov025_ScrollList_BuildRows(Ov025ScrollList *pList)
@@ -60,14 +56,16 @@ void Ov025_ScrollList_BuildRows(Ov025ScrollList *pList)
         nDayLimit = 8;
     }
     for (i = 0; i < nEntries - 1; i++) {
-        nNextDay = Ov025_GetTableValue(i + 1);
+        nNextDay = Ov025_GetTableValue((u16)(i + 1));
         if (nDayLimit < nNextDay) {
             return;
         }
-        pRow->nFirstDay = Ov025_GetTableValue(i);
+        pRow->nFirstDay = Ov025_GetTableValue((u16)i);
         pRow->nLastDay = nNextDay - 1;
-        if (Ov025_MissionList_HasVisibleInDays(pRow->nFirstDay, pRow->nLastDay) != 0) {
-            pRow->pName = Ov025_GetVarRecordByIndex(pList->strings, Ov025_GetTableValueB(i));
+        if (Ov025_MissionList_HasVisibleInDays((u16)pRow->nFirstDay, (u16)pRow->nLastDay) != 0) {
+            /* Written as a mask where another call truncates with a cast: mwcc would otherwise compute the
+             * truncation once and keep it, while the ROM truncates again at each call. */
+            pRow->pName = Ov025_GetVarRecordByIndex(pList->strings, Ov025_GetTableValueB(i & 0xffff));
             pRow++;
             pList->nCount++;
         }

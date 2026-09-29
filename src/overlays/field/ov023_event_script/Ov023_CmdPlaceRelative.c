@@ -56,9 +56,7 @@ typedef struct Ov023Entity {
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
 extern int   ScriptVm_ResolveActorIndex(Ov023ScriptCtx *pCtx, int nActor);
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                            /* Entity_Get */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                            /* Entity_Get */
 extern int   LoadArrayU8At0ce(u16 nEntity);                                   /* Entity_GetModelId */
 extern void  Obj_StepMotionTransform(Ov023Camera *pCamera, VecFx32 *pPos, VecFx32 *pAngle, int *pDistance, int *pRoll); /* Camera_SampleMotion */
 /* Defined taking nEntity as int, nModel as int: declared narrower here, which is what makes mwcc truncate the
@@ -100,7 +98,7 @@ int Ov023_CmdPlaceRelative(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     int nDistance;
 
     Obj_StepMotionTransform(&pEvent->aCamera[pEvent->nCamera], 0, &vCameraAngle, 0, 0);
-    pEntity = ArrayEntryPtrD0((u16)nReference);
+    pEntity = ArrayEntryPtrD0((u16)((u16)nReference));
     nHeading = pEntity->nAngle;
     vPos = pEntity->vPos;
     nModel = LoadArrayU8At0ce((u16)nReference);
@@ -117,7 +115,7 @@ int Ov023_CmdPlaceRelative(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     vOffset.x = -vOffset.x;
     VEC_Add(&vPos, &vOffset, &vPos);
     Entity_SubmitRenderNode((u16)nEntity, (u16)nModel, 0, &vPos);
-    pEntity = ArrayEntryPtrD0((u16)nEntity);
+    pEntity = ArrayEntryPtrD0((u16)((u16)nEntity));
     Ov023_EntitySetAngle(pEntity, nHeading);
     Entity_SetVisible((u16)nEntity, 1);
     if (pCtx->pEvent->pActors != 0) {

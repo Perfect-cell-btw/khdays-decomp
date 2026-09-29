@@ -46,13 +46,9 @@ extern void  strcpy(char *pszDst, const char *pszSrc);       /* STD_CopyString *
 /* Defined taking nEntity as int, nMode as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Entity_SubmitRenderNode(u16 nEntity, u16 nMode, char *pszSpot, VecFx32 *pPos); /* Entity_SetPosition */
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
 extern void  Ov023_PlaceActorModel(Ov023Actor *pActor, char *pszAnchor, VecFx32 *pPos, int nMode, int nActor); /* Ov023_PlaceActorModel */
-/* Defined taking nModel as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern void  EntityMgr_ProbeGround(u16 nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
+extern void  EntityMgr_ProbeGround(int nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
 extern void  Actor_SetVecAndSyncChild(Ov023Entity *pEntity, VecFx32 *pPos);   /* Entity_SetPositionNow */
 extern const Ov023SeatHeights data_ov023_02089ddc;                  /* the seat heights */
 extern const VecFx32 data_02041dc8;                                 /* the zero vector */
@@ -78,15 +74,15 @@ int Ov023_CmdSeatMembers(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
             vOffset.y = heights.aHeight[i] + 0xda01;
             strcpy(szSpot, Ov023_FormatIndex(i));
             Entity_SubmitRenderNode((u16)i, 0, szSpot, &vOffset);
-            vPos = ArrayEntryPtrD0((u16)i)->vPos;
+            vPos = ArrayEntryPtrD0((u16)((u16)i))->vPos;
             Ov023_PlaceActorModel(&pCtx->pEvent->pActors[i], 0, &vPos, 0, i);
         }
     } else {
         nExtra = ScriptVm_ReadOperandFx32(pCtx, pOperand + 1);
         nActor = ScriptVm_ReadOperandInt(pCtx, pOperand);
-        pEntity = ArrayEntryPtrD0((u16)nActor);
+        pEntity = ArrayEntryPtrD0((u16)((u16)nActor));
         strcpy(szSpot, Ov023_FormatIndex(nActor));
-        EntityMgr_ProbeGround(0, szSpot, &vPos);
+        EntityMgr_ProbeGround((u16)0, szSpot, &vPos);
         vPos.y += nExtra + (heights.aHeight[nActor] + 0xda01);
         Actor_SetVecAndSyncChild(pEntity, &vPos);
     }

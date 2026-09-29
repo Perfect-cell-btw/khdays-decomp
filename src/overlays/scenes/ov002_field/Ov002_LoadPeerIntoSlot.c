@@ -26,9 +26,7 @@ extern Ov002MissionMember data_0204c678[];
 extern u8 data_ov002_0207e610[];
 extern Ov002SurfaceTagTemplate data_ov002_0207e640[];
 extern char data_ov002_0207f0dc[];
-/* Defined taking argument 0 as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern int Entity_LoadAndAttach(u16,u32);
+extern int Entity_LoadAndAttach(int, u32);
 extern signed char Ov002_GetCtxModeByte(void);
 extern void Res_RequestIdPair(int nId);
 extern TrackEntryGroup *GetTrackEntryBase(u16);
@@ -55,7 +53,7 @@ void Ov002_LoadPeerIntoSlot(int nSlot,int nPeer)
     if(pCtx->slots[nSlot]>=0) pCtx->aSlotMappings[pCtx->slots[nSlot]]=-1;
     pCtx->aSlotMappings[nPeer]=nSlot;
     pCtx->slots[nSlot]=nPeer;
-    Entity_LoadAndAttach((u16)nSlot,(((((u32)pCtx->pArchiveIndex+0x8000)&0xfffffc)<<7)|0x80000000)|(pPeer->nArchiveMember&0x1ff));
+    Entity_LoadAndAttach((u16)((u16)nSlot), (((((u32)pCtx->pArchiveIndex+0x8000)&0xfffffc)<<7)|0x80000000)|(pPeer->nArchiveMember&0x1ff));
     for(i=0;i<data_02042a1d;i++) {
         int nKind=data_0204c678[i].bMemberKind;
         if(nKind==0x11) pCtx->bResourceKinds|=4;

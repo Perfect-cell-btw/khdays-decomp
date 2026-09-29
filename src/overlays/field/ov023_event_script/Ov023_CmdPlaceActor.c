@@ -50,10 +50,8 @@ extern long long func_02020400(int nNumerator, int nDenominator);
 /* Defined taking nEntity as int, nMode as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Entity_SubmitRenderNode(u16 nEntity, u16 nMode, char *pszAnchor, VecFx32 *pPos); /* Entity_SetPosition */
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
-extern void  Entity_SetVisible(u16 nEntity, int bVisible);              /* Entity_SetVisible */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
+extern void  Entity_SetVisible(int nEntity, int bVisible);              /* Entity_SetVisible */
 extern int   LoadArrayU8At0cc(u16 nEntity);                            /* Entity_GetFlags */
 extern int   strncmp(const char *pA, const char *pB, int nCount);
 extern int   func_020200b4(char *pszNumber);                        /* parse a number */
@@ -85,7 +83,7 @@ int Ov023_CmdPlaceActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
         pszAnchor = 0;
         nAngle = (u16)func_02020400(ScriptVm_ReadOperandInt(pCtx, pOperand + 6) << 16, 360);
         Entity_SubmitRenderNode((u16)nActor, (u16)nMode, 0, &vPos);
-        pEntity = ArrayEntryPtrD0((u16)nActor);
+        pEntity = ArrayEntryPtrD0((u16)((u16)nActor));
         if (!(pEntity->nFlags & 0x20)) {
             pEntity->nAngle = nAngle;
             pEntity->wFlags |= 0x20;
@@ -104,7 +102,7 @@ int Ov023_CmdPlaceActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
             vPos.y = vPos.y + pCtx->pEvent->aAnchorPos[nAnchor].y;
             Entity_SubmitRenderNode((u16)nActor, (u16)nMode, 0, &vPos);
             nAngle = pCtx->pEvent->aAnchorAngle[nAnchor];
-            pEntity = ArrayEntryPtrD0((u16)nActor);
+            pEntity = ArrayEntryPtrD0((u16)((u16)nActor));
             if (!(pEntity->nFlags & 0x20)) {
                 pEntity->nAngle = nAngle;
                 pEntity->wFlags |= 0x20;
@@ -114,7 +112,7 @@ int Ov023_CmdPlaceActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
             Entity_SubmitRenderNode((u16)nActor, (u16)nMode, pszAnchor, &vPos);
         }
     }
-    Entity_SetVisible((u16)nActor, 1);
+    Entity_SetVisible((u16)((u16)nActor), 1);
     if (pCtx->pEvent->pActors != 0 && !(LoadArrayU8At0cc((u16)nActor) & 0x20)) {
         Ov023_PlaceActorModel(&pCtx->pEvent->pActors[nActor], pszAnchor, &vPos, nMode, nActor);
     }

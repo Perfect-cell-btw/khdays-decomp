@@ -9,9 +9,7 @@ extern int Actor_ArmWithMessage(int nNode, int nZero, void *pObj, void *pParams,
 extern int EntityMgr_ProbeGround(u16 nId, int nSpot, VecFx32 *pOut);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
-/* Defined taking nId as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern short EntityMgr_GetCollEntryField14(u16 nId, int nSpot);
+extern short EntityMgr_GetCollEntryField14(int nId, int nSpot);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 extern void Ov002_PushBucketNode(int nBucket, char *pElement);
 extern void *Ov002_ElementPhase_WatchStateBit(char *pElement);
@@ -47,7 +45,7 @@ char *Ov002_SpawnActorElement(char *pClass, int nSlot, int nBucket,
             VEC_Add(&vSpot, pPos, &vSpot);
         }
         Actor_SetVecAndSyncChild(pElement + 0x28, &vSpot);
-        *(short *)(pElement + 0x18) = EntityMgr_GetCollEntryField14((u16)nId, nSpot);
+        *(short *)(pElement + 0x18) = EntityMgr_GetCollEntryField14((u16)((u16)nId), nSpot);
     } else {
         Actor_SetVecAndSyncChild(pElement + 0x28, pPos);
         *(short *)(pElement + 0x18) = nAngle;

@@ -27,10 +27,8 @@ typedef struct Ov023SceneRoot {
 extern int  Ov023_IsActivePanelEntry(Ov023Actor *pActor, int nPeer);     /* Ov023_ActorOnScreen */
 extern int  Ov023_Window_GetFlags(Ov023Actor *pActor);                /* the actor's state word */
 extern void Ov023_ActorHookJoints(Ov023Actor *pActor);                /* hide the actor */
-/* Defined taking nId as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern void Entity_SetVisible(u16 nId, int bOn);                        /* arm a sprite id */
-extern void Entity_Tick(u16 nId);
+extern void Entity_SetVisible(int nId, int bOn);                        /* arm a sprite id */
+extern void Entity_Tick(int nId);
 extern void NNS_G3dRenderObjResetCallBack(void *pModel);                            /* reset a bound model */
 extern Ov023SceneRoot data_ov023_0208a784;
 
@@ -47,8 +45,10 @@ void Ov023_HideScreenActors(void)
             nState = Ov023_Window_GetFlags((Ov023Actor *)((u8 *)data_ov023_0208a784.pScene->pActors + nOffset));
             if ((nState & 0x400) && !(nState & 0x20)) {
                 Ov023_ActorHookJoints((Ov023Actor *)((u8 *)data_ov023_0208a784.pScene->pActors + nOffset));
-                Entity_SetVisible(i, 1);
-                Entity_Tick(i);
+                Entity_SetVisible((u16)i, 1);
+                /* Written as a mask where another call truncates with a cast: mwcc would otherwise compute the
+                 * truncation once and keep it, while the ROM truncates again at each call. */
+                Entity_Tick(i & 0xffff);
                 NNS_G3dRenderObjResetCallBack(((Ov023Actor *)((u8 *)data_ov023_0208a784.pScene->pActors + nOffset))->pResource + 0x24);
             }
         }

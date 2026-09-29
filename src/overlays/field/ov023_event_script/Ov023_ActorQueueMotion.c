@@ -47,12 +47,8 @@ extern int   strlen(const char *pszString);
 extern int   strcmp(const char *pA, const char *pB);         /* STD_CompareString */
 extern void *Msg_OpenContainerAndReadHeader(const char *pszName, int nHeap);         /* open a text container */
 extern int   Anim_GetLengthQ12(void *pAnim, u16 nTrack);                /* Anim_GetLengthQ12 */
-/* Defined taking nTrack as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern int   Anim_GetFrame(void *pAnim, u16 nTrack);                /* Anim_GetFrame */
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern int   LoadArrayInt244(u16 nEntity);                            /* Entity_GetSpeed */
+extern int   Anim_GetFrame(void *pAnim, int nTrack);                /* Anim_GetFrame */
+extern int   LoadArrayInt244(int nEntity);                            /* Entity_GetSpeed */
 extern char  data_ov023_0208a730[];                                 /* ".p2" */
 
 void Ov023_ActorQueueMotion(Ov023Actor *pActor, char *pszMotion, s16 nFrame, int nTrack, int nBlend, int bHalfway)
@@ -81,7 +77,7 @@ void Ov023_ActorQueueMotion(Ov023Actor *pActor, char *pszMotion, s16 nFrame, int
         pMotion->nBlend = nBlend;
         if (nTrack == 0) {
             nLength = Anim_GetLengthQ12(&pActor->pEntity->wFlags, (u16)nTrack);
-            nCurrent = Anim_GetFrame(&pActor->pEntity->wFlags, (u16)nTrack);
+            nCurrent = Anim_GetFrame(&pActor->pEntity->wFlags, (u16)((u16)nTrack));
             if (bHalfway != 0) {
                 if (nCurrent < nLength / 2) {
                     pMotion->nEndFrame = nLength / 2;
@@ -91,7 +87,7 @@ void Ov023_ActorQueueMotion(Ov023Actor *pActor, char *pszMotion, s16 nFrame, int
             } else {
                 pMotion->nEndFrame = nLength;
                 if (!(pActor->nFlags & 0x40)) {
-                    pMotion->nEndFrame -= LoadArrayInt244((u16)pActor->nEntity);
+                    pMotion->nEndFrame -= LoadArrayInt244((u16)((u16)pActor->nEntity));
                 }
             }
         }

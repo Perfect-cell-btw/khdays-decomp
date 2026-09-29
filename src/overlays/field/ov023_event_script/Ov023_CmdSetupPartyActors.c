@@ -35,9 +35,7 @@ typedef struct Ov023MotionParam {
 extern Ov023SessionSlot *Slot4_GetIfOccupied(int nSlot);                  /* Session_GetSlotIfOccupied */
 extern void  OS_SPrintf(char *pBuffer, const char *pFormat, ...);
 extern void *Msg_OpenContainerAndReadHeader(const char *pszName, int nHeap);         /* open a text container */
-/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
- * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern void  Entity_ForwardToSlot(u16 nEntity, int nA, int nB, Ov023MotionParam *pParam, int nC); /* Entity_StartMotion */
+extern void  Entity_ForwardToSlot(int nEntity, int nA, int nB, Ov023MotionParam *pParam, int nC); /* Entity_StartMotion */
 extern void  TailForwardTrackEntry(u16 nEntity, void *pTable, int nA, int nB); /* Entity_BindResource */
 extern void  Entity_SetVisible(u16 nEntity, int bVisible);              /* Entity_SetVisible */
 extern void  Ov002_LoadCharacterWeapon(u8 *pBlock, int nKind, int nArg);  /* build a member block */
@@ -90,7 +88,7 @@ int Ov023_CmdSetupPartyActors(void)
         param.nMode = 1;
         param.nArg0 = 0x99a;
         param.nArg1 = 0xccd;
-        Entity_ForwardToSlot((u16)i, 0, 0, &param, 0);
+        Entity_ForwardToSlot((u16)((u16)i), 0, 0, &param, 0);
         TailForwardTrackEntry((u16)i, data_ov023_0208a334[nKind], 1, 6);
         Entity_SetVisible((u16)i, 0);
         Ov002_LoadCharacterWeapon(aBlock, nKind, pUsed->nByte04);
