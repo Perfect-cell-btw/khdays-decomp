@@ -3,6 +3,7 @@
  * the node to 020d046c. */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct {
     u16 soundId;
@@ -29,10 +30,7 @@ typedef struct {
 } Ov278Node;
 
 typedef struct {
-    u8 pad_0000[4];
-    Ov278Node *node;
-    u8 pad_0008[0x20 - 8];
-    s8 scriptSlot;
+    AI_TASK_FIELDS(Ov278Node)
 } Ov278Actor;
 
 extern void Ov107_BuildAndSendUpdate(Ov278CueObject *object, int id, int kind, void *anchor);
@@ -42,7 +40,7 @@ extern Ov278CueTable data_ov278_020d6374;
 extern void Ov278_AiReleaseRidersOnAnimEnd(void);
 
 void Ov278_EnterCharge(Ov278Actor *self) {
-    Ov278Node *node = self->node;
+    Ov278Node *node = self->pState;
     Ov278Cue cue;
     Ov278CueCallback playCue;
 
@@ -53,5 +51,5 @@ void Ov278_EnterCharge(Ov278Actor *self) {
     }
     Ov107_BuildAndSendUpdate(node->object, 0x166, 6, node->anchor);
     Ov107_PostTagUpdate(node->object, 4, 0);
-    SetIndexedSlot(self, self->scriptSlot, &Ov278_AiReleaseRidersOnAnimEnd);
+    SetIndexedSlot(self, self->slot, &Ov278_AiReleaseRidersOnAnimEnd);
 }

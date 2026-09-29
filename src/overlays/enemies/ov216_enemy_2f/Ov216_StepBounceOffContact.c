@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct MtxFx33 { int m[3][3]; };
 struct Ov214Params;
@@ -51,10 +52,7 @@ struct Ov214State {
 };
 
 struct Ov214Task {
-    struct Ov214Actor *pActor;
-    struct Ov214State *pState;
-    char pad008[0x18];
-    signed char nSlot20;
+    AI_TASK_FIELDS(struct Ov214State)
 };
 
 struct Ov214CollisionShape {
@@ -134,7 +132,7 @@ void Ov216_StepBounceOffContact(struct Ov214Task *task)
         func_ov107_020c0b90(state->pActor, 6, data_02041dc8, 0);
         state->nCallback50 = 0;
         state->bEffect70 = 0;
-        SetIndexedSlot(task, task->nSlot20, Ov216_TimerActionOnceThenAdvance);
+        SetIndexedSlot(task, task->slot, Ov216_TimerActionOnceThenAdvance);
         return;
     }
 
@@ -200,7 +198,7 @@ void Ov216_StepBounceOffContact(struct Ov214Task *task)
     if (state->bHoming78 != 0) {
         wasPositive = state->nDelay60 > 0;
         if (((struct Ov214CollisionFlags *)&state->pActor->bCollisionFlags17a)->bGrounded) {
-            state->nDelay60 -= task->pActor->nFrameDelta2c;
+            state->nDelay60 -= ((struct Ov214Actor *)task->pList)->nFrameDelta2c;
         }
         if (state->nDelay60 <= 0) {
             if (wasPositive) {
@@ -219,7 +217,7 @@ void Ov216_StepBounceOffContact(struct Ov214Task *task)
             ScaleVec3Fx12(0x800, &state->vDirection14, &state->vVelocity20);
             state->nDelay60 = 0;
         } else {
-            for (step = task->pActor->nFrameDelta2c; step > 0; step -= 0x88) {
+            for (step = ((struct Ov214Actor *)task->pList)->nFrameDelta2c; step > 0; step -= 0x88) {
                 int slice;
                 if (step <= 0x88) {
                     slice = step;
@@ -232,12 +230,12 @@ void Ov216_StepBounceOffContact(struct Ov214Task *task)
             ScaleVec3Fx12(state->nSpeed64, &state->vDirection14, &state->vVelocity20);
             state->vVelocity20.y = state->nVertical68;
             if (state->nVertical68 > -0x7000) {
-                gravityStep = task->pActor->nFrameDelta2c * -0x80;
+                gravityStep = ((struct Ov214Actor *)task->pList)->nFrameDelta2c * -0x80;
                 state->nVertical68 += gravityStep / 0x88;
             }
         }
     } else {
-        state->nTimer5c -= task->pActor->nFrameDelta2c;
+        state->nTimer5c -= ((struct Ov214Actor *)task->pList)->nFrameDelta2c;
         if (state->nTimer5c <= 0) {
             state->nTimer5c = 0;
         }
@@ -252,7 +250,7 @@ void Ov216_StepBounceOffContact(struct Ov214Task *task)
         targetAngle = phaseCount - (int)state->nPhase6e;
         targetAngle *= 0x300;
         targetAngle = func_02020400(targetAngle, phaseCount) + 0x500;
-        for (step = task->pActor->nFrameDelta2c; step > 0; step -= 0x88) {
+        for (step = ((struct Ov214Actor *)task->pList)->nFrameDelta2c; step > 0; step -= 0x88) {
             state->nSpeed64 += FX_MUL(targetAngle - state->nSpeed64, 0x800);
         }
         ScaleVec3Fx12(state->nSpeed64, &rotated, &state->vVelocity20);

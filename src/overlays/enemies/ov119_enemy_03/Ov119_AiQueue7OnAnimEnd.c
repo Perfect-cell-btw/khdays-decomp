@@ -1,5 +1,7 @@
 /* Queues action 7 when the animation ends. */
 
+#include "game/ai_task.h"
+
 extern int SetIndexedSlot();
 
 struct Inner {
@@ -8,19 +10,16 @@ struct Inner {
 };
 
 struct Obj {
-    int field0;
-    struct Inner *field4;
-    char pad8[0x18];
-    signed char field20;
+    AI_TASK_FIELDS(struct Inner)
 };
 
 int Ov119_AiQueue7OnAnimEnd(struct Obj *obj)
 {
-    struct Inner *inner = obj->field4;
+    struct Inner *inner = obj->pState;
 
     if (inner->p4[0xad] != 0)
         return (int)obj;
 
     inner->p0[0x1c7] = 7;
-    return SetIndexedSlot(obj, obj->field20, 0);
+    return SetIndexedSlot(obj, obj->slot, 0);
 }

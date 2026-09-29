@@ -2,6 +2,7 @@
  * flags at +0x1ae, clears bit 0 of its model's flag byte, then clears the step handler. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int SetIndexedSlot();
 
@@ -15,15 +16,12 @@ struct B {
 };
 
 struct A {
-    char pad0[4];
-    struct B *b;
-    char pad8[0x18];
-    signed char f20;
+    AI_TASK_FIELDS(struct B)
 };
 
 void Ov184_AiSetStanceAndEnd(struct A *a)
 {
-    struct B *b = a->b;
+    struct B *b = a->pState;
     Actor *c;
     struct D *d;
     unsigned int x;
@@ -38,5 +36,5 @@ void Ov184_AiSetStanceAndEnd(struct A *a)
     d = b->p0->pPoolEntry;
     d->f8 = d->f8 & ~1;
 
-    SetIndexedSlot(a, a->f20, 0);
+    SetIndexedSlot(a, a->slot, 0);
 }

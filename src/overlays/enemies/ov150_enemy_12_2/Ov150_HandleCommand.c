@@ -81,10 +81,10 @@ void Ov150_HandleCommand(struct Self *self, struct Command *cmd, int arg2)
         switch (cmd->action03) {
         case 1:
             self->pSlots390->field0c =
-                Ov107_CreateNodeBodyTask(self->base.field_03c, self->pSlots390->field08,
+                Ov107_CreateNodeBodyTask(self->base.taskList, self->pSlots390->field08,
                                     0x17, self->pTransform394 + 1, 0, 0);
             self->pSlots390->field1c =
-                Ov107_CreateNodeBodyTask(self->base.field_03c, self->pSlots390->field18,
+                Ov107_CreateNodeBodyTask(self->base.taskList, self->pSlots390->field18,
                                     0x17, self->aTransform39c, 0, 0);
             self->nEffect3d0 =
                 Ov107_CreateSpawnTask(self, 0x14e, 7, 0,
@@ -92,7 +92,7 @@ void Ov150_HandleCommand(struct Self *self, struct Command *cmd, int arg2)
             break;
         case 2:
             self->pSlots390->field24 =
-                Ov107_CreateNodeBodyTask(self->base.field_03c, self->pSlots390->field20,
+                Ov107_CreateNodeBodyTask(self->base.taskList, self->pSlots390->field20,
                                     0x17, self->pTransform394 + 1, 0, 0);
             break;
         case 0: {

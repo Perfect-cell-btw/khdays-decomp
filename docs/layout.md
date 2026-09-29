@@ -69,6 +69,11 @@ Still to do, in this order:
     other signedness), the access keeps that type with a cast. `tools/structconv.py` does the
     rewrite: it preprocesses a source with mwcc, maps every access through a view by type onto the
     shared member path, and keeps a source only if it still compiles to the same bytes.
+  - `game/ai_task.h`, an actor's AI task (`AiTask`, the 0x28-byte entry CreateRegistryEntry puts
+    in the actor's task list and ObjList_Update runs: three step callbacks, a start and a teardown
+    callback, the running pass `slot`). Its state block is the creator's own type, so the members
+    are declared through `AI_TASK_FIELDS(StateType)`: 713 enemy sources declare their task as
+    `struct X { AI_TASK_FIELDS(TheirState) };` and read `pState`/`slot` without casts.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
   the function prototypes and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per

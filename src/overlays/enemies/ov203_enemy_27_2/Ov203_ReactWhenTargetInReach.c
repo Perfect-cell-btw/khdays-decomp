@@ -1,4 +1,5 @@
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 typedef struct {
     Actor *pSelf;            /* +0x00 */
@@ -6,10 +7,7 @@ typedef struct {
 } Owner;
 
 typedef struct {
-    char pad00[4];
-    Owner *pOwner;           /* +0x04 */
-    char pad08[0x18];
-    signed char bTag;        /* +0x20 */
+    AI_TASK_FIELDS(Owner)
 } Ctx;
 
 extern Actor *Ov107_FindNearestObject(Actor *self, int *pDistSq);
@@ -21,7 +19,7 @@ void Ov203_ReactWhenTargetInReach(Ctx *ctx) {
     Owner *owner;
     Actor *self;
     Actor *target;
-    owner = ctx->pOwner;
+    owner = ctx->pState;
 
     owner->pTarget = Ov107_FindNearestObject(owner->pSelf, &dist);
     target = owner->pTarget;
@@ -34,5 +32,5 @@ void Ov203_ReactWhenTargetInReach(Ctx *ctx) {
         return;
     }
     owner->pSelf->nextState = 4;
-    SetIndexedSlot(ctx, ctx->bTag, 0);
+    SetIndexedSlot(ctx, ctx->slot, 0);
 }

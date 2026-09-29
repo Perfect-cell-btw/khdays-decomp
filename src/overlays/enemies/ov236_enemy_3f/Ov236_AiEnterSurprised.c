@@ -1,6 +1,7 @@
 /* Plays the surprised cue and anim 0xd, then installs the rolling charge start. */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct {
     u16 soundId;
@@ -25,10 +26,7 @@ typedef struct {
 } Ov236Node;
 
 typedef struct {
-    u8 pad_0000[4];
-    Ov236Node *node;
-    u8 pad_0008[0x20 - 8];
-    s8 scriptSlot;
+    AI_TASK_FIELDS(Ov236Node)
 } Ov236Actor;
 
 extern void Ov107_PostTagUpdate(Ov236CueObject *object, int mode, int flag);
@@ -37,7 +35,7 @@ extern Ov236CueTable data_ov236_020d63c0;
 extern void Ov236_AiStartRollingCharge(void);
 
 void Ov236_AiEnterSurprised(Ov236Actor *self) {
-    Ov236Node *node = self->node;
+    Ov236Node *node = self->pState;
     Ov236Cue cue;
     Ov236CueCallback playCue;
 
@@ -47,5 +45,5 @@ void Ov236_AiEnterSurprised(Ov236Actor *self) {
         playCue(node->object, &cue, sizeof(cue));
     }
     Ov107_PostTagUpdate(node->object, 0xd, 0);
-    SetIndexedSlot(self, self->scriptSlot, &Ov236_AiStartRollingCharge);
+    SetIndexedSlot(self, self->slot, &Ov236_AiStartRollingCharge);
 }

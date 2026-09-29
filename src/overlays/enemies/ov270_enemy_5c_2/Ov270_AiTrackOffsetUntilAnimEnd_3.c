@@ -1,19 +1,23 @@
 /* Transforms the offset (+0x18) through the owner's matrix and scales it; once the animation ends
  * queues action 2 and ends the step. */
 
+#include "game/ai_task.h"
+
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
 
-struct S0 { int *f0; int *f4; char pad[0x20 - 8]; signed char f20; };
+struct S0 {
+    AI_TASK_FIELDS(int)
+};
 
 struct Local { int a; int b; int c; };
 
 void Ov270_AiTrackOffsetUntilAnimEnd_3(struct S0 *this)
 {
     struct Local local;
-    int *r6 = this->f4;
+    int *r6 = this->pState;
     int r5;
 
     r5 = Ov107_ActionResource_GetOffsetAndScale(((int **)r6[0])[0xf4], &local);

@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -49,10 +50,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern const struct Msg data_ov136_020d3a10;
@@ -82,7 +80,7 @@ void Ov136_SwingTick(struct Node *node)
     int speed;
 
     st = node->pState;
-    st->nElapsed30 += *(int *)((char *)node->pScene + 0x2c);
+    st->nElapsed30 += *(int *)((char *)node->pList + 0x2c);
     if (st->bFired40 == 0 && st->nElapsed30 >= 0x330) {
         st->bFired40 = 1;
         Ov107_BuildAndSendUpdate(st->pActor, 0x11c, 6, st->pAnchor3c);
@@ -133,6 +131,6 @@ void Ov136_SwingTick(struct Node *node)
     }
     if (*(u8 *)((char *)st->pSub + 0xad) == 0) {
         ((struct Flags60 *)((char *)st->pActor + 0x60))->hi &= ~0x40;
-        SetIndexedSlot(node, node->bSlot, Ov136_BranchByFlag42SetStateThenAdvance);
+        SetIndexedSlot(node, node->slot, Ov136_BranchByFlag42SetStateThenAdvance);
     }
 }

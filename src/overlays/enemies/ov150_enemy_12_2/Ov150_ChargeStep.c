@@ -25,6 +25,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct Msg {
     u16 h[7];
@@ -48,10 +49,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
@@ -144,7 +142,7 @@ void Ov150_ChargeStep(struct Node *node)
                 }
                 Ov107_BuildAndSendUpdate(st->pActor, 0x14e, 5, st->pPoint04);
                 *(u8 *)((char *)st->pActor + 0x1c7) = 0;
-                SetIndexedSlot(node, node->bSlot, 0);
+                SetIndexedSlot(node, node->slot, 0);
                 return;
             }
             i++;
@@ -211,7 +209,7 @@ void Ov150_ChargeStep(struct Node *node)
         }
         Ov107_BuildAndSendUpdate(st->pActor, 0x14e, 6, st->pPoint04);
         *(u8 *)((char *)st->pActor + 0x1c7) = 0;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
 
@@ -243,5 +241,5 @@ void Ov150_ChargeStep(struct Node *node)
         (*pfnHook)(st->pActor, &msg3, 0xe);
     }
     *(u8 *)((char *)st->pActor + 0x1c7) = 0;
-    SetIndexedSlot(node, node->bSlot, 0);
+    SetIndexedSlot(node, node->slot, 0);
 }

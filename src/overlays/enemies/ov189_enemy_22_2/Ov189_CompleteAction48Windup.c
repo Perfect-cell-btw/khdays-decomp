@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct Actor {
     char pad000[0x60];
@@ -27,10 +28,7 @@ struct Ov189Scene {
 };
 
 struct Ov189ActionNode {
-    struct Ov189Scene *scene;
-    struct Ov189ActionState *state;
-    char pad008[0x18];
-    signed char slot20;
+    AI_TASK_FIELDS(struct Ov189ActionState)
 };
 
 struct ActorFlags60 {
@@ -49,10 +47,10 @@ extern void Ov189_AiStep_QueueAction2OnAnimEnd(void);
 
 void Ov189_CompleteAction48Windup(struct Ov189ActionNode *node)
 {
-    struct Ov189ActionState *state = node->state;
+    struct Ov189ActionState *state = node->pState;
     VecFx32 direction;
 
-    state->timer18 += node->scene->frameStep2c;
+    state->timer18 += ((struct Ov189Scene *)node->pList)->frameStep2c;
     if (state->timer18 < 0x6ee) {
         return;
     }
@@ -69,5 +67,5 @@ void Ov189_CompleteAction48Windup(struct Ov189ActionNode *node)
     Ov107_PostTagUpdate(state->actor, 0, 0);
     Ov107_BuildAndSendUpdate(state->actor, 0x12f, 6,
                         state->reactionContext0c);
-    SetIndexedSlot(node, node->slot20, Ov189_AiStep_QueueAction2OnAnimEnd);
+    SetIndexedSlot(node, node->slot, Ov189_AiStep_QueueAction2OnAnimEnd);
 }

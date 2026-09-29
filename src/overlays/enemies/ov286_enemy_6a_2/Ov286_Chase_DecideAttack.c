@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 struct State {
     char *pActor;
@@ -10,10 +11,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern char *Ov107_FindNearestObject(char *actor, int *pOutDistSq);
@@ -45,17 +43,17 @@ void Ov286_Chase_DecideAttack(struct Node *node)
 
     if (RandNextScaled(0xc9) + (z - z) == 0) {
         *(u8 *)(st->pActor + 0x1c7) = 4;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
     if (nDist < 0x2000) {
         nLimit = 0x1000 - ((*(u8 *)(st->pActor + 0x19e) << 12) / 10);
-        st->nElapsed28 += *(int *)((char *)node->pScene + 0x2c);
+        st->nElapsed28 += *(int *)((char *)node->pList + 0x2c);
         if (st->nElapsed28 < nLimit) {
             return;
         }
         *(u8 *)(st->pActor + 0x1c7) = 4;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
     st->nElapsed28 = 0;

@@ -1,5 +1,7 @@
 /* Sets bits 0-1 of the actor's first flag word and ends the step. */
 
+#include "game/ai_task.h"
+
 extern int SetIndexedSlot();
 
 struct Sub {
@@ -8,14 +10,11 @@ struct Sub {
 };
 
 struct Obj {
-    char pad0[4];
-    struct Sub **psub;
-    char pad8[0x20 - 8];
-    signed char b20;
+    AI_TASK_FIELDS(struct Sub *)
 };
 
 int Ov234_AiStep_SetFlags3AndEnd(struct Obj *r0)
 {
-    (*r0->psub)->flags |= 3;
-    return SetIndexedSlot(r0, r0->b20, 0);
+    (*r0->pState)->flags |= 3;
+    return SetIndexedSlot(r0, r0->slot, 0);
 }

@@ -2,6 +2,7 @@
  * action 2 and ends the step. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
@@ -19,14 +20,11 @@ struct Inner {
 };
 
 struct Obj {
-    char pad0[4];
-    struct Inner *inner;      /* +0x04 */
-    char pad8[0x20 - 0x08];
-    signed char b20;          /* +0x20 */
+    AI_TASK_FIELDS(struct Inner)
 };
 
 void Ov137_AiDecelUntilAnimEnd(struct Obj *o) {
-    struct Inner *in = o->inner;
+    struct Inner *in = o->pState;
     Actor *q;
 
     in->dst = in->src;
@@ -40,5 +38,5 @@ void Ov137_AiDecelUntilAnimEnd(struct Obj *o) {
         return;
 
     q->nextState = 2;
-    SetIndexedSlot(o, (int)o->b20, 0);
+    SetIndexedSlot(o, (int)o->slot, 0);
 }

@@ -4,6 +4,7 @@
  * this form) hoists it above the hw60 work. House style copied from ov149_020cfd84. */
 
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 extern const VecFx32 data_02041dc8;
 extern void SetIndexedSlot();
@@ -12,10 +13,12 @@ extern void Ov197_ResetPoseIdleStep(void);
 struct D { char pad0[8]; unsigned int f8 : 8; };
 struct C { char pad0[0x60]; unsigned short f60; char pad62[0x326]; struct D *f388; };
 struct B { struct C *p0; char pad4[4]; VecFx32 v8; };
-struct A { char pad0[4]; struct B *b; char pad8[0x18]; signed char f20; };
+struct A {
+    AI_TASK_FIELDS(struct B)
+};
 
 void Ov197_ResetPoseAndFlags(struct A *a) {
-    struct B *b = a->b;
+    struct B *b = a->pState;
     struct C *c;
     struct D *d;
     unsigned int x;
@@ -36,5 +39,5 @@ void Ov197_ResetPoseAndFlags(struct A *a) {
 
     b->v8 = data_02041dc8;
 
-    SetIndexedSlot(a, a->f20, Ov197_ResetPoseIdleStep);
+    SetIndexedSlot(a, a->slot, Ov197_ResetPoseIdleStep);
 }

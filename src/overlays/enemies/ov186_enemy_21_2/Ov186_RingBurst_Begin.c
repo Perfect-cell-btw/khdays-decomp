@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -39,10 +40,7 @@ struct Ov185ActionState {
 };
 
 struct Ov185ActionNode {
-    char pad000[4];
-    struct Ov185ActionState *pState;
-    char pad008[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov185ActionState)
 };
 
 extern const short data_0203d210[];
@@ -111,5 +109,5 @@ void Ov186_RingBurst_Begin(struct Ov185ActionNode *node)
         nAngle += 0x6488;
     } while (++i < 4);
     Ov107_BuildAndSendUpdate(state->pOwner, 0x120, 6, state->pAnchor44);
-    SetIndexedSlot(node, node->bSlot, Ov186_AiEnterBoneSpin);
+    SetIndexedSlot(node, node->slot, Ov186_AiEnterBoneSpin);
 }

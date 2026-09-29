@@ -19,6 +19,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -57,10 +58,7 @@ struct Ov141StepState {
 };
 
 struct Ov141StepNode {
-    void *pClock;                /* 0x00 */
-    struct Ov141StepState *pState; /* 0x04 */
-    char pad08[0x18];
-    signed char bSlot;           /* 0x20 */
+    AI_TASK_FIELDS(struct Ov141StepState)
 };
 
 extern VecFx32 data_02042258;
@@ -152,8 +150,8 @@ void Ov141_StepSlamProbe(struct Ov141StepNode *node)
             state->pSelf->pMsgHook24(state->pSelf, &cmd, 0xe);
         }
         state->pSelf->bSubState1c7 = 0;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
-    SetIndexedSlot(node, node->bSlot, Ov141_StepSlamStrike);
+    SetIndexedSlot(node, node->slot, Ov141_StepSlamStrike);
 }

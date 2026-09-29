@@ -71,7 +71,7 @@ extern void Ov107_BuildAndSendUpdate(Actor *actor, int id, unsigned short mode,
 
 int Ov122_Actor_OnHit(Actor *actor, int nParam, struct ActorHitEvent *hit)
 {
-    struct Ov120ActionState *state = actor->pHitState;
+    struct Ov120ActionState *state = actor->pAiState;
     int taken;
     int delta;
     int rem;

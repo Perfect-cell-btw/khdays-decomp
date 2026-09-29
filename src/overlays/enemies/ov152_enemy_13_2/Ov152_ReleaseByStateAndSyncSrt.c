@@ -60,15 +60,15 @@ struct Obj {
 void Ov152_ReleaseByStateAndSyncSrt(struct Obj *a) {
     if (a->base.state != 5) {
         if (a->f390->m0c != 0) {
-            TaskList_FinishByTag(a->base.field_03c, a->f390->m0c);
+            TaskList_FinishByTag(a->base.taskList, a->f390->m0c);
             a->f390->m0c = 0;
         }
         if (a->f390->m14 != 0) {
-            TaskList_FinishByTag(a->base.field_03c, a->f390->m14);
+            TaskList_FinishByTag(a->base.taskList, a->f390->m14);
             a->f390->m14 = 0;
         }
         if (a->f390->m1c != 0) {
-            TaskList_FinishByTag(a->base.field_03c, a->f390->m1c);
+            TaskList_FinishByTag(a->base.taskList, a->f390->m1c);
             a->f390->m1c = 0;
         }
         if (a->f3d0 != 0) {
@@ -78,7 +78,7 @@ void Ov152_ReleaseByStateAndSyncSrt(struct Obj *a) {
     }
 
     if (a->base.state != 6 && a->f390->m24 != 0) {
-        TaskList_FinishByTag(a->base.field_03c, a->f390->m24);
+        TaskList_FinishByTag(a->base.taskList, a->f390->m24);
         a->f390->m24 = 0;
     }
 

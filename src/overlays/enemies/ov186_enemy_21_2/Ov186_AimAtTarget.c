@@ -2,6 +2,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct Ov185ActionState {
     Actor *pOwner;
@@ -21,10 +22,7 @@ struct Ov185ActionState {
 struct Ov185Anim { int nPad0; int nId4; };
 
 struct Ov120ActionNode {
-    char pad000[4];
-    struct Ov185ActionState *pState;
-    char pad008[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov185ActionState)
 };
 
 extern void Ov186_OrbitStep(void);
@@ -66,7 +64,7 @@ void Ov186_AimAtTarget(struct Ov120ActionNode *node)
     state->pTarget = Ov107_FindNearestObject(state->pOwner, 0);
     if (state->pTarget == 0) {
         state->pOwner->nextState = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
     VEC_Subtract(&state->pTarget->vChaseTarget, &state->pOwner->srt.translation, &vDelta);
@@ -94,5 +92,5 @@ void Ov186_AimAtTarget(struct Ov120ActionNode *node)
                                    | ((((((unsigned int)v << 0x10) >> 0x18) | 2)
                                        << 0x18) >> 0x10));
     }
-    SetIndexedSlot(node, node->bSlot, Ov186_OrbitStep);
+    SetIndexedSlot(node, node->slot, Ov186_OrbitStep);
 }

@@ -1,25 +1,10 @@
-
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
-typedef struct Item Item;
-typedef void (*ItemCallback)(Item *item);
-
-/*
- * An entry on the object's node list. The list itself is walked by
- * List_First / List_Next, which return the item pointer stored at
- * offset 0xc of each node.
- */
-struct Item {
-    int field_00;
-    int field_04;
-    ItemCallback updateCallbacks[3]; /* 0x08, 0x0c, 0x10 */
-    ItemCallback pendingCallback;    /* 0x14 */
-    ItemCallback field_18;
-    int field_1c;
-    s8 field_20;                     /* which callback slot is running */
-    u8 pad_21[3];
-    int field_24;                    /* non-zero: item wants to be torn down */
-};
+/* Runs one update of a task list (an actor's AI tasks, see game/ai_task.h): each task's pending
+ * start callback, then its three step callbacks pass by pass, then tears down the tasks that asked
+ * to stop. The list is walked by List_First / List_Next, which return the task stored in each
+ * node. */
 
 typedef struct Owner {
     u8 pad_00[0x28];
@@ -27,13 +12,13 @@ typedef struct Owner {
     int scaledTime;  /* 0x2c */
 } Owner;
 
-extern Item *List_First(Owner *owner);
-extern Item *List_Next(Owner *owner);
-extern void DestroyListNode(Owner *owner, Item *item);
+extern AiTask *List_First(Owner *owner);
+extern AiTask *List_Next(Owner *owner);
+extern void DestroyListNode(Owner *owner, AiTask *item);
 
 void ObjList_Update(Owner *owner, int tick)
 {
-    Item *item;
+    AiTask *item;
     s8 pendingSlot;
     int slot;
 
@@ -42,10 +27,10 @@ void ObjList_Update(Owner *owner, int tick)
     pendingSlot = 1;
     item = List_First(owner);
     while (item != 0) {
-        if (item->pendingCallback != 0) {
-            item->field_20 = pendingSlot;
-            item->pendingCallback(item);
-            item->pendingCallback = 0;
+        if (item->pfnStart != 0) {
+            item->slot = pendingSlot;
+            item->pfnStart(item);
+            item->pfnStart = 0;
         }
         item = List_Next(owner);
     }
@@ -53,9 +38,9 @@ void ObjList_Update(Owner *owner, int tick)
     for (slot = 0; slot < 3; slot++) {
         item = List_First(owner);
         while (item != 0) {
-            if (item->field_24 == 0 && item->updateCallbacks[slot] != 0) {
-                item->field_20 = (s8)slot;
-                item->updateCallbacks[slot](item);
+            if (item->stop == 0 && item->pfnStep[slot] != 0) {
+                item->slot = (s8)slot;
+                item->pfnStep[slot](item);
             }
             item = List_Next(owner);
         }
@@ -73,7 +58,7 @@ restart:
         goto done;
     }
 check:
-    if (item->field_24 != 0) {
+    if (item->stop != 0) {
         DestroyListNode(owner, item);
         goto restart;
     }

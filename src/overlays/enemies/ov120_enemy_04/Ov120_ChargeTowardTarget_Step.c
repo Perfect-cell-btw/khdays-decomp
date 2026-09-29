@@ -37,6 +37,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct Ov107LockTarget {
     char pad000[0x80];
@@ -64,10 +65,7 @@ struct SceneFrameClock {
 };
 
 struct Ov120ActionNode {
-    struct SceneFrameClock *pClock;
-    struct Ov120ActionState *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov120ActionState)
 };
 
 extern const short data_0203d210[];
@@ -96,7 +94,7 @@ void Ov120_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
     state->pTarget = Ov107_FindNearestObject(state->pOwner, 0);
     if (state->pTarget == 0) {
         state->pOwner->nextState = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
 
@@ -108,7 +106,7 @@ void Ov120_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
     state->nHeading14 = func_020050b4(vAim.x, vAim.z);
     if (gap > state->pOwner->range) {
         state->pOwner->nextState = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
 
@@ -123,20 +121,20 @@ void Ov120_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
     }
     ScaleVec3Fx12((int)(((long long)dot * 0x300 + 0x800) >> 0xc),
                   &vFacing, &state->vVelocity);
-    state->nSpeed18 = (node->pClock->nDelta2c * 30) / 5;
+    state->nSpeed18 = (((struct SceneFrameClock *)node->pList)->nDelta2c * 30) / 5;
 
     if (gap < 0x800) {
         state->vVelocity = data_02041dc8;
         if (VEC_DotProduct(&vFacing, &vAim) >= 0xc00) {
             state->pOwner->nextState = 2;
-            SetIndexedSlot(node, node->bSlot, 0);
+            SetIndexedSlot(node, node->slot, 0);
             return;
         }
     }
 
-    state->nElapsed40 += node->pClock->nDelta2c;
+    state->nElapsed40 += ((struct SceneFrameClock *)node->pList)->nDelta2c;
     if (state->nElapsed40 >= 0x2000) {
         state->pOwner->nextState = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }

@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int SetIndexedSlot();
 
@@ -24,15 +25,12 @@ struct B {
 };
 
 struct A {
-    char pad0[4];
-    struct B *b;
-    char pad8[0x18];
-    signed char f20;
+    AI_TASK_FIELDS(struct B)
 };
 
 void Ov186_AiEnterDefeat(struct A *a)
 {
-    struct B *b = a->b;
+    struct B *b = a->pState;
     struct D *d;
 
     b->p0->flags60.raw = (u16)((b->p0->flags60.raw & ~0xff00) | (((b->p0->flags60.bits.hi | 0xce) & 0xff) << 8));
@@ -42,5 +40,5 @@ void Ov186_AiEnterDefeat(struct A *a)
     d = b->p0->pPoolEntry;
     d->f8 = d->f8 & ~1;
 
-    SetIndexedSlot(a, a->f20, 0);
+    SetIndexedSlot(a, a->slot, 0);
 }

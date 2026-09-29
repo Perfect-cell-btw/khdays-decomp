@@ -3,6 +3,7 @@
  * action 2 and clears the step handler. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int FX_Div();
 extern int RandNextScaled();
@@ -30,10 +31,7 @@ typedef struct {
 } Mid;
 
 typedef struct {
-    Foo224 *p0;         /* +0x00 */
-    Mid *p4;            /* +0x04 */
-    char _pad8[0x20 - 8];
-    signed char field_20;  /* +0x20 */
+    AI_TASK_FIELDS(Mid)
 } Outer;
 
 void Ov250_AiFadeInTick(Outer *o)
@@ -41,8 +39,8 @@ void Ov250_AiFadeInTick(Outer *o)
     Mid *m;
     int t;
 
-    m = o->p4;
-    t = m->field_1c + o->p0->field_2c;
+    m = o->pState;
+    t = m->field_1c + ((Foo224 *)o->pList)->field_2c;
     m->field_1c = t;
 
     t = FX_Div(t, 0x2aa);
@@ -61,5 +59,5 @@ void Ov250_AiFadeInTick(Outer *o)
         m->field_74 = base + RandNextScaled(d + 1);
     }
     m->p0->base.nextState = 2;
-    SetIndexedSlot(o, o->field_20, 0);
+    SetIndexedSlot(o, o->slot, 0);
 }

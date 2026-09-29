@@ -1,5 +1,7 @@
 /* Heads for the target (direct or rotated preset velocity); queues action 2 once within 0x2000. */
 
+#include "game/ai_task.h"
+
 extern int VEC_Subtract();
 extern int func_020050b4();
 extern int VEC_Normalize();
@@ -36,15 +38,12 @@ struct mid {
 };
 
 struct top {
-    char pad0[0x04];
-    struct mid *f4;   /* +0x04 */
-    char pad08[0x20 - 0x08];
-    signed char f20;  /* +0x20 */
+    AI_TASK_FIELDS(struct mid)
 };
 
 void Ov222_AiApproachTick(struct top *a)
 {
-    struct mid *r4 = a->f4;
+    struct mid *r4 = a->pState;
     int s24[3];
     int s0[9];
     int diff;
@@ -68,6 +67,6 @@ void Ov222_AiApproachTick(struct top *a)
 
     if (diff < 0x2000) {
         r4->f0->f1c7 = 2;
-        SetIndexedSlot(a, a->f20, 0);
+        SetIndexedSlot(a, a->slot, 0);
     }
 }

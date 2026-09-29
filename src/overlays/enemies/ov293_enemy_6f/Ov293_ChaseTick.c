@@ -13,6 +13,7 @@
  * again through an `int *` view for the owner comparison (a field re-read is CSE'd). */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct { int nX; int nY; int nZ; } Vec3;
 
@@ -42,10 +43,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
@@ -110,11 +108,11 @@ void Ov293_ChaseTick(struct Node *node)
         } else {
             st->nSpeed18 = 0x2000;
             *(u8 *)(st->pActor + 0x1c7) = 2;
-            SetIndexedSlot(node, node->bSlot, 0);
+            SetIndexedSlot(node, node->slot, 0);
             return;
         }
     }
-    st->nAngleStep14 = (*(int *)((char *)node->pScene + 0x2c) * 0x1e) / 10;
+    st->nAngleStep14 = (*(int *)((char *)node->pList + 0x2c) * 0x1e) / 10;
     {
         int nIdx = (u16)(int)(((long long)st->nAngle0c * 0x28be60db9391LL +
                               0x80000000000LL) >> 44) >> 4;
@@ -122,11 +120,11 @@ void Ov293_ChaseTick(struct Node *node)
         vFacing.nY = 0;
         vFacing.nZ = data_0203d210[nIdx * 2 + 1];
         ScaleVec3Fx12(0x999, &vFacing, &st->vMove1c);
-        st->nElapsed40 += *(int *)((char *)node->pScene + 0x2c);
+        st->nElapsed40 += *(int *)((char *)node->pList + 0x2c);
         if (st->nElapsed40 > st->nDuration44) {
             st->nSpeed18 = 0x2000;
             *(u8 *)(st->pActor + 0x1c7) = 2;
-            SetIndexedSlot(node, node->bSlot, 0);
+            SetIndexedSlot(node, node->slot, 0);
             return;
         }
         if (data_ov293_020d3660.pActor == 0) {
@@ -136,6 +134,6 @@ void Ov293_ChaseTick(struct Node *node)
             return;
         }
         *(u8 *)(st->pActor + 0x1c7) = 6;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }

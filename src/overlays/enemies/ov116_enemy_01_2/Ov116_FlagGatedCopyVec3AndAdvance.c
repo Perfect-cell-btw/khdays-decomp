@@ -4,6 +4,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct Holder {
     Actor *node;
@@ -14,10 +15,7 @@ struct Holder {
 };
 
 struct Obj {
-    char pad0[4];
-    struct Holder *holder;
-    char pad8[0x18];
-    signed char f20;
+    AI_TASK_FIELDS(struct Holder)
 };
 
 extern int Ov107_MoveNodeAndRelayout(int node, VecFx32 *v);
@@ -25,7 +23,7 @@ extern signed char Ov002_GetCtxModeByte(int x);
 extern int SetIndexedSlot();
 
 void Ov116_FlagGatedCopyVec3AndAdvance(struct Obj *this_) {
-    struct Holder *h = this_->holder;
+    struct Holder *h = this_->pState;
     Actor *node = h->node;
 
     if (((unsigned)(node->flags60.raw << 24) >> 24 & 1) == 0) return;
@@ -35,5 +33,5 @@ void Ov116_FlagGatedCopyVec3AndAdvance(struct Obj *this_) {
     h->f88 = (Ov002_GetCtxModeByte(Ov107_MoveNodeAndRelayout((int)h->node, &h->f14)) == 8);
     node = h->node;
     node->nextState = node->field_1c9;
-    SetIndexedSlot(this_, this_->f20, 0);
+    SetIndexedSlot(this_, this_->slot, 0);
 }

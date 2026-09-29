@@ -56,6 +56,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct SinCos {
     short sin;
@@ -105,10 +106,7 @@ struct Frame {
 };
 
 struct AiStateNode {
-    void *pScene;
-    struct ThrowState *pState;
-    char pad008[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct ThrowState)
 };
 
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *ab);
@@ -197,7 +195,7 @@ void Ov287_Throw_Tick(struct AiStateNode *node)
             obj = ln == 0 ? 0 : (Actor *)ln->item;
         }
         if (st->nPlanned <= 0 || st->nTravelled > st->nPlanned) {
-            st->vVelocity.y = st->vVelocity.y + *(int *)((char *)node->pScene + 0x2c) * -0x60 / 136;
+            st->vVelocity.y = st->vVelocity.y + *(int *)((char *)node->pList + 0x2c) * -0x60 / 136;
             return;
         }
         {
@@ -212,7 +210,7 @@ void Ov287_Throw_Tick(struct AiStateNode *node)
             st->vVelocity.y = st->nBaseVelY +
                         (int)(((long long)(st->nDrop + 0x1800) * (s - st->nLastSin) + 0x800) >> 12);
             st->nLastSin = s;
-            st->nTravelled = *(int *)((char *)node->pScene + 0x2c) * 0x1e + st->nTravelled;
+            st->nTravelled = *(int *)((char *)node->pList + 0x2c) * 0x1e + st->nTravelled;
             return;
         }
     }
@@ -291,5 +289,5 @@ void Ov287_Throw_Tick(struct AiStateNode *node)
 abort:
     st->vVelocity = data_02041dc8;
     *(u8 *)((char *)st->pActor + 0x1c7) = 4;
-    SetIndexedSlot(node, node->bSlot, 0);
+    SetIndexedSlot(node, node->slot, 0);
 }

@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -51,10 +52,7 @@ struct SceneFrameClock {
 };
 
 struct Ov120ActionNode {
-    struct SceneFrameClock *pClock;
-    struct Ov120ActionState *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov120ActionState)
 };
 
 extern const VecFx32 data_02041dc8;
@@ -121,7 +119,7 @@ void Ov122_SweepAttack_Step(struct Ov120ActionNode *node)
     ScaleVec3Fx12(scale, &state->vVelocity, &state->vVelocity);
     VEC_Add(&state->pOwner->aBones390[1]->vPos14, &state->vVelocity, &aPoints[0]);
     VEC_Add(&state->pOwner->aBones390[2]->vPos14, &state->vVelocity, &aPoints[1]);
-    state->nElapsed40 += node->pClock->nDelta2c;
+    state->nElapsed40 += ((struct SceneFrameClock *)node->pList)->nDelta2c;
     if (state->bOneShot4c == 0 && state->nElapsed40 >= 0x2a8) {
         state->bOneShot4c = 1;
         func_ov107_020c0b90(state->pOwner, 2, data_02041dc8, 0);
@@ -179,6 +177,6 @@ void Ov122_SweepAttack_Step(struct Ov120ActionNode *node)
     }
     if (*state->pGate48 == 0) {
         state->vPos28 = state->vVelocity;
-        SetIndexedSlot(node, node->bSlot, Ov122_DecayCopyPosFireOnHitFlag);
+        SetIndexedSlot(node, node->slot, Ov122_DecayCopyPosFireOnHitFlag);
     }
 }

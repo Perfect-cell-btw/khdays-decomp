@@ -2,6 +2,7 @@
  * 6. */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 extern int RandNextScaled();
 extern int SetIndexedSlot();
@@ -22,15 +23,12 @@ struct S0 {
 };
 
 struct This {
-    u8 pad0[4];
-    struct S0 *p4;  /* 0x04 */
-    u8 pad8[0x20 - 8];
-    s8 f20;         /* 0x20 */
+    AI_TASK_FIELDS(struct S0)
 };
 
 void Ov223_AiRollTimerOnAnimEnd(struct This *this)
 {
-    struct S0 *s0 = this->p4;
+    struct S0 *s0 = this->pState;
     struct S2 *s2 = s0->p0;
     int diff;
 
@@ -48,5 +46,5 @@ void Ov223_AiRollTimerOnAnimEnd(struct This *this)
     }
     s0->f78 = 1;
     *((u8 *)s0->p0 + 0x1c7) = 6;
-    SetIndexedSlot(this, (s8)this->f20, 0);
+    SetIndexedSlot(this, (s8)this->slot, 0);
 }

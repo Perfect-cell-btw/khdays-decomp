@@ -3,6 +3,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct Sphere {
     VecFx32 centre;
@@ -35,10 +36,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad008[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 struct Msg {
@@ -84,7 +82,7 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
     int count;
     unsigned int clamp;
 
-    scene = node->pScene;
+    scene = node->pList;
     st = node->pState;
     timer = st->timer034 + *(int *)((char *)scene + 0x2c);
     st->timer034 = timer;
@@ -196,5 +194,5 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
         return;
     }
     *(u8 *)((char *)st->pActor + 0x1c7) = 3;
-    SetIndexedSlot(node, node->bSlot, 0);
+    SetIndexedSlot(node, node->slot, 0);
 }

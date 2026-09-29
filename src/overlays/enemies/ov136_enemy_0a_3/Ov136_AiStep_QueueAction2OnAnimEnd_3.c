@@ -1,12 +1,11 @@
 /* Queues action 2 when the animation ends. */
 
+#include "game/ai_task.h"
+
 extern int SetIndexedSlot();
 
 struct A {
-    char pad0[4];
-    struct B *b;
-    char pad8[0x18];
-    signed char f20;
+    AI_TASK_FIELDS(struct B)
 };
 
 struct B {
@@ -21,9 +20,9 @@ struct C {
 
 void Ov136_AiStep_QueueAction2OnAnimEnd_3(struct A *a)
 {
-    struct B *b = a->b;
+    struct B *b = a->pState;
     if (b->c->fad != 0)
         return;
     b->p0[0x1c7] = 2;
-    SetIndexedSlot(a, a->f20, 0);
+    SetIndexedSlot(a, a->slot, 0);
 }

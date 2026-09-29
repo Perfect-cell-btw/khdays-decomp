@@ -5,6 +5,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 typedef struct Vec4 {
     int x, y, z, w;
@@ -33,10 +34,7 @@ struct State {
 };
 
 struct Node {
-    char pad00[0x04];
-    struct State *state;
-    char pad08[0x18];
-    s8 action;
+    AI_TASK_FIELDS(struct State)
 };
 
 struct Zero44 {
@@ -87,7 +85,7 @@ extern int VEC_Mag(VecFx32 *vector);
 
 void Ov197_SeekTarget(struct Node *node)
 {
-    struct State *state = node->state;
+    struct State *state = node->pState;
     void *collisionOwner = state->owner->base.pScene;
     Vec4 origin;
     VecFx32 movement;
@@ -115,7 +113,7 @@ void Ov197_SeekTarget(struct Node *node)
                 func_ov107_020c0b90(state->owner, 0, *state->position, 0);
                 Ov107_BuildAndSendUpdate(state->owner, 0, 0x53, state->position);
                 state->owner->base.nextState = 0;
-                SetIndexedSlot(node, node->action, 0);
+                SetIndexedSlot(node, node->slot, 0);
                 return;
             }
         }
@@ -143,7 +141,7 @@ void Ov197_SeekTarget(struct Node *node)
                 func_ov107_020c0b90(state->owner, 0, *state->position, 0);
                 Ov107_BuildAndSendUpdate(state->owner, 0, 0x53, state->position);
                 state->owner->base.nextState = 0;
-                SetIndexedSlot(node, node->action, 0);
+                SetIndexedSlot(node, node->slot, 0);
                 return;
             }
         }
@@ -161,7 +159,7 @@ void Ov197_SeekTarget(struct Node *node)
                             state->position, &ray) != 0) {
             func_ov107_020c0b90(state->owner, 1, *state->position, 0);
             state->owner->base.nextState = 0;
-            SetIndexedSlot(node, node->action, 0);
+            SetIndexedSlot(node, node->slot, 0);
             return;
         }
 
@@ -170,7 +168,7 @@ void Ov197_SeekTarget(struct Node *node)
         if (result != 0 && result->field08 == 0) {
             func_ov107_020c0b90(state->owner, 1, *state->position, 0);
             state->owner->base.nextState = 0;
-            SetIndexedSlot(node, node->action, 0);
+            SetIndexedSlot(node, node->slot, 0);
             return;
         }
 
@@ -182,7 +180,7 @@ void Ov197_SeekTarget(struct Node *node)
             func_ov107_020c0b90(state->owner, 1, *state->position, 0);
         }
         state->owner->base.nextState = 0;
-        SetIndexedSlot(node, node->action, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }
 

@@ -16,6 +16,7 @@
  */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct Owner {
     char pad00[0x2c];
@@ -23,10 +24,7 @@ struct Owner {
 };
 
 struct AiStateNode {
-    struct Owner *pScene;       /* 0x00 */
-    Actor *pState;              /* 0x04 */
-    char pad08[0x18];
-    signed char bSlot;          /* 0x20 */
+    AI_TASK_FIELDS(Actor)
 };
 
 extern int RandNextScaled();
@@ -38,14 +36,14 @@ void Ov272_OrbitWindUpTick(struct AiStateNode *self)
     Actor *node = self->pState;
     int sum;
 
-    sum = node->mode + self->pScene->nFrameDelta;
+    sum = node->mode + ((struct Owner *)self->pList)->nFrameDelta;
     node->mode = sum;
 
     if (sum >= 0x1000) {
         node->mode = 0;
         node->camera[0] = 0xffff6216;
         node->camera[1] = RandNextScaled(0x1001) + 0x2000;
-        SetIndexedSlot(self, self->bSlot, &Ov272_TickOrbitTarget);
+        SetIndexedSlot(self, self->slot, &Ov272_TickOrbitTarget);
     } else {
         return;
     }

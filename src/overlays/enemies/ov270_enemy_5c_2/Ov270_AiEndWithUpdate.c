@@ -2,6 +2,7 @@
  * pendingAction and ends the step. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int Ov107_BuildAndSendUpdate();
 extern int SetIndexedSlot();
@@ -24,15 +25,12 @@ struct B {
 };
 
 struct A {
-    char _pad0[4];
-    struct B *f4;              /* 0x04 */
-    char _pad1[0x20 - 8];
-    signed char f20;           /* 0x20 */
+    AI_TASK_FIELDS(struct B)
 };
 
 void Ov270_AiEndWithUpdate(struct A *this)
 {
-    struct B *b = this->f4;
+    struct B *b = this->pState;
 
     b->p0->base.flags60.bits.hi &= ~1;
     b->p0->base.flags60.bits.hi |= (unsigned short)0x86;
@@ -41,5 +39,5 @@ void Ov270_AiEndWithUpdate(struct A *this)
     Ov107_BuildAndSendUpdate(b->p0, 0, 0x49, b->f40);
 
     b->p0->base.nextState = 0;
-    SetIndexedSlot(this, this->f20, 0);
+    SetIndexedSlot(this, this->slot, 0);
 }

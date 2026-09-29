@@ -1,6 +1,7 @@
 /* Keeps the previous position and damps the velocity by 0xb00 until the watched flag clears. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
@@ -21,15 +22,12 @@ struct B {
 };
 
 struct A {
-    char pad0[4];
-    struct B *b;
-    char pad8[0x18];
-    signed char f20;
+    AI_TASK_FIELDS(struct B)
 };
 
 void Ov133_AiDecelUntilFlagClear(struct A *a)
 {
-    struct B *b = a->b;
+    struct B *b = a->pState;
     Actor *c;
 
     b->at20 = b->at2c;
@@ -48,5 +46,5 @@ void Ov133_AiDecelUntilFlagClear(struct A *a)
     }
 
     c->nextState = 2;
-    SetIndexedSlot(a, a->f20, 0);
+    SetIndexedSlot(a, a->slot, 0);
 }

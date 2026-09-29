@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -27,10 +28,7 @@ struct Ov185ActionState {
 };
 
 struct Ov185ActionNode {
-    char pad000[4];
-    struct Ov185ActionState *pState;
-    char pad008[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov185ActionState)
 };
 
 extern const short data_0203d210[];
@@ -96,7 +94,7 @@ void Ov185_BoneSpin_Step(struct Ov185ActionNode *node)
     do {
         if ((((struct Hw60 *)&aBones[j]->hw60)->lo & 1) == 0 && ++nIdle == 4) {
             owner->bActionState1c7 = 3;
-            SetIndexedSlot(node, node->bSlot, 0);
+            SetIndexedSlot(node, node->slot, 0);
             return;
         }
     } while (++j < 4);

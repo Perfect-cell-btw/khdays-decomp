@@ -35,7 +35,7 @@ extern int Ov107_CalcHitDamage(Actor *self, struct Hit *hit);
 
 int Ov257_FilterHit(Actor *self, int source, struct Hit *hit)
 {
-    struct Brain *brain = self->pHitState;
+    struct Brain *brain = self->pAiState;
     struct HitFlags *flags;
     int delta;
     int remaining;

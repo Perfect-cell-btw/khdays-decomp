@@ -4,6 +4,7 @@
  * wFlags60, stops the actor's motion, resets the elapsed counter and installs the next state. */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct {
     int nX;
@@ -29,10 +30,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *ab);
@@ -52,7 +50,7 @@ void Ov286_Wait_Tick(struct Node *node)
     int nAngle;
 
     st = node->pState;
-    nElapsed = st->nElapsed28 + *(int *)((char *)node->pScene + 0x2c);
+    nElapsed = st->nElapsed28 + *(int *)((char *)node->pList + 0x2c);
     st->nElapsed28 = nElapsed;
     if (nElapsed < 0x6ee) {
         return;
@@ -71,5 +69,5 @@ void Ov286_Wait_Tick(struct Node *node)
         ((struct Flags60 *)(st->pActor + 0x60))->hi & ~0xc0;
     Ov107_PostTagUpdate(st->pActor, 0, 0);
     st->nElapsed28 = 0;
-    SetIndexedSlot(node, node->bSlot, (void *)Ov286_AccumulateTimer28ThenAdvanceAt400);
+    SetIndexedSlot(node, node->slot, (void *)Ov286_AccumulateTimer28ThenAdvanceAt400);
 }

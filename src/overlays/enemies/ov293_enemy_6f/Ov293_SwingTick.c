@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -57,10 +58,7 @@ struct SceneFrameClock {
     int nDelta2c;
 };
 struct Ov293ActionNode {
-    struct SceneFrameClock *pClock;
-    struct Ov293ActionState *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov293ActionState)
 };
 
 extern const VecFx32 data_02041dc8;
@@ -99,7 +97,7 @@ void Ov293_SwingTick(struct Ov293ActionNode *node)
     int scale;
 
     state = node->pState;
-    state->nTurnStep14 = node->pClock->nDelta2c * 30 / 10;
+    state->nTurnStep14 = ((struct SceneFrameClock *)node->pList)->nDelta2c * 30 / 10;
     state->pTarget04 = Ov107_FindNearestObject(state->pOwner, 0);
     if (state->pTarget04 != 0) {
         VEC_Subtract((char *)state->pTarget04 + 0x190, (char *)state->pOwner + 0xb0, &vToTarget);
@@ -110,7 +108,7 @@ void Ov293_SwingTick(struct Ov293ActionNode *node)
     ScaleVec3Fx12(scale, &state->vVelocity, &state->vVelocity);
     VEC_Add(&state->pOwner->aBones394[0]->vPos14, &state->vVelocity, &aPoints[0]);
     VEC_Add(&state->pOwner->aBones394[1]->vPos14, &state->vVelocity, &aPoints[1]);
-    state->nElapsed40 += node->pClock->nDelta2c;
+    state->nElapsed40 += ((struct SceneFrameClock *)node->pList)->nDelta2c;
     if (state->nElapsed40 <= 0xc44) {
         pSweepPoint = aPoints;
         pEventPoint = aPoints;
@@ -160,6 +158,6 @@ void Ov293_SwingTick(struct Ov293ActionNode *node)
     if (*state->pGate4c == 0) {
         state->nTurnStep14 = 0;
         state->vPos28 = state->vVelocity;
-        SetIndexedSlot(node, node->bSlot, Ov293_DecayCopyPosFireOnHitFlag);
+        SetIndexedSlot(node, node->slot, Ov293_DecayCopyPosFireOnHitFlag);
     }
 }

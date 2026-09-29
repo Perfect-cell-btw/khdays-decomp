@@ -7,6 +7,7 @@
  * Byte-identical twin of Ov117_AiReaimStrafe. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
@@ -36,10 +37,7 @@ struct Mid {
 };
 
 struct Obj {
-    struct Sub *sub;           /* 0x00 */
-    struct Mid *mid;           /* 0x04 */
-    char pad8[0x20 - 8];
-    signed char b20;           /* 0x20 */
+    AI_TASK_FIELDS(struct Mid)
 };
 
 void Ov187_AiReaimStrafe(struct Obj *o)
@@ -47,7 +45,7 @@ void Ov187_AiReaimStrafe(struct Obj *o)
     struct Mid *m;
     char local[16];
 
-    m = o->mid;
+    m = o->pState;
 
     Vec3TransformViaTempMtx(m->buf2c, m->buf8, &data_02042258);
     ScaleVec3Fx12(0x100, m->buf2c, m->buf2c);
@@ -55,7 +53,7 @@ void Ov187_AiReaimStrafe(struct Obj *o)
     QuatFromAxisAngle(local, &data_02042270,
                   (int)((unsigned long long)((long long)m->w38 * 0x6488 + 0x800) >> 12));
 
-    m->w38 = m->w38 + o->sub->w2c;
+    m->w38 = m->w38 + ((struct Sub *)o->pList)->w2c;
     Srt_SetRotationQuat(((int)m->inner->pSubitem) + 4, local);
 
     if (m->w38 < 0x1000)
@@ -71,5 +69,5 @@ void Ov187_AiReaimStrafe(struct Obj *o)
 
     Srt_SetRotationQuat(((int)m->inner->pSubitem) + 4, &data_020420f8);
     m->inner->nextState = 2;
-    SetIndexedSlot(o, o->b20, 0);
+    SetIndexedSlot(o, o->slot, 0);
 }

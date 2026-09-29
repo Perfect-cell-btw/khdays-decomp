@@ -20,6 +20,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -51,10 +52,7 @@ struct SceneFrameClock {
 };
 
 struct Ov134ActionNode {
-    struct SceneFrameClock *pClock;
-    struct Ov134ActionState *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov134ActionState)
 };
 
 extern struct Ov134AreaMsg data_ov134_020cdfa2;
@@ -93,7 +91,7 @@ void Ov134_BurstAttackTick(struct Ov134ActionNode *node)
     int i;
 
     state = node->pState;
-    state->nElapsed30 += node->pClock->nDelta2c;
+    state->nElapsed30 += ((struct SceneFrameClock *)node->pList)->nDelta2c;
     if ((state->bFlags40 & 1) == 0 && state->nElapsed30 >= 0x999) {
         msg1 = data_ov134_020cdfa2;
         pos = (FxVec *)state->pPoint38;
@@ -176,6 +174,6 @@ void Ov134_BurstAttackTick(struct Ov134ActionNode *node)
     }
     if (*(u8 *)(state->pItem04 + 0xad) == 0) {
         Ov107_PostTagUpdate(state->pOwner, 1, 0);
-        SetIndexedSlot(node, node->bSlot, (void *)&Ov134_AiStep_QueueAction2OnAnimEnd_2);
+        SetIndexedSlot(node, node->slot, (void *)&Ov134_AiStep_QueueAction2OnAnimEnd_2);
     }
 }

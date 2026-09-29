@@ -359,6 +359,12 @@ class Canon:
         self.size = types.fields(node)[1]
         self.nodes = []  # (off, bp, bs, type, path)
         self._collect(node, 0, '')
+        # what makes a local struct a view of this one (set by the command line)
+        self.min_size, self.min_hits, self.deep_off, self.deep_n, self.require = 0x40, 3, 0x60, 2, set()
+        # --fields MACRO:member -- the header declares the members through MACRO(T), T being the
+        # pointee type of `member` that each view keeps (a family's own state type)
+        self.macro = self.template = None
+        self.only = set()  # --views: only local types of these names
 
     def _collect(self, agg, base, path):
         for off, bp, bs, n, t in self.T.fields(agg)[0]:
@@ -498,13 +504,15 @@ class Conv:
                     continue
                 if isinstance(ext, c_ast.Decl) and not isinstance(ext.type, c_ast.Struct) and ext.name:
                     continue  # a variable, not a type definition
+                if canon.only and not ({node.name, getattr(ext, 'name', None)} & canon.only):
+                    continue
                 try:
                     fields, size, _ = self.T.fields(node)
                 except Skip:
                     continue
-                if size < 0x40:
+                if size < canon.min_size:
                     continue
-                hits, misses = 0, []
+                hits, misses, hit_offs = 0, [], set()
                 for off, bp, bs, n, ft in fields:
                     if n is None or re.match(r'_?(pad|unk|reserved|padding)', n, re.I) and bs is None:
                         continue
@@ -512,11 +520,15 @@ class Conv:
                         continue
                     if pick(canon, '', off, bp, bs, self.T, ft) is not None:
                         hits += 1
+                        hit_offs.add(off)
                     else:
                         misses.append((off, bp, bs, n, ft))
                 deep = sum(1 for off, bp, bs, n, ft in fields
-                           if n and 0x60 <= off < canon.size and not re.match(r'_?(pad|unk|reserved|padding)', n, re.I))
-                if hits >= min_hits and deep >= 2 and (lenient or not misses):
+                           if n and canon.deep_off <= off < canon.size
+                           and not re.match(r'_?(pad|unk|reserved|padding)', n, re.I))
+                if canon.require and not (hit_offs & canon.require):
+                    continue
+                if hits >= canon.min_hits and deep >= canon.deep_n and (lenient or not misses):
                     names = [ext.name] if isinstance(ext, c_ast.Typedef) else []
                     out.append((node, names, size, hits, misses))
         return out
@@ -708,7 +720,7 @@ class Rewriter:
                 raise Skip('decayed array through a complex base at line %d' % n.coord.line)
             self.edits.append((n.field.coord.line, n.field.coord.column, n.field.name, rel, 'amp:' + n.name.name, None))
         else:
-            cast = self.cast_for(n, mt, ctype)
+            cast = None if cpath == self.canon.template else self.cast_for(n, mt, ctype)
             self.edits.append((n.field.coord.line, n.field.coord.column, n.field.name, rel, 'member', cast))
         self.anchor[id(n)] = (frame, off, cpath, ctype)
 
@@ -971,7 +983,9 @@ def convert(path, canon, header, struct):
                     break
         if decl_line is None:
             raise Skip('view definition not found')
-        if size <= canon.size:
+        if canon.macro:
+            new = retype_view(new, cv, node, decl_line, canon)
+        elif size <= canon.size:
             new = replace_view(new, decl_line, names, tag, struct)
         else:
             new = rebuild_extension(new, cv, node, decl_line, canon, struct)
@@ -1008,6 +1022,28 @@ def replace_view(src, line, names, tag, struct):
     src = re.sub(r'^[ \t]*typedef\s+%s\s+%s\s*;[^\n]*\n' % (struct, struct), '', src, flags=re.M)
     src = re.sub(r'^[ \t]*%s\s*;[^\n]*\n' % struct, '', src, flags=re.M)
     return src
+
+
+def retype_view(src, cv, node, line, canon):
+    """Replace a view's members by the header's field macro, instantiated with the pointee type
+    the view gives the templated member."""
+    T = cv.T
+    fields, size, _ = T.fields(node)
+    if size > canon.size:
+        raise Skip('view larger than the shared struct')
+    toff = [o for o, bp, bs, ct, cp in canon.nodes if cp == canon.template][0]
+    arg = 'void'
+    for off, bp, bs, n, ft in fields:
+        if off == toff and bs is None:
+            if T.kind(ft) != 'ptr':
+                raise Skip('the templated member is not a pointer')
+            arg = T.spell(T.strip(ft).type)
+    if '{' in arg:
+        raise Skip('state type is anonymous')
+    s, e = definition_span(src, line)
+    body = src[s:e]
+    ob, cb = body.index('{'), body.rindex('}')
+    return src[:s] + body[:ob + 1] + '\n    %s(%s)\n' % (canon.macro, arg) + body[cb:] + src[e:]
 
 
 def rebuild_extension(src, cv, node, line, canon, struct):
@@ -1131,7 +1167,7 @@ def _analyze_one(p):
         return p, [], 'error ' + type(e).__name__
 
 
-def analyze(files, jobs, header, struct):
+def analyze(files, jobs, header, struct, detect):
     """How the sources' views line up with the shared struct: which view members have no
     counterpart (by offset and shape) in views that are mostly the struct, and how the members
     that do are declared."""
@@ -1140,7 +1176,7 @@ def analyze(files, jobs, header, struct):
     decl = collections.defaultdict(collections.Counter)
     strict = near = nfiles = 0
     skipped = collections.Counter()
-    with multiprocessing.Pool(jobs, initializer=_init_worker, initargs=(header, struct)) as pool:
+    with multiprocessing.Pool(jobs, initializer=_init_worker, initargs=(header, struct, detect)) as pool:
         for p, views, err in pool.imap_unordered(_analyze_one, files, chunksize=8):
             if err:
                 skipped[err] += 1
@@ -1169,8 +1205,14 @@ def analyze(files, jobs, header, struct):
 _W = {}
 
 
-def _init_worker(header, struct):
+def _init_worker(header, struct, detect=None):
     _W['canon'] = load_canon(header, struct)
+    if detect:
+        c = _W['canon']
+        c.min_size, c.min_hits, c.deep_off, c.deep_n, c.require, fields, only = detect
+        if fields:
+            c.macro, c.template = fields.split(':')
+        c.only = only
     _W['header'], _W['struct'] = header, struct
 
 
@@ -1189,6 +1231,12 @@ def _convert_one(p):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--jobs', type=int, default=max(1, (os.cpu_count() or 2) - 1))
+    ap.add_argument('--min-size', default='0x40', help='smallest local struct to consider')
+    ap.add_argument('--min-hits', type=int, default=3)
+    ap.add_argument('--deep', default='0x60:2', help='OFF:N -- N matched members at or past OFF')
+    ap.add_argument('--require', default='', help='offsets of which one must be a matched member')
+    ap.add_argument('--fields', default='', help='MACRO:member -- keep each view, typed through MACRO')
+    ap.add_argument('--views', default='', help='only local types of these names (comma list)')
     ap.add_argument('--header')
     ap.add_argument('--struct')
     ap.add_argument('--analyze', action='store_true')
@@ -1208,12 +1256,16 @@ def main():
         else:
             files += glob.glob(f) or [f]
     canon = load_canon(a.header, a.struct)
+    doff, dn = a.deep.split(':')
+    detect = (int(a.min_size, 0), a.min_hits, int(doff, 0), int(dn),
+              {int(x, 0) for x in a.require.split(',') if x}, a.fields,
+              {x for x in a.views.split(',') if x})
     if a.analyze:
-        analyze(files, a.jobs, a.header, a.struct)
+        analyze(files, a.jobs, a.header, a.struct, detect)
         return
     results, report = {}, []
     import multiprocessing
-    with multiprocessing.Pool(a.jobs, initializer=_init_worker, initargs=(a.header, a.struct)) as pool:
+    with multiprocessing.Pool(a.jobs, initializer=_init_worker, initargs=(a.header, a.struct, detect)) as pool:
         for p, new, msg in pool.imap_unordered(_convert_one, files, chunksize=8):
             if new is not None:
                 results[p] = new

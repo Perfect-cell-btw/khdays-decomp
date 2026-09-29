@@ -5,6 +5,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 typedef struct {
     VecFx32 center;
@@ -37,10 +38,7 @@ typedef struct {
 } Ov188ActionScene;
 
 typedef struct {
-    Ov188ActionScene *scene;
-    Ov188ActionState *state;
-    char pad08[0x18];
-    signed char slot;
+    AI_TASK_FIELDS(Ov188ActionState)
 } Ov188ActionNode;
 
 static inline void VecFx32_Set(VecFx32 *vec, int x, int y, int z)
@@ -69,7 +67,7 @@ void Ov188_UpdateAimedHitAction(Ov188ActionNode *node)
     Ov188ActionHitScratch scratch;
     int idx;
 
-    state = node->state;
+    state = node->pState;
     state->target = Ov107_FindNearestObject(state->actor, 0);
     if (state->target == 0) {
         state->actor->nextState = 2;
@@ -89,7 +87,7 @@ void Ov188_UpdateAimedHitAction(Ov188ActionNode *node)
                 data_0203d210[idx * 2 + 1]);
     ScaleVec3Fx12(0x599, &scratch.direction, &state->motion);
 
-    state->timer += node->scene->frameStep;
+    state->timer += ((Ov188ActionScene *)node->pList)->frameStep;
     if (state->effectStarted == 0 && state->timer >= 0) {
         func_ov107_020c0b90(state->actor, 3, data_02041dc8, 0);
         state->effectStarted = 1;

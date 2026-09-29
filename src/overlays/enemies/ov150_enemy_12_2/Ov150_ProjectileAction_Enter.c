@@ -26,6 +26,7 @@
 
 #include "nitro/types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 typedef struct Ov150State Ov150State;
 
@@ -42,10 +43,7 @@ typedef struct Ov150StateRef {
 } Ov150StateRef;
 
 typedef struct Ov150Node {
-    u8 pad_0000[4];
-    Ov150StateRef *state_ref;            /* +0x04 */
-    u8 pad_0008[0x18];
-    s8 index_20;                         /* +0x20 */
+    AI_TASK_FIELDS(Ov150StateRef)
 } Ov150Node;
 
 extern void Ov107_PostTagUpdate();
@@ -56,7 +54,7 @@ extern void Ov150_stTransformProjectilePose(void);
 
 void Ov150_ProjectileAction_Enter(Ov150Node *node)
 {
-    Ov150StateRef *state_ref = node->state_ref;
+    Ov150StateRef *state_ref = node->pState;
     u16 buf[2];
     u16 *pp;
     Ov150Callback cb;
@@ -89,6 +87,6 @@ void Ov150_ProjectileAction_Enter(Ov150Node *node)
     }
 
     SetIndexedSlot(node,
-                  node->index_20,
+                  node->slot,
                   Ov150_stTransformProjectilePose);
 }

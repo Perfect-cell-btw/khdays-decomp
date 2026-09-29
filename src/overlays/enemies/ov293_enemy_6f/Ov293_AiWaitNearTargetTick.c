@@ -2,6 +2,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct State {
     char *pActor;          /* 0x00 */
@@ -19,10 +20,7 @@ typedef struct Scene {
 } Scene;
 
 typedef struct Node {
-    Scene *pScene;
-    State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(State)
 } Node;
 
 extern char *Ov107_FindNearestObject(char *actor, int *pDistSq);
@@ -39,7 +37,7 @@ void Ov293_AiWaitNearTargetTick(Node *node)
     int gap;
 
     st = node->pState;
-    st->nSpeed = node->pScene->nDelta * 30 / 5;
+    st->nSpeed = ((Scene *)node->pList)->nDelta * 30 / 5;
     target = st->pTarget = Ov107_FindNearestObject(st->pActor, &gap);
     if (target == 0) {
         return;
@@ -49,13 +47,13 @@ void Ov293_AiWaitNearTargetTick(Node *node)
     gap = FX_Sqrt(gap) - (*(int *)(target + 0x80) + *(int *)(actor + 0x80));
 
     if (data_ov293_020d3660[2] == 0) {
-        st->nCheckTimer += node->pScene->nDelta;
+        st->nCheckTimer += ((Scene *)node->pList)->nDelta;
         if (st->nCheckTimer < st->nCheckInterval) {
             return;
         }
         st->nCheckTimer = 0;
         *(u8 *)(st->pActor + 0x1c7) = 4;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
 
@@ -63,5 +61,5 @@ void Ov293_AiWaitNearTargetTick(Node *node)
         return;
     }
     *(u8 *)(st->pActor + 0x1c7) = 4;
-    SetIndexedSlot(node, node->bSlot, 0);
+    SetIndexedSlot(node, node->slot, 0);
 }

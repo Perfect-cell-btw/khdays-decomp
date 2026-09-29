@@ -57,7 +57,7 @@ int Ov281_ProcessHitReaction(Actor *self, int source,
         data_ov281_020ce468.special[0],
         data_ov281_020ce468.special[1]
     };
-    struct Ov281ReactionWork *work = self->pHitState;
+    struct Ov281ReactionWork *work = self->pAiState;
     int delta;
     int remaining;
     struct Ov281HitFlags *flags;

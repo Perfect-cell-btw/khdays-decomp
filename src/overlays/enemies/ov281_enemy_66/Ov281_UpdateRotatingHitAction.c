@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct {
     VecFx32 center;
@@ -46,10 +47,7 @@ typedef struct {
 } Ov281ActionScene;
 
 typedef struct {
-    Ov281ActionScene *scene;
-    Ov281ActionState *state;
-    char pad08[0x18];
-    signed char slot;
+    AI_TASK_FIELDS(Ov281ActionState)
 } Ov281ActionNode;
 
 extern short data_0203d210[];
@@ -71,14 +69,14 @@ void Ov281_UpdateRotatingHitAction(Ov281ActionNode *node)
     Sphere sphere;
     int idx;
 
-    state = node->state;
+    state = node->pState;
     idx = (unsigned short)(((long long)state->heading * 0x28be60db9391LL +
                             0x80000000000LL) >> 44) >> 4;
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
     MTX_MultVec33((const VecFx32 *)((char *)state->actor->auxResource + 0x2c),
                   &mtx, &state->motion);
 
-    state->timer += node->scene->frameStep;
+    state->timer += ((Ov281ActionScene *)node->pList)->frameStep;
     if (state->effectStarted == 0) {
         if (state->timer >= 0x2a8) {
             state->effectStarted = 1;

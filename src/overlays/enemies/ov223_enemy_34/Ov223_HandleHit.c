@@ -63,7 +63,7 @@ extern void Ov107_BuildAndSendUpdate(Actor *self, int reactionId, u8 mode, int c
 
 int Ov223_HandleHit(Actor *self, int source, struct Ov223Hit *hit)
 {
-    struct Ov223ReactionWork *work = self->pHitState;
+    struct Ov223ReactionWork *work = self->pAiState;
     int delta;
     int remaining;
     struct Ov223HitFlags *flags;

@@ -93,7 +93,7 @@ struct Actor {
     void (*pfnPostTick)();          /* 0x034 */
     void (*pfnConfigure)();         /* 0x038: (actor, size, data) */
 
-    int field_03c;                  /* 0x03c */
+    int taskList;                   /* 0x03c: the task list its AI tasks run in (game/ai_task.h) */
     u32 field_040;                  /* 0x040 */
     u8 pad044[0xc];
     int mode;                       /* 0x050 */
@@ -165,7 +165,7 @@ struct Actor {
     int field_1f4;                  /* 0x1f4 */
     void *field_1f8;                /* 0x1f8 */
     ActorBox bounds;                /* 0x1fc */
-    void *pHitState;                /* 0x214 */
+    void *pAiState;                 /* 0x214: state block of the AI task +0x030 creates */
     s16 hitPointsCap;               /* 0x218 */
     s16 hitPoints;                  /* 0x21a */
     u8 pad21c[4];

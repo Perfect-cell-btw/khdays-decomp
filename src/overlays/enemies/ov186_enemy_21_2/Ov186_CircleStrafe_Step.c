@@ -2,6 +2,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -18,10 +19,7 @@ struct Ov185ActionState {
 };
 
 struct Ov185ActionNode {
-    char pad000[4];
-    struct Ov185ActionState *pState;
-    char pad008[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov185ActionState)
 };
 
 extern VecFx32 data_02042258;
@@ -101,5 +99,5 @@ void Ov186_CircleStrafe_Step(struct Ov185ActionNode *node)
         return;
     }
     state->pOwner->nextState = 4;
-    SetIndexedSlot(node, node->bSlot, 0);
+    SetIndexedSlot(node, node->slot, 0);
 }

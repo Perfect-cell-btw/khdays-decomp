@@ -41,6 +41,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -78,10 +79,7 @@ struct SceneFrameClock {
 };
 
 struct Ov120ActionNode {
-    struct SceneFrameClock *pClock;
-    struct Ov120ActionState *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov120ActionState)
 };
 
 extern struct Ov120AreaOpener data_ov122_020d1b30;
@@ -113,7 +111,7 @@ void Ov122_AreaAttack_Broadcast(struct Ov120ActionNode *node)
     int i;
 
     state = node->pState;
-    state->nElapsed40 += node->pClock->nDelta2c;
+    state->nElapsed40 += ((struct SceneFrameClock *)node->pList)->nDelta2c;
     if (state->bOneShot4c == 0 && state->nElapsed40 >= 0x555) {
         pair.aOpener = data_ov122_020d1b30;
         if (state->pOwner->pMsgHook24 != 0) {
@@ -173,11 +171,11 @@ void Ov122_AreaAttack_Broadcast(struct Ov120ActionNode *node)
     state->pTarget = Ov107_FindNearestObject(state->pOwner, 0);
     if (state->pTarget == 0) {
         state->pOwner->bActionState1c7 = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
     if (*state->pGate48 == 0) {
         state->pOwner->bActionState1c7 = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }

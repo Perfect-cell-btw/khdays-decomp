@@ -3,6 +3,7 @@
  * plus rand(0x3001), and installs the chase tick. */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 struct State {
     char *pActor;
@@ -14,10 +15,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void *Ov107_FindNearestObject(char *actor, int mode);
@@ -37,11 +35,11 @@ void Ov285_Chase_Enter(struct Node *node)
     st->pTarget = pTarget;
     if (pTarget == 0) {
         *(u8 *)(st->pActor + 0x1c7) = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
     st->nPhase28 = 0;
     Ov107_PostTagUpdate(st->pActor, 1, 1);
     st->nTimer2c = RandNextScaled(0x3001) + 0x1000;
-    SetIndexedSlot(node, node->bSlot, (void *)Ov285_Chase_Tick);
+    SetIndexedSlot(node, node->slot, (void *)Ov285_Chase_Tick);
 }

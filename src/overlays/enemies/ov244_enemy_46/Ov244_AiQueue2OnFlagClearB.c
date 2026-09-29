@@ -1,5 +1,7 @@
 /* Queues action 2 once the watched flag clears. */
 
+#include "game/ai_task.h"
+
 extern int SetIndexedSlot();
 
 struct Inner {
@@ -9,18 +11,15 @@ struct Inner {
 };
 
 struct Obj {
-    char pad0;                  /* +0x00 */
-    struct Inner *inner;        /* +0x04 */
-    char pad1[0x20 - 8];
-    signed char field20;        /* +0x20 */
+    AI_TASK_FIELDS(struct Inner)
 };
 
 void Ov244_AiQueue2OnFlagClearB(struct Obj *obj)
 {
-    struct Inner *inner = obj->inner;
+    struct Inner *inner = obj->pState;
     if (inner->flagptr[0] != 0) {
         return;
     }
     inner->ptr0[0x1c7] = 2;
-    SetIndexedSlot(obj, obj->field20, 0);
+    SetIndexedSlot(obj, obj->slot, 0);
 }

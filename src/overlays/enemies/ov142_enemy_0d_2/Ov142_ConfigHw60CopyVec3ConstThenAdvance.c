@@ -3,6 +3,7 @@
  * data_02041dc8 and installs the queue-action-when-active step. */
 
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 extern int SetIndexedSlot();
 extern int Ov142_AiStep_QueueAction1IfActive();
@@ -28,15 +29,12 @@ struct B {
 };
 
 struct A {
-    char pad0[4];
-    struct B *b;
-    char pad8[0x18];
-    signed char f20;
+    AI_TASK_FIELDS(struct B)
 };
 
 void Ov142_ConfigHw60CopyVec3ConstThenAdvance(struct A *a)
 {
-    struct B *b = a->b;
+    struct B *b = a->pState;
     struct C *c;
     struct D *d;
     unsigned int x;
@@ -55,5 +53,5 @@ void Ov142_ConfigHw60CopyVec3ConstThenAdvance(struct A *a)
 
     b->v8 = data_02041dc8;
 
-    SetIndexedSlot(a, a->f20, Ov142_AiStep_QueueAction1IfActive);
+    SetIndexedSlot(a, a->slot, Ov142_AiStep_QueueAction1IfActive);
 }

@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -33,10 +34,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void Ov107_PostTagUpdate(char *actor, int a, int b);
@@ -94,5 +92,5 @@ void Ov131_ThrowRelease_Enter(struct Node *node)
     st->nField50 = 0;
     *(u8 *)(st->pActor + 0x1c5) &= ~0xf;
     Ov107_BuildAndSendUpdate(st->pActor, 0x119, 6, st->nParam44);
-    SetIndexedSlot(node, node->bSlot, (void *)Ov131_throwRelease_tick);
+    SetIndexedSlot(node, node->slot, (void *)Ov131_throwRelease_tick);
 }

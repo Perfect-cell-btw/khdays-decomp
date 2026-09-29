@@ -3,6 +3,8 @@
    the state as soon as the owner's busy byte at +0xad clears, kicking the actor
    into motion mode 5 and installing the next state. */
 
+#include "game/ai_task.h"
+
 struct State {
     char *pActor;
     char *pOwner;
@@ -17,10 +19,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void Ov130_DecaySpinOverElapsed(struct Node *node);
@@ -35,7 +34,7 @@ void Ov130_SpinUp_Tick(struct Node *node)
     int nElapsed;
 
     st = node->pState;
-    nElapsed = st->nElapsed2c + *(int *)((char *)node->pScene + 0x2c);
+    nElapsed = st->nElapsed2c + *(int *)((char *)node->pList + 0x2c);
     st->nElapsed2c = nElapsed;
     if (nElapsed >= 0x198) {
         if (st->bSeeded41 == 0) {
@@ -49,5 +48,5 @@ void Ov130_SpinUp_Tick(struct Node *node)
         return;
     }
     Ov107_PostTagUpdate(st->pActor, 5, 1);
-    SetIndexedSlot(node, node->bSlot, (void *)Ov130_ClearHiFlagAndAdvance);
+    SetIndexedSlot(node, node->slot, (void *)Ov130_ClearHiFlagAndAdvance);
 }

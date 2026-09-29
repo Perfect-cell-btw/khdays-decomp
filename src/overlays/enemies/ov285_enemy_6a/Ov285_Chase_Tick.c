@@ -10,6 +10,7 @@
    takes two arguments and divides. */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct {
     int nX;
@@ -32,10 +33,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
@@ -87,7 +85,7 @@ void Ov285_Chase_Tick(struct Node *node)
             nSpread + (func_020050b4(vToTarget.nX, vToTarget.nZ) + 0x3244);
     }
 
-    st->nAngleStep14 = (*(int *)((char *)node->pScene + 0x2c) * 0x1e) / 10;
+    st->nAngleStep14 = (*(int *)((char *)node->pList + 0x2c) * 0x1e) / 10;
 
     {
         int nIdx = (u16)(int)(((long long)st->nAngle04 * 0x28be60db9391LL +
@@ -98,11 +96,11 @@ void Ov285_Chase_Tick(struct Node *node)
         vFacing.nZ = data_0203d210[nIdx * 2 + 1];
         ScaleVec3Fx12(0x400, &vFacing, &st->vMove1c);
 
-        st->nElapsed28 += *(int *)((char *)node->pScene + 0x2c);
+        st->nElapsed28 += *(int *)((char *)node->pList + 0x2c);
         if (st->nElapsed28 <= st->nDuration2c) {
             return;
         }
         *(u8 *)(st->pActor + 0x1c7) = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }

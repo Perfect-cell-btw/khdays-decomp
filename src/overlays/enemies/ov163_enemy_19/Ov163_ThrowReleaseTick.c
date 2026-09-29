@@ -9,6 +9,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -71,10 +72,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void VEC_Subtract(FxVec *a, FxVec *b, FxVec *ab);
@@ -259,7 +257,7 @@ void Ov163_ThrowReleaseTick(struct Node *node)
         }
     }
 
-    timer = st->nTimer30 + *(int *)((char *)node->pScene + 0x2c);
+    timer = st->nTimer30 + *(int *)((char *)node->pList + 0x2c);
     st->nTimer30 = timer;
     if (timer >= 0x1000) {
         u16 *hw = (u16 *)(st->pActor + 0x60);
@@ -273,6 +271,6 @@ void Ov163_ThrowReleaseTick(struct Node *node)
             *hw2 = h2 & ~0xff00 | (((((u32)h2 << 0x10) >> 0x18 | 0x80) << 0x18) >> 0x10);
         }
         *(u8 *)(st->pActor + 0x1c7) = 3;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }

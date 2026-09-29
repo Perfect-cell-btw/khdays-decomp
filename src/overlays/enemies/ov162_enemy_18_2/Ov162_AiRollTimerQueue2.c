@@ -1,5 +1,7 @@
 /* When the watched flag clears rolls the move timer and queues action 2. */
 
+#include "game/ai_task.h"
+
 extern int RandNextScaled();
 extern int SetIndexedSlot();
 
@@ -19,14 +21,11 @@ struct S1 {
 };
 
 struct S2 {
-    char pad0[4];
-    struct S1* field_4;
-    char pad8[0x20 - 8];
-    signed char field_20;
+    AI_TASK_FIELDS(struct S1)
 };
 
 void Ov162_AiRollTimerQueue2(struct S2* a) {
-    struct S1* b = a->field_4;
+    struct S1* b = a->pState;
     if (*b->field_48 != 0) {
         return;
     }
@@ -38,5 +37,5 @@ void Ov162_AiRollTimerQueue2(struct S2* a) {
         b->field_34 = lo + RandNextScaled(diff + 1);
     }
     *(unsigned char*)((char*)b->field_0 + 0x1c7) = 2;
-    SetIndexedSlot(a, a->field_20, 0);
+    SetIndexedSlot(a, a->slot, 0);
 }

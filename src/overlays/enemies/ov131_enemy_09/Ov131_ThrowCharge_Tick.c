@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct Flags17a {
     u8 bBit0 : 1;
@@ -24,10 +25,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void SetIndexedSlot(struct Node *node, int slot, int arg);
@@ -53,12 +51,12 @@ void Ov131_ThrowCharge_Tick(struct Node *node)
             st->nActive58 = 0;
         } else {
             st->vDelta24.y = st->vDelta24.y -
-                (int)(((long long)(*(int *)((char *)node->pScene + 0x2c) * 0x1e) * 0x68 +
+                (int)(((long long)(*(int *)((char *)node->pList + 0x2c) * 0x1e) * 0x68 +
                        0x800) >> 12);
         }
     }
     if (((struct Flags3cc *)(st->pActor + 0x3cc))->bBit0 != 0) {
         *(u8 *)(st->pActor + 0x1c7) = 8;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
     }
 }

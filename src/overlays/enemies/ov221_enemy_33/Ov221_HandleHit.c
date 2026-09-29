@@ -65,7 +65,7 @@ extern signed char Ov002_GetCtxModeByte(void);
 
 int Ov221_HandleHit(Actor *self, int source, struct Ov221Hit *hit)
 {
-    struct Ov221ReactionWork *work = self->pHitState;
+    struct Ov221ReactionWork *work = self->pAiState;
     int delta;
     int remaining;
     struct Ov221HitFlags *flags;

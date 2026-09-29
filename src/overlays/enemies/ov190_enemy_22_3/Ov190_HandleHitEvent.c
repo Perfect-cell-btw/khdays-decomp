@@ -58,7 +58,7 @@ int Ov190_HandleHitEvent(Actor *self, int source,
         data_ov190_020d5cd8.special[0],
         data_ov190_020d5cd8.special[1]
     };
-    struct Ov190ReactionWork *work = self->pHitState;
+    struct Ov190ReactionWork *work = self->pAiState;
     int delta;
     int remaining;
     struct Ov190HitFlags *flags;

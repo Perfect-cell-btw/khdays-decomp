@@ -1,5 +1,7 @@
 /* Queues action 2 once the watched slot (+0x44) is empty. */
 
+#include "game/ai_task.h"
+
 extern int SetIndexedSlot();
 
 struct Inner {
@@ -9,17 +11,14 @@ struct Inner {
 };
 
 struct Obj {
-    char pad0[4];
-    struct Inner *inner;
-    char pad8[0x18];
-    signed char b20;
+    AI_TASK_FIELDS(struct Inner)
 };
 
 void Ov142_AiStep_QueueAction2WhenFree(struct Obj *obj) {
-    struct Inner *inner = obj->inner;
+    struct Inner *inner = obj->pState;
     if (inner->ptr44[0] != 0) {
         return;
     }
     inner->ptr0[0x1c7] = 2;
-    SetIndexedSlot(obj, obj->b20, 0);
+    SetIndexedSlot(obj, obj->slot, 0);
 }

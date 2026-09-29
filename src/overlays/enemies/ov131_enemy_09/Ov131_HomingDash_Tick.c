@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -52,10 +53,7 @@ struct State {
 };
 
 struct Node {
-    void *pScene;
-    struct State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct State)
 };
 
 extern void VEC_Subtract(FxVec *a, FxVec *b, FxVec *ab);
@@ -110,7 +108,7 @@ void Ov131_HomingDash_Tick(struct Node *node)
     st->pTarget = Ov107_FindNearestObject(st->pActor, 0);
     if (st->pTarget == 0) {
         *(u8 *)((char *)st->pActor + 0x1c7) = 2;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
 
@@ -123,7 +121,7 @@ void Ov131_HomingDash_Tick(struct Node *node)
     VEC_Normalize(&vToTarget, &vToTarget);
     Quat_FromTwoVectors(&delta, &data_02042258, &vToTarget);
     if (VEC_DotProduct(&vFwd, &vToTarget) >= -0xa00) {
-        Quat_Slerp(&quat, (int)((((long long)(*(int *)((char *)node->pScene + 0x2c) * 0x1e) << 27) + 0x80000000) >> 32),
+        Quat_Slerp(&quat, (int)((((long long)(*(int *)((char *)node->pList + 0x2c) * 0x1e) << 27) + 0x80000000) >> 32),
                       &quat, &delta);
         Vec4_Normalize(&quat, &quat);
         Srt_SetRotationQuat((char *)st->pActor + 0xa0, &quat);
@@ -197,5 +195,5 @@ void Ov131_HomingDash_Tick(struct Node *node)
     ((struct Flags60 *)((char *)st->pActor + 0x60))->hi =
         ((struct Flags60 *)((char *)st->pActor + 0x60))->hi & ~0x40;
     Ov107_StartAnim(*(void **)((char *)st->pActor + 0x3c8), 1, 0);
-    SetIndexedSlot(node, node->bSlot, (void *)Ov131_HomingDash_Recover);
+    SetIndexedSlot(node, node->slot, (void *)Ov131_HomingDash_Recover);
 }

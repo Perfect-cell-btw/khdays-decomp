@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/ai_task.h"
 
 struct Vec4 {
     s32 x;
@@ -52,10 +53,7 @@ struct Inner {
 };
 
 struct Task {
-    char pad00[4];
-    struct Inner *inner04;
-    char pad08[0x18];
-    s8 index20;
+    AI_TASK_FIELDS(struct Inner)
 };
 
 struct HitInfo {
@@ -119,7 +117,7 @@ void Ov294_TickEnemyAi(struct Task *arg0)
     int scale;
     u16 flags;
 
-    inner = arg0->inner04;
+    inner = arg0->pState;
     component = inner->actor00->component388;
     transform = inner->actor00->transform04;
 
@@ -167,7 +165,7 @@ void Ov294_TickEnemyAi(struct Task *arg0)
         inner->actor00->flags60 = (u16)((flags & ~0xff00) |
             (((u32)(u16)(((u32)(flags << 16) >> 24) & ~0x1e)) << 24) >> 16);
 
-        SetIndexedSlot(arg0, arg0->index20, 0);
+        SetIndexedSlot(arg0, arg0->slot, 0);
         return;
     }
 
@@ -209,7 +207,7 @@ void Ov294_TickEnemyAi(struct Task *arg0)
         inner->actor00->flags60 = (u16)((flags & ~0xff00) |
             (((u32)(u16)(((u32)(flags << 16) >> 24) & ~0x1e)) << 24) >> 16);
 
-        SetIndexedSlot(arg0, arg0->index20, 0);
+        SetIndexedSlot(arg0, arg0->slot, 0);
         return;
     }
 
@@ -221,7 +219,7 @@ void Ov294_TickEnemyAi(struct Task *arg0)
         inner->actor00->flags60 = (u16)((flags & ~0xff00) |
             (((((u32)(flags << 16) >> 24) | 0x40) << 24) >> 16));
 
-        SetIndexedSlot(arg0, arg0->index20, 0);
+        SetIndexedSlot(arg0, arg0->slot, 0);
         return;
     }
 

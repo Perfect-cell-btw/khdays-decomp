@@ -1,6 +1,9 @@
 /* Spawn step: hold off while the spawner is still busy (+0xad of its owner),
  * then pick the entry animation -- the short one when the "seen before" bit is
  * set, the full one otherwise -- and hand control to the idle handler. */
+
+#include "game/ai_task.h"
+
 extern void SetIndexedSlot(void *self, int script, void *handler);
 
 typedef struct {
@@ -21,14 +24,11 @@ typedef struct {
 } Ov236Actor;
 
 typedef struct {
-    char pad0000[4];
-    Ov236Actor *pActor;         /* +4 */
-    char pad0008[0x18];
-    signed char bScript;        /* +0x20 */
+    AI_TASK_FIELDS(Ov236Actor)
 } Ov236Enemy;
 
 void Ov236_SpawnStep(Ov236Enemy *self) {
-    Ov236Actor *actor = self->pActor;
+    Ov236Actor *actor = self->pState;
 
     if (actor->pSpawner->bBusy != 0) {
         return;
@@ -40,5 +40,5 @@ void Ov236_SpawnStep(Ov236Enemy *self) {
         actor->pModel->bEntryAnim = 7;
     }
 
-    SetIndexedSlot(self, self->bScript, 0);
+    SetIndexedSlot(self, self->slot, 0);
 }

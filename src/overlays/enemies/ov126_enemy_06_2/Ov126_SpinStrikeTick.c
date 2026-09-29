@@ -15,6 +15,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 typedef struct { int value; } Fx32;
 
@@ -62,10 +63,7 @@ struct Ov125State {
 };
 
 struct Ov125Node {
-    void *pClock;
-    struct Ov125State *pState;
-    char pad08[0x18];
-    signed char bSlot;
+    AI_TASK_FIELDS(struct Ov125State)
 };
 
 extern VecFx32 data_02041dc8;
@@ -134,7 +132,7 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
                     }
                     Ov107_BuildAndSendUpdate(state->pActor->pItem38c, 0x11b, 6, &(*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->x);
                     state->pActor->base.nextState = 0;
-                    SetIndexedSlot(node, node->bSlot, 0);
+                    SetIndexedSlot(node, node->slot, 0);
                     return;
                 }
             } while (++i < n);
@@ -165,7 +163,7 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
                 }
                 Ov107_BuildAndSendUpdate(state->pActor->pItem38c, 0x11b, 6, &(*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->x);
                 state->pActor->base.nextState = 0;
-                SetIndexedSlot(node, node->bSlot, 0);
+                SetIndexedSlot(node, node->slot, 0);
                 return;
             }
         }
@@ -174,7 +172,7 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
     state->nTimer18 += 0xc00;
     if (state->nTimer18 > 0xa000) {
         state->pActor->base.nextState = 0;
-        SetIndexedSlot(node, node->bSlot, 0);
+        SetIndexedSlot(node, node->slot, 0);
         return;
     }
     if (((struct Ov125Contact *)&state->pActor->base.contact17a.raw)->bGrounded == 0
@@ -194,6 +192,6 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
         state->pActor->pItem38c->pMsgHook24(state->pActor->pItem38c, &cmdEnd, 0xe);
     }
     state->pActor->base.nextState = 0;
-    SetIndexedSlot(node, node->bSlot, 0);
+    SetIndexedSlot(node, node->slot, 0);
     }
 }

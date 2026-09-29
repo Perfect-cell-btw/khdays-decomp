@@ -1,20 +1,18 @@
 /* Queues action 1 once the item is active. */
 
 #include "game/actor.h"
+#include "game/ai_task.h"
 
 extern int SetIndexedSlot();
 
 struct Obj {
-    char _pad0[4];
-    Actor **pp;                 /* 0x04 */
-    char _pad1[0x20 - 8];
-    signed char field_20;      /* 0x20 */
+    AI_TASK_FIELDS(Actor *)
 };
 
 void Ov232_Item_AiWaitActive(struct Obj *this) {
-    Actor *s = *this->pp;
+    Actor *s = *this->pState;
     if (s->flags60.bits.lo & 1) {
         s->nextState = 1;
-        SetIndexedSlot(this, this->field_20, 0);
+        SetIndexedSlot(this, this->slot, 0);
     }
 }

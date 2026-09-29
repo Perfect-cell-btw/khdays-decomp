@@ -1,6 +1,8 @@
 /* AI step: when the byte behind context +0x48 is clear, pendingAction (+0x1c7) = 2 and the step
  * handler is cleared. */
 
+#include "game/ai_task.h"
+
 extern int SetIndexedSlot();
 
 struct Sub {
@@ -10,19 +12,16 @@ struct Sub {
 };
 
 struct Obj {
-    char pad0[4];
-    struct Sub *sub;
-    char pad8[0x18];
-    signed char c20;
+    AI_TASK_FIELDS(struct Sub)
 };
 
 void Ov120_AiStep_QueueAction2OnFlag48Clear_2(struct Obj *o)
 {
-    struct Sub *s = o->sub;
+    struct Sub *s = o->pState;
 
     if (s->p48[0] != 0)
         return;
 
     s->p00[0x1c7] = 2;
-    SetIndexedSlot(o, o->c20, 0);
+    SetIndexedSlot(o, o->slot, 0);
 }
