@@ -1,0 +1,2 @@
+# old_name	new_name	module  -- NitroSDK functions identified by their body
+func_02003948	OS_ResetSystem	main

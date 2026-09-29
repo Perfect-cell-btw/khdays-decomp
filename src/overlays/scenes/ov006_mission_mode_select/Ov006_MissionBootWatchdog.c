@@ -6,7 +6,7 @@
 #include "game/engine.h"
 
 extern void func_02023ad0(int *p);
-extern void func_02003948(int code);
+extern void OS_ResetSystem(int code);
 extern int  data_ov006_02056668;
 
 #define OBJ (*(int **)&data_ov006_02056668)
@@ -17,5 +17,5 @@ void Ov006_MissionBootWatchdog(void) {
         return;
     }
     Overlay105_Release();
-    func_02003948(-2);
+    OS_ResetSystem(-2);
 }

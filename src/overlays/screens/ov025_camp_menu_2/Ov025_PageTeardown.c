@@ -99,7 +99,7 @@ extern int   TP_CheckError(int mask);
 extern int   ZeroHalfThenFree(void *resource);
 extern void  ResSlot_Release_2(int id);
 extern void  UnloadOverlaySync(int processor, int overlayId);
-extern void  func_02003948(int result);
+extern void  OS_ResetSystem(int result);
 
 static volatile u16 *const REG_BG1CNT_MAIN =
     (volatile u16 *)0x0400000a;
@@ -267,6 +267,6 @@ void Ov025_PageTeardown(void)
     }
 
     if (data_ov025_020b5744[0] != 0) {
-        func_02003948(-2);
+        OS_ResetSystem(-2);
     }
 }

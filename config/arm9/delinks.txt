@@ -752,7 +752,7 @@ libs/nitro/os/calls/OSi_SendToPxi.c:
     complete
     .text       start:0x0200391c end:0x02003948
 
-libs/nitro/os/asm_stubs/calls/func_02003948.c:
+libs/nitro/os/asm_stubs/calls/OS_ResetSystem.c:
     complete
     .text       start:0x02003948 end:0x02003a04
 

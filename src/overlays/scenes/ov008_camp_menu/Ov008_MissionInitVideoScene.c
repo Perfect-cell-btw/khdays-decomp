@@ -11,7 +11,7 @@ extern u16 *GXx_SetMasterBrightness_(u16 *reg, int brightness);
 extern int Ov008_Link_GetField4F0(void);
 extern u16 Ov105_GetState(void);
 extern u16 Ov105_GetStatusLow(void);
-extern void func_02003948(u32 value);
+extern void OS_ResetSystem(u32 value);
 
 void *Ov008_MissionInitVideoScene(void) {
     u32 packed;
@@ -58,6 +58,6 @@ void *Ov008_MissionInitVideoScene(void) {
     }
 
     Heap_SetCurrent(0);
-    func_02003948(packed);
+    OS_ResetSystem(packed);
     return 0;
 }

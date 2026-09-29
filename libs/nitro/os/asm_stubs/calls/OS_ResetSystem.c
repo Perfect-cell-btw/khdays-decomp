@@ -1,3 +1,8 @@
+/* NitroSDK OS_ResetSystem (ARM9): refuses on a multiboot child (OS_Terminate), locks the card ROM,
+ * stops the four DMA channels, masks every interrupt but the PXI receive FIFO (OS_IE_FIFO_RECV)
+ * and clears the pending requests, leaves `parameter` for the ARM7 at HW_RESET_PARAMETER_BUF
+ * (0x027ffc20), sends it the PXI reset command (0x10), then moves the stack below the DTCM top and
+ * runs OSi_FinalizeReset, which does not return. */
 extern void OS_Terminate(void);
 extern int OS_GetLockID(void);
 extern void CARD_LockRom(unsigned short lockId);
@@ -12,7 +17,7 @@ static inline int MB_IsMultiBootChild(void)
     return *(volatile unsigned short *)0x027ffc40 == 2;
 }
 
-void func_02003948(unsigned int parameter)
+void OS_ResetSystem(unsigned int parameter)
 {
     unsigned short lockId;
 

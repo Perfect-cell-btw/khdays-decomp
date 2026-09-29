@@ -30,7 +30,7 @@ extern void Ov105_WH_Finalize(void);
 extern void GXx_SetMasterBrightness_(unsigned int reg, int value);
 extern unsigned short Ov105_GetState(void);
 extern unsigned short Ov105_GetStatusLow(void);
-extern void func_02003948(unsigned int a);
+extern void OS_ResetSystem(unsigned int a);
 
 void Game_RunSceneLoop(void) {
     int running;
@@ -66,5 +66,5 @@ void Game_RunSceneLoop(void) {
     packed = Ov105_GetState() << 16;
     packed |= Ov105_GetStatusLow();
     Heap_SetCurrent(0);
-    func_02003948(packed | 0x80000000);
+    OS_ResetSystem(packed | 0x80000000);
 }

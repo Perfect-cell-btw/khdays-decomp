@@ -81,6 +81,28 @@ def rename_in_indexes(mapping):
         json.dump(renamed, open(path, 'w'))
 
 
+def rename_in_report_asm(mapping, moves):
+    """config/arm9/report_asm_matches.json keys its attested non-C sources by function name and
+    records each one's path; carry both over (tools/verify_report_asm.py refreshes the hashes)."""
+    import json
+    path = os.path.join(ROOT, 'config', 'arm9', 'report_asm_matches.json')
+    if not os.path.exists(path):
+        return
+    manifest = json.load(open(path, encoding='utf-8'))
+    moved = {os.path.relpath(s, ROOT).replace(os.sep, '/'): os.path.relpath(d, ROOT).replace(os.sep, '/')
+             for s, d in moves}
+    functions = {}
+    changed = False
+    for name, entry in manifest['functions'].items():
+        if entry['source'] in moved or name in mapping:
+            changed = True
+        entry['source'] = moved.get(entry['source'], entry['source'])
+        functions[mapping.get(name, name)] = entry
+    if changed:
+        manifest['functions'] = functions
+        open(path, 'w', encoding='utf-8', newline='\n').write(json.dumps(manifest, indent=2, sort_keys=True) + '\n')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('table')
@@ -121,6 +143,8 @@ def main():
         print('git mv', os.path.relpath(src, ROOT), '->', os.path.basename(dst))
         if not args.dry_run:
             subprocess.run(['git', 'mv', src, dst], cwd=ROOT, check=True)
+    if not args.dry_run:
+        rename_in_report_asm(mapping, moves)
 
     # whole-word references
     changed = 0

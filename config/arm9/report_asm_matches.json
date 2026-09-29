@@ -603,6 +603,15 @@
       "source_sha256": "db92fe1de2eb6d20b268d06f0ecf7255eab302ddca1eaabe16c92c95a92384dc",
       "target_sha256": "274fcbc8387fdbfa2b6fe7cf75cd25eeb0e1f19ab24402739d7c7535e8368198"
     },
+    "OS_ResetSystem": {
+      "evidence": "NitroSDK libraries/os/src/os_reset.c: OS_ResetSystem (C with the SDK's inline asm block)",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 188,
+      "source": "libs/nitro/os/asm_stubs/calls/OS_ResetSystem.c",
+      "source_sha256": "d26dcc08c0de3b5b8a84ffac6321b72d236bb7d158e8a78223c6123d5a208c30",
+      "target_sha256": "d3630bd3ce7a203a1079ae41556dbcc443ee8cd02f4963b62a41a402e8047a72"
+    },
     "OS_RestoreInterrupts": {
       "evidence": "NitroSDK libraries/os/src/os_system.c: asm OS_RestoreInterrupts",
       "kind": "canonical_sdk_asm",
@@ -894,15 +903,6 @@
       "source": "libs/nitro/os/asm_stubs/calls/func_0200302c.c",
       "source_sha256": "d1808b252c11ad882f3b62b29cdfe3acf8d73519ba72a3c19f978475c57caac0",
       "target_sha256": "1cdb4a7c45521a423b782ff8f77aa27c7e7a28d50cd063d3f10fc6fe28bfbffc"
-    },
-    "func_02003948": {
-      "evidence": "NitroSDK libraries/os/src/os_reset.c: OS_ResetSystem (C with the SDK's inline asm block)",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 188,
-      "source": "libs/nitro/os/asm_stubs/calls/func_02003948.c",
-      "source_sha256": "d4366903122d3607ffbf504d9999094faf5b6fbb513a652e906ece796054f7b5",
-      "target_sha256": "d3630bd3ce7a203a1079ae41556dbcc443ee8cd02f4963b62a41a402e8047a72"
     },
     "func_02004484": {
       "evidence": "NitroSDK libraries/mi/src/mi_uncomp_stream.c: asm MI_ReadUncompLZ8",

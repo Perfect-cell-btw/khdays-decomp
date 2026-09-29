@@ -2,7 +2,7 @@
  * Guarded by the live menu heap (data_ov008_02090f00 != 0). Reads the confirmed action code
  * (Ov008_GetCtxField9678), tears down the menu UI (e130/da14) and starts the 0x1e-frame fade;
  * if in-game state is active, resets story flags 0xd/0xe. Then:
- *   action 7 -> full soft reset: func_02003948(-2) (OSi reset) + scene 1 (ov000/title).
+ *   action 7 -> full soft reset: OS_ResetSystem(-2) (NitroSDK system reset) + scene 1 (ov000/title).
  *   action 8 -> enter game: copy the selected save slot's 4-word config (overwriting word[1]
  *     with Ov008_CountOccupiedSlots), CopyConfig16 it, and switch to scene 2 (ov002/gameplay).
  * Clears the menu-heap guard afterward so it fires only once. */
@@ -17,7 +17,7 @@ extern void Ov008_ReleaseMenuUi(void);
 extern void ClearGlobalArrayInt(int flag);
 extern void Ov008_TickKeySharingShutdown(void);
 extern int  Ov008_CountOccupiedSlots(void);
-extern void func_02003948(int mode);
+extern void OS_ResetSystem(int mode);
 
 void Ov008_MainMenuExit(void) {
     int action;
@@ -47,7 +47,7 @@ void Ov008_MainMenuExit(void) {
             ReleaseServiceInstance();
         }
         PartyState_ResetBuffers();
-        func_02003948(-2);
+        OS_ResetSystem(-2);
         Scene_RequestPending(1, 0);
     }
     data_ov008_02090f00 = 0;

@@ -8,6 +8,7 @@ code outside this repository that refers to functions by name can migrate mechan
 | `2026-09-27-sdk-and-veneers.tsv` | NitroSDK/NitroSystem identifications and the undoing of shape-matched names (`WM_EndKeySharing_0x*`, `SNDi_UnlockMutex_0x*`, ...). Some old names are reused as new names for other addresses (for example `SNDi_UnlockMutex`, `FX_Inv`, `OS_UnlockByWord`), so apply the table in one pass, never line by line. |
 | `2026-09-28-function-names.tsv` | 22036 `func_<addr>` symbols given the names they carry in the Ghidra project. Functions whose name could not be verified keep `func_<addr>`. |
 | `2026-09-29-header-placeholders.tsv` | The 56 `func_<addr>` placeholders left in the shared prototype headers (`include/game/engine.h`, `include/game/enemy_common.h`), named from their callers and the globals they touch (`Sleep_Block`, `GetFrameRateMode`, `SoundMgr_SwitchBgm`, ...). |
+| `2026-09-29-sdk-names.tsv` | NitroSDK functions identified by their body (`func_02003948` is `OS_ResetSystem`). |
 | `2026-09-29-misleading-names.tsv` | Names that described something else (`StreamReader_InitU16` is `NNS_G2dFontInitUTF16`, `Session_GetSlotTable` is `Session_GetSetup`, `Callbacks_SetByte` is `PauseMenu_SetMode`, ...). |
 
 Addresses never change, so a name can always be recovered from `config/arm9/**/symbols.txt`.
