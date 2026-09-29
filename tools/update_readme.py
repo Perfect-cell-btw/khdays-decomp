@@ -26,8 +26,8 @@ def update_policy_descriptions(text):
             "decomp.dev additionally counts source-hashed, verified SDK assembly and authorized CLZ "
             "exceptions as matching, not as C. See [progress policy](docs/PROGRESS_POLICY.md)."),
         "Inline ASM / ASM stub matched functions": (
-            "ASM implementations, including temporary game stubs, canonical library assembly and "
-            "authorized inline exceptions; never counted as real C. Only explicitly verified "
+            "ASM implementations: the libraries' own assembly and the authorized inline exceptions "
+            "(two game functions that need `clz`); never counted as real C. Only explicitly verified "
             "manifest entries contribute to decomp.dev matching coverage."),
     }
     for label, description in descriptions.items():
