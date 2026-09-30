@@ -29,7 +29,8 @@ typedef struct Ov008TouchRecord {
     u16 nX;                   /* 0x00 */
     u16 nY;                   /* 0x02 */
     u16 nTouching;            /* 0x04 */
-} Ov008TouchRecord;
+    u16 nValidity;            /* 0x06 */
+} Ov008TouchRecord;   /* the NitroSDK's TPData: 8 bytes */
 
 typedef struct Ov008InventoryItem {
     u8 pad[0x14];

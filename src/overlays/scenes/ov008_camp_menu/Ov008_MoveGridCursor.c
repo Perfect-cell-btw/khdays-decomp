@@ -158,6 +158,10 @@ int Ov008_MoveGridCursor(Ov008MenuContext *pCtx, int nCol, int nRow, int nStep)
             pHit = Ov008_FindGridHit(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
         }
     }
+    /* Without a list node nDx and nDy are never set: the ROM passes whatever r6 and their stack
+     * slot hold, as this C does. It is harmless: Ov008_DrawCardCountAndIcons reads them only with a
+     * shape, and that path has none (pShape stays 0, nPlacedSlot -1). Setting them would add code
+     * the ROM does not have. */
     if (Ov008_DrawCardCountAndIcons(pCtx, pShape, pHit, nDx, nDy) != 0) {
         Ov008_SetEntrySlotsVisible(nCtx, Ov008_FindEntryById(nCtx, WIDGET_CURSOR_B), 0);
         Ov008_RepaintTextRow(pCtx, 0, Ov008_GetItemDescriptionForMember(pCtx->textList, pCtx->pListNode), COLOUR_ACTIVE);

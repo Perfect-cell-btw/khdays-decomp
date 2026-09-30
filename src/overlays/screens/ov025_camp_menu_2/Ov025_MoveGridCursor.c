@@ -158,6 +158,10 @@ int Ov025_MoveGridCursor(Ov008MenuContext *pCtx, int nCol, int nRow, int nStep)
             pHit = Ov025_FindGridHit(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
         }
     }
+    /* Without a list node nDx and nDy are never set: the ROM passes whatever r6 and their stack
+     * slot hold, as this C does. It is harmless: Ov025_DrawCardCountAndIcons reads them only with a
+     * shape, and that path has none (pShape stays 0, nPlacedSlot -1). Setting them would add code
+     * the ROM does not have. */
     if (Ov025_DrawCardCountAndIcons(pCtx, pShape, pHit, nDx, nDy) != 0) {
         Ov025_SetEntrySlotsVisible(nCtx, Ov025_FindEntryById(nCtx, WIDGET_CURSOR_B), 0);
         Ov025_RepaintTextRow(pCtx, 0, Ov025_GetItemDescriptionForMember(pCtx->textList, pCtx->pListNode), COLOUR_ACTIVE);

@@ -37,7 +37,7 @@ extern void Ov008_EnterMenuState(Ov008MenuContext *pCtx, int nMode);
 
 void Ov008_MenuKeyLeft(Ov008MenuContext *pCtx)
 {
-    u16 touch[3];
+    u16 touch[4];                 /* the NitroSDK's TPData: x, y, touch, validity */
 
     Ov008_CopySourceBlock(touch);
     if (touch[2] != 0) {

@@ -40,7 +40,7 @@ extern int  Ov025_SelectListRow(Ov008MenuContext *pCtx, int nPage);       /* swi
 
 void Ov025_MenuKeyDown(Ov008MenuContext *pCtx)
 {
-    u16 touch[3];
+    u16 touch[4];                 /* the NitroSDK's TPData: x, y, touch, validity */
 
     Ov025_CopySourceBlock(touch);
     if (touch[2] != 0) {

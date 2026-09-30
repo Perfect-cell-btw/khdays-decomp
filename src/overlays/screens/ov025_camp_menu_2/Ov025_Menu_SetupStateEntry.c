@@ -27,7 +27,7 @@ extern void Ov025_ReleaseTwoSlotsEx_2(int table, int entry, int a);
 void Ov025_Menu_SetupStateEntry(int param_1, int param_2, int param_3, int param_4)
 {
     int blk, tbl, entry;
-    unsigned short st[3];
+    unsigned short st[4];      /* the 8-byte touch sample kept at +0x1c (the NitroSDK's TPData) */
 
     blk = Ov025_GetCtxBlock954c();
     Ov025_GetPoint1C(blk, st);

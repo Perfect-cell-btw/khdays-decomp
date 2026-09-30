@@ -44,7 +44,7 @@ extern void Ov025_RefreshStatusPage(void *pPanel);                            /*
 
 void Ov025_MenuKeyRight(Ov008MenuContext *pCtx)
 {
-    u16 touch[3];
+    u16 touch[4];                 /* the NitroSDK's TPData: x, y, touch, validity */
 
     Ov025_CopySourceBlock(touch);
     if (touch[2] != 0) {

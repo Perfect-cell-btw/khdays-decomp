@@ -44,7 +44,7 @@ extern void Ov008_RefreshEquipPanel(void *pPanel);                            /*
 
 void Ov008_MenuKeyRight(Ov008MenuContext *pCtx)
 {
-    u16 touch[3];
+    u16 touch[4];                 /* the NitroSDK's TPData: x, y, touch, validity */
 
     Ov008_CopySourceBlock(touch);
     if (touch[2] != 0) {

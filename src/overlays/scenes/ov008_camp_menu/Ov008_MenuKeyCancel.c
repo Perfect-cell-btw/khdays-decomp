@@ -51,7 +51,7 @@ extern Ov008ListHooks data_ov008_02090380;
 void Ov008_MenuKeyCancel(Ov008MenuContext *pCtx)
 {
     int nCtx = Ov008_GetContext();
-    u16 touch[3];
+    u16 touch[4];                 /* the NitroSDK's TPData: x, y, touch, validity */
 
     if (pCtx->nBusy != 0) {
         return;

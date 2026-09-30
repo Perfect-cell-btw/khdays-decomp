@@ -16,7 +16,7 @@ extern long long func_02020400(int a, unsigned int b);
 extern void Ov008_ShowGridPage(int ctx, int high, int flag);
 
 void Ov008_TickIdleTouchSample(int param_1) {
-    unsigned short local[3];
+    unsigned short local[4];                 /* the NitroSDK's TPData: x, y, touch, validity */
     long long r;
     if (*(int *)(param_1 + 0x30) != 0) {
         return;
