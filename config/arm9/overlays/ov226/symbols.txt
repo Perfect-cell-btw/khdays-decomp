@@ -82,7 +82,7 @@ data_ov226_020d4b20 kind:data(any) addr:0x020d4b20
 data_ov226_020d4b40 kind:data(any) addr:0x020d4b40
 data_ov226_020d4b44 kind:data(any) addr:0x020d4b44
 data_ov226_020d4b50 kind:data(any) addr:0x020d4b50
-data_ov226_020d4b60 kind:data(any) addr:0x020d4b60
+gOv226PackPathFmt kind:data(any) addr:0x020d4b60
 data_ov226_020d4b6c kind:data(any) addr:0x020d4b6c
 data_ov226_020d4b78 kind:data(any) addr:0x020d4b78
 data_ov226_020d4b88 kind:data(any) addr:0x020d4b88

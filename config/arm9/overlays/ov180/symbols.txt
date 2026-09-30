@@ -62,6 +62,6 @@ Ov180_SettleHold kind:function(arm,size=0x164) addr:0x020d655c
 Ov180_AiStep_QueueAction0OnAnimEnd kind:function(arm,size=0x30) addr:0x020d66c0
 data_ov180_020d66f0 kind:data(any) addr:0x020d66f0
 data_ov180_020d6708 kind:data(any) addr:0x020d6708
-data_ov180_020d6720 kind:data(any) addr:0x020d6720
+gOv180PackPathFmt kind:data(any) addr:0x020d6720
 data_ov180_020d672c kind:data(any) addr:0x020d672c
 data_ov180_020d6734 kind:data(any) addr:0x020d6734

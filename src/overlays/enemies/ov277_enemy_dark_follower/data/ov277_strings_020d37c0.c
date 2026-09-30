@@ -22,4 +22,4 @@ char data_ov277_020d3830[16] = "Bip01_L_Finger1";
 
 char data_ov277_020d3840[8] = "DM002";
 
-char data_ov277_020d3848[24] = "Ms/%02x.p";
+char gOv277PackPathFmt[24] = "Ms/%02x.p";

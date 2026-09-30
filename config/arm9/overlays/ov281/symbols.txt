@@ -47,7 +47,7 @@ Ov281_TimerGateHw60FlipThenAdvance kind:function(arm,size=0x94) addr:0x020ce284
 Ov281_SetPose2ThenAdvanceSlot kind:function(arm,size=0x34) addr:0x020ce318
 Ov281_ReaimAndClose kind:function(arm,size=0x11c) addr:0x020ce34c
 data_ov281_020ce468 kind:data(any) addr:0x020ce468
-data_ov281_020ce480 kind:data(any) addr:0x020ce480
+gOv281PackPathFmt kind:data(any) addr:0x020ce480
 data_ov281_020ce48c kind:data(any) addr:0x020ce48c
 data_ov281_020ce494 kind:data(any) addr:0x020ce494
 data_ov281_020ce49c kind:data(any) addr:0x020ce49c

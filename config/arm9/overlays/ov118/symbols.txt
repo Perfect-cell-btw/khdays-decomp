@@ -40,4 +40,4 @@ Ov118_AiEnterDefeat kind:function(arm,size=0x78) addr:0x020d17f0
 data_ov118_020d1868 kind:data(any) addr:0x020d1868
 data_ov118_020d1874 kind:data(any) addr:0x020d1874
 data_ov118_020d18a0 kind:data(any) addr:0x020d18a0
-data_ov118_020d18a4 kind:data(any) addr:0x020d18a4
+gOv118PackPathFmt kind:data(any) addr:0x020d18a4

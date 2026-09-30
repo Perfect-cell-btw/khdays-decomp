@@ -2,11 +2,12 @@
  * base actor. */
 
 #include "game/enemy_common.h"
+#include "game/enemy_id.h"
 
 extern void *CallocInstance(int size);
 extern int OS_SPrintf(char *dst, const char *fmt, ...);
 extern void func_ov107_020c6624(void *obj, int arg);
-extern int data_ov239_020cdc40;
+extern int gOv239PackPathFmt;
 extern void Ov239_InitializeActorResources(void *obj);
 
 void *Ov239_CreateNamedEntity(int arg)
@@ -15,7 +16,7 @@ void *Ov239_CreateNamedEntity(int arg)
     void *obj = CallocInstance(0x3bc);
 
     *(signed char *)((int)obj + 0x19c) = 0x42;
-    OS_SPrintf(name, (const char *)&data_ov239_020cdc40, 0x42);
+    OS_SPrintf(name, (const char *)&gOv239PackPathFmt, ENEMY_DUSK);
     *(int *)((int)obj + 0x1a4) = Ov107_OpenCachedResourceByName(name);
     *(void **)((int)obj + 0x18c) = Ov239_InitializeActorResources;
     func_ov107_020c6624(obj, arg);

@@ -25,4 +25,4 @@ Ov287_AreaSweepAttack_Tick kind:function(arm,size=0x4dc) addr:0x020d1058
 Ov287_ResetHw60FlagsAndTimer34ThenAdvance kind:function(arm,size=0xa4) addr:0x020d1534
 Ov287_ChargeAndPickTarget kind:function(arm,size=0xfc) addr:0x020d15d8
 data_ov287_020d16d4 kind:data(any) addr:0x020d16d4
-data_ov287_020d16e0 kind:data(any) addr:0x020d16e0
+gOv287PackPathFmt kind:data(any) addr:0x020d16e0

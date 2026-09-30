@@ -16,4 +16,4 @@ Ov301_ConfigSubStateThenAdvanceSlot kind:function(arm,size=0x54) addr:0x020cc6a4
 Ov301_AiSlot1NoOp kind:function(arm,size=0x4) addr:0x020cc6f8
 Ov301_SetupNodeCallback kind:function(arm,size=0x4c) addr:0x020cc6fc
 Ov301_NodeCallbackIdleStep kind:function(arm,size=0x4) addr:0x020cc748
-data_ov301_020cc760 kind:data(any) addr:0x020cc760
+gOv301PackPathFmt kind:data(any) addr:0x020cc760

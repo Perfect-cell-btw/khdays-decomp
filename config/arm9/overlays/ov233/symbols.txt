@@ -83,7 +83,7 @@ data_ov233_020d0d74 kind:data(any) addr:0x020d0d74
 data_ov233_020d0d9c kind:data(any) addr:0x020d0d9c
 data_ov233_020d0e08 kind:data(any) addr:0x020d0e08
 data_ov233_020d0e20 kind:data(any) addr:0x020d0e20
-data_ov233_020d0e40 kind:data(any) addr:0x020d0e40
+gOv233PackPathFmt kind:data(any) addr:0x020d0e40
 data_ov233_020d0e4c kind:data(any) addr:0x020d0e4c
 data_ov233_020d0e5c kind:data(any) addr:0x020d0e5c
 data_ov233_020d0e6c kind:data(any) addr:0x020d0e6c

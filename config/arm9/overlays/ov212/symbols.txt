@@ -120,7 +120,7 @@ Ov212_ChargeSweep kind:function(arm,size=0x18c) addr:0x020d1f9c
 data_ov212_020d2128 kind:data(any) addr:0x020d2128
 data_ov212_020d212c kind:data(any) addr:0x020d212c
 data_ov212_020d2154 kind:data(any) addr:0x020d2154
-data_ov212_020d2180 kind:data(any) addr:0x020d2180
+gOv212PackPathFmt kind:data(any) addr:0x020d2180
 data_ov212_020d218c kind:data(any) addr:0x020d218c
 data_ov212_020d219c kind:data(any) addr:0x020d219c
 data_ov212_020d21a8 kind:data(any) addr:0x020d21a8

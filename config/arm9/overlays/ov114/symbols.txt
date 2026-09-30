@@ -44,4 +44,4 @@ Ov114_AiSetStanceAndEnd kind:function(arm,size=0x78) addr:0x020cdf3c
 data_ov114_020cdfb4 kind:data(any) addr:0x020cdfb4
 data_ov114_020cdfbc kind:data(any) addr:0x020cdfbc
 data_ov114_020cdfc0 kind:data(any) addr:0x020cdfc0
-data_ov114_020cdfe0 kind:data(any) addr:0x020cdfe0
+gOv114PackPathFmt kind:data(any) addr:0x020cdfe0

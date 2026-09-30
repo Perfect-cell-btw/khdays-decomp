@@ -57,6 +57,6 @@ Ov169_LeapTick kind:function(arm,size=0x35c) addr:0x020cea4c
 Ov169_SweepStep kind:function(arm,size=0x9c) addr:0x020ceda8
 data_ov169_020cee44 kind:data(any) addr:0x020cee44
 data_ov169_020cee54 kind:data(any) addr:0x020cee54
-data_ov169_020cee60 kind:data(any) addr:0x020cee60
+gOv169PackPathFmt kind:data(any) addr:0x020cee60
 data_ov169_020cee6c kind:data(any) addr:0x020cee6c
 data_ov169_020cee74 kind:data(any) addr:0x020cee74

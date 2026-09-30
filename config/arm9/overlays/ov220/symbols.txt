@@ -50,5 +50,5 @@ Ov220_SetPose1ThenAdvanceSlot kind:function(arm,size=0x34) addr:0x020d3a6c
 Ov220_AimAndFaceTick kind:function(arm,size=0xf4) addr:0x020d3aa0
 data_ov220_020d3b94 kind:data(any) addr:0x020d3b94
 data_ov220_020d3b98 kind:data(any) addr:0x020d3b98
-data_ov220_020d3ba0 kind:data(any) addr:0x020d3ba0
+gOv220PackPathFmt kind:data(any) addr:0x020d3ba0
 data_ov220_020d3bac kind:data(any) addr:0x020d3bac

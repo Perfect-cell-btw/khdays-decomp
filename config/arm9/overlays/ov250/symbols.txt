@@ -55,7 +55,7 @@ data_ov250_020d289c kind:data(any) addr:0x020d289c
 data_ov250_020d28c0 kind:data(any) addr:0x020d28c0
 data_ov250_020d28ce kind:data(any) addr:0x020d28ce
 data_ov250_020d28dc kind:data(any) addr:0x020d28dc
-data_ov250_020d2900 kind:data(any) addr:0x020d2900
+gOv250PackPathFmt kind:data(any) addr:0x020d2900
 data_ov250_020d290c kind:data(any) addr:0x020d290c
 data_ov250_020d2914 kind:data(any) addr:0x020d2914
 data_ov250_020d2924 kind:data(any) addr:0x020d2924

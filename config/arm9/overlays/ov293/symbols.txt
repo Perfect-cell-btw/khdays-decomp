@@ -38,7 +38,7 @@ Ov293_ConfigHw60FlagsBeginAction4a kind:function(arm,size=0xc8) addr:0x020d3534
 data_ov293_020d35fc kind:data(any) addr:0x020d35fc
 data_ov293_020d3604 kind:data(any) addr:0x020d3604
 data_ov293_020d3608 kind:data(any) addr:0x020d3608
-data_ov293_020d3620 kind:data(any) addr:0x020d3620
+gOv293PackPathFmt kind:data(any) addr:0x020d3620
 data_ov293_020d362c kind:data(any) addr:0x020d362c
 data_ov293_020d3634 kind:data(any) addr:0x020d3634
 data_ov293_020d3644 kind:data(any) addr:0x020d3644

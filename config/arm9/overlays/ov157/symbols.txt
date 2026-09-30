@@ -56,6 +56,6 @@ data_ov157_020d0bc4 kind:data(any) addr:0x020d0bc4
 data_ov157_020d0bcc kind:data(any) addr:0x020d0bcc
 data_ov157_020d0bda kind:data(any) addr:0x020d0bda
 data_ov157_020d0be8 kind:data(any) addr:0x020d0be8
-data_ov157_020d0c00 kind:data(any) addr:0x020d0c00
+gOv157PackPathFmt kind:data(any) addr:0x020d0c00
 data_ov157_020d0c0c kind:data(any) addr:0x020d0c0c
 data_ov157_020d0c14 kind:data(any) addr:0x020d0c14

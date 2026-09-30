@@ -55,6 +55,6 @@ Ov175_Action5ThenScaleVec kind:function(arm,size=0xdc) addr:0x020ce768
 Ov175_DashTick kind:function(arm,size=0x234) addr:0x020ce844
 data_ov175_020cea78 kind:data(any) addr:0x020cea78
 data_ov175_020cea84 kind:data(any) addr:0x020cea84
-data_ov175_020ceaa0 kind:data(any) addr:0x020ceaa0
+gOv175PackPathFmt kind:data(any) addr:0x020ceaa0
 data_ov175_020ceaac kind:data(any) addr:0x020ceaac
 data_ov175_020ceab4 kind:data(any) addr:0x020ceab4

@@ -31,6 +31,6 @@ Ov291_AiFinishAndNotifyOwner kind:function(arm,size=0x54) addr:0x020cd524
 Ov291_SetPose7ThenAdvanceSlot kind:function(arm,size=0x34) addr:0x020cd578
 Ov291_AdvanceWrapCounterThenSubState3_2 kind:function(arm,size=0x58) addr:0x020cd5ac
 data_ov291_020cd604 kind:data(any) addr:0x020cd604
-data_ov291_020cd620 kind:data(any) addr:0x020cd620
+gOv291PackPathFmt kind:data(any) addr:0x020cd620
 data_ov291_020cd62c kind:data(any) addr:0x020cd62c
 data_ov291_020cd638 kind:data(any) addr:0x020cd638

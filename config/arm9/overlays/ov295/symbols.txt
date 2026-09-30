@@ -12,4 +12,4 @@ Ov295_stSetDispFlagsde kind:function(arm,size=0x40) addr:0x020d3d74
 Ov295_LatchStateAndRender kind:function(arm,size=0x74) addr:0x020d3db4
 Ov295_TickEnemyAi kind:function(arm,size=0x44c) addr:0x020d3e28
 Ov295_ConfigHw60FlagsAndBeginAction4 kind:function(arm,size=0xc8) addr:0x020d4274
-data_ov295_020d4340 kind:data(any) addr:0x020d4340
+gOv295PackPathFmt kind:data(any) addr:0x020d4340

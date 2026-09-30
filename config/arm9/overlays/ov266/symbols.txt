@@ -121,7 +121,7 @@ data_ov266_020d3f1c kind:data(any) addr:0x020d3f1c
 data_ov266_020d3f20 kind:data(any) addr:0x020d3f20
 data_ov266_020d3f48 kind:data(any) addr:0x020d3f48
 data_ov266_020d3f4c kind:data(any) addr:0x020d3f4c
-data_ov266_020d3f60 kind:data(any) addr:0x020d3f60
+gOv266PackPathFmt kind:data(any) addr:0x020d3f60
 data_ov266_020d3f6c kind:data(any) addr:0x020d3f6c
 data_ov266_020d3f7c kind:data(any) addr:0x020d3f7c
 data_ov266_020d3f88 kind:data(any) addr:0x020d3f88

@@ -30,4 +30,4 @@ Ov299_AttackTick kind:function(arm,size=0x208) addr:0x020d45d4
 Ov299_AiEnterProjectileFlight kind:function(arm,size=0x94) addr:0x020d47dc
 Ov299_ProjectileFlightTick kind:function(arm,size=0x578) addr:0x020d4870
 data_ov299_020d4de8 kind:data(any) addr:0x020d4de8
-data_ov299_020d4e00 kind:data(any) addr:0x020d4e00
+gOv299PackPathFmt kind:data(any) addr:0x020d4e00

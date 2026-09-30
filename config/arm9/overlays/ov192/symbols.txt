@@ -61,6 +61,6 @@ data_ov192_020d4bac kind:data(any) addr:0x020d4bac
 data_ov192_020d4bba kind:data(any) addr:0x020d4bba
 data_ov192_020d4bc8 kind:data(any) addr:0x020d4bc8
 data_ov192_020d4bd6 kind:data(any) addr:0x020d4bd6
-data_ov192_020d4c00 kind:data(any) addr:0x020d4c00
+gOv192PackPathFmt kind:data(any) addr:0x020d4c00
 data_ov192_020d4c0c kind:data(any) addr:0x020d4c0c
 data_ov192_020d4c14 kind:data(any) addr:0x020d4c14

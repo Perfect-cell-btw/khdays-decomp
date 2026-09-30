@@ -121,7 +121,7 @@ data_ov256_020d25c4 kind:data(any) addr:0x020d25c4
 data_ov256_020d25d0 kind:data(any) addr:0x020d25d0
 data_ov256_020d2600 kind:data(any) addr:0x020d2600
 data_ov256_020d2648 kind:data(any) addr:0x020d2648
-data_ov256_020d2680 kind:data(any) addr:0x020d2680
+gOv256PackPathFmt kind:data(any) addr:0x020d2680
 data_ov256_020d268c kind:data(any) addr:0x020d268c
 data_ov256_020d2694 kind:data(any) addr:0x020d2694
 data_ov256_020d269c kind:data(any) addr:0x020d269c

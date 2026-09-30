@@ -53,5 +53,5 @@ data_ov123_020ce2b8 kind:data(any) addr:0x020ce2b8
 data_ov123_020ce2c6 kind:data(any) addr:0x020ce2c6
 data_ov123_020ce2d4 kind:data(any) addr:0x020ce2d4
 data_ov123_020ce2e2 kind:data(any) addr:0x020ce2e2
-data_ov123_020ce300 kind:data(any) addr:0x020ce300
+gOv123PackPathFmt kind:data(any) addr:0x020ce300
 data_ov123_020ce30c kind:data(any) addr:0x020ce30c

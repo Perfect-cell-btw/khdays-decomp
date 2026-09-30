@@ -75,7 +75,7 @@ data_ov206_020d0612 kind:data(any) addr:0x020d0612
 data_ov206_020d0620 kind:data(any) addr:0x020d0620
 data_ov206_020d062e kind:data(any) addr:0x020d062e
 data_ov206_020d063c kind:data(any) addr:0x020d063c
-data_ov206_020d0660 kind:data(any) addr:0x020d0660
+gOv206PackPathFmt kind:data(any) addr:0x020d0660
 data_ov206_020d066c kind:data(any) addr:0x020d066c
 data_ov206_020d0678 kind:data(any) addr:0x020d0678
 data_ov206_020d0688 kind:data(any) addr:0x020d0688

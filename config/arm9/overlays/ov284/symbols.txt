@@ -39,5 +39,5 @@ data_ov284_020cd5e0 kind:data(any) addr:0x020cd5e0
 data_ov284_020cd5e8 kind:data(any) addr:0x020cd5e8
 data_ov284_020cd5f0 kind:data(any) addr:0x020cd5f0
 data_ov284_020cd5f8 kind:data(any) addr:0x020cd5f8
-data_ov284_020cd600 kind:data(any) addr:0x020cd600
+gOv284PackPathFmt kind:data(any) addr:0x020cd600
 data_ov284_020cd60c kind:data(any) addr:0x020cd60c

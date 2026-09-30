@@ -21,4 +21,4 @@ Ov285_Chase_Enter kind:function(arm,size=0x88) addr:0x020d2368
 Ov285_Chase_Tick kind:function(arm,size=0x1dc) addr:0x020d23f0
 Ov285_ConfigHw60FlagsBeginAction4a kind:function(arm,size=0xc8) addr:0x020d25cc
 Ov285_ConfigHw60BeginAction49 kind:function(arm,size=0xb4) addr:0x020d2694
-data_ov285_020d2760 kind:data(any) addr:0x020d2760
+gOv285PackPathFmt kind:data(any) addr:0x020d2760

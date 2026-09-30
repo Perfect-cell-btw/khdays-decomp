@@ -62,6 +62,6 @@ Ov198_ResetOrientationAndAdvance kind:function(arm,size=0x8c) addr:0x020d1fc4
 Ov198_SeekTarget kind:function(arm,size=0x484) addr:0x020d2050
 data_ov198_020d24d4 kind:data(any) addr:0x020d24d4
 data_ov198_020d24dc kind:data(any) addr:0x020d24dc
-data_ov198_020d2500 kind:data(any) addr:0x020d2500
+gOv198PackPathFmt kind:data(any) addr:0x020d2500
 data_ov198_020d250c kind:data(any) addr:0x020d250c
 data_ov198_020d2514 kind:data(any) addr:0x020d2514

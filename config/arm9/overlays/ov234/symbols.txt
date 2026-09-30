@@ -21,4 +21,4 @@ Ov234_KnockbackSlide kind:function(arm,size=0x154) addr:0x020ccf80
 Ov234_AiStep_SetFlags3AndEnd kind:function(arm,size=0x2c) addr:0x020cd0d4
 data_ov234_020cd100 kind:data(any) addr:0x020cd100
 data_ov234_020cd104 kind:data(any) addr:0x020cd104
-data_ov234_020cd120 kind:data(any) addr:0x020cd120
+gOv234PackPathFmt kind:data(any) addr:0x020cd120

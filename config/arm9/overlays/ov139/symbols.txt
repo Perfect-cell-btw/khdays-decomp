@@ -51,5 +51,5 @@ data_ov139_020cec2e kind:data(any) addr:0x020cec2e
 data_ov139_020cec3c kind:data(any) addr:0x020cec3c
 data_ov139_020cec4a kind:data(any) addr:0x020cec4a
 data_ov139_020cec58 kind:data(any) addr:0x020cec58
-data_ov139_020cec80 kind:data(any) addr:0x020cec80
+gOv139PackPathFmt kind:data(any) addr:0x020cec80
 data_ov139_020cec8c kind:data(any) addr:0x020cec8c

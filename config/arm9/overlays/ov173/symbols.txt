@@ -51,6 +51,6 @@ Ov173_stateSetFlagsEffectClear kind:function(arm,size=0xa0) addr:0x020ceb64
 Ov173_stateTimerToggleFlags kind:function(arm,size=0x94) addr:0x020cec04
 data_ov173_020cec98 kind:data(any) addr:0x020cec98
 data_ov173_020ceca8 kind:data(any) addr:0x020ceca8
-data_ov173_020cecc0 kind:data(any) addr:0x020cecc0
+gOv173PackPathFmt kind:data(any) addr:0x020cecc0
 data_ov173_020ceccc kind:data(any) addr:0x020ceccc
 data_ov173_020cecd4 kind:data(any) addr:0x020cecd4

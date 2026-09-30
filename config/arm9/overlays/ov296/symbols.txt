@@ -12,4 +12,4 @@ Ov296_stSetDispFlagsde kind:function(arm,size=0x40) addr:0x020d5b94
 Ov296_LatchStateAndRender kind:function(arm,size=0x74) addr:0x020d5bd4
 Ov296_TickEnemyAi kind:function(arm,size=0x44c) addr:0x020d5c48
 Ov296_ConfigHw60FlagsAndBeginAction4 kind:function(arm,size=0xc8) addr:0x020d6094
-data_ov296_020d6160 kind:data(any) addr:0x020d6160
+gOv296PackPathFmt kind:data(any) addr:0x020d6160

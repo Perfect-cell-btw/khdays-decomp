@@ -42,7 +42,7 @@ data_ov121_020cfd04 kind:data(any) addr:0x020cfd04
 data_ov121_020cfd10 kind:data(any) addr:0x020cfd10
 data_ov121_020cfd14 kind:data(any) addr:0x020cfd14
 data_ov121_020cfd22 kind:data(any) addr:0x020cfd22
-data_ov121_020cfd40 kind:data(any) addr:0x020cfd40
+gOv121PackPathFmt kind:data(any) addr:0x020cfd40
 data_ov121_020cfd4c kind:data(any) addr:0x020cfd4c
 data_ov121_020cfd58 kind:data(any) addr:0x020cfd58
 data_ov121_020cfd68 kind:data(any) addr:0x020cfd68

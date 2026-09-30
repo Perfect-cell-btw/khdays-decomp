@@ -28,5 +28,5 @@ data_ov242_020d48c4 kind:data(any) addr:0x020d48c4
 data_ov242_020d48e0 kind:data(any) addr:0x020d48e0
 data_ov242_020d48e8 kind:data(any) addr:0x020d48e8
 data_ov242_020d48f0 kind:data(any) addr:0x020d48f0
-data_ov242_020d48f8 kind:data(any) addr:0x020d48f8
+gOv242PackPathFmt kind:data(any) addr:0x020d48f8
 data_ov242_020d4904 kind:data(any) addr:0x020d4904

@@ -3,9 +3,10 @@
  * object to the shared enemy framework. */
 
 #include "game/enemy_common.h"
+#include "game/enemy_id.h"
 
 extern int OS_SPrintf(char *dst, const char *fmt, ...);
-extern int data_ov276_020d2c20;
+extern int gOv276PackPathFmt;
 extern void *CallocInstance(int size);
 extern void func_ov107_020c6624(void *obj, int arg);
 extern void Ov276_EnemyConstruct(void *obj);
@@ -16,7 +17,7 @@ void *Ov276_AllocActorWithName(int arg)
     void *obj = CallocInstance(0x4b8);
 
     *(signed char *)((int)obj + 0x19c) = 0x61;
-    OS_SPrintf(name, (const char *)&data_ov276_020d2c20, 0x61);
+    OS_SPrintf(name, (const char *)&gOv276PackPathFmt, ENEMY_ZIP_SLASHER);
     *(int *)((int)obj + 0x1a4) = Ov107_OpenCachedResourceByName(name);
     *(void **)((int)obj + 0x18c) = Ov276_EnemyConstruct;
     func_ov107_020c6624(obj, arg);

@@ -86,7 +86,7 @@ data_ov258_020d1820 kind:data(any) addr:0x020d1820
 data_ov258_020d182c kind:data(any) addr:0x020d182c
 data_ov258_020d1838 kind:data(any) addr:0x020d1838
 data_ov258_020d1844 kind:data(any) addr:0x020d1844
-data_ov258_020d1860 kind:data(any) addr:0x020d1860
+gOv258PackPathFmt kind:data(any) addr:0x020d1860
 data_ov258_020d186c kind:data(any) addr:0x020d186c
 data_ov258_020d1878 kind:data(any) addr:0x020d1878
 data_ov258_020d1884 kind:data(any) addr:0x020d1884

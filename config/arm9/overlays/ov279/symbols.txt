@@ -56,7 +56,7 @@ Ov279_TimerBlinkParityClear kind:function(arm,size=0x78) addr:0x020d348c
 Ov279_TimerBlinkParitySet kind:function(arm,size=0x78) addr:0x020d3504
 data_ov279_020d357c kind:data(any) addr:0x020d357c
 data_ov279_020d358c kind:data(any) addr:0x020d358c
-data_ov279_020d35c0 kind:data(any) addr:0x020d35c0
+gOv279PackPathFmt kind:data(any) addr:0x020d35c0
 data_ov279_020d35cc kind:data(any) addr:0x020d35cc
 data_ov279_020d35d8 kind:data(any) addr:0x020d35d8
 data_ov279_020d35e4 kind:data(any) addr:0x020d35e4

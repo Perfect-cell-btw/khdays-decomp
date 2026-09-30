@@ -4,7 +4,7 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov238_020d3700[12] = "Ms/%02x.p";
+char gOv238PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov238_020d370c[12] = "Bone_pelvis";
 

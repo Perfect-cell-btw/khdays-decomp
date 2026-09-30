@@ -85,7 +85,7 @@ Ov227_GrowTick kind:function(arm,size=0xa0) addr:0x020d4a94
 data_ov227_020d4b34 kind:data(any) addr:0x020d4b34
 data_ov227_020d4b54 kind:data(any) addr:0x020d4b54
 data_ov227_020d4b6c kind:data(any) addr:0x020d4b6c
-data_ov227_020d4b80 kind:data(any) addr:0x020d4b80
+gOv227PackPathFmt kind:data(any) addr:0x020d4b80
 data_ov227_020d4b8c kind:data(any) addr:0x020d4b8c
 data_ov227_020d4b98 kind:data(any) addr:0x020d4b98
 data_ov227_020d4ba8 kind:data(any) addr:0x020d4ba8

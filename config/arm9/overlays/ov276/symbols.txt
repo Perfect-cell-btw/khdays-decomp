@@ -51,7 +51,7 @@ Ov276_AiWalkToTargetTick kind:function(arm,size=0x128) addr:0x020d2a60
 data_ov276_020d2b88 kind:data(any) addr:0x020d2b88
 data_ov276_020d2ba0 kind:data(any) addr:0x020d2ba0
 data_ov276_020d2bf8 kind:data(any) addr:0x020d2bf8
-data_ov276_020d2c20 kind:data(any) addr:0x020d2c20
+gOv276PackPathFmt kind:data(any) addr:0x020d2c20
 data_ov276_020d2c2c kind:data(any) addr:0x020d2c2c
 data_ov276_020d2c3c kind:data(any) addr:0x020d2c3c
 data_ov276_020d2c4c kind:data(any) addr:0x020d2c4c

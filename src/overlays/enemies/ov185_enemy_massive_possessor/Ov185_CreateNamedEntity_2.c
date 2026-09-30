@@ -1,18 +1,20 @@
-/* Construct a named object: allocate 0x404 bytes, format a debug name via OS_SPrintf,
- * register it (+0x1a4), install the 020cdde8 callback (+0x18c) and init. Return it. */
+/* Construct a named object: allocate 0x404 bytes, open the resource pack Ms/<id>.p of Massive
+ * Possessor (its handle goes to +0x1a4), install the 020cdde8 callback (+0x18c) and init. Return
+ * it. */
 
 #include "game/enemy_common.h"
+#include "game/enemy_id.h"
 
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
 extern void func_ov107_020c6624(int a, int b);
-extern const char data_ov185_020d16c4[];
+extern const char gOv185PackPathFmt_2[];
 extern void Ov185_Actor_Construct(int);
 int Ov185_CreateNamedEntity_2(int param_1) {
     char buf[0x1d] = {0};
     int obj = CallocInstance(0x404);
     *(signed char *)(obj + 0x19c) = 0x21;
-    OS_SPrintf(buf, data_ov185_020d16c4, 33);
+    OS_SPrintf(buf, gOv185PackPathFmt_2, ENEMY_MASSIVE_POSSESSOR);
     *(int *)(obj + 0x1a4) = Ov107_OpenCachedResourceByName(buf);
     *(int *)(obj + 0x18c) = (int)&Ov185_Actor_Construct;
     func_ov107_020c6624(obj, param_1);

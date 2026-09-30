@@ -88,6 +88,6 @@ Ov146_Mount_AiEnterSink kind:function(arm,size=0x44) addr:0x020cf478
 Ov146_Mount_AiSinkWait kind:function(arm,size=0x3c) addr:0x020cf4bc
 data_ov146_020cf4f8 kind:data(any) addr:0x020cf4f8
 data_ov146_020cf50c kind:data(any) addr:0x020cf50c
-data_ov146_020cf520 kind:data(any) addr:0x020cf520
+gOv146PackPathFmt kind:data(any) addr:0x020cf520
 data_ov146_020cf52c kind:data(any) addr:0x020cf52c
 data_ov146_020cf534 kind:data(any) addr:0x020cf534

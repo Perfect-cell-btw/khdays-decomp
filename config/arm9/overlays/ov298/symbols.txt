@@ -38,4 +38,4 @@ Ov298_AiLockStep kind:function(arm,size=0x1c) addr:0x020d54cc
 data_ov298_020d54e8 kind:data(any) addr:0x020d54e8
 data_ov298_020d54ec kind:data(any) addr:0x020d54ec
 data_ov298_020d54f0 kind:data(any) addr:0x020d54f0
-data_ov298_020d55c0 kind:data(any) addr:0x020d55c0
+gOv298PackPathFmt kind:data(any) addr:0x020d55c0

@@ -51,5 +51,5 @@ data_ov153_020ce036 kind:data(any) addr:0x020ce036
 data_ov153_020ce044 kind:data(any) addr:0x020ce044
 data_ov153_020ce052 kind:data(any) addr:0x020ce052
 data_ov153_020ce060 kind:data(any) addr:0x020ce060
-data_ov153_020ce080 kind:data(any) addr:0x020ce080
+gOv153PackPathFmt kind:data(any) addr:0x020ce080
 data_ov153_020ce08c kind:data(any) addr:0x020ce08c

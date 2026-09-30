@@ -26,5 +26,5 @@ Ov243_ConfigSubStateThenAdvanceSlot_4 kind:function(arm,size=0x54) addr:0x020d46
 Ov243_CallTargetHook kind:function(arm,size=0x28) addr:0x020d4720
 data_ov243_020d4748 kind:data(any) addr:0x020d4748
 data_ov243_020d4760 kind:data(any) addr:0x020d4760
-data_ov243_020d476c kind:data(any) addr:0x020d476c
+gOv243PackPathFmt kind:data(any) addr:0x020d476c
 data_ov243_020d4778 kind:data(any) addr:0x020d4778

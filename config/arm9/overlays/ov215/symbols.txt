@@ -51,6 +51,6 @@ Ov215_EmptyTickHandler kind:function(arm,size=0x4) addr:0x020d2820
 data_ov215_020d2824 kind:data(any) addr:0x020d2824
 data_ov215_020d2838 kind:data(any) addr:0x020d2838
 data_ov215_020d285c kind:data(any) addr:0x020d285c
-data_ov215_020d2880 kind:data(any) addr:0x020d2880
+gOv215PackPathFmt kind:data(any) addr:0x020d2880
 data_ov215_020d288c kind:data(any) addr:0x020d288c
 data_ov215_020d2898 kind:data(any) addr:0x020d2898

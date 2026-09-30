@@ -1,18 +1,19 @@
-/* Construct a named object: allocate 0x3ac bytes, format a debug name via OS_SPrintf,
- * register it (+0x1a4), install the 020d1a24 callback (+0x18c) and init. Return it. */
+/* Construct a named object: allocate 0x3ac bytes, open the resource pack Ms/<id>.p of Ice Cannon
+ * (its handle goes to +0x1a4), install the 020d1a24 callback (+0x18c) and init. Return it. */
 
 #include "game/enemy_common.h"
+#include "game/enemy_id.h"
 
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
 extern void func_ov107_020c6624(int a, int b);
-extern const char data_ov159_020d4fe0[];
+extern const char gOv159PackPathFmt[];
 extern void Ov159_Construct(int);
 int Ov159_CreateNamedEntity(int param_1) {
     char buf[0x1d] = {0};
     int obj = CallocInstance(0x3ac);
     *(signed char *)(obj + 0x19c) = 22;
-    OS_SPrintf(buf, data_ov159_020d4fe0, 22);
+    OS_SPrintf(buf, gOv159PackPathFmt, ENEMY_ICE_CANNON);
     *(int *)(obj + 0x1a4) = Ov107_OpenCachedResourceByName(buf);
     *(int *)(obj + 0x18c) = (int)&Ov159_Construct;
     func_ov107_020c6624(obj, param_1);

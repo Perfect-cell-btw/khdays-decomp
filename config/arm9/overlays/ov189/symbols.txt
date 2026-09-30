@@ -47,7 +47,7 @@ Ov189_TimerGateHw60FlipThenAdvance kind:function(arm,size=0x94) addr:0x020d1eb4
 Ov189_SetPose2ThenAdvanceSlot kind:function(arm,size=0x34) addr:0x020d1f48
 Ov189_ReaimAndClose kind:function(arm,size=0x11c) addr:0x020d1f7c
 data_ov189_020d2098 kind:data(any) addr:0x020d2098
-data_ov189_020d20a0 kind:data(any) addr:0x020d20a0
+gOv189PackPathFmt kind:data(any) addr:0x020d20a0
 data_ov189_020d20ac kind:data(any) addr:0x020d20ac
 data_ov189_020d20b4 kind:data(any) addr:0x020d20b4
 data_ov189_020d20bc kind:data(any) addr:0x020d20bc

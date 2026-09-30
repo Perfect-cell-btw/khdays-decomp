@@ -3,18 +3,19 @@
  * object to the shared enemy framework. */
 
 #include "game/enemy_common.h"
+#include "game/enemy_id.h"
 
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
 extern void func_ov107_020c6624(int a, int b);
-extern const char data_ov129_020d6e00[];
+extern const char gOv129PackPathFmt[];
 extern void Ov129_ChaserInit(int);
 
 int Ov129_CreateNamedEntity(int param_1) {
     char buf[0x1d] = {0};
     int obj = CallocInstance(0x3c0);
     *(signed char *)(obj + 0x19c) = 7;
-    OS_SPrintf(buf, data_ov129_020d6e00, 7);
+    OS_SPrintf(buf, gOv129PackPathFmt, ENEMY_BULKY_VENDOR);
     *(int *)(obj + 0x1a4) = Ov107_OpenCachedResourceByName(buf);
     *(int *)(obj + 0x18c) = (int)Ov129_ChaserInit;
     func_ov107_020c6624(obj, param_1);

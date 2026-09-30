@@ -21,4 +21,4 @@ Ov286_Chase_Enter kind:function(arm,size=0x88) addr:0x020d4188
 Ov286_Chase_Tick kind:function(arm,size=0x1dc) addr:0x020d4210
 Ov286_ConfigHw60FlagsBeginAction4a kind:function(arm,size=0xc8) addr:0x020d43ec
 Ov286_ConfigHw60BeginAction49 kind:function(arm,size=0xb4) addr:0x020d44b4
-data_ov286_020d4580 kind:data(any) addr:0x020d4580
+gOv286PackPathFmt kind:data(any) addr:0x020d4580

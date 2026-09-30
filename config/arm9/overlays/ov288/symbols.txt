@@ -25,4 +25,4 @@ Ov288_AreaSweepAttack_Tick kind:function(arm,size=0x4dc) addr:0x020d4c98
 Ov288_ResetHw60FlagsAndTimer34ThenAdvance kind:function(arm,size=0xa4) addr:0x020d5174
 Ov288_ChargeAndPickTarget kind:function(arm,size=0xfc) addr:0x020d5218
 data_ov288_020d5314 kind:data(any) addr:0x020d5314
-data_ov288_020d5320 kind:data(any) addr:0x020d5320
+gOv288PackPathFmt kind:data(any) addr:0x020d5320

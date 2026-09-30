@@ -56,6 +56,6 @@ Ov171_CarryDashTick kind:function(arm,size=0x378) addr:0x020ce99c
 Ov171_CarryReleaseTick kind:function(arm,size=0x198) addr:0x020ced14
 data_ov171_020ceeac kind:data(any) addr:0x020ceeac
 data_ov171_020ceeb8 kind:data(any) addr:0x020ceeb8
-data_ov171_020ceec0 kind:data(any) addr:0x020ceec0
+gOv171PackPathFmt kind:data(any) addr:0x020ceec0
 data_ov171_020ceecc kind:data(any) addr:0x020ceecc
 data_ov171_020ceed4 kind:data(any) addr:0x020ceed4

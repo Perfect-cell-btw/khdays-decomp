@@ -68,7 +68,7 @@ data_ov231_020cfa30 kind:data(any) addr:0x020cfa30
 data_ov231_020cfa34 kind:data(any) addr:0x020cfa34
 data_ov231_020cfa40 kind:data(any) addr:0x020cfa40
 data_ov231_020cfa4c kind:data(any) addr:0x020cfa4c
-data_ov231_020cfa60 kind:data(any) addr:0x020cfa60
+gOv231PackPathFmt kind:data(any) addr:0x020cfa60
 data_ov231_020cfa6c kind:data(any) addr:0x020cfa6c
 data_ov231_020cfa78 kind:data(any) addr:0x020cfa78
 data_ov231_020cfa84 kind:data(any) addr:0x020cfa84

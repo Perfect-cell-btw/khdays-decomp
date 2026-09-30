@@ -60,7 +60,7 @@ extern void func_ov107_020c6624(int obj, int arg);
 extern void Res_RequestIdPair(int resourceId);
 extern const JointNames data_ov237_020d19f8;
 extern const IdTable19 data_ov237_020d1a20;
-extern const char data_ov237_020d1c88[];
+extern const char gOv237PackPathFmt[];
 extern const char data_ov237_020d1c94[];
 extern const char data_ov237_020d1ca0[];
 extern const char data_ov237_020d1ca8[];
@@ -204,7 +204,7 @@ void Ov237_Construct(char *self)
         *(signed char *)&data_ov237_020d1ce0 = 1;
         *(int *)(self + 0x4a4) = CallocInstance(0x4d0);
         *(u8 *)(*(int *)(self + 0x4a4) + 0x19c) = 0x40;
-        OS_SPrintf(buf, data_ov237_020d1c88, *(u8 *)(*(int *)(self + 0x4a4) + 0x19c));
+        OS_SPrintf(buf, gOv237PackPathFmt, *(u8 *)(*(int *)(self + 0x4a4) + 0x19c));
         *(int *)(*(int *)(self + 0x4a4) + 0x1a4) = Ov107_OpenCachedResourceByName(buf);
         *(void **)(*(int *)(self + 0x4a4) + 0x18c) = Ov237_Construct;
         func_ov107_020c6624(*(int *)(self + 0x4a4), *(int *)(self + 0x1a0));

@@ -35,5 +35,5 @@ Ov130_ConfigHw60ActionCallSubThenAdvance kind:function(arm,size=0xd0) addr:0x020
 Ov130_BeginWindUp kind:function(arm,size=0xf4) addr:0x020cd59c
 Ov130_TimerFireNodeCallbackThenAdvance kind:function(arm,size=0xb0) addr:0x020cd690
 data_ov130_020cd740 kind:data(any) addr:0x020cd740
-data_ov130_020cd760 kind:data(any) addr:0x020cd760
+gOv130PackPathFmt kind:data(any) addr:0x020cd760
 data_ov130_020cd76c kind:data(any) addr:0x020cd76c

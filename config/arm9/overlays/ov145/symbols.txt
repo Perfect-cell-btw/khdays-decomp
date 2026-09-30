@@ -36,6 +36,6 @@ Ov145_CountdownTimer38ThenPose5 kind:function(arm,size=0x4c) addr:0x020cf8b4
 Ov145_stateScanSlotRoundRobin kind:function(arm,size=0x88) addr:0x020cf900
 Ov145_BeginRetreat kind:function(arm,size=0xbc) addr:0x020cf988
 Ov145_TimerGateHw60FlipThenAdvance kind:function(arm,size=0x94) addr:0x020cfa44
-data_ov145_020cfae0 kind:data(any) addr:0x020cfae0
+gOv145PackPathFmt kind:data(any) addr:0x020cfae0
 data_ov145_020cfaec kind:data(any) addr:0x020cfaec
 data_ov145_020cfaf8 kind:data(any) addr:0x020cfaf8

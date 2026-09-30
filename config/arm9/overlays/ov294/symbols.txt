@@ -12,4 +12,4 @@ Ov294_stSetDispFlagsde kind:function(arm,size=0x40) addr:0x020d1f54
 Ov294_LatchStateAndRender kind:function(arm,size=0x74) addr:0x020d1f94
 Ov294_TickEnemyAi kind:function(arm,size=0x44c) addr:0x020d2008
 Ov294_ConfigHw60FlagsAndBeginAction4 kind:function(arm,size=0xc8) addr:0x020d2454
-data_ov294_020d2520 kind:data(any) addr:0x020d2520
+gOv294PackPathFmt kind:data(any) addr:0x020d2520

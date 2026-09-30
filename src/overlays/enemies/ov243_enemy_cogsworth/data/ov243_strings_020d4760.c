@@ -6,6 +6,6 @@
 
 char data_ov243_020d4760[12] = "Bone_head";
 
-char data_ov243_020d476c[12] = "Ms/%02x.p";
+char gOv243PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov243_020d4778[8] = "move";

@@ -51,6 +51,6 @@ Ov264_EmptyTickHandler kind:function(arm,size=0x4) addr:0x020cebc0
 data_ov264_020cebc4 kind:data(any) addr:0x020cebc4
 data_ov264_020cebd8 kind:data(any) addr:0x020cebd8
 data_ov264_020cebfc kind:data(any) addr:0x020cebfc
-data_ov264_020cec20 kind:data(any) addr:0x020cec20
+gOv264PackPathFmt kind:data(any) addr:0x020cec20
 data_ov264_020cec2c kind:data(any) addr:0x020cec2c
 data_ov264_020cec38 kind:data(any) addr:0x020cec38

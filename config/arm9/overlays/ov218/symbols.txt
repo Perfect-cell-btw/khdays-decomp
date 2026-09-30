@@ -74,6 +74,6 @@ Ov218_FlashTick kind:function(arm,size=0x80) addr:0x020cf28c
 data_ov218_020cf30c kind:data(any) addr:0x020cf30c
 data_ov218_020cf310 kind:data(any) addr:0x020cf310
 data_ov218_020cf314 kind:data(any) addr:0x020cf314
-data_ov218_020cf320 kind:data(any) addr:0x020cf320
+gOv218PackPathFmt kind:data(any) addr:0x020cf320
 data_ov218_020cf32c kind:data(any) addr:0x020cf32c
 data_ov218_020cf338 kind:data(any) addr:0x020cf338

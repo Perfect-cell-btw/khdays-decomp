@@ -80,7 +80,7 @@ data_ov248_020d0b58 kind:data(any) addr:0x020d0b58
 data_ov248_020d0b80 kind:data(any) addr:0x020d0b80
 data_ov248_020d0bec kind:data(any) addr:0x020d0bec
 data_ov248_020d0c04 kind:data(any) addr:0x020d0c04
-data_ov248_020d0c20 kind:data(any) addr:0x020d0c20
+gOv248PackPathFmt kind:data(any) addr:0x020d0c20
 data_ov248_020d0c2c kind:data(any) addr:0x020d0c2c
 data_ov248_020d0c3c kind:data(any) addr:0x020d0c3c
 data_ov248_020d0c4c kind:data(any) addr:0x020d0c4c

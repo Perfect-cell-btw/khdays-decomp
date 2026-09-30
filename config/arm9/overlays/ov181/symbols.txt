@@ -53,5 +53,5 @@ Ov181_AiSetStanceAndEnd kind:function(arm,size=0x78) addr:0x020ce980
 data_ov181_020ce9f8 kind:data(any) addr:0x020ce9f8
 data_ov181_020cea04 kind:data(any) addr:0x020cea04
 data_ov181_020cea12 kind:data(any) addr:0x020cea12
-data_ov181_020cea40 kind:data(any) addr:0x020cea40
+gOv181PackPathFmt kind:data(any) addr:0x020cea40
 data_ov181_020cea4c kind:data(any) addr:0x020cea4c

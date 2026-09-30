@@ -10,6 +10,6 @@ char data_ov242_020d48e8[8] = "tag_01";
 
 char data_ov242_020d48f0[8] = "tag_00";
 
-char data_ov242_020d48f8[12] = "Ms/%02x.p";
+char gOv242PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov242_020d4904[28] = "move";

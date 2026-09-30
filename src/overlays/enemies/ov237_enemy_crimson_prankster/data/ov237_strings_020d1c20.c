@@ -24,7 +24,7 @@ char data_ov237_020d1c70[12] = "R_arm_01";
 
 char data_ov237_020d1c7c[12] = "R_arm_02";
 
-char data_ov237_020d1c88[12] = "Ms/%02x.p";
+char gOv237PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov237_020d1c94[12] = "Bone_Head";
 

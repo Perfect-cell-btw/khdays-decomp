@@ -4,7 +4,7 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov265_020d36c0[12] = "Ms/%02x.p";
+char gOv265PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov265_020d36cc[12] = "Bone_pelvis";
 

@@ -44,7 +44,7 @@ char data_ov253_020d4b38[16] = "Bone_L_UpperArm";
 
 char data_ov253_020d4b48[16] = "Bone_R_UpperArm";
 
-char data_ov253_020d4b58[12] = "Ms/%02x.p";
+char gOv253PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov253_020d4b64[8] = "tag01";
 

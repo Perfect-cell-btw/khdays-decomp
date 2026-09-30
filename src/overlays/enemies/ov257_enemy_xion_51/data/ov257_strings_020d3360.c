@@ -20,7 +20,7 @@ char data_ov257_020d33a8[12] = "B2_R_hand03";
 
 char data_ov257_020d33b4[12] = "B2_L_hand03";
 
-char data_ov257_020d33c0[12] = "Ms/%02x.p";
+char gOv257PackPathFmt[12] = "Ms/%02x.p";
 
 char data_ov257_020d33cc[16] = "Ms/XionShare.p";
 

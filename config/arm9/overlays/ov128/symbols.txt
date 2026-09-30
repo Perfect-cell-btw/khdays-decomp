@@ -35,5 +35,5 @@ Ov128_ConfigHw60ActionCallSubThenAdvance kind:function(arm,size=0xd0) addr:0x020
 Ov128_BeginWindUp kind:function(arm,size=0xf4) addr:0x020d4e20
 Ov128_TimerFireNodeCallbackThenAdvance kind:function(arm,size=0xb0) addr:0x020d4f14
 data_ov128_020d4fc4 kind:data(any) addr:0x020d4fc4
-data_ov128_020d4fe0 kind:data(any) addr:0x020d4fe0
+gOv128PackPathFmt kind:data(any) addr:0x020d4fe0
 data_ov128_020d4fec kind:data(any) addr:0x020d4fec

@@ -185,7 +185,7 @@ data_ov254_020d5910 kind:data(any) addr:0x020d5910
 data_ov254_020d5914 kind:data(any) addr:0x020d5914
 data_ov254_020d592c kind:data(any) addr:0x020d592c
 data_ov254_020d594c kind:data(any) addr:0x020d594c
-data_ov254_020d5980 kind:data(any) addr:0x020d5980
+gOv254PackPathFmt kind:data(any) addr:0x020d5980
 data_ov254_020d598c kind:data(any) addr:0x020d598c
 data_ov254_020d5994 kind:data(any) addr:0x020d5994
 data_ov254_020d5998 kind:data(any) addr:0x020d5998

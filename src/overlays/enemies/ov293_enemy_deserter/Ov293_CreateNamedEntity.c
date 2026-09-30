@@ -3,11 +3,12 @@
  * object to the shared enemy framework. */
 
 #include "game/enemy_common.h"
+#include "game/enemy_id.h"
 
 extern void *CallocInstance(int size);
 extern int OS_SPrintf(char *dst, const char *fmt, ...);
 extern void func_ov107_020c6624(void *obj, int arg);
-extern int data_ov293_020d3620;
+extern int gOv293PackPathFmt;
 extern void Ov293_Construct(void *obj);
 
 void *Ov293_CreateNamedEntity(int arg)
@@ -16,7 +17,7 @@ void *Ov293_CreateNamedEntity(int arg)
     void *obj = CallocInstance(0x3a4);
 
     *(signed char *)((int)obj + 0x19c) = 0x6f;
-    OS_SPrintf(name, (const char *)&data_ov293_020d3620, 0x6f);
+    OS_SPrintf(name, (const char *)&gOv293PackPathFmt, ENEMY_DESERTER);
     *(int *)((int)obj + 0x1a4) = Ov107_OpenCachedResourceByName(name);
     *(void **)((int)obj + 0x18c) = Ov293_Construct;
     func_ov107_020c6624(obj, arg);
