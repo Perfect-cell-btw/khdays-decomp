@@ -4,8 +4,8 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207f420[20] = "UI/nldg/nldg.pbg.z";
+char gOv002UiNldgNldgPath[20] = "UI/nldg/nldg.pbg.z";
 
-char data_ov002_0207f434[16] = "UI/sg_bg.pbg.z";
+char gOv002UiSgBgPath[16] = "UI/sg_bg.pbg.z";
 
-char data_ov002_0207f444[16] = "UINOWLDTASKFUNC";
+char gOv002UinowldtaskfuncName[16] = "UINOWLDTASKFUNC";

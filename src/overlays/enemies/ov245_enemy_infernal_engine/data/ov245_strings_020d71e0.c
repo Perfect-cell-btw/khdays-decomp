@@ -6,38 +6,38 @@
 
 char gOv245PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov245_020d71ec[8] = "tag_00";
+char gOv245Tag00Name[8] = "tag_00";
 
-char data_ov245_020d71f4[12] = "tag_item";
+char gOv245TagItemName[12] = "tag_item";
 
-char data_ov245_020d7200[12] = "tag_tire_F";
+char gOv245TagTireFName[12] = "tag_tire_F";
 
-char data_ov245_020d720c[12] = "tag_tire_R";
+char gOv245TagTireRName[12] = "tag_tire_R";
 
-char data_ov245_020d7218[8] = "move";
+char gOv245MoveName[8] = "move";
 
-char data_ov245_020d7220[12] = "Bone_tag00";
+char gOv245BoneTag00Name[12] = "Bone_tag00";
 
-char data_ov245_020d722c[8] = "tag_00";
+char gOv245Tag00Name_2[8] = "tag_00";
 
-char data_ov245_020d7234[8] = "tag_00";
+char gOv245Tag00Name_3[8] = "tag_00";
 
-char data_ov245_020d723c[8] = "ham_a";
+char gOv245HamAName[8] = "ham_a";
 
-char data_ov245_020d7244[8] = "ham_b";
+char gOv245HamBName[8] = "ham_b";
 
-char data_ov245_020d724c[8] = "ham_c";
+char gOv245HamCName[8] = "ham_c";
 
-char data_ov245_020d7254[8] = "tag_00";
+char gOv245Tag00Name_4[8] = "tag_00";
 
-char data_ov245_020d725c[12] = "move_item02";
+char gOv245MoveItem02Name[12] = "move_item02";
 
-char data_ov245_020d7268[12] = "Bone_R_fing";
+char gOv245BoneRFingName[12] = "Bone_R_fing";
 
-char data_ov245_020d7274[16] = "Bip01_R_Foot";
+char gOv245Bip01RFootName[16] = "Bip01_R_Foot";
 
-char data_ov245_020d7284[16] = "Bip01_L_Foot";
+char gOv245Bip01LFootName[16] = "Bip01_L_Foot";
 
-char data_ov245_020d7294[8] = "Bip01";
+char gOv245Bip01Name[8] = "Bip01";
 
-char data_ov245_020d729c[36] = "move";
+char gOv245MoveName_2[36] = "move";

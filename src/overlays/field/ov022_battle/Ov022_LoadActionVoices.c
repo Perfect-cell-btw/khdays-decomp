@@ -62,8 +62,8 @@ struct Actor {
     void *pContainer;            /* 0x2bd0 */
 };
 
-extern char data_ov022_020b2d70[];
-extern char data_ov022_020b2d80[];
+extern char gOv022XemnasT2Path[];
+extern char gOv022MarluxiaT2Path[];
 
 extern void RegisterSeqAndInit(struct VoiceSet *pVoice, u32 nFile, int nArg, int nSlot);   /* RegisterSeqAndInit */
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
@@ -123,7 +123,7 @@ void Ov022_LoadActionVoices(struct ActionTable *pTable, struct Actor *pActor)
         if (pActor->nKind == 0xd && (*pMove == 0x11 || *pMove == 0x12)) {
             bOwnContainer = 1;
             nBase = 0;
-            pContainer = Msg_OpenContainerAndReadHeader(data_ov022_020b2d70, CONTAINER_HEAP);
+            pContainer = Msg_OpenContainerAndReadHeader(gOv022XemnasT2Path, CONTAINER_HEAP);
         }
         if (pActor->nKind == 10) {
             switch (*pMove) {
@@ -134,7 +134,7 @@ void Ov022_LoadActionVoices(struct ActionTable *pTable, struct Actor *pActor)
             case 0x15:
                 bOwnContainer = 1;
                 nBase = 0;
-                pContainer = Msg_OpenContainerAndReadHeader(data_ov022_020b2d80, CONTAINER_HEAP);
+                pContainer = Msg_OpenContainerAndReadHeader(gOv022MarluxiaT2Path, CONTAINER_HEAP);
                 break;
             }
         }

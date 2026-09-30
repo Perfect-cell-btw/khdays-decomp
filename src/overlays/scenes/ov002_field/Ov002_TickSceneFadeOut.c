@@ -20,7 +20,7 @@ typedef void (*Ov002StateFn)(void);
 extern void Ov002_UpdateSceneFrame(void); /* per-frame scene update */
 extern void Ov002_GetBootModeStep(void); /* the state entered once faded out */
 
-extern char data_ov002_0207e850[];     /* the VBlank callback's cookie */
+extern char gOv002RefreshWndName[];     /* the VBlank callback's cookie */
 extern int data_ov002_0207f600;        /* slot holding the scene context */
 
 Ov002StateFn Ov002_TickSceneFadeOut(void)
@@ -42,7 +42,7 @@ Ov002StateFn Ov002_TickSceneFadeOut(void)
         *(unsigned int *)data_ov002_0207f600 =
             *(unsigned int *)data_ov002_0207f600 & ~1;
         pNext = Ov002_GetBootModeStep;
-        VBlank_UnregisterCallback(1, data_ov002_0207e850);
+        VBlank_UnregisterCallback(1, gOv002RefreshWndName);
     }
 
     if ((*(unsigned int *)data_ov002_0207f600 & 8) == 0) {

@@ -76,7 +76,7 @@ typedef struct Ov009MenuContext {
 } Ov009MenuContext;
 
 extern Ov009MenuContext *data_ov025_020b5744[2];
-extern const char data_ov025_020b4a38[];
+extern const char gOv025CampmenumngrName[];
 
 extern int   func_ov025_02085850(void);
 extern void  Ov025_FullScreenTeardown(void);
@@ -164,7 +164,7 @@ void Ov025_PageTeardown(void)
     }
 
     Ov025_DestroyAllRegistryEntries();
-    VBlank_UnregisterCallback(1, data_ov025_020b4a38);
+    VBlank_UnregisterCallback(1, gOv025CampmenumngrName);
     Ov025_DestroyObjectsAndRelease(data_ov025_020b5744[1]->subsystem0);
     Ov025_DestroyObjectsAndRelease(data_ov025_020b5744[1]->subsystem1);
     Ov025_ReleaseThreeBuffers(data_ov025_020b5744[1]->object9500);

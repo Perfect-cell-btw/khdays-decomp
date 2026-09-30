@@ -9,11 +9,11 @@ typedef struct SpriteResSet {
 } SpriteResSet;
 
 extern int data_ov012_0205cb20;
-extern char data_ov012_0205cac0[];
+extern char gOv012TextFontEu10AllPath[];
 extern int data_ov012_0205c2d0;
-extern char data_ov012_0205cadc[];
+extern char gOv012OpOpPath[];
 extern int data_ov012_0205caf4;
-extern char data_ov012_0205cae8[];
+extern char gOv012OpScrPath[];
 extern u32 OVERLAY_24_ID[1];
 #define FS_OVERLAY_ID_ov024 ((u32)&OVERLAY_24_ID)
 
@@ -62,11 +62,11 @@ void *Ov012_InitOpeningScene(int alternateMode) {
     *(u8 *)(root + 0x8be0) = 0;
     *(u8 *)(root + 0x8bf0) = 0;
     MI_CpuFill8(workspace + 0x8400, 0, 0x5a4);
-    Font_LoadUTF16(root + 0x8b40, data_ov012_0205cac0);
+    Font_LoadUTF16(root + 0x8b40, gOv012TextFontEu10AllPath);
     GX_LoadBGPltt(&data_ov012_0205c2d0, 0x1a0, 0x20);
     GXS_LoadBGPltt(&data_ov012_0205c2d0, 0x1a0, 0x20);
     *(void **)(root + 0x85a4) = root + 0x8b4c;
-    header = Msg_OpenContainerAndReadHeader(data_ov012_0205cadc, 0xe);
+    header = Msg_OpenContainerAndReadHeader(gOv012OpOpPath, 0xe);
     archiveEntry = (((u32)header + 0x8000) & 0x00fffffc) << 7 | 0x80000000;
     *(void **)(root + 0x8bf8) = Archive_LoadFile(archiveEntry, 0xe);
     *(void **)(root + 0x8bfc) =
@@ -97,7 +97,7 @@ void *Ov012_InitOpeningScene(int alternateMode) {
     } while (paletteIndex < 14);
 
     StoreGlobalArrayEntry(3, &data_ov012_0205caf4);
-    Stream_DecodeIntoStagingBuffer(root + 4, data_ov012_0205cae8, 0, root + 0x8598);
+    Stream_DecodeIntoStagingBuffer(root + 4, gOv012OpScrPath, 0, root + 0x8598);
     *(u16 *)(root + 2) |= 1;
     *(u8 *)(root + 0x8be1) = 0;
     rawKeys = *(volatile u16 *)0x04000130 | *(volatile u16 *)0x027fffa8;

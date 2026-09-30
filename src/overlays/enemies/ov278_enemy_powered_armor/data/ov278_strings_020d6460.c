@@ -6,22 +6,22 @@
 
 char gOv278PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov278_020d646c[8] = "B_body";
+char gOv278BBodyName[8] = "B_body";
 
-char data_ov278_020d6474[12] = "B_head02";
+char gOv278BHead02Name[12] = "B_head02";
 
-char data_ov278_020d6480[8] = "GA_move";
+char gOv278GaMoveName[8] = "GA_move";
 
-char data_ov278_020d6488[12] = "B_LArm01";
+char gOv278BLArm01Name[12] = "B_LArm01";
 
-char data_ov278_020d6494[12] = "B_RArm01";
+char gOv278BRArm01Name[12] = "B_RArm01";
 
-char data_ov278_020d64a0[12] = "B_Lfoot01";
+char gOv278BLfoot01Name[12] = "B_Lfoot01";
 
-char data_ov278_020d64ac[12] = "B_Lfoot02";
+char gOv278BLfoot02Name[12] = "B_Lfoot02";
 
-char data_ov278_020d64b8[12] = "B_Rfoot01";
+char gOv278BRfoot01Name[12] = "B_Rfoot01";
 
-char data_ov278_020d64c4[12] = "B_Rfoot02";
+char gOv278BRfoot02Name[12] = "B_Rfoot02";
 
-char data_ov278_020d64d0[16] = "GA_move";
+char gOv278GaMoveName_2[16] = "GA_move";

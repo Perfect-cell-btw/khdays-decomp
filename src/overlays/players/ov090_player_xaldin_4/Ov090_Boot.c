@@ -22,11 +22,11 @@ extern void Ov090_BuildRenderHandles(void);
 extern void Ov090_SetTimingsAndEnterState21(void);
 
 extern void *data_ov090_020bcc00;
-extern int data_ov090_020bcb74;
-extern int data_ov090_020bcb88;
-extern int data_ov090_020bcb2c;
-extern int data_ov090_020bcb1c;
-extern int data_ov090_020bcb3c;
+extern int gOv090XaldinDefPackPath;
+extern int gOv090XaldinDefHPackPath;
+extern int gOv090XaldinTgName;
+extern int gOv090XaldinRName;
+extern int gOv090Bip01Name;
 
 /* The rig hangs off the scene node at +0x28; each bone block starts 0x40 further in. */
 typedef struct { int pad[1]; int f4; } RigHdr;
@@ -56,9 +56,9 @@ void Ov090_Boot(int *cfg) {
                          (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
     if (cfg[6] == 0) {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov090_020bcb74, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv090XaldinDefPackPath, 1, cfg[0] + 7);
     } else {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov090_020bcb88, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv090XaldinDefHPackPath, 1, cfg[0] + 7);
     }
 
     *(void **)(obj + 0x664 + 0x00) = (void *)&Ov090_ApplyModeChange;
@@ -85,11 +85,11 @@ test:
     }
 
     b = bone(obj);
-    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov090_020bcb2c) : -1;
+    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv090XaldinTgName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov090_020bcb1c) : -1;
+    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv090XaldinRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov090_020bcb3c) : -1;
+    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv090Bip01Name) : -1;
 
     if (cfg[3] != 0) {
         *(long long *)obj |= 0x20;

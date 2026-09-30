@@ -22,11 +22,11 @@ extern void Ov055_FirePartShot(void);
 extern void Ov055_BuildRenderHandles(void);
 extern void Ov055_InitStateFieldFromQuery(void);
 extern void *data_ov055_020b7740;
-extern int data_ov055_020b7668;
-extern int data_ov055_020b767c;
-extern int data_ov055_020b7608;
-extern int data_ov055_020b7618;
-extern int data_ov055_020b7628;
+extern int gOv055DemyxDefPackPath;
+extern int gOv055DemyxDefHPackPath;
+extern int gOv055DemyxTgName;
+extern int gOv055DemyxRName;
+extern int gOv055Bip01Name;
 
 /* The rig hangs off the scene node at +0x28; each bone block starts 0x40 further in. */
 typedef struct { int pad[1]; int f4; } RigHdr;
@@ -56,9 +56,9 @@ void Ov055_Boot(int *cfg) {
                          (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
     if (cfg[6] == 0) {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov055_020b7668, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv055DemyxDefPackPath, 1, cfg[0] + 7);
     } else {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov055_020b767c, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv055DemyxDefHPackPath, 1, cfg[0] + 7);
     }
     *(void **)(obj + 0x664 + 0x00) = (void *)&Ov055_ApplyModeChange;
     *(void **)(obj + 0x664 + 0x04) = (void *)&Ov055_UpdateAnchor;
@@ -85,11 +85,11 @@ test:
     }
 
     b = bone(obj);
-    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov055_020b7608) : -1;
+    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv055DemyxTgName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov055_020b7618) : -1;
+    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv055DemyxRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov055_020b7628) : -1;
+    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv055Bip01Name) : -1;
     if (cfg[3] != 0) {
         *(long long *)obj |= 0x20;
     }

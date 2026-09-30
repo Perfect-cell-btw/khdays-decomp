@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207eec4[20] = "/UI/btl/stamp.dat";
+char gOv002UiBtlStampPath[20] = "/UI/btl/stamp.dat";

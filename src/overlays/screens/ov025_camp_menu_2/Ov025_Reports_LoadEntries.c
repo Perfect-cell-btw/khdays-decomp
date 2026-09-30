@@ -62,9 +62,9 @@ extern int Ov025_IsFlagRowFree(int index);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 
-extern char data_ov025_020b5250[];
+extern char gOv025MiMiEidPath[];
 extern const char *data_ov025_020b4220[];
-extern char data_ov025_020b525c[];
+extern char gOv025UiCmStrPathFmt[];
 extern const u8 data_ov025_020b4228[]; /* Ov025ReportsSet[2]; +4 = the entries' sprite member tag */
 
 void Ov025_Reports_LoadEntries(void)
@@ -104,10 +104,10 @@ void Ov025_Reports_LoadEntries(void)
     }
     raw = (Ov025RawEntry *)page;
     if (!modeZero) {
-        itemFile = Archive_LoadFile((u32)data_ov025_020b5250, 0xe);
+        itemFile = Archive_LoadFile((u32)gOv025MiMiEidPath, 0xe);
         MsgDb_LoadDb(0x15, 0xe);
     }
-    OS_SNPrintf(path, 0x20, data_ov025_020b525c, data_ov025_020b4220[page->mode]);
+    OS_SNPrintf(path, 0x20, gOv025UiCmStrPathFmt, data_ov025_020b4220[page->mode]);
     table = Archive_LoadFile((u32)path, 0xe);
     page->spriteFile = Archive_LoadFile(Ov025_PackSlotTag((data_ov025_020b4228 + 4)[((Ov025Page *)raw)->mode * 5]), 0xe);
     if (modeZero) {

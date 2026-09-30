@@ -39,7 +39,7 @@ extern void Ov025_HandlerB_Call2(int object);
 extern void Ov025_BlitConfigRegion(int value, unsigned int duration);
 extern void Ov025_SetCtxField95cc(int value);
 extern void RegisterNamedTask(int priority, const char *name, void (*callback)(void));
-extern char data_ov025_020b4a38[];
+extern char gOv025CampmenumngrName[];
 extern void Ov025_UpdateBrightnessAndCallbacks(void);
 
 void Ov025_UpdateCampaignMenuManager(void)
@@ -109,7 +109,7 @@ void Ov025_UpdateCampaignMenuManager(void)
     }
 
     if (*(int *)(CTXV + 0x9618) != 0) {
-        RegisterNamedTask(1, data_ov025_020b4a38, Ov025_UpdateBrightnessAndCallbacks);
+        RegisterNamedTask(1, gOv025CampmenumngrName, Ov025_UpdateBrightnessAndCallbacks);
         *(int *)(CTXV + 0x9618) = 0;
     }
 }

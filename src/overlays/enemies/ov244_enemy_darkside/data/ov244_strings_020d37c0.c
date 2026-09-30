@@ -6,34 +6,34 @@
 
 char gOv244PackPathFmt_2[12] = "Ms/%02x.p";
 
-char data_ov244_020d37cc[16] = "Bip01_Spine1";
+char gOv244Bip01Spine1Name[16] = "Bip01_Spine1";
 
-char data_ov244_020d37dc[12] = "Bip01_Neck";
+char gOv244Bip01NeckName[12] = "Bip01_Neck";
 
-char data_ov244_020d37e8[12] = "Bip01_Spine";
+char gOv244Bip01SpineName[12] = "Bip01_Spine";
 
-char data_ov244_020d37f4[16] = "Bip01_Pelvis";
+char gOv244Bip01PelvisName[16] = "Bip01_Pelvis";
 
-char data_ov244_020d3804[8] = "DS01";
+char gOv244Ds01Name[8] = "DS01";
 
-char data_ov244_020d380c[12] = "Bip01_Head";
+char gOv244Bip01HeadName[12] = "Bip01_Head";
 
-char data_ov244_020d3818[20] = "Bip01_R_UpperArm";
+char gOv244Bip01RUpperArmName[20] = "Bip01_R_UpperArm";
 
-char data_ov244_020d382c[16] = "Bip01_R_Forearm";
+char gOv244Bip01RForearmName[16] = "Bip01_R_Forearm";
 
-char data_ov244_020d383c[16] = "Bip01_R_Hand";
+char gOv244Bip01RHandName[16] = "Bip01_R_Hand";
 
-char data_ov244_020d384c[16] = "Bip01_R_Finger1";
+char gOv244Bip01RFinger1Name[16] = "Bip01_R_Finger1";
 
-char data_ov244_020d385c[20] = "Bip01_L_UpperArm";
+char gOv244Bip01LUpperArmName[20] = "Bip01_L_UpperArm";
 
-char data_ov244_020d3870[16] = "Bip01_L_Forearm";
+char gOv244Bip01LForearmName[16] = "Bip01_L_Forearm";
 
-char data_ov244_020d3880[16] = "Bip01_L_Hand";
+char gOv244Bip01LHandName[16] = "Bip01_L_Hand";
 
-char data_ov244_020d3890[16] = "Bip01_L_Finger1";
+char gOv244Bip01LFinger1Name[16] = "Bip01_L_Finger1";
 
-char data_ov244_020d38a0[8] = "DM002";
+char gOv244Dm002Name[8] = "DM002";
 
 char gOv244PackPathFmt[24] = "Ms/%02x.p";

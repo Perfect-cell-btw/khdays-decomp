@@ -40,7 +40,7 @@ typedef struct {
 } Ov000SharedContext;
 
 extern const TileSurfaceCfg data_ov000_0205a98c;
-extern u8 data_ov000_0205abbc[];
+extern u8 gOv000UiThrThrTextPath[];
 extern Ov000SharedContext *data_ov000_0205ac3c;
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_InitResourceRecord(void *object, const void *config);
@@ -51,7 +51,7 @@ void Ov000_InitSceneSurfaces(void) {
     TileSurfaceCfg config = data_ov000_0205a98c;
     Ov000SceneContext *context = NNSi_FndGetCurrentRootHeap();
 
-    Ov000_InitResourceRecord(context->object_0088, data_ov000_0205abbc);
+    Ov000_InitResourceRecord(context->object_0088, gOv000UiThrThrTextPath);
     NNS_G2dFontInitUTF16(context->resource_9658,
                   data_ov000_0205ac3c->resource_9660);
 

@@ -54,8 +54,8 @@ typedef struct Ov008MissionMenu {
     u8  nCursorSlot;          /* 0x56c */
 } Ov008MissionMenu;
 
-extern const char data_ov008_020909a4[];                                  /* "UI/cm/str/mission_&.s.z" */
-extern const char data_ov008_020909bc[];                                  /* "UI/cm/str/status_&.s.z" */
+extern const char gOv008UiCmStrSelectTextPath_3[];                                  /* "UI/cm/str/mission_&.s.z" */
+extern const char gOv008UiCmStrStatusTextPath_4[];                                  /* "UI/cm/str/status_&.s.z" */
 extern const Ov008MissionResourceDescriptor data_ov008_0208fa1c;
 extern const Ov008MissionResourceDescriptor data_ov008_0208fa10;
 extern int  Ov008_GetCtxObject95c0(void);                                    /* Ov008_GetCtxObject95c0 */
@@ -116,8 +116,8 @@ int Ov008_MissionMenuInitStep(Ov008MissionMenu *pMenu)
         Ov008_AcquireMsgDb(0x1a);
         pMenu->pFlagTable = 0;
         Ov008_RelocateOffsetTable2(pMenu);
-        Ov008_VarTable_Load(pMenu->textCacheA, data_ov008_020909a4);
-        Ov008_VarTable_Load(pMenu->textCacheB, data_ov008_020909bc);
+        Ov008_VarTable_Load(pMenu->textCacheA, gOv008UiCmStrSelectTextPath_3);
+        Ov008_VarTable_Load(pMenu->textCacheB, gOv008UiCmStrStatusTextPath_4);
         if (Ov008_GetCtxObject9634() != 0) {
             descriptorA = data_ov008_0208fa1c;
             Ov008_InitMissionList(pMenu->missionList, &descriptorA);

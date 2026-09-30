@@ -64,7 +64,7 @@ extern void  Ov025_RefreshScrollArrows(Ov025ScrollList *pList);           /* Ov0
 extern void  Ov025_ScrollList_PlaceKnobBar(Ov025ScrollList *pList);           /* Ov025_ScrollList_PlaceKnobBar */
 extern void  Ov025_ApplyComputedOffset(Ov025ScrollList *pList);           /* Ov025_ScrollList_ApplyOffset */
 extern void  Ov025_ScrollList_PlaceMarkers(Ov025ScrollList *pList);           /* Ov025_ScrollList_PlaceMarkers */
-extern const char data_ov025_020b54f8[];                            /* "UI/cal/ttl_&.z" */
+extern const char gOv025UiCalTtlPath[];                            /* "UI/cal/ttl_&.z" */
 
 int Ov025_ScrollList_Open(Ov025ScrollList *pList)
 {
@@ -80,7 +80,7 @@ int Ov025_ScrollList_Open(Ov025ScrollList *pList)
     bDone = 0;
     switch (pList->nState) {
     case 0:
-        Ov025_InitResourceRecord(pList->strings, data_ov025_020b54f8);
+        Ov025_InitResourceRecord(pList->strings, gOv025UiCalTtlPath);
         Ov025_InitDisplayRegs();
         Ov025_ScrollList_BuildRows(pList);
         pList->nCursor = 0;

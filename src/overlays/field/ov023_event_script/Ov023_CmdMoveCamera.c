@@ -74,7 +74,7 @@ extern int   Session_GetLocalPlayerIndex(void);                                 
 extern int   strncmp(const char *pA, const char *pB, int nCount);
 extern void  VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern Ov023Placement *EntityMgr_FindCollEntry(int nSlot, const char *pszName); /* find a placement */
-extern char  data_ov023_0208a5cc[];                                 /* "AnchorPos" */
+extern char  gOv023AnchorPosName[];                                 /* "AnchorPos" */
 
 int Ov023_CmdMoveCamera(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 {
@@ -158,7 +158,7 @@ int Ov023_CmdMoveCamera(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
         break;
     case 2:
         pszName = ByteCode_ResolveOperand(pCtx, pOp);
-        if (strncmp(pszName, data_ov023_0208a5cc, 9) == 0) {
+        if (strncmp(pszName, gOv023AnchorPosName, 9) == 0) {
             VEC_Add(&pCamera->vPos, &pCtx->pEvent->aAnchorPos[pszName[9]], &pCamera->vPos);
             pCamera->nTargetActor = 0x40;
         } else {

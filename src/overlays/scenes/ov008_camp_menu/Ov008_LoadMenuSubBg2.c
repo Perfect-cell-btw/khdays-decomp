@@ -4,7 +4,7 @@
  * archive-subfile handle for subfile 0x30 from ctx->archiveBase (the standard NDS archive-handle
  * formula), unpacks it (GetResourceSubBlock_CHAR resolves the character block), uploads the block as BG2
  * characters at offset 0x4f40, frees the temp resource, and attaches a descriptor
- * (data_ov008_02090b58) to the cell-list context. Character-block layout matches the loader family
+ * (gOv008UiTutorialTutPath) to the cell-list context. Character-block layout matches the loader family
  * (size at +0x10, data at +0x14). */
 
 #include "nitro/types.h"
@@ -12,7 +12,7 @@
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008MenuContext { u8 pad_0000[0x34]; u32 archiveBase; } Ov008MenuContext;
 
-extern u8 data_ov008_02090b58[];
+extern u8 gOv008UiTutorialTutPath[];
 extern Ov008MenuContext *Ov008_GetPageB(void);
 extern void *Ov008_GetCtxBlock954c(void);
 extern void *Archive_LoadFile(u32 handle, int heapId);
@@ -41,5 +41,5 @@ void Ov008_LoadMenuSubBg2(int param_1)
     if (resource != 0) {
         NNSi_FndFreeFromDefaultHeap(resource);
     }
-    Ov008_LoadLayoutResource(ctx2, data_ov008_02090b58);
+    Ov008_LoadLayoutResource(ctx2, gOv008UiTutorialTutPath);
 }

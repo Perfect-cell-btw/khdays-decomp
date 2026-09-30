@@ -35,8 +35,8 @@ struct Actor {
 };
 
 extern char *data_02042a70[];
-extern char data_ov022_020b2d5c[];
-extern char data_ov022_020b2d68[];
+extern char gOv022AmPathFmt[];
+extern char gOv022BaChPath[];
 
 extern void OS_SPrintf(char *pszOut, char *pszFormat, char *pszSet,
                        char *pszKind);
@@ -55,7 +55,7 @@ void Ov022_LoadActionRows(struct ActionTable *pTable, struct Actor *pActor,
     u32 nBase;
     int nRow;
 
-    OS_SPrintf(szName, data_ov022_020b2d5c, data_ov022_020b2d68,
+    OS_SPrintf(szName, gOv022AmPathFmt, gOv022BaChPath,
                data_02042a70[nKind]);
     pContainer = Msg_OpenContainerAndReadHeader(szName, CONTAINER_HEAP);
     pRow = pTable->aRows;

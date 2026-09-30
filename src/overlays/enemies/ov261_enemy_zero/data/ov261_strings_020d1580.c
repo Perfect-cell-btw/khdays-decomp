@@ -6,6 +6,6 @@
 
 char gOv261PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov261_020d158c[16] = "zero_ef_dummy";
+char gOv261ZeroEfDummyName[16] = "zero_ef_dummy";
 
-char data_ov261_020d159c[36] = "Bip01";
+char gOv261Bip01Name[36] = "Bip01";

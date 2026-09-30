@@ -65,7 +65,7 @@ extern void  Ov023_DetachActorModel(Ov023Actor *pActor);               /* Ov023_
 extern void  Ov023_ResetActorModel(Ov023Actor *pActor);               /* Ov023_ResetActorModel */
 extern void  Ov023_SetScrollAndMarkDirty(Ov023Actor *pActor, int nAngle);   /* Ov023_SetActorAngle */
 extern const short data_0203d210[];                                 /* FX_SinCosTable_: sin, cos pairs */
-extern char  data_ov023_0208a5cc[];                                 /* "AnchorPos" */
+extern char  gOv023AnchorPosName[];                                 /* "AnchorPos" */
 
 /* Give an entity a heading unless it is locked (bit 5 of its flags). */
 static inline void Ov023_EntitySetAngle(Ov023Entity *pEntity, int nAngle)
@@ -115,7 +115,7 @@ int Ov023_CmdWarpActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
         }
     } else {
         pszName = ByteCode_ResolveOperand(pCtx, pOperand + 2);
-        if (strncmp(pszName, data_ov023_0208a5cc, 9) == 0) {
+        if (strncmp(pszName, gOv023AnchorPosName, 9) == 0) {
             pszName += 9;
             nAnchor = func_020200b4(pszName);
             nIdx = (pCtx->pEvent->aAnchorAngle[nAnchor] >> 4) * 2;

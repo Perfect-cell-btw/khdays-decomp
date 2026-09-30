@@ -1,5 +1,5 @@
 /* Ov027_InitHintText -- Ov027_InitHintText: set the game-over hint text up.  The 10-pixel EU
- * font (data_ov027_02084344, "/text/font_eu_10all.nftr") is loaded into the font slot at +0x624
+ * font (gOv027TextFontEu10AllPath, "/text/font_eu_10all.nftr") is loaded into the font slot at +0x624
  * of the scene work (0202f7fc), its palette sent to the sub palette RAM at 0x1a0 (GFXi_EnqueueCommand
  * 0xf from data_02042958, 0x20 bytes), and the tile text renderer at +0x5e4 is set up on layer 2
  * with a 0x20 x 3 cell box at (0, 0x14), palette 1, spacing 0xd, kind 1 (0202f834), cleared
@@ -136,14 +136,14 @@ extern void  Text_UploadTileBuffer(void *pText);                            /* T
 /* khdays: shared-bss */
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
-extern char  data_ov027_02084344[];                                 /* "/text/font_eu_10all.nftr" */
+extern char  gOv027TextFontEu10AllPath[];                                 /* "/text/font_eu_10all.nftr" */
 extern u8    data_02042958[];                                       /* the text palette */
 
 void Ov027_InitHintText(void)
 {
     Ov027TextBox box;
 
-    Font_LoadUTF16(data_ov027_02084364->font, data_ov027_02084344);
+    Font_LoadUTF16(data_ov027_02084364->font, gOv027TextFontEu10AllPath);
     GFXi_EnqueueCommand(0xf, 0x1a0, data_02042958, 0x20);
     box.nX = 0;
     box.nY = 0x14;

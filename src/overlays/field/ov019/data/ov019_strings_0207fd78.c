@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov019_0207fd78[8] = "%4d";
+char gOv019IntFmt[8] = "%4d";

@@ -45,8 +45,8 @@ typedef struct {
 } Ov002PanelScene;
 
 extern int data_ov002_0207f628;
-extern const char data_ov002_0207ebd4[];
-extern const char data_ov002_0207ebe4[];
+extern const char gOv002UiHcntArcPath[];
+extern const char gOv002UiHcntArcPath_2[];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *pDst, int nValue, unsigned int nSize);
@@ -99,8 +99,8 @@ void *Ov002_SceneCreatePanel(const void *pInit)
     s->nCounterPhase = s->nCounterState;
     s->nBackdropState = 0;
 
-    s->nFileBase = Msg_OpenContainerAndReadHeader(data_ov002_0207ebd4, 0xe);
-    s->nBackdropBase = Msg_OpenContainerAndReadHeader(data_ov002_0207ebe4, 0xe);
+    s->nFileBase = Msg_OpenContainerAndReadHeader(gOv002UiHcntArcPath, 0xe);
+    s->nBackdropBase = Msg_OpenContainerAndReadHeader(gOv002UiHcntArcPath_2, 0xe);
     Projection_LoadDefaults(s->aCamera);
 
     Ov002_SceneResetPanelWidgets();

@@ -6,16 +6,16 @@
 
 char gOv206PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov206_020d066c[12] = "Bip01_Head";
+char gOv206Bip01HeadName[12] = "Bip01_Head";
 
-char data_ov206_020d0678[16] = "Bip01_L_Hand";
+char gOv206Bip01LHandName[16] = "Bip01_L_Hand";
 
-char data_ov206_020d0688[16] = "Bip01_R_Hand";
+char gOv206Bip01RHandName[16] = "Bip01_R_Hand";
 
-char data_ov206_020d0698[8] = "Bip01";
+char gOv206Bip01Name[8] = "Bip01";
 
-char data_ov206_020d06a0[16] = "Bip01_Spine1";
+char gOv206Bip01Spine1Name[16] = "Bip01_Spine1";
 
-char data_ov206_020d06b0[12] = "Target01";
+char gOv206Target01Name[12] = "Target01";
 
-char data_ov206_020d06bc[36] = "large_move";
+char gOv206LargeMoveName[36] = "large_move";

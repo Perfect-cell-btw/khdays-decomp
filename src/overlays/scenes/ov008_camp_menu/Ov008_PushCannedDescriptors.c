@@ -10,14 +10,14 @@
 
 extern void Resource_BindByName(int dst, const void *src);
 extern int data_ov008_02090f04[];
-extern int data_ov008_0208ffc4;
-extern int data_ov008_0208ffdc;
-extern int data_ov008_0208fff4;
-extern int data_ov008_0209000c;
+extern int gOv008TextFontEu08Path;
+extern int gOv008TextFontEu10Path;
+extern int gOv008TextFontEu08SPath;
+extern int gOv008TextFontEu10SPath;
 
 void Ov008_PushCannedDescriptors(void) {
-    Resource_BindByName(data_ov008_02090f04[1] + 0x9680, &data_ov008_0208ffc4);
-    Resource_BindByName(data_ov008_02090f04[1] + 0x968c, &data_ov008_0208ffdc);
-    Resource_BindByName(data_ov008_02090f04[1] + 0x9698, &data_ov008_0208fff4);
-    Resource_BindByName(data_ov008_02090f04[1] + 0x96a4, &data_ov008_0209000c);
+    Resource_BindByName(data_ov008_02090f04[1] + 0x9680, &gOv008TextFontEu08Path);
+    Resource_BindByName(data_ov008_02090f04[1] + 0x968c, &gOv008TextFontEu10Path);
+    Resource_BindByName(data_ov008_02090f04[1] + 0x9698, &gOv008TextFontEu08SPath);
+    Resource_BindByName(data_ov008_02090f04[1] + 0x96a4, &gOv008TextFontEu10SPath);
 }

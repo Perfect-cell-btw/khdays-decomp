@@ -40,7 +40,7 @@ extern void Ov002_CommitDisplayState(void);
 extern void Ov002_UiTweenCallback(void);
 extern void Ov002_ResetMenuRoot(void);
 
-extern char data_ov002_0207e8a8[];
+extern char gOv002BguivbfuncName[];
 extern int data_ov002_0207f60c;
 
 void *Ov002_CreateUiContext(int *pDesc)
@@ -73,7 +73,7 @@ void *Ov002_CreateUiContext(int *pDesc)
     Tween_Clear(pUi + 0xc0);
 
     G2x_SetBlendAlpha_(0x04000050, 8, 0x21, 0, 0x10);
-    RegisterNamedTask(1, data_ov002_0207e8a8, Ov002_RunQueuedSteps);
+    RegisterNamedTask(1, gOv002BguivbfuncName, Ov002_RunQueuedSteps);
 
     if (LoadGlobalU16At0() != 0x2a) {
         Ov002_CreateStepNode(Ov002_CommitDisplayState);

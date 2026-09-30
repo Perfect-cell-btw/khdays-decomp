@@ -28,7 +28,7 @@ typedef struct Ov000LogoSceneContext {
 extern const TileSurfaceCfg data_ov000_0205a8d4;
 extern const TileSurfaceCfg data_ov000_0205a884;
 extern const TileSurfaceCfg data_ov000_0205a8ac;
-extern const u8 data_ov000_0205ab38[];
+extern const u8 gOv000UiNewgameNgmTextPath[];
 extern Ov000LogoSceneContext *volatile data_ov000_0205ac28;
 
 extern void NNS_G2dFontInitUTF16(void *resource, void *sharedResource);
@@ -45,7 +45,7 @@ void Ov000_SetupLogoTileSurfaces(void) {
 
     NNS_G2dFontInitUTF16(context->resourceStorage, context->resource);
     Ov000_InitResourceRecord(data_ov000_0205ac28->variantObject,
-                        data_ov000_0205ab38);
+                        gOv000UiNewgameNgmTextPath);
     MIi_CpuClearFast(0, G2S_GetBG3ScrPtr(), 0x800);
 
     config2.pPixels = data_ov000_0205ac28->resourceStorage;

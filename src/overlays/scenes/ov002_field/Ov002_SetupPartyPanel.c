@@ -12,9 +12,9 @@ extern int Msg_OpenContainerAndReadHeader(void *name, int slot);
 extern void Ov002_PanelIdleState(void);
 extern PanelCfg data_ov002_0207de90;
 extern char *data_ov002_0207f624;
-extern int data_ov002_0207eb70;
-extern int data_ov002_0207eb8c;
-extern int data_ov002_0207eba0;
+extern int gOv002UiBtlStUpBg002Path;
+extern int gOv002UiBtlCharaTextPath;
+extern int gOv002UiBtlFacePath;
 
 /* Sets the party panel up from the template config: clears the 0x7e8-byte block, opens the
  * roster (or marks it preloaded), builds the row renderer and loads the icon set. */
@@ -25,14 +25,14 @@ void *Ov002_SetupPartyPanel(int preloaded) {
     MI_CpuFill8(self, 0, 0x7e8);
     *(int *)(self + 0x6a4) = Obj_GetCurrent();
     if (preloaded == 0) {
-        *(int *)(self + 4) = Archive_LoadFile(&data_ov002_0207eb70, 0xe);
+        *(int *)(self + 4) = Archive_LoadFile(&gOv002UiBtlStUpBg002Path, 0xe);
         NNS_G2dGetUnpackedPaletteData(*(int *)(self + 4), self + 8);
     } else {
         *(int *)(self + 0x664) = 1;
         cfg.w[8] = Ov002_Hud_GetBlock30();
         TileSurface_Init8bpp(self + (0x77 << 4), &cfg);
-        Ov002_InitResourceRecord(self + 0x7ac, &data_ov002_0207eb8c);
+        Ov002_InitResourceRecord(self + 0x7ac, &gOv002UiBtlCharaTextPath);
     }
-    *(int *)(self + 0x7e4) = Msg_OpenContainerAndReadHeader(&data_ov002_0207eba0, 0xe);
+    *(int *)(self + 0x7e4) = Msg_OpenContainerAndReadHeader(&gOv002UiBtlFacePath, 0xe);
     return (void *)&Ov002_PanelIdleState;
 }

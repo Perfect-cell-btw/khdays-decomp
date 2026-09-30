@@ -32,8 +32,8 @@ typedef struct {
 } Ov000SubSceneContext;
 
 extern Ov000SubSceneContext *volatile data_ov000_0205ac28;
-extern u8 data_ov000_0205ab50[];
-extern u8 data_ov000_0205ab64[];
+extern u8 gOv000UiNewgameResPath[];
+extern u8 gOv000TextFontEu10AllPath_3[];
 extern Ov000SubSceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void *NNS_FndAllocFromDefaultExpHeapEx(u32 size, int alignment);
@@ -56,7 +56,7 @@ OverlayCallback Ov000_InitSubScene(void) {
         MIi_CpuClear16(0, data_ov000_0205ac28->buffers[i], 0x800);
     }
 
-    data_ov000_0205ac28->resource_0028 = Msg_OpenContainerAndReadHeader(data_ov000_0205ab50, 14);
-    data_ov000_0205ac28->resource_4b00 = Loader_RequestFile(data_ov000_0205ab64, 14);
+    data_ov000_0205ac28->resource_0028 = Msg_OpenContainerAndReadHeader(gOv000UiNewgameResPath, 14);
+    data_ov000_0205ac28->resource_4b00 = Loader_RequestFile(gOv000TextFontEu10AllPath_3, 14);
     return Ov000_WaitLoadThenBuildMenu;
 }

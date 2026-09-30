@@ -1,11 +1,11 @@
 /* Ov008_LoadMenuUi -- load the menu UI container and build its root cell, ov008.
  * Runs once (guarded by heap[0x608]): clears the two OBJ palettes, loads the UI archive
- * (data_ov008_0208ffb4 = "UI/mlt/res.p2") via Msg_OpenContainerAndReadHeader, then registers the root cell
+ * (gOv008UiMltResPath = "UI/mlt/res.p2") via Msg_OpenContainerAndReadHeader, then registers the root cell
  * in the object manager (heap+0x60c) from a {resAddr, 2, 0, 0} descriptor (ObjNode_InitFromDesc),
  * creates it (func_02032444 slot 5 -> heap[0x5044]), sets frame 0 and scale
  * 1.0, and enables sub-BG mode 1. */
 extern char *data_ov008_02090f00;
-extern char  data_ov008_0208ffb4[];
+extern char  gOv008UiMltResPath[];
 extern void *Msg_OpenContainerAndReadHeader(void *desc, int mode);
 extern void  SetMasterBrightnessSub(int);
 extern void  ObjNode_InitFromDesc(void *mgr, int *desc);
@@ -20,7 +20,7 @@ void Ov008_LoadMenuUi(void) {
     }
     *(unsigned short *)0x05000000 = 0;
     *(unsigned short *)0x05000400 = 0;
-    *(void **)(data_ov008_02090f00 + 0x608) = Msg_OpenContainerAndReadHeader(data_ov008_0208ffb4, 0xe);
+    *(void **)(data_ov008_02090f00 + 0x608) = Msg_OpenContainerAndReadHeader(gOv008UiMltResPath, 0xe);
     SetMasterBrightnessSub(0);
     {
         int desc[4];

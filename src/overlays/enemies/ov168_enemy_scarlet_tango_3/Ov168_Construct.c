@@ -46,8 +46,8 @@ extern void Res_RequestIdPair(int resourceId);
 extern int *Ov168_Actor_New(char *self);
 extern VecFx32 data_02041dc8;
 extern IdTable data_ov168_020d6350;
-extern char data_ov168_020d638c[];
-extern char data_ov168_020d6394[];
+extern char gOv168Bone04Name[];
+extern char gOv168BodyName[];
 
 void Ov168_Construct(char *self)
 {
@@ -88,9 +88,9 @@ void Ov168_Construct(char *self)
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov168_OrientPartAlongDirection;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
     *(unsigned char *)(*(int *)(self + 0x384) + 0xad) = 0;
-    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov168_020d638c);
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov168_020d638c);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov168_020d6394);
+    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv168Bone04Name);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv168Bone04Name);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv168BodyName);
     *(int **)(self + 0x39c) = CallocInstance(0x18);
     for (i = 0; i < 3; i++) {
         if (i < 0) {

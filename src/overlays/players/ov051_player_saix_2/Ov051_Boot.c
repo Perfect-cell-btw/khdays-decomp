@@ -21,13 +21,13 @@ extern void Ov051_HandleMsgAndReaimArc(void);
 extern void Ov051_BuildRenderHandle(void);
 extern void Ov051_activateAndComputeAimAngle(void);
 extern void *data_ov051_020b7380;
-extern int data_ov051_020b7314;
-extern int data_ov051_020b7328;
-extern int data_ov051_020b72a8;
-extern int data_ov051_020b72c8;
-extern int data_ov051_020b72b8;
-extern int data_ov051_020b72e8;
-extern int data_ov051_020b72d8;
+extern int gOv051SaixDefPackPath;
+extern int gOv051SaixDefHPackPath;
+extern int gOv051SaixTgName;
+extern int gOv051SaHRName;
+extern int gOv051SaHLName;
+extern int gOv051SaixRName;
+extern int gOv051Bip01Name;
 
 /* The rig hangs off the scene node at +0x28; each bone block starts 0x40 further in. */
 typedef struct { int pad[1]; int f4; } RigHdr;
@@ -57,9 +57,9 @@ void Ov051_Boot(int *cfg) {
                          (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
     if (cfg[6] == 0) {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov051_020b7314, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv051SaixDefPackPath, 1, cfg[0] + 7);
     } else {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov051_020b7328, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv051SaixDefHPackPath, 1, cfg[0] + 7);
     }
     *(void **)(obj + 0x664 + 0x00) = (void *)&Ov051_dispatchStateTransitionCode;
     *(void **)(obj + 0x664 + 0x04) = (void *)&Ov051_UpdateShotsByMode;
@@ -85,15 +85,15 @@ test:
     }
 
     b = bone(obj);
-    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov051_020b72a8) : -1;
+    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv051SaixTgName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x518) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov051_020b72c8) : -1;
+    *(int *)(obj + 0x518) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv051SaHRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x514) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov051_020b72b8) : -1;
+    *(int *)(obj + 0x514) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv051SaHLName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov051_020b72e8) : -1;
+    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv051SaixRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov051_020b72d8) : -1;
+    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv051Bip01Name) : -1;
     if (cfg[3] != 0) {
         *(long long *)obj |= 0x20;
     }

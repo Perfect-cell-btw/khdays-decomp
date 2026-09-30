@@ -6,18 +6,18 @@
 
 char gOv267PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov267_020d5d8c[16] = "Bone_spine01";
+char gOv267BoneSpine01Name[16] = "Bone_spine01";
 
-char data_ov267_020d5d9c[12] = "tag_bero";
+char gOv267TagBeroName[12] = "tag_bero";
 
-char data_ov267_020d5da8[12] = "Bone_head";
+char gOv267BoneHeadName[12] = "Bone_head";
 
-char data_ov267_020d5db4[16] = "Bone_tail_02";
+char gOv267BoneTail02Name[16] = "Bone_tail_02";
 
-char data_ov267_020d5dc4[12] = "Bone_L_hand";
+char gOv267BoneLHandName[12] = "Bone_L_hand";
 
-char data_ov267_020d5dd0[12] = "Bone_R_hand";
+char gOv267BoneRHandName[12] = "Bone_R_hand";
 
-char data_ov267_020d5ddc[8] = "tagE01";
+char gOv267TagE01Name[8] = "tagE01";
 
-char data_ov267_020d5de4[28] = "move";
+char gOv267MoveName[28] = "move";

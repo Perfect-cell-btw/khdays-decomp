@@ -8,9 +8,9 @@
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot, int variant, void *parameters);
 extern void Ov022_StepCueTrack(void *block, int size);
-extern char data_ov073_020ba4dc[];
-extern char data_ov073_020ba4ec[];
-extern char data_ov073_020ba500[];
+extern char gOv073XaldinLiPackPath[];
+extern char gOv073XaldinLiEa1PackPath[];
+extern char gOv073XaldinLiEa0PackPath[];
 
 u8 Ov073_BuildRenderHandles(char *self)
 {
@@ -18,9 +18,9 @@ u8 Ov073_BuildRenderHandles(char *self)
 
     block[0x334] = 0;
     Ov022_ConfigureGridSlotMode(*(u8 *)(self + 9), 3);
-    *(u8 **)(block + 0x340) = Ov022_AcquireGridSlot(data_ov073_020ba4dc, *(u8 *)(self + 9), 0, *(char **)(self + 0x20) + 4);
-    *(u8 **)(block + 0x344) = Ov022_AcquireGridSlot(data_ov073_020ba4ec, *(u8 *)(self + 9), 1, self + 0xf10);
-    *(u8 **)(block + 0x348) = Ov022_AcquireGridSlot(data_ov073_020ba500, *(u8 *)(self + 9), 2, self + 0xdac);
+    *(u8 **)(block + 0x340) = Ov022_AcquireGridSlot(gOv073XaldinLiPackPath, *(u8 *)(self + 9), 0, *(char **)(self + 0x20) + 4);
+    *(u8 **)(block + 0x344) = Ov022_AcquireGridSlot(gOv073XaldinLiEa1PackPath, *(u8 *)(self + 9), 1, self + 0xf10);
+    *(u8 **)(block + 0x348) = Ov022_AcquireGridSlot(gOv073XaldinLiEa0PackPath, *(u8 *)(self + 9), 2, self + 0xdac);
     Ov022_StepCueTrack(self + 0xda0, 0xc6);
     return *(u8 *)(block + 0x334) |= 0xf;
 }

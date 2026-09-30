@@ -41,7 +41,7 @@ extern void  CamAnim_Start(void *pPlayer, u32 nDescriptor);         /* CameraPla
 extern void  ZeroHalfThenFree(void *pContainer);                       /* close a text container */
 extern void  Obj_SetIndirectWord(void *pPlayer, int nFrame);              /* CameraPlayer_Seek */
 extern void  Obj_SetWord54(void *pPlayer, int nArg);                /* CameraPlayer_SetArg */
-extern char  data_ov023_0208a610[];                                 /* "ev/ecam.p2" */
+extern char  gOv023EvEcamPath[];                                 /* "ev/ecam.p2" */
 
 int Ov023_CmdPlayCameraScript(Ov023ScriptCtx *pCtx, u8 *pOperand)
 {
@@ -62,7 +62,7 @@ int Ov023_CmdPlayCameraScript(Ov023ScriptCtx *pCtx, u8 *pOperand)
     } else {
         MI_CpuFill8(pCtx->pEvent->aCamera[nCamera].player, 0, 0x58);
     }
-    pText = Msg_OpenContainerAndReadHeader(data_ov023_0208a610, 0xd);
+    pText = Msg_OpenContainerAndReadHeader(gOv023EvEcamPath, 0xd);
     CamAnim_Start(pCtx->pEvent->aCamera[nCamera].player,
                   ((((u32)pText + 0x8000) & 0xfffffc) << 7) | 0x80000000 | (nLine & (0xfffffc >> 15)));
     ZeroHalfThenFree(pText);

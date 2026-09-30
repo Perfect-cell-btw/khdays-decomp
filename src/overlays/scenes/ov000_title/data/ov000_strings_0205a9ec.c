@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov000_0205a9ec[20] = "UI/load/lrd_&.s.z";
+char gOv000UiLoadLrdTextPath[20] = "UI/load/lrd_&.s.z";
 
-char data_ov000_0205aa00[24] = "text/font_eu_10all.nftr";
+char gOv000TextFontEu10AllPath[24] = "text/font_eu_10all.nftr";
 
-char data_ov000_0205aa18[12] = "/ttl/ttl.p2";
+char gOv000TtlTtlPath[12] = "/ttl/ttl.p2";
 
-char data_ov000_0205aa24[16] = "ttl/ttl_&.p2";
+char gOv000TtlTtlPath_2[16] = "ttl/ttl_&.p2";

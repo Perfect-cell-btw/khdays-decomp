@@ -32,7 +32,7 @@ struct PanelSubCfg {
 extern void Ov022_TakeChannelBlock(void *pSub, int a, int b);
 extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc,
                                 struct PanelSubCfg *pCfg, int a, int b);
-extern int data_ov032_020b5890;
+extern int gOv032XigbarLiE0PackPath;
 
 void Ov032_OpenSubObject(char *self)
 {
@@ -72,5 +72,5 @@ void Ov032_OpenSubObject(char *self)
     cfg[1].field38 = 0x25;
     cfg[1].field4c = 4;
 
-    Ov022_PublishGroupUpdate(*(char **)(self + 0x2644) + 0x30, self, &data_ov032_020b5890, cfg, 2, 4);
+    Ov022_PublishGroupUpdate(*(char **)(self + 0x2644) + 0x30, self, &gOv032XigbarLiE0PackPath, cfg, 2, 4);
 }

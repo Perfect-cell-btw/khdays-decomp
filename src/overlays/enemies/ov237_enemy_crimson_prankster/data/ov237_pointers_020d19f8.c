@@ -4,37 +4,37 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov237_020d1c20;
-extern int data_ov237_020d1c28;
-extern int data_ov237_020d1c30;
-extern int data_ov237_020d1c38;
-extern int data_ov237_020d1c40;
-extern int data_ov237_020d1c4c;
-extern int data_ov237_020d1c58;
-extern int data_ov237_020d1c64;
-extern int data_ov237_020d1c70;
-extern int data_ov237_020d1c7c;
+extern int gOv237RYubiName;
+extern int gOv237LHandName;
+extern int gOv237LYubiName;
+extern int gOv237RHandName;
+extern int gOv237LArm01Name;
+extern int gOv237LArm02Name;
+extern int gOv237RArm00Name;
+extern int gOv237LArm00Name;
+extern int gOv237RArm01Name;
+extern int gOv237RArm02Name;
 
 void *const data_ov237_020d19f8[10] = {
 
-    &data_ov237_020d1c64,
+    &gOv237LArm00Name,
 
-    &data_ov237_020d1c40,
+    &gOv237LArm01Name,
 
-    &data_ov237_020d1c4c,
+    &gOv237LArm02Name,
 
-    &data_ov237_020d1c28,
+    &gOv237LHandName,
 
-    &data_ov237_020d1c30,
+    &gOv237LYubiName,
 
-    &data_ov237_020d1c58,
+    &gOv237RArm00Name,
 
-    &data_ov237_020d1c70,
+    &gOv237RArm01Name,
 
-    &data_ov237_020d1c7c,
+    &gOv237RArm02Name,
 
-    &data_ov237_020d1c38,
+    &gOv237RHandName,
 
-    &data_ov237_020d1c20,
+    &gOv237RYubiName,
 
 };

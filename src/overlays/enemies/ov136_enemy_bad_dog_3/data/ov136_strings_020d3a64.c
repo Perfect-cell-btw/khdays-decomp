@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov136_020d3a64[28] = "guru0";
+char gOv136Guru0Name[28] = "guru0";

@@ -6,8 +6,8 @@
 
 char gOv137PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov137_020cf3cc[8] = "eff_tag";
+char gOv137EffTagName[8] = "eff_tag";
 
-char data_ov137_020cf3d4[4] = "017";
+char gOv137017Name[4] = "017";
 
-char data_ov137_020cf3d8[8] = "move";
+char gOv137MoveName[8] = "move";

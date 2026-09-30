@@ -36,8 +36,8 @@ struct ArmEntry {
     int nB;                      /* 0x0004 */
 };
 
-extern char data_ov022_020b2c34[];
-extern char data_ov022_020b2c44[];
+extern char gOv022BaEfArPackPath[];
+extern char gOv022BaChArPath[];
 
 extern void RegisterSeqAndInit(struct Anim *pAnim, char *pszDescriptor, int nA,
                           int nB);
@@ -62,12 +62,12 @@ void Ov022_SetUpArmEffect(struct Effect *pEffect, int nCount,
     if (nCount <= 0) {
         return;
     }
-    RegisterSeqAndInit(&pEffect->anim, data_ov022_020b2c34, 1, 5);
+    RegisterSeqAndInit(&pEffect->anim, gOv022BaEfArPackPath, 1, 5);
     BindAnimTrack(&pEffect->anim, 0, &pEffect->blkChannels, 0);
     BindAnimTrack(&pEffect->anim, 2, &pEffect->blkChannels, 0);
     BindAnimTrack(&pEffect->anim, 3, &pEffect->blkChannels, 0);
     BindAnimTrack(&pEffect->anim, 1, &pEffect->blkChannels, 0);
-    OS_SPrintf(szPath, data_ov022_020b2c44);
+    OS_SPrintf(szPath, gOv022BaChArPath);
     pTable = Archive_LoadFile(szPath, 6);
     if (nCount > 9) {
         nCount = 9;

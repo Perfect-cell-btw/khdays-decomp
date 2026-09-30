@@ -15,8 +15,8 @@ typedef struct {
 } ResEntry;
 
 extern ResEntry *data_0204c238;
-extern char data_02042a04[];
-extern char data_02042a10[];
+extern char gDbDbPath[];
+extern char gDbDbPath_2[];
 
 extern void *Msg_OpenContainerAndReadHeader(const char *name, int mode);
 extern void *Archive_LoadFile(u32 addr, int mode);
@@ -43,7 +43,7 @@ int MsgDb_LoadDb(int id, int mode)
     ResSlot_Release_2(id);
 
     entry->nUnk10 = mode;
-    h = Msg_OpenContainerAndReadHeader(data_02042a04, mode);
+    h = Msg_OpenContainerAndReadHeader(gDbDbPath, mode);
 
     flags = (0x80000000 | ((((u32)h + 0x8000) & 0xfffffc) << 7)) | (0x1ff & packIndex);
     h2 = Archive_LoadFile(flags, mode);
@@ -60,7 +60,7 @@ int MsgDb_LoadDb(int id, int mode)
     }
 
     if (id <= 0x18) {
-        h = Msg_OpenContainerAndReadHeader(data_02042a10, mode);
+        h = Msg_OpenContainerAndReadHeader(gDbDbPath_2, mode);
         if (id == 0x18) packIndex = packIndex - 1;
 
         flags = (0x80000000 | ((((u32)h + 0x8000) & 0xfffffc) << 7)) | (0x1ff & packIndex);

@@ -37,11 +37,11 @@ extern void *Ov107_HitShape_NewBox(const Obb *box);
 extern void Res_RequestIdPair(int id);
 
 extern KindTable data_ov232_020d3650;
-extern const char data_ov232_020d36ac[];
-extern const char data_ov232_020d36b8[];
-extern const char data_ov232_020d36c4[];
-extern const char data_ov232_020d36d0[];
-extern const char data_ov232_020d36dc[];
+extern const char gOv232BonePelvisName[];
+extern const char gOv232BoneLHandName[];
+extern const char gOv232BoneHaneLName[];
+extern const char gOv232BoneHaneRName[];
+extern const char gOv232MoveName[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042264;
@@ -99,15 +99,15 @@ void Ov232_Construct(char *self)
         Snd_RegisterSeqAndBind(self + 0x394, *(void **)(*(char **)(self + 0x384) + 0x88), anim, 0xc);
         MainBlob_ResetSlotRows(*(void **)(self + 0x384), self + 0x394);
     }
-    *(int *)(self + 0x3cc) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, data_ov232_020d36ac);
-    *(int *)(self + 0x3d0) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, data_ov232_020d36b8);
-    *(int *)(self + 0x3d4) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 3, data_ov232_020d36c4);
-    *(int *)(self + 0x3d8) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 3, data_ov232_020d36d0);
+    *(int *)(self + 0x3cc) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, gOv232BonePelvisName);
+    *(int *)(self + 0x3d0) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, gOv232BoneLHandName);
+    *(int *)(self + 0x3d4) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 3, gOv232BoneHaneLName);
+    *(int *)(self + 0x3d8) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 3, gOv232BoneHaneRName);
     {
         unsigned int v = *(u16 *)(self + 0x60);
         *(u16 *)(self + 0x60) = (u16)((v & ~0xff00) | ((((v << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     }
-    *(int *)(self + 0x388) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x11), data_ov232_020d36dc);
+    *(int *)(self + 0x388) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x11), gOv232MoveName);
     *(void **)(self + 0x3b8) = CallocInstance(0x40);
     for (i = 0; i < 8; i++) {
         (*(Slot **)(self + 0x3b8))[i].node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, kinds.w[i]));

@@ -41,8 +41,8 @@ extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc, struct
 extern void Ov022_PublishGroupUpdateFixed(void *pSub, char *self, void *pDesc, struct PanelSubCfg *pCfg);
 extern void Ov098_StepParts(void);
 extern void Ov098_DispatchActiveEntriesByStatus(void);
-extern int data_ov098_020bbd68;
-extern int data_ov098_020bbd7c;
+extern int gOv098VexenLiE0PackPath;
+extern int gOv098VexenLiE2PackPath;
 
 void Ov098_CreateSubObject(char *self)
 {
@@ -78,7 +78,7 @@ void Ov098_CreateSubObject(char *self)
     cfg[2] = cfg[0];
     cfg[2].field3c = 3;
 
-    Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self, &data_ov098_020bbd68, cfg, 3, 6);
+    Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self, &gOv098VexenLiE0PackPath, cfg, 3, 6);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x20) = (void *)&Ov098_StepParts;
 
     cfg2.field04 = 0;
@@ -100,7 +100,7 @@ void Ov098_CreateSubObject(char *self)
     cfg2.field34 = 0x100;
     cfg2.field38 = 0x25;
     cfg2.field4c = 1;
-    Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x30, self, &data_ov098_020bbd7c, &cfg2);
+    Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x30, self, &gOv098VexenLiE2PackPath, &cfg2);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x50) = (void *)&Ov098_StepParts;
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x54) = (void *)&Ov098_DispatchActiveEntriesByStatus;
 }

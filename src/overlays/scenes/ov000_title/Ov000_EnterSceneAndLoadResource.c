@@ -19,7 +19,7 @@ typedef struct {
     u32 second;
 } OverlayStartParams;
 
-extern u8 data_ov000_0205abd0[];
+extern u8 gOv000TextFontEu10Path[];
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_CreateSceneContext(void);
 extern u32 Loader_RequestFile(const void *data, int id);
@@ -37,6 +37,6 @@ OverlayCallback Ov000_EnterSceneAndLoadResource(const OverlayStartParams *params
         context->second_value = params->second;
     }
 
-    context->resource = Loader_RequestFile(data_ov000_0205abd0, 14);
+    context->resource = Loader_RequestFile(gOv000TextFontEu10Path, 14);
     return Ov000_EnterListScene;
 }

@@ -4,14 +4,14 @@
 
 #include "nitro/types.h"
 
-extern int data_ov257_020d3360;
-extern int data_ov257_020d336c;
-extern int data_ov257_020d3378;
-extern int data_ov257_020d3384;
-extern int data_ov257_020d3390;
-extern int data_ov257_020d339c;
-extern int data_ov257_020d33a8;
-extern int data_ov257_020d33b4;
+extern int gOv257Tag02FlName;
+extern int gOv257Tag02BrName;
+extern int gOv257Tag02BlName;
+extern int gOv257Tag02FrName;
+extern int gOv257B2RHand02Name;
+extern int gOv257B2LHand02Name;
+extern int gOv257B2RHand03Name;
+extern int gOv257B2LHand03Name;
 
 /* read by Ov257_EnemyConstruct (not yet decompiled) */
 const int data_ov257_020d3064[4] = {
@@ -19,17 +19,17 @@ const int data_ov257_020d3064[4] = {
 };
 
 void *const data_ov257_020d3074[4] = {
-    &data_ov257_020d339c,
-    &data_ov257_020d3390,
-    &data_ov257_020d33b4,
-    &data_ov257_020d33a8,
+    &gOv257B2LHand02Name,
+    &gOv257B2RHand02Name,
+    &gOv257B2LHand03Name,
+    &gOv257B2RHand03Name,
 };
 
 void *const data_ov257_020d3084[4] = {
-    &data_ov257_020d3360,
-    &data_ov257_020d3384,
-    &data_ov257_020d3378,
-    &data_ov257_020d336c,
+    &gOv257Tag02FlName,
+    &gOv257Tag02FrName,
+    &gOv257Tag02BlName,
+    &gOv257Tag02BrName,
 };
 
 /* read by Ov257_EnemyConstruct (not yet decompiled) */

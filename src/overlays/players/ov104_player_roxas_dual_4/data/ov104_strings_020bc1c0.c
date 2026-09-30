@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov104_020bc1c0[20] = "ba/ch/r2/li_e2.p.z";
+char gOv104RoxasDualLiE2PackPath[20] = "ba/ch/r2/li_e2.p.z";

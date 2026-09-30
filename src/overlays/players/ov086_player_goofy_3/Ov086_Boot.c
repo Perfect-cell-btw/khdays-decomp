@@ -21,11 +21,11 @@ extern void Ov086_HandleMessage(void);
 extern void Ov086_BuildRenderHandles(void);
 extern void Ov086_FlagLocalAndEnterState21(void);
 extern void *data_ov086_020b9a60;
-extern int data_ov086_020b99c8;
-extern int data_ov086_020b995c;
-extern int data_ov086_020b994c;
-extern int data_ov086_020b993c;
-extern int data_ov086_020b992c;
+extern int gOv086GoofyDefPackPath;
+extern int gOv086GoofyTgName;
+extern int gOv086GoHRName;
+extern int gOv086GoofyRName;
+extern int gOv086Bip01Name;
 
 /* The rig hangs off the scene node at +0x28; each bone block starts 0x40 further in. */
 typedef struct { int pad[1]; int f4; } RigHdr;
@@ -54,7 +54,7 @@ void Ov086_Boot(int *cfg) {
     Entity_ForwardToSlot(*(signed char *)(obj + 0x4bc),
                          (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
-    TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov086_020b99c8, 1, cfg[0] + 7);
+    TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv086GoofyDefPackPath, 1, cfg[0] + 7);
     *(void **)(obj + 0x664 + 0x00) = (void *)&Ov086_ApplyMode;
     *(void **)(obj + 0x664 + 0x04) = (void *)&Ov086_SyncLocalPlayerHandle;
     *(void **)(obj + 0x664 + 0x08) = (void *)&Ov086_StepAttackSlotAndForward;
@@ -79,13 +79,13 @@ test:
     }
 
     b = bone(obj);
-    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov086_020b995c) : -1;
+    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv086GoofyTgName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x518) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov086_020b994c) : -1;
+    *(int *)(obj + 0x518) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv086GoHRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov086_020b993c) : -1;
+    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv086GoofyRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov086_020b992c) : -1;
+    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv086Bip01Name) : -1;
     if (cfg[3] != 0) {
         *(long long *)obj |= 0x20;
     }

@@ -1,6 +1,6 @@
 /* Ov000_BuildPageTextSurfaces -- Scene 1: build the three text surfaces of the page.
  * Sibling of Ov000_SetupLogoTileSurfaces (same flow, this page's configs/globals): bind
- * the shared resource, open the message archive (data_ov000_0205aac4 name),
+ * the shared resource, open the message archive (gOv000UiLoadLrdTextPath_2 name),
  * clear sub BG3 screen memory, point the three TileSurfaceCfg copies at the
  * resource storage and BG3 screen base, init the three 0x3c surfaces at
  * +0x4cc0/+0x4cfc/+0x4d38, then draw records 0..2 (header at 0x8e/0 selected,
@@ -34,7 +34,7 @@ typedef struct Ov000TextSceneContext {
 extern const TileSurfaceCfg data_ov000_0205a734;
 extern const TileSurfaceCfg data_ov000_0205a75c;
 extern const TileSurfaceCfg data_ov000_0205a784;
-extern const char data_ov000_0205aac4[];
+extern const char gOv000UiLoadLrdTextPath_2[];
 extern Ov000TextSceneContext *data_ov000_0205ac24;
 
 extern void NNS_G2dFontInitUTF16(void *resource, void *sharedResource);
@@ -61,7 +61,7 @@ void Ov000_BuildPageTextSurfaces(void)
     NNS_G2dFontInitUTF16(data_ov000_0205ac24->resourceStorage,
                   data_ov000_0205ac24->resource);
     Ov000_InitResourceRecord(data_ov000_0205ac24->messageArchive,
-                        data_ov000_0205aac4);
+                        gOv000UiLoadLrdTextPath_2);
     MIi_CpuClearFast(0, G2S_GetBG3ScrPtr(), 0x800);
 
     config0.pPixels = data_ov000_0205ac24->resourceStorage;

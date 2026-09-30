@@ -19,7 +19,7 @@ typedef struct {
 
 extern void Ov061_CreateSubObject(char *self);
 extern char *data_ov061_020b7000;
-extern char data_ov061_020b6fb4[];
+extern char gOv061VexenLiE1PackPath[];
 
 void Ov061_ResetSequenceSlots(void)
 {
@@ -34,7 +34,7 @@ void Ov061_ResetSequenceSlots(void)
     }
     seq = slots[0].sequence;
     for (i = 0; i < 7; i++) {
-        RegisterSeqAndInit(seq, data_ov061_020b6fb4, 1, *(u8 *)(self + 9) + 7);
+        RegisterSeqAndInit(seq, gOv061VexenLiE1PackPath, 1, *(u8 *)(self + 9) + 7);
         seq += sizeof(Ov042SeqSlot);
     }
     Ov061_CreateSubObject(self);

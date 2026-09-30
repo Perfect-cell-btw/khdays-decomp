@@ -23,4 +23,4 @@ Ov302_InitObjectWithList kind:function(arm,size=0x60) addr:0x020cc64c
 Ov302_DestroyListAndBuffers kind:function(arm,size=0x30) addr:0x020cc6ac
 Ov302_FindListObjectWithField10Zero kind:function(arm,size=0x3c) addr:0x020cc6dc
 Ov302_GetId10 kind:function(arm,size=0x8) addr:0x020cc718
-data_ov302_020cc740 kind:data(any) addr:0x020cc740
+gOv302UiCmStrWorldIdTextPath kind:data(any) addr:0x020cc740

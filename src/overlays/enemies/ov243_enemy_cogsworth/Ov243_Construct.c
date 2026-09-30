@@ -37,7 +37,7 @@ extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern void Res_RequestIdPair(int id);
 extern struct Names data_ov243_020d4748;
-extern const char data_ov243_020d4778[];
+extern const char gOv243MoveName[];
 
 void Ov243_Construct(char *self)
 {
@@ -72,7 +72,7 @@ void Ov243_Construct(char *self)
     *(char **)(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x4c) = self;
     NNS_G3dRenderObjSetCallBack(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, Ov243_JointCallback, 0, 6, 3);
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, 0x200, 0);
-    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov243_020d4778);
+    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), gOv243MoveName);
     *(int *)(self + 0x394) = ModelNode_New();
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x394));
     ((struct Bit0 *)(*(int *)(self + 0x394) + 0x5c))->bit0 = 1;

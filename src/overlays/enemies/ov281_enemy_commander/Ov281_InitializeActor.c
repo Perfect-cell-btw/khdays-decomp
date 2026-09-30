@@ -33,19 +33,19 @@ struct Ov281Actor {
 
 extern struct v3 data_02041dc8;
 
-extern unsigned short data_ov281_020ce48c[];
-extern unsigned short data_ov281_020ce494[];
-extern unsigned short data_ov281_020ce49c[];
-extern unsigned short data_ov281_020ce4a8[];
-extern unsigned short data_ov281_020ce4b8[];
-extern unsigned short data_ov281_020ce4c8[];
-extern unsigned short data_ov281_020ce4d4[];
-extern unsigned short data_ov281_020ce4e4[];
-extern unsigned short data_ov281_020ce4f0[];
-extern unsigned short data_ov281_020ce500[];
-extern unsigned short data_ov281_020ce510[];
-extern unsigned short data_ov281_020ce520[];
-extern int data_ov281_020ce530;
+extern unsigned short gOv281Bip01Name[];
+extern unsigned short gOv281Bone01Name[];
+extern unsigned short gOv281BoneHeadName[];
+extern unsigned short gOv281Bip01PelvisName[];
+extern unsigned short gOv281BoneLUpperArmName[];
+extern unsigned short gOv281BoneLFingName[];
+extern unsigned short gOv281BoneRUpperArmName[];
+extern unsigned short gOv281BoneRFingName[];
+extern unsigned short gOv281Bip01LThighName[];
+extern unsigned short gOv281Bip01LFootName[];
+extern unsigned short gOv281Bip01RThighName[];
+extern unsigned short gOv281Bip01RFootName[];
+extern int gOv281MoveName;
 
 extern int Ov281_ReleaseSubObjectsAndSlotArrayThenNotify, Ov281_TickWithChildRefresh, Ov281_HandleActorCommand;
 extern int Ov281_SpawnActorRegistryEntry, func_ov281_020cc63c, func_ov281_020cc648;
@@ -114,21 +114,21 @@ void Ov281_InitializeActor(struct Ov281Actor *actor) {
     {
         int *self = (int *)actor;
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe4] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce48c);
-        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce494);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce49c);
-        ((void **)self)[0xe7] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce4a8);
-        ((void **)self)[0xe8] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce4b8);
-        ((void **)self)[0xe9] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce4c8);
-        ((void **)self)[0xea] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce4d4);
-        ((void **)self)[0xeb] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce4e4);
-        ((void **)self)[0xec] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce4f0);
-        ((void **)self)[0xed] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce500);
-        ((void **)self)[0xee] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce510);
-        ((void **)self)[0xef] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov281_020ce520);
+        ((void **)self)[0xe4] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bip01Name);
+        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bone01Name);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281BoneHeadName);
+        ((void **)self)[0xe7] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bip01PelvisName);
+        ((void **)self)[0xe8] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281BoneLUpperArmName);
+        ((void **)self)[0xe9] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281BoneLFingName);
+        ((void **)self)[0xea] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281BoneRUpperArmName);
+        ((void **)self)[0xeb] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281BoneRFingName);
+        ((void **)self)[0xec] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bip01LThighName);
+        ((void **)self)[0xed] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bip01LFootName);
+        ((void **)self)[0xee] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bip01RThighName);
+        ((void **)self)[0xef] = InsertSortedEntryWithKey(self[0xe1], 1, gOv281Bip01RFootName);
 
         ((void **)self)[0xf0] =
-            Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), &data_ov281_020ce530);
+            Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), &gOv281MoveName);
 
         actionScale = 0x2998;
         Ov107_Actor_SetAttachSlot(self, 0, 1, 0, actionScale);

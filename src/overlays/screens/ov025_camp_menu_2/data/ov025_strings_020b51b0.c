@@ -4,12 +4,12 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov025_020b51b0[20] = "UI/cm/str/ttl_&.s.z";
+char gOv025UiCmStrTtlTextPath[20] = "UI/cm/str/ttl_&.s.z";
 
-char data_ov025_020b51c4[24] = "UI/tutorial/root_&.s.z";
+char gOv025UiTutorialRootTextPath[24] = "UI/tutorial/root_&.s.z";
 
-char data_ov025_020b51dc[4] = "rpt";
+char gOv025RptName[4] = "rpt";
 
-char data_ov025_020b51e0[4] = "enm";
+char gOv025EnmName[4] = "enm";
 
-char data_ov025_020b51e4[20] = "UI/cm/msl_&.msi.z";
+char gOv025UiCmMslPath_3[20] = "UI/cm/msl_&.msi.z";

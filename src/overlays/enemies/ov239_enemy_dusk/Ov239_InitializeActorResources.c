@@ -87,8 +87,8 @@ extern void Ov239_OnHit(void);
 extern void Ov239_ApplyActorConfig310(void);
 extern void Ov239_RequestSubState8IfNotAlready(void);
 extern void Ov239_RequestSubState9IfIdle(void);
-extern const char data_ov239_020cdc4c[];
-extern const char data_ov239_020cdc5c[];
+extern const char gOv239MsNbSharePackPath[];
+extern const char gOv239MoveName[];
 
 #pragma opt_dead_assignments off
 void Ov239_InitializeActorResources(Ov239Actor *actor)
@@ -101,7 +101,7 @@ void Ov239_InitializeActorResources(Ov239Actor *actor)
     void **descriptorSlot;
     void *descriptor;
 
-    actor->cachedResourceId = Ov107_OpenCachedResourceByName(data_ov239_020cdc4c);
+    actor->cachedResourceId = Ov107_OpenCachedResourceByName(gOv239MsNbSharePackPath);
     minX = -0xeea;
     minY = 0x17;
     minZ = -0x858;
@@ -133,7 +133,7 @@ void Ov239_InitializeActorResources(Ov239Actor *actor)
 
     actor->moveBinding =
         Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(actor, 1),
-                            data_ov239_020cdc5c);
+                            gOv239MoveName);
 
     actor->subitem39c =
         CreateSubitemInstance0xB4(Ov107_PackTextureHandle(actor, 2));

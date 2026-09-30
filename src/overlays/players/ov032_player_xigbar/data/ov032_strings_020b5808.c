@@ -4,18 +4,18 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov032_020b5808[20] = "ba/ch/xi/etc.p.z";
+char gOv032XigbarEtcPackPath[20] = "ba/ch/xi/etc.p.z";
 
-char data_ov032_020b581c[20] = "ba/ch/xi/def.p.z";
+char gOv032XigbarDefPackPath[20] = "ba/ch/xi/def.p.z";
 
-char data_ov032_020b5830[20] = "ba/ch/xi/def_h.p.z";
+char gOv032XigbarDefHPackPath[20] = "ba/ch/xi/def_h.p.z";
 
-char data_ov032_020b5844[16] = "ba/ch/xi/li.p.z";
+char gOv032XigbarLiPackPath[16] = "ba/ch/xi/li.p.z";
 
-char data_ov032_020b5854[20] = "ba/ch/xi/li_ea0.p.z";
+char gOv032XigbarLiEa0PackPath[20] = "ba/ch/xi/li_ea0.p.z";
 
-char data_ov032_020b5868[20] = "ba/ch/xi/li_ea1.p.z";
+char gOv032XigbarLiEa1PackPath[20] = "ba/ch/xi/li_ea1.p.z";
 
-char data_ov032_020b587c[20] = "ba/ch/xi/li_e1.p.z";
+char gOv032XigbarLiE1PackPath[20] = "ba/ch/xi/li_e1.p.z";
 
-char data_ov032_020b5890[48] = "ba/ch/xi/li_e0.p.z";
+char gOv032XigbarLiE0PackPath[48] = "ba/ch/xi/li_e0.p.z";

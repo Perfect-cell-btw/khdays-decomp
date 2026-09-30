@@ -57,8 +57,8 @@ Ov279_TimerBlinkParitySet kind:function(arm,size=0x78) addr:0x020d3504
 data_ov279_020d357c kind:data(any) addr:0x020d357c
 data_ov279_020d358c kind:data(any) addr:0x020d358c
 gOv279PackPathFmt kind:data(any) addr:0x020d35c0
-data_ov279_020d35cc kind:data(any) addr:0x020d35cc
-data_ov279_020d35d8 kind:data(any) addr:0x020d35d8
-data_ov279_020d35e4 kind:data(any) addr:0x020d35e4
-data_ov279_020d35f0 kind:data(any) addr:0x020d35f0
-data_ov279_020d35fc kind:data(any) addr:0x020d35fc
+gOv279BoneLEyeName kind:data(any) addr:0x020d35cc
+gOv279BoneRFingName kind:data(any) addr:0x020d35d8
+gOv279BoneLFingName kind:data(any) addr:0x020d35e4
+gOv279BoneHeadName kind:data(any) addr:0x020d35f0
+gOv279BoneTail02Name kind:data(any) addr:0x020d35fc

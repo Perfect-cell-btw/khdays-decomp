@@ -52,11 +52,11 @@ extern void Ov046_AcquireGridSlots(void);
 extern void Ov046_FlagLocalAndEnterState21(void);
 
 extern void *data_ov046_020b4b40;
-extern const char data_ov046_020b4ac8[];
-extern int data_ov046_020b4a68;
-extern int data_ov046_020b4a58;
-extern int data_ov046_020b4a78;
-extern int data_ov046_020b4a88;
+extern const char gOv046MickeyDefPackPath[];
+extern int gOv046MickeyTgName;
+extern int gOv046MiWTgRName;
+extern int gOv046MickeyRName;
+extern int gOv046Bip01Name;
 
 void Ov046_BuildRigObject(struct PanelInitConfig *config)
 {
@@ -78,7 +78,7 @@ void Ov046_BuildRigObject(struct PanelInitConfig *config)
     Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0,
                          &params, 0);
 
-    TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov046_020b4ac8, 1,
+    TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)gOv046MickeyDefPackPath, 1,
                   config->objectType + 7);
 
     *(void **)(object + 0x664 + 0x00) = (void *)&Ov046_ApplyModeChange;
@@ -107,16 +107,16 @@ test:
 
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x520) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov046_020b4a68) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv046MickeyTgName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x518) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov046_020b4a58) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv046MiWTgRName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x51c) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov046_020b4a78) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv046MickeyRName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x524) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov046_020b4a88) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv046Bip01Name) : -1;
 
     if (config->enableLowFlag != 0) {
         *(long long *)object |= 0x20;

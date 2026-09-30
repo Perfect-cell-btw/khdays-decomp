@@ -25,6 +25,6 @@ Ov243_WalkTick kind:function(arm,size=0x1c8) addr:0x020d4504
 Ov243_ConfigSubStateThenAdvanceSlot_4 kind:function(arm,size=0x54) addr:0x020d46cc
 Ov243_CallTargetHook kind:function(arm,size=0x28) addr:0x020d4720
 data_ov243_020d4748 kind:data(any) addr:0x020d4748
-data_ov243_020d4760 kind:data(any) addr:0x020d4760
+gOv243BoneHeadName kind:data(any) addr:0x020d4760
 gOv243PackPathFmt kind:data(any) addr:0x020d476c
-data_ov243_020d4778 kind:data(any) addr:0x020d4778
+gOv243MoveName kind:data(any) addr:0x020d4778

@@ -48,9 +48,9 @@ extern int Ov107_CloneResourceTransform(struct Pose *pose);
 extern int Ov152_New(char *self);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov152_020d6460;
-extern const char data_ov152_020d64ec[];
-extern const char data_ov152_020d64f0[];
-extern const char data_ov152_020d64f8[];
+extern const char gOv1527Name[];
+extern const char gOv152RootName[];
+extern const char gOv152MwLoudnessName[];
 extern const VecFx32 data_02041dc8;
 
 void Ov152_Construct(char *self)
@@ -76,10 +76,10 @@ void Ov152_Construct(char *self)
     *(int *)(self + 0x6c) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov152_020d64ec);
-    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov152_020d64f0);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv1527Name);
+    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv152RootName);
     *(int *)(self + 0x2cc) = *(int *)(self + 0x398) + 0x14;
-    *(int *)(self + 0x3cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov152_020d64f8);
+    *(int *)(self + 0x3cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), gOv152MwLoudnessName);
     *(void **)(self + 0x390) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
         (*(struct Ov151SubitemSlot **)(self + 0x390))[i].pItem =

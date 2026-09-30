@@ -37,7 +37,7 @@ extern void Ov022_TakeChannelBlock(void *pSub, int a, int b);
 extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc,
                                 struct PanelSubCfg *pCfg, int a, int b);
 extern void Ov049_UpdateParts(void);
-extern int data_ov049_020b4cac;
+extern int gOv049RoxasDualLiE1PackPath;
 
 void Ov049_CreateSubObject(char *self)
 {
@@ -68,6 +68,6 @@ void Ov049_CreateSubObject(char *self)
     cfg[1].field38 |= 0x20;
 
     Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self,
-                        &data_ov049_020b4cac, cfg, 2, 10);
+                        &gOv049RoxasDualLiE1PackPath, cfg, 2, 10);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x20) = (void *)&Ov049_UpdateParts;
 }

@@ -40,7 +40,7 @@ typedef struct Ov002LinkCtx {
     char pad000[0x58]; Ov002GateEffect *apOwnedBlocks[8]; s8 nOwnedBlockCount;
 } Ov002LinkCtx;
 extern Ov002LinkCtx *data_ov002_0207fa10;
-extern char data_ov002_0207f0d4[],data_ov002_0207f0dc[],data_ov002_0207f0e8[],data_ov002_0207f0f0[];
+extern char gOv002StrIntFmt[],gOv002ColWallName[],gOv002GateName[],gOv00210Name[];
 extern u8 data_0204c240;
 extern Ov002GateModelEntry *Ov002_FindEntryAddrByKey(int nKey);
 extern void Ov002_BuildModelSlot(Ov002ModelDesc *,int,int);
@@ -87,12 +87,12 @@ void Ov002_ConfigureGateFromPeerRow(Ov002PeerRow *pRow,int nWorld)
     }
     {
         int bDisable=1;
-        OS_SPrintf(szWall,data_ov002_0207f0d4,data_ov002_0207f0dc,pRow->nKey);
+        OS_SPrintf(szWall,gOv002StrIntFmt,gOv002ColWallName,pRow->nKey);
         if(bEnabled) bDisable=0;
         Ov002_RebindGroupAnimations(szWall,strlen(szWall),bDisable,nWorld);
     }
     if(data_0204c240 & 4) bEnabled=(pRow->wFlags & 1)!=0;
-    OS_SPrintf(szGate,data_ov002_0207f0d4,data_ov002_0207f0e8,pRow->nKey);
+    OS_SPrintf(szGate,gOv002StrIntFmt,gOv002GateName,pRow->nKey);
     if(!bEnabled) {
         pNamed=SymbolGroup_FindName((u16)nWorld, szGate);
         if(pNamed) pNamed->bEnabled=0;
@@ -116,7 +116,7 @@ void Ov002_ConfigureGateFromPeerRow(Ov002PeerRow *pRow,int nWorld)
         Ov002GatePlacement *pPlacement=(Ov002GatePlacement *)&pEntry->aModels[0];
         int nSlot=pCtx->nOwnedBlockCount;
         pCtx->apOwnedBlocks[nSlot]=NNSi_FndAllocFromDefaultExpHeap(0x108);
-        RegisterSeqAndInit(pCtx->apOwnedBlocks[nSlot],Ov002_LookupChannelEntry(data_ov002_0207f0f0),1,0);
+        RegisterSeqAndInit(pCtx->apOwnedBlocks[nSlot],Ov002_LookupChannelEntry(gOv00210Name),1,0);
         pCtx->nOwnedBlockCount++;
         pCtx->apOwnedBlocks[nSlot]->vPosition=pPlacement->vPosition;
         pEffect=pCtx->apOwnedBlocks[nSlot];

@@ -6,8 +6,8 @@
 
 char gOv230PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov230_020d648c[16] = "Bip01_Spine1";
+char gOv230Bip01Spine1Name[16] = "Bip01_Spine1";
 
-char data_ov230_020d649c[16] = "Bip01_L_Hand";
+char gOv230Bip01LHandName[16] = "Bip01_L_Hand";
 
-char data_ov230_020d64ac[20] = "AE_move";
+char gOv230AeMoveName[20] = "AE_move";

@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov152_020d64f0[8] = "root";
+char gOv152RootName[8] = "root";
 
-char data_ov152_020d64f8[40] = "MW_Loudness";
+char gOv152MwLoudnessName[40] = "MW_Loudness";

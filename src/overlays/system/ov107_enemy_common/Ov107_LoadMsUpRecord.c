@@ -28,7 +28,7 @@ typedef struct RecordLookup {
     Path path;          /* sp+4: file name handed to the loader */
 } RecordLookup;
 
-extern const char data_ov107_020cb642[10];     /* "Ms/UP.bin" */
+extern const char gOv107MsUpPath[10];     /* "Ms/UP.bin" */
 extern void *Archive_LoadFile(char *name, u32 kind);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
@@ -36,7 +36,7 @@ void Ov107_LoadMsUpRecord(Actor *self, u8 recordIndex)
 {
     RecordLookup lookup;
 
-    lookup.path = *(const Path *)data_ov107_020cb642;
+    lookup.path = *(const Path *)gOv107MsUpPath;
     self->field_19e = recordIndex;
 
     {

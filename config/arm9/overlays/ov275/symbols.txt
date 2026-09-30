@@ -76,10 +76,10 @@ data_ov275_020d6084 kind:data(any) addr:0x020d6084
 data_ov275_020d6092 kind:data(any) addr:0x020d6092
 data_ov275_020d60a0 kind:data(any) addr:0x020d60a0
 gOv275PackPathFmt kind:data(any) addr:0x020d60e0
-data_ov275_020d60ec kind:data(any) addr:0x020d60ec
-data_ov275_020d60f8 kind:data(any) addr:0x020d60f8
-data_ov275_020d6108 kind:data(any) addr:0x020d6108
-data_ov275_020d6118 kind:data(any) addr:0x020d6118
-data_ov275_020d6120 kind:data(any) addr:0x020d6120
-data_ov275_020d6130 kind:data(any) addr:0x020d6130
-data_ov275_020d613c kind:data(any) addr:0x020d613c
+gOv275Bip01HeadName kind:data(any) addr:0x020d60ec
+gOv275Bip01LHandName kind:data(any) addr:0x020d60f8
+gOv275Bip01RHandName kind:data(any) addr:0x020d6108
+gOv275Bip01Name kind:data(any) addr:0x020d6118
+gOv275Bip01Spine1Name kind:data(any) addr:0x020d6120
+gOv275Target01Name kind:data(any) addr:0x020d6130
+gOv275SlargeMoveName kind:data(any) addr:0x020d613c

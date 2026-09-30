@@ -53,8 +53,8 @@ extern int Ov156_Actor_New(char *self);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov156_020ced80;
 extern const VecFx32 data_ov156_020ced74;
-extern const char data_ov156_020cedec[];
-extern const char data_ov156_020cedf4[];
+extern const char gOv156Head02Name[];
+extern const char gOv156HeadconName[];
 extern const VecFx32 data_02041dc8;
 
 void Ov156_Construct(char *self)
@@ -86,8 +86,8 @@ void Ov156_Construct(char *self)
     *(u16 *)(self + 0x100 + 0xae) |= 0x10;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov156_020cedec);
-    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov156_020cedf4);
+    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv156Head02Name);
+    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv156HeadconName);
     *(void **)(self + 0x3a0) = CallocInstance(0x20);
     for (i = 0; i < 4; i++) {
         (*(struct Ov156SubitemSlot **)(self + 0x3a0))[i].pItem =

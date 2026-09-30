@@ -16,7 +16,7 @@ struct Ov181SubitemSlot {
 };
 
 extern VecFx32 data_ov183_020d2638;
-extern const char data_ov183_020d268c[];
+extern const char gOv183BMoveName[];
 
 extern void Ov183_Destroy(void);
 extern void Ov183_TickAndSyncChildren(void);
@@ -67,7 +67,7 @@ void Ov183_Construct(int param)
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         Srt_SetTranslationXYZ((char *)((void **)self)[0xe1] + 4, 0, 0x80, 0);
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe4] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov183_020d268c);
+        ((void **)self)[0xe4] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv183BMoveName);
         ((void **)self)[0xe6] = CallocInstance(0x18);
 
         for (i = 0; i < 3; i++) {

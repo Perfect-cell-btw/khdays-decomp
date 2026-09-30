@@ -50,8 +50,8 @@ extern void  Stream_DecodeIntoStagingBuffer(u32 *pDst, u32 nDescriptor, void *pS
 extern void *Ov023_SceneRun(void);                             /* Ov023_SceneReady */
 extern Ov023SceneRoot data_ov023_0208a784;
 extern const Ov023WorldTable data_ov023_02089d14;                   /* world codes by world index */
-extern char  data_ov023_0208a05c[];                                 /* "ev/EV_S.p2" */
-extern char  data_ov023_0208a068[];                                 /* "ev/EV_%s.p2" */
+extern char  gOv023EvEvSPath[];                                 /* "ev/EV_S.p2" */
+extern char  gOv023EvEvPathFmt[];                                 /* "ev/EV_%s.p2" */
 
 void *Ov023_LoadScripts(void)
 {
@@ -67,10 +67,10 @@ void *Ov023_LoadScripts(void)
     Ov002_FormatResultLine(0, szLine);
     data_ov023_0208a784.pScene->nSubObject = Ov002_GetRootSub04();
     data_ov023_0208a784.pScene->nHandle = Ov002_GetSceneHandle();
-    OS_SPrintf(szPath, data_ov023_0208a05c);
+    OS_SPrintf(szPath, gOv023EvEvSPath);
     data_ov023_0208a784.pScene->pSharedText = Msg_OpenContainerAndReadHeader(szPath, 0xf);
     if (world.apCode[data_ov023_0208a784.pScene->nWorld] != 0) {
-        OS_SPrintf(szPath, data_ov023_0208a068, world.apCode[data_ov023_0208a784.pScene->nWorld]);
+        OS_SPrintf(szPath, gOv023EvEvPathFmt, world.apCode[data_ov023_0208a784.pScene->nWorld]);
         data_ov023_0208a784.pScene->pWorldText = Msg_OpenContainerAndReadHeader(szPath, 0xf);
     }
     pScene = data_ov023_0208a784.pScene;

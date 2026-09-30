@@ -136,7 +136,7 @@ data_ov273_020d6ba0 kind:data(any) addr:0x020d6ba0
 data_ov273_020d6bb0 kind:data(any) addr:0x020d6bb0
 data_ov273_020d6bb4 kind:data(any) addr:0x020d6bb4
 gOv273PackPathFmt kind:data(any) addr:0x020d6be0
-data_ov273_020d6bec kind:data(any) addr:0x020d6bec
-data_ov273_020d6bf4 kind:data(any) addr:0x020d6bf4
-data_ov273_020d6bfc kind:data(any) addr:0x020d6bfc
-data_ov273_020d6c0c kind:data(any) addr:0x020d6c0c
+gOv273Bip01Name kind:data(any) addr:0x020d6bec
+gOv273SwordName kind:data(any) addr:0x020d6bf4
+gOv273Bip01LHandName kind:data(any) addr:0x020d6bfc
+gOv273Bip01RHandName kind:data(any) addr:0x020d6c0c

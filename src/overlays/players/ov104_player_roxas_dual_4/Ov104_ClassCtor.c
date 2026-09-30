@@ -3,7 +3,7 @@
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern unsigned char data_0204c240;
-extern void *data_ov104_020bc1fc;
+extern void *gOv104RoxasDualEtcPackPath;
 extern void Ov104_Boot(void *);
 extern void *Archive_LoadFile(void *, int);
 extern void Resource_BindFileToSlot(void *, int, void *, int);
@@ -17,7 +17,7 @@ void *Ov104_ClassCtor(void *a)
     *(void **)(r + 0x2c50) = 0;
     Ov104_Boot(a);
     if (!(data_0204c240 & 4)) {
-        void *p = Archive_LoadFile(&data_ov104_020bc1fc, *(int *)a + 7);
+        void *p = Archive_LoadFile(&gOv104RoxasDualEtcPackPath, *(int *)a + 7);
         *(void **)(r + 0x2c50) = p;
         Resource_BindFileToSlot(r + 0x2c2c, *(int *)(r + 0x20) + 4, *(void **)(r + 0x2c50), *(int *)a + 7);
     }

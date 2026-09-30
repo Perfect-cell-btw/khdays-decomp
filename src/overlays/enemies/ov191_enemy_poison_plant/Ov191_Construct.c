@@ -36,8 +36,8 @@ struct bf {
 extern struct Ov191Kinds data_ov191_020d2d60;
 extern VecFx32 data_ov191_020d2d54;
 extern const VecFx32 data_02041dc8;
-extern const char data_ov191_020d2dec[];
-extern const char data_ov191_020d2df4[];
+extern const char gOv191Head02Name[];
+extern const char gOv191HeadconName[];
 
 extern void Ov191_DestroyArrayObjectsAndBuffersThenNotify(void);
 extern void func_ov191_020d0220(void);
@@ -98,8 +98,8 @@ void Ov191_Construct(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov191_020d2dec);
-        ((void **)self)[0xe7] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov191_020d2df4);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, gOv191Head02Name);
+        ((void **)self)[0xe7] = InsertSortedEntryWithKey(self[0xe1], 1, gOv191HeadconName);
         ((void **)self)[0xe8] = CallocInstance(0x20);
 
         for (i = 0; i < 4; i++) {

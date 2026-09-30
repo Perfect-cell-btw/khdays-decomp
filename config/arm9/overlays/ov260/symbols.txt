@@ -113,7 +113,7 @@ data_ov260_020d2a6c kind:data(any) addr:0x020d2a6c
 data_ov260_020d2a80 kind:data(any) addr:0x020d2a80
 data_ov260_020d2a88 kind:data(any) addr:0x020d2a88
 gOv260PackPathFmt kind:data(any) addr:0x020d2aa0
-data_ov260_020d2aac kind:data(any) addr:0x020d2aac
-data_ov260_020d2ab4 kind:data(any) addr:0x020d2ab4
-data_ov260_020d2ac4 kind:data(any) addr:0x020d2ac4
-data_ov260_020d2ac8 kind:data(any) addr:0x020d2ac8
+gOv260Bip01Name kind:data(any) addr:0x020d2aac
+gOv260Bip01LHandName kind:data(any) addr:0x020d2ab4
+gOv260WAName kind:data(any) addr:0x020d2ac4
+gOv260B013MoveName kind:data(any) addr:0x020d2ac8

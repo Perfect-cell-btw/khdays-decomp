@@ -54,9 +54,9 @@ typedef struct Ov011Globals {
 } Ov011Globals;
 
 extern Ov011Globals data_ov011_0205e960;
-extern const u8 data_ov011_0205e8f8[];
-extern const u8 data_ov011_0205e904[];
-extern const u8 data_ov011_0205e91c[];
+extern const u8 gOv011UiSfSfPath[];
+extern const u8 gOv011UiSfSffont10FontPath[];
+extern const u8 gOv011UiSfSffont8FontPath[];
 
 extern void SetMasterBrightnessMain(int brightness);
 extern void SetMasterBrightnessSub(int brightness);
@@ -94,9 +94,9 @@ Ov011StateFn Ov011_TickMoviePlaybackState(void)
         Table_TailCallWithEntry(0, 0x1e);
         return (Ov011StateFn)Ov011_InitGlobalStateAndGetHandler;
     }
-    data_ov011_0205e960.pScene->pMsgResource = Msg_OpenContainerAndReadHeader(data_ov011_0205e8f8, 0xe);
-    data_ov011_0205e960.pScene->handle1 = Loader_RequestFile(data_ov011_0205e904, 0xe);
-    data_ov011_0205e960.pScene->handle2 = Loader_RequestFile(data_ov011_0205e91c, 0xe);
+    data_ov011_0205e960.pScene->pMsgResource = Msg_OpenContainerAndReadHeader(gOv011UiSfSfPath, 0xe);
+    data_ov011_0205e960.pScene->handle1 = Loader_RequestFile(gOv011UiSfSffont10FontPath, 0xe);
+    data_ov011_0205e960.pScene->handle2 = Loader_RequestFile(gOv011UiSfSffont8FontPath, 0xe);
     Ov011_InitTitleDisplay();
     Loader_SleepIfBusy(Ov011_SetupTitleBackgrounds());
     Ov011_CreateTitleObjects();

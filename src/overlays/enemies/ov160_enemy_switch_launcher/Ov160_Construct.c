@@ -2,8 +2,8 @@
  * 020cc248, +0xc 020cc290, +0x1c message 020cc398, +0x30 020cc728, +0x28 020cc53c, +0x2c
  * 020cc564, +0x34 020cc58c, +0x1d0 on-hit 020cc784, +0x1e0 release 020cc99c, +0x1dc finish
  * 020cc2dc), seeds the +0x64 pose (scale 0x1000, y 0x1000), builds the primary item from pool
- * entry 0 (subscribed), resolves its two mode-3 joints (+0x398 data_ov160_020cf80c, +0x394
- * data_ov160_020cf814), keeps the data_ov160_020cf818 motion handle of pool entry 1 (+0x3a0),
+ * entry 0 (subscribed), resolves its two mode-3 joints (+0x398 gOv160EffTagName, +0x394
+ * gOv160037Name), keeps the gOv160MoveName motion handle of pool entry 1 (+0x3a0),
  * the nine sub-items of the data_ov160_020cf770 kinds in a fresh 72-byte slot table (+0x390,
  * attached, bit 1 on their +0x5c), configures actions 0/1/2/4 (mode 1, rate 0x2800), creates a
  * placement from the +0x64 pose on the +0x22c list (+0x388) and a capsule (zero position, world
@@ -29,9 +29,9 @@ struct Ov160SubitemSlot {
 extern struct Ov160Kinds data_ov160_020cf770;
 extern VecFx32 data_02041dc8;
 extern VecFx32 data_02042264;
-extern const char data_ov160_020cf80c[];
-extern const char data_ov160_020cf814[];
-extern const char data_ov160_020cf818[];
+extern const char gOv160EffTagName[];
+extern const char gOv160037Name[];
+extern const char gOv160MoveName[];
 
 extern void Ov160_Destroy(void);
 extern void Ov160_RebindClip(void);
@@ -87,9 +87,9 @@ void Ov160_Construct(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov160_020cf80c);
-        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov160_020cf814);
-        ((void **)self)[0xe8] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov160_020cf818);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 3, gOv160EffTagName);
+        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 3, gOv160037Name);
+        ((void **)self)[0xe8] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv160MoveName);
         ((void **)self)[0xe4] = CallocInstance(0x48);
 
         for (i = 0; i < 9; i++) {

@@ -1,5 +1,5 @@
 /* Scene entry for the four-row list: take the root heap block as the context,
- * open the archive named by data_ov022_020b290c, and give each of the four rows
+ * open the archive named by gOv022BaEfCPath, and give each of the four rows
  * its resource -- but only for the rows GameState_IsFlagSet(0x20ee) admits, and the
  * bFirst flag tells Ov002_Slot_SetCellData which admitted row is the first one.
  * Every row clears its own resource pointer first, so a rejected row keeps null.
@@ -38,7 +38,7 @@ extern void Tween_Clear(void *tween);
 extern void Ov022_AdvanceFadeStateThenNextStep(void);
 
 extern void *data_ov022_020b2e74;
-extern char data_ov022_020b290c[];
+extern char gOv022BaEfCPath[];
 
 void *Ov022_EnterFourRowScene(void) {
     Ov022RootContext *ctx = NNSi_FndGetCurrentRootHeap();
@@ -48,7 +48,7 @@ void *Ov022_EnterFourRowScene(void) {
 
     (&data_ov022_020b2e74)[0] = ctx;
     ctx->bReady = 0;
-    arc = Archive_LoadFile(Msg_BuildLangPath(data_ov022_020b290c), 0xf);
+    arc = Archive_LoadFile(Msg_BuildLangPath(gOv022BaEfCPath), 0xf);
     InstallHandlerPairByFlag(0);
     G3dRes_DefaultSetup(arc);
     InstallHandlerPairByFlag(1);

@@ -24,8 +24,8 @@ extern void Ov256_Claw_CreateAiTask(void);
 extern void Ov256_Claw_OnHitNoOp(void);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042258;
-extern char data_ov256_020d26d4[];
-extern char data_ov256_020d26e0[];
+extern char gOv256MoveBukiLName[];
+extern char gOv256MoveBukiRName[];
 
 void Ov256_ClawInit(char *self)
 {
@@ -56,9 +56,9 @@ void Ov256_ClawInit(char *self)
     *(int *)(self + 0x3a0) = 0;
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     if (*(u8 *)(self + 0x394) == 0) {
-        *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(owner, 0x47), data_ov256_020d26d4);
+        *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(owner, 0x47), gOv256MoveBukiLName);
     } else {
-        *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(owner, 0x48), data_ov256_020d26e0);
+        *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(owner, 0x48), gOv256MoveBukiRName);
     }
     cap.pos = origin;
     cap.axis = data_02042258;

@@ -68,6 +68,6 @@ data_ov246_020d30f4 kind:data(any) addr:0x020d30f4
 data_ov246_020d30f8 kind:data(any) addr:0x020d30f8
 data_ov246_020d3108 kind:data(any) addr:0x020d3108
 gOv246PackPathFmt kind:data(any) addr:0x020d3120
-data_ov246_020d312c kind:data(any) addr:0x020d312c
-data_ov246_020d3134 kind:data(any) addr:0x020d3134
-data_ov246_020d3138 kind:data(any) addr:0x020d3138
+gOv246EffTagName kind:data(any) addr:0x020d312c
+gOv246038Name kind:data(any) addr:0x020d3134
+gOv246MoveName kind:data(any) addr:0x020d3138

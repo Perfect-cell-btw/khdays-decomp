@@ -4,20 +4,20 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov088_020bc29c[20] = "ba/ch/ax/def.p.z";
+char gOv088AxelDefPackPath[20] = "ba/ch/ax/def.p.z";
 
-char data_ov088_020bc2b0[20] = "ba/ch/ax/def_h.p.z";
+char gOv088AxelDefHPackPath[20] = "ba/ch/ax/def_h.p.z";
 
-char data_ov088_020bc2c4[16] = "ba/ch/ax/li.p.z";
+char gOv088AxelLiPackPath[16] = "ba/ch/ax/li.p.z";
 
-char data_ov088_020bc2d4[20] = "ba/ch/ax/li_ea4.p.z";
+char gOv088AxelLiEa4PackPath[20] = "ba/ch/ax/li_ea4.p.z";
 
-char data_ov088_020bc2e8[20] = "ba/ch/ax/li_ea2.p.z";
+char gOv088AxelLiEa2PackPath[20] = "ba/ch/ax/li_ea2.p.z";
 
-char data_ov088_020bc2fc[20] = "ba/ch/ax/li_e0.p.z";
+char gOv088AxelLiE0PackPath[20] = "ba/ch/ax/li_e0.p.z";
 
-char data_ov088_020bc310[20] = "ba/ch/ax/li_e2.p.z";
+char gOv088AxelLiE2PackPath[20] = "ba/ch/ax/li_e2.p.z";
 
-char data_ov088_020bc324[20] = "ba/ch/ax/li_e3.p.z";
+char gOv088AxelLiE3PackPath[20] = "ba/ch/ax/li_e3.p.z";
 
-char data_ov088_020bc338[40] = "ba/ch/ax/li_e4.p.z";
+char gOv088AxelLiE4PackPath[40] = "ba/ch/ax/li_e4.p.z";

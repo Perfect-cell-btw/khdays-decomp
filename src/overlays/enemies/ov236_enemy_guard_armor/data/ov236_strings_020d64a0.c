@@ -6,22 +6,22 @@
 
 char gOv236PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov236_020d64ac[8] = "B_body";
+char gOv236BBodyName[8] = "B_body";
 
-char data_ov236_020d64b4[12] = "B_head02";
+char gOv236BHead02Name[12] = "B_head02";
 
-char data_ov236_020d64c0[8] = "GA_move";
+char gOv236GaMoveName[8] = "GA_move";
 
-char data_ov236_020d64c8[12] = "B_LArm01";
+char gOv236BLArm01Name[12] = "B_LArm01";
 
-char data_ov236_020d64d4[12] = "B_RArm01";
+char gOv236BRArm01Name[12] = "B_RArm01";
 
-char data_ov236_020d64e0[12] = "B_Lfoot01";
+char gOv236BLfoot01Name[12] = "B_Lfoot01";
 
-char data_ov236_020d64ec[12] = "B_Lfoot02";
+char gOv236BLfoot02Name[12] = "B_Lfoot02";
 
-char data_ov236_020d64f8[12] = "B_Rfoot01";
+char gOv236BRfoot01Name[12] = "B_Rfoot01";
 
-char data_ov236_020d6504[12] = "B_Rfoot02";
+char gOv236BRfoot02Name[12] = "B_Rfoot02";
 
-char data_ov236_020d6510[16] = "GA_move";
+char gOv236GaMoveName_2[16] = "GA_move";

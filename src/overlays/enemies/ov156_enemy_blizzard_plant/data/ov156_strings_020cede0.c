@@ -6,6 +6,6 @@
 
 char gOv156PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov156_020cedec[8] = "head02";
+char gOv156Head02Name[8] = "head02";
 
-char data_ov156_020cedf4[12] = "headcon";
+char gOv156HeadconName[12] = "headcon";

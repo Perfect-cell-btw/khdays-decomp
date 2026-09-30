@@ -25,7 +25,7 @@ typedef struct Ov011Globals { u32 nTimer; u8 *pScene; } Ov011Globals;
 
 extern Ov011Globals data_ov011_0205e960;
 extern Ov011StateFn data_ov011_0205e8cc[];
-extern int  data_ov011_0205e930;
+extern int  gOv011SfVName;
 
 extern long long Math_DivMod(int a, int b);
 extern void SetMasterBrightnessMain(int brightness);
@@ -55,7 +55,7 @@ void Ov011_TickTitleFadeOut(void)
     if (data_ov011_0205e960.nTimer >= *(u16 *)(data_ov011_0205e960.pScene + 0x2cf4e) &&
         SoundStrm_HasPlaybackPos(0) == 0) {
         if (*(int *)(data_ov011_0205e960.pScene + 8) == 1) {
-            VBlank_UnregisterCallback(1, &data_ov011_0205e930);
+            VBlank_UnregisterCallback(1, &gOv011SfVName);
         }
         *(int *)(data_ov011_0205e960.pScene + 4) =
             (*(int *)(data_ov011_0205e960.pScene + 0x23ac4) == 1) ? 5 : 6;

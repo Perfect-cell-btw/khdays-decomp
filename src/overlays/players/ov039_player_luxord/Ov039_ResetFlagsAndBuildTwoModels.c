@@ -47,8 +47,8 @@ extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot,
                                int variant, void *parameters);
 extern void Ov022_StepCueTrack(void *block, int size);
-extern struct Ov047Descriptor data_ov039_020b55a4;
-extern struct Ov047Descriptor data_ov039_020b55b4;
+extern struct Ov047Descriptor gOv039LuxordLiPackPath;
+extern struct Ov047Descriptor gOv039LuxordLiEa2PackPath;
 
 u8 Ov039_ResetFlagsAndBuildTwoModels(struct Ov047Runtime *self)
 {
@@ -57,10 +57,10 @@ u8 Ov039_ResetFlagsAndBuildTwoModels(struct Ov047Runtime *self)
     block->flags334 = 0;
     Ov022_ConfigureGridSlotMode(self->slot09, 2);
     block->handle340 = Ov022_AcquireGridSlot(
-        data_ov039_020b55a4.bytes, self->slot09, 0,
+        gOv039LuxordLiPackPath.bytes, self->slot09, 0,
         &self->scene20->field04);
     block->handle344 = Ov022_AcquireGridSlot(
-        data_ov039_020b55b4.bytes, self->slot09, 1,
+        gOv039LuxordLiEa2PackPath.bytes, self->slot09, 1,
         &self->attach2644->model0c->field28);
     Ov022_StepCueTrack((char *)self + 0xda0, 0xcd);
     return block->flags334 |= 0xb;

@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov027_02084148[72] = "Stuck? You can always withdraw and\ncheck the Enemy Profiles for hints.";
+char gOv027StuckYouCanAlwaysText[72] = "Stuck? You can always withdraw and\ncheck the Enemy Profiles for hints.";

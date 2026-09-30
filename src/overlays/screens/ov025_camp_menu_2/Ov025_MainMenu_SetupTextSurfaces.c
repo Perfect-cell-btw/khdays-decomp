@@ -46,9 +46,9 @@ extern void Ov025_MarkSlotUsed(int a);
 extern TileSurfaceCfg data_ov025_020b39bc;
 extern TileSurfaceCfg data_ov025_020b396c;
 extern TileSurfaceCfg data_ov025_020b3994;
-extern char data_ov025_020b4cf8[];
+extern char gOv025UiCmStrSelectTextPath[];
 extern char data_ov025_020b4d10[];
-extern char data_ov025_020b4d14[];
+extern char gOv025UiCmStrStatusTextPath[];
 
 void Ov025_MainMenu_SetupTextSurfaces(int obj)
 {
@@ -72,7 +72,7 @@ void Ov025_MainMenu_SetupTextSurfaces(int obj)
     cfg2.nVramTarget = vram;
     cfg1.pPixels = cfg0.pPixels;
     cfg2.pPixels = cfg0.pPixels;
-    Ov025_InitResourceRecord((void *)(obj + 0x14f4), data_ov025_020b4cf8);
+    Ov025_InitResourceRecord((void *)(obj + 0x14f4), gOv025UiCmStrSelectTextPath);
     TileSurface_InitAndUpload4bpp(obj + 0x1420, &cfg0);
     TileSurface_InitAndUpload4bpp(obj + 0x145c, &cfg1);
     TileSurface_InitAndUpload4bpp(obj + 0x1498, &cfg2);
@@ -89,7 +89,7 @@ void Ov025_MainMenu_SetupTextSurfaces(int obj)
     Text_DrawWithShadow(obj + 0x145c, 2, 3, 1, rec, 0);
     EnqueueObjGfxCommand(obj + 0x145c);
     if (*(int *)(obj + 0x14e0) != 0 && Ov025_GetCtxObject9634() != 0) {
-        Ov025_InitResourceRecord(textIter, data_ov025_020b4d14);
+        Ov025_InitResourceRecord(textIter, gOv025UiCmStrStatusTextPath);
         minVal = Ov025_FindMinListValue();
         if (minVal != 0) {
             rec = Ov025_GetVarRecordByIndex(textIter, minVal + 0xe);

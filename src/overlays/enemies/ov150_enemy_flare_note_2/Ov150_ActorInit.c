@@ -37,8 +37,8 @@ struct Ov150Kinds {
 extern struct Ov150Kinds data_ov150_020d2558;
 extern VecFx32 data_02041dc8;
 extern const unsigned short data_ov150_020d25cc[];
-extern const unsigned short data_ov150_020d25d0[];
-extern char data_ov150_020d25d8[];
+extern const unsigned short gOv150RootName[];
+extern char gOv150MfLoudnessName[];
 
 extern void Ov150_ReleaseSubObjectsAndListThenNotify(void);
 extern void Ov150_TickAndSyncMarkerSrt(void);
@@ -95,10 +95,10 @@ void Ov150_ActorInit(int param)
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
         ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov150_020d25cc);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov150_020d25d0);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, gOv150RootName);
         ((char **)self)[0xb3] = (char *)((void **)self)[0xe6] + 0x14;
         ((void **)self)[0xf3] = Ov107_CreateNamedResourceBinding(
-            Ov107_PackTextureHandle(self, 1), data_ov150_020d25d8);
+            Ov107_PackTextureHandle(self, 1), gOv150MfLoudnessName);
         ((void **)self)[0xe4] = CallocInstance(0x28);
 
         for (i = 0; i < 5; i++) {

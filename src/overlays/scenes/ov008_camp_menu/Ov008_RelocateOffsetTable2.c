@@ -1,11 +1,11 @@
 /* Twin of Ov008_RelocateOffsetTable for the 0xe-entry table at param_1+0x174. */
 extern int Archive_LoadFile(void *pool, int count);
-extern int data_ov008_02090920;
+extern int gOv008MiMiTrBoxPath_2;
 
 void Ov008_RelocateOffsetTable2(int param_1) {
     int i;
     if (*(int *)(param_1 + 0x174) != 0) return;
-    *(int *)(param_1 + 0x174) = Archive_LoadFile(&data_ov008_02090920, 0xe);
+    *(int *)(param_1 + 0x174) = Archive_LoadFile(&gOv008MiMiTrBoxPath_2, 0xe);
     for (i = 0; i < *(unsigned char *)(*(int *)(param_1 + 0x174)); i++) {
         int base = *(int *)(param_1 + 0x174);
         ((int *)base)[i + 1] += base;

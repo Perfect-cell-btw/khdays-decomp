@@ -7,7 +7,7 @@
  * descriptor from the message-container base (resBase, masked to 4-byte alignment and
  * flagged 0x80000000), registers the sprite sequence (RegisterSeqAndInit) and primes the
  * panel node, then decides which layout archive variant to load:
- *   - scene 0xe: a fixed archive (data_ov025_020b4c3c);
+ *   - scene 0xe: a fixed archive (gOv025XionWMotPackPath);
  *   - scenes {0,5,6,0xb,0x10}: variant 0;
  *   - scenes {4,9,0xf}: variant 0 when slot==3, else variant 1;
  *   - scenes {2,0x13}: variant 0 when slot==1, else variant 1;
@@ -34,7 +34,7 @@ extern void  SceneNode_SetFlag40(void *node, int a);
 extern void  Widget_SetTagWord(int node, int a);
 extern void *Archive_LoadFile(char *name, int kind);
 extern void  Resource_BindFileToSlot(int a, int b, void *handle, int d);
-extern char  data_ov025_020b4c3c[];
+extern char  gOv025XionWMotPackPath[];
 
 void Ov025_Menu_InitPanelSubObject(u8 *panel, int resBase, int subId, int sceneId, u32 charFlags, int slot)
 {
@@ -78,7 +78,7 @@ void Ov025_Menu_InitPanelSubObject(u8 *panel, int resBase, int subId, int sceneI
         if (slot == 1) variant = 0; else variant = 1;
         break;
     case 0xe:
-        *(void **)(panel + 0x160) = Archive_LoadFile(data_ov025_020b4c3c, panel[2] + 7);
+        *(void **)(panel + 0x160) = Archive_LoadFile(gOv025XionWMotPackPath, panel[2] + 7);
         Resource_BindFileToSlot((int)(panel + 0x13c), (int)(panel + 4), *(void **)(panel + 0x160), panel[2] + 7);
         *panel |= 4;
         break;

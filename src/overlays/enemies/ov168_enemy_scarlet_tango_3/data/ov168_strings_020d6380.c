@@ -6,6 +6,6 @@
 
 char gOv168PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov168_020d638c[8] = "Bone04";
+char gOv168Bone04Name[8] = "Bone04";
 
-char data_ov168_020d6394[12] = "body";
+char gOv168BodyName[12] = "body";

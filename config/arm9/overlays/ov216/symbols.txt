@@ -52,5 +52,5 @@ data_ov216_020cebe4 kind:data(any) addr:0x020cebe4
 data_ov216_020cebf8 kind:data(any) addr:0x020cebf8
 data_ov216_020cec1c kind:data(any) addr:0x020cec1c
 gOv216PackPathFmt kind:data(any) addr:0x020cec40
-data_ov216_020cec4c kind:data(any) addr:0x020cec4c
-data_ov216_020cec58 kind:data(any) addr:0x020cec58
+gOv216BonePelvisName kind:data(any) addr:0x020cec4c
+gOv216MoveName kind:data(any) addr:0x020cec58

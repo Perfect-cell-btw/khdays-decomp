@@ -6,7 +6,7 @@
 
 extern void Ov050_ActorCreateSubObjects(int a);
 extern int data_ov050_020b75c0;
-extern int data_ov050_020b755c;
+extern int gOv050AxelLiE0PackPath;
 
 void Ov050_initTwoEntrySlots(void) {
     int obj = data_ov050_020b75c0;
@@ -17,7 +17,7 @@ void Ov050_initTwoEntrySlots(void) {
     *(int *)(obj + 0x2c2c) = 0;
     *(int *)(ibase + 4) = 0;
     do {
-        RegisterSeqAndInit((void *)puVar5, &data_ov050_020b755c, 1, *(unsigned char *)(obj + 9) + 7);
+        RegisterSeqAndInit((void *)puVar5, &gOv050AxelLiE0PackPath, 1, *(unsigned char *)(obj + 9) + 7);
         *(int *)(ibase + 0xc) = i;
         i++;
         *(int *)(ibase + 0x10) = 0;

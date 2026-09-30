@@ -25,7 +25,7 @@ extern u8 data_02042a1d;
 extern Ov002MissionMember gPartyMembers[];
 extern u8 data_ov002_0207e610[];
 extern Ov002SurfaceTagTemplate data_ov002_0207e640[];
-extern char data_ov002_0207f0dc[];
+extern char gOv002ColWallName[];
 extern int Entity_LoadAndAttach(int, u32);
 extern signed char Ov002_GetCtxModeByte(void);
 extern void Res_RequestIdPair(int nId);
@@ -96,5 +96,5 @@ void Ov002_LoadPeerIntoSlot(int nSlot,int nPeer)
         StoreValueInNamedEntry((u16)nSlot,pTemplate->pName,aTags);
     }
     Ov002_SelectLinkCallbacks(nPeer,&pCtx->apPrimaryHooks[nSlot],&pCtx->apSecondaryHooks[nSlot]);
-    Ov002_RebindGroupAnimations(data_ov002_0207f0dc,8,0,nSlot);
+    Ov002_RebindGroupAnimations(gOv002ColWallName,8,0,nSlot);
 }

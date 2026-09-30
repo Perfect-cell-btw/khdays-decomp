@@ -52,5 +52,5 @@ data_ov264_020cebc4 kind:data(any) addr:0x020cebc4
 data_ov264_020cebd8 kind:data(any) addr:0x020cebd8
 data_ov264_020cebfc kind:data(any) addr:0x020cebfc
 gOv264PackPathFmt kind:data(any) addr:0x020cec20
-data_ov264_020cec2c kind:data(any) addr:0x020cec2c
-data_ov264_020cec38 kind:data(any) addr:0x020cec38
+gOv264BonePelvisName kind:data(any) addr:0x020cec2c
+gOv264MoveName kind:data(any) addr:0x020cec38

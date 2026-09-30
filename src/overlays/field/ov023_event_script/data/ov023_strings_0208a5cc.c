@@ -4,32 +4,32 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov023_0208a5cc[12] = "AnchorPos";
+char gOv023AnchorPosName[12] = "AnchorPos";
 
-char data_ov023_0208a5d8[4] = "%s";
+char gOv023StrFmt[4] = "%s";
 
-char data_ov023_0208a5dc[8] = "%d%s";
+char gOv023IntStrFmt[8] = "%d%s";
 
-char data_ov023_0208a5e4[16] = "ba/ch/%s/w_.p2";
+char gOv023BaChWPathFmt[16] = "ba/ch/%s/w_.p2";
 
-char data_ov023_0208a5f4[12] = "mi/mo/mu.p2";
+char gOv023MiMoMuPath[12] = "mi/mo/mu.p2";
 
-char data_ov023_0208a600[16] = "mi/mo/win_we.p2";
+char gOv023MiMoWinWePath[16] = "mi/mo/win_we.p2";
 
-char data_ov023_0208a610[12] = "ev/ecam.p2";
+char gOv023EvEcamPath[12] = "ev/ecam.p2";
 
-char data_ov023_0208a61c[4] = "ev/";
+char gOv023EvPath[4] = "ev/";
 
-char data_ov023_0208a620[12] = "ev/%s.p2f";
+char gOv023EvPathFmt[12] = "ev/%s.p2f";
 
-char data_ov023_0208a62c[4] = "Co";
+char gOv023CoName[4] = "Co";
 
-char data_ov023_0208a630[20] = "Ms/SharedEffect.p2f";
+char gOv023MsSharedEffectPath[20] = "Ms/SharedEffect.p2f";
 
-char data_ov023_0208a644[8] = "Ms/%s.p";
+char gOv023MsPackPathFmt[8] = "Ms/%s.p";
 
-char data_ov023_0208a64c[12] = "chair0%d";
+char gOv023Chair0Fmt[12] = "chair0%d";
 
-char data_ov023_0208a658[8] = "chair%d";
+char gOv023ChairFmt[8] = "chair%d";
 
-char data_ov023_0208a660[12] = "/mi/ob/0C.z";
+char gOv023MiOb0CPath[12] = "/mi/ob/0C.z";

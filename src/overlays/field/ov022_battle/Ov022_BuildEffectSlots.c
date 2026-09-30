@@ -63,11 +63,11 @@ extern const struct SlotInitParams data_ov022_020b262c;   /* the magic slot */
 extern const struct SlotInitParams data_ov022_020b2640;   /* the third effect context */
 extern u8 data_ov022_020b2930[];            /* the effect context class */
 extern u8 data_0204c240;
-extern char data_ov022_020b2cf4[];          /* "ba/ef/mg.p.z" */
-extern char data_ov022_020b2d04[];          /* "%s" */
-extern char data_ov022_020b2d08[];          /* "ba/ef/haziki.p.z" */
-extern char data_ov022_020b2d1c[];          /* "ba/ef/critical.p.z" */
-extern char data_ov022_020b2d30[];          /* "ba/ef/dead.p.z" */
+extern char gOv022BaEfMgPackPath_2[];          /* "ba/ef/mg.p.z" */
+extern char gOv022StrFmt[];          /* "%s" */
+extern char gOv022BaEfHazikiPackPath[];          /* "ba/ef/haziki.p.z" */
+extern char gOv022BaEfCriticalPackPath[];          /* "ba/ef/critical.p.z" */
+extern char gOv022BaEfDeadPackPath[];          /* "ba/ef/dead.p.z" */
 
 extern void Ov022_AcquireSlotBlock(void **papSlots);                                /* Ov022_AcquireSlotBlock */
 extern void *InstantiateClass(u8 *pClass, struct SlotInitParams *pParams);         /* InstantiateClass */
@@ -103,14 +103,14 @@ void Ov022_BuildEffectSlots(struct Actor *pActor)
     } else if ((data_0204c240 & GLOBAL_BIT2) != 0) {
         paramsMagic = data_ov022_020b262c;
         Ov022_AllocateSlotWithClass(pActor->aSlots, pActor->nId, SLOT_MAGIC, &paramsMagic);
-        Ov022_RegisterSequence(pActor, data_ov022_020b2cf4);
+        Ov022_RegisterSequence(pActor, gOv022BaEfMgPackPath_2);
     }
     if (Ov002_GetSlotTableByte(0) == MODE_SPECIAL) {
         paramsThird = data_ov022_020b2640;
         pActor->pEffectE = InstantiateClass(data_ov022_020b2930, &paramsThird);
     }
     params.pszResourcePath = szName;
-    OS_SPrintf(szName, data_ov022_020b2d04, data_ov022_020b2d08);
+    OS_SPrintf(szName, gOv022StrFmt, gOv022BaEfHazikiPackPath);
     params.nResourceKind = KIND_DEFAULT;
     switch (pActor->nKind) {
     case ACTOR_KIND_2:
@@ -121,14 +121,14 @@ void Ov022_BuildEffectSlots(struct Actor *pActor)
         break;
     }
     Ov022_AllocateSlotWithClass(pActor->aSlots, pActor->nId, SLOT_HAZIKI, &params);
-    OS_SPrintf(szName, data_ov022_020b2d04, data_ov022_020b2d1c);
+    OS_SPrintf(szName, gOv022StrFmt, gOv022BaEfCriticalPackPath);
     params.nResourceKind = KIND_DEFAULT;
     if (pActor->nKind == ACTOR_KIND_2) {
         params.nResourceKind = KIND_ALT;
     }
     Ov022_AllocateSlotWithClass(pActor->aSlots, pActor->nId, SLOT_CRITICAL, &params);
     if ((data_0204c240 & GLOBAL_BIT2) != 0) {
-        OS_SPrintf(szName, data_ov022_020b2d04, data_ov022_020b2d30);
+        OS_SPrintf(szName, gOv022StrFmt, gOv022BaEfDeadPackPath);
         params.nResourceKind = KIND_DEAD;
         Ov022_AllocateSlotWithClass(pActor->aSlots, pActor->nId, SLOT_DEAD, &params);
     }

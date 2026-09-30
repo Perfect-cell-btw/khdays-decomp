@@ -64,5 +64,5 @@ data_ov150_020d259c kind:data(any) addr:0x020d259c
 data_ov150_020d25aa kind:data(any) addr:0x020d25aa
 gOv150PackPathFmt kind:data(any) addr:0x020d25c0
 data_ov150_020d25cc kind:data(any) addr:0x020d25cc
-data_ov150_020d25d0 kind:data(any) addr:0x020d25d0
-data_ov150_020d25d8 kind:data(any) addr:0x020d25d8
+gOv150RootName kind:data(any) addr:0x020d25d0
+gOv150MfLoudnessName kind:data(any) addr:0x020d25d8

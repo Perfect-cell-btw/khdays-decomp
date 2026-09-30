@@ -41,8 +41,8 @@ extern int Ov259_New_2(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable13 data_ov259_020d2f2c;
 extern u8 data_0204c240;
-extern const char data_ov259_020d2fcc[];
-extern const char data_ov259_020d2fd4[];
+extern const char gOv259SaHRName[];
+extern const char gOv259MoveName[];
 
 void Ov259_Construct(char *self)
 {
@@ -85,8 +85,8 @@ void Ov259_Construct(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x390));
     Snd_RegisterSeqAndBind(self + 0x3e0, *(int *)(*(int *)(self + 0x390) + 0x88), Ov107_PackTextureHandle(self, 0x21), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x390), self + 0x3e0);
-    *(int *)(self + 0x40c) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, data_ov259_020d2fcc);
-    *(int *)(self + 0x414) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x1f), data_ov259_020d2fd4);
+    *(int *)(self + 0x40c) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, gOv259SaHRName);
+    *(int *)(self + 0x414) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x1f), gOv259MoveName);
     for (i = 0; i < 13; i++) {
         ((struct Ov259Parts *)self)->items[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Ov259Parts *)self)->items[i].res);

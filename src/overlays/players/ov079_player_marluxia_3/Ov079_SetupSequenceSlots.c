@@ -11,9 +11,9 @@ extern int GetFrameRateMode(void);                                              
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);                        /* RegisterSeqAndInit */
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern char *data_ov079_020b9a00;
-extern char data_ov079_020b99b4[];
-extern char data_ov079_020b99c8[];
-extern char data_ov079_020b99dc[];
+extern char gOv079MarluxiaLiE0PackPath[];
+extern char gOv079MarluxiaLiE1PackPath[];
+extern char gOv079MarluxiaLiE3PackPath[];
 extern Params data_ov079_020b9924;
 
 void Ov079_SetupSequenceSlots(char *self)
@@ -28,9 +28,9 @@ void Ov079_SetupSequenceSlots(char *self)
     if (GetFrameRateMode() == 1) {
         *(int *)(rig + 0x120) = (int)(((long long)*(int *)(rig + 0x120) * 0x1800 + 0x800) >> 12);
     }
-    RegisterSeqAndInit((int)(rig + 0xc), data_ov079_020b99b4, 1, *(u8 *)(base + 9) + 7);
-    RegisterSeqAndInit((int)(rig + 0x128), data_ov079_020b99c8, 1, *(u8 *)(base + 9) + 7);
-    RegisterSeqAndInit((int)(rig + 0x238), data_ov079_020b99dc, 1, *(u8 *)(base + 9) + 7);
+    RegisterSeqAndInit((int)(rig + 0xc), gOv079MarluxiaLiE0PackPath, 1, *(u8 *)(base + 9) + 7);
+    RegisterSeqAndInit((int)(rig + 0x128), gOv079MarluxiaLiE1PackPath, 1, *(u8 *)(base + 9) + 7);
+    RegisterSeqAndInit((int)(rig + 0x238), gOv079MarluxiaLiE3PackPath, 1, *(u8 *)(base + 9) + 7);
     p = data_ov079_020b9924;
     Ov022_AllocateSlotWithClass((int)(self + 0x248 + 0x2400), *(u8 *)(self + 9), 5, &p);
 }

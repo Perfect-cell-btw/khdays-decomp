@@ -2,8 +2,8 @@
  * Tears down any previously-bound cell object for layer slot 0x976c (if +0x9798 set) and
  * slot 0x97b8 (if +0x97e4 set), then rebinds both from their loaded resources through
  * TileTextRenderer_Init with a shared placement rect { x=0, y=0, w=0x20, h=0x18, ..., alpha, .., 6 }:
- *   layer 3 <- resource at obj+0x9760 (data_ov006_02056540), object at obj+0x976c
- *   layer 7 <- resource at obj+0x97ac (data_ov006_0205655c), object at obj+0x97b8
+ *   layer 3 <- resource at obj+0x9760 (gOv006TextFontEu10AllPath), object at obj+0x976c
+ *   layer 7 <- resource at obj+0x97ac (gOv006TextFontEu10AllPath_2), object at obj+0x97b8
  * Both layers are shown (alpha 0xf) for the normal title states {0-3,10,11,13,14}; in the
  * attract states {4-7} layer 7 is hidden (alpha 0). Other states leave the layers as-is. */
 extern int *data_ov008_02090fa4;

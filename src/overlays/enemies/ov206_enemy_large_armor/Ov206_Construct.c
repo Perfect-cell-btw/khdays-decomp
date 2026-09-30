@@ -7,7 +7,7 @@
  * +0x3d0 / +0x3dc mode 1, +0x3d4 / +0x3d8 mode 3), the five sub-items of the
  * data_ov206_020d0550 kinds in a fresh 40-byte slot table (+0x3e0, attached, bit 1 on their
  * +0x5c), configures actions 0/2/1/4 (modes 2/3/2/2, the second with a (0, -0x1d00, 0) offset,
- * rates 0x1000 / 0x99a / 0xccd / 0x1000), keeps pool entry 0x14's data_ov206_020d06bc motion
+ * rates 0x1000 / 0x99a / 0xccd / 0x1000), keeps pool entry 0x14's gOv206LargeMoveName motion
  * handle (+0x3b4), and creates from the zero position: a 0.5 placement on the +0x22c list
  * (+0x3ac), a capsule (world Y axis, radius 1.0, height 0x1333) on the +0x22c list with 110
  * slots (+0x3b0), a capsule of height 0x1050 on the +0x144 list (+0x3b8) and placements of
@@ -37,13 +37,13 @@ struct Ov206SubitemSlot {
 extern struct Ov206Kinds data_ov206_020d0550;
 extern VecFx32 data_02041dc8;
 extern VecFx32 data_02042264;
-extern const char data_ov206_020d066c[];
-extern const char data_ov206_020d0678[];
-extern const char data_ov206_020d0688[];
-extern const char data_ov206_020d0698[];
-extern const char data_ov206_020d06a0[];
-extern const char data_ov206_020d06b0[];
-extern const char data_ov206_020d06bc[];
+extern const char gOv206Bip01HeadName[];
+extern const char gOv206Bip01LHandName[];
+extern const char gOv206Bip01RHandName[];
+extern const char gOv206Bip01Name[];
+extern const char gOv206Bip01Spine1Name[];
+extern const char gOv206Target01Name[];
+extern const char gOv206LargeMoveName[];
 
 extern void Ov206_Destroy(void);
 extern void Ov206_DrawHandler(void);
@@ -107,12 +107,12 @@ void Ov206_Construct(int param)
         Snd_RegisterSeqAndBind(self + 0xe2, *(int *)(self[0xe1] + 0x88), Ov107_PackTextureHandle(self, 1), 0xc);
         MainBlob_ResetSlotRows(self[0xe1], self + 0xe2);
         RefreshObjectCallbacks(self[0xe1], 0);
-        ((void **)self)[0xf2] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov206_020d066c);
-        ((void **)self)[0xf3] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov206_020d0678);
-        ((void **)self)[0xf4] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov206_020d0688);
-        ((void **)self)[0xf5] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov206_020d0698);
-        ((void **)self)[0xf7] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov206_020d06a0);
-        ((void **)self)[0xf6] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov206_020d06b0);
+        ((void **)self)[0xf2] = InsertSortedEntryWithKey(self[0xe1], 1, gOv206Bip01HeadName);
+        ((void **)self)[0xf3] = InsertSortedEntryWithKey(self[0xe1], 1, gOv206Bip01LHandName);
+        ((void **)self)[0xf4] = InsertSortedEntryWithKey(self[0xe1], 1, gOv206Bip01RHandName);
+        ((void **)self)[0xf5] = InsertSortedEntryWithKey(self[0xe1], 3, gOv206Bip01Name);
+        ((void **)self)[0xf7] = InsertSortedEntryWithKey(self[0xe1], 1, gOv206Bip01Spine1Name);
+        ((void **)self)[0xf6] = InsertSortedEntryWithKey(self[0xe1], 3, gOv206Target01Name);
         ((void **)self)[0xf8] = CallocInstance(0x28);
 
         for (i = 0; i < 5; i++) {
@@ -132,7 +132,7 @@ void Ov206_Construct(int param)
         Ov107_Actor_SetAttachSlot(self, 1, 2, 0, 0xccd);
         Ov107_Actor_SetAttachSlot(self, 4, 2, 0, 0x1000);
 
-        ((void **)self)[0xed] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x14), data_ov206_020d06bc);
+        ((void **)self)[0xed] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x14), gOv206LargeMoveName);
 
         base = data_02041dc8;
         pose.position = base;

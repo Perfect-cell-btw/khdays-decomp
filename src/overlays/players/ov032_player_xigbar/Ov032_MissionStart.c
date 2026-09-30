@@ -6,7 +6,7 @@ extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern void Ov032_OpenSubObject(int a);
 extern int data_ov032_020b58c0;
-extern int data_ov032_020b587c;
+extern int gOv032XigbarLiE1PackPath;
 
 typedef struct { int w[5]; } Params;
 extern Params data_ov032_020b5724;
@@ -21,7 +21,7 @@ void Ov032_MissionStart(int self)
     *(signed char *)(blk + 0x114) = 0;
     *(int *)blk = 0;
     *(int *)(blk + 4) = 0;
-    RegisterSeqAndInit((int)(blk + 0xc), &data_ov032_020b587c, 1, *(unsigned char *)(base + 9) + 7);
+    RegisterSeqAndInit((int)(blk + 0xc), &gOv032XigbarLiE1PackPath, 1, *(unsigned char *)(base + 9) + 7);
     p = data_ov032_020b5724;
     Ov022_AllocateSlotWithClass(self + 0x2648, *(unsigned char *)(self + 9), 5, &p);
     Ov032_OpenSubObject(base);

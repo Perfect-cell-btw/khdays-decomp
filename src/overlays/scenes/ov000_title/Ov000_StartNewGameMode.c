@@ -45,7 +45,7 @@ typedef struct Ov000NewGameContext {
 } Ov000NewGameContext;
 
 extern const Ov000ResourceTrackerConfig data_ov000_0205a858;
-extern const char data_ov000_0205ab20[];
+extern const char gOv000UiNewgameResI18NPath[];
 extern Ov000NewGameContext *data_ov000_0205ac28;
 
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
@@ -79,7 +79,7 @@ void Ov000_StartNewGameMode(void)
     Ov000NewGameContext *context;
     void *entry;
 
-    container = Msg_OpenContainerAndReadHeader(data_ov000_0205ab20, 14);
+    container = Msg_OpenContainerAndReadHeader(gOv000UiNewgameResI18NPath, 14);
     data_ov000_0205ac28->activeMode = 1;
     data_ov000_0205ac28->pendingMode = 2;
 

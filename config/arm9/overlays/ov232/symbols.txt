@@ -69,8 +69,8 @@ data_ov232_020d3674 kind:data(any) addr:0x020d3674
 data_ov232_020d3680 kind:data(any) addr:0x020d3680
 data_ov232_020d368c kind:data(any) addr:0x020d368c
 gOv232PackPathFmt kind:data(any) addr:0x020d36a0
-data_ov232_020d36ac kind:data(any) addr:0x020d36ac
-data_ov232_020d36b8 kind:data(any) addr:0x020d36b8
-data_ov232_020d36c4 kind:data(any) addr:0x020d36c4
-data_ov232_020d36d0 kind:data(any) addr:0x020d36d0
-data_ov232_020d36dc kind:data(any) addr:0x020d36dc
+gOv232BonePelvisName kind:data(any) addr:0x020d36ac
+gOv232BoneLHandName kind:data(any) addr:0x020d36b8
+gOv232BoneHaneLName kind:data(any) addr:0x020d36c4
+gOv232BoneHaneRName kind:data(any) addr:0x020d36d0
+gOv232MoveName kind:data(any) addr:0x020d36dc

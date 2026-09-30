@@ -4,107 +4,107 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov022_020b2958;
-extern int data_ov022_020b295c;
-extern int data_ov022_020b2960;
-extern int data_ov022_020b2964;
-extern int data_ov022_020b2968;
-extern int data_ov022_020b296c;
-extern int data_ov022_020b2970;
-extern int data_ov022_020b2974;
-extern int data_ov022_020b2978;
-extern int data_ov022_020b297c;
-extern int data_ov022_020b2980;
-extern int data_ov022_020b2984;
-extern int data_ov022_020b2988;
-extern int data_ov022_020b298c;
-extern int data_ov022_020b2990;
-extern int data_ov022_020b2994;
-extern int data_ov022_020b2998;
-extern int data_ov022_020b299c;
-extern int data_ov022_020b29a0;
-extern int data_ov022_020b29a4;
-extern int data_ov022_020b29a8;
-extern int data_ov022_020b29ac;
-extern int data_ov022_020b29b0;
-extern int data_ov022_020b29b4;
+extern int gOv022A2Name;
+extern int gOv022BlName;
+extern int gOv022T0Name;
+extern int gOv022A1Name;
+extern int gOv022C2Name;
+extern int gOv022S2Name;
+extern int gOv022B0Name;
+extern int gOv022B2Name;
+extern int gOv022F0Name;
+extern int gOv022A0Name;
+extern int gOv022C0Name;
+extern int gOv022C1Name;
+extern int gOv022S0Name;
+extern int gOv022S1Name;
+extern int gOv022F1Name;
+extern int gOv022F2Name;
+extern int gOv022B1Name;
+extern int gOv022CuName;
+extern int gOv022AeName;
+extern int gOv022ThName;
+extern int gOv022T1Name;
+extern int gOv022T2Name;
+extern int gOv022FiName;
+extern int gOv022NotingName;
 
 void *const data_ov022_020b2394[18] = {
 
-    &data_ov022_020b2978,
+    &gOv022F0Name,
 
-    &data_ov022_020b2990,
+    &gOv022F1Name,
 
-    &data_ov022_020b2994,
+    &gOv022F2Name,
 
-    &data_ov022_020b2970,
+    &gOv022B0Name,
 
-    &data_ov022_020b2998,
+    &gOv022B1Name,
 
-    &data_ov022_020b2974,
+    &gOv022B2Name,
 
-    &data_ov022_020b2960,
+    &gOv022T0Name,
 
-    &data_ov022_020b29a8,
+    &gOv022T1Name,
 
-    &data_ov022_020b29ac,
+    &gOv022T2Name,
 
-    &data_ov022_020b297c,
+    &gOv022A0Name,
 
-    &data_ov022_020b2964,
+    &gOv022A1Name,
 
-    &data_ov022_020b2958,
+    &gOv022A2Name,
 
-    &data_ov022_020b2980,
+    &gOv022C0Name,
 
-    &data_ov022_020b2984,
+    &gOv022C1Name,
 
-    &data_ov022_020b2968,
+    &gOv022C2Name,
 
-    &data_ov022_020b2988,
+    &gOv022S0Name,
 
-    &data_ov022_020b298c,
+    &gOv022S1Name,
 
-    &data_ov022_020b296c,
+    &gOv022S2Name,
 
 };
 
 void *const data_ov022_020b23dc[18] = {
 
-    &data_ov022_020b29b0,
+    &gOv022FiName,
 
-    &data_ov022_020b29b0,
+    &gOv022FiName,
 
-    &data_ov022_020b29b0,
+    &gOv022FiName,
 
-    &data_ov022_020b295c,
+    &gOv022BlName,
 
-    &data_ov022_020b295c,
+    &gOv022BlName,
 
-    &data_ov022_020b295c,
+    &gOv022BlName,
 
-    &data_ov022_020b29a4,
+    &gOv022ThName,
 
-    &data_ov022_020b29a4,
+    &gOv022ThName,
 
-    &data_ov022_020b29a4,
+    &gOv022ThName,
 
-    &data_ov022_020b29a0,
+    &gOv022AeName,
 
-    &data_ov022_020b29a0,
+    &gOv022AeName,
 
-    &data_ov022_020b29a0,
+    &gOv022AeName,
 
-    &data_ov022_020b299c,
+    &gOv022CuName,
 
-    &data_ov022_020b299c,
+    &gOv022CuName,
 
-    &data_ov022_020b299c,
+    &gOv022CuName,
 
-    &data_ov022_020b29b4,
+    &gOv022NotingName,
 
-    &data_ov022_020b29b4,
+    &gOv022NotingName,
 
-    &data_ov022_020b29b4,
+    &gOv022NotingName,
 
 };

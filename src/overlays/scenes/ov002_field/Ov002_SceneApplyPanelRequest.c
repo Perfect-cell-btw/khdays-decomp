@@ -40,7 +40,7 @@
 extern int data_ov002_0207f624;
 extern u16 data_ov002_0207deb8[];
 extern u16 data_ov002_0207deba[];
-extern int data_ov002_0207eb58[];
+extern int gOv002TextFontEu10SPath[];
 
 extern void NNSi_FndFreeFromDefaultHeap(int pBlock);
 extern int Archive_LoadFile(unsigned int nFileId, int nHeap);
@@ -98,7 +98,7 @@ void Ov002_SceneApplyPanelRequest(int *pReq)
         MIi_CpuCopyFast(*(int **)(pWindow[0xb] + 0x14),
                         *(int **)(*(int *)((char *)ctx + 0x788) + 0x20), 0x3840);
 
-        Resource_BindByName(f.aBind, data_ov002_0207eb58);
+        Resource_BindByName(f.aBind, gOv002TextFontEu10SPath);
         nHandle = Ov002_Hud_GetBlock30();
         f.pText = Ov002_GetVarRecordByIndex((int *)((char *)ctx + 0x7ac),
                                     data_ov002_0207deba[pReq[5] * 2]);

@@ -52,5 +52,5 @@ Ov174_stateTimerToggleFlags kind:function(arm,size=0x94) addr:0x020d2844
 data_ov174_020d28d8 kind:data(any) addr:0x020d28d8
 data_ov174_020d28e8 kind:data(any) addr:0x020d28e8
 gOv174PackPathFmt kind:data(any) addr:0x020d2900
-data_ov174_020d290c kind:data(any) addr:0x020d290c
-data_ov174_020d2914 kind:data(any) addr:0x020d2914
+gOv174Bone04Name kind:data(any) addr:0x020d290c
+gOv174BodyName kind:data(any) addr:0x020d2914

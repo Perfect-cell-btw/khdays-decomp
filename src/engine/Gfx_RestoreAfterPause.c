@@ -5,7 +5,7 @@
 #include "game/engine.h"
 
 extern char *data_0204be08;
-extern char data_02042748[16];
+extern char gPauseRefreshName[16];
 
 extern void G2x_SetBlendBrightness_(u16 *dst, u32 attr, int value);
 /* Defined taking param_1 as GXDispMode: declared narrower here, which is what makes mwcc truncate the
@@ -39,7 +39,7 @@ void Gfx_RestoreAfterPause(void)
         GX_SetGraphicsMode(0xe, 4, 1);
     }
 
-    VBlank_UnregisterCallback(1, data_02042748);
+    VBlank_UnregisterCallback(1, gPauseRefreshName);
     Ov002_UpdatePanelBlend();
 
     if (LoadGlobalU16At0() == 0x2a) {

@@ -4,12 +4,12 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-const char data_ov056_020b7524[16] = "la_h_L";
+const char gOv056LaHLName[16] = "la_h_L";
 
-const char data_ov056_020b7534[16] = "larxene_R";
+const char gOv056LarxeneRName[16] = "larxene_R";
 
-const char data_ov056_020b7544[16] = "larxene_tg";
+const char gOv056LarxeneTgName[16] = "larxene_tg";
 
-const char data_ov056_020b7554[16] = "la_h_R";
+const char gOv056LaHRName[16] = "la_h_R";
 
-const char data_ov056_020b7564[16] = "Bip01";
+const char gOv056Bip01Name[16] = "Bip01";

@@ -139,9 +139,9 @@ data_ov024_0209383c kind:data(any) addr:0x0209383c
 data_ov024_02093900 kind:data(any) addr:0x02093900
 data_ov024_02093904 kind:data(any) addr:0x02093904
 data_ov024_02093918 kind:data(any) addr:0x02093918
-data_ov024_02093958 kind:data(any) addr:0x02093958
+gOv024TextFontEu10AllPath kind:data(any) addr:0x02093958
 data_ov024_02093974 kind:data(any) addr:0x02093974
-data_ov024_020939ac kind:data(any) addr:0x020939ac
+gOv024MobiclipIntrName kind:data(any) addr:0x020939ac
 data_ov024_020939c4 kind:data(any) addr:0x020939c4
 data_ov024_020939e8 kind:data(any) addr:0x020939e8
 data_ov024_02093a20 kind:bss addr:0x02093a20

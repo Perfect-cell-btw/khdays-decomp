@@ -6,10 +6,10 @@
 
 char gOv251PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov251_020d654c[8] = "Bip01";
+char gOv251Bip01Name[8] = "Bip01";
 
-char data_ov251_020d6554[16] = "Bip01_L_Hand";
+char gOv251Bip01LHandName[16] = "Bip01_L_Hand";
 
-char data_ov251_020d6564[16] = "Bip01_R_Hand";
+char gOv251Bip01RHandName[16] = "Bip01_R_Hand";
 
-char data_ov251_020d6574[12] = "B2_Move";
+char gOv251B2MoveName[12] = "B2_Move";

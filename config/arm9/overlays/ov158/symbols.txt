@@ -68,6 +68,6 @@ data_ov158_020cf554 kind:data(any) addr:0x020cf554
 data_ov158_020cf560 kind:data(any) addr:0x020cf560
 data_ov158_020cf564 kind:data(any) addr:0x020cf564
 gOv158PackPathFmt kind:data(any) addr:0x020cf580
-data_ov158_020cf58c kind:data(any) addr:0x020cf58c
-data_ov158_020cf594 kind:data(any) addr:0x020cf594
-data_ov158_020cf598 kind:data(any) addr:0x020cf598
+gOv158EffTagName kind:data(any) addr:0x020cf58c
+gOv158036Name kind:data(any) addr:0x020cf594
+gOv158MoveName kind:data(any) addr:0x020cf598

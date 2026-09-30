@@ -43,4 +43,4 @@ Ov219_AimAndFaceTick kind:function(arm,size=0xf4) addr:0x020d17ac
 data_ov219_020d18a0 kind:data(any) addr:0x020d18a0
 data_ov219_020d18a4 kind:data(any) addr:0x020d18a4
 gOv219PackPathFmt kind:data(any) addr:0x020d18c0
-data_ov219_020d18cc kind:data(any) addr:0x020d18cc
+gOv219MoveName kind:data(any) addr:0x020d18cc

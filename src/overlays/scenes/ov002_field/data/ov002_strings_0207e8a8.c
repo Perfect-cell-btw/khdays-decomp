@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207e8a8[12] = "BGUIVBFUNC";
+char gOv002BguivbfuncName[12] = "BGUIVBFUNC";

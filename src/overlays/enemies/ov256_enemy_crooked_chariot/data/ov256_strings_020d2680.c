@@ -6,22 +6,22 @@
 
 char gOv256PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov256_020d268c[8] = "tag00";
+char gOv256Tag00Name[8] = "tag00";
 
-char data_ov256_020d2694[8] = "tag01";
+char gOv256Tag01Name[8] = "tag01";
 
-char data_ov256_020d269c[8] = "tag02";
+char gOv256Tag02Name[8] = "tag02";
 
-char data_ov256_020d26a4[8] = "tag03";
+char gOv256Tag03Name[8] = "tag03";
 
-char data_ov256_020d26ac[8] = "tag04";
+char gOv256Tag04Name[8] = "tag04";
 
-char data_ov256_020d26b4[12] = "tag_buki_L";
+char gOv256TagBukiLName[12] = "tag_buki_L";
 
-char data_ov256_020d26c0[12] = "tag_buki_R";
+char gOv256TagBukiRName[12] = "tag_buki_R";
 
-char data_ov256_020d26cc[8] = "move";
+char gOv256MoveName[8] = "move";
 
-char data_ov256_020d26d4[12] = "move_buki_L";
+char gOv256MoveBukiLName[12] = "move_buki_L";
 
-char data_ov256_020d26e0[32] = "move_buki_R";
+char gOv256MoveBukiRName[32] = "move_buki_R";

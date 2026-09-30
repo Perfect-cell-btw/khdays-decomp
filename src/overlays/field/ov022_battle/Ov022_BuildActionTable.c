@@ -42,9 +42,9 @@ struct Actor {
 };
 
 extern char *data_02042a70[];
-extern char data_ov022_020b2d68[];
-extern char data_ov022_020b2d90[];
-extern char data_ov022_020b2da0[];
+extern char gOv022BaChPath[];
+extern char gOv022CiPathFmt[];
+extern char gOv022CmPathFmt[];
 
 extern void Ov002_LoadCharacterWeapon(u8 *pBlk, int nKind, int nArg);
 extern int Slot_EvalPackedParam(int nId, int nWhat);
@@ -80,12 +80,12 @@ void Ov022_BuildActionTable(struct ActionTable *pTable, struct Actor *pActor,
     if (Slot_EvalPackedParam(pActor->nId, REACH_QUERY) != 0) {
         pTable->nAngle = pTable->nAngleAlt;
     }
-    OS_SPrintf(szTableName, data_ov022_020b2d90, data_ov022_020b2d68,
+    OS_SPrintf(szTableName, gOv022CiPathFmt, gOv022BaChPath,
                data_02042a70[nKind]);
     pFile = Archive_LoadFile(szTableName, ARCHIVE_HEAP);
     Ov022_RebaseAnimRecord(pTable, pFile);
     NNSi_FndFreeFromDefaultHeap(pFile);
-    OS_SPrintf(szExtraName, data_ov022_020b2da0, data_ov022_020b2d68,
+    OS_SPrintf(szExtraName, gOv022CmPathFmt, gOv022BaChPath,
                data_02042a70[nKind]);
     pFile = Archive_LoadFile(szExtraName, ARCHIVE_HEAP);
     Ov022_LinkActionAnims(pTable, pFile);

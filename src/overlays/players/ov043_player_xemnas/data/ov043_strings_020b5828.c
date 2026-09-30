@@ -4,20 +4,20 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov043_020b5828[20] = "ba/ch/xe/def.p.z";
+char gOv043XemnasDefPackPath[20] = "ba/ch/xe/def.p.z";
 
-char data_ov043_020b583c[20] = "ba/ch/xe/def_h.p.z";
+char gOv043XemnasDefHPackPath[20] = "ba/ch/xe/def_h.p.z";
 
-char data_ov043_020b5850[20] = "ba/ch/xe/ef_rg.p.z";
+char gOv043XemnasEfRgPackPath[20] = "ba/ch/xe/ef_rg.p.z";
 
-char data_ov043_020b5864[16] = "ba/ch/xe/li.p.z";
+char gOv043XemnasLiPackPath[16] = "ba/ch/xe/li.p.z";
 
-char data_ov043_020b5874[20] = "ba/ch/xe/li_ea0.p.z";
+char gOv043XemnasLiEa0PackPath[20] = "ba/ch/xe/li_ea0.p.z";
 
-char data_ov043_020b5888[20] = "ba/ch/xe/li_ea1.p.z";
+char gOv043XemnasLiEa1PackPath[20] = "ba/ch/xe/li_ea1.p.z";
 
-char data_ov043_020b589c[20] = "ba/ch/xe/li_e0.p.z";
+char gOv043XemnasLiE0PackPath[20] = "ba/ch/xe/li_e0.p.z";
 
-char data_ov043_020b58b0[20] = "ba/ch/xe/li_e2.p.z";
+char gOv043XemnasLiE2PackPath[20] = "ba/ch/xe/li_e2.p.z";
 
-char data_ov043_020b58c4[28] = "ba/ch/xe/li_e1.p.z";
+char gOv043XemnasLiE1PackPath[28] = "ba/ch/xe/li_e1.p.z";

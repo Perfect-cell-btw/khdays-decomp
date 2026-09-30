@@ -77,8 +77,8 @@ extern void Ov107_EnqueueValue(struct Ov240Actor *self, struct Subitem *item);
 extern void **List_InsertSorted(void *pool, int size, int count);
 extern void *Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int id);
-extern const char data_ov240_020cfb8c[];
-extern const char data_ov240_020cfb9c[];
+extern const char gOv240MsNbSharePackPath[];
+extern const char gOv240MoveName[];
 
 void Ov240_InitializeActor(struct Ov240Actor *self)
 {
@@ -90,7 +90,7 @@ void Ov240_InitializeActor(struct Ov240Actor *self)
     void **slot;
     void *value;
 
-    self->config384 = Ov107_OpenCachedResourceByName(data_ov240_020cfb8c);
+    self->config384 = Ov107_OpenCachedResourceByName(gOv240MsNbSharePackPath);
     minX = -0xeea;
     box.xmin = minX;
     minY = 0x17;
@@ -116,7 +116,7 @@ void Ov240_InitializeActor(struct Ov240Actor *self)
     self->box = box;
     self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(self->subscriberList9c, self->subitem388);
-    self->motion398 = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov240_020cfb9c);
+    self->motion398 = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv240MoveName);
     item = self->subitem39c =
         CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 3));
     Ov107_EnqueueValue(self, item);

@@ -1,5 +1,5 @@
 /* Ov008_MissionEnterPage1 -- enter menu page 1.
- * Resets the page's resource block at OBJ+8, reloads it from data_ov008_02090d88, rebuilds
+ * Resets the page's resource block at OBJ+8, reloads it from gOv008UiMltMltgpPath, rebuilds
  * layer 0 and layer 1, re-applies the current Mission Mode sub-state (OBJ+0x94f4) to the model and
  * the text, and starts the page-1 entry animation.
  *
@@ -19,11 +19,11 @@ extern void Ov008_Menu_SetupSprites(int state);
 extern void Ov008_MissionBuildScreenCells(int state);
 extern void Ov008_MissionRequestStateChange(int anim, int a, int b, int c, int d);
 extern int *data_ov008_02090fa4;
-extern int  data_ov008_02090d88;
+extern int  gOv008UiMltMltgpPath;
 
 void Ov008_MissionEnterPage1(void) {
     Ov008_SweepElements((int *)((char *)data_ov008_02090fa4 + 8));
-    Ov008_LoadLayoutResource((int)((char *)data_ov008_02090fa4 + 8), (int)&data_ov008_02090d88);
+    Ov008_LoadLayoutResource((int)((char *)data_ov008_02090fa4 + 8), (int)&gOv008UiMltMltgpPath);
     Ov008_MissionRetargetCellByTag(0, 0, 0);
     Ov008_MissionRetargetCellByTag(1, 0, 0);
     Ov008_Menu_SetupSprites(*(int *)((char *)data_ov008_02090fa4 + 0x94f4));

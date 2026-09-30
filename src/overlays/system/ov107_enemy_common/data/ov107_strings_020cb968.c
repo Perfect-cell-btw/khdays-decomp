@@ -4,8 +4,8 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov107_020cb968[20] = "ba/ef/s_burn.p.z";
+char gOv107BaEfSBurnPackPath[20] = "ba/ef/s_burn.p.z";
 
-char data_ov107_020cb97c[20] = "ba/ef/s_frost.p.z";
+char gOv107BaEfSFrostPackPath[20] = "ba/ef/s_frost.p.z";
 
-char data_ov107_020cb990[20] = "ba/ef/s_shock.p.z";
+char gOv107BaEfSShockPackPath[20] = "ba/ef/s_shock.p.z";

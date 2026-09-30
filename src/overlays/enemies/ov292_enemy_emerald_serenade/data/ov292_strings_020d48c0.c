@@ -6,4 +6,4 @@
 
 char gOv292PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov292_020d48cc[20] = "body";
+char gOv292BodyName[20] = "body";

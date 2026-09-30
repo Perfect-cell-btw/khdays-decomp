@@ -41,7 +41,7 @@ extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc,
                                 struct PanelSubCfg *pCfg, int a, int b);
 extern void Ov100_StepParts(void);
 extern void Ov100_ReleaseSlotHandles(void);
-extern int data_ov100_020bc1a8;
+extern int gOv100ZexionLiE0PackPath;
 
 void Ov100_BuildEmitterDescriptor(char *self)
 {
@@ -86,7 +86,7 @@ void Ov100_BuildEmitterDescriptor(char *self)
     cfg[1].field4c = 10;
 
     Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self,
-                        &data_ov100_020bc1a8, cfg, 2, 10);
+                        &gOv100ZexionLiE0PackPath, cfg, 2, 10);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x20) = (void *)&Ov100_StepParts;
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x24) = (void *)&Ov100_ReleaseSlotHandles;
 }

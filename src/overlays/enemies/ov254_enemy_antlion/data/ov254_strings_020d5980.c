@@ -6,22 +6,22 @@
 
 char gOv254PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov254_020d598c[8] = "Bone02";
+char gOv254Bone02Name[8] = "Bone02";
 
-char data_ov254_020d5994[4] = "SL";
+char gOv254SlName[4] = "SL";
 
-char data_ov254_020d5998[4] = "SR";
+char gOv254SrName[4] = "SR";
 
-char data_ov254_020d599c[8] = "core";
+char gOv254CoreName[8] = "core";
 
-char data_ov254_020d59a4[8] = "head01";
+char gOv254Head01Name[8] = "head01";
 
-char data_ov254_020d59ac[12] = "L_tooth02";
+char gOv254LTooth02Name[12] = "L_tooth02";
 
-char data_ov254_020d59b8[12] = "L_tooth03";
+char gOv254LTooth03Name[12] = "L_tooth03";
 
-char data_ov254_020d59c4[12] = "R_tooth02";
+char gOv254RTooth02Name[12] = "R_tooth02";
 
-char data_ov254_020d59d0[12] = "R_tooth03";
+char gOv254RTooth03Name[12] = "R_tooth03";
 
-char data_ov254_020d59dc[36] = "B5move";
+char gOv254B5MoveName[36] = "B5move";

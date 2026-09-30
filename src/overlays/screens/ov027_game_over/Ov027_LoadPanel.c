@@ -1,5 +1,5 @@
 /* Ov027_LoadPanel -- Ov027_LoadPanel: load the game-over background and menu panel.  The
- * background file "gameover/gameoverbg_&.pbg.z" (data_ov027_02084328, heap 0xf) is opened into
+ * background file "gameover/gameoverbg_&.pbg.z" (gOv027GameoverGameoverbgPath, heap 0xf) is opened into
  * the panel (+0x510 of the scene work), its screen / character / palette set is bound
  * (Res_LoadBgSet 02024c94) and registered as BG 1 with parameters 7 / 1 (BG_Register
  * 02024ba4); the menu strips are unpacked from the game-over archive (+0x18; entry 0 of the
@@ -140,14 +140,14 @@ extern void  Ov027_EnqueueDisplayList(Ov027Panel *pPanel);              /* Ov027
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
 extern Ov027SessionInfo data_0204c240;
-extern char  data_ov027_02084328[];                                 /* "gameover/gameoverbg_&.pbg.z" */
+extern char  gOv027GameoverGameoverbgPath[];                                 /* "gameover/gameoverbg_&.pbg.z" */
 
 void Ov027_LoadPanel(void)
 {
     int i;
     Ov027BgSet *pSet;
 
-    data_ov027_02084364->panel.pFile = Archive_LoadFile(data_ov027_02084328, 0xf);
+    data_ov027_02084364->panel.pFile = Archive_LoadFile(gOv027GameoverGameoverbgPath, 0xf);
     Res_LoadSpriteSet(&data_ov027_02084364->panel.set, data_ov027_02084364->panel.pFile, 0, 0, 0);
     pSet = &data_ov027_02084364->panel.set;
     DispatchByPartType(1, pSet->pScreen, pSet->pChar, pSet->pPalette, 7, 1);

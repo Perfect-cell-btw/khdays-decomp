@@ -8,9 +8,9 @@ struct slot { void *ptr; int pad; };
 
 extern struct v5 data_ov131_020cef58;
 extern struct v3 data_02041dc8;
-extern unsigned short data_ov131_020cefec[];
-extern unsigned short data_ov131_020ceff8[];
-extern int data_ov131_020cf004;
+extern unsigned short gOv131BoneHimoName[];
+extern unsigned short gOv131BoneHeadName[];
+extern int gOv131MoveName;
 
 extern void Ov131_Destroy(void), Ov131_TickWithChildRefresh(void), Ov131_TickAndPlaceBelowCamera(void);
 extern void Ov131_OnEffectMessage(void), Ov131_SpawnActorRegistryEntry(void), Ov131_ReleaseByStateAndSyncSrt(void);
@@ -49,9 +49,9 @@ void Ov131_nodeConstructor(int param_1) {
     *(int *)(param_1 + 0x6c) = 0;
     *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
-    *(void **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov131_020cefec);
-    *(void **)(param_1 + 0x3c0) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov131_020ceff8);
-    *(void **)(param_1 + 0x3c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov131_020cf004);
+    *(void **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv131BoneHimoName);
+    *(void **)(param_1 + 0x3c0) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv131BoneHeadName);
+    *(void **)(param_1 + 0x3c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &gOv131MoveName);
     *(void **)(param_1 + 0x3c4) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
         ((struct slot *)*(int *)(param_1 + 0x3c4))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, tbl.w[i]));

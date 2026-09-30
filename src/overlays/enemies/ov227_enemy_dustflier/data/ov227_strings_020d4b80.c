@@ -6,14 +6,14 @@
 
 char gOv227PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov227_020d4b8c[12] = "Bone_head";
+char gOv227BoneHeadName[12] = "Bone_head";
 
-char data_ov227_020d4b98[16] = "Bone_tail_03";
+char gOv227BoneTail03Name[16] = "Bone_tail_03";
 
-char data_ov227_020d4ba8[12] = "Bone_pelvis";
+char gOv227BonePelvisName[12] = "Bone_pelvis";
 
-char data_ov227_020d4bb4[12] = "Bone_L_hand";
+char gOv227BoneLHandName[12] = "Bone_L_hand";
 
-char data_ov227_020d4bc0[12] = "Bone_R_hand";
+char gOv227BoneRHandName[12] = "Bone_R_hand";
 
-char data_ov227_020d4bcc[20] = "move";
+char gOv227MoveName[20] = "move";

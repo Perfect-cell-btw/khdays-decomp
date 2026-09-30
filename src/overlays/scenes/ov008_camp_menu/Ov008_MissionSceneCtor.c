@@ -27,8 +27,8 @@
 struct S5 { int w[5]; };
 
 extern int *data_ov008_02090fa4;
-extern int data_ov008_02090d30, data_ov008_02090d4c;
-extern int data_ov008_02090d68, data_ov008_02090d78;
+extern int gOv008TextFontEu10AllPath, gOv008TextFontEu10AllPath_2;
+extern int gOv008UiMltResPath_2, gOv008UiMltResPath_3;
 extern struct S5 data_ov008_0208fd58;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
@@ -99,10 +99,10 @@ void *Ov008_MissionSceneCtor(int arg) {
         i = i + 1 & 0xff;
     } while (i < 8);
 
-    Font_LoadUTF16((int)(OBJ + 0x9760), (int)&data_ov008_02090d30);
-    Font_LoadUTF16((int)(OBJ + 0x97ac), (int)&data_ov008_02090d4c);
-    *(int *)OBJ = Msg_OpenContainerAndReadHeader((int)&data_ov008_02090d68, 0xe);
-    *(int *)(OBJ + 4) = Msg_OpenContainerAndReadHeader((int)&data_ov008_02090d78, 0xe);
+    Font_LoadUTF16((int)(OBJ + 0x9760), (int)&gOv008TextFontEu10AllPath);
+    Font_LoadUTF16((int)(OBJ + 0x97ac), (int)&gOv008TextFontEu10AllPath_2);
+    *(int *)OBJ = Msg_OpenContainerAndReadHeader((int)&gOv008UiMltResPath_2, 0xe);
+    *(int *)(OBJ + 4) = Msg_OpenContainerAndReadHeader((int)&gOv008UiMltResPath_3, 0xe);
 
     param = data_ov008_0208fd58;
     Ov008_Container_Init((int *)(OBJ + 8), &param);

@@ -6,4 +6,4 @@
 
 char gOv154PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov154_020d1ccc[20] = "headcon";
+char gOv154HeadconName[20] = "headcon";

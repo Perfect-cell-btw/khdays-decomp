@@ -56,7 +56,7 @@ data_ov250_020d28c0 kind:data(any) addr:0x020d28c0
 data_ov250_020d28ce kind:data(any) addr:0x020d28ce
 data_ov250_020d28dc kind:data(any) addr:0x020d28dc
 gOv250PackPathFmt kind:data(any) addr:0x020d2900
-data_ov250_020d290c kind:data(any) addr:0x020d290c
-data_ov250_020d2914 kind:data(any) addr:0x020d2914
-data_ov250_020d2924 kind:data(any) addr:0x020d2924
-data_ov250_020d2934 kind:data(any) addr:0x020d2934
+gOv250Bip01Name kind:data(any) addr:0x020d290c
+gOv250Bip01LHandName kind:data(any) addr:0x020d2914
+gOv250Bip01RHandName kind:data(any) addr:0x020d2924
+gOv250B2MoveName kind:data(any) addr:0x020d2934

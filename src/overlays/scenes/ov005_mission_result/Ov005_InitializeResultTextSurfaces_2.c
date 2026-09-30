@@ -19,7 +19,7 @@ typedef struct Ov005ResultContext {
     int activeTextBufferIndex;
 } Ov005ResultContext;
 extern Ov005ResultContext *data_ov005_0205b810;
-extern char data_ov005_0205b5f4[];
+extern char gOv005TextFontEu10Path_2[];
 extern void MI_CpuFill8(void *,u8,u32);
 extern void *Ov005_FindResultRowBuffer(int,int *);
 extern void *G2_GetBG2ScrPtr(void),*G2S_GetBG2CharPtr(void);
@@ -29,7 +29,7 @@ void Ov005_InitializeResultTextSurfaces_2(void) {
     u8 tileBase=1;
     MI_CpuFill8(&data_ov005_0205b810->font,0,12);
     MI_CpuFill8(&config,0,40);
-    Resource_BindByName(&data_ov005_0205b810->font,data_ov005_0205b5f4);
+    Resource_BindByName(&data_ov005_0205b810->font,gOv005TextFontEu10Path_2);
     config.nUnk04=13;
     config.nWidthTiles=19;
     config.nHeightTiles=2;

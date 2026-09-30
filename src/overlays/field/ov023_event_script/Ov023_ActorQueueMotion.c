@@ -49,7 +49,7 @@ extern void *Msg_OpenContainerAndReadHeader(const char *pszName, int nHeap);    
 extern int   Anim_GetLengthQ12(void *pAnim, u16 nTrack);                /* Anim_GetLengthQ12 */
 extern int   Anim_GetFrame(void *pAnim, int nTrack);                /* Anim_GetFrame */
 extern int   LoadArrayInt244(int nEntity);                            /* Entity_GetSpeed */
-extern char  data_ov023_0208a730[];                                 /* ".p2" */
+extern char  gOv023P2Name_2[];                                 /* ".p2" */
 
 void Ov023_ActorQueueMotion(Ov023Actor *pActor, char *pszMotion, s16 nFrame, int nTrack, int nBlend, int bHalfway)
 {
@@ -69,7 +69,7 @@ void Ov023_ActorQueueMotion(Ov023Actor *pActor, char *pszMotion, s16 nFrame, int
             pMotion->szName[0] = 0;
         } else {
             strcpy(pMotion->szName, pszMotion);
-            if (strcmp(pMotion->szName + (strlen(pMotion->szName) - 3), data_ov023_0208a730) == 0
+            if (strcmp(pMotion->szName + (strlen(pMotion->szName) - 3), gOv023P2Name_2) == 0
                 && pActor->pMotionText == 0) {
                 pActor->pMotionText = Msg_OpenContainerAndReadHeader(pszMotion, 0xd);
             }

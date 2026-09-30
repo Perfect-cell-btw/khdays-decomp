@@ -1,7 +1,7 @@
 /* Ov025_SaveMenuInitStep -- Ov008_SaveMenuInitStep: one step of the save menu's
  * start-up sequence (+0xc), returning 1 once it is done.  Step 0 loads the
  * menu graphics, clears the main BG1..3 screens, points the text loader
- * (+0x158) at data_ov025_020b4eb0, backs the whole game state up (+0x248),
+ * (+0x158) at gOv025UiCmStrSavTextPath, backs the whole game state up (+0x248),
  * resets the load phase byte (+0x244) and the phase (+0x4).  Step 1 loads
  * the summary of slot +0x8 (Ov008_StepSaveSlotLoad); once done the slot's
  * stamp (fields 0xc77:0xc87, 16 bits each) replaces the best stamp (+0x1ef8)
@@ -49,7 +49,7 @@ typedef struct Ov008SaveMenu {
 } Ov008SaveMenu;
 
 extern GameState *gGameState;
-extern const char data_ov025_020b4eb0[];
+extern const char gOv025UiCmStrSavTextPath[];
 extern void  Ov025_InitSubScreenGraphics(void);                                   /* load the menu graphics */
 extern void *G2_GetBG1ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);
@@ -79,7 +79,7 @@ int Ov025_SaveMenuInitStep(Ov008SaveMenu *pMenu)
         MIi_CpuClearFast(0, G2_GetBG1ScrPtr(), 0x800);
         MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
         MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
-        Ov025_InitResourceRecord(pMenu->varRecords, data_ov025_020b4eb0);
+        Ov025_InitResourceRecord(pMenu->varRecords, gOv025UiCmStrSavTextPath);
         pMenu->backup = *gGameState;
         pMenu->nLoadPhase = 0;
         pMenu->nPhase = 0;

@@ -6,34 +6,34 @@
 
 char gOv252PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov252_020d452c[12] = "01_B_head01";
+char gOv25201BHead01Name[12] = "01_B_head01";
 
-char data_ov252_020d4538[12] = "01_B_body02";
+char gOv25201BBody02Name[12] = "01_B_body02";
 
-char data_ov252_020d4544[8] = "core";
+char gOv252CoreName[8] = "core";
 
-char data_ov252_020d454c[12] = "B3_01body";
+char gOv252B301BodyName[12] = "B3_01body";
 
-char data_ov252_020d4558[12] = "01_B_head02";
+char gOv25201BHead02Name[12] = "01_B_head02";
 
-char data_ov252_020d4564[12] = "01_B_L_rib";
+char gOv25201BLRibName[12] = "01_B_L_rib";
 
-char data_ov252_020d4570[12] = "01_B_R_rib";
+char gOv25201BRRibName[12] = "01_B_R_rib";
 
-char data_ov252_020d457c[12] = "01_B_wast02";
+char gOv25201BWast02Name[12] = "01_B_wast02";
 
-char data_ov252_020d4588[8] = "fire";
+char gOv252FireName[8] = "fire";
 
-char data_ov252_020d4590[12] = "02_sw_L02";
+char gOv25202SwL02Name[12] = "02_sw_L02";
 
-char data_ov252_020d459c[12] = "02_sw_R02";
+char gOv25202SwR02Name[12] = "02_sw_R02";
 
-char data_ov252_020d45a8[12] = "B3_03tail01";
+char gOv252B303Tail01Name[12] = "B3_03tail01";
 
-char data_ov252_020d45b4[12] = "B3_03tail02";
+char gOv252B303Tail02Name[12] = "B3_03tail02";
 
-char data_ov252_020d45c0[12] = "B3_03tail03";
+char gOv252B303Tail03Name[12] = "B3_03tail03";
 
-char data_ov252_020d45cc[12] = "B3_03tail04";
+char gOv252B303Tail04Name[12] = "B3_03tail04";
 
-char data_ov252_020d45d8[8] = "B3move";
+char gOv252B3MoveName[8] = "B3move";

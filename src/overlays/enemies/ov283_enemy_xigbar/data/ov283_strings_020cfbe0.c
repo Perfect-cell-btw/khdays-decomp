@@ -6,6 +6,6 @@
 
 char gOv283PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov283_020cfbec[8] = "xig_h_L";
+char gOv283XigHLName[8] = "xig_h_L";
 
-char data_ov283_020cfbf4[12] = "xig_h_R";
+char gOv283XigHRName[12] = "xig_h_R";

@@ -43,7 +43,7 @@ data_ov136_020d39f4 kind:data(any) addr:0x020d39f4
 data_ov136_020d3a02 kind:data(any) addr:0x020d3a02
 data_ov136_020d3a10 kind:data(any) addr:0x020d3a10
 gOv136PackPathFmt kind:data(any) addr:0x020d3a40
-data_ov136_020d3a4c kind:data(any) addr:0x020d3a4c
-data_ov136_020d3a58 kind:data(any) addr:0x020d3a58
+gOv136BoneHeadName kind:data(any) addr:0x020d3a4c
+gOv136MoveName kind:data(any) addr:0x020d3a58
 data_ov136_020d3a60 kind:data(any) addr:0x020d3a60
-data_ov136_020d3a64 kind:data(any) addr:0x020d3a64
+gOv136Guru0Name kind:data(any) addr:0x020d3a64

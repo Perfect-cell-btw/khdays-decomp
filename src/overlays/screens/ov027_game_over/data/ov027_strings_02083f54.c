@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov027_02083f54[12] = "jp_unused";
+char gOv027JpUnusedName[12] = "jp_unused";
 
-char data_ov027_02083f60[20] = "ba/ch/go/def.p.z";
+char gOv027GoofyDefPackPath[20] = "ba/ch/go/def.p.z";
 
-char data_ov027_02083f74[20] = "ba/ch/do/def.p.z";
+char gOv027DonaldDefPackPath[20] = "ba/ch/do/def.p.z";
 
-char data_ov027_02083f88[20] = "ba/ch/so/def.p.z";
+char gOv027SoraDefPackPath[20] = "ba/ch/so/def.p.z";

@@ -14,16 +14,16 @@ typedef struct {
 } Ov002RootContext;
 
 extern Ov002RootContext *data_ov002_0207fa00;
-extern const char data_ov002_0207efe0[];
-extern const char data_ov002_0207efe4[];
+extern const char gOv002StrFmt[];
+extern const char gOv002IntFmt[];
 
 void Ov002_FormatResultLine(int reason, char *buffer) {
     Ov002ResultContext *result = &data_ov002_0207fa00->result;
 
     if (reason != 0) {
-        OS_SPrintf(buffer, data_ov002_0207efe0, reason);
+        OS_SPrintf(buffer, gOv002StrFmt, reason);
         return;
     }
 
-    OS_SPrintf(buffer, data_ov002_0207efe4, result->wScore);
+    OS_SPrintf(buffer, gOv002IntFmt, result->wScore);
 }

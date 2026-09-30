@@ -11,7 +11,7 @@ extern void Ov002_CommitWidgetPayload(void);
 extern void Ov002_StepPageScroll(void);
 extern void Ov002_DropPendingEdit(void);
 extern char *data_ov002_0207f638;
-extern int data_ov002_0207ee54;
+extern int gOv002UiBtlBmLoBg002Path;
 
 /* Sets up the save/load page: clears the scene block, allocates and clears the 0x12c0-byte entry
  * table, builds the button, and registers the row renderer; returns the page's tick handler. */
@@ -21,7 +21,7 @@ void *Ov002_SetupSaveSlotPage(void) {
     MI_CpuFill8(self, 0, 0x44);
     *(void **)(self + 0x1c) = NNS_FndAllocFromDefaultExpHeapEx(0x4b << 6, 4);
     MIi_CpuClearFast(0, *(void **)(self + 0x1c), 0x4b << 6);
-    Ov002_AppendEntry(&data_ov002_0207ee54, (void *)&Ov002_CommitWidgetPayload, 0);
+    Ov002_AppendEntry(&gOv002UiBtlBmLoBg002Path, (void *)&Ov002_CommitWidgetPayload, 0);
     Ov002_QueueScreenLoad();
     if (Ov002_Field_GetHalf84() != 0xffff) {
         Ov002_QueuePanelGraphics();

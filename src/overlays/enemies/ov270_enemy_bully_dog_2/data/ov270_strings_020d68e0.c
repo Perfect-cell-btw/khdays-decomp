@@ -6,8 +6,8 @@
 
 char gOv270PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov270_020d68ec[12] = "Bone_head";
+char gOv270BoneHeadName[12] = "Bone_head";
 
-char data_ov270_020d68f8[8] = "tag_00";
+char gOv270Tag00Name[8] = "tag_00";
 
-char data_ov270_020d6900[8] = "move";
+char gOv270MoveName[8] = "move";

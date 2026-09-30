@@ -37,7 +37,7 @@ extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern int Ov245_Child_New(int self);
-extern const char data_ov245_020d7220[];
+extern const char gOv245BoneTag00Name[];
 
 static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
@@ -75,7 +75,7 @@ void Ov245_CarrierActorInit(int selfArg) {
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x10));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
-    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7220);
+    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv245BoneTag00Name);
     os = Ov107_GetActorManager();
     ((struct Ov245Self *)self)->slots[0].pItem =
         CreateSubitemInstance0xB4((void *)((((*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc) << 7) | 0x80000000));

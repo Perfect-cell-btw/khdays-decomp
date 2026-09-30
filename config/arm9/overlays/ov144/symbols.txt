@@ -37,5 +37,5 @@ Ov144_stateScanSlotRoundRobin kind:function(arm,size=0x88) addr:0x020cdae8
 Ov144_BeginRetreat kind:function(arm,size=0xbc) addr:0x020cdb70
 Ov144_TimerGateHw60FlipThenAdvance kind:function(arm,size=0x94) addr:0x020cdc2c
 gOv144PackPathFmt kind:data(any) addr:0x020cdce0
-data_ov144_020cdcec kind:data(any) addr:0x020cdcec
-data_ov144_020cdcf8 kind:data(any) addr:0x020cdcf8
+gOv144BoneHeadName kind:data(any) addr:0x020cdcec
+gOv144MoveName kind:data(any) addr:0x020cdcf8

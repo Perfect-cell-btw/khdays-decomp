@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207e844[12] = "ba/tr/%s.z";
+char gOv002BaTrPathFmt[12] = "ba/tr/%s.z";
 
-char data_ov002_0207e850[12] = "refresh_wnd";
+char gOv002RefreshWndName[12] = "refresh_wnd";
 
-char data_ov002_0207e85c[20] = "ba/ch/xo/w_mot.p.z";
+char gOv002XionWMotPackPath[20] = "ba/ch/xo/w_mot.p.z";
 
-char data_ov002_0207e870[16] = "ba/ch/%s/wp.b.z";
+char gOv002BaChWpPathFmt[16] = "ba/ch/%s/wp.b.z";

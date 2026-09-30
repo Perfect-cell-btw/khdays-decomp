@@ -84,68 +84,68 @@ extern void Ov023_ScriptOpActWhenOpcodeC(void);
 extern void Ov023_ScriptTestOpcodeC(void);
 extern void Ov023_CmdWaitScriptIdle(void);
 extern void Ov023_Cmd_WorldActionAtEntity(void);
-extern int data_ov023_0208a1a4;
-extern int data_ov023_0208a1b8;
-extern int data_ov023_0208a1cc;
-extern int data_ov023_0208a1e0;
-extern int data_ov023_0208a1f4;
-extern int data_ov023_0208a208;
-extern int data_ov023_0208a21c;
-extern int data_ov023_0208a230;
-extern int data_ov023_0208a244;
-extern int data_ov023_0208a258;
-extern int data_ov023_0208a26c;
-extern int data_ov023_0208a280;
-extern int data_ov023_0208a294;
-extern int data_ov023_0208a2a8;
-extern int data_ov023_0208a2bc;
-extern int data_ov023_0208a2d0;
-extern int data_ov023_0208a2e4;
-extern int data_ov023_0208a2f8;
-extern int data_ov023_0208a30c;
-extern int data_ov023_0208a320;
+extern int gOv023GoofyDefPackPath;
+extern int gOv023SoraDefPackPath;
+extern int gOv023MickeyDefPackPath;
+extern int gOv023DonaldDefPackPath;
+extern int gOv023RoxasDualDefHPackPath;
+extern int gOv023AxelDefHPackPath;
+extern int gOv023XigbarDefHPackPath;
+extern int gOv023SaixDefHPackPath;
+extern int gOv023XaldinDefHPackPath;
+extern int gOv023LarxeneDefHPackPath;
+extern int gOv023LexaeusDefHPackPath;
+extern int gOv023LuxordDefHPackPath;
+extern int gOv023MarluxiaDefHPackPath;
+extern int gOv023RikuDefHPackPath;
+extern int gOv023VexenDefHPackPath;
+extern int gOv023XemnasDefHPackPath;
+extern int gOv023DemyxDefHPackPath;
+extern int gOv023XionDefHPackPath;
+extern int gOv023ZexionDefHPackPath;
+extern int gOv023RoxasDefHbPackPath;
 
 void *data_ov023_0208a334[20] = {
 
-    &data_ov023_0208a320,
+    &gOv023RoxasDefHbPackPath,
 
-    &data_ov023_0208a208,
+    &gOv023AxelDefHPackPath,
 
-    &data_ov023_0208a21c,
+    &gOv023XigbarDefHPackPath,
 
-    &data_ov023_0208a230,
+    &gOv023SaixDefHPackPath,
 
-    &data_ov023_0208a244,
+    &gOv023XaldinDefHPackPath,
 
-    &data_ov023_0208a1b8,
+    &gOv023SoraDefPackPath,
 
-    &data_ov023_0208a2e4,
+    &gOv023DemyxDefHPackPath,
 
-    &data_ov023_0208a258,
+    &gOv023LarxeneDefHPackPath,
 
-    &data_ov023_0208a26c,
+    &gOv023LexaeusDefHPackPath,
 
-    &data_ov023_0208a280,
+    &gOv023LuxordDefHPackPath,
 
-    &data_ov023_0208a294,
+    &gOv023MarluxiaDefHPackPath,
 
-    &data_ov023_0208a2a8,
+    &gOv023RikuDefHPackPath,
 
-    &data_ov023_0208a2bc,
+    &gOv023VexenDefHPackPath,
 
-    &data_ov023_0208a2d0,
+    &gOv023XemnasDefHPackPath,
 
-    &data_ov023_0208a2f8,
+    &gOv023XionDefHPackPath,
 
-    &data_ov023_0208a30c,
+    &gOv023ZexionDefHPackPath,
 
-    &data_ov023_0208a1cc,
+    &gOv023MickeyDefPackPath,
 
-    &data_ov023_0208a1e0,
+    &gOv023DonaldDefPackPath,
 
-    &data_ov023_0208a1a4,
+    &gOv023GoofyDefPackPath,
 
-    &data_ov023_0208a1f4,
+    &gOv023RoxasDualDefHPackPath,
 
 };
 

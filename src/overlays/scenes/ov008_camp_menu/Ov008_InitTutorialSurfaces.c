@@ -39,7 +39,7 @@ typedef struct Ov008PageB {
 } Ov008PageB;
 
 extern const Ov008TutorialCfgTable data_ov008_0208fb6c;
-extern char data_ov008_02090b70[];                                  /* "UI/tutorial/root_&.s.z" */
+extern char gOv008UiTutorialRootTextPath[];                                  /* "UI/tutorial/root_&.s.z" */
 
 extern Ov008PageB *Ov008_GetPageB(void);                       /* Ov008_GetPageB */
 extern void *Ov008_GetCtxBlock968c(void);                             /* Ov008_GetCtxBlock968c */
@@ -63,5 +63,5 @@ void Ov008_InitTutorialSurfaces(void)
         TileSurface_Init4bpp(&pPage->aSurface[i], pCfg);
         pPage->aSurface[i].bDirty = 1;
     }
-    Ov008_VarTable_Load(pPage->textLoader, data_ov008_02090b70);
+    Ov008_VarTable_Load(pPage->textLoader, gOv008UiTutorialRootTextPath);
 }

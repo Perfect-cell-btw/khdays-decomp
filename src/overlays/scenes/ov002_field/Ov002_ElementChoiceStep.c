@@ -3,7 +3,7 @@
 #include "game/engine.h"
 
 extern u8 data_0204be04;
-extern const char data_ov002_0207f480[];
+extern const char gOv002SName_3[];
 
 extern void Ov002_SetRosterHighlight(char *pElement, int nIndex, int bOn);
 extern int Ov002_Hud_IsPanelOpen(void);
@@ -106,7 +106,7 @@ int Ov002_ElementChoiceStep(char *pElement)
         }
         if (nRes == 0) {
             if (*(signed char *)(pElement + 0x1bb) != 0) {
-                Ov002_StreamFormattedLine(data_ov002_0207f480, pElement + 0x1bb);
+                Ov002_StreamFormattedLine(gOv002SName_3, pElement + 0x1bb);
                 if (Ov002_GetPhaseWord() == 5) {
                     Ov002_SetRootField8b41((u8)(Ov002_GetRootField8b41() & ~0xb));
                 } else {

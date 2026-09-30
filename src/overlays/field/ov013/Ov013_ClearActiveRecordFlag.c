@@ -14,7 +14,7 @@ typedef struct {
     Ov013Record records[];
 } Ov013RecordList;
 
-extern char data_ov013_0207fec0[];
+extern char gOv013ColBtlName[];
 extern void Ov002_RebindGroupAnimations(void *data, int kind, int zero, int value);
 
 void Ov013_ClearActiveRecordFlag(void *unused, int value, Ov013RecordList *list) {
@@ -32,6 +32,6 @@ void Ov013_ClearActiveRecordFlag(void *unused, int value, Ov013RecordList *list)
         } while (i < list->count);
     }
 
-    Ov002_RebindGroupAnimations(data_ov013_0207fec0, 5, 0, value);
+    Ov002_RebindGroupAnimations(gOv013ColBtlName, 5, 0, value);
 }
 

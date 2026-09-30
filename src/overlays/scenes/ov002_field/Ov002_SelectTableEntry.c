@@ -34,7 +34,7 @@ extern Table *Archive_LoadFile(void *archive, int mode, int c, int d);
 extern void   Ov002_StoreRequestPayload(int entry);
 extern void   NNSi_FndFreeFromDefaultHeap(void *p);
 extern int    data_ov002_0207fa00;
-extern char   data_ov002_0207f000[];
+extern char   gOv002MiMiMdbPath[];
 extern u8     data_0204c240;
 
 void Ov002_SelectTableEntry(int param_1, int param_2, int param_3, int param_4)
@@ -47,7 +47,7 @@ void Ov002_SelectTableEntry(int param_1, int param_2, int param_3, int param_4)
 
     ctx = (char *)data_ov002_0207fa00;
     rec = ctx + 0x8d84;
-    hdr = Archive_LoadFile(data_ov002_0207f000, 2, param_3, param_4);
+    hdr = Archive_LoadFile(gOv002MiMiMdbPath, 2, param_3, param_4);
     for (i = 0; i < hdr->count; i++) {
         if (*(short *)(ctx + 0x8ba8) == hdr->entries[i].cmpField)
             found = &hdr->entries[i];

@@ -58,8 +58,8 @@ extern void TileTextRenderer_Destroy(Ov000TileTextRenderer *renderer);
 extern void FontResource_Destroy(Ov000FontResource *font);
 extern void Ov000_FreeResourceRecordBuffer(Ov000MessageArchive *archive);
 
-extern const char data_ov000_0205a9ec[];
-extern const char data_ov000_0205aa00[];
+extern const char gOv000UiLoadLrdTextPath[];
+extern const char gOv000TextFontEu10AllPath[];
 extern const u16 data_02042958[];
 
 void Ov000_SetupBootTextScreen(int mode) {
@@ -82,8 +82,8 @@ void Ov000_SetupBootTextScreen(int mode) {
         (*(vu16 *)0x0400000e & 0x43) | 0x204;
     MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x600);
 
-    Ov000_InitResourceRecord(&messages, data_ov000_0205a9ec);
-    Font_LoadUTF16(&font, data_ov000_0205aa00);
+    Ov000_InitResourceRecord(&messages, gOv000UiLoadLrdTextPath);
+    Font_LoadUTF16(&font, gOv000TextFontEu10AllPath);
     GX_LoadBGPltt(data_02042958, 0x1a0, 0x20);
 
     frame.destinationX = 1;

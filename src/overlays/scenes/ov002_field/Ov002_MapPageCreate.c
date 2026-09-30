@@ -41,7 +41,7 @@ typedef struct Ov002MapSelection {
 extern Ov002MapPage *data_ov002_0207f9f0;
 extern const int data_ov002_0207e4a0[];
 extern const int data_ov002_0207e480[];
-extern int data_ov002_0207ee98;
+extern int gOv002UiBtlBl101Path;
 
 extern Ov002MapPage *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *pDest, u8 nValue, u32 nSize);
@@ -83,7 +83,7 @@ void *Ov002_MapPageCreate(void)
     Ov002_FillMapRows(0x1a, 0, 0, 0x20, 0x18);
     Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x3e6));
     Ov002_Ctx_SetTagTrackerNodeArmed_5(Ov002_Ctx_FindActiveEntryByTag(6), 1);
-    Ov002_AppendEntry(&data_ov002_0207ee98, Ov002_UploadPageAsTileKind17, 0);
+    Ov002_AppendEntry(&gOv002UiBtlBl101Path, Ov002_UploadPageAsTileKind17, 0);
 
     for (i = 0; i < 22; i++) {
         pPage->aCellSounds[i] = Ov002_ForwardToSubDc((u16)data_ov002_0207e4a0[i]);

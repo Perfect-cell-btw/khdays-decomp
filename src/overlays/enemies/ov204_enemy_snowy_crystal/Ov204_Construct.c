@@ -40,7 +40,7 @@ extern int Ov107_CloneResourceTransform(char *pose);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov204_020d35e0;
 extern const VecFx32 data_ov204_020d35c4;
-extern const char data_ov204_020d36ac[];
+extern const char gOv204BImoveName[];
 
 void Ov204_Construct(char *self)
 {
@@ -65,7 +65,7 @@ void Ov204_Construct(char *self)
     *(int *)(self + 0x6c) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov204_020d36ac);
+    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), gOv204BImoveName);
     *(void **)(self + 0x394) = CallocInstance(0x38);
     for (i = 0; i < 7; i++) {
         (*(struct Ov139SubitemSlot **)(self + 0x394))[i].pItem =

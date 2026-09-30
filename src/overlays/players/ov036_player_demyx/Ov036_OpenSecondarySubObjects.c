@@ -34,8 +34,8 @@ struct ActorSubCfg {
 extern void Ov022_TakeChannelBlock(void *pSub, int a, int b);
 extern void Ov022_PublishGroupUpdateFixed(void *pSub, char *self, void *pDesc, struct ActorSubCfg *pCfg);
 extern void Ov036_dispatchEntryList(void);
-extern int data_ov036_020b4edc;
-extern int data_ov036_020b4ef0;
+extern int gOv036DemyxLiE0PackPath;
+extern int gOv036DemyxLiE1PackPath;
 
 void Ov036_OpenSecondarySubObjects(char *self)
 {
@@ -61,7 +61,7 @@ void Ov036_OpenSecondarySubObjects(char *self)
     cfg.field38 = 5;
     cfg.field4c = 0xc;
     Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x30, self,
-                        &data_ov036_020b4edc, &cfg);
+                        &gOv036DemyxLiE0PackPath, &cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x50) = (void *)&Ov036_dispatchEntryList;
 
     cfg.flags00 = 0x3c9;
@@ -81,6 +81,6 @@ void Ov036_OpenSecondarySubObjects(char *self)
     cfg.field38 = 0x25;
     cfg.field4c = 0xc;
     Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x60, self,
-                        &data_ov036_020b4ef0, &cfg);
+                        &gOv036DemyxLiE1PackPath, &cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x80) = (void *)&Ov036_dispatchEntryList;
 }

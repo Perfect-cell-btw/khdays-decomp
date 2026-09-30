@@ -45,10 +45,10 @@ extern void NNS_G3dRenderObjSetCallBack(void *part, void *cb, int ptr, int timin
 extern int NNS_G3dGetResDictIdxByName(void *node, void *desc);
 extern void Ov052_DrawTrail(void);
 extern char data_0204c4d8[];
-extern int data_ov052_020b7f68;
-extern int data_ov052_020b7f78;
-extern int data_ov052_020b7f58;
-extern int data_ov052_020b7f38;
+extern int gOv052EfB00Name;
+extern int gOv052EfB01Name;
+extern int gOv052EfB02Name;
+extern int gOv052EfB03Name;
 
 struct Part { char pad[0x1c8]; };
 
@@ -146,11 +146,11 @@ test:
     }
     rig = *(char **)(*(char **)(self + 0x2644) + 0xc);
     b = bone(rig);
-    *(int *)(self + 0x2e68) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov052_020b7f68) : -1;
+    *(int *)(self + 0x2e68) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv052EfB00Name) : -1;
     b = bone(rig);
-    *(int *)(self + 0x2e6c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov052_020b7f78) : -1;
+    *(int *)(self + 0x2e6c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv052EfB01Name) : -1;
     b = bone(rig);
-    *(int *)(self + 0x2e70) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov052_020b7f58) : -1;
+    *(int *)(self + 0x2e70) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv052EfB02Name) : -1;
     b = bone(rig);
-    *(int *)(self + 0x2e74) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov052_020b7f38) : -1;
+    *(int *)(self + 0x2e74) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv052EfB03Name) : -1;
 }

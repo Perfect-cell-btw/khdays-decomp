@@ -75,8 +75,8 @@ extern void Ov147_QueryAndCopyVecIfHit(void);
 extern void Ov147_TickSwingArc(void);
 extern int Ov147_AllocLinkChild3a4(struct Obj *self);
 
-extern char data_ov147_020ce8cc[];
-extern char data_ov147_020ce8d4[];
+extern char gOv147SFireName[];
+extern char gOv147SMoveName[];
 extern VecFx32 data_02042264;
 
 extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
@@ -134,12 +134,12 @@ void Ov147_InitActor(struct Obj *self)
     self->subitem384->callback74 = Ov147_QueryAndCopyVecIfHit;
     self->subitem384->owner84 = self;
     RegisterSubscriberSlot(self->subscriberList9c, self->subitem384);
-    self->resourceId3d4 = FindResourceIndexByName(self->subitem384, data_ov147_020ce8cc);
+    self->resourceId3d4 = FindResourceIndexByName(self->subitem384, gOv147SFireName);
 
     (self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 1)))->callback6c = Ov147_TickSwingArc;
     self->subitem388->owner84 = self;
     RefreshObjectCallbacks(self->subitem388, 0);
-    self->resourceId3d0 = FindResourceIndexByName(self->subitem388, data_ov147_020ce8d4);
+    self->resourceId3d0 = FindResourceIndexByName(self->subitem388, gOv147SMoveName);
 
     self->angle3bc = 0x10c1;
     QuatFromAxisAngle(self->quaternion3c0, &data_02042264, self->angle3bc);

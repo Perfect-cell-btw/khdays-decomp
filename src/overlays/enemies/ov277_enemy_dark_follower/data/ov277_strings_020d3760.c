@@ -6,14 +6,14 @@
 
 char gOv277PackPathFmt_2[12] = "Ms/%02x.p";
 
-char data_ov277_020d376c[16] = "Bip01_Spine1";
+char gOv277Bip01Spine1Name[16] = "Bip01_Spine1";
 
-char data_ov277_020d377c[12] = "Bip01_Neck";
+char gOv277Bip01NeckName[12] = "Bip01_Neck";
 
-char data_ov277_020d3788[12] = "Bip01_Spine";
+char gOv277Bip01SpineName[12] = "Bip01_Spine";
 
-char data_ov277_020d3794[16] = "Bip01_Pelvis";
+char gOv277Bip01PelvisName[16] = "Bip01_Pelvis";
 
-char data_ov277_020d37a4[8] = "DS01";
+char gOv277Ds01Name[8] = "DS01";
 
-char data_ov277_020d37ac[12] = "Bip01_Head";
+char gOv277Bip01HeadName[12] = "Bip01_Head";

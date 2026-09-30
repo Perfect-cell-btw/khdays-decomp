@@ -5,5 +5,5 @@ Ov013_UpdateSpawnGroups kind:function(arm,size=0x100) addr:0x0207fc2c
 Ov013_SpawnAtOrientedOffset kind:function(arm,size=0x114) addr:0x0207fd2c
 Ov013_MarshalFieldsAndInvoke kind:function(thumb,size=0x58) addr:0x0207fe40
 Ov013_CopyEquipTables kind:function(thumb,size=0xe) addr:0x0207fe98
-data_ov013_0207fec0 kind:data(any) addr:0x0207fec0
+gOv013ColBtlName kind:data(any) addr:0x0207fec0
 data_ov013_0207fec8 kind:data(any) addr:0x0207fec8

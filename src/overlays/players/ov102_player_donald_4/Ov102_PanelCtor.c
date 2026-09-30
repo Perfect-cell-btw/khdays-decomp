@@ -52,11 +52,11 @@ extern void Ov102_SetupBuildBlock(void);
 extern void Ov102_ArmPlayerBlock(void);
 
 extern void *data_ov102_020bb920;
-extern const char data_ov102_020bb8a8[];
-extern int data_ov102_020bb7dc;
-extern int data_ov102_020bb7cc;
-extern int data_ov102_020bb7bc;
-extern int data_ov102_020bb7ac;
+extern const char gOv102DonaldDefPackPath[];
+extern int gOv102DonaldTgName;
+extern int gOv102DoHRName;
+extern int gOv102DonaldRName;
+extern int gOv102Bip01Name;
 
 void Ov102_PanelCtor(struct PanelInitConfig *config)
 {
@@ -78,7 +78,7 @@ void Ov102_PanelCtor(struct PanelInitConfig *config)
     Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0,
                          &params, 0);
 
-    TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov102_020bb8a8, 1,
+    TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)gOv102DonaldDefPackPath, 1,
                   config->objectType + 7);
 
     *(void **)(object + 0x664 + 0x00) = (void *)&Ov102_RequestState;
@@ -107,16 +107,16 @@ test:
 
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x520) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov102_020bb7dc) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv102DonaldTgName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x518) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov102_020bb7cc) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv102DoHRName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x51c) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov102_020bb7bc) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv102DonaldRName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x524) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov102_020bb7ac) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv102Bip01Name) : -1;
 
     if (config->enableLowFlag != 0) {
         *(long long *)object |= 0x20;

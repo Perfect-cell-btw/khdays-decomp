@@ -61,6 +61,6 @@ data_ov132_020d0db0 kind:data(any) addr:0x020d0db0
 data_ov132_020d0dbe kind:data(any) addr:0x020d0dbe
 data_ov132_020d0dcc kind:data(any) addr:0x020d0dcc
 gOv132PackPathFmt kind:data(any) addr:0x020d0e00
-data_ov132_020d0e0c kind:data(any) addr:0x020d0e0c
-data_ov132_020d0e18 kind:data(any) addr:0x020d0e18
-data_ov132_020d0e24 kind:data(any) addr:0x020d0e24
+gOv132BoneHimoName kind:data(any) addr:0x020d0e0c
+gOv132BoneHeadName kind:data(any) addr:0x020d0e18
+gOv132MoveName kind:data(any) addr:0x020d0e24

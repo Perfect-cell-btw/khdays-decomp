@@ -29,7 +29,7 @@ extern void Ov259_OnHitIgnore(void);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042258;
 extern u8 data_0204c240;
-extern char data_ov259_020d2fdc[];
+extern char gOv259Tag001Name[];
 
 void Ov259_HelperInit(char *self)
 {
@@ -63,7 +63,7 @@ void Ov259_HelperInit(char *self)
     *(int *)(self + 0x398) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, (data_0204c240 & 4) ? 0x3d : 0x3c));
     *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, (data_0204c240 & 4) ? 0x3f : 0x3e));
-    *(int *)(*(char **)(self + 0x394) + 0x410) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov259_020d2fdc);
+    *(int *)(*(char **)(self + 0x394) + 0x410) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, gOv259Tag001Name);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
     Srt_SetScaleUniform(*(int *)(self + 0x388) + 4, 0);

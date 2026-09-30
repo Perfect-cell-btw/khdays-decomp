@@ -77,7 +77,7 @@ extern int   Ov023_PollForNextState(void);                             /* Ov023_
 extern Ov023SceneRoot data_ov023_0208a784;
 extern void *data_ov023_0208a384[];                                 /* the message table */
 extern void *data_ov023_0208a66c[];                                 /* the script-command table */
-extern char  data_ov023_0208a04c[];                                 /* "dual3d_update" */
+extern char  gOv023Dual3DUpdateName[];                                 /* "dual3d_update" */
 extern u8    data_0204c240;                                         /* session bits */
 
 void *Ov023_SceneInit(Ov023SceneRequest *pRequest)
@@ -116,7 +116,7 @@ void *Ov023_SceneInit(Ov023SceneRequest *pRequest)
         Gfx_ResetDisplayAndVram(data_ov023_0208a784.pScene->camera, 1);
         Obj_SetWord8(data_ov023_0208a784.pScene->camera, data_ov023_0208a784.pScene->nCameraMode);
         Obj_SetWord4(data_ov023_0208a784.pScene->camera, 0);
-        RegisterNamedTask(1, data_ov023_0208a04c, Ov023_Dual3DUpdate);
+        RegisterNamedTask(1, gOv023Dual3DUpdateName, Ov023_Dual3DUpdate);
         aMatrix[0] = 0;
         aMatrix[1] = 0x20000;
         aMatrix[2] = 0;

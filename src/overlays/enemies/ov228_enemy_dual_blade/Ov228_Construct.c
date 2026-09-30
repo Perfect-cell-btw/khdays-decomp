@@ -51,9 +51,9 @@ extern int Ov107_CloneResourceTransform(const Placement *placement);
 extern int Ov228_Companion_New(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable data_ov228_020d2c2c;
-extern const char data_ov228_020d2cec[];
-extern const char data_ov228_020d2cfc[];
-extern const char data_ov228_020d2d0c[];
+extern const char gOv228Bip01Spine1Name[];
+extern const char gOv228Bip01LHandName[];
+extern const char gOv228AMoveName[];
 extern const VecFx32 data_02041dc8;
 
 void Ov228_Construct(char *self)
@@ -100,15 +100,15 @@ void Ov228_Construct(char *self)
         Snd_RegisterSeqAndBind(self + 0x384, *(int *)(*(int *)(self + 0x3a8) + 0x88), anim, 0xc);
     }
     MainBlob_ResetSlotRows(*(int *)(self + 0x3a8), self + 0x384);
-    *(int *)(self + 0x3b4) = FindResourceIndexByName(*(int *)(self + 0x3a8), data_ov228_020d2cec);
-    *(int *)(self + 0x3b8) = FindResourceIndexByName(*(int *)(self + 0x3a8), data_ov228_020d2cfc);
+    *(int *)(self + 0x3b4) = FindResourceIndexByName(*(int *)(self + 0x3a8), gOv228Bip01Spine1Name);
+    *(int *)(self + 0x3b8) = FindResourceIndexByName(*(int *)(self + 0x3a8), gOv228Bip01LHandName);
     RefreshObjectCallbacks(*(int *)(self + 0x3a8), 0);
     SrtTransform_SetIdentity(self + 0x3e0);
     SrtTransform_SetIdentity(self + 0x464);
     for (i = 0; i < 2; i++) {
         SrtTransform_SetIdentity(&((struct Xforms *)self)->xf[i]);
     }
-    *(int *)(self + 0x490) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x1c), data_ov228_020d2d0c);
+    *(int *)(self + 0x490) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x1c), gOv228AMoveName);
     for (i = 0; i < 10; i++) {
         if (i < 1) {
             node = CreateSubitemInstance0xB4((void *)((ids.id[i] & 0x1ff)

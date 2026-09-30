@@ -4,22 +4,22 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov004_02051224[20] = "/UI/cal/7_a.pak.z";
+char gOv004UiCal7APackPath[20] = "/UI/cal/7_a.pak.z";
 
-char data_ov004_02051238[20] = "/UI/cal/8_a.pak.z";
+char gOv004UiCal8APackPath[20] = "/UI/cal/8_a.pak.z";
 
-char data_ov004_0205124c[20] = "/UI/cal/1_a.pak.z";
+char gOv004UiCal1APackPath[20] = "/UI/cal/1_a.pak.z";
 
-char data_ov004_02051260[20] = "/UI/cal/6_a.pak.z";
+char gOv004UiCal6APackPath[20] = "/UI/cal/6_a.pak.z";
 
-char data_ov004_02051274[20] = "/UI/cal/4_a.pak.z";
+char gOv004UiCal4APackPath[20] = "/UI/cal/4_a.pak.z";
 
-char data_ov004_02051288[20] = "/UI/cal/5_a.pak.z";
+char gOv004UiCal5APackPath[20] = "/UI/cal/5_a.pak.z";
 
-char data_ov004_0205129c[20] = "/UI/cal/3_a.pak.z";
+char gOv004UiCal3APackPath[20] = "/UI/cal/3_a.pak.z";
 
-char data_ov004_020512b0[20] = "/UI/cal/2_a.pak.z";
+char gOv004UiCal2APackPath[20] = "/UI/cal/2_a.pak.z";
 
-char data_ov004_020512c4[20] = "/UI/cal/9_a.pak.z";
+char gOv004UiCal9APackPath[20] = "/UI/cal/9_a.pak.z";
 
-char data_ov004_020512d8[20] = "/UI/cal/0_a.pak.z";
+char gOv004UiCal0APackPath[20] = "/UI/cal/0_a.pak.z";

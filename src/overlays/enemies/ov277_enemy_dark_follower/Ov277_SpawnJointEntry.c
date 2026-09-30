@@ -7,7 +7,7 @@ extern int FindResourceIndexByName(int owner, const char *name);
 extern void Ov277_TaskTeardown_FlagOwner_3(void);
 extern void Ov277_EnterPounceHold(void);
 extern void Ov277_ArmSwingSweepB(void);
-extern const char data_ov277_020d3840[];
+extern const char gOv277Dm002Name[];
 
 int Ov277_SpawnJointEntry(int actor, int owner) {
     int *entry;
@@ -16,7 +16,7 @@ int Ov277_SpawnJointEntry(int actor, int owner) {
     entry[1] = actor;
     entry[0] = owner;
     if (*(int *)(entry[1] + 0x50) == 1) {
-        entry[3] = FindResourceIndexByName(entry[0], data_ov277_020d3840);
+        entry[3] = FindResourceIndexByName(entry[0], gOv277Dm002Name);
         *(void **)(entry[0] + 0x74) = (void *)&Ov277_ArmSwingSweepB;
         *(int **)(entry[0] + 0x84) = entry;
     }

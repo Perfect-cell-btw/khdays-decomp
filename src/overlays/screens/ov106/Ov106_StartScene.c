@@ -1,6 +1,6 @@
 /* Start the ov106 scene from its launch record: the scene block is taken and cleared (0x8eb4 bytes),
  * field 0x14 opens on data_ov106_020b8af0, the record's caption string is copied to +0x8e50 and its
- * +0x44 value kept in +0x8e90, the +0x8b38 camera starts in mode 0xb, the data_ov106_020b8ab4 task runs
+ * +0x44 value kept in +0x8e90, the +0x8b38 camera starts in mode 0xb, the gOv106Dual3DUpdateName task runs
  * 020b7b08, the frame counter is sampled into +0x8e3c/+0x8e28, the 2.0 x 2.0 view rectangles are set,
  * the view is built (020b77b4), both selections clear to -1 and the shared 0x44-byte state is reset.
  * Returns the next state (020b75c0). */
@@ -8,7 +8,7 @@ typedef struct { int v[10]; } ViewRects;
 
 extern char *data_ov106_020b8b60;
 extern char data_ov106_020b8af0[];
-extern char data_ov106_020b8ab4[];
+extern char gOv106Dual3DUpdateName[];
 extern char data_0204c41c[];
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int val, int size);
@@ -37,7 +37,7 @@ void *Ov106_StartScene(char *record)
     Gfx_ResetDisplayAndVram(data_ov106_020b8b60 + 0x8b38, 0);
     Obj_SetWord8(data_ov106_020b8b60 + 0x8b38, *(int *)(data_ov106_020b8b60 + 0x8e4c));
     Obj_SetWord4(data_ov106_020b8b60 + 0x8b38, 0);
-    RegisterNamedTask(1, data_ov106_020b8ab4, Ov106_FrameTask);
+    RegisterNamedTask(1, gOv106Dual3DUpdateName, Ov106_FrameTask);
     *(int *)(data_ov106_020b8b60 + 0x8e3c) = GetMasterBrightnessMain();
     *(int *)(data_ov106_020b8b60 + 0x8e28) = *(int *)(data_ov106_020b8b60 + 0x8e3c);
     rects.v[0] = 0;

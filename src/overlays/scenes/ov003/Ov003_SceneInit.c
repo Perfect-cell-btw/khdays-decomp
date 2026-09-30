@@ -57,11 +57,11 @@ typedef struct {
 
 extern unsigned short *data_ov003_0204f9a0;
 extern unsigned short data_0204c300[];
-extern unsigned char data_ov003_0204f944[];
-extern unsigned char data_ov003_0204f950[];
-extern unsigned char data_ov003_0204f958[];
-extern unsigned char data_ov003_0204f964[];
-extern unsigned char data_ov003_0204f978[];
+extern unsigned char gOv003MrsltDataPath[];
+extern unsigned char gOv003PFmt[];
+extern unsigned char gOv003MiOb0APath[];
+extern unsigned char gOv003MrsltBgPath[];
+extern unsigned char gOv003Dual3DUpdateName[];
 extern signed char data_ov003_0204f8f8[], data_ov003_0204f8d0[], data_ov003_0204f8bc[];
 extern int Ov003_StateActivateLayers;
 extern void Ov003_DisplaySetup(void);
@@ -126,7 +126,7 @@ int Ov003_SceneInit(int param_1) {
     SetMasterBrightnessMain(-0x10);
     SetMasterBrightnessSub(-0x10);
     Gfx_Reset2DEngines();
-    *(unsigned int **)(root + 0x20) = Msg_OpenContainerAndReadHeader(data_ov003_0204f944, 0xf);
+    *(unsigned int **)(root + 0x20) = Msg_OpenContainerAndReadHeader(gOv003MrsltDataPath, 0xf);
     if (param_1 != 0) {
         ((Ov003InitState *)(root + 0xf08))->mode = 1;
         ((Ov003InitState *)(root + 0xf08))->value = 3;
@@ -206,7 +206,7 @@ int Ov003_SceneInit(int param_1) {
         puVar4  = root + 0xb60;
         puVar14 = root + 0x738;
         do {
-            OS_SPrintf(auStack_30, (unsigned int)data_ov003_0204f950, uVar7, iVar12 + 1);
+            OS_SPrintf(auStack_30, (unsigned int)gOv003PFmt, uVar7, iVar12 + 1);
             RegisterSeqAndInit(puVar16, (unsigned int *)((*(int *)(root + 0x20) + 0x8000U & 0x00fffffcU) << 7 |
                           0x80000000 | (iVar12 + 3U & 0x00fffffcU >> 0xf)), 1, 0);
             SceneNode_AttachToModelJoint((int)puVar16, (int)(root + 0x84), auStack_30);
@@ -234,7 +234,7 @@ int Ov003_SceneInit(int param_1) {
             }
 #pragma opt_common_subs off
 #pragma opt_propagation off
-            RegisterSeqAndInit(puVar15, (unsigned int *)data_ov003_0204f958, 1, 0xf);
+            RegisterSeqAndInit(puVar15, (unsigned int *)gOv003MiOb0APath, 1, 0xf);
             SceneNode_AttachToModelJoint((int)puVar15, (int)(root + 0x84), auStack_30);
             BindAnimTrack((int)puVar15, 0, (int)(puVar15 + 0x70), 0);
             BindAnimTrack((int)puVar15, 4, (int)(puVar15 + 0x70), 0);
@@ -258,7 +258,7 @@ int Ov003_SceneInit(int param_1) {
     if (iVar12 != 0) {
         *(unsigned int *)(root + 0xede) = 0;
     } else {
-        uVar7 = Archive_LoadFile((unsigned int)data_ov003_0204f964, 0xe);
+        uVar7 = Archive_LoadFile((unsigned int)gOv003MrsltBgPath, 0xe);
         *(unsigned int *)(root + 0xede) = uVar7;
     }
     Ov003_LoadCharResource((unsigned int *)(root + 0xee0), (int)root, 0, 0, 0);
@@ -362,7 +362,7 @@ int Ov003_SceneInit(int param_1) {
     *(volatile unsigned short *)0x04000060 =
         *(volatile unsigned short *)0x04000060 & ~0x3000 | 0x10;
     Touch_StartAutoSampling();
-    RegisterNamedTask(1, (unsigned int)data_ov003_0204f978, (int)&Ov003_DisplaySetup);
+    RegisterNamedTask(1, (unsigned int)gOv003Dual3DUpdateName, (int)&Ov003_DisplaySetup);
     return (int)&Ov003_StateActivateLayers;
 }
 

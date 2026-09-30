@@ -73,9 +73,9 @@ extern void Ov107_Region_DrawStatusFx2(void);
 extern void Ov107_Region_DrawStatusFx4(void);
 extern void Ov107_Region_DrawStatusFx8(void);
 
-extern char data_ov107_020cb968[]; /* "ba/ef/s_burn.p.z" */
-extern char data_ov107_020cb97c[]; /* "ba/ef/s_frost.p.z" */
-extern char data_ov107_020cb990[]; /* "ba/ef/s_shock.p.z" */
+extern char gOv107BaEfSBurnPackPath[]; /* "ba/ef/s_burn.p.z" */
+extern char gOv107BaEfSFrostPackPath[]; /* "ba/ef/s_frost.p.z" */
+extern char gOv107BaEfSShockPackPath[]; /* "ba/ef/s_shock.p.z" */
 
 void Ov107_Region_Init(StatusNode *self, int tableIndex)
 {
@@ -107,7 +107,7 @@ void Ov107_Region_Init(StatusNode *self, int tableIndex)
     List_Init(&self->lista8);
     List_Init(&self->listd0);
 
-    fx = CreateSubitemInstance0xB4(data_ov107_020cb968);
+    fx = CreateSubitemInstance0xB4(gOv107BaEfSBurnPackPath);
     self->burnFx = fx;
     RegisterSubscriberSlot(self->group104, fx);
     SetSubitemState(fx, 0, 0, 1);
@@ -116,7 +116,7 @@ void Ov107_Region_Init(StatusNode *self, int tableIndex)
     fx->onBusy = Ov107_Region_OnBusy;
     fx->owner = self;
 
-    fx = CreateSubitemInstance0xB4(data_ov107_020cb97c);
+    fx = CreateSubitemInstance0xB4(gOv107BaEfSFrostPackPath);
     self->frostFx = fx;
     RegisterSubscriberSlot(self->group104, fx);
     SetSubitemState(fx, 0, 0, 1);
@@ -124,7 +124,7 @@ void Ov107_Region_Init(StatusNode *self, int tableIndex)
     fx->onBusy = Ov107_Region_DrawStatusFx2;
     fx->owner = self;
 
-    fx = CreateSubitemInstance0xB4(data_ov107_020cb990);
+    fx = CreateSubitemInstance0xB4(gOv107BaEfSShockPackPath);
     self->shockFx = fx;
     RegisterSubscriberSlot(self->group104, fx);
     SetSubitemState(fx, 0, 0, 1);

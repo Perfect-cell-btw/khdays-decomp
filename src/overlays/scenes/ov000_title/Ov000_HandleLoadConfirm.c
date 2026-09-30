@@ -53,7 +53,7 @@ typedef struct Ov000ConfirmContext {
 
 extern Ov000ConfirmContext *data_ov000_0205ac24;
 extern u16 gPadPressed;
-extern u8  data_ov000_0205ab00[];
+extern u8  gOv000TtlTtlPath_3[];
 extern Ov000GameSave *gGameState;
 
 extern void  Ov000_PlaceCursorByMode(int mode, int row);
@@ -134,7 +134,7 @@ void Ov000_HandleLoadConfirm(void)
         if (data_ov000_0205ac24->nPageIndex < 3) {
             Ov000_MarkSceneReady(data_ov000_0205ac24->nPageIndex);
         } else {
-            u32 *hdr = Msg_OpenContainerAndReadHeader(data_ov000_0205ab00, 0xe);
+            u32 *hdr = Msg_OpenContainerAndReadHeader(gOv000TtlTtlPath_3, 0xe);
             void *buf = Archive_LoadFile(
                 ((((u32)hdr + 0x8000) & 0xfffffc) << 7) | 0x80000003, 0xe);
             *gGameState = *(Ov000GameSave *)buf;

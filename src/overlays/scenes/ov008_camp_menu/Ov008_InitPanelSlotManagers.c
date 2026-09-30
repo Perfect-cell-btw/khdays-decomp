@@ -43,8 +43,8 @@ extern Ov008PanelContext *data_ov008_02090fac;
 extern s8 data_ov008_0208fef0[];                                  /* per page: selected cell (both managers) */
 extern s8 data_ov008_0208fef1[];                                  /* per page: manager A first cell */
 extern s8 data_ov008_0208fef3[];                                  /* per page: manager B first cell */
-extern u8 data_ov008_02090e1c[];                                  /* manager B resource */
-extern u8 data_ov008_02090e30[];                                  /* manager A resource */
+extern u8 gOv008UiShopSpUoPath[];                                  /* manager B resource */
+extern u8 gOv008UiShopSpLoPath[];                                  /* manager A resource */
 extern void Ov008_InitSubsystemObject(void *pManager, Ov008SlotManagerCfg *pCfg, int nArg, int nSlots); /* InitSubsystemObject */
 extern u32  DispObjList_AddResource(void *hSlots, u32 nHandle);
 extern void Ov008_LoadBlockProcessAndFree(void *pManager, u8 *pResource, int nCount); /* Ov008_LoadBlockProcessAndFree */
@@ -68,7 +68,7 @@ void Ov008_InitPanelSlotManagers(void)
     if (nSlot >= 0) {
         DispObjList_AddResource(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
     }
-    Ov008_LoadBlockProcessAndFree(ctx->managerB, data_ov008_02090e1c, 0xf);
+    Ov008_LoadBlockProcessAndFree(ctx->managerB, gOv008UiShopSpUoPath, 0xf);
     nSlot = data_ov008_0208fef0[ctx->nPage * 4];
     if (nSlot >= 0) {
         ctx->nCell = DispObjList_AddResource(ctx->hSlotsB, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
@@ -87,7 +87,7 @@ void Ov008_InitPanelSlotManagers(void)
     if (nSlot >= 0) {
         DispObjList_AddResource(ctx->hSlots, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));
     }
-    Ov008_LoadBlockProcessAndFree(ctx->managerA, data_ov008_02090e30, 0x1b);
+    Ov008_LoadBlockProcessAndFree(ctx->managerA, gOv008UiShopSpLoPath, 0x1b);
     nSlot = data_ov008_0208fef0[ctx->nPage * 4];
     if (nSlot >= 0) {
         DispObjList_AddResource(ctx->hSlots, CELL_HANDLE(ctx->pContainerB, nSlot & SLOT_MASK));

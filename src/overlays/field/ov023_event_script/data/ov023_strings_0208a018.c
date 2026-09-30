@@ -4,18 +4,18 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov023_0208a018[4] = "AW";
+char gOv023AwName[4] = "AW";
 
-char data_ov023_0208a01c[4] = "NM";
+char gOv023NmName[4] = "NM";
 
-char data_ov023_0208a020[4] = "PI";
+char gOv023PiName[4] = "PI";
 
-char data_ov023_0208a024[4] = "TT";
+char gOv023TtName[4] = "TT";
 
-char data_ov023_0208a028[4] = "BB";
+char gOv023BbName[4] = "BB";
 
-char data_ov023_0208a02c[4] = "PP";
+char gOv023PpName[4] = "PP";
 
-char data_ov023_0208a030[4] = "AL";
+char gOv023AlName[4] = "AL";
 
-char data_ov023_0208a034[4] = "HE";
+char gOv023HeName[4] = "HE";

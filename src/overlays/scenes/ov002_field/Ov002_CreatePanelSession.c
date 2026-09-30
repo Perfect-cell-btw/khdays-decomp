@@ -48,7 +48,7 @@ typedef struct {
 typedef int (*Ov002PanelStepFn)(void);
 
 extern Ov002PanelSession *data_ov002_0207f620;
-extern int data_ov002_0207eb10[];
+extern int gOv002UiBtlMagicTextPath[];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void NNS_FndInitList(void *pList, int nLinkOffset);
@@ -163,7 +163,7 @@ Ov002PanelStepFn Ov002_CreatePanelSession(Ov002PanelSetup *pReq)
         i++;
     } while (i < 0x12);
 
-    Ov002_InitResourceRecord((char *)s + 0x5e8, data_ov002_0207eb10);
+    Ov002_InitResourceRecord((char *)s + 0x5e8, gOv002UiBtlMagicTextPath);
     Ov002_BuildTileRow();
     Ov002_LoadIconSet();
     Ov002_PanelRefreshCurrentMode();

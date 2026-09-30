@@ -4,16 +4,16 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov011_0205e8e4[12] = "UI/sf/m.p2";
+char gOv011UiSfMPath[12] = "UI/sf/m.p2";
 
-char data_ov011_0205e8f0[8] = "843.z";
+char gOv011843ZName[8] = "843.z";
 
-char data_ov011_0205e8f8[12] = "UI/sf/sf.p2";
+char gOv011UiSfSfPath[12] = "UI/sf/sf.p2";
 
-char data_ov011_0205e904[24] = "UI/sf/sffont_10.nftr";
+char gOv011UiSfSffont10FontPath[24] = "UI/sf/sffont_10.nftr";
 
-char data_ov011_0205e91c[20] = "UI/sf/sffont_8.nftr";
+char gOv011UiSfSffont8FontPath[20] = "UI/sf/sffont_8.nftr";
 
-char data_ov011_0205e930[8] = "sf_v";
+char gOv011SfVName[8] = "sf_v";
 
-char data_ov011_0205e938[40] = "UI/sf/sf.z";
+char gOv011UiSfSfPath_2[40] = "UI/sf/sf.z";

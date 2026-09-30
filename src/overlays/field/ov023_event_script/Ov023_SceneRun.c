@@ -62,7 +62,7 @@ extern int   Session_IsActive(void);                                   /* Sessio
 extern void  Ov023_DrawSignInPanel(void *pPanel);                     /* Ov023_DrawSignInPanel */
 extern void *Ov023_BeginClose(void);                             /* Ov023_SceneClose */
 extern Ov023SceneRoot data_ov023_0208a784;
-extern char  data_ov023_0208a04c[];                                 /* "dual3d_update" */
+extern char  gOv023Dual3DUpdateName[];                                 /* "dual3d_update" */
 extern u8    data_0204c240;                                         /* session bits */
 extern Ov023Lobby data_0204c254;
 
@@ -78,7 +78,7 @@ void *Ov023_SceneRun(void)
             case 2:
                 StoreToGlobalPtr4FieldE4IfSet(0);
                 if (LoadGlobalU16At0() & 8) {
-                    VBlank_UnregisterCallback(1, data_ov023_0208a04c);
+                    VBlank_UnregisterCallback(1, gOv023Dual3DUpdateName);
                     Gfx_SetupSubEngine(data_ov023_0208a784.pScene->camera);
                 }
                 Ov023_SetupMainBackgrounds();

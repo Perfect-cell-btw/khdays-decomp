@@ -1,7 +1,7 @@
 /* Ov008_InitGridMenuSurfaces -- Ov008_InitGridMenuSurfaces: create the grid menu's
  * text surfaces.  The templates data_ov008_0208f248 / f270 / f298 and the
  * five row templates data_ov008_0208f420 are copied to the stack; the text
- * loader (+0x28c) is pointed at data_ov008_020903f0; the two panel surfaces
+ * loader (+0x28c) is pointed at gOv008UiCmStrPanelTextPath; the two panel surfaces
  * (+0xac, +0xe8) are created and uploaded with slot 10's VRAM target and the
  * pixel buffer of context block 968c, the second with word +0x28 = 4; the
  * cursor surface (+0x124) is created (not uploaded) on slot 9 with word +0x28
@@ -63,7 +63,7 @@ extern const TileSurfaceCfg data_ov008_0208f248;
 extern const TileSurfaceCfg data_ov008_0208f270;
 extern const TileSurfaceCfg data_ov008_0208f298;
 extern const Ov008RowSurfaceCfgs data_ov008_0208f420;
-extern const char data_ov008_020903f0[];
+extern const char gOv008UiCmStrPanelTextPath[];
 extern void  Ov008_VarTable_Load(void *pLoader, const char *pPath);       /* Ov008_Set_5c4c */
 extern int   Ov008_ResetEntry(int nSlot);                              /* Ov008_ResetEntry: slot handle */
 extern void *Ov008_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
@@ -93,7 +93,7 @@ void Ov008_InitGridMenuSurfaces(Ov008MenuContext *pCtx)
     cfgPanelB = data_ov008_0208f270;
     cfgCursor = data_ov008_0208f298;
     rows = data_ov008_0208f420;
-    Ov008_VarTable_Load(pCtx->records, data_ov008_020903f0);
+    Ov008_VarTable_Load(pCtx->records, gOv008UiCmStrPanelTextPath);
     cfgPanelA.nVramTarget = Ov008_ResetEntry(SLOT_PANEL);
     cfgPanelA.pPixels = Ov008_GetCtxBlock968c();
     TileSurface_InitAndUpload8bpp(&pCtx->panelSurfaceA, &cfgPanelA);

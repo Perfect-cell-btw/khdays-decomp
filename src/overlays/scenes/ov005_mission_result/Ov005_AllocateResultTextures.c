@@ -8,7 +8,7 @@ typedef struct Ov005MenuQuad {char data[36];} Ov005MenuQuad;
 typedef struct Ov005TextureSet {void *archive;Ov005TextureResource textures[213];Ov005MenuQuad quads[2][7];} Ov005TextureSet;
 typedef struct Ov005Context {char pad0[0x61548];Ov005TextureSet textureSet;} Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
-extern char data_ov005_0205b50c[];
+extern char gOv005UiPnl3DPackPath[];
 extern void NNS_GfdInitFrmTexVramManager(int,int);
 extern void NNS_GfdInitFrmPlttVramManager(int,int);
 extern void *Archive_LoadFile(const char *,int);
@@ -26,7 +26,7 @@ void Ov005_AllocateResultTextures(void) {
     int j;
     NNS_GfdInitFrmTexVramManager(1,1);
     NNS_GfdInitFrmPlttVramManager(0x8000,1);
-    context->textureSet.archive=Archive_LoadFile(data_ov005_0205b50c,14);
+    context->textureSet.archive=Archive_LoadFile(gOv005UiPnl3DPackPath,14);
     Obj_RelocateSections(context->textureSet.archive,0);
     for(i=0,texture=set->textures;i<213;i++,texture++) {
         texture->textureKey=func_02010f7c(0x80,0,0);

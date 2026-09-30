@@ -48,9 +48,9 @@ struct MarkerPanel {
 };
 
 extern struct MarkerPanel *data_ov022_020b2ec0[2];   /* the two marker panels by kind */
-extern char data_ov022_020b2e24[];          /* "%s" */
-extern char data_ov022_020b2e28[];          /* "ba/ef/info.p.z" */
-extern char data_ov022_020b2e38[];          /* "ba/ef/st_&.p.z" */
+extern char gOv022StrFmt_2[];          /* "%s" */
+extern char gOv022BaEfInfoPackPath[];          /* "ba/ef/info.p.z" */
+extern char gOv022BaEfStPackPath[];          /* "ba/ef/st_&.p.z" */
 
 extern void OS_SPrintf(char *pszOut, char *pszFormat, char *pszArg);
 extern char *Msg_BuildLangPath(char *pszPath);                                      /* Msg_BuildLangPath */
@@ -85,12 +85,12 @@ void Ov022_LoadMarkerPanel(struct MarkerPanel *pPanel, int nKind)
     bFirst = 1;
     switch (nKind) {
     case KIND_INFO:
-        OS_SPrintf(szPath, data_ov022_020b2e24, data_ov022_020b2e28);
+        OS_SPrintf(szPath, gOv022StrFmt_2, gOv022BaEfInfoPackPath);
         pPanel->nYLift = INFO_Y_LIFT;
         pPanel->nXShift = INFO_X_SHIFT;
         break;
     case KIND_STATE:
-        OS_SPrintf(szPath, data_ov022_020b2e24, Msg_BuildLangPath(data_ov022_020b2e38));
+        OS_SPrintf(szPath, gOv022StrFmt_2, Msg_BuildLangPath(gOv022BaEfStPackPath));
         pPanel->nYLift = STATE_Y_LIFT;
         pPanel->nXShift = 0;
         break;

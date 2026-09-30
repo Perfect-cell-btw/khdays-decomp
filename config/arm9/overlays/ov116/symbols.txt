@@ -50,5 +50,5 @@ data_ov116_020d2794 kind:data(any) addr:0x020d2794
 data_ov116_020d27a2 kind:data(any) addr:0x020d27a2
 data_ov116_020d27b0 kind:data(any) addr:0x020d27b0
 gOv116PackPathFmt kind:data(any) addr:0x020d27c0
-data_ov116_020d27cc kind:data(any) addr:0x020d27cc
-data_ov116_020d27d4 kind:data(any) addr:0x020d27d4
+gOv116Bone04Name kind:data(any) addr:0x020d27cc
+gOv116BodyName kind:data(any) addr:0x020d27d4

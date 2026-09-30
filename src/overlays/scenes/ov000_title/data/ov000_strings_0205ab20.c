@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov000_0205ab20[24] = "/UI/newgame/res_i18n.p2";
+char gOv000UiNewgameResI18NPath[24] = "/UI/newgame/res_i18n.p2";
 
-char data_ov000_0205ab38[24] = "UI/newgame/ngm_&.s.z";
+char gOv000UiNewgameNgmTextPath[24] = "UI/newgame/ngm_&.s.z";
 
-char data_ov000_0205ab50[20] = "/UI/newgame/res.p2";
+char gOv000UiNewgameResPath[20] = "/UI/newgame/res.p2";
 
-char data_ov000_0205ab64[28] = "/text/font_eu_10all.NFTR";
+char gOv000TextFontEu10AllPath_3[28] = "/text/font_eu_10all.NFTR";

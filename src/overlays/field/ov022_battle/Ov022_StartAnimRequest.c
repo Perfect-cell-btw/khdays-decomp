@@ -46,8 +46,8 @@ struct ShapeTable {
 
 extern const struct ShapeTable data_ov022_020b2850;
 extern const char *const data_02042a70[];
-extern const char data_ov022_020b2e04[];
-extern const char data_ov022_020b2e10[];
+extern const char gOv022BaChPathFmt[];
+extern const char gOv022BaChEtaPackPathFmt[];
 
 extern void OS_SPrintf(char *pDst, const char *pFmt, ...);
 extern int Ov022_ResolveRequestPart(struct AnimRequest *pReq, int nWhich);
@@ -66,13 +66,13 @@ void Ov022_StartAnimRequest(struct AnimRequest *pReq, int nTrack)
     shapes = data_ov022_020b2850;
     nShape = Ov022_ResolveRequestPart(pReq, pReq->nSlot);
     if (nShape < 9) {
-        OS_SPrintf(szPath, data_ov022_020b2e04, data_02042a70[pOwner->nModel],
+        OS_SPrintf(szPath, gOv022BaChPathFmt, data_02042a70[pOwner->nModel],
                    shapes.aFile[nShape]);
     } else if (nShape == 4) {
-        OS_SPrintf(szPath, data_ov022_020b2e04, data_02042a70[pOwner->nModel],
+        OS_SPrintf(szPath, gOv022BaChPathFmt, data_02042a70[pOwner->nModel],
                    shapes.aFile[8]);
     } else {
-        OS_SPrintf(szPath, data_ov022_020b2e10, data_02042a70[pOwner->nModel],
+        OS_SPrintf(szPath, gOv022BaChEtaPackPathFmt, data_02042a70[pOwner->nModel],
                    pReq->nVariant);
     }
     Ov022_ConfigureGridSlotMode(pOwner->nId, 2);

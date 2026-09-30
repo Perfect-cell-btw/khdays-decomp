@@ -4,28 +4,28 @@
  * a zero word is a null entry.
  */
 
-extern int data_020427b8;
-extern int data_020427bc;
-extern int data_020427c0;
-extern int data_020427c4;
-extern int data_020427c8;
-extern int data_020427cc;
-extern int data_020427d0;
+extern int gZhName;
+extern int gEnName;
+extern int gItName;
+extern int gDeName;
+extern int gFrName;
+extern int gEsName;
+extern int gJaName;
 
 void *data_020427d4[7] = {
 
-    &data_020427d0,
+    &gJaName,
 
-    &data_020427bc,
+    &gEnName,
 
-    &data_020427c8,
+    &gFrName,
 
-    &data_020427c4,
+    &gDeName,
 
-    &data_020427c0,
+    &gItName,
 
-    &data_020427cc,
+    &gEsName,
 
-    &data_020427b8,
+    &gZhName,
 
 };

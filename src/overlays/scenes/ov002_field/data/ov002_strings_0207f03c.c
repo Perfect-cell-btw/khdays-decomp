@@ -4,42 +4,42 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207f03c[4] = "_s";
+char gOv002SName_2[4] = "_s";
 
-char data_ov002_0207f040[4] = "aw";
+char gOv002AwName[4] = "aw";
 
-char data_ov002_0207f044[4] = "tw";
+char gOv002TwName[4] = "tw";
 
-char data_ov002_0207f048[4] = "zz";
+char gOv002ZzName[4] = "zz";
 
-char data_ov002_0207f04c[4] = "tt";
+char gOv002TtName[4] = "tt";
 
-char data_ov002_0207f050[4] = "bb";
+char gOv002BbName[4] = "bb";
 
-char data_ov002_0207f054[4] = "pp";
+char gOv002PpName[4] = "pp";
 
-char data_ov002_0207f058[4] = "pi";
+char gOv002PiName[4] = "pi";
 
-char data_ov002_0207f05c[4] = "nm";
+char gOv002NmName[4] = "nm";
 
-char data_ov002_0207f060[4] = "eh";
+char gOv002EhName[4] = "eh";
 
-char data_ov002_0207f064[4] = "hb";
+char gOv002HbName[4] = "hb";
 
-char data_ov002_0207f068[4] = "al";
+char gOv002AlName[4] = "al";
 
-char data_ov002_0207f06c[4] = "he";
+char gOv002HeName[4] = "he";
 
-char data_ov002_0207f070[4] = "sea";
+char gOv002SeaName[4] = "sea";
 
-char data_ov002_0207f074[8] = "sea2";
+char gOv002Sea2Name[8] = "sea2";
 
-char data_ov002_0207f07c[8] = "nohit";
+char gOv002NohitName[8] = "nohit";
 
-char data_ov002_0207f084[8] = "nocam";
+char gOv002NocamName[8] = "nocam";
 
-char data_ov002_0207f08c[8] = "slide";
+char gOv002SlideName[8] = "slide";
 
-char data_ov002_0207f094[8] = "sicon";
+char gOv002SiconName[8] = "sicon";
 
-char data_ov002_0207f09c[8] = "nocatch";
+char gOv002NocatchName[8] = "nocatch";

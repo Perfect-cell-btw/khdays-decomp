@@ -39,8 +39,8 @@ data_ov293_020d35fc kind:data(any) addr:0x020d35fc
 data_ov293_020d3604 kind:data(any) addr:0x020d3604
 data_ov293_020d3608 kind:data(any) addr:0x020d3608
 gOv293PackPathFmt kind:data(any) addr:0x020d3620
-data_ov293_020d362c kind:data(any) addr:0x020d362c
-data_ov293_020d3634 kind:data(any) addr:0x020d3634
-data_ov293_020d3644 kind:data(any) addr:0x020d3644
-data_ov293_020d3654 kind:data(any) addr:0x020d3654
+gOv293Bip01Name kind:data(any) addr:0x020d362c
+gOv293Bip01RFootName kind:data(any) addr:0x020d3634
+gOv293Bip01LFootName kind:data(any) addr:0x020d3644
+gOv293MoveName kind:data(any) addr:0x020d3654
 data_ov293_020d3660 kind:bss addr:0x020d3660

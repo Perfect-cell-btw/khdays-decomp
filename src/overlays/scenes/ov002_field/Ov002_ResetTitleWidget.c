@@ -10,7 +10,7 @@
  */
 
 extern char *data_ov002_0207f628;
-extern char data_ov002_0207ebc4[];
+extern char gOv002BaEfMiPackPath[];
 extern char *Msg_BuildLangPath(char *name);
 extern void Ov002_PlaceWidget(char *widget, char *path, int *box, int flags, int mode);
 extern void Ov002_BindNodeTracks02(char *widget);
@@ -19,7 +19,7 @@ void Ov002_ResetTitleWidget(void) {
     char *ctx = data_ov002_0207f628;
     int box[3] = { 0, 0, 0 };
     int i;
-    Ov002_PlaceWidget(ctx + 0x132c, Msg_BuildLangPath(data_ov002_0207ebc4), box, 0x20000, 5);
+    Ov002_PlaceWidget(ctx + 0x132c, Msg_BuildLangPath(gOv002BaEfMiPackPath), box, 0x20000, 5);
     Ov002_BindNodeTracks02(ctx + 0x132c);
     i = 0;
     do {

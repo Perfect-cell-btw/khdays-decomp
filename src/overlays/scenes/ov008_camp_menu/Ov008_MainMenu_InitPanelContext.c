@@ -46,15 +46,15 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern s32 data_ov008_0208f050[];
-extern u8 data_ov008_0208f080[];
-extern u8 data_ov008_0208f090[];
-extern u8 data_ov008_0208f0a0[];
-extern u8 data_ov008_0208f0b0[];
-extern u8 data_ov008_0208f0c0[];
-extern u8 data_ov008_0208f0d0[];
-extern u8 data_ov008_0208f0e0[];
-extern u8 data_ov008_0208f0f0[];
-extern u8 data_ov008_0208f100[];
+extern u8 gOv008Dummy09Name[];
+extern u8 gOv008Dummy01Name[];
+extern u8 gOv008Dummy08Name[];
+extern u8 gOv008Dummy03Name[];
+extern u8 gOv008Dummy02Name[];
+extern u8 gOv008Dummy05Name[];
+extern u8 gOv008Dummy00Name[];
+extern u8 gOv008Dummy12Name[];
+extern u8 gOv008Dummy04Name[];
 
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void Tween_Clear(void *tween);
@@ -140,7 +140,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f0e0);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy00Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[0], resourceBase, value);
 
@@ -151,7 +151,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f090);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy01Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[1], resourceBase, value);
 
@@ -162,7 +162,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f0c0);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy02Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[2], resourceBase, value);
 
@@ -173,7 +173,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f0b0);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy03Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[3], resourceBase, value);
 
@@ -184,7 +184,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f100);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy04Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[4], resourceBase, value);
 
@@ -195,7 +195,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f0d0);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy05Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[5], resourceBase, value);
 
@@ -206,7 +206,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f080);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy09Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[9], resourceBase, value);
 
@@ -217,7 +217,7 @@ panel_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f0a0);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy08Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[8], resourceBase, value);
 
@@ -255,7 +255,7 @@ brightness_loop_test:
     if (dictionary == 0) {
         value = 0xffffffff;
     } else {
-        value = NNS_G3dGetResDictIdxByName(dictionary, data_ov008_0208f0f0);
+        value = NNS_G3dGetResDictIdxByName(dictionary, gOv008Dummy12Name);
     }
     Ov008_DecodeResourceTransform(&menu->decodedTransforms[12], resourceBase, value);
 

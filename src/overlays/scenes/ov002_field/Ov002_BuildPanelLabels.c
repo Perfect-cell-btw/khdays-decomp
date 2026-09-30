@@ -43,8 +43,8 @@ typedef struct {
 extern Ov002PanelCtx *data_ov002_0207f614;
 extern u8 data_0204c240;
 extern Ov002SurfaceCfg data_ov002_0207dc38;
-extern int data_ov002_0207e8dc;
-extern int data_ov002_0207e8f4;
+extern int gOv002TextFontEu08SPath;
+extern int gOv002UiBtlEnemyTextPath;
 
 extern void Resource_BindByName(void *pField, const void *pTable);
 extern void FreeFieldAt8(void *pField);
@@ -83,9 +83,9 @@ void Ov002_BuildPanelLabels(void)
     ctx = data_ov002_0207f614;
     pWalk = ctx;
     cfg = data_ov002_0207dc38;
-    Resource_BindByName(aBind, &data_ov002_0207e8dc);
+    Resource_BindByName(aBind, &gOv002TextFontEu08SPath);
     nFont = Ov002_Hud_GetBlock24();
-    Ov002_InitResourceRecord(aRecords, &data_ov002_0207e8f4);
+    Ov002_InitResourceRecord(aRecords, &gOv002UiBtlEnemyTextPath);
     cfg.nVramTarget = Ov002_GetItemResource(9);
     cfg.pPixels = ctx->aPixels;
     TileSurface_InitAndUpload4bpp(ctx->aSurface, &cfg);

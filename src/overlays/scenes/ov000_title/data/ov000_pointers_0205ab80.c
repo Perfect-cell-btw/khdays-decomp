@@ -4,12 +4,12 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov000_0205ab88;
+extern int gOv000Kh358DaysName;
 
 void *data_ov000_0205ab80[2] = {
 
-    &data_ov000_0205ab88,
+    &gOv000Kh358DaysName,
 
-    &data_ov000_0205ab88,
+    &gOv000Kh358DaysName,
 
 };

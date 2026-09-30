@@ -9,7 +9,7 @@ typedef struct Ov002ScreenCtx {
 } Ov002ScreenCtx;
 
 extern Ov002ScreenCtx *data_ov002_0207fa18;
-extern char data_ov002_0207f444[];
+extern char gOv002UinowldtaskfuncName[];
 
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void Ov002_World_SetField4(int nMode);
@@ -33,7 +33,7 @@ void Ov002_TearDownScreen(void)
     vu32 *pDispCnt;
     vu32 *pSubDispCnt;
 
-    VBlank_UnregisterCallback(1, data_ov002_0207f444);
+    VBlank_UnregisterCallback(1, gOv002UinowldtaskfuncName);
     SetMasterBrightnessMain(-16);
 
     if (data_ov002_0207fa18->pBuffer != 0) {

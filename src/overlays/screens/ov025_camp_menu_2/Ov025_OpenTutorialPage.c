@@ -36,7 +36,7 @@ typedef struct DisplayRegisters {
 
 static volatile DisplayRegisters *const SUB_DISPLAY = (volatile DisplayRegisters *)0x04001000;
 
-extern char data_ov025_020b5674[];                                  /* "UI/btlttr/ttr_&.dat.z" */
+extern char gOv025UiBtlttrTtrPath[];                                  /* "UI/btlttr/ttr_&.dat.z" */
 extern const int data_ov025_020b5588[];                             /* page index -> tutorial entry */
 
 extern Ov008PageB *Ov025_GetPageB(void);                        /* Ov008_GetPageB */
@@ -54,7 +54,7 @@ void Ov025_OpenTutorialPage(void)
 
     MI_CpuFill8(pPage, 0, PAGE_B_SIZE);
     pPage->header = *Ov025_GetCueRequest();
-    pPage->pArchive = Archive_LoadFile(data_ov025_020b5674, 14);
+    pPage->pArchive = Archive_LoadFile(gOv025UiBtlttrTtrPath, 14);
     Ov025_InitBlockCursor(pPage->list, pPage->pArchive);
     Ov025_FindChunkById(pPage->list, (u16)data_ov025_020b5588[pPage->header.aWord[0]]);
     pPage->nFlags |= 4;

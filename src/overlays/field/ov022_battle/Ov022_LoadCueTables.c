@@ -67,7 +67,7 @@ struct Actor {
     int nCueEntryCount;          /* 0x07a0 */
 };
 
-extern char data_ov022_020b2d50[];
+extern char gOv022BaChSePath[];
 
 extern void *Msg_OpenContainerAndReadHeader(char *pszName, int nHeap);                           /* Msg_OpenContainerAndReadHeader */
 extern struct CueFile *Archive_LoadFile(u32 nFile, int nHeap);                     /* Archive_LoadFile */
@@ -95,7 +95,7 @@ void Ov022_LoadCueTables(struct Actor *pActor)
     }
     pActor->pCueVoices = 0;
     pActor->pCueEntries = 0;
-    pContainer = Msg_OpenContainerAndReadHeader(data_ov022_020b2d50, CONTAINER_HEAP);
+    pContainer = Msg_OpenContainerAndReadHeader(gOv022BaChSePath, CONTAINER_HEAP);
     nMask = 0xfffffc;
     pFile = Archive_LoadFile(((((u32)pContainer + 0x8000) & nMask) << 7) | 0x80000000
                           | (pActor->nKind & (nMask >> 15)), FILE_HEAP);

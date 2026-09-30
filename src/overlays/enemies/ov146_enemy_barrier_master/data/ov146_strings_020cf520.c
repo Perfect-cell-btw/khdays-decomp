@@ -6,4 +6,4 @@
 
 char gOv146PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov146_020cf52c[8] = "Broot";
+char gOv146BrootName[8] = "Broot";

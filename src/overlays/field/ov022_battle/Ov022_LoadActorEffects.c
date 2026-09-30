@@ -32,7 +32,7 @@ struct Actor {
 
 /* one path per model, indexed by the actor's model id */
 extern const char *data_02042a70[];
-extern const char data_ov022_020b2d40[];
+extern const char gOv022BaChAbPathFmt[];
 
 extern void OS_SPrintf(char *pBuf, const char *pFmt, ...);
 extern void *Msg_OpenContainerAndReadHeader(const char *pPath, int nKind);
@@ -69,7 +69,7 @@ void Ov022_LoadActorEffects(struct Actor *pActor)
     const char *pName;
 
     pName = data_02042a70[pActor->nModelId];
-    OS_SPrintf(szPath, data_ov022_020b2d40, pName);
+    OS_SPrintf(szPath, gOv022BaChAbPathFmt, pName);
     pActor->pContainer = Msg_OpenContainerAndReadHeader(szPath, CONTAINER_KIND);
     Ov022_LoadEffectFiles(pActor);
     if (func_ov022_0209fc78(pActor, ANY_SLOT) != 0) {

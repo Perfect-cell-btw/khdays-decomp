@@ -23,7 +23,7 @@ typedef struct Ov002LinkCtx {
     void *apPrimaryHooks[4],*apSecondaryHooks[4]; u8 aHookState[4][32];
 } Ov002LinkCtx;
 extern Ov002LinkCtx *data_ov002_0207fa10;
-extern char data_ov002_0207f0f4[];
+extern char gOv002MiWdWdPathFmt[];
 extern const char *data_ov002_0207f0a4[];
 extern int OS_SPrintf(char *,const char *,...);
 extern void *Msg_OpenContainerAndReadHeader(const char *,int);
@@ -43,7 +43,7 @@ void Ov002_LoadWorldLinkResources(int nWorld,int nResourceContext)
     Ov002PeerRecord *pPeer;
     Ov002LinkCtx *pCtx=data_ov002_0207fa10;
     StoreToGlobalDblPtr(nResourceContext);
-    OS_SPrintf(szPath,data_ov002_0207f0f4,data_ov002_0207f0a4[nWorld]);
+    OS_SPrintf(szPath,gOv002MiWdWdPathFmt,data_ov002_0207f0a4[nWorld]);
     if(pCtx->pArchiveIndex) ZeroHalfThenFree(pCtx->pArchiveIndex);
     pCtx->pArchiveIndex=Msg_OpenContainerAndReadHeader(szPath,2);
     Ov002_SetRootWord8a28(2,pCtx->pArchiveIndex);

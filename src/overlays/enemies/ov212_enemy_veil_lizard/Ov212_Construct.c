@@ -64,14 +64,14 @@ extern int Ov212_New(char *self);
 extern int Ov212_Tail_New(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable data_ov212_020d212c;
-extern const char data_ov212_020d218c[];
-extern const char data_ov212_020d219c[];
-extern const char data_ov212_020d21a8[];
-extern const char data_ov212_020d21b4[];
-extern const char data_ov212_020d21c4[];
-extern const char data_ov212_020d21d0[];
-extern const char data_ov212_020d21dc[];
-extern const char data_ov212_020d21e4[];
+extern const char gOv212BoneSpine01Name[];
+extern const char gOv212TagBeroName[];
+extern const char gOv212BoneHeadName[];
+extern const char gOv212BoneTail02Name[];
+extern const char gOv212BoneLHandName[];
+extern const char gOv212BoneRHandName[];
+extern const char gOv212TagE01Name[];
+extern const char gOv212MoveName[];
 extern const Quat data_020420f8;
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;
@@ -128,18 +128,18 @@ void Ov212_Construct(char *self)
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov212_BoneCallback;
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, 0, -0x1b34);
-    *(int *)(self + 0x58c) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov212_020d218c);
-    *(int *)(self + 0x590) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov212_020d219c);
-    *(int *)(self + 0x598) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov212_020d21a8);
-    *(int *)(self + 0x59c) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov212_020d21b4);
-    *(int *)(self + 0x5a0) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov212_020d21c4);
-    *(int *)(self + 0x5a4) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov212_020d21d0);
+    *(int *)(self + 0x58c) = FindResourceIndexByName(*(int *)(self + 0x384), gOv212BoneSpine01Name);
+    *(int *)(self + 0x590) = FindResourceIndexByName(*(int *)(self + 0x384), gOv212TagBeroName);
+    *(int *)(self + 0x598) = FindResourceIndexByName(*(int *)(self + 0x384), gOv212BoneHeadName);
+    *(int *)(self + 0x59c) = FindResourceIndexByName(*(int *)(self + 0x384), gOv212BoneTail02Name);
+    *(int *)(self + 0x5a0) = FindResourceIndexByName(*(int *)(self + 0x384), gOv212BoneLHandName);
+    *(int *)(self + 0x5a4) = FindResourceIndexByName(*(int *)(self + 0x384), gOv212BoneRHandName);
     *(char **)(self + 0x2cc) = self + 0x514;
     quat = data_020420f8;
     for (i = 0; i < 16; i++) {
         if (i < 15) {
             ((struct Items *)self)->items[i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 1));
-            *(int *)(self + 0x594) = FindResourceIndexByName(((struct Items *)self)->items[i], data_ov212_020d21dc);
+            *(int *)(self + 0x594) = FindResourceIndexByName(((struct Items *)self)->items[i], gOv212TagE01Name);
         } else {
             ((struct Items *)self)->items[i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 2));
         }
@@ -158,7 +158,7 @@ void Ov212_Construct(char *self)
     *(Callback *)(*(int *)(self + 0x388) + 0x6c) = Ov212_RefreshAimPoint;
     *(char **)(*(int *)(self + 0x388) + 0x84) = self;
     RefreshObjectCallbacks(*(int *)(self + 0x388), 0);
-    *(int *)(self + 0x588) = FindResourceIndexByName(*(int *)(self + 0x388), data_ov212_020d21e4);
+    *(int *)(self + 0x588) = FindResourceIndexByName(*(int *)(self + 0x388), gOv212MoveName);
     lift.x = 0;
     lift.y = -0x2f9b;
     lift.z = 0;

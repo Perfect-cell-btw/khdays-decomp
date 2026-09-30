@@ -4,12 +4,12 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov020_020800d8[12] = "col_wall";
+char gOv020ColWallName[12] = "col_wall";
 
-char data_ov020_020800e4[12] = "col_wall10";
+char gOv020ColWall10Name[12] = "col_wall10";
 
-char data_ov020_020800f0[12] = "col_wall09";
+char gOv020ColWall09Name[12] = "col_wall09";
 
-char data_ov020_020800fc[4] = "up";
+char gOv020UpName[4] = "up";
 
-char data_ov020_02080100[32] = "down";
+char gOv020DownName[32] = "down";

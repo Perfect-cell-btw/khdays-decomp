@@ -32,8 +32,8 @@ struct Ov030Scene { char pad0000[0x2cb0]; struct Ov030SceneBlock block2cb0; };
 struct Ov030Descriptor { char bytes[0x10]; };
 
 extern struct Ov030Scene *data_ov030_020b5a00;
-extern struct Ov030Descriptor data_ov030_020b5960;
-extern struct Ov030Descriptor data_ov030_020b5970;
+extern struct Ov030Descriptor gOv030RoxasLiPackPath;
+extern struct Ov030Descriptor gOv030RoxasLiEa0PackPath;
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot, int variant, void *parameters);
@@ -47,10 +47,10 @@ u8 Ov030_BuildActorHandles(struct Ov030Runtime *self)
     block->flags334 = 0;
     Ov022_ConfigureGridSlotMode(self->slot09, 2);
     block->handle340 = Ov022_AcquireGridSlot(
-        data_ov030_020b5960.bytes, self->slot09, 0,
+        gOv030RoxasLiPackPath.bytes, self->slot09, 0,
         &self->scene20->field04);
     block->handle344 = Ov022_AcquireGridSlot(
-        data_ov030_020b5970.bytes, self->slot09, 1,
+        gOv030RoxasLiEa0PackPath.bytes, self->slot09, 1,
         &scene->field234);
     Ov022_StepCueTrack((char *)self + 0xda0, 0xd0);
     return block->flags334 |= 0xb;

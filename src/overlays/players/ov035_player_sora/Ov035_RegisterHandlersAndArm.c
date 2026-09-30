@@ -27,8 +27,8 @@ struct Runtime {
     struct Attachment *attachment2644;
 };
 struct Path { char bytes[0x10]; };
-extern const struct Path data_ov035_020b4c30;
-extern const struct Path data_ov035_020b4c40;
+extern const struct Path gOv035SoraLiPackPath;
+extern const struct Path gOv035SoraLiEa4PackPath;
 extern void Ov022_ConfigureGridSlotMode(int id, int mode);
 extern struct GridEntry *Ov022_AcquireGridSlot(const char *path, int id, int index, u16 *block);
 extern int Ov022_StepCueTrack(u8 *p, int n);
@@ -38,8 +38,8 @@ u8 Ov035_RegisterHandlersAndArm(struct Runtime *self)
     struct BuildBlock *block = &self->block22f8;
     block->flags334 = 0;
     Ov022_ConfigureGridSlotMode(self->slot09, 2);
-    block->entry340 = Ov022_AcquireGridSlot(data_ov035_020b4c30.bytes, self->slot09, 0, &self->part20->flags);
-    block->entry344 = Ov022_AcquireGridSlot(data_ov035_020b4c40.bytes, self->slot09, 1, &self->attachment2644->model3c->flags);
+    block->entry340 = Ov022_AcquireGridSlot(gOv035SoraLiPackPath.bytes, self->slot09, 0, &self->part20->flags);
+    block->entry344 = Ov022_AcquireGridSlot(gOv035SoraLiEa4PackPath.bytes, self->slot09, 1, &self->attachment2644->model3c->flags);
     Ov022_StepCueTrack((u8 *)self + 0xda0, 0xd3);
     return block->flags334 |= 0xb;
 }

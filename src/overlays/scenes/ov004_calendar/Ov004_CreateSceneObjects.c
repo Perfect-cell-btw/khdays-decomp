@@ -4,7 +4,7 @@
 #include "nitro/types.h"
 
 extern char *data_ov004_02051384;
-extern char data_ov004_0205135c[];
+extern char gOv004UiCalTtlPath[];
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -36,7 +36,7 @@ void *Ov004_CreateSceneObjects(void *args) {
     *(int *)(context + 0x5564) =
         *(int *)(context + 0x556c) - *(int *)(context + 0x5560);
 
-    Ov004_InitResourceRecord(context + 0x558c, data_ov004_0205135c);
+    Ov004_InitResourceRecord(context + 0x558c, gOv004UiCalTtlPath);
     Ov004_LoadSceneGraphics();
 
     *(int *)(context + 0xb08) = 0;

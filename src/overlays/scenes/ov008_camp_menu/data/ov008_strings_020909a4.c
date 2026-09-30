@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov008_020909a4[24] = "UI/cm/str/select_&.s.z";
+char gOv008UiCmStrSelectTextPath_3[24] = "UI/cm/str/select_&.s.z";
 
-char data_ov008_020909bc[24] = "UI/cm/str/status_&.s.z";
+char gOv008UiCmStrStatusTextPath_4[24] = "UI/cm/str/status_&.s.z";

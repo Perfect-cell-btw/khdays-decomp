@@ -32,7 +32,7 @@ typedef struct GameHeap {
 extern char *data_0204be08;
 extern u8 gPauseAllowed;
 extern u8 data_0204c240;
-extern char data_02042748[16];
+extern char gPauseRefreshName[16];
 extern int GameState_IsFlagSet(int id);
 extern void PauseMenu_SetMode(int a);
 extern void GX_SetGraphicsMode(int a, int b, int c);
@@ -91,5 +91,5 @@ void Game_EnterPauseScene(void)
     if ((LoadGlobalU16At0() & 8) != 0) {
         SetGameMode(0);
     }
-    RegisterNamedTask(1, data_02042748, PauseMenu_Open);
+    RegisterNamedTask(1, gPauseRefreshName, PauseMenu_Open);
 }

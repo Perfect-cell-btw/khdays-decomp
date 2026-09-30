@@ -15,7 +15,7 @@ typedef struct {
 } Ov006RootContext;
 
 extern Ov006RootContext *data_ov006_02056664;
-extern u32 data_ov006_020565ac;
+extern u32 gOv006UiMltMltPath;
 
 extern void Ov006_SetBgLayout(int state);
 extern void Ov006_UploadTextCells(int state);
@@ -44,7 +44,7 @@ void Ov006_MissionRebuildLayers(void) {
     Ov006_Menu_SetupSprites(data_ov006_02056664->scene_state);
     Ov006_SweepElements(&data_ov006_02056664->display_state);
     Ov006_LoadAndInitResourceSections(&data_ov006_02056664->display_state,
-                        (void *)&data_ov006_020565ac);
+                        (void *)&gOv006UiMltMltPath);
 
     Ov006_MissionRetargetCellByTag(2, 0, 0);
     Ov006_MissionRetargetCellByTag(3, 0, 0);

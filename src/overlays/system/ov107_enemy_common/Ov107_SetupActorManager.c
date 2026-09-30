@@ -8,10 +8,10 @@ extern int Ov107_ContainerNode_New(void);
 extern void Ov107_DispatchByType(void);
 extern void Ov107_Scene_Tick(void);
 extern char *gOv107ActorManager;
-extern int data_ov107_020cbab8;
-extern int data_ov107_020cbac4;
-extern int data_ov107_020cbad0;
-extern int data_ov107_020cbadc;
+extern int gOv107MsDpPath;
+extern int gOv107MsEcPath;
+extern int gOv107MsMpPath;
+extern int gOv107MsSharedEffectPath;
 
 /* Sets the actor manager up: two render lists, the two input handlers, the four sprite sets and
  * the four 0xa00-byte actor pools, each tagged with its index. Returns the tick handler. */
@@ -25,10 +25,10 @@ void *Ov107_SetupActorManager(void) {
     List_Init(self + 0x4c);
     StoreGlobalPtrArray4At0c(1, (void *)&Ov107_DispatchByType);
     StoreGlobalPtrArray4At0c(4, (void *)&Ov107_DispatchByType);
-    *(int *)(self + 0x7c) = Msg_OpenContainerAndReadHeader(&data_ov107_020cbab8, 0xb);
-    *(int *)(self + 0x80) = Msg_OpenContainerAndReadHeader(&data_ov107_020cbac4, 0xb);
-    *(int *)(self + 0x84) = Msg_OpenContainerAndReadHeader(&data_ov107_020cbad0, 0xb);
-    *(int *)(self + 0x88) = Msg_OpenContainerAndReadHeader(&data_ov107_020cbadc, 0xb);
+    *(int *)(self + 0x7c) = Msg_OpenContainerAndReadHeader(&gOv107MsDpPath, 0xb);
+    *(int *)(self + 0x80) = Msg_OpenContainerAndReadHeader(&gOv107MsEcPath, 0xb);
+    *(int *)(self + 0x84) = Msg_OpenContainerAndReadHeader(&gOv107MsMpPath, 0xb);
+    *(int *)(self + 0x88) = Msg_OpenContainerAndReadHeader(&gOv107MsSharedEffectPath, 0xb);
     i = 0;
     slot = self;
     do {

@@ -34,5 +34,5 @@ Ov261_GrabSlotFlight kind:function(arm,size=0x240) addr:0x020d122c
 Ov261_PoseInvokeClearField40ThenAdvance kind:function(arm,size=0x50) addr:0x020d146c
 Ov261_stateDualTimerDivide kind:function(arm,size=0xb0) addr:0x020d14bc
 gOv261PackPathFmt kind:data(any) addr:0x020d1580
-data_ov261_020d158c kind:data(any) addr:0x020d158c
-data_ov261_020d159c kind:data(any) addr:0x020d159c
+gOv261ZeroEfDummyName kind:data(any) addr:0x020d158c
+gOv261Bip01Name kind:data(any) addr:0x020d159c

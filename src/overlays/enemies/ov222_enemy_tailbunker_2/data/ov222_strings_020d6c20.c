@@ -6,17 +6,17 @@
 
 char gOv222PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov222_020d6c2c[12] = "Bone_head";
+char gOv222BoneHeadName[12] = "Bone_head";
 
-char data_ov222_020d6c38[16] = "Bone_tail_03";
+char gOv222BoneTail03Name[16] = "Bone_tail_03";
 
-char data_ov222_020d6c48[12] = "Bone_pelvis";
+char gOv222BonePelvisName[12] = "Bone_pelvis";
 
-char data_ov222_020d6c54[12] = "Bone_L_hand";
+char gOv222BoneLHandName[12] = "Bone_L_hand";
 
-char data_ov222_020d6c60[12] = "Bone_R_hand";
+char gOv222BoneRHandName[12] = "Bone_R_hand";
 
-char data_ov222_020d6c6c[8] = "move";
+char gOv222MoveName[8] = "move";
 
 /* rolling sub-item slot handed to each new enemy by the constructor (Ov222_Construct):
  * advances by one per construction and wraps back to 3 at 0x1f; kept word-aligned so the

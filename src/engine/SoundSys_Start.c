@@ -65,7 +65,7 @@ typedef struct SoundCtx {
 } SoundCtx;
 
 extern SoundCtx *gSoundMgr;
-extern const char data_020429ec[];      /* default sound archive path */
+extern const char gSndSoundDataPath[];      /* default sound archive path */
 extern void NNS_SndPlayerStopSeqAll(int mode);
 extern void NNS_SndInit(void);
 extern void NNS_SndArcInit(void *arc, const char *path, NNSSndHeapHandle heap, int bSymbolLoad);   /* NNS_SndArcInit */
@@ -79,7 +79,7 @@ extern int NNS_SndArcLoadBank(u32 waveId, NNSSndHeapHandle heap);
 extern void *NNS_SndHeapSaveState(NNSSndHeapHandle heap);
 
 /* SoundSys_Start -- start the sound system on a sound archive, MAIN. `path` (default
- * data_020429ec) is opened into the context's archive with the main heap; the player priority,
+ * gSndSoundDataPath) is opened into the context's archive with the main heap; the player priority,
  * the main heap's groups and the SE/BGM handles are set up; the 16 sound nodes are cleared,
  * chained into a doubly linked free list (ids 6..21, each with its own handle); streaming starts
  * on the effect heap (priority 10) with its two stream handles; the BGM slots are emptied, wave
@@ -91,7 +91,7 @@ void SoundSys_Start(const char *path)
     int i;
 
     if (path == 0) {
-        path = data_020429ec;
+        path = gSndSoundDataPath;
     }
     SoundMgr_WaitLoaderIfState1();
     NNS_SndPlayerStopSeqAll(0);

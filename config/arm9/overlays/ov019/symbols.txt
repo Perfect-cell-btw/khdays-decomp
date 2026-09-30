@@ -5,4 +5,4 @@ Ov019_StoreSlotIndex kind:function(thumb,size=0x1a) addr:0x0207fcc0
 Ov019_AdvancePlayTime kind:function(thumb,size=0x64) addr:0x0207fcdc
 data_ov019_0207fd40 kind:data(any) addr:0x0207fd40
 data_ov019_0207fd60 kind:data(any) addr:0x0207fd60
-data_ov019_0207fd78 kind:data(any) addr:0x0207fd78
+gOv019IntFmt kind:data(any) addr:0x0207fd78

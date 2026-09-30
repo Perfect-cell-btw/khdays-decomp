@@ -4,64 +4,64 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov003_0204f740;
-extern int data_ov003_0204f754;
-extern int data_ov003_0204f768;
-extern int data_ov003_0204f77c;
-extern int data_ov003_0204f790;
-extern int data_ov003_0204f7a4;
-extern int data_ov003_0204f7b8;
-extern int data_ov003_0204f7cc;
-extern int data_ov003_0204f7e0;
-extern int data_ov003_0204f7f4;
-extern int data_ov003_0204f808;
-extern int data_ov003_0204f81c;
-extern int data_ov003_0204f830;
-extern int data_ov003_0204f844;
-extern int data_ov003_0204f858;
-extern int data_ov003_0204f86c;
-extern int data_ov003_0204f880;
-extern int data_ov003_0204f894;
-extern int data_ov003_0204f8a8;
+extern int gOv003AxelDefPackPath;
+extern int gOv003XionDefPackPath;
+extern int gOv003GoofyDefPackPath;
+extern int gOv003DonaldDefPackPath;
+extern int gOv003ZexionDefPackPath;
+extern int gOv003LarxeneDefPackPath;
+extern int gOv003XaldinDefPackPath;
+extern int gOv003XemnasDefPackPath;
+extern int gOv003VexenDefPackPath;
+extern int gOv003RikuDefPackPath;
+extern int gOv003MarluxiaDefPackPath;
+extern int gOv003LuxordDefPackPath;
+extern int gOv003LexaeusDefPackPath;
+extern int gOv003MickeyDefPackPath;
+extern int gOv003DemyxDefPackPath;
+extern int gOv003SoraDefPackPath;
+extern int gOv003RoxasDefPackPath;
+extern int gOv003SaixDefPackPath;
+extern int gOv003XigbarDefPackPath;
 
 void *data_ov003_0204f8f8[19] = {
 
-    &data_ov003_0204f880,
+    &gOv003RoxasDefPackPath,
 
-    &data_ov003_0204f740,
+    &gOv003AxelDefPackPath,
 
-    &data_ov003_0204f8a8,
+    &gOv003XigbarDefPackPath,
 
-    &data_ov003_0204f894,
+    &gOv003SaixDefPackPath,
 
-    &data_ov003_0204f7b8,
+    &gOv003XaldinDefPackPath,
 
-    &data_ov003_0204f86c,
+    &gOv003SoraDefPackPath,
 
-    &data_ov003_0204f858,
+    &gOv003DemyxDefPackPath,
 
-    &data_ov003_0204f7a4,
+    &gOv003LarxeneDefPackPath,
 
-    &data_ov003_0204f830,
+    &gOv003LexaeusDefPackPath,
 
-    &data_ov003_0204f81c,
+    &gOv003LuxordDefPackPath,
 
-    &data_ov003_0204f808,
+    &gOv003MarluxiaDefPackPath,
 
-    &data_ov003_0204f7f4,
+    &gOv003RikuDefPackPath,
 
-    &data_ov003_0204f7e0,
+    &gOv003VexenDefPackPath,
 
-    &data_ov003_0204f7cc,
+    &gOv003XemnasDefPackPath,
 
-    &data_ov003_0204f754,
+    &gOv003XionDefPackPath,
 
-    &data_ov003_0204f790,
+    &gOv003ZexionDefPackPath,
 
-    &data_ov003_0204f844,
+    &gOv003MickeyDefPackPath,
 
-    &data_ov003_0204f77c,
+    &gOv003DonaldDefPackPath,
 
-    &data_ov003_0204f768,
+    &gOv003GoofyDefPackPath,
 
 };

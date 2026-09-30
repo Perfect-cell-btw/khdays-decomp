@@ -7,4 +7,4 @@
 
 #include "nitro/types.h"
 
-char data_ov027_02083f9c[8] = "ba/ch/mi";
+char gOv027BaChMiPath[8] = "ba/ch/mi";

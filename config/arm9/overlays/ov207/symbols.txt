@@ -76,10 +76,10 @@ data_ov207_020d4260 kind:data(any) addr:0x020d4260
 data_ov207_020d426e kind:data(any) addr:0x020d426e
 data_ov207_020d427c kind:data(any) addr:0x020d427c
 gOv207PackPathFmt kind:data(any) addr:0x020d42a0
-data_ov207_020d42ac kind:data(any) addr:0x020d42ac
-data_ov207_020d42b8 kind:data(any) addr:0x020d42b8
-data_ov207_020d42c8 kind:data(any) addr:0x020d42c8
-data_ov207_020d42d8 kind:data(any) addr:0x020d42d8
-data_ov207_020d42e0 kind:data(any) addr:0x020d42e0
-data_ov207_020d42f0 kind:data(any) addr:0x020d42f0
-data_ov207_020d42fc kind:data(any) addr:0x020d42fc
+gOv207Bip01HeadName kind:data(any) addr:0x020d42ac
+gOv207Bip01LHandName kind:data(any) addr:0x020d42b8
+gOv207Bip01RHandName kind:data(any) addr:0x020d42c8
+gOv207Bip01Name kind:data(any) addr:0x020d42d8
+gOv207Bip01Spine1Name kind:data(any) addr:0x020d42e0
+gOv207Target01Name kind:data(any) addr:0x020d42f0
+gOv207LargeMoveName kind:data(any) addr:0x020d42fc

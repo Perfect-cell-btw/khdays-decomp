@@ -6,8 +6,8 @@
 
 char gOv259PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov259_020d2fcc[8] = "sa_h_R";
+char gOv259SaHRName[8] = "sa_h_R";
 
-char data_ov259_020d2fd4[8] = "move";
+char gOv259MoveName[8] = "move";
 
-char data_ov259_020d2fdc[36] = "tag00_1";
+char gOv259Tag001Name[36] = "tag00_1";

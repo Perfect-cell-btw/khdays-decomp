@@ -57,7 +57,7 @@ extern struct MobiClipFileBank data_ov024_02093a48;
 extern int data_ov024_0209ba48;
 extern struct MobiClipGlobals data_ov024_02093a2c;
 extern struct MobiClipFrameTimer *data_ov024_02093a3c[3];
-extern int data_ov024_020939ac;
+extern int gOv024MobiclipIntrName;
 
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void FS_CloseFile(void *pFile);
@@ -95,7 +95,7 @@ void Ov024_MobiClip_StopPlayback(void)
         }
     }
     OS_EndAlarm();
-    VBlank_UnregisterCallback(1, &data_ov024_020939ac);
+    VBlank_UnregisterCallback(1, &gOv024MobiclipIntrName);
 
     if (pAudio != 0) {
         Ov024_MobiClip_ReleaseAudioChannel();

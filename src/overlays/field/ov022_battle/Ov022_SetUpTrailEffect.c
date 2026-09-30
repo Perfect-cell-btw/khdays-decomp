@@ -36,8 +36,8 @@ struct Actor {
     u8 nId;                      /* 0x0009 */
 };
 
-extern char data_ov022_020b2b6c[];
-extern char data_ov022_020b2b7c[];
+extern char gOv022BaEfReGPackPath[];
+extern char gOv022BaChRgPath[];
 
 extern void RegisterSeqAndInit(struct Anim *pAnim, char *pszDescriptor, int nA,
                           int nB);
@@ -56,10 +56,10 @@ void Ov022_SetUpTrailEffect(struct Effect *pEffect, int nCount,
     if (nCount <= 0) {
         return;
     }
-    RegisterSeqAndInit(&pEffect->anim, data_ov022_020b2b6c, 1, 5);
+    RegisterSeqAndInit(&pEffect->anim, gOv022BaEfReGPackPath, 1, 5);
     BindAnimTrack(&pEffect->anim, 0, &pEffect->blkChannels, 0);
     BindAnimTrack(&pEffect->anim, 2, &pEffect->blkChannels, 0);
-    pTable = Archive_LoadFile(data_ov022_020b2b7c, 6);
+    pTable = Archive_LoadFile(gOv022BaChRgPath, 6);
     if (nCount > 9) {
         nCount = 9;
     }

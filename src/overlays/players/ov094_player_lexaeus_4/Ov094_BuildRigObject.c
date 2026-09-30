@@ -39,12 +39,12 @@ extern void Ov094_BuildScene(void);
 extern void Ov094_FlagLocalAndEnterState21(void);
 
 extern void *data_ov094_020bc240;
-extern int data_ov094_020bc188;
-extern int data_ov094_020bc19c;
-extern int data_ov094_020bc11c;
-extern int data_ov094_020bc10c;
-extern int data_ov094_020bc0fc;
-extern int data_ov094_020bc0ec;
+extern int gOv094LexaeusDefPackPath;
+extern int gOv094LexaeusDefHPackPath;
+extern int gOv094LexaeusTgName;
+extern int gOv094LeHRName;
+extern int gOv094LexaeusRName;
+extern int gOv094Bip01Name;
 
 /* The rig hangs off the scene node at +0x28; each bone block starts 0x40 further in. */
 typedef struct { int pad[1]; int f4; } RigHdr;
@@ -74,9 +74,9 @@ void Ov094_BuildRigObject(int *cfg) {
                          (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
     if (cfg[6] == 0) {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov094_020bc188, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv094LexaeusDefPackPath, 1, cfg[0] + 7);
     } else {
-        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov094_020bc19c, 1, cfg[0] + 7);
+        TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &gOv094LexaeusDefHPackPath, 1, cfg[0] + 7);
     }
 
     *(void **)(obj + 0x664 + 0x00) = (void *)&Ov094_SwitchAnimationSet;
@@ -103,13 +103,13 @@ test:
     }
 
     b = bone(obj);
-    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov094_020bc11c) : -1;
+    *(int *)(obj + 0x520) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv094LexaeusTgName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x518) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov094_020bc10c) : -1;
+    *(int *)(obj + 0x518) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv094LeHRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov094_020bc0fc) : -1;
+    *(int *)(obj + 0x51c) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv094LexaeusRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &data_ov094_020bc0ec) : -1;
+    *(int *)(obj + 0x524) = b != 0 ? NNS_G3dGetResDictIdxByName((void *)b, &gOv094Bip01Name) : -1;
 
     if (cfg[3] != 0) {
         *(long long *)obj |= 0x20;

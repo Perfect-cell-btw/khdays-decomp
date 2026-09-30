@@ -1,6 +1,6 @@
 /* Ov023_CmdSeatMembers -- Ov023_CmdSeatMembers: script command that seats the party actors.
  * A copy of the 13 seat heights (data_ov023_02089ddc) is taken.  Without operand 0 all 13
- * seats are filled: actor i gets the chair resource (data_ov023_0208a660, 0202b914 1 / 0xd),
+ * seats are filled: actor i gets the chair resource (gOv023MiOb0CPath, 0202b914 1 / 0xd),
  * is placed on the spot "chair<i>" (Ov023_FormatSeatName 02086c90, 0202ba78) at the seat's
  * height + 0xda01 above the origin, and its model is placed at the entity's position
  * (0202bfcc +0xa8, 020887dc).  With operand 0 (the actor) and operand 1 (an extra height)
@@ -52,7 +52,7 @@ extern void  EntityMgr_ProbeGround(int nModel, char *pszSpot, VecFx32 *pOut); /*
 extern void  Actor_SetVecAndSyncChild(Ov023Entity *pEntity, VecFx32 *pPos);   /* Entity_SetPositionNow */
 extern const Ov023SeatHeights data_ov023_02089ddc;                  /* the seat heights */
 extern const VecFx32 data_02041dc8;                                 /* the zero vector */
-extern char  data_ov023_0208a660[];                                 /* "/mi/ob/0C.z", the chair model */
+extern char  gOv023MiOb0CPath[];                                 /* "/mi/ob/0C.z", the chair model */
 
 int Ov023_CmdSeatMembers(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 {
@@ -70,7 +70,7 @@ int Ov023_CmdSeatMembers(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 
         vOffset = data_02041dc8;
         for (i = 0; i < 13; i++) {
-            TailForwardTrackEntry((u16)i, data_ov023_0208a660, 1, 0xd);
+            TailForwardTrackEntry((u16)i, gOv023MiOb0CPath, 1, 0xd);
             vOffset.y = heights.aHeight[i] + 0xda01;
             strcpy(szSpot, Ov023_FormatIndex(i));
             Entity_SubmitRenderNode((u16)i, 0, szSpot, &vOffset);

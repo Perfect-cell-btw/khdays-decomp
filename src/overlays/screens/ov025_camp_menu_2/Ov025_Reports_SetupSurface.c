@@ -1,5 +1,5 @@
 /* Ov025_Reports_SetupSurface -- Ov025_Reports_SetupSurface: prepare the report page's text.  The
- * string file "UI/cm/str/%s_&.s.z" (data_ov025_020b523c) is named after the page's mode word
+ * string file "UI/cm/str/%s_&.s.z" (gOv025UiCmStrTextPathFmt) is named after the page's mode word
  * (+0x258; data_ov025_020b4220: "rpt" for the story reports, "enm" for the enemy profiles) and
  * loaded into the text at +0x6c (0208985c); the 32 x 24 text surface at +0x78 is built from the
  * template data_ov025_020b4250 with the shared tile pixel buffer (02084c84) and VRAM slot 9
@@ -64,7 +64,7 @@ extern void *Ov025_GetCtxBlock968c(void);                             /* Ov008_G
 extern int   Ov025_LookupEntry(int nSlot);                        /* Ov008_ResetEntry: slot handle */
 extern TileSurfaceCfg data_ov025_020b4250;
 extern const char *data_ov025_020b4220[];                           /* "rpt", "enm" */
-extern char  data_ov025_020b523c[];                                 /* "UI/cm/str/%s_&.s.z" */
+extern char  gOv025UiCmStrTextPathFmt[];                                 /* "UI/cm/str/%s_&.s.z" */
 
 void Ov025_Reports_SetupSurface(void)
 {
@@ -74,7 +74,7 @@ void Ov025_Reports_SetupSurface(void)
 
     cfg = data_ov025_020b4250;
     pPage = Ov025_GetPageA();
-    OS_SNPrintf(szPath, 0x20, data_ov025_020b523c, data_ov025_020b4220[pPage->bMissionMode]);
+    OS_SNPrintf(szPath, 0x20, gOv025UiCmStrTextPathFmt, data_ov025_020b4220[pPage->bMissionMode]);
     Ov025_InitResourceRecord(pPage->text, szPath);
     cfg.pPixels = Ov025_GetCtxBlock968c();
     cfg.nVramTarget = Ov025_LookupEntry(9);

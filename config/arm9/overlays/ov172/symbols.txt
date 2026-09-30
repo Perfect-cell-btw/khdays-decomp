@@ -57,5 +57,5 @@ Ov172_CarryReleaseTick kind:function(arm,size=0x198) addr:0x020d2954
 data_ov172_020d2aec kind:data(any) addr:0x020d2aec
 data_ov172_020d2af8 kind:data(any) addr:0x020d2af8
 gOv172PackPathFmt kind:data(any) addr:0x020d2b00
-data_ov172_020d2b0c kind:data(any) addr:0x020d2b0c
-data_ov172_020d2b14 kind:data(any) addr:0x020d2b14
+gOv172Bone04Name kind:data(any) addr:0x020d2b0c
+gOv172BodyName kind:data(any) addr:0x020d2b14

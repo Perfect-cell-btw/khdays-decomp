@@ -43,8 +43,8 @@ data_ov120_020cdef0 kind:data(any) addr:0x020cdef0
 data_ov120_020cdef4 kind:data(any) addr:0x020cdef4
 data_ov120_020cdf02 kind:data(any) addr:0x020cdf02
 gOv120PackPathFmt kind:data(any) addr:0x020cdf20
-data_ov120_020cdf2c kind:data(any) addr:0x020cdf2c
-data_ov120_020cdf38 kind:data(any) addr:0x020cdf38
-data_ov120_020cdf48 kind:data(any) addr:0x020cdf48
-data_ov120_020cdf58 kind:data(any) addr:0x020cdf58
-data_ov120_020cdf60 kind:data(any) addr:0x020cdf60
+gOv120BoneRFingName kind:data(any) addr:0x020cdf2c
+gOv120Bip01RFootName kind:data(any) addr:0x020cdf38
+gOv120Bip01LFootName kind:data(any) addr:0x020cdf48
+gOv120Bip01Name kind:data(any) addr:0x020cdf58
+gOv120MoveName kind:data(any) addr:0x020cdf60

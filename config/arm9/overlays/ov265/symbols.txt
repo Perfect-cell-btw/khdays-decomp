@@ -69,8 +69,8 @@ data_ov265_020d368c kind:data(any) addr:0x020d368c
 data_ov265_020d3698 kind:data(any) addr:0x020d3698
 data_ov265_020d36a4 kind:data(any) addr:0x020d36a4
 gOv265PackPathFmt kind:data(any) addr:0x020d36c0
-data_ov265_020d36cc kind:data(any) addr:0x020d36cc
-data_ov265_020d36d8 kind:data(any) addr:0x020d36d8
-data_ov265_020d36e4 kind:data(any) addr:0x020d36e4
-data_ov265_020d36f0 kind:data(any) addr:0x020d36f0
-data_ov265_020d36fc kind:data(any) addr:0x020d36fc
+gOv265BonePelvisName kind:data(any) addr:0x020d36cc
+gOv265BoneLHandName kind:data(any) addr:0x020d36d8
+gOv265BoneHaneLName kind:data(any) addr:0x020d36e4
+gOv265BoneHaneRName kind:data(any) addr:0x020d36f0
+gOv265MoveName kind:data(any) addr:0x020d36fc

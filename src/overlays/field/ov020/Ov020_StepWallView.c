@@ -50,8 +50,8 @@ struct TrackEntryGroup {
     void **apEntry;                         /* 0x04 */
 };
 
-extern char data_ov020_020800e4[];
-extern char data_ov020_020800f0[];
+extern char gOv020ColWall10Name[];
+extern char gOv020ColWall09Name[];
 
 extern VecFx32 *func_ov022_020881f8(int id);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
@@ -96,8 +96,8 @@ int Ov020_StepWallView(struct Ov020WallQuery *query, int unused,
             if ((int)group->wCount > 0) {
                 do {
                     entry = group->apEntry[i];
-                    upper = FindEntryByExactName(entry, data_ov020_020800e4);
-                    lower = FindEntryByExactName(entry, data_ov020_020800f0);
+                    upper = FindEntryByExactName(entry, gOv020ColWall10Name);
+                    lower = FindEntryByExactName(entry, gOv020ColWall09Name);
                     RoomMesh_ForEachPrimOnPoint(entry, 2, lower,
                                   (void *)Ov002_SetWidgetHidden, 1);
                     RoomMesh_ForEachPrimOnPoint(entry, 2, upper,
@@ -134,7 +134,7 @@ int Ov020_StepWallView(struct Ov020WallQuery *query, int unused,
 
             if ((int)g->wCount > 0) {
                 do {
-                    m = query->bUpperWall10 ? data_ov020_020800f0 : data_ov020_020800e4;
+                    m = query->bUpperWall10 ? gOv020ColWall09Name : gOv020ColWall10Name;
                     e = g->apEntry[k];
                     RoomMesh_ForEachPrimOnPoint(e, 2, FindEntryByExactName(e, m),
                                   (void *)Ov002_SetWidgetHidden, 0);

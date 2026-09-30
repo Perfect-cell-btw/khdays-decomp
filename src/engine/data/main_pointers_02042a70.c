@@ -4,67 +4,67 @@
  * a zero word is a null entry.
  */
 
-extern int data_02042a20;
-extern int data_02042a24;
-extern int data_02042a28;
-extern int data_02042a2c;
-extern int data_02042a30;
-extern int data_02042a34;
-extern int data_02042a38;
-extern int data_02042a3c;
-extern int data_02042a40;
-extern int data_02042a44;
-extern int data_02042a48;
-extern int data_02042a4c;
-extern int data_02042a50;
-extern int data_02042a54;
-extern int data_02042a58;
-extern int data_02042a5c;
-extern int data_02042a60;
-extern int data_02042a64;
-extern int data_02042a68;
-extern int data_02042a6c;
+extern int gDoName;
+extern int gLuName;
+extern int gMaName;
+extern int gLeName;
+extern int gDeName_2;
+extern int gR2Name;
+extern int gXaName;
+extern int gVeName;
+extern int gXeName;
+extern int gXoName;
+extern int gZeName;
+extern int gMiName;
+extern int gRoName;
+extern int gRiName;
+extern int gGoName;
+extern int gAxName;
+extern int gXiName;
+extern int gLaName;
+extern int gSaName;
+extern int gSoName;
 
 void *data_02042a70[20] = {
 
-    &data_02042a50,
+    &gRoName,
 
-    &data_02042a5c,
+    &gAxName,
 
-    &data_02042a60,
+    &gXiName,
 
-    &data_02042a68,
+    &gSaName,
 
-    &data_02042a38,
+    &gXaName,
 
-    &data_02042a6c,
+    &gSoName,
 
-    &data_02042a30,
+    &gDeName_2,
 
-    &data_02042a64,
+    &gLaName,
 
-    &data_02042a2c,
+    &gLeName,
 
-    &data_02042a24,
+    &gLuName,
 
-    &data_02042a28,
+    &gMaName,
 
-    &data_02042a54,
+    &gRiName,
 
-    &data_02042a3c,
+    &gVeName,
 
-    &data_02042a40,
+    &gXeName,
 
-    &data_02042a44,
+    &gXoName,
 
-    &data_02042a48,
+    &gZeName,
 
-    &data_02042a4c,
+    &gMiName,
 
-    &data_02042a20,
+    &gDoName,
 
-    &data_02042a58,
+    &gGoName,
 
-    &data_02042a34,
+    &gR2Name,
 
 };

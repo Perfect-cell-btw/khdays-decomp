@@ -6,6 +6,6 @@
 
 char gOv239PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov239_020cdc4c[16] = "Ms/NBShare.p";
+char gOv239MsNbSharePackPath[16] = "Ms/NBShare.p";
 
-char data_ov239_020cdc5c[36] = "move";
+char gOv239MoveName[36] = "move";

@@ -23,8 +23,8 @@ typedef struct Ov002PlaceResult {
 } Ov002PlaceResult;
 
 extern Ov002CodeBase *data_ov002_0207fa10;
-extern char data_ov002_0207f108[];      /* "%s%02d_%d" */
-extern char data_ov002_0207f100[];      /* "pent" */
+extern char gOv002StrIntIntFmt[];      /* "%s%02d_%d" */
+extern char gOv002PentName[];      /* "pent" */
 
 extern Ov002DayEntry *Ov002_FindPeerRow(int nDay, int nSlotValue);
 extern void OS_SPrintf(char *pDest, const char *pFmt, ...);
@@ -49,7 +49,7 @@ void Ov002_ResolveNamedPlacement(const char *pName, int nSlot, VecFx32 *pPlace,
         nDay = pEntry->bDay;
     }
 
-    OS_SPrintf(szKey, data_ov002_0207f108, data_ov002_0207f100, nDay, nIndex);
+    OS_SPrintf(szKey, gOv002StrIntIntFmt, gOv002PentName, nDay, nIndex);
     pResult = EntityMgr_FindCollEntry((u16)nSlot, szKey);
     pPlace->x = pResult->nX;
     pPlace->y = pResult->nY;

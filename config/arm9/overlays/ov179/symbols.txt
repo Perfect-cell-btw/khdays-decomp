@@ -63,5 +63,5 @@ Ov179_AiStep_QueueAction0OnAnimEnd kind:function(arm,size=0x30) addr:0x020d48a0
 data_ov179_020d48d0 kind:data(any) addr:0x020d48d0
 data_ov179_020d48e8 kind:data(any) addr:0x020d48e8
 gOv179PackPathFmt kind:data(any) addr:0x020d4900
-data_ov179_020d490c kind:data(any) addr:0x020d490c
-data_ov179_020d4914 kind:data(any) addr:0x020d4914
+gOv179Bone04Name kind:data(any) addr:0x020d490c
+gOv179BodyName kind:data(any) addr:0x020d4914

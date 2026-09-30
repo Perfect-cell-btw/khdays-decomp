@@ -131,11 +131,11 @@ extern Ov002CharClassParams data_ov002_0207db9c;
 extern char data_ov002_0207e880[];
 extern char data_ov002_0207e894[];
 extern char data_ov002_0207e8b4[];
-extern char data_ov002_0207e91c[];
-extern char data_ov002_0207e92c[];
-extern char data_ov002_0207e940[];
-extern char data_ov002_0207e958[];
-extern char data_ov002_0207e970[];
+extern char gOv002UiBtlMainPath[];
+extern char gOv002UiBtlMainPath_2[];
+extern char gOv002TextFontEu08Path[];
+extern char gOv002TextFontEu10Path[];
+extern char gOv002UiBtlSu200Path[];
 extern char data_ov002_0207e9cc[];
 extern char data_ov002_0207e9e0[];
 extern char data_ov002_0207ea00[];
@@ -196,10 +196,10 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
     ctx = (Ov002PanelContext *)NNSi_FndGetCurrentRootHeap();
     data_ov002_0207f614 = ctx;
     MI_CpuFill8(ctx, 0, 0x2c4);
-    ctx->nArchiveGroup = (int)Msg_OpenContainerAndReadHeader(data_ov002_0207e91c, 0xe);
+    ctx->nArchiveGroup = (int)Msg_OpenContainerAndReadHeader(gOv002UiBtlMainPath, 0xe);
     bLangVariant = GetLanguage() == 1;
     if (bLangVariant == 0) {
-        ctx->nArchiveGroupAlt = (int)Msg_OpenContainerAndReadHeader(data_ov002_0207e92c, 0xe);
+        ctx->nArchiveGroupAlt = (int)Msg_OpenContainerAndReadHeader(gOv002UiBtlMainPath_2, 0xe);
     }
     ctx->nUnk01ad = 4;
     ctx->bOwnsScreen = 1;
@@ -233,8 +233,8 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
         pWalk = (Ov002PanelContext *)((char *)pWalk + 0x10);
     } while (i < 4);
 
-    Resource_BindByName(ctx->aBind0024, data_ov002_0207e940);
-    Resource_BindByName(ctx->aBind0030, data_ov002_0207e958);
+    Resource_BindByName(ctx->aBind0024, gOv002TextFontEu08Path);
+    Resource_BindByName(ctx->aBind0030, gOv002TextFontEu10Path);
     Tween_Clear(ctx->aOffsetTween);
     Tween_Clear(ctx->aScrollTween);
 
@@ -266,7 +266,7 @@ int Ov002_OpenPanelScreen(Ov002PanelParams *pParams)
             Res_LoadSpriteSet(&sRes, pArc, 0, 0, 0);
         } else {
             Res_LoadSpriteSet(&sRes, pArc, 0, -1, 0);
-            pExtra = Archive_LoadFile((u32)data_ov002_0207e970, 0xe);
+            pExtra = Archive_LoadFile((u32)gOv002UiBtlSu200Path, 0xe);
             GetResourceSubBlock_CHAR2(pExtra, &sRes.pChar);
         }
     } else {

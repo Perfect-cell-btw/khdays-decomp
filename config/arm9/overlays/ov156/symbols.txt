@@ -57,5 +57,5 @@ data_ov156_020cedac kind:data(any) addr:0x020cedac
 data_ov156_020cedba kind:data(any) addr:0x020cedba
 data_ov156_020cedc8 kind:data(any) addr:0x020cedc8
 gOv156PackPathFmt kind:data(any) addr:0x020cede0
-data_ov156_020cedec kind:data(any) addr:0x020cedec
-data_ov156_020cedf4 kind:data(any) addr:0x020cedf4
+gOv156Head02Name kind:data(any) addr:0x020cedec
+gOv156HeadconName kind:data(any) addr:0x020cedf4

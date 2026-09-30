@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov106_020b8b34[44] = "ev/tex_noise.nsbtx";
+char gOv106EvTexNoiseTexturePath[44] = "ev/tex_noise.nsbtx";

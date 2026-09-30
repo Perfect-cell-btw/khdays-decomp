@@ -58,8 +58,8 @@ data_ov270_020d6898 kind:data(any) addr:0x020d6898
 data_ov270_020d68a8 kind:data(any) addr:0x020d68a8
 data_ov270_020d68bc kind:data(any) addr:0x020d68bc
 gOv270PackPathFmt kind:data(any) addr:0x020d68e0
-data_ov270_020d68ec kind:data(any) addr:0x020d68ec
-data_ov270_020d68f8 kind:data(any) addr:0x020d68f8
-data_ov270_020d6900 kind:data(any) addr:0x020d6900
-data_ov270_020d6908 kind:data(any) addr:0x020d6908
-data_ov270_020d690c kind:data(any) addr:0x020d690c
+gOv270BoneHeadName kind:data(any) addr:0x020d68ec
+gOv270Tag00Name kind:data(any) addr:0x020d68f8
+gOv270MoveName kind:data(any) addr:0x020d6900
+gOv270BName kind:data(any) addr:0x020d6908
+gOv270Guru0Name kind:data(any) addr:0x020d690c

@@ -5,8 +5,8 @@
 #include "game/engine.h"
 
 extern void *data_ov033_020b4b80;
-extern void *data_ov033_020b4b4c;
-extern void *data_ov033_020b4b60;
+extern void *gOv033SaixLiE1PackPath;
+extern void *gOv033SaixLiE0PackPath;
 
 void Ov033_initSubObjectSlots(void)
 {
@@ -19,12 +19,12 @@ void Ov033_initSubObjectSlots(void)
     *(int *)(obj + 0x2c2c) = 0;
     *(int *)(base + 4) = 0;
     *(int *)(base + 8) = 0;
-    RegisterSeqAndInit(base + 0xc, &data_ov033_020b4b4c, 1, ((unsigned char *)obj)[9] + 7);
+    RegisterSeqAndInit(base + 0xc, &gOv033SaixLiE1PackPath, 1, ((unsigned char *)obj)[9] + 7);
     i = 0;
     slot = base + 0x120;
     zero = 0;
     do {
-        RegisterSeqAndInit(slot, &data_ov033_020b4b60, 1, ((unsigned char *)obj)[9] + 7);
+        RegisterSeqAndInit(slot, &gOv033SaixLiE0PackPath, 1, ((unsigned char *)obj)[9] + 7);
         *(int *)(base + 0x11c) = 0x1c - i;
         i++;
         *(int *)(base + 0x118) = zero;

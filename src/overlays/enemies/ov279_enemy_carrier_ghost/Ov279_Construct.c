@@ -25,11 +25,11 @@ extern void *Ov107_Mover_New(const Capsule *capsule);
 extern void Res_RequestIdPair(int id);
 
 extern KindTable data_ov279_020d358c;
-extern const char data_ov279_020d35cc[];
-extern const char data_ov279_020d35d8[];
-extern const char data_ov279_020d35e4[];
-extern const char data_ov279_020d35f0[];
-extern const char data_ov279_020d35fc[];
+extern const char gOv279BoneLEyeName[];
+extern const char gOv279BoneRFingName[];
+extern const char gOv279BoneLFingName[];
+extern const char gOv279BoneHeadName[];
+extern const char gOv279BoneTail02Name[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;
 
@@ -69,11 +69,11 @@ void Ov279_Construct(char *self)
     RegisterSubscriberSlot(*(void **)(self + 0x9c), *(void **)(self + 0x384));
     *(void **)(*(char **)(self + 0x384) + 0x74) = (void *)Ov279_RefreshAndPublishTransform;
     *(char **)(*(char **)(self + 0x384) + 0x84) = self;
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 3, data_ov279_020d35cc);
-    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, data_ov279_020d35d8);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, data_ov279_020d35e4);
-    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, data_ov279_020d35f0);
-    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, data_ov279_020d35fc);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 3, gOv279BoneLEyeName);
+    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, gOv279BoneRFingName);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, gOv279BoneLFingName);
+    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, gOv279BoneHeadName);
+    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(void **)(self + 0x384), 1, gOv279BoneTail02Name);
     *(void **)(self + 0x3a8) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
         (*(Slot **)(self + 0x3a8))[i].node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, kinds.w[i]));

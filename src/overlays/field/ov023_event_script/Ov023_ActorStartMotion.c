@@ -53,9 +53,9 @@ extern int   strcmp(const char *pA, const char *pB);         /* STD_CompareStrin
 extern void  Snd_RegisterSeqAndBind(Ov023AnimSlot *pSlots, void *pAnim, void *pSource, int nHeap); /* AnimSlot_Load */
 extern void  strcpy(char *pszDst, const char *pszSrc);       /* STD_CopyString */
 extern void  OS_SPrintf(char *pBuffer, const char *pFormat, ...);
-extern char  data_ov023_0208a730[];                                 /* ".p2" */
-extern char  data_ov023_0208a734[];                                 /* ".z" */
-extern char  data_ov023_0208a738[];                                 /* "mi/mo/%s.z" */
+extern char  gOv023P2Name_2[];                                 /* ".p2" */
+extern char  gOv023ZName[];                                 /* ".z" */
+extern char  gOv023MiMoPathFmt[];                                 /* "mi/mo/%s.z" */
 
 void Ov023_ActorStartMotion(Ov023Actor *pActor, int nTrack)
 {
@@ -87,15 +87,15 @@ void Ov023_ActorStartMotion(Ov023Actor *pActor, int nTrack)
                 }
             }
         }
-        if (strcmp(pMotion->szName + (nLength - 3), data_ov023_0208a730) == 0) {
+        if (strcmp(pMotion->szName + (nLength - 3), gOv023P2Name_2) == 0) {
             Snd_RegisterSeqAndBind(pActor->pSlots, pActor->pEntity->anim,
                           (void *)(((((u32)pActor->pMotionText + 0x8000) & 0xfffffc) << 7) | 0x80000000 | (pMotion->nFrame & (0xfffffc >> 15))),
                           0xd);
         } else {
-            if (strcmp(pMotion->szName + (nLength - 2), data_ov023_0208a734) == 0) {
+            if (strcmp(pMotion->szName + (nLength - 2), gOv023ZName) == 0) {
                 strcpy(szPath, pMotion->szName);
             } else {
-                OS_SPrintf(szPath, data_ov023_0208a738, pMotion->szName);
+                OS_SPrintf(szPath, gOv023MiMoPathFmt, pMotion->szName);
             }
             Snd_RegisterSeqAndBind(pActor->pSlots, pActor->pEntity->anim, szPath, 0xd);
             if (pMotion->nFrame >= 0) {

@@ -36,4 +36,4 @@ Ov129_BeginWindUp kind:function(arm,size=0xf4) addr:0x020d6c40
 Ov129_TimerFireNodeCallbackThenAdvance kind:function(arm,size=0xb0) addr:0x020d6d34
 data_ov129_020d6de4 kind:data(any) addr:0x020d6de4
 gOv129PackPathFmt kind:data(any) addr:0x020d6e00
-data_ov129_020d6e0c kind:data(any) addr:0x020d6e0c
+gOv129MoveName kind:data(any) addr:0x020d6e0c

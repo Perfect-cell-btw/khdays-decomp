@@ -11,12 +11,12 @@ extern int ResCache_Acquire(int a, void *b, int c);
 extern void TailForwardTrackEntry_2(int id, int a, int b, int c);
 extern void Ov023_ReleaseSubPanelResource(void *entity);
 extern void Slot48_StoreAtCurrentIndex(int ctx, char *args);
-extern char data_ov023_0208a61c[];
-extern char data_ov023_0208a5d8[];
-extern char data_ov023_0208a620[];
-extern char data_ov023_0208a62c[];
-extern char data_ov023_0208a630[];
-extern char data_ov023_0208a644[];
+extern char gOv023EvPath[];
+extern char gOv023StrFmt[];
+extern char gOv023EvPathFmt[];
+extern char gOv023CoName[];
+extern char gOv023MsSharedEffectPath[];
+extern char gOv023MsPackPathFmt[];
 
 /* Script command: builds the animation file path from the operand's short-hand name, loads it onto
  * the entity, and yields until it has finished playing. */
@@ -29,16 +29,16 @@ int Ov023_Cmd_PlayEntityAnimByName(int ctx, char *args) {
     char prefix[0x10];
     int anim;
     int loop;
-    if (strncmp(name, data_ov023_0208a61c, 3) == 0) {
-        OS_SNPrintf(prefix, 3, data_ov023_0208a5d8, name + 3);
-        OS_SPrintf(path, data_ov023_0208a620, prefix);
+    if (strncmp(name, gOv023EvPath, 3) == 0) {
+        OS_SNPrintf(prefix, 3, gOv023StrFmt, name + 3);
+        OS_SPrintf(path, gOv023EvPathFmt, prefix);
         anim = func_020200b4(name + 6);
     } else {
-        OS_SNPrintf(group, 3, data_ov023_0208a5d8, name);
-        if (strncmp(name, data_ov023_0208a62c, 2) == 0) {
-            OS_SPrintf(path, data_ov023_0208a630);
+        OS_SNPrintf(group, 3, gOv023StrFmt, name);
+        if (strncmp(name, gOv023CoName, 2) == 0) {
+            OS_SPrintf(path, gOv023MsSharedEffectPath);
         } else {
-            OS_SPrintf(path, data_ov023_0208a644, group);
+            OS_SPrintf(path, gOv023MsPackPathFmt, group);
         }
         anim = func_020200b4(name + 3);
     }

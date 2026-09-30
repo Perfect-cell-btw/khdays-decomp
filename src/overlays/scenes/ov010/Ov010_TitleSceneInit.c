@@ -72,8 +72,8 @@ extern void TileTextRenderer_Init(void *tile_engine, int layer, void *text_engin
 extern void SetMasterBrightnessMain(int value);
 extern void SetMasterBrightnessSub(int value);
 extern const PaletteData data_ov010_0204cf88;
-extern char data_ov010_0204cfb4[];
-extern char data_ov010_0204cfc8[];
+extern char gOv010UiSysSysTextPath[];
+extern char gOv010TextFontEu10Path[];
 extern void Ov010_TitleBootStep(void);
 
 void *Ov010_TitleSceneInit(u32 parameter) {
@@ -137,7 +137,7 @@ void *Ov010_TitleSceneInit(u32 parameter) {
 
     GX_LoadBGPltt(&frame, 0, 4);
 
-    Ov010_BindResourceHandle(context, data_ov010_0204cfb4);
+    Ov010_BindResourceHandle(context, gOv010UiSysSysTextPath);
 
     if (parameter == 0xffffffff) {
         context->node = Ov010_GetVarRecordByIndex(context, 1);
@@ -145,7 +145,7 @@ void *Ov010_TitleSceneInit(u32 parameter) {
         context->node = Ov010_GetVarRecordByIndex(context, 0);
     }
 
-    Font_LoadUTF16(context->text_engine, data_ov010_0204cfc8);
+    Font_LoadUTF16(context->text_engine, gOv010TextFontEu10Path);
 
     frame.rect[0] = 0;
     frame.rect[1] = 0;

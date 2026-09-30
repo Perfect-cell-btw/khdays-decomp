@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov008_020903f0[24] = "UI/cm/str/panel_&.s.z";
+char gOv008UiCmStrPanelTextPath[24] = "UI/cm/str/panel_&.s.z";
 
-char data_ov008_02090408[20] = "ui/pnl/3d_&.pak.z";
+char gOv008UiPnl3DPackPath[20] = "ui/pnl/3d_&.pak.z";

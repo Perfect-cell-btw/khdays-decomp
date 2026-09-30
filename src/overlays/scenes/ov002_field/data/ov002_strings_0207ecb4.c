@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207ecb4[24] = "/text/font_eu_10s.nftr";
+char gOv002TextFontEu10SPath_2[24] = "/text/font_eu_10s.nftr";
 
-char data_ov002_0207eccc[24] = "UI/btl/&/bl000.NCGR.z";
+char gOv002UiBtlBl000Path[24] = "UI/btl/&/bl000.NCGR.z";
 
-char data_ov002_0207ece4[28] = "UI/btl/bm_lo_bg007.NCGR.z";
+char gOv002UiBtlBmLoBg007Path[28] = "UI/btl/bm_lo_bg007.NCGR.z";
 
-char data_ov002_0207ed00[28] = "UI/btl/bm_lo_bg003.NCGR.z";
+char gOv002UiBtlBmLoBg003Path[28] = "UI/btl/bm_lo_bg003.NCGR.z";

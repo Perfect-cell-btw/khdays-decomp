@@ -40,8 +40,8 @@ extern int *Ov126_SpawnProjectileEntry(char *self);
 extern int Ov126_Actor_New(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable data_ov126_020d3fe8;
-extern char data_ov126_020d408c[];
-extern char data_ov126_020d4094[];
+extern char gOv126TagLName[];
+extern char gOv126TagRName[];
 
 void Ov126_Construct(char *self)
 {
@@ -70,8 +70,8 @@ void Ov126_Construct(char *self)
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, -0xe00, 0);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov126_020d408c);
-    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov126_020d4094);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv126TagLName);
+    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv126TagRName);
     *(int **)(self + 0x39c) = CallocInstance(0x48);
     for (i = 0; i < 9; i++) {
         (*(Slot **)(self + 0x39c))[i].subitem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));

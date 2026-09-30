@@ -24,11 +24,11 @@ struct Ov194SubitemSlot {
 
 extern VecFx32 data_ov194_020cef4c;
 extern VecFx32 data_02041dc8;
-extern const char data_ov194_020cefec[];
-extern const char data_ov194_020ceff8[];
-extern const char data_ov194_020cf000[];
-extern const char data_ov194_020cf008[];
-extern const char data_ov194_020cf00c[];
+extern const char gOv194BoneHeadName[];
+extern const char gOv194Tag00Name[];
+extern const char gOv194MoveName[];
+extern const char gOv194BName[];
+extern const char gOv194Guru0Name[];
 
 extern void Ov194_ReleaseSubObjectsAndListThenNotify(void);
 extern void Ov194_Draw(void);
@@ -78,9 +78,9 @@ void Ov194_Construct(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov194_020cefec);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov194_020ceff8);
-        ((void **)self)[0xf4] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov194_020cf000);
+        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 1, gOv194BoneHeadName);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 3, gOv194Tag00Name);
+        ((void **)self)[0xf4] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv194MoveName);
         ((void **)self)[0xf5] = CallocInstance(0x18);
 
         for (i = 0; i < 3; i++) {
@@ -97,8 +97,8 @@ void Ov194_Construct(int param)
         Ov107_Actor_SetAttachSlot(self, 2, 1, 0, 0x2851);
         Ov107_Actor_SetAttachSlot(self, 4, 1, 0, 0x2851);
 
-        ((void **)self)[0xe7] = InsertSortedEntryWithKey(((struct Ov194SubitemSlot *)((void **)self)[0xf5])[0].subitem, 1, data_ov194_020cf008);
-        ((void **)self)[0xe8] = InsertSortedEntryWithKey(((struct Ov194SubitemSlot *)((void **)self)[0xf5])[0].subitem, 1, data_ov194_020cf00c);
+        ((void **)self)[0xe7] = InsertSortedEntryWithKey(((struct Ov194SubitemSlot *)((void **)self)[0xf5])[0].subitem, 1, gOv194BName);
+        ((void **)self)[0xe8] = InsertSortedEntryWithKey(((struct Ov194SubitemSlot *)((void **)self)[0xf5])[0].subitem, 1, gOv194Guru0Name);
 
         pose.position = data_02041dc8;
         pose.scale = 0x10cc;

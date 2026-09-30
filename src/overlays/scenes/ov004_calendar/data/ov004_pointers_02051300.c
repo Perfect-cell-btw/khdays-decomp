@@ -4,37 +4,37 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov004_02051224;
-extern int data_ov004_02051238;
-extern int data_ov004_0205124c;
-extern int data_ov004_02051260;
-extern int data_ov004_02051274;
-extern int data_ov004_02051288;
-extern int data_ov004_0205129c;
-extern int data_ov004_020512b0;
-extern int data_ov004_020512c4;
-extern int data_ov004_020512d8;
+extern int gOv004UiCal7APackPath;
+extern int gOv004UiCal8APackPath;
+extern int gOv004UiCal1APackPath;
+extern int gOv004UiCal6APackPath;
+extern int gOv004UiCal4APackPath;
+extern int gOv004UiCal5APackPath;
+extern int gOv004UiCal3APackPath;
+extern int gOv004UiCal2APackPath;
+extern int gOv004UiCal9APackPath;
+extern int gOv004UiCal0APackPath;
 
 void *data_ov004_02051300[10] = {
 
-    &data_ov004_020512d8,
+    &gOv004UiCal0APackPath,
 
-    &data_ov004_0205124c,
+    &gOv004UiCal1APackPath,
 
-    &data_ov004_020512b0,
+    &gOv004UiCal2APackPath,
 
-    &data_ov004_0205129c,
+    &gOv004UiCal3APackPath,
 
-    &data_ov004_02051274,
+    &gOv004UiCal4APackPath,
 
-    &data_ov004_02051288,
+    &gOv004UiCal5APackPath,
 
-    &data_ov004_02051260,
+    &gOv004UiCal6APackPath,
 
-    &data_ov004_02051224,
+    &gOv004UiCal7APackPath,
 
-    &data_ov004_02051238,
+    &gOv004UiCal8APackPath,
 
-    &data_ov004_020512c4,
+    &gOv004UiCal9APackPath,
 
 };

@@ -43,8 +43,8 @@ extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
 extern const VecFx32 data_02041dc8;
 extern IdTable data_ov116_020d2778;
-extern char data_ov116_020d27cc[];
-extern char data_ov116_020d27d4[];
+extern char gOv116Bone04Name[];
+extern char gOv116BodyName[];
 
 void Ov116_EnemyConstruct(char *self)
 {
@@ -85,9 +85,9 @@ void Ov116_EnemyConstruct(char *self)
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov116_OrientPartAlongDirection;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
     *(unsigned char *)(*(int *)(self + 0x384) + 0xad) = 0;
-    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov116_020d27cc);
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov116_020d27cc);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov116_020d27d4);
+    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv116Bone04Name);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv116Bone04Name);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv116BodyName);
     *(int **)(self + 0x39c) = CallocInstance(0x38);
     for (i = 0; i < 7; i++) {
         if (i < 0) {

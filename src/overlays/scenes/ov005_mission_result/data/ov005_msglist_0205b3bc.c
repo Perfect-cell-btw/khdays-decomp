@@ -8,7 +8,7 @@ typedef struct MsgListInit {
     int nCapacity;           /* 0x08 */
 } MsgListInit;
 
-extern char data_ov005_0205b788;  /* "UI/cm/msl_&.msi.z" */
+extern char gOv005UiCmMslPath_2;  /* "UI/cm/msl_&.msi.z" */
 
 /* Read by Ov005_UpdateCompletionMilestones. */
-const MsgListInit data_ov005_0205b3bc = { &data_ov005_0205b788, 0, 5 };
+const MsgListInit data_ov005_0205b3bc = { &gOv005UiCmMslPath_2, 0, 5 };

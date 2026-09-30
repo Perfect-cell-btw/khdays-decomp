@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov025_020b54f8[16] = "UI/cal/ttl_&.z";
+char gOv025UiCalTtlPath[16] = "UI/cal/ttl_&.z";

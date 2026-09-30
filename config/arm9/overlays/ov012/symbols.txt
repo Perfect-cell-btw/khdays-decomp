@@ -45,9 +45,9 @@ data_ov012_0205c2a4 kind:data(any) addr:0x0205c2a4
 gOv012OpeningSceneClass kind:data(any) addr:0x0205c2bc
 data_ov012_0205c2d0 kind:data(any) addr:0x0205c2d0
 data_ov012_0205c310 kind:data(any) addr:0x0205c310
-data_ov012_0205cac0 kind:data(any) addr:0x0205cac0
-data_ov012_0205cadc kind:data(any) addr:0x0205cadc
-data_ov012_0205cae8 kind:data(any) addr:0x0205cae8
+gOv012TextFontEu10AllPath kind:data(any) addr:0x0205cac0
+gOv012OpOpPath kind:data(any) addr:0x0205cadc
+gOv012OpScrPath kind:data(any) addr:0x0205cae8
 data_ov012_0205caf4 kind:data(any) addr:0x0205caf4
 data_ov012_0205cb20 kind:bss addr:0x0205cb20
 data_ov012_0205cb24 kind:bss addr:0x0205cb24

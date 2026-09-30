@@ -34,8 +34,8 @@ struct Group;
 struct Peer;
 extern void Ov022_PublishGroupUpdateFixed(struct Group *group, struct Peer *peer,
                                 unsigned int *out, char *desc);
-extern unsigned int data_ov054_020b7468[];
-extern unsigned int data_ov054_020b747c[];
+extern unsigned int gOv054SoraLiE3PackPath[];
+extern unsigned int gOv054SoraLiE4PackPath[];
 extern void Ov054_dispatchEntryList(int group, int param);
 
 void Ov054_SetupChannelBlocks(char *self)
@@ -65,7 +65,7 @@ void Ov054_SetupChannelBlocks(char *self)
     cfg.field1c = 0;
     cfg.field28 = 0;
     Ov022_PublishGroupUpdateFixed((struct Group *)*(void **)(self + 0x2000 + 0x644),
-                        (struct Peer *)self, data_ov054_020b7468, (char *)&cfg);
+                        (struct Peer *)self, gOv054SoraLiE3PackPath, (char *)&cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x20) =
         (void *)&Ov054_dispatchEntryList;
 
@@ -89,7 +89,7 @@ void Ov054_SetupChannelBlocks(char *self)
     cfg.field4c = 2;
     cfg.field34 = 0x100;
     Ov022_PublishGroupUpdateFixed((struct Group *)((char *)*(void **)(self + 0x2000 + 0x644) + 0x30),
-                        (struct Peer *)self, data_ov054_020b747c, (char *)&cfg);
+                        (struct Peer *)self, gOv054SoraLiE4PackPath, (char *)&cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x50) =
         (void *)&Ov054_dispatchEntryList;
 }

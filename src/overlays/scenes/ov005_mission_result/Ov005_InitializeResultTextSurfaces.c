@@ -8,7 +8,7 @@ typedef struct TileSurface {char pad0[40];int nUnk28;char pad2c[16];} TileSurfac
 typedef struct TileSurfaceCfg {int nUnk00,nUnk04,nWidthTiles,nHeightTiles,nRowTiles,nPaletteIndex;void *nVramTarget;int nUnk1c;FontInfo *pPixels;int nUnk24;} TileSurfaceCfg;
 typedef struct Ov005Context {char pad0[0x4ad8];FontInfo fonts[2];TileSurface surfaces[4];int activeBufferIndex;} Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
-extern char data_ov005_0205b558[],data_ov005_0205b570[];
+extern char gOv005TextFontEu10Path[],gOv005TextFontEu10SPath[];
 extern void MI_CpuFill8(void *,u8,u32);
 extern void *Ov005_GetRowBuffer(int,int *);
 extern void *G2S_GetBG2ScrPtr(void);
@@ -21,8 +21,8 @@ void Ov005_InitializeResultTextSurfaces(void) {
     u16 tileBase=1;
     MI_CpuFill8(&data_ov005_0205b80c->fonts[0],0,12);
     MI_CpuFill8(&config,0,40);
-    Resource_BindByName(&data_ov005_0205b80c->fonts[0],data_ov005_0205b558);
-    Resource_BindByName(&data_ov005_0205b80c->fonts[1],data_ov005_0205b570);
+    Resource_BindByName(&data_ov005_0205b80c->fonts[0],gOv005TextFontEu10Path);
+    Resource_BindByName(&data_ov005_0205b80c->fonts[1],gOv005TextFontEu10SPath);
     config.nPaletteIndex=15;
     config.nVramTarget=Ov005_GetRowBuffer(10,&data_ov005_0205b80c->activeBufferIndex);
     config.nUnk1c=6;

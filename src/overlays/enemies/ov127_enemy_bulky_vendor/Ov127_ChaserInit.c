@@ -61,7 +61,7 @@ extern int Ov107_CloneResourceTransform(void *a);
 extern long long Ov107_Mover_New(VecFx32 *pReq);
 extern void Res_RequestIdPair(int nId);
 
-extern const char data_ov127_020cd76c[];
+extern const char gOv127MoveName[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;
 
@@ -91,7 +91,7 @@ void Ov127_ChaserInit(int *self)
     self[0xe1] = nInst;
     RegisterSubscriberSlot(self[0x27], self[0xe1]);
 
-    self[0xe4] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov127_020cd76c);
+    self[0xe4] = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv127MoveName);
     List_Init((void *)&self[0xe6]);
     self[0xe5] = CallocInstance(8);
 

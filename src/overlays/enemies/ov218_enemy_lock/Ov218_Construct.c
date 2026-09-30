@@ -33,8 +33,8 @@ extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int resourceId);
 extern const Kinds data_ov218_020cf30c;
-extern const char data_ov218_020cf32c[];
-extern const char data_ov218_020cf338[];
+extern const char gOv218BoneRHandName[];
+extern const char gOv218MoveName[];
 extern int FindResourceIndexByName(int item, const char *name);
 extern void Ov218_ArmModelCallback(char *self);
 extern int Ov218_New(char *self);
@@ -74,8 +74,8 @@ void Ov218_Construct(char *self)
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     Ov218_ArmModelCallback(self);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x3a8) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov218_020cf32c);
-    *(int *)(self + 0x3ac) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov218_020cf338);
+    *(int *)(self + 0x3a8) = FindResourceIndexByName(*(int *)(self + 0x384), gOv218BoneRHandName);
+    *(int *)(self + 0x3ac) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv218MoveName);
     kind = kinds.id;
     for (i = 0; i < 2; i++) {
         item = ((SubitemSlot *)(self + 0x3dc))[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, *kind++));

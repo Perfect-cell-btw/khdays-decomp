@@ -6,12 +6,12 @@
 
 char gOv255PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov255_020d2bec[16] = "Ms/XionShare.p";
+char gOv255MsXionSharePackPath[16] = "Ms/XionShare.p";
 
-char data_ov255_020d2bfc[12] = "B50B_01body";
+char gOv255B50B01BodyName[12] = "B50B_01body";
 
-char data_ov255_020d2c08[12] = "B_spine01";
+char gOv255BSpine01Name[12] = "B_spine01";
 
-char data_ov255_020d2c14[4] = "T2";
+char gOv255T2Name[4] = "T2";
 
-char data_ov255_020d2c18[12] = "1_2_swd1";
+char gOv25512Swd1Name[12] = "1_2_swd1";

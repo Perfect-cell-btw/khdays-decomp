@@ -29,10 +29,10 @@ typedef struct Ov008PanelContext {
 } Ov008PanelContext;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern const char data_ov026_020912b0[];                                  /* "text/font_eu_10.nftr" */
-extern const char data_ov026_020912c8[];                                  /* "text/font_eu_08.nftr" */
-extern const char data_ov026_020912e0[];
-extern const char data_ov026_020912f8[];                                  /* "UI/shop/shp_&.s.z" */
+extern const char gOv026TextFontEu10Path[];                                  /* "text/font_eu_10.nftr" */
+extern const char gOv026TextFontEu08Path[];                                  /* "text/font_eu_08.nftr" */
+extern const char gOv026TextFontEu08SPath[];
+extern const char gOv026UiShopShpTextPath[];                                  /* "UI/shop/shp_&.s.z" */
 extern void  Ov026_UploadTileSurface(void *pSurface, int nX, int nY, int nWidth, int nHeight, int nRows, void *pVram, int nUnk1c, void *pPixels); /* Ov008_UploadTileSurface */
 extern void  Ov026_InitResourceRecord(void *pLoader, const char *pPath);       /* Ov008_Set_5c4c */
 extern void *Ov026_GetVarRecordByIndex(void *pRecords, int nIndex);             /* GetVarRecordByIndex */
@@ -44,15 +44,15 @@ void Ov026_InitShopSurfaces(void)
 
     ctx = data_ov026_02091368;
     apText = ctx->apVarText;
-    Resource_BindByName(ctx->fontA, data_ov026_020912b0);
-    Resource_BindByName(ctx->fontB, data_ov026_020912c8);
-    Resource_BindByName(ctx->fontC, data_ov026_020912e0);
+    Resource_BindByName(ctx->fontA, gOv026TextFontEu10Path);
+    Resource_BindByName(ctx->fontB, gOv026TextFontEu08Path);
+    Resource_BindByName(ctx->fontC, gOv026TextFontEu08SPath);
     Ov026_UploadTileSurface(ctx->textSurface, 0, 0, 0x20, 0x18, 0, ctx->pixelsB, 0x14, ctx->fontA);
     Ov026_UploadTileSurface(ctx->surfaceB, 10, 0, 0x16, 2, 0xc0, ctx->pixelsA, 5, ctx->fontA);
     Ov026_UploadTileSurface(ctx->surfaceC, 10, 0x12, 0x16, 6, 0x118, ctx->pixelsA, 5, ctx->fontA);
     Ov026_UploadTileSurface(ctx->surfaceD, 4, 2, 0x18, 0x10, 0x220, ctx->pixelsA, 5, ctx->fontA);
     ctx->nFlags |= 9;
-    Ov026_InitResourceRecord(ctx->textLoader, data_ov026_020912f8);
+    Ov026_InitResourceRecord(ctx->textLoader, gOv026UiShopShpTextPath);
     apText[0] = Ov026_GetVarRecordByIndex(ctx->textLoader, 0x1a);
     apText[1] = Ov026_GetVarRecordByIndex(ctx->textLoader, 0x1b);
     apText[2] = Ov026_GetVarRecordByIndex(ctx->textLoader, 0x1c);

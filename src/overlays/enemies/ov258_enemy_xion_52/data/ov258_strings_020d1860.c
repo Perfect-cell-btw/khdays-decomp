@@ -6,22 +6,22 @@
 
 char gOv258PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov258_020d186c[12] = "Bone_head";
+char gOv258BoneHeadName[12] = "Bone_head";
 
-char data_ov258_020d1878[12] = "Bone_pelvis";
+char gOv258BonePelvisName[12] = "Bone_pelvis";
 
-char data_ov258_020d1884[12] = "Bone_L_kata";
+char gOv258BoneLKataName[12] = "Bone_L_kata";
 
-char data_ov258_020d1890[16] = "Bone_L_Forearm";
+char gOv258BoneLForearmName[16] = "Bone_L_Forearm";
 
-char data_ov258_020d18a0[12] = "tag_buki_L";
+char gOv258TagBukiLName[12] = "tag_buki_L";
 
-char data_ov258_020d18ac[12] = "Bone_R_kata";
+char gOv258BoneRKataName[12] = "Bone_R_kata";
 
-char data_ov258_020d18b8[16] = "Bone_R_Forearm";
+char gOv258BoneRForearmName[16] = "Bone_R_Forearm";
 
-char data_ov258_020d18c8[12] = "tag_buki_R";
+char gOv258TagBukiRName[12] = "tag_buki_R";
 
-char data_ov258_020d18d4[8] = "tagB_L";
+char gOv258TagBLName[8] = "tagB_L";
 
-char data_ov258_020d18dc[36] = "tagB_R";
+char gOv258TagBRName[36] = "tagB_R";

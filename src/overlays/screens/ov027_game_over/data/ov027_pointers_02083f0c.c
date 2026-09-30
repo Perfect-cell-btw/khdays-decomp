@@ -4,24 +4,24 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov027_02083f54;
+extern int gOv027JpUnusedName;
 extern int data_ov027_02084104;
-extern int data_ov027_02084148;
-extern int data_ov027_020841e0;
+extern int gOv027StuckYouCanAlwaysText;
+extern int gOv027BloccatoPerDeiSuggerimentiText;
 extern int data_ov027_02084238;
 extern int data_ov027_02084294;
 
 void *data_ov027_02083f0c[6] = {
 
-    &data_ov027_02083f54,
+    &gOv027JpUnusedName,
 
-    &data_ov027_02084148,
+    &gOv027StuckYouCanAlwaysText,
 
     &data_ov027_02084238,
 
     &data_ov027_02084104,
 
-    &data_ov027_020841e0,
+    &gOv027BloccatoPerDeiSuggerimentiText,
 
     &data_ov027_02084294,
 

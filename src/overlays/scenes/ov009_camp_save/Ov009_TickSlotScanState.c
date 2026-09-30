@@ -30,7 +30,7 @@ typedef struct Ov009SaveContext {
 } Ov009SaveContext;
 
 extern Ov009GameState *volatile gGameState;
-extern const char data_ov009_02056378[];
+extern const char gOv009UiCmStrSavTextPath[];
 
 extern void Ov009_InitSubScreenGraphics(void);
 extern void *G2_GetBG1ScrPtr(void);
@@ -59,7 +59,7 @@ int Ov009_TickSlotScanState(Ov009SaveContext *ctx)
         MIi_CpuClearFast(0, G2_GetBG1ScrPtr(), 0x800);
         MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
         MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
-        Ov009_InitResourceRecord(ctx->resource15c, data_ov009_02056378);
+        Ov009_InitResourceRecord(ctx->resource15c, gOv009UiCmStrSavTextPath);
         ctx->snapshot = *gGameState;
         ctx->slotPhase = 0;
         ctx->state = 0;

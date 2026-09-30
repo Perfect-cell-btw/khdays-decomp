@@ -12,7 +12,7 @@ extern void Srt_SetTranslation(int dst, VecFx32 *src);
 extern void Ov277_TaskTeardown_FlagOwner_2(void);
 extern void Ov277_ResetChannelsA(void);
 extern void Ov277_ArmSwingSweepA(void);
-extern const char data_ov277_020d3840[];
+extern const char gOv277Dm002Name[];
 
 int Ov277_SpawnPounceEntry(int actor, int owner)
 {
@@ -28,7 +28,7 @@ int Ov277_SpawnPounceEntry(int actor, int owner)
     }
     at = *(VecFx32 *)(*(int *)(entry[1] + 0x3cc) + 0x14);
     at.y = *(int *)(entry[1] + 0xb4) + 0x200;
-    entry[3] = FindResourceIndexByName(entry[0], data_ov277_020d3840);
+    entry[3] = FindResourceIndexByName(entry[0], gOv277Dm002Name);
     Srt_SetTranslation(*entry + 4, &at);
     return r;
 }

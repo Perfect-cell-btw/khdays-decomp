@@ -29,7 +29,7 @@ extern void Ov002_Slot_LoadCellFile(unsigned short *pDst, const char *pName);
 typedef struct { int nFirst; int nSecond; } Ov002Pair;
 
 extern Ov002Pair data_ov002_0207db54;  /* copied into the object */
-extern char data_ov002_0207e844[];  /* resource name format */
+extern char gOv002BaTrPathFmt[];  /* resource name format */
 extern int data_ov002_0207f600;     /* slot holding the task object */
 
 Ov002TickFn Ov002_BeginSceneSetup(int *pDesc)
@@ -50,7 +50,7 @@ Ov002TickFn Ov002_BeginSceneSetup(int *pDesc)
     *(int *)(data_ov002_0207f600 + 0x40) = 0;
 
     nIndex = Ov002_GetWorldName(nId);
-    OS_SPrintf(szName, data_ov002_0207e844, nIndex);
+    OS_SPrintf(szName, gOv002BaTrPathFmt, nIndex);
     if (LoadGlobalU16At0() != 0x2a) {
         Ov002_Slot_LoadCellFile((unsigned short *)(data_ov002_0207f600 + 0x10),
                             szName);

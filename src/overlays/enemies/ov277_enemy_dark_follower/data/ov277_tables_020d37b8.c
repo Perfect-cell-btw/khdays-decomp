@@ -7,4 +7,4 @@
 
 #include "nitro/types.h"
 
-char data_ov277_020d37b8[8] = "Bip01_R_";
+char gOv277Bip01RName[8] = "Bip01_R_";

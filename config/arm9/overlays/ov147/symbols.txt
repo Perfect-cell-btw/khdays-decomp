@@ -63,5 +63,5 @@ Ov147_SeekTarget kind:function(arm,size=0x484) addr:0x020ce41c
 data_ov147_020ce8a0 kind:data(any) addr:0x020ce8a0
 data_ov147_020ce8a8 kind:data(any) addr:0x020ce8a8
 gOv147PackPathFmt kind:data(any) addr:0x020ce8c0
-data_ov147_020ce8cc kind:data(any) addr:0x020ce8cc
-data_ov147_020ce8d4 kind:data(any) addr:0x020ce8d4
+gOv147SFireName kind:data(any) addr:0x020ce8cc
+gOv147SMoveName kind:data(any) addr:0x020ce8d4

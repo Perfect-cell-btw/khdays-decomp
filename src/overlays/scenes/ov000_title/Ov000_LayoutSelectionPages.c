@@ -37,8 +37,8 @@ typedef struct Ov000LoadContext {
 } Ov000LoadContext;
 
 extern const Ov000LayoutTemplate data_ov000_0205a6d0;
-extern const char data_ov000_0205aaa0[];
-extern const char data_ov000_0205aab0[];
+extern const char gOv000UiCmCmoPath[];
+extern const char gOv000UiCmCmSavePath[];
 extern const int data_ov000_0205a7ac[4][8];
 extern const int data_ov000_0205a6bc[2];
 extern const int data_ov000_0205a6f4[7];
@@ -86,7 +86,7 @@ void Ov000_LayoutSelectionPages(void)
     case 3:
     case 4:
     case 5:
-        container = Msg_OpenContainerAndReadHeader(data_ov000_0205aaa0, 14);
+        container = Msg_OpenContainerAndReadHeader(gOv000UiCmCmoPath, 14);
         tmpl.handle = OV000_SUBFILE(container, 3);
         break;
     case 0:
@@ -97,7 +97,7 @@ void Ov000_LayoutSelectionPages(void)
 
     ctx = data_ov000_0205ac24;
     Ov000_InitFromDescAndMark(ctx->selectionObject, &tmpl);
-    Ov000_LoadBlockProcessAndFree(ctx->selectionObject, data_ov000_0205aab0, 0x24);
+    Ov000_LoadBlockProcessAndFree(ctx->selectionObject, gOv000UiCmCmSavePath, 0x24);
     ClampToRange0to16At0x4628(ctx->selectionObject, 8);
     G2x_SetBlendAlpha_(0x04001050, 4, 0x10, 8, 8);
 

@@ -12,10 +12,10 @@ struct slot { void *ptr; int pad; };
 
 extern struct v2 data_ov293_020d35fc;
 extern struct v3 data_02041dc8;
-extern unsigned short data_ov293_020d362c[];
-extern unsigned short data_ov293_020d3634[];
-extern unsigned short data_ov293_020d3644[];
-extern int data_ov293_020d3654;
+extern unsigned short gOv293Bip01Name[];
+extern unsigned short gOv293Bip01RFootName[];
+extern unsigned short gOv293Bip01LFootName[];
+extern int gOv293MoveName;
 extern void Ov293_ReleaseSubObjectsAndListThenNotify(void), Ov293_TickWithChildRefresh(void), Ov293_HandleMessage(void);
 extern void Ov293_CopyBlockToTwoNodesThenNotify(void), Ov293_CreateRegistryEntryAndLink(void), Ov293_OnHit(void);
 extern void Ov293_ForwardAnimEvent(void);
@@ -52,11 +52,11 @@ void Ov293_Construct(int param_1)
     *(int *)(param_1 + 0x6c) = 0;
     *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
-    *(char **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov293_020d362c);
-    *(char **)(param_1 + 0x394) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov293_020d3634);
-    *(char **)(param_1 + 0x398) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov293_020d3644);
+    *(char **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv293Bip01Name);
+    *(char **)(param_1 + 0x394) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv293Bip01RFootName);
+    *(char **)(param_1 + 0x398) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv293Bip01LFootName);
     *(char **)(param_1 + 0x2cc) = *(char **)(param_1 + 0x390) + 0x14;
-    *(void **)(param_1 + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov293_020d3654);
+    *(void **)(param_1 + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &gOv293MoveName);
     *(void **)(param_1 + 0x3a0) = CallocInstance(0x10);
     for (i = 0; i < 2; i++) {
         ((struct slot *)*(int *)(param_1 + 0x3a0))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, tbl.w[i]));

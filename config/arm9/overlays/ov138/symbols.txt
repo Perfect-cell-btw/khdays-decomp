@@ -68,6 +68,6 @@ data_ov138_020d2fd0 kind:data(any) addr:0x020d2fd0
 data_ov138_020d2fdc kind:data(any) addr:0x020d2fdc
 data_ov138_020d2fe0 kind:data(any) addr:0x020d2fe0
 gOv138PackPathFmt kind:data(any) addr:0x020d3000
-data_ov138_020d300c kind:data(any) addr:0x020d300c
-data_ov138_020d3014 kind:data(any) addr:0x020d3014
-data_ov138_020d3018 kind:data(any) addr:0x020d3018
+gOv138EffTagName kind:data(any) addr:0x020d300c
+gOv138017Name kind:data(any) addr:0x020d3014
+gOv138MoveName kind:data(any) addr:0x020d3018

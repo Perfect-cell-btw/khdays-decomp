@@ -69,6 +69,6 @@ data_ov160_020cf7c4 kind:data(any) addr:0x020cf7c4
 data_ov160_020cf7c8 kind:data(any) addr:0x020cf7c8
 data_ov160_020cf7d6 kind:data(any) addr:0x020cf7d6
 gOv160PackPathFmt kind:data(any) addr:0x020cf800
-data_ov160_020cf80c kind:data(any) addr:0x020cf80c
-data_ov160_020cf814 kind:data(any) addr:0x020cf814
-data_ov160_020cf818 kind:data(any) addr:0x020cf818
+gOv160EffTagName kind:data(any) addr:0x020cf80c
+gOv160037Name kind:data(any) addr:0x020cf814
+gOv160MoveName kind:data(any) addr:0x020cf818

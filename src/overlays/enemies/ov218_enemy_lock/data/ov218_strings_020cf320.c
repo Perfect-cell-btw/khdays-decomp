@@ -6,6 +6,6 @@
 
 char gOv218PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov218_020cf32c[12] = "Bone_R_hand";
+char gOv218BoneRHandName[12] = "Bone_R_hand";
 
-char data_ov218_020cf338[8] = "move";
+char gOv218MoveName[8] = "move";

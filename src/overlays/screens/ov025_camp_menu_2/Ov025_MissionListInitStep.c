@@ -51,8 +51,8 @@ typedef struct Ov008MissionList {
     int nMode;                /* 0x504 */
 } Ov008MissionList;
 
-extern const char data_ov025_020b5380[];                                  /* "UI/cm/str/select_&.s.z" */
-extern const char data_ov025_020b5398[];                                  /* "UI/cm/str/status_&.s.z" */
+extern const char gOv025UiCmStrSelectTextPath_2[];                                  /* "UI/cm/str/select_&.s.z" */
+extern const char gOv025UiCmStrStatusTextPath_3[];                                  /* "UI/cm/str/status_&.s.z" */
 extern const Ov008MissionResourceDescriptor data_ov025_020b458c;
 extern const Ov008MissionResourceDescriptor data_ov025_020b4580;
 extern void GameState_ClearFlag(int nFlag);
@@ -112,8 +112,8 @@ int Ov025_MissionListInitStep(Ov008MissionList *pList)
         }
         pList->nCursorWord = 0;
         Ov025_RelocateOffsetTable(pList, 0);
-        Ov025_InitResourceRecord(pList->textCacheA, data_ov025_020b5380);
-        Ov025_InitResourceRecord(pList->textCacheB, data_ov025_020b5398);
+        Ov025_InitResourceRecord(pList->textCacheA, gOv025UiCmStrSelectTextPath_2);
+        Ov025_InitResourceRecord(pList->textCacheB, gOv025UiCmStrStatusTextPath_3);
         if (Ov025_GetCtxObject9634() != 0) {
             descriptorA = data_ov025_020b458c;
             Ov025_InitObjectWithList(pList->missionList, &descriptorA);

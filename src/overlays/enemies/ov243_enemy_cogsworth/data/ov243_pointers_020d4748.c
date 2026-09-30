@@ -4,11 +4,11 @@
  * first entry is set. All zero in the ROM image because the entry is a relocation.
  */
 
-extern char data_ov243_020d4760[];
+extern char gOv243BoneHeadName[];
 
 void *const data_ov243_020d4748[3] = {
 
-    data_ov243_020d4760,
+    gOv243BoneHeadName,
 
     0,
 

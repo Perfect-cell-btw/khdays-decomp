@@ -21,7 +21,7 @@ extern void Ov022_SetupRenderState(void);
 extern int InstantiateClass(void *registrationClass,
                          Ov022RegistrationBuffer *buffer);
 extern void Ov002_LoadShopTable(void);
-extern u8 data_ov022_020b28bc[];
+extern u8 gOv022PleaseEntryScriptNameText[];
 extern int data_ov106_020b8aa0;
 extern Ov022RegistrationState data_ov022_020b2e60;
 
@@ -35,7 +35,7 @@ void Ov022_LoadSceneResources(void) {
         const u8 *src;
         u8 *dst;
 
-        src = data_ov022_020b28bc;
+        src = gOv022PleaseEntryScriptNameText;
         dst = buffer.payload;
         remaining = 0x18;
 

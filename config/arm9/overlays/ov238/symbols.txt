@@ -80,7 +80,7 @@ data_ov238_020d36cc kind:data(any) addr:0x020d36cc
 data_ov238_020d36d8 kind:data(any) addr:0x020d36d8
 data_ov238_020d36e4 kind:data(any) addr:0x020d36e4
 gOv238PackPathFmt kind:data(any) addr:0x020d3700
-data_ov238_020d370c kind:data(any) addr:0x020d370c
-data_ov238_020d3718 kind:data(any) addr:0x020d3718
-data_ov238_020d3724 kind:data(any) addr:0x020d3724
-data_ov238_020d3730 kind:data(any) addr:0x020d3730
+gOv238BonePelvisName kind:data(any) addr:0x020d370c
+gOv238BoneRFingName kind:data(any) addr:0x020d3718
+gOv238BoneLFingName kind:data(any) addr:0x020d3724
+gOv238MoveName kind:data(any) addr:0x020d3730

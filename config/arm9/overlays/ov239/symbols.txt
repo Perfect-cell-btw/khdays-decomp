@@ -42,5 +42,5 @@ Ov239_BeginSubActionWithCallback kind:function(arm,size=0x24) addr:0x020cdb08
 Ov239_AimAndSteerTick kind:function(arm,size=0xf4) addr:0x020cdb2c
 data_ov239_020cdc20 kind:data(any) addr:0x020cdc20
 gOv239PackPathFmt kind:data(any) addr:0x020cdc40
-data_ov239_020cdc4c kind:data(any) addr:0x020cdc4c
-data_ov239_020cdc5c kind:data(any) addr:0x020cdc5c
+gOv239MsNbSharePackPath kind:data(any) addr:0x020cdc4c
+gOv239MoveName kind:data(any) addr:0x020cdc5c

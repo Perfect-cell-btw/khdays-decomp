@@ -50,5 +50,5 @@ data_ov115_020ceb54 kind:data(any) addr:0x020ceb54
 data_ov115_020ceb62 kind:data(any) addr:0x020ceb62
 data_ov115_020ceb70 kind:data(any) addr:0x020ceb70
 gOv115PackPathFmt kind:data(any) addr:0x020ceb80
-data_ov115_020ceb8c kind:data(any) addr:0x020ceb8c
-data_ov115_020ceb94 kind:data(any) addr:0x020ceb94
+gOv115Bone04Name kind:data(any) addr:0x020ceb8c
+gOv115BodyName kind:data(any) addr:0x020ceb94

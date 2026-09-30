@@ -15,7 +15,7 @@ typedef struct Ov002DropTableRow {Ov002DropChoice aVariants[6];} Ov002DropTableR
 typedef struct Ov002DropTable {u32 header;Ov002DropTableRow aRows[1];} Ov002DropTable;
 extern Ov002ObjectContext *data_ov002_0207fa14;
 extern u8 data_0204c240;
-extern char data_ov002_0207f114[],data_ov002_0207f118[],data_ov002_0207f11c[],data_ov002_0207f124[],data_ov002_0207f128[];
+extern char data_ov002_0207f114[],data_ov002_0207f118[],gOv0020Fmt[],gOv002EmName[],gOv002MiMiEidPath[];
 extern int OS_SPrintf(char *,const char *,...);
 extern int Ov002_GetRootSub04(void);
 extern u32 MsgArchive_FindEntryByName(int,const char *);
@@ -35,7 +35,7 @@ void Ov002_LoadObjectRecordsAndDrops(void)
     int nArchive,nVariant,i;
     u32 nFile;
     pCtx=data_ov002_0207fa14;
-    OS_SPrintf(szMemberName,data_ov002_0207f11c,data_ov002_0207f124,(data_0204c240&4)?data_ov002_0207f114:data_ov002_0207f118);
+    OS_SPrintf(szMemberName,gOv0020Fmt,gOv002EmName,(data_0204c240&4)?data_ov002_0207f114:data_ov002_0207f118);
     nArchive=Ov002_GetRootSub04();
     nFile=MsgArchive_FindEntryByName(Ov002_GetRootSub04(),szMemberName);
     pRecords=Archive_LoadFile((((nArchive+0x8000)&0xfffffc)<<7)|0x80000000|(nFile&(0xfffffc>>15)),2);
@@ -44,7 +44,7 @@ void Ov002_LoadObjectRecordsAndDrops(void)
     pRecords->pRows=(Ov002MarkerRow *)((u32)pRecords->pRows+(u32)pRecords);
     for(i=0;i<pRecords->nEntryCount;i++)pRecords->apEntries[i]=(Ov002RecordEntry *)((u32)pRecords+(u32)pRecords->apEntries[i]);
     nVariant=pCtx->nDropVariant;
-    pDrops=Archive_LoadFile((u32)data_ov002_0207f128,2);
+    pDrops=Archive_LoadFile((u32)gOv002MiMiEidPath,2);
     for(i=0;i<pCtx->pEntryList->nRowCount;i++){
         pRow=&pCtx->pEntryList->pRows[i];
         if(pRow->nDropKey<0){

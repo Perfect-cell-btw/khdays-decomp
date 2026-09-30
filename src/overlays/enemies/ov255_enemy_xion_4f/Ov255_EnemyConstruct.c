@@ -36,13 +36,13 @@ extern void Ov107_EnqueueValue(char *self, int item);
 extern void Res_RequestIdPair(int resourceId);
 extern char *Ov255_Partner_New(char *owner);
 extern IdTable data_ov255_020d29d8;
-extern const char data_ov255_020d2bec[];
-extern const char data_ov255_020d2bfc[];
-extern const char data_ov255_020d2c08[];
-extern const char data_ov255_020d2c14[];
-extern const char data_ov255_020d2c18[];
+extern const char gOv255MsXionSharePackPath[];
+extern const char gOv255B50B01BodyName[];
+extern const char gOv255BSpine01Name[];
+extern const char gOv255T2Name[];
+extern const char gOv25512Swd1Name[];
 extern const char data_ov255_020d2c24[];
-extern const char data_ov255_020d2c28[];
+extern const char gOv255B50BMName[];
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042258;
@@ -68,7 +68,7 @@ void Ov255_EnemyConstruct(char *self)
     int *slot;
     u16 hw;
 
-    *(int *)(self + 0x3f4) = Ov107_OpenCachedResourceByName(data_ov255_020d2bec);
+    *(int *)(self + 0x3f4) = Ov107_OpenCachedResourceByName(gOv255MsXionSharePackPath);
     /* written three times: the dead copies are dropped after scheduling but spend its budget, which
      * keeps the ROM's order further down (as in Ov235_EnemyConstruct) */
     *(Callback *)(self + 0x8) = Ov255_Destroy;
@@ -91,21 +91,21 @@ void Ov255_EnemyConstruct(char *self)
     *(int *)(self + 0x68) = 0x1a00;
     *(int *)(self + 0x6c) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
-    *(char **)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov255_020d2bfc);
+    *(char **)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv255B50B01BodyName);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(void **)(self + 0x388) = CallocInstance(0x24);
     Snd_RegisterSeqAndBind(*(void **)(self + 0x388), *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(self, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), *(void **)(self + 0x388));
-    *(char **)(self + 0x3a8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov255_020d2c08);
+    *(char **)(self + 0x3a8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv255BSpine01Name);
     *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x24));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
     *(void **)(self + 0x390) = CallocInstance(0x24);
     Snd_RegisterSeqAndBind(*(void **)(self + 0x390), *(int *)(*(int *)(self + 0x38c) + 0x88), Ov107_PackTextureHandle(self, 0x25), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x38c), *(void **)(self + 0x390));
-    *(char **)(self + 0x3b0) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, data_ov255_020d2c14);
-    *(char **)(self + 0x3b4) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, data_ov255_020d2c18);
+    *(char **)(self + 0x3b0) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, gOv255T2Name);
+    *(char **)(self + 0x3b4) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, gOv25512Swd1Name);
     *(char **)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, data_ov255_020d2c24);
-    *(void **)(self + 0x3a4) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x48), data_ov255_020d2c28);
+    *(void **)(self + 0x3a4) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x48), gOv255B50BMName);
     cap.length = 0xa00;
     cap.radius = 0x1200;
     cap.pos.x = 0;

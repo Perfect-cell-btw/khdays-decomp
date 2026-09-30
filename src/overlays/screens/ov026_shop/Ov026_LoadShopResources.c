@@ -59,10 +59,10 @@ typedef struct Ov008PanelContext {
 
 extern const Ov008SurfaceConfig data_ov026_02091120;
 extern Ov008PanelContext *data_ov026_02091368;
-extern char data_ov026_02091250[];                                /* "ui/shop/res.p2" */
-extern char data_ov026_02091260[];                                /* "ui/shop/res_i18n.p2" */
+extern char gOv026UiShopResPath[];                                /* "ui/shop/res.p2" */
+extern char gOv026UiShopResI18NPath[];                                /* "ui/shop/res_i18n.p2" */
 extern s8   data_ov026_0209114a[];                                /* per page: character cell of container B */
-extern char data_ov026_02091274[];                                /* "ui/shop/shop.BGUI.z" */
+extern char gOv026UiShopShopPath[];                                /* "ui/shop/shop.BGUI.z" */
 extern int   Msg_OpenContainerAndReadHeader(const char *pPath, int nHeap);         /* Msg_OpenContainerAndReadHeader */
 extern void  Ov026_Container_Init(void *pTracker, const Ov008SurfaceConfig *pConfig);
 extern void *Archive_LoadFile(u32 nHandle, int nHeap);               /* Archive_LoadFile */
@@ -94,8 +94,8 @@ void Ov026_LoadShopResources(void)
 
     config = data_ov026_02091120;
     ctx = data_ov026_02091368;
-    ctx->pContainerA = Msg_OpenContainerAndReadHeader(data_ov026_02091250, HEAP_FILE);
-    ctx->pContainerB = Msg_OpenContainerAndReadHeader(data_ov026_02091260, HEAP_FILE);
+    ctx->pContainerA = Msg_OpenContainerAndReadHeader(gOv026UiShopResPath, HEAP_FILE);
+    ctx->pContainerB = Msg_OpenContainerAndReadHeader(gOv026UiShopResI18NPath, HEAP_FILE);
     Ov026_Container_Init(ctx->trackerB, &config);
     Ov026_Container_Init(ctx->tracker, &config);
     pFile = Archive_LoadFile(CELL_HANDLE(ctx->pContainerA, 0), HEAP_FILE);
@@ -119,8 +119,8 @@ void Ov026_LoadShopResources(void)
     if (pFile != 0) {
         NNSi_FndFreeFromDefaultHeap(pFile);
     }
-    Ov026_LoadAndInitResourceSections(ctx->trackerB, data_ov026_02091274);
-    Ov026_LoadAndInitResourceSections(ctx->tracker, data_ov026_02091274);
+    Ov026_LoadAndInitResourceSections(ctx->trackerB, gOv026UiShopShopPath);
+    Ov026_LoadAndInitResourceSections(ctx->tracker, gOv026UiShopShopPath);
     Ov026_SetFlagBit0(ctx->tracker, 1);
     pRowText = NNSi_FndAllocFromDefaultExpHeap(ROW_TEXT_ALLOC);
     pRowText->nCapacity = ROW_TEXT_CAPACITY;

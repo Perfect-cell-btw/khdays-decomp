@@ -77,6 +77,6 @@ data_ov230_020d63e0 kind:data(any) addr:0x020d63e0
 data_ov230_020d644c kind:data(any) addr:0x020d644c
 data_ov230_020d6464 kind:data(any) addr:0x020d6464
 gOv230PackPathFmt kind:data(any) addr:0x020d6480
-data_ov230_020d648c kind:data(any) addr:0x020d648c
-data_ov230_020d649c kind:data(any) addr:0x020d649c
-data_ov230_020d64ac kind:data(any) addr:0x020d64ac
+gOv230Bip01Spine1Name kind:data(any) addr:0x020d648c
+gOv230Bip01LHandName kind:data(any) addr:0x020d649c
+gOv230AeMoveName kind:data(any) addr:0x020d64ac

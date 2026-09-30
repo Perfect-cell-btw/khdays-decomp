@@ -6,10 +6,10 @@
 
 char gOv238PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov238_020d370c[12] = "Bone_pelvis";
+char gOv238BonePelvisName[12] = "Bone_pelvis";
 
-char data_ov238_020d3718[12] = "Bone_R_fing";
+char gOv238BoneRFingName[12] = "Bone_R_fing";
 
-char data_ov238_020d3724[12] = "Bone_L_fing";
+char gOv238BoneLFingName[12] = "Bone_L_fing";
 
-char data_ov238_020d3730[16] = "move";
+char gOv238MoveName[16] = "move";

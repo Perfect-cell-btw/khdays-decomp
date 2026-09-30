@@ -52,9 +52,9 @@ extern void Ov022_PublishGroupUpdateFixed(void *pSub, char *self, void *pDesc,
                                 struct ActorSubCfg *pCfg);
 extern void Ov070_ActorPartsUpdatePass(void);
 extern void Ov070_dispatchEntryList(void);
-extern int data_ov070_020b9c50;
-extern int data_ov070_020b9c64;
-extern int data_ov070_020b9c78;
+extern int gOv070AxelLiE2PackPath;
+extern int gOv070AxelLiE3PackPath;
+extern int gOv070AxelLiE4PackPath;
 
 void Ov070_ActorCreateSubObjects(char *self)
 {
@@ -85,7 +85,7 @@ void Ov070_ActorCreateSubObjects(char *self)
     cfg.field28 = 0;
     cfg.field0c = 0x99a;
     Ov022_PublishGroupUpdateFixed(*(void **)(self + 0x2000 + 0x644), self,
-                        &data_ov070_020b9c50, &cfg);
+                        &gOv070AxelLiE2PackPath, &cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x20) =
         (void *)&Ov070_ActorPartsUpdatePass;
 
@@ -109,7 +109,7 @@ void Ov070_ActorCreateSubObjects(char *self)
     cfg.field4c = 3;
     cfg.field34 = 0x200;
     Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x30, self,
-                        &data_ov070_020b9c64, &cfg);
+                        &gOv070AxelLiE3PackPath, &cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x50) =
         (void *)&Ov070_ActorPartsUpdatePass;
 
@@ -133,7 +133,7 @@ void Ov070_ActorCreateSubObjects(char *self)
     cfg.field20 = 0;
     cfg.field28 = 0;
     Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x60, self,
-                        &data_ov070_020b9c78, &cfg);
+                        &gOv070AxelLiE4PackPath, &cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x80) =
         (void *)&Ov070_dispatchEntryList;
 }

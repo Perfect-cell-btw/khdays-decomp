@@ -62,6 +62,6 @@ data_ov151_020cec18 kind:data(any) addr:0x020cec18
 data_ov151_020cec26 kind:data(any) addr:0x020cec26
 data_ov151_020cec34 kind:data(any) addr:0x020cec34
 gOv151PackPathFmt kind:data(any) addr:0x020cec60
-data_ov151_020cec6c kind:data(any) addr:0x020cec6c
-data_ov151_020cec70 kind:data(any) addr:0x020cec70
-data_ov151_020cec78 kind:data(any) addr:0x020cec78
+gOv1517Name kind:data(any) addr:0x020cec6c
+gOv151RootName kind:data(any) addr:0x020cec70
+gOv151MwLoudnessName kind:data(any) addr:0x020cec78

@@ -55,10 +55,10 @@ typedef struct Ov000SceneContext {
 
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern int OS_SPrintf(char *destination, const char *format, ...);
-extern char data_ov000_0205abf8[];
+extern char gOv000ZFmt[];
 extern void Ov000_TeardownTitle(void);
 extern Ov000SceneContext *data_ov000_0205ac3c;
-extern char data_ov000_0205ac00[];
+extern char gOv000UiThrMPath[];
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
 extern void strcpy(char *destination, const char *source);
 extern void Ov024_MobiClip_InstallStreamSourceVtbl(Ov000StreamInterface *stream);
@@ -68,13 +68,13 @@ Ov000StateFn Ov000_StartMovieFromMenuRow(void) {
     Ov000SceneContext *ctx = NNSi_FndGetCurrentRootHeap();
     Ov000MovieFrame frame;
 
-    OS_SPrintf(frame.formatted, data_ov000_0205abf8, ctx->rows[ctx->selectedRow].displayValue);
+    OS_SPrintf(frame.formatted, gOv000ZFmt, ctx->rows[ctx->selectedRow].displayValue);
     Ov000_TeardownTitle();
     data_ov000_0205ac3c = ctx;
     GameState_SetFlag(0x20e9);
     StoreGlobalShortAt0(0x100);
     LoadOverlaySync(0, FS_OVERLAY_ID_ov024);
-    ctx->resource = Msg_OpenContainerAndReadHeader(data_ov000_0205ac00, 0xf);
+    ctx->resource = Msg_OpenContainerAndReadHeader(gOv000UiThrMPath, 0xf);
     frame.openParams.resource = ctx->resource;
     frame.openParams.enabled = 1;
     strcpy(frame.path, frame.formatted);

@@ -40,8 +40,8 @@ extern int Ov271_BuildBeamState(char *self, int kind);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable data_ov271_020d3678;
 extern Box data_ov271_020d3688;
-extern char data_ov271_020d36ec[];
-extern char data_ov271_020d36f4[];
+extern char gOv271TagLName[];
+extern char gOv271TagRName[];
 
 void Ov271_Construct(char *self)
 {
@@ -71,8 +71,8 @@ void Ov271_Construct(char *self)
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, -0x2a66, 0);
-    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov271_020d36ec);
-    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov271_020d36f4);
+    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv271TagLName);
+    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv271TagRName);
     *(int **)(self + 0x3a4) = CallocInstance(0x20);
     for (i = 0; i < 4; i++) {
         (*(Slot **)(self + 0x3a4))[i].subitem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));

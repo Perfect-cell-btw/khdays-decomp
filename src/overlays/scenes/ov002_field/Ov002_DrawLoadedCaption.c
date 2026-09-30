@@ -27,7 +27,7 @@ typedef struct {
 } Ov002TextScene;
 
 extern int data_ov002_0207f62c;
-extern const char data_ov002_0207ecb4[];
+extern const char gOv002TextFontEu10SPath_2[];
 
 extern void GetResourceSubBlock_CHAR(int nId, void **ppOut);
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
@@ -60,7 +60,7 @@ void Ov002_DrawLoadedCaption(void *pNode)
 
     pText = Ov002_Field_GetWordB4();
     if (pText != 0) {
-        Resource_BindByName(aFont, data_ov002_0207ecb4);
+        Resource_BindByName(aFont, gOv002TextFontEu10SPath_2);
         nFont = Ov002_Hud_GetBlock30();
         bWide = NNSi_G2dFontGetStringWidth(s->nFont, s->nFontAlt, pText, 0) > 0x78;
         if (bWide != 0) {

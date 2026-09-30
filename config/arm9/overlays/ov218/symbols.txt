@@ -75,5 +75,5 @@ data_ov218_020cf30c kind:data(any) addr:0x020cf30c
 data_ov218_020cf310 kind:data(any) addr:0x020cf310
 data_ov218_020cf314 kind:data(any) addr:0x020cf314
 gOv218PackPathFmt kind:data(any) addr:0x020cf320
-data_ov218_020cf32c kind:data(any) addr:0x020cf32c
-data_ov218_020cf338 kind:data(any) addr:0x020cf338
+gOv218BoneRHandName kind:data(any) addr:0x020cf32c
+gOv218MoveName kind:data(any) addr:0x020cf338

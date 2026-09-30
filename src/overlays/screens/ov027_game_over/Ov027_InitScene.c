@@ -157,7 +157,7 @@ int data_ov027_02084360 = 0;                                        /* the fade-
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
 extern Ov027GameInfo  data_0204c4d8;
 extern Ov027SessionInfo data_0204c240;
-extern char  data_ov027_02084318[];                                 /* "/gameover/data" */
+extern char  gOv027GameoverDataPath[];                                 /* "/gameover/data" */
 
 Ov027StateFn Ov027_InitScene(void)
 {
@@ -171,7 +171,7 @@ Ov027StateFn Ov027_InitScene(void)
         data_0204c4d8.nGameOvers++;
     }
     pScene->bPrompt = Ov027_IsMissionMode5Active();
-    pScene->pArchive = Msg_OpenContainerAndReadHeader(data_ov027_02084318, 0xf);
+    pScene->pArchive = Msg_OpenContainerAndReadHeader(gOv027GameoverDataPath, 0xf);
     pScene->nBrightness = (data_0204c240.nBits & 4) ? -16 : 16;
     pScene->nMode = 1;
     pScene->nSwapTimer = 0;

@@ -45,14 +45,14 @@ extern int Ov107_CloneResourceTransform(const Placement *placement);
 extern int Ov256_Claw_New(char *self, int index);
 extern int Ov256_Shard_New(char *self, int index);
 extern IdTable data_ov256_020d2444;
-extern const char data_ov256_020d268c[];
-extern const char data_ov256_020d2694[];
-extern const char data_ov256_020d269c[];
-extern const char data_ov256_020d26a4[];
-extern const char data_ov256_020d26ac[];
-extern const char data_ov256_020d26b4[];
-extern const char data_ov256_020d26c0[];
-extern const char data_ov256_020d26cc[];
+extern const char gOv256Tag00Name[];
+extern const char gOv256Tag01Name[];
+extern const char gOv256Tag02Name[];
+extern const char gOv256Tag03Name[];
+extern const char gOv256Tag04Name[];
+extern const char gOv256TagBukiLName[];
+extern const char gOv256TagBukiRName[];
+extern const char gOv256MoveName[];
 extern const VecFx32 data_02041dc8;
 
 #pragma push
@@ -140,16 +140,16 @@ void Ov256_EnemyConstruct(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x420));
     ((struct Bit0 *)(*(int *)(self + 0x420) + 0x5c))->b0 = 1;
     *(u16 *)(self + 0x100 + 0xae) |= 8;
-    *(int *)(self + 0x3dc) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov256_020d268c);
-    *(int *)(self + 0x3e8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov256_020d2694);
-    *(int *)(self + 0x3f4) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, data_ov256_020d269c);
-    *(int *)(self + 0x400) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, data_ov256_020d26a4);
-    *(int *)(self + 0x40c) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, data_ov256_020d26ac);
-    *(int *)(self + 0x418) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov256_020d26b4);
-    *(int *)(self + 0x424) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov256_020d26c0);
+    *(int *)(self + 0x3dc) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv256Tag00Name);
+    *(int *)(self + 0x3e8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv256Tag01Name);
+    *(int *)(self + 0x3f4) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, gOv256Tag02Name);
+    *(int *)(self + 0x400) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, gOv256Tag03Name);
+    *(int *)(self + 0x40c) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, gOv256Tag04Name);
+    *(int *)(self + 0x418) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv256TagBukiLName);
+    *(int *)(self + 0x424) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv256TagBukiRName);
     place = *(Placement *)(self + 0x64);
     place.pos = data_02041dc8;
-    *(int *)(self + 0x450) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x46), data_ov256_020d26cc);
+    *(int *)(self + 0x450) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x46), gOv256MoveName);
     for (i = 0; i < 16; i++) {
         node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Pairs *)self)->pairs[i].res = node);

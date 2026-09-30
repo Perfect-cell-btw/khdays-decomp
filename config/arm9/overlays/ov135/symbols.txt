@@ -43,7 +43,7 @@ data_ov135_020d1bd4 kind:data(any) addr:0x020d1bd4
 data_ov135_020d1be2 kind:data(any) addr:0x020d1be2
 data_ov135_020d1bf0 kind:data(any) addr:0x020d1bf0
 gOv135PackPathFmt kind:data(any) addr:0x020d1c20
-data_ov135_020d1c2c kind:data(any) addr:0x020d1c2c
-data_ov135_020d1c38 kind:data(any) addr:0x020d1c38
+gOv135BoneHeadName kind:data(any) addr:0x020d1c2c
+gOv135MoveName kind:data(any) addr:0x020d1c38
 data_ov135_020d1c40 kind:data(any) addr:0x020d1c40
-data_ov135_020d1c44 kind:data(any) addr:0x020d1c44
+gOv135Guru0Name kind:data(any) addr:0x020d1c44

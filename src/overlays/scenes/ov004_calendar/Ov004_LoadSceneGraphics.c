@@ -22,8 +22,8 @@ typedef struct Ov004Context {
 
 extern Ov004Context *data_ov004_02051384;
 extern void *data_ov004_02051300[];
-extern char data_ov004_02051328[];
-extern char data_ov004_02051340[];
+extern char gOv004UiCalClHrtPath[];
+extern char gOv004TextFontEu10AllPath[];
 extern char data_ov004_020510b0[];
 
 extern void RegisterSeqAndInit(void *object, void *resource, int mode, int style);
@@ -65,7 +65,7 @@ void Ov004_LoadSceneGraphics(void) {
     Projection_LoadDefaults((char *)data_ov004_02051384 + 0xac0);
     *(int *)((char *)data_ov004_02051384 + 0x55ec) = 0;
 
-    init.resource = data_ov004_02051328;
+    init.resource = gOv004UiCalClHrtPath;
     init.enabled = 1;
     init.reserved0 = 0;
     init.reserved1 = 0;
@@ -120,7 +120,7 @@ void Ov004_LoadSceneGraphics(void) {
     SlotTable_SetMode((char *)data_ov004_02051384 + 0xb0c, 1);
     ClampToRange0to16At0x4628((char *)data_ov004_02051384 + 0xb0c, 0);
 
-    Font_LoadUTF16((char *)data_ov004_02051384 + 0x55a0, data_ov004_02051340);
+    Font_LoadUTF16((char *)data_ov004_02051384 + 0x55a0, gOv004TextFontEu10AllPath);
 
     rect[0] = 0;
     rect[4] = 0;

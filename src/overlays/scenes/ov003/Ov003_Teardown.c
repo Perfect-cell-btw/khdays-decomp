@@ -13,7 +13,7 @@ extern void ReleaseField74AndCleanup(int p);
 extern void CamAnim_Release(void *p);
 extern void Gfx_SetupSubEngine(void *p);
 extern void ZeroHalfThenFree(void *p);
-extern int data_ov003_0204f978;
+extern int gOv003Dual3DUpdateName;
 
 void Ov003_Teardown(void) {
     unsigned short *root;
@@ -28,7 +28,7 @@ void Ov003_Teardown(void) {
     int puVar9;
 
     root = (unsigned short *)NNSi_FndGetCurrentRootHeap();
-    VBlank_UnregisterCallback(1, &data_ov003_0204f978);
+    VBlank_UnregisterCallback(1, &gOv003Dual3DUpdateName);
     TP_RequestAutoSamplingStopAsync();
     TP_WaitBusy(4);
     TP_CheckError(4);

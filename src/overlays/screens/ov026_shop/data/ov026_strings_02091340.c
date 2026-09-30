@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov026_02091340[32] = "UI/cm/msl_&.msi.z";
+char gOv026UiCmMslPath[32] = "UI/cm/msl_&.msi.z";

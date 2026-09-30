@@ -19,9 +19,9 @@ extern void GX_LoadBGPltt(void *a, int b, int c);
 extern void Ov007_FadeInStep(void);
 
 extern int data_ov007_0204d420;
-extern int data_ov007_0204d3d8;
-extern int data_ov007_0204d3e4;
-extern int data_ov007_0204d3f8;
+extern int gOv007UiMnlMPath;
+extern int gOv007UiMnlMnlTextPath;
+extern int gOv007TextFontEu10AllPath;
 extern int data_ov007_0204d3ac;
 
 /* ov007 scene init: grab the root heap, publish it, spawn the framebuffer/dual-screen
@@ -39,8 +39,8 @@ void *Ov007_SceneInit(int param_1, int param_2, int param_3, int param_4) {
 
     data_ov007_0204d420 = (int)heap;
     heap[0x16b0] = param_1;
-    heap[0] = (int)Msg_OpenContainerAndReadHeader(&data_ov007_0204d3d8, 0xf, heap + 0x1400);
-    Ov007_ReleaseAndFreeField2644(heap + 2, (int)&data_ov007_0204d3e4);
+    heap[0] = (int)Msg_OpenContainerAndReadHeader(&gOv007UiMnlMPath, 0xf, heap + 0x1400);
+    Ov007_ReleaseAndFreeField2644(heap + 2, (int)&gOv007UiMnlMnlTextPath);
 
     heap[0x16ae] = GameState_GetField(0, 9);
     switch (heap[0x16ae]) {
@@ -77,7 +77,7 @@ void *Ov007_SceneInit(int param_1, int param_2, int param_3, int param_4) {
         fr.box[1] = 0xbc000;
         Slot_SetPosition(heap + 0x41f, heap[0x16ad], fr.box);
         Slot_SetMode2Bit(heap + 0x41f, heap[0x16ad], 0);
-        Font_LoadUTF16(heap + 9, &data_ov007_0204d3f8);
+        Font_LoadUTF16(heap + 9, &gOv007TextFontEu10AllPath);
 
         {
             unsigned short flag = 0;

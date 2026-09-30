@@ -51,9 +51,9 @@ extern void Ov002_StepCaptionFade(void);
 extern void Ov002_StepCaptionScreen(void);
 
 extern char *data_ov002_0207f62c;
-extern char data_ov002_0207ed20[];
-extern char data_ov002_0207ed30[];
-extern char data_ov002_0207ed44[];
+extern char gOv002UiBtlMapPath[];
+extern char gOv002UiBtlMapchrPath[];
+extern char gOv002UiBtlInfoTextPath[];
 extern char data_ov002_0207ee70[];
 extern unsigned char data_0204c240;
 
@@ -66,9 +66,9 @@ void *Ov002_EnterDimmedScene(void) {
     ctx->wCursorB = 0xffff;
     ctx->nSelected = -1;
     ctx->nUnk08 = 0;
-    ctx->pAnimA = Msg_OpenContainerAndReadHeader(data_ov002_0207ed20, 0xe);
-    ctx->pAnimB = Msg_OpenContainerAndReadHeader(data_ov002_0207ed30, 0xe);
-    Ov002_InitResourceRecord(ctx->aSubCtx, data_ov002_0207ed44);
+    ctx->pAnimA = Msg_OpenContainerAndReadHeader(gOv002UiBtlMapPath, 0xe);
+    ctx->pAnimB = Msg_OpenContainerAndReadHeader(gOv002UiBtlMapchrPath, 0xe);
+    Ov002_InitResourceRecord(ctx->aSubCtx, gOv002UiBtlInfoTextPath);
     Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x3e8));
     Ov002_SetUpSubScreen();
     Ov002_UploadFileToSubBg1Char();

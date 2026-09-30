@@ -1,9 +1,9 @@
 /* Replace the UTF-16 string cached at +0xb4 of the ov002 context: free the old
  * one, and when a new string is given duplicate it into a fresh heap block of
  * (length + 1) * 2 bytes. Either way tell Ov002_AppendEntry to re-run the
- * Ov002_DrawLoadedCaption pass over data_ov002_0207ed58. */
+ * Ov002_DrawLoadedCaption pass over gOv002UiBtlBmLoBg004Path. */
 extern int data_ov002_0207f62c;
-extern int data_ov002_0207ed58;
+extern int gOv002UiBtlBmLoBg004Path;
 
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
@@ -29,5 +29,5 @@ void Ov002_SetCachedString(unsigned short *s) {
         StrCopy16(*(unsigned short **)(ctx + 0xb4), s);
     }
 
-    Ov002_AppendEntry(&data_ov002_0207ed58, (void *)&Ov002_DrawLoadedCaption, 0);
+    Ov002_AppendEntry(&gOv002UiBtlBmLoBg004Path, (void *)&Ov002_DrawLoadedCaption, 0);
 }

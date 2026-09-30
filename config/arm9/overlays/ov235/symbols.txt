@@ -109,8 +109,8 @@ data_ov235_020d2534 kind:data(any) addr:0x020d2534
 data_ov235_020d2542 kind:data(any) addr:0x020d2542
 data_ov235_020d2550 kind:data(any) addr:0x020d2550
 gOv235PackPathFmt kind:data(any) addr:0x020d2580
-data_ov235_020d258c kind:data(any) addr:0x020d258c
-data_ov235_020d259c kind:data(any) addr:0x020d259c
-data_ov235_020d25a8 kind:data(any) addr:0x020d25a8
-data_ov235_020d25b4 kind:data(any) addr:0x020d25b4
-data_ov235_020d25c0 kind:data(any) addr:0x020d25c0
+gOv235MsXionSharePackPath kind:data(any) addr:0x020d258c
+gOv235B50A01BodyName kind:data(any) addr:0x020d259c
+gOv235BSpine01Name kind:data(any) addr:0x020d25a8
+gOv23511SwordName kind:data(any) addr:0x020d25b4
+gOv235B50AMName kind:data(any) addr:0x020d25c0

@@ -58,8 +58,8 @@ extern Ov002TallyCfg data_ov002_0207ec74;
 extern const char data_ov002_0207ec00[];
 extern const char data_ov002_0207ec78[];
 extern const char data_ov002_0207ec50[];
-extern const char data_ov002_0207ece4[];
-extern const char data_ov002_0207ed00[];
+extern const char gOv002UiBtlBmLoBg007Path[];
+extern const char gOv002UiBtlBmLoBg003Path[];
 
 extern void TileSurface_InitAndUpload4bpp(void *pSurface, const void *pConfig);
 extern void InvokeSubObjectMethod(void *pSurface, int nValue);
@@ -99,12 +99,12 @@ void Ov002_OpenCaptionSurfaces(void)
         if (GameState_GetField(0, 9) != 0x165) {
             Ov069_TallyMissionRecords(s->animBlock);
         }
-        Ov002_AppendEntry(data_ov002_0207ece4, Ov002_DrawLoadedTally, 0);
+        Ov002_AppendEntry(gOv002UiBtlBmLoBg007Path, Ov002_DrawLoadedTally, 0);
     }
 
     TileSurface_InitAndUpload4bpp(s->surfMain, data_ov002_0207ec50);
     InvokeSubObjectMethod(s->surfMain, 2);
-    Ov002_AppendEntry(data_ov002_0207ed00, Ov002_DrawLoadedPortrait, 0);
+    Ov002_AppendEntry(gOv002UiBtlBmLoBg003Path, Ov002_DrawLoadedPortrait, 0);
     s->bReadyA = 1;
     s->bReadyB = 1;
 }

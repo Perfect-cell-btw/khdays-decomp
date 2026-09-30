@@ -34,7 +34,7 @@ typedef struct Ov011Globals {
 
 extern Ov011Globals data_ov011_0205e960;
 extern const u8 data_ov011_0205dd10[];
-extern u8 data_ov011_0205e930[];
+extern u8 gOv011SfVName[];
 
 extern void  VBlank_UnregisterCallback(int nMode, u8 *pName);
 extern void  NNSi_FndFreeFromDefaultHeap(void *p);
@@ -46,7 +46,7 @@ void Ov011_EnterMode2(void)
     data_ov011_0205e960.pScene->pTable = data_ov011_0205dd10;
     data_ov011_0205e960.pScene->wB = 6;
     data_ov011_0205e960.pScene->wA = 0;
-    VBlank_UnregisterCallback(1, data_ov011_0205e930);
+    VBlank_UnregisterCallback(1, gOv011SfVName);
     NNSi_FndFreeFromDefaultHeap(data_ov011_0205e960.pScene->pBuffer);
     data_ov011_0205e960.pScene->pBuffer = Archive_LoadFile(
         ((data_ov011_0205e960.pScene->nArchiveBase + 0x8000 & 0xfffffc) << 7)

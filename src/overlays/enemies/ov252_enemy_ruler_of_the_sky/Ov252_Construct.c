@@ -49,22 +49,22 @@ extern int Ov107_HitShape_NewBox(Box *box);
 extern void Res_RequestIdPair(int id);
 extern const Bounds data_ov252_020d4258;
 extern const PartPoses data_ov252_020d4270;
-extern const char data_ov252_020d452c[];
-extern const char data_ov252_020d4538[];
-extern const char data_ov252_020d4544[];
-extern const char data_ov252_020d454c[];
-extern const char data_ov252_020d4558[];
-extern const char data_ov252_020d4564[];
-extern const char data_ov252_020d4570[];
-extern const char data_ov252_020d457c[];
-extern const char data_ov252_020d4588[];
-extern const char data_ov252_020d4590[];
-extern const char data_ov252_020d459c[];
-extern const char data_ov252_020d45a8[];
-extern const char data_ov252_020d45b4[];
-extern const char data_ov252_020d45c0[];
-extern const char data_ov252_020d45cc[];
-extern const char data_ov252_020d45d8[];
+extern const char gOv25201BHead01Name[];
+extern const char gOv25201BBody02Name[];
+extern const char gOv252CoreName[];
+extern const char gOv252B301BodyName[];
+extern const char gOv25201BHead02Name[];
+extern const char gOv25201BLRibName[];
+extern const char gOv25201BRRibName[];
+extern const char gOv25201BWast02Name[];
+extern const char gOv252FireName[];
+extern const char gOv25202SwL02Name[];
+extern const char gOv25202SwR02Name[];
+extern const char gOv252B303Tail01Name[];
+extern const char gOv252B303Tail02Name[];
+extern const char gOv252B303Tail03Name[];
+extern const char gOv252B303Tail04Name[];
+extern const char gOv252B3MoveName[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042270;
@@ -105,16 +105,16 @@ void Ov252_Construct(char *self)
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
     *(Callback *)(*(int *)(self + 0x384) + 0x68) = Ov252_ModelAnimTick;
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x530) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov252_020d452c);
-    *(int *)(self + 0x534) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov252_020d4538);
-    *(int *)(self + 0x554) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov252_020d4544);
-    *(int *)(self + 0x55c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov252_020d454c);
-    *(int *)(self + 0x558) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov252_020d454c);
-    *(int *)(self + 0x560) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov252_020d4558);
-    *(int *)(self + 0x564) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov252_020d4564);
-    *(int *)(self + 0x568) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov252_020d4570);
-    *(int *)(self + 0x538) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov252_020d457c);
-    *(int *)(self + 0x570) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov252_020d4588);
+    *(int *)(self + 0x530) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv25201BHead01Name);
+    *(int *)(self + 0x534) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv25201BBody02Name);
+    *(int *)(self + 0x554) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv252CoreName);
+    *(int *)(self + 0x55c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv252B301BodyName);
+    *(int *)(self + 0x558) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv252B301BodyName);
+    *(int *)(self + 0x560) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv25201BHead02Name);
+    *(int *)(self + 0x564) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv25201BLRibName);
+    *(int *)(self + 0x568) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv25201BRRibName);
+    *(int *)(self + 0x538) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv25201BWast02Name);
+    *(int *)(self + 0x570) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv252FireName);
     for (i = 0; i < 4; i++) {
         *(signed char *)(self + i + 0x39c) = -1;
     }
@@ -123,8 +123,8 @@ void Ov252_Construct(char *self)
     Snd_RegisterSeqAndBind((void *)(self + 0x430), ((struct Ov252Track *)*(int *)(self + 0x388))->track,
                   Ov107_PackTextureHandle(self, 0x3b), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x388), (void *)(self + 0x430));
-    *(int *)(self + 0x54c) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov252_020d4590);
-    *(int *)(self + 0x550) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov252_020d459c);
+    *(int *)(self + 0x54c) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, gOv25202SwL02Name);
+    *(int *)(self + 0x550) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, gOv25202SwR02Name);
     *(u16 *)(self + 0x57a) = 0;
     *(u16 *)(self + 0x57c) = 0;
     *(u16 *)(self + 0x57e) = 0;
@@ -134,29 +134,29 @@ void Ov252_Construct(char *self)
         case 0:
             ((int *)(self + 0x38c))[i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x6a));
             Snd_RegisterSeqAndBind(track, ((struct Ov252Track *)((int *)(self + 0x38c))[i])->track, Ov107_PackTextureHandle(self, 0x6b), 0xc);
-            *(int *)(self + 0x53c) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, data_ov252_020d45a8);
+            *(int *)(self + 0x53c) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, gOv252B303Tail01Name);
             break;
         case 1:
             ((int *)(self + 0x38c))[i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x99));
             Snd_RegisterSeqAndBind(track, ((struct Ov252Track *)((int *)(self + 0x38c))[i])->track, Ov107_PackTextureHandle(self, 0x9a), 0xc);
-            *(int *)(self + 0x540) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, data_ov252_020d45b4);
+            *(int *)(self + 0x540) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, gOv252B303Tail02Name);
             break;
         case 2:
             ((int *)(self + 0x38c))[i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0xc8));
             Snd_RegisterSeqAndBind(track, ((struct Ov252Track *)((int *)(self + 0x38c))[i])->track, Ov107_PackTextureHandle(self, 0xc9), 0xc);
-            *(int *)(self + 0x544) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, data_ov252_020d45c0);
+            *(int *)(self + 0x544) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, gOv252B303Tail03Name);
             break;
         case 3:
             ((int *)(self + 0x38c))[i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0xf7));
             Snd_RegisterSeqAndBind(track, ((struct Ov252Track *)((int *)(self + 0x38c))[i])->track, Ov107_PackTextureHandle(self, 0xf8), 0xc);
-            *(int *)(self + 0x548) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, data_ov252_020d45cc);
+            *(int *)(self + 0x548) = InsertSortedEntryWithKey(((int *)(self + 0x38c))[i], 3, gOv252B303Tail04Name);
             break;
         }
         RegisterSubscriberSlot(*(int *)(self + 0x9c), ((int *)(self + 0x38c))[i]);
         MainBlob_ResetSlotRows(((int *)(self + 0x38c))[i], track);
         track += 0x24;
     }
-    *(int *)(self + 0x574) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x126), data_ov252_020d45d8);
+    *(int *)(self + 0x574) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x126), gOv252B3MoveName);
     for (i = 0; i < 49; i++) {
         ((struct Ov252Part *)(self + 0x63c))[i].item = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Ov252Part *)(self + 0x63c))[i].item);

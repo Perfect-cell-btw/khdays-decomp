@@ -13,7 +13,7 @@ extern void Ov008_PushCountersToEventFlags(void);
 extern void Ov008_Menu_RefreshSubitemGrid(void);
 extern void Ov008_Menu_RefreshSlotPanel(void);
 extern void Ov008_Menu_InitSceneObject(char *p, int *cfg);
-extern int data_ov008_020901fc;
+extern int gOv008UiCmStrRootTextPath;
 
 /* Scene setup: builds the empty layout descriptor, marks the slot unused, blanks the three
  * tiled BG screens and brings up every sub-system. */
@@ -26,7 +26,7 @@ int Ov008_SetupScene(char *self) {
     MIi_CpuClearFast(0, G2_GetBG1ScrPtr(), 0x800);
     MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
     MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
-    Ov008_VarTable_Load(self + 4, &data_ov008_020901fc);
+    Ov008_VarTable_Load(self + 4, &gOv008UiCmStrRootTextPath);
     Ov008_SetupMenuBgCells();
     Ov008_SetupMenuSurfaces(self);
     func_ov008_020593cc(self);

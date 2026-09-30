@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov107_020cbab8[12] = "Ms/DP.p2f";
+char gOv107MsDpPath[12] = "Ms/DP.p2f";
 
-char data_ov107_020cbac4[12] = "Ms/EC.p2f";
+char gOv107MsEcPath[12] = "Ms/EC.p2f";
 
-char data_ov107_020cbad0[12] = "Ms/MP.p2f";
+char gOv107MsMpPath[12] = "Ms/MP.p2f";
 
-char data_ov107_020cbadc[36] = "Ms/SharedEffect.p2f";
+char gOv107MsSharedEffectPath[36] = "Ms/SharedEffect.p2f";

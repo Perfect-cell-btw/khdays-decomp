@@ -72,5 +72,5 @@ data_ov125_020d03f8 kind:data(any) addr:0x020d03f8
 data_ov125_020d0406 kind:data(any) addr:0x020d0406
 data_ov125_020d0414 kind:data(any) addr:0x020d0414
 gOv125PackPathFmt kind:data(any) addr:0x020d0440
-data_ov125_020d044c kind:data(any) addr:0x020d044c
-data_ov125_020d0454 kind:data(any) addr:0x020d0454
+gOv125TagLName kind:data(any) addr:0x020d044c
+gOv125TagRName kind:data(any) addr:0x020d0454

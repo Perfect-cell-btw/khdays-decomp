@@ -32,9 +32,9 @@ struct Ov143KindTable {
 
 extern struct Ov143KindTable data_ov143_020d623c;
 extern VecFx32 data_02041dc8;
-extern const char data_ov143_020d62cc[];
-extern const char data_ov143_020d62d0[];
-extern char data_ov143_020d62d8[];
+extern const char gOv1437Name[];
+extern const char gOv143RootName[];
+extern char gOv143MLoudnessName[];
 
 extern void Ov143_ReleaseSubObjectsAndListThenNotify(void);
 extern void Ov143_TickAndSyncMarkerSrt(void);
@@ -90,11 +90,11 @@ void Ov143_InitializeActor(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 3, data_ov143_020d62cc);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov143_020d62d0);
+        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 3, gOv1437Name);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, gOv143RootName);
         ((char **)self)[0xb3] = (char *)((void **)self)[0xe6] + 0x14;
         ((void **)self)[0xf3] = Ov107_CreateNamedResourceBinding(
-            Ov107_PackTextureHandle(self, 1), data_ov143_020d62d8);
+            Ov107_PackTextureHandle(self, 1), gOv143MLoudnessName);
         ((void **)self)[0xe4] = CallocInstance(0x28);
 
         for (i = 0; i < 5; i++) {

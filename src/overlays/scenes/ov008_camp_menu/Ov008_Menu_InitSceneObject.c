@@ -15,9 +15,9 @@ extern void Ov008_Menu_BindScenePanels(int obj, int *param2);
 extern void Ov008_RefreshMatchingMatrices(void);
 typedef struct { int f0; unsigned char pad[0x30]; } SceneParam;
 extern SceneParam data_ov008_0208e9c4[];
-extern char data_ov008_02090298[];
-extern char data_ov008_020902ac[];
-extern char data_ov008_020902c0[];
+extern char gOv008BaChDefHbPackPathFmt[];
+extern char gOv008BaChDefPackPathFmt[];
+extern char gOv008BaChDefHPackPathFmt[];
 extern int  gPartyMembers;
 
 /* Ov008_Menu_InitSceneObject: initialize the menu scene object and resources. */
@@ -49,16 +49,16 @@ void Ov008_Menu_InitSceneObject(int *param_1, int *param_2)
     val = *(int *)(val + sceneId * 0x34);
     switch (*(int *)param_2) {
     case 0:
-        OS_SPrintf(auStack, data_ov008_02090298, val, val);
+        OS_SPrintf(auStack, gOv008BaChDefHbPackPathFmt, val, val);
         break;
     case 5:
     case 0x10:
     case 0x11:
     case 0x12:
-        OS_SPrintf(auStack, data_ov008_020902ac, val, val);
+        OS_SPrintf(auStack, gOv008BaChDefPackPathFmt, val, val);
         break;
     default:
-        OS_SPrintf(auStack, data_ov008_020902c0, val, val);
+        OS_SPrintf(auStack, gOv008BaChDefHPackPathFmt, val, val);
         break;
     }
 

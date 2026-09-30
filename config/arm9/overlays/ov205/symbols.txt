@@ -67,4 +67,4 @@ data_ov205_020d72a0 kind:data(any) addr:0x020d72a0
 data_ov205_020d72ae kind:data(any) addr:0x020d72ae
 data_ov205_020d72bc kind:data(any) addr:0x020d72bc
 gOv205PackPathFmt kind:data(any) addr:0x020d72e0
-data_ov205_020d72ec kind:data(any) addr:0x020d72ec
+gOv205BImoveName kind:data(any) addr:0x020d72ec

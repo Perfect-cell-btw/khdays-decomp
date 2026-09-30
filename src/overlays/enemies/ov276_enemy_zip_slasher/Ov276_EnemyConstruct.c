@@ -83,9 +83,9 @@ extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov276_020d2b88;
-extern const char data_ov276_020d2c2c[];
-extern const char data_ov276_020d2c3c[];
-extern const char data_ov276_020d2c4c[];
+extern const char gOv276Bip01Spine1Name[];
+extern const char gOv276Bip01LHandName[];
+extern const char gOv276SaMoveName[];
 extern const VecFx32 data_02041dc8;
 
 static inline void VecSetP_(VecFx32 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
@@ -133,8 +133,8 @@ void Ov276_EnemyConstruct(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x3a8));
     Snd_RegisterSeqAndBind(self + 0x384, *(int *)(*(int *)(self + 0x3a8) + 0x88), Ov107_PackTextureHandle(handle, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x3a8), self + 0x384);
-    *(int *)(self + 0x3b4) = FindResourceIndexByName(*(int *)(self + 0x3a8), data_ov276_020d2c2c);
-    *(int *)(self + 0x3b8) = FindResourceIndexByName(*(int *)(self + 0x3a8), data_ov276_020d2c3c);
+    *(int *)(self + 0x3b4) = FindResourceIndexByName(*(int *)(self + 0x3a8), gOv276Bip01Spine1Name);
+    *(int *)(self + 0x3b8) = FindResourceIndexByName(*(int *)(self + 0x3a8), gOv276Bip01LHandName);
     RefreshObjectCallbacks(*(int *)(self + 0x3a8), 0);
     SrtTransform_SetIdentity(self + 0x3c0);
     SrtTransform_SetIdentity(self + 0x444);
@@ -142,7 +142,7 @@ void Ov276_EnemyConstruct(char *self)
     for (i = 0; i < 2; i++) {
         SrtTransform_SetIdentity(&actor->shapes[i]);
     }
-    *(int *)(self + 0x470) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(handle, 0x17), data_ov276_020d2c4c);
+    *(int *)(self + 0x470) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(handle, 0x17), gOv276SaMoveName);
     for (i = 0; i < 6; i++) {
         if (i < 1) {
             int *os = Ov107_GetActorManager();

@@ -4,28 +4,28 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov257_020d3360[12] = "tag02_FL";
+char gOv257Tag02FlName[12] = "tag02_FL";
 
-char data_ov257_020d336c[12] = "tag02_BR";
+char gOv257Tag02BrName[12] = "tag02_BR";
 
-char data_ov257_020d3378[12] = "tag02_BL";
+char gOv257Tag02BlName[12] = "tag02_BL";
 
-char data_ov257_020d3384[12] = "tag02_FR";
+char gOv257Tag02FrName[12] = "tag02_FR";
 
-char data_ov257_020d3390[12] = "B2_R_hand02";
+char gOv257B2RHand02Name[12] = "B2_R_hand02";
 
-char data_ov257_020d339c[12] = "B2_L_hand02";
+char gOv257B2LHand02Name[12] = "B2_L_hand02";
 
-char data_ov257_020d33a8[12] = "B2_R_hand03";
+char gOv257B2RHand03Name[12] = "B2_R_hand03";
 
-char data_ov257_020d33b4[12] = "B2_L_hand03";
+char gOv257B2LHand03Name[12] = "B2_L_hand03";
 
 char gOv257PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov257_020d33cc[16] = "Ms/XionShare.p";
+char gOv257MsXionSharePackPath[16] = "Ms/XionShare.p";
 
-char data_ov257_020d33dc[4] = "00";
+char gOv25700Name[4] = "00";
 
-char data_ov257_020d33e0[12] = "B_spine01";
+char gOv257BSpine01Name[12] = "B_spine01";
 
-char data_ov257_020d33ec[20] = "B50C_m";
+char gOv257B50CMName[20] = "B50C_m";

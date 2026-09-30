@@ -40,7 +40,7 @@ typedef struct Ov002TextReq {
     char pad1c[8];
 } Ov002TextReq;
 
-extern char data_ov002_0207f404[];
+extern char gOv002StrFmt_2[];
 
 extern int ScriptVm_ReadOperandInt(Ov002Ctx *pCtx, void *pArg);
 extern char *ByteCode_ResolveOperand(Ov002Ctx *pCtx, void *pArg);
@@ -64,9 +64,9 @@ void Ov002_DrawRecordLine(Ov002Ctx *pCtx, void *pArg)
 
     hFont = ScriptVm_ReadOperandInt(pCtx, (char *)pArg + 0x10);
     if (pCtx->pRec->szName[0] != 0) {
-        OS_SPrintf(szText, data_ov002_0207f404, pCtx->pRec->szName);
+        OS_SPrintf(szText, gOv002StrFmt_2, pCtx->pRec->szName);
     } else {
-        OS_SPrintf(szText, data_ov002_0207f404, ByteCode_ResolveOperand(pCtx, pArg));
+        OS_SPrintf(szText, gOv002StrFmt_2, ByteCode_ResolveOperand(pCtx, pArg));
     }
 
     Ov002_SplitPath(szText, pCtx->pRec->szName);

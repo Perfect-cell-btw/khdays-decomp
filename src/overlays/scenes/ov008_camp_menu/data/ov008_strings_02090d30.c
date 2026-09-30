@@ -4,14 +4,14 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov008_02090d30[28] = "/text/font_eu_10all.NFTR";
+char gOv008TextFontEu10AllPath[28] = "/text/font_eu_10all.NFTR";
 
-char data_ov008_02090d4c[28] = "/text/font_eu_10all.NFTR";
+char gOv008TextFontEu10AllPath_2[28] = "/text/font_eu_10all.NFTR";
 
-char data_ov008_02090d68[16] = "UI/mlt/res.p2";
+char gOv008UiMltResPath_2[16] = "UI/mlt/res.p2";
 
-char data_ov008_02090d78[16] = "UI/mlt/res_&.p2";
+char gOv008UiMltResPath_3[16] = "UI/mlt/res_&.p2";
 
-char data_ov008_02090d88[20] = "UI/mlt/mltgp.BGUI.z";
+char gOv008UiMltMltgpPath[20] = "UI/mlt/mltgp.BGUI.z";
 
-char data_ov008_02090d9c[20] = "UI/mlt/mlt.BGUI.z";
+char gOv008UiMltMltPath[20] = "UI/mlt/mlt.BGUI.z";

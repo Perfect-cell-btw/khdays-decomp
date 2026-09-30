@@ -2,13 +2,13 @@
 
 #include "nitro/types.h"
 
-extern char data_ov002_0207f07c;
-extern char data_ov002_0207f09c;
-extern char data_ov002_0207f070;
-extern char data_ov002_0207f084;
-extern char data_ov002_0207f08c;
-extern char data_ov002_0207f074;
-extern char data_ov002_0207f094;
+extern char gOv002NohitName;
+extern char gOv002NocatchName;
+extern char gOv002SeaName;
+extern char gOv002NocamName;
+extern char gOv002SlideName;
+extern char gOv002Sea2Name;
+extern char gOv002SiconName;
 
 typedef struct {
     const char *name;
@@ -17,11 +17,11 @@ typedef struct {
 } Ov002SurfaceTag;
 
 const Ov002SurfaceTag data_ov002_0207e640[7] = {
-    { &data_ov002_0207f07c, 2, {0} },
-    { &data_ov002_0207f09c, 3, {0} },
-    { &data_ov002_0207f070, 4, {0} },
-    { &data_ov002_0207f084, 5, {0} },
-    { &data_ov002_0207f08c, 6, {0} },
-    { &data_ov002_0207f074, 7, {0} },
-    { &data_ov002_0207f094, 8, {0} },
+    { &gOv002NohitName, 2, {0} },
+    { &gOv002NocatchName, 3, {0} },
+    { &gOv002SeaName, 4, {0} },
+    { &gOv002NocamName, 5, {0} },
+    { &gOv002SlideName, 6, {0} },
+    { &gOv002Sea2Name, 7, {0} },
+    { &gOv002SiconName, 8, {0} },
 };

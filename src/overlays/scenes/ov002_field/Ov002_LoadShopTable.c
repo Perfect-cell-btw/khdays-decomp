@@ -5,13 +5,13 @@ extern int Obj_GetIndirectWord(int h, int kind);
 extern int Archive_GetMember(int h, int kind, int index);
 extern void Tex0_GetTexPlttParams(char *dst, int src, int a);
 extern void ResSlot_Release(int h);
-extern int data_ov002_0207f470;
+extern int gOv002MoPrizePackPath;
 extern char *data_ov002_0207fa28;
 
 /* Loads the shop's item table out of the archive: opens it, walks the seven-kind entry list and
  * copies each record into the 8-byte slots at +0x60. */
 void Ov002_LoadShopTable(void) {
-    int arc = SND_RegisterSeq(&data_ov002_0207f470, 4);
+    int arc = SND_RegisterSeq(&gOv002MoPrizePackPath, 4);
     int list;
     int count;
     int i;

@@ -70,8 +70,8 @@ typedef struct Ov011Scene {
 /* khdays: shared-bss */
 int data_ov011_0205e960 = 0;             /* gOv011Cursor */
 Ov011Scene *data_ov011_0205e964 = 0;     /* gpOv011Scene */
-extern const char data_ov011_0205e8e4[];
-extern const u8 data_ov011_0205e8f0[];
+extern const char gOv011UiSfMPath[];
+extern const u8 gOv011843ZName[];
 
 extern Ov011Scene *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *destination, int value, u32 size);
@@ -98,18 +98,18 @@ Ov011StateFn Ov011_CreateScene(int nArg)
     data_ov011_0205e964->aPane[1].nScrollStep = -0x10;
     data_ov011_0205e964->nMode = 0;
     GameState_SetFlag(0x20e9);
-    data_ov011_0205e964->pResource = Msg_OpenContainerAndReadHeader(data_ov011_0205e8e4, 0xf);
+    data_ov011_0205e964->pResource = Msg_OpenContainerAndReadHeader(gOv011UiSfMPath, 0xf);
     frame.openParams.resource = data_ov011_0205e964->pResource;
     bEnabled = data_ov011_0205e964->nArg != 0;
     frame.openParams.enabled = bEnabled;
     pStream = &(*(Ov011Scene *volatile *)&data_ov011_0205e964)->stream;
     pDst = frame.path;
-    pDst[0] = data_ov011_0205e8f0[0];
-    pDst[1] = data_ov011_0205e8f0[1];
-    pDst[2] = data_ov011_0205e8f0[2];
-    pDst[3] = data_ov011_0205e8f0[3];
-    pDst[4] = data_ov011_0205e8f0[4];
-    pDst[5] = data_ov011_0205e8f0[5];
+    pDst[0] = gOv011843ZName[0];
+    pDst[1] = gOv011843ZName[1];
+    pDst[2] = gOv011843ZName[2];
+    pDst[3] = gOv011843ZName[3];
+    pDst[4] = gOv011843ZName[4];
+    pDst[5] = gOv011843ZName[5];
     Ov024_MobiClip_InstallStreamSourceVtbl(pStream);
     data_ov011_0205e964->stream.initialize();
     data_ov011_0205e964->stream.open(&frame.openParams);

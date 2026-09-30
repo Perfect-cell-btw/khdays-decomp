@@ -16,7 +16,7 @@ typedef struct Ov005ResultContext {
 } Ov005ResultContext;
 extern Ov005Config data_ov005_0205b85c;
 extern Ov005ResultContext *data_ov005_0205b810;
-extern char data_ov005_0205b5bc[],data_ov005_0205b5d0[],data_ov005_0205b5e0[];
+extern char gOv005UiSrsltResTextPath_2[],gOv005UiSrsltResPath_3[],gOv005UiSrsltResPath_4[];
 extern void *NNS_FndAllocFromDefaultExpHeapEx(unsigned int,int);
 extern void MIi_CpuClear16(unsigned short,void *,unsigned int);
 extern void Tween_Clear(Tween *);
@@ -36,10 +36,10 @@ void Ov005_InitResultResources(void) {
   Tween_Clear(&entry->tween);
   entry->value=1000;
  }
- Ov005_InitResourceRecord(&data_ov005_0205b810->menuText,data_ov005_0205b5bc);
+ Ov005_InitResourceRecord(&data_ov005_0205b810->menuText,gOv005UiSrsltResTextPath_2);
  data_ov005_0205b810->startTick=OS_GetTick();
- data_ov005_0205b810->resultArchive=Msg_OpenContainerAndReadHeader(data_ov005_0205b5d0,14);
- data_ov005_0205b810->localizedResultArchive=Msg_OpenContainerAndReadHeader(data_ov005_0205b5e0,14);
+ data_ov005_0205b810->resultArchive=Msg_OpenContainerAndReadHeader(gOv005UiSrsltResPath_3,14);
+ data_ov005_0205b810->localizedResultArchive=Msg_OpenContainerAndReadHeader(gOv005UiSrsltResPath_4,14);
  SetMasterBrightnessSub(-16);
  data_ov005_0205b810->resultTweens[0].value=0;
  data_ov005_0205b810->resultTweens[3].value=(config->bMode+1)*800;

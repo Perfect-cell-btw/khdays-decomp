@@ -4,67 +4,67 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov027_02083f60;
-extern int data_ov027_02083f74;
-extern int data_ov027_02083f88;
-extern int data_ov027_02083f9c;
-extern int data_ov027_02083fb0;
-extern int data_ov027_02083fc4;
-extern int data_ov027_02083fd8;
-extern int data_ov027_02083fec;
-extern int data_ov027_02084000;
-extern int data_ov027_02084014;
-extern int data_ov027_02084028;
-extern int data_ov027_0208403c;
-extern int data_ov027_02084050;
-extern int data_ov027_02084064;
-extern int data_ov027_02084078;
-extern int data_ov027_0208408c;
-extern int data_ov027_020840a0;
-extern int data_ov027_020840b4;
-extern int data_ov027_020840c8;
-extern int data_ov027_020840dc;
+extern int gOv027GoofyDefPackPath;
+extern int gOv027DonaldDefPackPath;
+extern int gOv027SoraDefPackPath;
+extern int gOv027BaChMiPath;
+extern int gOv027MarluxiaDefHPackPath;
+extern int gOv027RikuDefHPackPath;
+extern int gOv027VexenDefHPackPath;
+extern int gOv027XemnasDefHPackPath;
+extern int gOv027AxelDefHPackPath;
+extern int gOv027RoxasDualDefHPackPath;
+extern int gOv027SaixDefHPackPath;
+extern int gOv027XionDefHPackPath;
+extern int gOv027XaldinDefHPackPath;
+extern int gOv027XigbarDefHPackPath;
+extern int gOv027ZexionDefHPackPath;
+extern int gOv027DemyxDefHPackPath;
+extern int gOv027LarxeneDefHPackPath;
+extern int gOv027LexaeusDefHPackPath;
+extern int gOv027LuxordDefHPackPath;
+extern int gOv027RoxasDefHbPackPath;
 
 void *data_ov027_02084190[20] = {
 
-    &data_ov027_020840dc,
+    &gOv027RoxasDefHbPackPath,
 
-    &data_ov027_02084000,
+    &gOv027AxelDefHPackPath,
 
-    &data_ov027_02084064,
+    &gOv027XigbarDefHPackPath,
 
-    &data_ov027_02084028,
+    &gOv027SaixDefHPackPath,
 
-    &data_ov027_02084050,
+    &gOv027XaldinDefHPackPath,
 
-    &data_ov027_02083f88,
+    &gOv027SoraDefPackPath,
 
-    &data_ov027_0208408c,
+    &gOv027DemyxDefHPackPath,
 
-    &data_ov027_020840a0,
+    &gOv027LarxeneDefHPackPath,
 
-    &data_ov027_020840b4,
+    &gOv027LexaeusDefHPackPath,
 
-    &data_ov027_020840c8,
+    &gOv027LuxordDefHPackPath,
 
-    &data_ov027_02083fb0,
+    &gOv027MarluxiaDefHPackPath,
 
-    &data_ov027_02083fc4,
+    &gOv027RikuDefHPackPath,
 
-    &data_ov027_02083fd8,
+    &gOv027VexenDefHPackPath,
 
-    &data_ov027_02083fec,
+    &gOv027XemnasDefHPackPath,
 
-    &data_ov027_0208403c,
+    &gOv027XionDefHPackPath,
 
-    &data_ov027_02084078,
+    &gOv027ZexionDefHPackPath,
 
-    &data_ov027_02083f9c,
+    &gOv027BaChMiPath,
 
-    &data_ov027_02083f74,
+    &gOv027DonaldDefPackPath,
 
-    &data_ov027_02083f60,
+    &gOv027GoofyDefPackPath,
 
-    &data_ov027_02084014,
+    &gOv027RoxasDualDefHPackPath,
 
 };

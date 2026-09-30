@@ -54,4 +54,4 @@ data_ov183_020d2638 kind:data(any) addr:0x020d2638
 data_ov183_020d2644 kind:data(any) addr:0x020d2644
 data_ov183_020d2652 kind:data(any) addr:0x020d2652
 gOv183PackPathFmt kind:data(any) addr:0x020d2680
-data_ov183_020d268c kind:data(any) addr:0x020d268c
+gOv183BMoveName kind:data(any) addr:0x020d268c

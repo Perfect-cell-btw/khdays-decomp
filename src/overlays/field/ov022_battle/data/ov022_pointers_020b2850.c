@@ -4,33 +4,33 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov022_020b2dc4;
-extern int data_ov022_020b2dcc;
-extern int data_ov022_020b2dd4;
-extern int data_ov022_020b2ddc;
-extern int data_ov022_020b2de4;
-extern int data_ov022_020b2dec;
-extern int data_ov022_020b2df4;
-extern int data_ov022_020b2dfc;
+extern int gOv022DummyName;
+extern int gOv022RgPZName;
+extern int gOv022ItPZName;
+extern int gOv022GlPZName;
+extern int gOv022AsPZName;
+extern int gOv022Ma0PZName;
+extern int gOv022Ma2PZName;
+extern int gOv022Ma1PZName;
 
 void *const data_ov022_020b2850[9] = {
 
-    &data_ov022_020b2dc4,
+    &gOv022DummyName,
 
-    &data_ov022_020b2ddc,
+    &gOv022GlPZName,
 
-    &data_ov022_020b2dcc,
+    &gOv022RgPZName,
 
-    &data_ov022_020b2de4,
+    &gOv022AsPZName,
 
-    &data_ov022_020b2df4,
+    &gOv022Ma2PZName,
 
-    &data_ov022_020b2dd4,
+    &gOv022ItPZName,
 
-    &data_ov022_020b2dec,
+    &gOv022Ma0PZName,
 
-    &data_ov022_020b2dfc,
+    &gOv022Ma1PZName,
 
-    &data_ov022_020b2df4,
+    &gOv022Ma2PZName,
 
 };

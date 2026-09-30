@@ -41,10 +41,10 @@ extern int Ov238_Partner_New(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern const Order12 data_ov238_020d3674;
 extern const IdTable9 data_ov238_020d368c;
-extern const char data_ov238_020d370c[];
-extern const char data_ov238_020d3718[];
-extern const char data_ov238_020d3724[];
-extern const char data_ov238_020d3730[];
+extern const char gOv238BonePelvisName[];
+extern const char gOv238BoneRFingName[];
+extern const char gOv238BoneLFingName[];
+extern const char gOv238MoveName[];
 extern const VecFx32 data_02041dc8;
 
 void Ov238_Construct(char *self)
@@ -84,13 +84,13 @@ void Ov238_Construct(char *self)
     *(char **)(*(int *)(self + 0x388) + 0x84) = self;
     *(Callback *)(*(int *)(self + 0x388) + 0x68) = Ov238_ModelAnimTick;
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
-    *(int *)(self + 0x3ec) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, data_ov238_020d370c);
-    *(int *)(self + 0x3f8) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov238_020d370c);
-    *(int *)(self + 0x3f0) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, data_ov238_020d3718);
-    *(int *)(self + 0x3f4) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, data_ov238_020d3724);
+    *(int *)(self + 0x3ec) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, gOv238BonePelvisName);
+    *(int *)(self + 0x3f8) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, gOv238BonePelvisName);
+    *(int *)(self + 0x3f0) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, gOv238BoneRFingName);
+    *(int *)(self + 0x3f4) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, gOv238BoneLFingName);
     place = *(Placement *)(self + 0x64);
     place.pos = data_02041dc8;
-    *(int *)(self + 0x3e0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x18), data_ov238_020d3730);
+    *(int *)(self + 0x3e0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x18), gOv238MoveName);
     for (i = 0; i < 9; i++) {
         ((struct Ov238Parts *)self)->items[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Ov238Parts *)self)->items[i].res);

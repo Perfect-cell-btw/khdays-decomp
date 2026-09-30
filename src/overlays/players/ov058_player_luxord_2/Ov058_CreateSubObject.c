@@ -38,7 +38,7 @@ extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc,
                                 struct PanelSubCfg *pCfg, int a, int b);
 extern void Ov058_dispatchEntryList(void);
 extern void Ov058_ReleaseSlotHandles(void);
-extern int data_ov058_020b7ddc;
+extern int gOv058LuxordLiE2PackPath;
 
 void Ov058_CreateSubObject(char *self)
 {
@@ -72,7 +72,7 @@ void Ov058_CreateSubObject(char *self)
     cfg[1].field38 |= 0x20;
 
     Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self,
-                        &data_ov058_020b7ddc, cfg, 2, 6);
+                        &gOv058LuxordLiE2PackPath, cfg, 2, 6);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x20) = (void *)&Ov058_dispatchEntryList;
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x24) = (void *)&Ov058_ReleaseSlotHandles;
 }

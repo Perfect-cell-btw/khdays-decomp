@@ -10,7 +10,7 @@ extern int Ov069_LookupRecordValue(char *table, int id);
 extern unsigned int GameState_GetField(int index, int kind);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern s16 *data_ov069_020baa20[];
-extern char data_ov069_020baa70[];
+extern char gOv069UiCmMslPath[];
 
 int Ov069_RequirementListMet(unsigned int idx)
 {
@@ -22,7 +22,7 @@ int Ov069_RequirementListMet(unsigned int idx)
         return 0;
     }
     list = data_ov069_020baa20[idx];
-    buf = Archive_LoadFile(data_ov069_020baa70, 0xe);
+    buf = Archive_LoadFile(gOv069UiCmMslPath, 0xe);
     if (buf != 0) {
         id = *list;
         while (id > 0) {

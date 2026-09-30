@@ -54,12 +54,12 @@ extern int Ov107_CloneResourceTransform(const Sphere *sphere);
 extern int Ov223_Actor_New(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable8 data_ov223_020d50c4;
-extern const char data_ov223_020d510c[];
-extern const char data_ov223_020d5118[];
-extern const char data_ov223_020d5128[];
-extern const char data_ov223_020d5134[];
-extern const char data_ov223_020d5140[];
-extern const char data_ov223_020d514c[];
+extern const char gOv223BoneHeadName[];
+extern const char gOv223BoneTail03Name[];
+extern const char gOv223BonePelvisName[];
+extern const char gOv223BoneLHandName[];
+extern const char gOv223BoneRHandName[];
+extern const char gOv223MoveName[];
 extern const VecFx32 data_02041dc8;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
@@ -114,12 +114,12 @@ void Ov223_EnemyInit(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Snd_RegisterSeqAndBind(self + 0x388, *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(self, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), self + 0x388);
-    *(int *)(self + 0x3d8) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov223_020d510c);
-    *(int *)(self + 0x3dc) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov223_020d5118);
-    *(int *)(self + 0x3d4) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov223_020d5128);
-    *(int *)(self + 0x3e0) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov223_020d5134);
-    *(int *)(self + 0x3e4) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov223_020d5140);
-    *(int *)(self + 0x3fc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x24), data_ov223_020d514c);
+    *(int *)(self + 0x3d8) = FindResourceIndexByName(*(int *)(self + 0x384), gOv223BoneHeadName);
+    *(int *)(self + 0x3dc) = FindResourceIndexByName(*(int *)(self + 0x384), gOv223BoneTail03Name);
+    *(int *)(self + 0x3d4) = FindResourceIndexByName(*(int *)(self + 0x384), gOv223BonePelvisName);
+    *(int *)(self + 0x3e0) = FindResourceIndexByName(*(int *)(self + 0x384), gOv223BoneLHandName);
+    *(int *)(self + 0x3e4) = FindResourceIndexByName(*(int *)(self + 0x384), gOv223BoneRHandName);
+    *(int *)(self + 0x3fc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x24), gOv223MoveName);
     lift.x = 0;
     lift.y = -0x11ae;
     lift.z = 0;

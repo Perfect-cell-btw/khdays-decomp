@@ -9,9 +9,9 @@ typedef struct ClassCtorArgs {
     int aParam[4];            /* 0x04 */
 } ClassCtorArgs;
 
-extern char data_ov063_020b7db0;  /* the path string */
+extern char gOv063RoxasLiE3PackPath;  /* the path string */
 
 const ClassCtorArgs data_ov063_020b7cd4 = {
-    &data_ov063_020b7db0,
+    &gOv063RoxasLiE3PackPath,
     { 3, 0, 0, 0 },
 };

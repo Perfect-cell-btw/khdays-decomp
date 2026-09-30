@@ -6,6 +6,6 @@
 
 char gOv172PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov172_020d2b0c[8] = "Bone04";
+char gOv172Bone04Name[8] = "Bone04";
 
-char data_ov172_020d2b14[12] = "body";
+char gOv172BodyName[12] = "body";

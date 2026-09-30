@@ -4,8 +4,8 @@
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov046_CreateSubObject(int base);
 extern int data_ov046_020b4b40;
-extern int data_ov046_020b4b00;
-extern int data_ov046_020b4b14;
+extern int gOv046MickeyLiE0PackPath;
+extern int gOv046MickeyLiE2PackPath;
 
 void Ov046_ResetAndBindSlotArray(void) {
     int i;
@@ -19,9 +19,9 @@ void Ov046_ResetAndBindSlotArray(void) {
     for (i = 0, q = p; i < 6; i++, q += 0x120) {
         *(int *)(q + 0x128) = 0;
     }
-    RegisterSeqAndInit((int)(p + 4), &data_ov046_020b4b00, 1, *(unsigned char *)(base + 9) + 7);
+    RegisterSeqAndInit((int)(p + 4), &gOv046MickeyLiE0PackPath, 1, *(unsigned char *)(base + 9) + 7);
     for (j = 0, r = p + 0x12c; j < 6; j++, r += 0x120) {
-        RegisterSeqAndInit((int)r, &data_ov046_020b4b14, 1, *(unsigned char *)(base + 9) + 7);
+        RegisterSeqAndInit((int)r, &gOv046MickeyLiE2PackPath, 1, *(unsigned char *)(base + 9) + 7);
     }
     Ov046_CreateSubObject(base);
 }

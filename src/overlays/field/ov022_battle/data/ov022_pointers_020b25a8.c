@@ -4,16 +4,16 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov022_020b2c9c;
-extern int data_ov022_020b2cb0;
-extern int data_ov022_020b2cc4;
+extern int gOv022BaEfSBurnPackPath;
+extern int gOv022BaEfSShockPackPath;
+extern int gOv022BaEfSFrostPackPath;
 
 void *const data_ov022_020b25a8[3] = {
 
-    &data_ov022_020b2c9c,
+    &gOv022BaEfSBurnPackPath,
 
-    &data_ov022_020b2cb0,
+    &gOv022BaEfSShockPackPath,
 
-    &data_ov022_020b2cc4,
+    &gOv022BaEfSFrostPackPath,
 
 };

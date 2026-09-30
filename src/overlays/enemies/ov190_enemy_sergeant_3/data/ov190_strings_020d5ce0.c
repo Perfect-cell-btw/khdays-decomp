@@ -6,28 +6,28 @@
 
 char gOv190PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov190_020d5cec[8] = "Bip01";
+char gOv190Bip01Name[8] = "Bip01";
 
-char data_ov190_020d5cf4[8] = "Bone01";
+char gOv190Bone01Name[8] = "Bone01";
 
-char data_ov190_020d5cfc[12] = "Bone_head";
+char gOv190BoneHeadName[12] = "Bone_head";
 
-char data_ov190_020d5d08[16] = "Bip01_Pelvis";
+char gOv190Bip01PelvisName[16] = "Bip01_Pelvis";
 
-char data_ov190_020d5d18[16] = "Bone_L_UpperArm";
+char gOv190BoneLUpperArmName[16] = "Bone_L_UpperArm";
 
-char data_ov190_020d5d28[12] = "Bone_L_fing";
+char gOv190BoneLFingName[12] = "Bone_L_fing";
 
-char data_ov190_020d5d34[16] = "Bone_R_UpperArm";
+char gOv190BoneRUpperArmName[16] = "Bone_R_UpperArm";
 
-char data_ov190_020d5d44[12] = "Bone_R_fing";
+char gOv190BoneRFingName[12] = "Bone_R_fing";
 
-char data_ov190_020d5d50[16] = "Bip01_L_Thigh";
+char gOv190Bip01LThighName[16] = "Bip01_L_Thigh";
 
-char data_ov190_020d5d60[16] = "Bip01_L_Foot";
+char gOv190Bip01LFootName[16] = "Bip01_L_Foot";
 
-char data_ov190_020d5d70[16] = "Bip01_R_Thigh";
+char gOv190Bip01RThighName[16] = "Bip01_R_Thigh";
 
-char data_ov190_020d5d80[16] = "Bip01_R_Foot";
+char gOv190Bip01RFootName[16] = "Bip01_R_Foot";
 
-char data_ov190_020d5d90[16] = "move";
+char gOv190MoveName[16] = "move";

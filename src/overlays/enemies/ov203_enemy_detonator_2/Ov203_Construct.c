@@ -5,9 +5,9 @@ struct slot { void *ptr; int pad; };
 
 extern struct v5 data_ov203_020d67d0;
 extern struct v3 data_02041dc8;
-extern unsigned short data_ov203_020d686c[];
-extern unsigned short data_ov203_020d6878[];
-extern int data_ov203_020d6884;
+extern unsigned short gOv203BoneHimoName[];
+extern unsigned short gOv203BoneHeadName[];
+extern int gOv203MoveName;
 
 extern void Ov203_Destroy(void), Ov203_TickWithChildRefresh(void), Ov203_InitModelPose(void);
 extern void Ov203_HandleSpawnMessage(void), Ov203_CreateRegistryEntryTwoCallbacks(void), Ov203_ReleaseTasks(void);
@@ -46,9 +46,9 @@ void Ov203_Construct(int param_1) {
     *(int *)(param_1 + 0x6c) = 0;
     *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
-    *(void **)(param_1 + 0x3d4) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov203_020d686c);
-    *(void **)(param_1 + 0x3d8) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov203_020d6878);
-    *(void **)(param_1 + 0x388) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov203_020d6884);
+    *(void **)(param_1 + 0x3d4) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv203BoneHimoName);
+    *(void **)(param_1 + 0x3d8) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv203BoneHeadName);
+    *(void **)(param_1 + 0x388) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &gOv203MoveName);
     *(void **)(param_1 + 0x3dc) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
         ((struct slot *)*(int *)(param_1 + 0x3dc))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, tbl.w[i]));

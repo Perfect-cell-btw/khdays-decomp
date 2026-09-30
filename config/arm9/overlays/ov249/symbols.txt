@@ -81,6 +81,6 @@ data_ov249_020d4904 kind:data(any) addr:0x020d4904
 data_ov249_020d4970 kind:data(any) addr:0x020d4970
 data_ov249_020d4988 kind:data(any) addr:0x020d4988
 gOv249PackPathFmt kind:data(any) addr:0x020d49a0
-data_ov249_020d49ac kind:data(any) addr:0x020d49ac
-data_ov249_020d49bc kind:data(any) addr:0x020d49bc
-data_ov249_020d49cc kind:data(any) addr:0x020d49cc
+gOv249Bip01Spine1Name kind:data(any) addr:0x020d49ac
+gOv249Bip01LHandName kind:data(any) addr:0x020d49bc
+gOv249AfMoveName kind:data(any) addr:0x020d49cc

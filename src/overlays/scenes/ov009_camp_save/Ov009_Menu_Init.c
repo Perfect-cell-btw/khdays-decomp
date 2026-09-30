@@ -49,8 +49,8 @@ typedef struct Ov009MenuContext {
 extern const Ov009ObjectTemplate data_ov009_02055f58;
 extern const Ov009HeaderLimits data_ov009_02055f54;
 extern Ov009MenuContext *data_ov009_020563e4[2];
-extern const char data_ov009_020562a4[];
-extern const char data_ov009_020562b0[];
+extern const char gOv009UiCmCmPath[];
+extern const char gOv009UiCmCmbPath[];
 extern const char data_ov009_020562c0[];
 extern const char data_ov009_020562e0[];
 
@@ -96,11 +96,11 @@ void Ov009_Menu_Init(void)
 
     LoadOverlaySync(0, 0x12e);
     data_ov009_020563e4[1]->primaryMessageContainer =
-        Msg_OpenContainerAndReadHeader(data_ov009_020562a4, 14);
+        Msg_OpenContainerAndReadHeader(gOv009UiCmCmPath, 14);
     isModeOne = GetLanguage() == 1;
     if (isModeOne == 0) {
         data_ov009_020563e4[1]->secondaryMessageContainer =
-            Msg_OpenContainerAndReadHeader(data_ov009_020562b0, 14);
+            Msg_OpenContainerAndReadHeader(gOv009UiCmCmbPath, 14);
     }
     data_ov009_020563e4[1]->tertiaryMessageContainer =
         Msg_OpenContainerAndReadHeader(data_ov009_020562c0, 14);

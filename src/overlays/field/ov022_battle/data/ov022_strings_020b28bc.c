@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov022_020b28bc[24] = "Please Entry ScriptName";
+char gOv022PleaseEntryScriptNameText[24] = "Please Entry ScriptName";

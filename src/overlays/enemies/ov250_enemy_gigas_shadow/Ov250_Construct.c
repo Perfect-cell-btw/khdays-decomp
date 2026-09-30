@@ -54,10 +54,10 @@ extern int Ov107_CloneResourceTransform(struct Pose *pose);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov250_020d2890;
 extern const struct Box data_ov250_020d289c;
-extern const char data_ov250_020d290c[];
-extern const char data_ov250_020d2914[];
-extern const char data_ov250_020d2924[];
-extern const char data_ov250_020d2934[];
+extern const char gOv250Bip01Name[];
+extern const char gOv250Bip01LHandName[];
+extern const char gOv250Bip01RHandName[];
+extern const char gOv250B2MoveName[];
 extern const VecFx32 data_02041dc8;
 
 void Ov250_Construct(char *self)
@@ -86,12 +86,12 @@ void Ov250_Construct(char *self)
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, 0x80, 0);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov250_020d290c);
-    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov250_020d2914);
-    *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov250_020d2924);
+    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv250Bip01Name);
+    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv250Bip01LHandName);
+    *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv250Bip01RHandName);
     pose = *(struct Pose *)(self + 0x64);
     pose.pos = data_02041dc8;
-    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov250_020d2934);
+    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), gOv250B2MoveName);
     *(void **)(self + 0x398) = CallocInstance(0x18);
     for (i = 0; i < 3; i++) {
         (*(struct Ov250SubitemSlot **)(self + 0x398))[i].pItem =

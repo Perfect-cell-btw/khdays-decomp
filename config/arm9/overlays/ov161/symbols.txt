@@ -66,6 +66,6 @@ data_ov161_020cf29c kind:data(any) addr:0x020cf29c
 data_ov161_020cf2aa kind:data(any) addr:0x020cf2aa
 data_ov161_020cf2b8 kind:data(any) addr:0x020cf2b8
 gOv161PackPathFmt kind:data(any) addr:0x020cf2e0
-data_ov161_020cf2ec kind:data(any) addr:0x020cf2ec
-data_ov161_020cf2f8 kind:data(any) addr:0x020cf2f8
-data_ov161_020cf304 kind:data(any) addr:0x020cf304
+gOv161BoneHimoName kind:data(any) addr:0x020cf2ec
+gOv161BoneHeadName kind:data(any) addr:0x020cf2f8
+gOv161MoveName kind:data(any) addr:0x020cf304

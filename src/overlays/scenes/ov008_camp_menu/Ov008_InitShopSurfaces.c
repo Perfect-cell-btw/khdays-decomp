@@ -29,10 +29,10 @@ typedef struct Ov008PanelContext {
 } Ov008PanelContext;
 
 extern Ov008PanelContext *data_ov008_02090fac;
-extern const char data_ov008_02090e44[];                                  /* "text/font_eu_10.nftr" */
-extern const char data_ov008_02090e5c[];                                  /* "text/font_eu_08.nftr" */
-extern const char data_ov008_02090e74[];
-extern const char data_ov008_02090e8c[];                                  /* "UI/shop/shp_&.s.z" */
+extern const char gOv008TextFontEu10Path_2[];                                  /* "text/font_eu_10.nftr" */
+extern const char gOv008TextFontEu08Path_2[];                                  /* "text/font_eu_08.nftr" */
+extern const char gOv008TextFontEu08SPath_2[];
+extern const char gOv008UiShopShpTextPath[];                                  /* "UI/shop/shp_&.s.z" */
 extern void  Ov008_UploadTileSurface(void *pSurface, int nX, int nY, int nWidth, int nHeight, int nRows, void *pVram, int nUnk1c, void *pPixels); /* Ov008_UploadTileSurface */
 extern void  Ov008_VarTable_Load(void *pLoader, const char *pPath);       /* Ov008_Set_5c4c */
 extern void *Ov008_GetVarRecordByIndex(void *pRecords, int nIndex);             /* GetVarRecordByIndex */
@@ -44,15 +44,15 @@ void Ov008_InitShopSurfaces(void)
 
     ctx = data_ov008_02090fac;
     apText = ctx->apVarText;
-    Resource_BindByName(ctx->fontA, data_ov008_02090e44);
-    Resource_BindByName(ctx->fontB, data_ov008_02090e5c);
-    Resource_BindByName(ctx->fontC, data_ov008_02090e74);
+    Resource_BindByName(ctx->fontA, gOv008TextFontEu10Path_2);
+    Resource_BindByName(ctx->fontB, gOv008TextFontEu08Path_2);
+    Resource_BindByName(ctx->fontC, gOv008TextFontEu08SPath_2);
     Ov008_UploadTileSurface(ctx->textSurface, 0, 0, 0x20, 0x18, 0, ctx->pixelsB, 0x14, ctx->fontA);
     Ov008_UploadTileSurface(ctx->surfaceB, 10, 0, 0x16, 2, 0xc0, ctx->pixelsA, 5, ctx->fontA);
     Ov008_UploadTileSurface(ctx->surfaceC, 10, 0x12, 0x16, 6, 0x118, ctx->pixelsA, 5, ctx->fontA);
     Ov008_UploadTileSurface(ctx->surfaceD, 4, 2, 0x18, 0x10, 0x220, ctx->pixelsA, 5, ctx->fontA);
     ctx->nFlags |= 9;
-    Ov008_VarTable_Load(ctx->textLoader, data_ov008_02090e8c);
+    Ov008_VarTable_Load(ctx->textLoader, gOv008UiShopShpTextPath);
     apText[0] = Ov008_GetVarRecordByIndex(ctx->textLoader, 0x1a);
     apText[1] = Ov008_GetVarRecordByIndex(ctx->textLoader, 0x1b);
     apText[2] = Ov008_GetVarRecordByIndex(ctx->textLoader, 0x1c);

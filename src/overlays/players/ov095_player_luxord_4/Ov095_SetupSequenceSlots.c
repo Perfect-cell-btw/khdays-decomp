@@ -13,7 +13,7 @@ extern void RegisterSeqAndInit(int a, void *b, int c, int d);                   
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern void Ov095_CreateSubObject(char *self);
 extern char *data_ov095_020bcba0;
-extern char data_ov095_020bcb68[];
+extern char gOv095LuxordLiE0PackPath[];
 extern Params data_ov095_020bc93c;
 
 void Ov095_SetupSequenceSlots(char *self)
@@ -37,7 +37,7 @@ void Ov095_SetupSequenceSlots(char *self)
     }
     slot = rig + 0x1c;
     for (i = 0; i < 2; i++) {
-        RegisterSeqAndInit((int)slot, data_ov095_020bcb68, 1, *(u8 *)(base + 9) + 7);
+        RegisterSeqAndInit((int)slot, gOv095LuxordLiE0PackPath, 1, *(u8 *)(base + 9) + 7);
         slot += 0x10c;
     }
     p = data_ov095_020bc93c;

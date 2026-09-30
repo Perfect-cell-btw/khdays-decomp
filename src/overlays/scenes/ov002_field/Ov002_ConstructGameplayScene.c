@@ -35,9 +35,9 @@ extern u8    data_0204c240;
 extern u8    data_0204c248;
 extern u8    data_0204c254;
 extern int   data_0204c4d8;
-extern int   data_ov002_0207efb0;
-extern int   data_ov002_0207efbc;
-extern int   data_ov002_0207efc0;
+extern int   gOv002MiMiPathFmt;
+extern int   gOv002SName;
+extern int   gOv002IName;
 extern int   data_ov002_0207f134;
 
 extern int  NNSi_FndGetCurrentRootHeap(void);
@@ -140,7 +140,7 @@ void *Ov002_ConstructGameplayScene(void *param_1)
             }
         }
     }
-    OS_SPrintf(buf, &data_ov002_0207efb0, *(short *)rec);
+    OS_SPrintf(buf, &gOv002MiMiPathFmt, *(short *)rec);
     *(int *)(heap + 4) = Msg_OpenContainerAndReadHeader(buf, 2);
     Ov002_ResetGlobalTracks(*(int *)(rec + 0x14));
     Ov002_ClearRosterRow();
@@ -167,7 +167,7 @@ void *Ov002_ConstructGameplayScene(void *param_1)
     Ov002_CreateSceneRegistry();
     Ov002_SetSceneObjectsActive(1);
     Ov002_EnsureSceneManager(0x792b);
-    Ov002_StreamFormattedLine(&data_ov002_0207efbc, &data_ov002_0207efc0);
+    Ov002_StreamFormattedLine(&gOv002SName, &gOv002IName);
     Ov002_SetRootWord8a28(0, *(int *)(heap + 4));
     MI_CpuFill8(heap + 0x8d84, 0, 0x18);
     if ((data_0204c240 & 0xc) == 4 && *(u8 *)((char *)&data_0204c248 + 2) != 0) {

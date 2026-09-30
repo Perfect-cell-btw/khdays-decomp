@@ -6,12 +6,12 @@
 
 char gOv121PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov121_020cfd4c[12] = "Bone_R_fing";
+char gOv121BoneRFingName[12] = "Bone_R_fing";
 
-char data_ov121_020cfd58[16] = "Bip01_R_Foot";
+char gOv121Bip01RFootName[16] = "Bip01_R_Foot";
 
-char data_ov121_020cfd68[16] = "Bip01_L_Foot";
+char gOv121Bip01LFootName[16] = "Bip01_L_Foot";
 
-char data_ov121_020cfd78[8] = "Bip01";
+char gOv121Bip01Name[8] = "Bip01";
 
-char data_ov121_020cfd80[32] = "move";
+char gOv121MoveName[32] = "move";

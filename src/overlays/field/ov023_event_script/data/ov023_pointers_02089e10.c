@@ -4,112 +4,112 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov023_0208a0c4;
-extern int data_ov023_0208a0cc;
-extern int data_ov023_0208a0d4;
-extern int data_ov023_0208a0dc;
-extern int data_ov023_0208a0e4;
-extern int data_ov023_0208a0ec;
-extern int data_ov023_0208a0f4;
-extern int data_ov023_0208a0fc;
-extern int data_ov023_0208a104;
-extern int data_ov023_0208a10c;
-extern int data_ov023_0208a114;
-extern int data_ov023_0208a11c;
-extern int data_ov023_0208a124;
-extern int data_ov023_0208a12c;
-extern int data_ov023_0208a134;
-extern int data_ov023_0208a13c;
-extern int data_ov023_0208a144;
-extern int data_ov023_0208a14c;
-extern int data_ov023_0208a154;
-extern int data_ov023_0208a15c;
-extern int data_ov023_0208a168;
-extern int data_ov023_0208a174;
-extern int data_ov023_0208a180;
-extern int data_ov023_0208a18c;
-extern int data_ov023_0208a198;
+extern int gOv023LaHRName;
+extern int gOv023LeHRName;
+extern int gOv023RoHRName;
+extern int gOv023XeHLName;
+extern int gOv023XoHRName;
+extern int gOv023DoHRName;
+extern int gOv023AxHLName;
+extern int gOv023SaHRName;
+extern int gOv023LaHLName;
+extern int gOv023RiHRName;
+extern int gOv023XeHRName;
+extern int gOv023GoHRName;
+extern int gOv023RoHLName;
+extern int gOv023AxHRName;
+extern int gOv023MaHRName;
+extern int gOv023XigHLName;
+extern int gOv023VeWTgName;
+extern int gOv023XigHRName;
+extern int gOv023DemyxRName;
+extern int gOv023ZexionRName;
+extern int gOv023XaldinRName;
+extern int gOv023LuxordRName;
+extern int gOv023RoWTgRName;
+extern int gOv023SoWTg00Name;
+extern int gOv023MiWTgRName;
 
 void *const data_ov023_02089e10[40] = {
 
-    &data_ov023_0208a180,
+    &gOv023RoWTgRName,
 
     0,
 
-    &data_ov023_0208a12c,
+    &gOv023AxHRName,
 
-    &data_ov023_0208a0f4,
+    &gOv023AxHLName,
 
-    &data_ov023_0208a14c,
+    &gOv023XigHRName,
 
-    &data_ov023_0208a13c,
+    &gOv023XigHLName,
 
-    &data_ov023_0208a0fc,
-
-    0,
-
-    &data_ov023_0208a168,
+    &gOv023SaHRName,
 
     0,
 
-    &data_ov023_0208a18c,
+    &gOv023XaldinRName,
 
     0,
 
-    &data_ov023_0208a154,
+    &gOv023SoWTg00Name,
 
     0,
 
-    &data_ov023_0208a0c4,
-
-    &data_ov023_0208a104,
-
-    &data_ov023_0208a0cc,
+    &gOv023DemyxRName,
 
     0,
 
-    &data_ov023_0208a174,
+    &gOv023LaHRName,
 
-    &data_ov023_0208a174,
+    &gOv023LaHLName,
 
-    &data_ov023_0208a134,
-
-    0,
-
-    &data_ov023_0208a10c,
+    &gOv023LeHRName,
 
     0,
 
-    &data_ov023_0208a144,
+    &gOv023LuxordRName,
+
+    &gOv023LuxordRName,
+
+    &gOv023MaHRName,
 
     0,
 
-    &data_ov023_0208a114,
-
-    &data_ov023_0208a0dc,
-
-    &data_ov023_0208a0e4,
+    &gOv023RiHRName,
 
     0,
 
-    &data_ov023_0208a15c,
+    &gOv023VeWTgName,
 
     0,
 
-    &data_ov023_0208a198,
+    &gOv023XeHRName,
+
+    &gOv023XeHLName,
+
+    &gOv023XoHRName,
 
     0,
 
-    &data_ov023_0208a0ec,
+    &gOv023ZexionRName,
 
     0,
 
-    &data_ov023_0208a11c,
+    &gOv023MiWTgRName,
 
     0,
 
-    &data_ov023_0208a124,
+    &gOv023DoHRName,
 
-    &data_ov023_0208a0d4,
+    0,
+
+    &gOv023GoHRName,
+
+    0,
+
+    &gOv023RoHLName,
+
+    &gOv023RoHRName,
 
 };

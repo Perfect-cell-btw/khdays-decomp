@@ -6,4 +6,4 @@
 
 char gOv183PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov183_020d268c[20] = "B_Move";
+char gOv183BMoveName[20] = "B_Move";

@@ -15,10 +15,10 @@
 #include "game/engine.h"
 
 extern int *data_ov002_0207f9fc;
-extern char data_ov002_0207eefc[];
-extern char data_ov002_0207ef14[];
-extern char data_ov002_0207ef28[];
-extern char data_ov002_0207ef3c[];
+extern char gOv002UiTutorialRootTextPath[];
+extern char gOv002UiBtlttrTtrPath[];
+extern char gOv002UiBtlttrTtrPath_2[];
+extern char gOv002UiBtlttrTtrPath_3[];
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *pDst, int nValue, int nSize);
@@ -46,15 +46,15 @@ void *Ov002_OpenTutorialPage(u16 nTutorial)
     hud = (int)NNSi_FndGetCurrentRootHeap();
     data_ov002_0207f9fc = (int *)hud;
     MI_CpuFill8((void *)hud, 0, 0x1b0);
-    Ov002_InitResourceRecord(hud + 0x19c, (int)data_ov002_0207eefc);
+    Ov002_InitResourceRecord(hud + 0x19c, (int)gOv002UiTutorialRootTextPath);
     *(int *)(hud + 0x2c) = (REG_DISPCNT_SUB & 0x1f00) >> 8;
     REG_DISPCNT_SUB = (REG_DISPCNT_SUB & 0xffffe0ff) | 0xc00;
     Ov002_FillMapRows(0x1a, 0, 0, 0x20, 0x20);
     Ov002_SelectEntry(0x1a);
     *(u16 *)hud = nTutorial;
-    *(int *)(hud + 4) = Msg_OpenContainerAndReadHeader(data_ov002_0207ef14, 0xe);
-    *(int *)(hud + 8) = Msg_OpenContainerAndReadHeader(data_ov002_0207ef28, 0xe);
-    Ov002_AppendEntry((int)data_ov002_0207ef3c, (int)Ov002_TakePageIntoSubObject, 0);
+    *(int *)(hud + 4) = Msg_OpenContainerAndReadHeader(gOv002UiBtlttrTtrPath, 0xe);
+    *(int *)(hud + 8) = Msg_OpenContainerAndReadHeader(gOv002UiBtlttrTtrPath_2, 0xe);
+    Ov002_AppendEntry((int)gOv002UiBtlttrTtrPath_3, (int)Ov002_TakePageIntoSubObject, 0);
     Ov002_AppendEntry(0x80000030 |
                         (((*(int *)(hud + 8) + 0x8000) & 0xfffffc) << 7),
                         (int)Ov002_UploadPageToSubBg2Char, 0);

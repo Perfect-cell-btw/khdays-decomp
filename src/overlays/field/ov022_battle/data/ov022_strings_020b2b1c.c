@@ -4,8 +4,8 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov022_020b2b1c[16] = "ba/ma/%s_mo.p.z";
+char gOv022BaMaMoPackPathFmt[16] = "ba/ma/%s_mo.p.z";
 
-char data_ov022_020b2b2c[12] = "ba/ch/mp.z";
+char gOv022BaChMpPath[12] = "ba/ch/mp.z";
 
-char data_ov022_020b2b38[16] = "ba/ma/%s.p.z";
+char gOv022BaMaPackPathFmt[16] = "ba/ma/%s.p.z";

@@ -54,9 +54,9 @@ extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot,
                                int variant, void *parameters);
 extern void Ov022_StepCueTrack(void *block, int size);
-extern struct Ov031Descriptor data_ov031_020b4d24;
-extern struct Ov031Descriptor data_ov031_020b4d34;
-extern struct Ov031Descriptor data_ov031_020b4d48;
+extern struct Ov031Descriptor gOv031AxelLiPackPath;
+extern struct Ov031Descriptor gOv031AxelLiEa4PackPath;
+extern struct Ov031Descriptor gOv031AxelLiEa2PackPath;
 
 u8 Ov031_ActorBuildStep(struct Ov031Runtime *self)
 {
@@ -65,13 +65,13 @@ u8 Ov031_ActorBuildStep(struct Ov031Runtime *self)
     block->flags334 = 0;
     Ov022_ConfigureGridSlotMode(self->slot09, 3);
     block->handle340 = Ov022_AcquireGridSlot(
-        data_ov031_020b4d24.bytes, self->slot09, 0,
+        gOv031AxelLiPackPath.bytes, self->slot09, 0,
         &self->scene20->field04);
     block->handle344 = Ov022_AcquireGridSlot(
-        data_ov031_020b4d34.bytes, self->slot09, 1,
+        gOv031AxelLiEa4PackPath.bytes, self->slot09, 1,
         &self->attach2644->model6c->field28);
     block->handle348 = Ov022_AcquireGridSlot(
-        data_ov031_020b4d48.bytes, self->slot09, 2,
+        gOv031AxelLiEa2PackPath.bytes, self->slot09, 2,
         &self->attach2644->model0c->field28);
     Ov022_StepCueTrack((char *)self + 0xda0, 0xcb);
     return block->flags334 |= 0xf;

@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov106_020b8ab4[16] = "dual3d_update";
+char gOv106Dual3DUpdateName[16] = "dual3d_update";
 
-char data_ov106_020b8ac4[12] = "ev/EV_DP.p2";
+char gOv106EvEvDpPath[12] = "ev/EV_DP.p2";
 
-char data_ov106_020b8ad0[16] = "/UI/hcnt/arc_&";
+char gOv106UiHcntArcPath[16] = "/UI/hcnt/arc_&";
 
-char data_ov106_020b8ae0[16] = "ba/ef/mi_&.p.z";
+char gOv106BaEfMiPackPath[16] = "ba/ef/mi_&.p.z";

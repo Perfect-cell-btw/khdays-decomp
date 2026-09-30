@@ -54,7 +54,7 @@ extern int   strcmp(const char *pA, const char *pB);         /* STD_CompareStrin
 extern void *Msg_OpenContainerAndReadHeader(const char *pszName, int nHeap);         /* open a text container */
 extern void  Ov023_ActorStartMotion(Ov023Actor *pActor, int nTrack);  /* Ov023_ActorStartMotion */
 extern void  Ov023_ResetActorModel(Ov023Actor *pActor);               /* Ov023_ResetActorModel */
-extern char  data_ov023_0208a730[];                                 /* ".p2" */
+extern char  gOv023P2Name_2[];                                 /* ".p2" */
 
 void Ov023_ActorPlayMotion(Ov023Actor *pActor, char *pszMotion, int nFrame, int nTrack, int nBlend)
 {
@@ -79,7 +79,7 @@ void Ov023_ActorPlayMotion(Ov023Actor *pActor, char *pszMotion, int nFrame, int 
     }
     if (pszMotion[0] != 0) {
         strcpy(szName, pszMotion);
-        if (strcmp(szName + (strlen(szName) - 3), data_ov023_0208a730) == 0 && pActor->pMotionText == 0) {
+        if (strcmp(szName + (strlen(szName) - 3), gOv023P2Name_2) == 0 && pActor->pMotionText == 0) {
             pActor->pMotionText = Msg_OpenContainerAndReadHeader(szName, 0xd);
         }
     } else {

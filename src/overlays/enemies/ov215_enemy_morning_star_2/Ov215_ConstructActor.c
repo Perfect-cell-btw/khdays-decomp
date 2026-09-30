@@ -27,8 +27,8 @@ extern void *Ov107_CloneResourceTransform(const SpawnSeed *seed);
 extern void Res_RequestIdPair(int id);
 
 extern KindTable data_ov215_020d2824;
-extern const char data_ov215_020d288c[];
-extern const char data_ov215_020d2898[];
+extern const char gOv215BonePelvisName[];
+extern const char gOv215MoveName[];
 extern const VecFx32 data_02041dc8;
 
 extern void Ov215_syncSubitemPoseToJoint(void);
@@ -98,14 +98,14 @@ void Ov215_ConstructActor(char *self)
         void *anim = Ov107_PackTextureHandle(self, 1);
         Snd_RegisterSeqAndBind(self + 0x388, *(void **)(*(char **)(self + 0x384) + 0x88), anim, 0xc);
         MainBlob_ResetSlotRows(*(void **)(self + 0x384), self + 0x388);
-        *(int *)(self + 0x438) = FindResourceIndexByName(*(void **)(self + 0x384), data_ov215_020d288c);
+        *(int *)(self + 0x438) = FindResourceIndexByName(*(void **)(self + 0x384), gOv215BonePelvisName);
 
         {
             *(void **)(self + 0x420) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0xa));
             *(void **)(*(char **)(self + 0x420) + 0x6c) = (void *)Ov215_initSubitemPathTarget;
             *(char **)(*(char **)(self + 0x420) + 0x84) = self;
             RefreshObjectCallbacks(*(void **)(self + 0x420), 0);
-            *(int *)(self + 0x434) = FindResourceIndexByName(*(void **)(self + 0x420), data_ov215_020d2898);
+            *(int *)(self + 0x434) = FindResourceIndexByName(*(void **)(self + 0x420), gOv215MoveName);
         }
     }
 

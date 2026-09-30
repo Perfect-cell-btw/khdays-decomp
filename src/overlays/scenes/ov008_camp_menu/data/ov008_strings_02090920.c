@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov008_02090920[12] = "mi/mi/trBox";
+char gOv008MiMiTrBoxPath_2[12] = "mi/mi/trBox";

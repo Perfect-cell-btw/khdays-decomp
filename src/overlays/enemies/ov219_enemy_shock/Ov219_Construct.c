@@ -36,7 +36,7 @@ extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int resourceId);
 extern const Kinds data_ov219_020d18a0;
-extern const char data_ov219_020d18cc[];
+extern const char gOv219MoveName[];
 
 void Ov219_Construct(char *self)
 {
@@ -70,7 +70,7 @@ void Ov219_Construct(char *self)
     *(Bounds *)(self + 0x1fc) = bounds;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov219_020d18cc);
+    *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), gOv219MoveName);
     kind = kinds.id;
     for (i = 0; i < 3; i++) {
         item = ((SubitemSlot *)(self + 0x3c4))[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, *kind++));

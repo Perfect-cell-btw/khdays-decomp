@@ -47,8 +47,8 @@ extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot,
                                int variant, void *parameters);
 extern void Ov022_StepCueTrack(void *block, int size);
-extern struct Ov047Descriptor data_ov084_020b99bc;
-extern struct Ov047Descriptor data_ov084_020b99cc;
+extern struct Ov047Descriptor gOv084MickeyLiPackPath;
+extern struct Ov047Descriptor gOv084MickeyLiEa1PackPath;
 
 u8 Ov084_AcquireGridSlots(struct Ov047Runtime *self)
 {
@@ -57,10 +57,10 @@ u8 Ov084_AcquireGridSlots(struct Ov047Runtime *self)
     block->flags334 = 0;
     Ov022_ConfigureGridSlotMode(self->slot09, 2);
     block->handle340 = Ov022_AcquireGridSlot(
-        data_ov084_020b99bc.bytes, self->slot09, 0,
+        gOv084MickeyLiPackPath.bytes, self->slot09, 0,
         &self->scene20->field04);
     block->handle344 = Ov022_AcquireGridSlot(
-        data_ov084_020b99cc.bytes, self->slot09, 1,
+        gOv084MickeyLiEa1PackPath.bytes, self->slot09, 1,
         &self->attach2644->model0c->field28);
     Ov022_StepCueTrack((char *)self + 0xda0, 0xd6);
     return block->flags334 |= 0xb;

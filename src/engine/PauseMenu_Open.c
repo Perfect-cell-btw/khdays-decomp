@@ -35,7 +35,7 @@ typedef struct {
 extern Root0204be08 data_0204be08;
 extern unsigned char gPauseAllowed;
 extern unsigned char data_0204c240;
-extern char data_02042748[];            /* "pause_refresh" */
+extern char gPauseRefreshName[];            /* "pause_refresh" */
 
 extern int GameState_IsFlagSet(int flag);                 /* GameState_IsFlagSet */
 extern void PauseMenu_SetMode(int step);
@@ -130,7 +130,7 @@ void PauseMenu_Open(void)
             SNDi_BroadcastChannelOp(1);
         }
         PlaySound(0, 2);
-        VBlank_UnregisterCallback(1, data_02042748);
+        VBlank_UnregisterCallback(1, gPauseRefreshName);
     } else {
         ctx->openDelay--;
     }

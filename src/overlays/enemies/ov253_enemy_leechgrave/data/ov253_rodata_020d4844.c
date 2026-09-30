@@ -4,79 +4,79 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov253_020d4a40;
-extern int data_ov253_020d4a4c;
-extern int data_ov253_020d4a58;
-extern int data_ov253_020d4a64;
-extern int data_ov253_020d4a70;
-extern int data_ov253_020d4a7c;
-extern int data_ov253_020d4a88;
-extern int data_ov253_020d4a94;
-extern int data_ov253_020d4aa0;
-extern int data_ov253_020d4aac;
-extern int data_ov253_020d4ab8;
-extern int data_ov253_020d4ac8;
-extern int data_ov253_020d4ad8;
-extern int data_ov253_020d4ae8;
-extern int data_ov253_020d4af8;
-extern int data_ov253_020d4b08;
-extern int data_ov253_020d4b18;
-extern int data_ov253_020d4b28;
-extern int data_ov253_020d4b38;
-extern int data_ov253_020d4b48;
+extern int gOv253BoneRToeName;
+extern int gOv253BoneLToeName;
+extern int gOv253BoneRFootName;
+extern int gOv253BoneLFingName;
+extern int gOv253BoneLHandName;
+extern int gOv253BoneRCalfName;
+extern int gOv253BoneRHandName;
+extern int gOv253BoneRFingName;
+extern int gOv253BoneLCalfName;
+extern int gOv253BoneLFootName;
+extern int gOv253BoneLFing1Name;
+extern int gOv253BoneLThighName;
+extern int gOv253BoneRFing1Name;
+extern int gOv253BoneRThighName;
+extern int gOv253BoneLFoot1Name;
+extern int gOv253BoneRFoot1Name;
+extern int gOv253BoneLForearmName;
+extern int gOv253BoneRForearmName;
+extern int gOv253BoneLUpperArmName;
+extern int gOv253BoneRUpperArmName;
 
 void *const data_ov253_020d4844[5] = {
 
-    &data_ov253_020d4ad8,
+    &gOv253BoneRFing1Name,
 
-    &data_ov253_020d4a94,
+    &gOv253BoneRFingName,
 
-    &data_ov253_020d4a88,
+    &gOv253BoneRHandName,
 
-    &data_ov253_020d4b28,
+    &gOv253BoneRForearmName,
 
-    &data_ov253_020d4b48,
+    &gOv253BoneRUpperArmName,
 
 };
 
 void *const data_ov253_020d4858[5] = {
 
-    &data_ov253_020d4b08,
+    &gOv253BoneRFoot1Name,
 
-    &data_ov253_020d4a40,
+    &gOv253BoneRToeName,
 
-    &data_ov253_020d4a58,
+    &gOv253BoneRFootName,
 
-    &data_ov253_020d4a7c,
+    &gOv253BoneRCalfName,
 
-    &data_ov253_020d4ae8,
+    &gOv253BoneRThighName,
 
 };
 
 void *const data_ov253_020d486c[5] = {
 
-    &data_ov253_020d4ab8,
+    &gOv253BoneLFing1Name,
 
-    &data_ov253_020d4a64,
+    &gOv253BoneLFingName,
 
-    &data_ov253_020d4a70,
+    &gOv253BoneLHandName,
 
-    &data_ov253_020d4b18,
+    &gOv253BoneLForearmName,
 
-    &data_ov253_020d4b38,
+    &gOv253BoneLUpperArmName,
 
 };
 
 void *const data_ov253_020d4880[5] = {
 
-    &data_ov253_020d4af8,
+    &gOv253BoneLFoot1Name,
 
-    &data_ov253_020d4a4c,
+    &gOv253BoneLToeName,
 
-    &data_ov253_020d4aac,
+    &gOv253BoneLFootName,
 
-    &data_ov253_020d4aa0,
+    &gOv253BoneLCalfName,
 
-    &data_ov253_020d4ac8,
+    &gOv253BoneLThighName,
 
 };

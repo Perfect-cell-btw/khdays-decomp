@@ -20,17 +20,17 @@ GameClassDescriptor data_02042734 = {
     0,     /* pArena */
 };
 
-char data_02042748[16] = "pause_refresh";
-char data_02042758[24] = "pause/pausebg_&.pbg.z";
-char data_02042770[24] = "pause/pauseicon.NSCR.z";
-char data_02042788[24] = "pause/pausemsg.NSCR.z";
-char data_020427a0[24] = "pause/etcicon.NSCR.z";
+char gPauseRefreshName[16] = "pause_refresh";
+char gPausePausebgPath[24] = "pause/pausebg_&.pbg.z";
+char gPausePauseiconPath[24] = "pause/pauseicon.NSCR.z";
+char gPausePausemsgPath[24] = "pause/pausemsg.NSCR.z";
+char gPauseEtciconPath[24] = "pause/etcicon.NSCR.z";
 
 /* The language suffixes of the pause background, in the game's language-id order. */
-char data_020427b8[4] = "zh";
-char data_020427bc[4] = "en";
-char data_020427c0[4] = "it";
-char data_020427c4[4] = "de";
-char data_020427c8[4] = "fr";
-char data_020427cc[4] = "es";
-char data_020427d0[4] = "ja";
+char gZhName[4] = "zh";
+char gEnName[4] = "en";
+char gItName[4] = "it";
+char gDeName[4] = "de";
+char gFrName[4] = "fr";
+char gEsName[4] = "es";
+char gJaName[4] = "ja";

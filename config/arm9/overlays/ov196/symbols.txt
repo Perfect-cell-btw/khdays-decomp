@@ -57,8 +57,8 @@ data_ov196_020d6810 kind:data(any) addr:0x020d6810
 data_ov196_020d6820 kind:data(any) addr:0x020d6820
 data_ov196_020d6834 kind:data(any) addr:0x020d6834
 gOv196PackPathFmt kind:data(any) addr:0x020d6860
-data_ov196_020d686c kind:data(any) addr:0x020d686c
-data_ov196_020d6878 kind:data(any) addr:0x020d6878
-data_ov196_020d6880 kind:data(any) addr:0x020d6880
-data_ov196_020d6888 kind:data(any) addr:0x020d6888
-data_ov196_020d688c kind:data(any) addr:0x020d688c
+gOv196BoneHeadName kind:data(any) addr:0x020d686c
+gOv196Tag00Name kind:data(any) addr:0x020d6878
+gOv196MoveName kind:data(any) addr:0x020d6880
+gOv196BName kind:data(any) addr:0x020d6888
+gOv196Guru0Name kind:data(any) addr:0x020d688c

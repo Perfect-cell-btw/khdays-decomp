@@ -4,12 +4,12 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov241_020d0ca0[8] = "tag_02";
+char gOv241Tag02Name[8] = "tag_02";
 
-char data_ov241_020d0ca8[8] = "tag_01";
+char gOv241Tag01Name[8] = "tag_01";
 
-char data_ov241_020d0cb0[8] = "tag_00";
+char gOv241Tag00Name[8] = "tag_00";
 
 char gOv241PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov241_020d0cc4[28] = "move";
+char gOv241MoveName[28] = "move";

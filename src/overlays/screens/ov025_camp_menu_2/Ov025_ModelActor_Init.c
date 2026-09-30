@@ -62,11 +62,11 @@ extern void  Ov025_ClearBytes01AndWord160(void *pPanel);                     /* 
 extern void  Ov025_Menu_InitPanelSubObject(u8 *pPanel, void *pResBase, int nSubId, int nSceneId, u32 nCharFlags, int nSlot); /* Ov008_Menu_InitPanelSubObject */
 extern void  Ov025_BuildPanelIdSummary(void *pPanel, void *pSummary, int nSrc); /* build the panel-id summary */
 extern u8    gPartyMembers[];                                       /* kOv022KindRecords: byte 4 = the character kind */
-extern const char data_ov025_020b4c60[];                            /* "ro" */
-extern const char data_ov025_020b4c64[];                            /* "ba/ch/%s/def_hb.p.z" */
-extern const char data_ov025_020b4c78[];                            /* "ba/ch/%s/def.p.z" */
-extern const char data_ov025_020b4c8c[];                            /* "ba/ch/%s/def_h.p.z" */
-extern const char data_ov025_020b3924[];                            /* "ro_w_tg_R" */
+extern const char gOv025RoName[];                            /* "ro" */
+extern const char gOv025BaChDefHbPackPathFmt[];                            /* "ba/ch/%s/def_hb.p.z" */
+extern const char gOv025BaChDefPackPathFmt[];                            /* "ba/ch/%s/def.p.z" */
+extern const char gOv025BaChDefHPackPathFmt[];                            /* "ba/ch/%s/def_h.p.z" */
+extern const char gOv025RoWTgRName[];                            /* "ro_w_tg_R" */
 
 void Ov025_ModelActor_Init(Ov025ModelActor *pActor, Ov025ModelParams *pParams)
 {
@@ -88,19 +88,19 @@ void Ov025_ModelActor_Init(Ov025ModelActor *pActor, Ov025ModelParams *pParams)
     Camera_CommitMatrices(pActor);
     NNS_GfdGetFrmTexVramState(pActor->matrix);
     GFXi_SaveStateTo(pActor->gfxState);
-    pszName = data_ov025_020b4c60;
+    pszName = gOv025RoName;
     switch (pParams->nSceneId) {
     case 0:
-        OS_SPrintf(szPath, data_ov025_020b4c64, pszName, pszName);
+        OS_SPrintf(szPath, gOv025BaChDefHbPackPathFmt, pszName, pszName);
         break;
     case 5:
     case 0x10:
     case 0x11:
     case 0x12:
-        OS_SPrintf(szPath, data_ov025_020b4c78, pszName, pszName);
+        OS_SPrintf(szPath, gOv025BaChDefPackPathFmt, pszName, pszName);
         break;
     default:
-        OS_SPrintf(szPath, data_ov025_020b4c8c, pszName, pszName);
+        OS_SPrintf(szPath, gOv025BaChDefHPackPathFmt, pszName, pszName);
         break;
     }
     RegisterSeqAndInit(pActor->sequence, szPath, 1, 0xe);
@@ -109,7 +109,7 @@ void Ov025_ModelActor_Init(Ov025ModelActor *pActor, Ov025ModelParams *pParams)
     NNS_G3dRenderObjSetCallBack(&pActor->nCtrl058, Ov025_RefreshMatchingMatrices, 0, 6, 3);
     Ov025_LoadCharacterMsgAndWeapon(pActor, pParams->nSceneId, gPartyMembers[4]);
     pDict = pActor->pResource != 0 ? (u8 *)pActor->pResource + 0x40 : 0;
-    pActor->nDictIndex = pDict != 0 ? NNS_G3dGetResDictIdxByName(pDict, data_ov025_020b3924) : -1;
+    pActor->nDictIndex = pDict != 0 ? NNS_G3dGetResDictIdxByName(pDict, gOv025RoWTgRName) : -1;
     pActor->nField144 = 1;
     Ov025_ClearBytes01AndWord160(pActor->panel);
     Ov025_Menu_InitPanelSubObject(pActor->panel, pActor->pModelFile, 0, pParams->nSceneId, pActor->weaponRow[0], 2);

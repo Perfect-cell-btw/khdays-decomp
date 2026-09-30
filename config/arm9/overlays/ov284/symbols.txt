@@ -35,9 +35,9 @@ data_ov284_020cd594 kind:data(any) addr:0x020cd594
 data_ov284_020cd5a4 kind:data(any) addr:0x020cd5a4
 data_ov284_020cd5b4 kind:data(any) addr:0x020cd5b4
 data_ov284_020cd5b8 kind:data(any) addr:0x020cd5b8
-data_ov284_020cd5e0 kind:data(any) addr:0x020cd5e0
-data_ov284_020cd5e8 kind:data(any) addr:0x020cd5e8
-data_ov284_020cd5f0 kind:data(any) addr:0x020cd5f0
-data_ov284_020cd5f8 kind:data(any) addr:0x020cd5f8
+gOv284Bone05Name kind:data(any) addr:0x020cd5e0
+gOv284Bone03Name kind:data(any) addr:0x020cd5e8
+gOv284Bone02Name kind:data(any) addr:0x020cd5f0
+gOv284Bone01Name kind:data(any) addr:0x020cd5f8
 gOv284PackPathFmt kind:data(any) addr:0x020cd600
-data_ov284_020cd60c kind:data(any) addr:0x020cd60c
+gOv284Tag03Name kind:data(any) addr:0x020cd60c

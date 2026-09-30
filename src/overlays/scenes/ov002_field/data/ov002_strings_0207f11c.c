@@ -4,8 +4,8 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207f11c[8] = "%s0%s";
+char gOv0020Fmt[8] = "%s0%s";
 
-char data_ov002_0207f124[4] = "em";
+char gOv002EmName[4] = "em";
 
-char data_ov002_0207f128[12] = "mi/mi/eid.z";
+char gOv002MiMiEidPath[12] = "mi/mi/eid.z";

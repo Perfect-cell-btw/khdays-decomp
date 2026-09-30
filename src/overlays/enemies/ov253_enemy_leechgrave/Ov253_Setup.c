@@ -41,7 +41,7 @@ extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
 extern const IdTable data_ov253_020d4950;
 extern const NameTable data_ov253_020d4940;
-extern const char data_ov253_020d4bc0[];
+extern const char gOv253Tag03Name[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042270;
 
@@ -78,7 +78,7 @@ void Ov253_Setup(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
     *(Callback *)(*(int *)(self + 0x38c) + 0x74) = Ov253_UpdateSegmentDirs;
     *(char **)(*(int *)(self + 0x38c) + 0x84) = self;
-    *(int *)(self + 0x2cc) = (*(int *)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, data_ov253_020d4bc0)) + 0x14;
+    *(int *)(self + 0x2cc) = (*(int *)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x38c), 3, gOv253Tag03Name)) + 0x14;
     NameTable names;
     NameTable *pNames = &names;
     *pNames = data_ov253_020d4940;

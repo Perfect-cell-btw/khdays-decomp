@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-const char data_ov107_020cb638[10] = "Ms/BL.bin";
+const char gOv107MsBlPath[10] = "Ms/BL.bin";
 
-const char data_ov107_020cb642[10] = "Ms/UP.bin";
+const char gOv107MsUpPath[10] = "Ms/UP.bin";

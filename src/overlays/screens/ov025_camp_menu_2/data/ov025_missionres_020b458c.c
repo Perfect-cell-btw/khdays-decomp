@@ -10,10 +10,10 @@ typedef struct Ov008MissionResourceDescriptor {
     int nListKind;             /* 0x08 */
 } Ov008MissionResourceDescriptor;
 
-extern char data_ov025_020b52fc;
+extern char gOv025UiCmMslPath_4;
 
 const Ov008MissionResourceDescriptor data_ov025_020b458c = {
-    &data_ov025_020b52fc,  /* pResourcePath */
+    &gOv025UiCmMslPath_4,  /* pResourcePath */
     0,  /* nSelector */
     5,  /* nListKind */
 };

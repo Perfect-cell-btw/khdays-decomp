@@ -44,7 +44,7 @@ typedef struct Ov011Globals {
 
 extern Ov011Globals data_ov011_0205e960;
 extern const u8 data_ov011_0205e130[];
-extern u8 data_ov011_0205e930[];
+extern u8 gOv011SfVName[];
 
 extern void  NNSi_FndFreeFromDefaultHeap(void *p);
 extern void *Archive_LoadFile(u32 nHandle, int nHeap);
@@ -109,7 +109,7 @@ void Ov011_BuildTitleLayout0(void)
     pBottom->nPhase = 5;
     G2x_SetBlendBrightness_((volatile void *)0x04000050, 4, -0x10);
     G2x_SetBlendBrightness_((volatile void *)0x04001050, 4, -0x10);
-    RegisterNamedTask(1, data_ov011_0205e930, Ov011_VBlankApplyBgScroll);
+    RegisterNamedTask(1, gOv011SfVName, Ov011_VBlankApplyBgScroll);
     pTop->wScrollPhase = 0;
     pBottom->wScrollPhase = 0;
     pTop->nSpeed = 0x5dc0;

@@ -2,7 +2,7 @@
  * (mode 0), rebuild it from the sequence archive: register the archive, take
  * its list, and hand that list to the two sub-builders at +0x3c and +0xe8.
  * The mode is remembered at +0x2c. Returns the module's entry point. */
-extern int data_ov022_020b28e8;
+extern int gOv022BaEfTaPackPath;
 
 extern int *NNSi_FndGetCurrentRootHeap(void);
 extern void *SND_RegisterSeq(void *archive, int id);
@@ -24,7 +24,7 @@ void *Ov022_ResetAndBuildFromSeqArchive(int mode) {
     ctx[0x38 / 4] = 0;
 
     if (mode == 0) {
-        void *seq = SND_RegisterSeq(&data_ov022_020b28e8, 0xf);
+        void *seq = SND_RegisterSeq(&gOv022BaEfTaPackPath, 0xf);
         void *list;
 
         InstallHandlerPairByFlag(0);

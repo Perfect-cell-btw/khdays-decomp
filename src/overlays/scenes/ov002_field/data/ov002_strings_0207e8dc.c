@@ -4,18 +4,18 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207e8dc[24] = "/text/font_eu_08s.nftr";
+char gOv002TextFontEu08SPath[24] = "/text/font_eu_08s.nftr";
 
-char data_ov002_0207e8f4[20] = "UI/btl/&/enemy.s.z";
+char gOv002UiBtlEnemyTextPath[20] = "UI/btl/&/enemy.s.z";
 
-char data_ov002_0207e908[20] = "UI/btl/&/text.s.z";
+char gOv002UiBtlTextPath[20] = "UI/btl/&/text.s.z";
 
-char data_ov002_0207e91c[16] = "/UI/btl/main.p2";
+char gOv002UiBtlMainPath[16] = "/UI/btl/main.p2";
 
-char data_ov002_0207e92c[20] = "/UI/btl/&/main.p2";
+char gOv002UiBtlMainPath_2[20] = "/UI/btl/&/main.p2";
 
-char data_ov002_0207e940[24] = "text/font_eu_08.nftr";
+char gOv002TextFontEu08Path[24] = "text/font_eu_08.nftr";
 
-char data_ov002_0207e958[24] = "text/font_eu_10.nftr";
+char gOv002TextFontEu10Path[24] = "text/font_eu_10.nftr";
 
-char data_ov002_0207e970[24] = "UI/btl/&/su200.NCGR.z";
+char gOv002UiBtlSu200Path[24] = "UI/btl/&/su200.NCGR.z";

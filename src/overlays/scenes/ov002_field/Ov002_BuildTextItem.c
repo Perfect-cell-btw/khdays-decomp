@@ -26,7 +26,7 @@ typedef struct {
 
 extern int data_ov002_0207f614;
 extern const TileSurfaceCfg data_ov002_0207dbe8;
-extern int data_ov002_0207e908;
+extern int gOv002UiBtlTextPath;
 
 extern void Ov002_InitResourceRecord(void *ref, void *src);
 extern int Ov002_GetItemResource(int id);
@@ -42,7 +42,7 @@ void Ov002_BuildTextItem(void) {
     char *ctx = (char *)*(int *)&data_ov002_0207f614;
 
     cfg = data_ov002_0207dbe8;
-    Ov002_InitResourceRecord(&ref, &data_ov002_0207e908);
+    Ov002_InitResourceRecord(&ref, &gOv002UiBtlTextPath);
     cfg.nVramTarget = Ov002_GetItemResource(9);
     cfg.pPixels = ctx + 0x24;
     *(int *)(ctx + 0x4c) = 1;

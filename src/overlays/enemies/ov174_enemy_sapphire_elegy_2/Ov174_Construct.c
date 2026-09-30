@@ -45,8 +45,8 @@ extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
 extern const VecFx32 data_02041dc8;
 extern IdTable data_ov174_020d28d8;
-extern char data_ov174_020d290c[];
-extern char data_ov174_020d2914[];
+extern char gOv174Bone04Name[];
+extern char gOv174BodyName[];
 
 void Ov174_Construct(char *self)
 {
@@ -87,9 +87,9 @@ void Ov174_Construct(char *self)
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov174_OrientPartAlongDirection;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
     *(unsigned char *)(*(int *)(self + 0x384) + 0xad) = 0;
-    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov174_020d290c);
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov174_020d290c);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov174_020d2914);
+    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv174Bone04Name);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv174Bone04Name);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv174BodyName);
     *(int **)(self + 0x39c) = CallocInstance(0x20);
     for (i = 0; i < 4; i++) {
         if (i < 0) {

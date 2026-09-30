@@ -6,6 +6,6 @@
 
 char gOv264PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov264_020cec2c[12] = "Bone_pelvis";
+char gOv264BonePelvisName[12] = "Bone_pelvis";
 
-char data_ov264_020cec38[8] = "move";
+char gOv264MoveName[8] = "move";

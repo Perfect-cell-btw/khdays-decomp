@@ -2,10 +2,10 @@
  * sequences for the owner's palette slot. */
 
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
-extern int data_ov080_020b9b8c;
-extern int data_ov080_020b9ba0;
-extern int data_ov080_020b9bb4;
-extern int data_ov080_020b9bc8;
+extern int gOv080RikuLiE0PackPath;
+extern int gOv080RikuLiE2PackPath;
+extern int gOv080RikuLiE3PackPath;
+extern int gOv080RikuLiE1PackPath;
 
 void Ov080_ResetAndBindFourSlotSets(int self) {
     char *blk = (char *)(self + 0x84 + 0x2c00);
@@ -19,10 +19,10 @@ void Ov080_ResetAndBindFourSlotSets(int self) {
     for (i = 0, p = blk; i < 3; i++, p += 0x110) {
         *(int *)(p + 0x330) = 0;
     }
-    RegisterSeqAndInit((int)(blk + 4), &data_ov080_020b9b8c, 1, *(unsigned char *)(self + 9) + 7);
-    RegisterSeqAndInit((int)(blk + 0x114), &data_ov080_020b9ba0, 1, *(unsigned char *)(self + 9) + 7);
-    RegisterSeqAndInit((int)(blk + 0x224), &data_ov080_020b9bb4, 1, *(unsigned char *)(self + 9) + 7);
+    RegisterSeqAndInit((int)(blk + 4), &gOv080RikuLiE0PackPath, 1, *(unsigned char *)(self + 9) + 7);
+    RegisterSeqAndInit((int)(blk + 0x114), &gOv080RikuLiE2PackPath, 1, *(unsigned char *)(self + 9) + 7);
+    RegisterSeqAndInit((int)(blk + 0x224), &gOv080RikuLiE3PackPath, 1, *(unsigned char *)(self + 9) + 7);
     for (j = 0, q = blk + 0x334; j < 3; j++, q += 0x110) {
-        RegisterSeqAndInit((int)q, &data_ov080_020b9bc8, 1, *(unsigned char *)(self + 9) + 7);
+        RegisterSeqAndInit((int)q, &gOv080RikuLiE1PackPath, 1, *(unsigned char *)(self + 9) + 7);
     }
 }

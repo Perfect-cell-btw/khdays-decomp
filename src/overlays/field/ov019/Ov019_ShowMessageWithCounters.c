@@ -12,7 +12,7 @@ extern void Ov002_SetSeatFlag(int a, int b);
 extern void Ov002_TryBeginPanelRequest(void *s, int nValue);
 
 extern unsigned char data_ov019_0207fd40[];
-extern char data_ov019_0207fd78[];
+extern char gOv019IntFmt[];
 
 struct namelist {
     unsigned short *names;
@@ -83,7 +83,7 @@ int Ov019_ShowMessageWithCounters(int param_1, unsigned short *param_2, int para
                 Utf8_ToUcs2(&header[0], scratch);
             }
 
-            OS_SPrintf(fmtbuf, data_ov019_0207fd78, val);
+            OS_SPrintf(fmtbuf, gOv019IntFmt, val);
             Utf8_ToUcs2(fmtbuf, found);
 
             i = pos;
@@ -134,7 +134,7 @@ int Ov019_ShowMessageWithCounters(int param_1, unsigned short *param_2, int para
         val = GameState_GetField(0x1400, 10);
         Utf8_ToUcs2(&header[4], scratch);
 
-        OS_SPrintf(fmtbuf, data_ov019_0207fd78, val);
+        OS_SPrintf(fmtbuf, gOv019IntFmt, val);
         Utf8_ToUcs2(fmtbuf, found);
 
         {

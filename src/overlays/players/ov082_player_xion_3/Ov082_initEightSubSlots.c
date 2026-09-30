@@ -2,13 +2,13 @@
  * sequence for the owner's palette slot and records its index in state 0. */
 
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
-extern int data_ov082_020ba4a4[];
+extern int gOv082RoxasLiE0PackPath[];
 void Ov082_initEightSubSlots(int this) {
     int obj = *(int *)(this + 0xdb4);
     int i = 0;
     int base = this + 0x234;
     do {
-        RegisterSeqAndInit(base, data_ov082_020ba4a4, 1, ((unsigned char *)obj)[9] + 7);
+        RegisterSeqAndInit(base, gOv082RoxasLiE0PackPath, 1, ((unsigned char *)obj)[9] + 7);
         *(unsigned char *)(base + 0x12d) = i;
         *(unsigned char *)(base + 0x12c) = 0;
         base += 0x170;

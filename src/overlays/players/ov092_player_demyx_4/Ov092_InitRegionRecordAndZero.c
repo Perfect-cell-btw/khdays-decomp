@@ -2,13 +2,13 @@
  * palette slot. */
 
 extern void RegisterSeqAndInit(int a, int b, int c, int d);
-extern int data_ov092_020bc4a4;
+extern int gOv092DemyxEfWaPackPath;
 
 void Ov092_InitRegionRecordAndZero(int this_) {
     char *a = (char *)(this_ + 0x2000);
     char *b = (char *)(this_ + 0x2c80);
     *(int *)(a + 0xc80) = 0;
-    RegisterSeqAndInit((int)(b + 0xc), (int)&data_ov092_020bc4a4, 1, *(unsigned char *)(this_ + 9) + 7);
+    RegisterSeqAndInit((int)(b + 0xc), (int)&gOv092DemyxEfWaPackPath, 1, *(unsigned char *)(this_ + 9) + 7);
     *(int *)(b + 4) = 0;
     *(int *)(b + 8) = 0;
 }

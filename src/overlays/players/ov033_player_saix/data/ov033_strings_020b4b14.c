@@ -4,12 +4,12 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov033_020b4b14[20] = "ba/ch/sa/def.p.z";
+char gOv033SaixDefPackPath[20] = "ba/ch/sa/def.p.z";
 
-char data_ov033_020b4b28[20] = "ba/ch/sa/def_h.p.z";
+char gOv033SaixDefHPackPath[20] = "ba/ch/sa/def_h.p.z";
 
-char data_ov033_020b4b3c[16] = "ba/ch/sa/li.p.z";
+char gOv033SaixLiPackPath[16] = "ba/ch/sa/li.p.z";
 
-char data_ov033_020b4b4c[20] = "ba/ch/sa/li_e1.p.z";
+char gOv033SaixLiE1PackPath[20] = "ba/ch/sa/li_e1.p.z";
 
-char data_ov033_020b4b60[32] = "ba/ch/sa/li_e0.p.z";
+char gOv033SaixLiE0PackPath[32] = "ba/ch/sa/li_e0.p.z";

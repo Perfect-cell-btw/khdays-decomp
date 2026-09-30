@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov255_020d2c28[8] = "B50B_m";
+char gOv255B50BMName[8] = "B50B_m";
 
-char data_ov255_020d2c30[16] = "Ms/XionShare.p";
+char gOv255MsXionSharePackPath_2[16] = "Ms/XionShare.p";

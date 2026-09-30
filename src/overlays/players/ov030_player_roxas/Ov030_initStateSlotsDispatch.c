@@ -6,9 +6,9 @@ struct s5 { int a, b, c, d, e; };
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern void Ov030_initEightSubSlots(int a);
-extern int data_ov030_020b59ac[];
-extern int data_ov030_020b59c0[];
-extern int data_ov030_020b59d4[];
+extern int gOv030RoxasLiE1PackPath[];
+extern int gOv030RoxasLiE2PackPath[];
+extern int gOv030XionLiE0PackPath[];
 extern struct s5 data_ov030_020b58c4;
 void Ov030_initStateSlotsDispatch(int p1, int state) {
     struct s5 buf;
@@ -16,11 +16,11 @@ void Ov030_initStateSlotsDispatch(int p1, int state) {
     *(int *)(state + 0xc) = 0;
     *(int *)(state + 0x14) = 0;
     *(int *)(state + 0x230) = 0;
-    RegisterSeqAndInit(state + 0x18, data_ov030_020b59ac, 1, *(unsigned char *)(p1 + 9) + 7);
+    RegisterSeqAndInit(state + 0x18, gOv030RoxasLiE1PackPath, 1, *(unsigned char *)(p1 + 9) + 7);
     if (*(int *)(p1 + 0xc) == 0)
-        RegisterSeqAndInit(state + 0x128, data_ov030_020b59c0, 1, *(unsigned char *)(p1 + 9) + 7);
+        RegisterSeqAndInit(state + 0x128, gOv030RoxasLiE2PackPath, 1, *(unsigned char *)(p1 + 9) + 7);
     else
-        RegisterSeqAndInit(state + 0x128, data_ov030_020b59d4, 1, *(unsigned char *)(p1 + 9) + 7);
+        RegisterSeqAndInit(state + 0x128, gOv030XionLiE0PackPath, 1, *(unsigned char *)(p1 + 9) + 7);
     buf = data_ov030_020b58c4;
     buf.b = 4;
     Ov022_AllocateSlotWithClass(p1 + 0x2648, *(unsigned char *)(p1 + 9), 5, &buf);

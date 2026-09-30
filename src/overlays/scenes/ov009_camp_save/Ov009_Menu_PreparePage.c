@@ -15,7 +15,7 @@ typedef struct Ov009MenuContext {
 } Ov009MenuContext;
 
 extern Ov009MenuContext *data_ov009_020563e4[];
-extern const char data_ov009_02056294[];
+extern const char gOv009CampmenumngrName[];
 
 #define OV009_CONTEXT (data_ov009_020563e4[1])
 #define OV009_CONTEXT_VOLATILE \
@@ -70,7 +70,7 @@ void Ov009_Menu_PreparePage(void)
 
     if (OV009_CONTEXT->updateTaskPending != 0) {
         RegisterNamedTask(
-            1, data_ov009_02056294, Ov009_Menu_VBlankTick);
+            1, gOv009CampmenumngrName, Ov009_Menu_VBlankTick);
         OV009_CONTEXT->updateTaskPending = 0;
     }
 }

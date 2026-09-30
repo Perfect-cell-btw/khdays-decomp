@@ -48,7 +48,7 @@ extern void Stream_DecodeIntoStagingBuffer(void *stream, int id, void *path, voi
 extern void Ov024_MobiClip_UpdatePlayback(void);
 
 extern void *data_ov024_02093a20[];
-extern char data_ov024_02093958[];
+extern char gOv024TextFontEu10AllPath[];
 extern u16 data_ov024_02093918[];
 extern void *data_ov024_02093974[];
 
@@ -74,7 +74,7 @@ void *Ov024_MobiClip_OpenPlayer(struct MobiClipOpenArgs *args)
     *(int *)(player + 0x8bd8) = 0;
     *(u8 *)(player + 0x8be0) = 0;
     MI_CpuFill8(player + 0x8598, 0, 0x5a4);
-    Font_LoadUTF16(player + 0x8b40, data_ov024_02093958);
+    Font_LoadUTF16(player + 0x8b40, gOv024TextFontEu10AllPath);
     GX_LoadBGPltt(data_ov024_02093918, 0x1a0, 0x40);
     GXS_LoadBGPltt(data_ov024_02093918, 0x1a0, 0x40);
     *(char **)(player + 0x85a4) = player + 0x8b4c;

@@ -20,9 +20,9 @@ typedef struct LayoutTemplate {
     int aParam[2];          /* 0x08 */
 } LayoutTemplate;
 
-extern char data_ov000_0205aa48;  /* "UI/cm/sav_o_000.pobj.z" */
+extern char gOv000UiCmSavO000Path;  /* "UI/cm/sav_o_000.pobj.z" */
 
-const LayoutTemplate data_ov000_0205a6d0 = { &data_ov000_0205aa48, 2, { 0, 0 } };
+const LayoutTemplate data_ov000_0205a6d0 = { &gOv000UiCmSavO000Path, 2, { 0, 0 } };
 
 extern void Ov000_ResourceEntryCallback(void);
 extern void Ov000_ResourceNodeCallback(void);

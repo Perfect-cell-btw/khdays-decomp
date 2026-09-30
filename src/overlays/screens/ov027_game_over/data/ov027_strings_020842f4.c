@@ -4,12 +4,12 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov027_020842f4[16] = "UI/sg_bg.pbg.z";
+char gOv027UiSgBgPath[16] = "UI/sg_bg.pbg.z";
 
-char data_ov027_02084304[20] = "UI/sg_icon.NSCR.z";
+char gOv027UiSgIconPath[20] = "UI/sg_icon.NSCR.z";
 
-char data_ov027_02084318[16] = "/gameover/data";
+char gOv027GameoverDataPath[16] = "/gameover/data";
 
-char data_ov027_02084328[28] = "gameover/gameoverbg_&.pbg.z";
+char gOv027GameoverGameoverbgPath[28] = "gameover/gameoverbg_&.pbg.z";
 
-char data_ov027_02084344[28] = "/text/font_eu_10all.nftr";
+char gOv027TextFontEu10AllPath[28] = "/text/font_eu_10all.nftr";

@@ -40,7 +40,7 @@ extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern void Res_RequestIdPair(int id);
 extern struct Names data_ov242_020d48c4;
-extern const char data_ov242_020d4904[];
+extern const char gOv242MoveName[];
 
 void Ov242_Construct(char *self)
 {
@@ -75,7 +75,7 @@ void Ov242_Construct(char *self)
     *(char **)(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x4c) = self;
     NNS_G3dRenderObjSetCallBack(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, Ov242_JointCallback, 0, 6, 3);
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, 0x200, 0);
-    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov242_020d4904);
+    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), gOv242MoveName);
     for (i = 0; i < 3; i++) {
         ((int *)self)[0xe3 + i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 2));
         Ov107_EnqueueValue((int)self, ((int *)self)[0xe3 + i]);

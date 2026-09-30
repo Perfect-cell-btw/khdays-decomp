@@ -46,7 +46,7 @@ typedef struct Ov008MenuContext {
     Ov008GridCell aDragCell[DRAG_CELLS]; /* 0x184c */
 } Ov008MenuContext;
 
-extern char data_ov008_02090408[];                                        /* "ui/pnl/3d_&.pak.z" */
+extern char gOv008UiPnl3DPackPath[];                                        /* "ui/pnl/3d_&.pak.z" */
 extern void  NNS_GfdInitFrmTexVramManager(int a, int b);
 extern void  NNS_GfdInitFrmPlttVramManager(int a, int b);
 extern void *Archive_LoadFile(const char *pPath, int nHeap);                 /* Archive_LoadFile */
@@ -75,7 +75,7 @@ void Ov008_InitGridMenuTextures(Ov008MenuContext *pCtx)
 
     NNS_GfdInitFrmTexVramManager(1, 1);
     NNS_GfdInitFrmPlttVramManager(0x8000, 1);
-    pCtx->pIconArchive = Archive_LoadFile(data_ov008_02090408, 0xe);
+    pCtx->pIconArchive = Archive_LoadFile(gOv008UiPnl3DPackPath, 0xe);
     Obj_RelocateSections(pCtx->pIconArchive, 0);
     InstallHandlerPairByFlag(0);
     for (i = 0; i < TEXTURE_COUNT; i++) {

@@ -87,11 +87,11 @@ data_ov221_020d4dc8 kind:data(any) addr:0x020d4dc8
 data_ov221_020d4dcc kind:data(any) addr:0x020d4dcc
 data_ov221_020d4ddc kind:data(any) addr:0x020d4ddc
 gOv221PackPathFmt kind:data(any) addr:0x020d4e00
-data_ov221_020d4e0c kind:data(any) addr:0x020d4e0c
-data_ov221_020d4e18 kind:data(any) addr:0x020d4e18
-data_ov221_020d4e28 kind:data(any) addr:0x020d4e28
-data_ov221_020d4e34 kind:data(any) addr:0x020d4e34
-data_ov221_020d4e40 kind:data(any) addr:0x020d4e40
-data_ov221_020d4e4c kind:data(any) addr:0x020d4e4c
+gOv221BoneHeadName kind:data(any) addr:0x020d4e0c
+gOv221BoneTail03Name kind:data(any) addr:0x020d4e18
+gOv221BonePelvisName kind:data(any) addr:0x020d4e28
+gOv221BoneLHandName kind:data(any) addr:0x020d4e34
+gOv221BoneRHandName kind:data(any) addr:0x020d4e40
+gOv221MoveName kind:data(any) addr:0x020d4e4c
 data_ov221_020d4e54 kind:data(byte[4]) addr:0x020d4e54
 data_ov221_020d4e58 kind:data(any) addr:0x020d4e58

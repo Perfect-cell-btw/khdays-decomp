@@ -48,11 +48,11 @@ struct Ov020Placement {
     VecFx32 vOrigin08;                  /* 0x08 */
 };
 
-extern char data_ov020_020800d8[];
-extern char data_ov020_020800e4[];
-extern char data_ov020_020800f0[];
-extern char data_ov020_020800fc[];
-extern char data_ov020_02080100[];
+extern char gOv020ColWallName[];
+extern char gOv020ColWall10Name[];
+extern char gOv020ColWall09Name[];
+extern char gOv020UpName[];
+extern char gOv020DownName[];
 
 extern void Ov002_RebindGroupAnimations(const char *name, int a, int b, void *handle);
 extern void MIi_CpuClearFast(int value, void *dst, unsigned int size);
@@ -75,7 +75,7 @@ void Ov020_OpenWallView(struct Ov020WallQuery *query, void *handle,
     int i;
     struct Ov020WallNode *node;
 
-    Ov002_RebindGroupAnimations(data_ov020_020800d8, 8, 1, handle);
+    Ov002_RebindGroupAnimations(gOv020ColWallName, 8, 1, handle);
     MIi_CpuClearFast(0, query, 0x20);
 
     kind = Ov002_GetSlotTableByte(handle);
@@ -94,7 +94,7 @@ void Ov020_OpenWallView(struct Ov020WallQuery *query, void *handle,
     }
 
     group = GetTrackEntryBase(room->bTrackId0d);
-    mesh = query->bUpperWall10 ? data_ov020_020800e4 : data_ov020_020800f0;
+    mesh = query->bUpperWall10 ? gOv020ColWall10Name : gOv020ColWall09Name;
 
     i = 0;
     if ((int)group->wCount > 0) {
@@ -107,8 +107,8 @@ void Ov020_OpenWallView(struct Ov020WallQuery *query, void *handle,
     }
 
     placement = EntityMgr_FindCollEntry(room->bTrackId0d,
-                              query->bUpperWall10 ? data_ov020_020800fc
-                                                : data_ov020_02080100);
+                              query->bUpperWall10 ? gOv020UpName
+                                                : gOv020DownName);
     query->vOrigin = placement->vOrigin08;
     query->vOrigin.y = 0;
     query->nScale0c = 0x4ccd;

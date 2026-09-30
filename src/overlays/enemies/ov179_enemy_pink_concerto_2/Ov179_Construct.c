@@ -46,8 +46,8 @@ extern void Res_RequestIdPair(int resourceId);
 extern int *Ov179_AllocLinkChild390(char *self);
 extern const VecFx32 data_02041dc8;
 extern IdTable data_ov179_020d48d0;
-extern char data_ov179_020d490c[];
-extern char data_ov179_020d4914[];
+extern char gOv179Bone04Name[];
+extern char gOv179BodyName[];
 
 void Ov179_Construct(char *self)
 {
@@ -88,9 +88,9 @@ void Ov179_Construct(char *self)
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov179_OrientPartAlongDirection;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
     *(unsigned char *)(*(int *)(self + 0x384) + 0xad) = 0;
-    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov179_020d490c);
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov179_020d490c);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov179_020d4914);
+    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv179Bone04Name);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv179Bone04Name);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv179BodyName);
     *(int **)(self + 0x39c) = CallocInstance(0x30);
     for (i = 0; i < 6; i++) {
         if (i < 0) {

@@ -42,5 +42,5 @@ Ov240_AiEnterWalkB kind:function(arm,size=0x40) addr:0x020cfa2c
 Ov240_stateFixedAngleMatrix_2 kind:function(arm,size=0xf4) addr:0x020cfa6c
 data_ov240_020cfb60 kind:data(any) addr:0x020cfb60
 gOv240PackPathFmt kind:data(any) addr:0x020cfb80
-data_ov240_020cfb8c kind:data(any) addr:0x020cfb8c
-data_ov240_020cfb9c kind:data(any) addr:0x020cfb9c
+gOv240MsNbSharePackPath kind:data(any) addr:0x020cfb8c
+gOv240MoveName kind:data(any) addr:0x020cfb9c

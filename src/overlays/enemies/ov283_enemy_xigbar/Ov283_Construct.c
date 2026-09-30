@@ -37,8 +37,8 @@ extern int Ov283_New(char *self);
 extern void Ov107_EnqueueValue(char *self, int item);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable6 data_ov283_020cfb4c;
-extern char data_ov283_020cfbec[];
-extern char data_ov283_020cfbf4[];
+extern char gOv283XigHLName[];
+extern char gOv283XigHRName[];
 
 void Ov283_Construct(char *self)
 {
@@ -70,8 +70,8 @@ void Ov283_Construct(char *self)
     *(Bounds *)(self + 0x1fc) = bounds;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov283_020cfbec);
-    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov283_020cfbf4);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv283XigHLName);
+    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv283XigHRName);
     *(int *)(self + 0x388) = (int)List_InsertSorted(self + 0x22c, 0x10, 100);
     **(int **)(self + 0x388) = Ov107_CloneResourceTransform((Placement *)(self + 0x64));
     slot = List_InsertSorted(self + 0x144, 4, 100);

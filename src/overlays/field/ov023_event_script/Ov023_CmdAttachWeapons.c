@@ -58,8 +58,8 @@ extern void  Ov023_ActorPlayMotion(Ov023Actor *pActor, char *pszMotion, int nMot
 extern const Ov023WeaponResTable data_ov023_02089e10;               /* weapon resources */
 extern const Ov023WeaponMotionTable data_ov023_02089eb0;            /* weapon motions */
 extern const VecFx32 data_02041dc8;                                 /* the zero vector */
-extern const u8 data_ov023_0208a5f4[];                              /* "mi/mo/mu.p2" */
-extern const u8 data_ov023_0208a600[];                              /* "mi/mo/win_we.p2" */
+extern const u8 gOv023MiMoMuPath[];                              /* "mi/mo/mu.p2" */
+extern const u8 gOv023MiMoWinWePath[];                              /* "mi/mo/win_we.p2" */
 
 int Ov023_CmdAttachWeapons(Ov023ScriptCtx *pCtx, u8 *pOperand)
 {
@@ -120,7 +120,7 @@ int Ov023_CmdAttachWeapons(Ov023ScriptCtx *pCtx, u8 *pOperand)
                 const u8 *pSrc;
                 u8 *pDst;
 
-                pSrc = data_ov023_0208a5f4;
+                pSrc = gOv023MiMoMuPath;
                 pDst = (u8 *)szMotion;
                 nRemaining = 12;
                 do {
@@ -136,7 +136,7 @@ int Ov023_CmdAttachWeapons(Ov023ScriptCtx *pCtx, u8 *pOperand)
                 const u8 *pSrc;
                 u8 *pDst;
 
-                pSrc = data_ov023_0208a600;
+                pSrc = gOv023MiMoWinWePath;
                 pDst = (u8 *)szMotion;
                 nRemaining = 16;
                 do {

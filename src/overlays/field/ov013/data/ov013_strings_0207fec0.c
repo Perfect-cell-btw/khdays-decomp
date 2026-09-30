@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov013_0207fec0[8] = "col_btl";
+char gOv013ColBtlName[8] = "col_btl";

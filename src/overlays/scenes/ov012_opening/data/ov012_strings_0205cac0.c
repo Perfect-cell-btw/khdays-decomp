@@ -4,8 +4,8 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov012_0205cac0[28] = "/text/font_eu_10all.nftr";
+char gOv012TextFontEu10AllPath[28] = "/text/font_eu_10all.nftr";
 
-char data_ov012_0205cadc[12] = "/op/op.p2";
+char gOv012OpOpPath[12] = "/op/op.p2";
 
-char data_ov012_0205cae8[12] = "op/scr.z";
+char gOv012OpScrPath[12] = "op/scr.z";

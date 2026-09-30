@@ -2,7 +2,7 @@
 #include "game/engine.h"
 
 extern char *data_ov008_02090fac;
-extern char data_ov008_02090dd8;
+extern char gOv008MiCh70Path;
 extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 
 /* Resets the preview model: default camera distances, no tint, and the idle pose. */
@@ -14,7 +14,7 @@ void Ov008_ResetPreviewModel(void) {
     *(int *)(obj + 0x24) = 0x1100;
     *(int *)(obj + 0x28) = 0x1800;
     *(int *)(obj + 0x140) = 0;
-    RegisterSeqAndInit(obj + 0x38, &data_ov008_02090dd8, 1, 0xf);
+    RegisterSeqAndInit(obj + 0x38, &gOv008MiCh70Path, 1, 0xf);
     zero.z = 0;
     zero.y = 0;
     zero.x = 0;

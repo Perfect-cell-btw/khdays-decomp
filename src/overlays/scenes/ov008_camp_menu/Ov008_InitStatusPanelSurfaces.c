@@ -49,7 +49,7 @@ extern const TileSurfaceCfg data_ov008_0208f700;
 extern const TileSurfaceCfg data_ov008_0208f728;
 extern const TileSurfaceCfg data_ov008_0208f750;
 extern const TileSurfaceCfg data_ov008_0208f688;
-extern const char data_ov008_020907f0[];                                  /* "UI/cm/str/status_&.s.z" */
+extern const char gOv008UiCmStrStatusTextPath_2[];                                  /* "UI/cm/str/status_&.s.z" */
 extern int   Ov008_ResetEntry(int nSlot);                              /* Ov008_ResetEntry: slot handle */
 extern void *Ov008_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
 extern void  Ov008_MarkSlotUsed(int nSlot);                              /* Ov008_MarkSlotUsed */
@@ -93,6 +93,6 @@ void Ov008_InitStatusPanelSurfaces(Ov008StatusPanel *pPanel)
     TileSurface_InitAndUpload8bpp(&pPanel->aSurface[5], &cfg5);
     pPanel->aSurface[0].bDirty = 5;
     Ov008_MarkSlotUsed(VRAM_SLOT_MAIN);
-    Ov008_VarTable_Load(pPanel->textLoader, data_ov008_020907f0);
+    Ov008_VarTable_Load(pPanel->textLoader, gOv008UiCmStrStatusTextPath_2);
 }
 #pragma pop

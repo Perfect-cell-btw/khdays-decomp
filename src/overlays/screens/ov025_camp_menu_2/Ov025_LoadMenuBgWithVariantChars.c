@@ -1,11 +1,11 @@
 /* Ov025_LoadMenuBgWithVariantChars -- Ov008_LoadMenuBgWithVariantChars (300 B, 19 relocs).
- * Loads a menu background from a fixed archive descriptor (data_ov025_020b4e70, passed to
+ * Loads a menu background from a fixed archive descriptor (gOv025UiCmSavB000Path, passed to
  * Archive_LoadFile by address), uploads its BG palette, then selects the BG3 character source:
  * if Ov025_PackHandleTag(2) is non-zero it unpacks that alternate subfile, resolves its
  * character block (GetResourceSubBlock_CHAR2), flushes the data cache and uploads it; otherwise it uses
  * the cell's own character block. After freeing the temp resource it programs the BG2 scroll
  * registers (a raw write of 0x01e600e3 to 0x04000018 -- both operands are pool literals, no
- * relocation), attaches a second descriptor (data_ov025_020b4e88) to the cell-list context via
+ * relocation), attaches a second descriptor (gOv025UiCmSavePath) to the cell-list context via
  * Ov025_LoadBlockDispatchThreeThenFree, and registers cells for tags {0,1}. Resource-cell / character-block
  * layout matches Ov008_SetupMenuBgCells; Res_LoadSpriteSet takes five args. */
 
@@ -21,8 +21,8 @@ typedef struct Ov008ResourceCell {
     Ov008PaletteBlock   *palette;
 } Ov008ResourceCell;
 
-extern u8 data_ov025_020b4e70[];
-extern u8 data_ov025_020b4e88[];
+extern u8 gOv025UiCmSavB000Path[];
+extern u8 gOv025UiCmSavePath[];
 extern void *Ov025_GetCtxBlock9500(void);
 extern u32   Ov025_PackHandleTag(int subfile);
 extern void *Archive_LoadFile(u32 handle, int heapId);
@@ -45,7 +45,7 @@ void Ov025_LoadMenuBgWithVariantChars(void)
     Ov008CharacterBlock *altBlock;
 
     ctx = Ov025_GetCtxBlock9500();
-    resource = Archive_LoadFile((u32)data_ov025_020b4e70, 0xe);
+    resource = Archive_LoadFile((u32)gOv025UiCmSavB000Path, 0xe);
     Res_LoadSpriteSet(&cell, resource, 0, 0, 0);
     GX_LoadBGPltt(cell.palette->data, 0, cell.palette->size);
 
@@ -66,7 +66,7 @@ void Ov025_LoadMenuBgWithVariantChars(void)
     }
 
     *(volatile u32 *)0x04000018 = 0x01e600e3;
-    Ov025_LoadBlockDispatchThreeThenFree(ctx, data_ov025_020b4e88);
+    Ov025_LoadBlockDispatchThreeThenFree(ctx, gOv025UiCmSavePath);
     Ov025_TagTracker_InvokeCallback(ctx, Ov025_FindEntryByTag(ctx, 0));
     Ov025_TagTracker_InvokeCallback(ctx, Ov025_FindEntryByTag(ctx, 1));
 }

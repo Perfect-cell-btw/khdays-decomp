@@ -93,9 +93,9 @@ data_ov211_020d6562 kind:data(any) addr:0x020d6562
 data_ov211_020d6570 kind:data(any) addr:0x020d6570
 data_ov211_020d657e kind:data(any) addr:0x020d657e
 gOv211PackPathFmt kind:data(any) addr:0x020d65a0
-data_ov211_020d65ac kind:data(any) addr:0x020d65ac
-data_ov211_020d65b8 kind:data(any) addr:0x020d65b8
-data_ov211_020d65c0 kind:data(any) addr:0x020d65c0
-data_ov211_020d65cc kind:data(any) addr:0x020d65cc
-data_ov211_020d65dc kind:data(any) addr:0x020d65dc
-data_ov211_020d65ec kind:data(any) addr:0x020d65ec
+gOv211Bip01HeadName kind:data(any) addr:0x020d65ac
+gOv211Bip01Name kind:data(any) addr:0x020d65b8
+gOv211NShadowName kind:data(any) addr:0x020d65c0
+gOv211Bip01LHandName kind:data(any) addr:0x020d65cc
+gOv211Bip01RHandName kind:data(any) addr:0x020d65dc
+gOv211NsMoveName kind:data(any) addr:0x020d65ec

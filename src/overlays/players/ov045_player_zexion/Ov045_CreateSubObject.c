@@ -41,7 +41,7 @@ extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc,
                                 struct PanelSubCfg *pCfg, int a, int b);
 extern void Ov045_StepParts(void);
 extern void Ov045_ReleaseSlotHandles(void);
-extern int data_ov045_020b4c08;
+extern int gOv045ZexionLiE0PackPath;
 
 void Ov045_CreateSubObject(char *self)
 {
@@ -86,7 +86,7 @@ void Ov045_CreateSubObject(char *self)
     cfg[1].field4c = 10;
 
     Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self,
-                        &data_ov045_020b4c08, cfg, 2, 10);
+                        &gOv045ZexionLiE0PackPath, cfg, 2, 10);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x20) = (void *)&Ov045_StepParts;
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x24) = (void *)&Ov045_ReleaseSlotHandles;
 }

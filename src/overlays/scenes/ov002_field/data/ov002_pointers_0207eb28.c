@@ -4,10 +4,10 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov002_0207eb40;
+extern int gOv002UiBtlSu200Path_2;
 
 void *data_ov002_0207eb28[1] = {
 
-    &data_ov002_0207eb40,
+    &gOv002UiBtlSu200Path_2,
 
 };

@@ -48,7 +48,7 @@ typedef struct MissionMenuContext {
 extern MissionMenuConfig data_ov008_0208fc8c;
 extern MissionMenuContext *data_ov008_02090fa0;
 extern u8 data_ov008_02090d1c;                                          /* scene object class */
-extern const char data_ov008_02090cf8[];                                 /* "UI/mlt/mlt_%s.z" */
+extern const char gOv008UiMltMltTextPath[];                                 /* "UI/mlt/mlt_%s.z" */
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern int   GameState_IsFlagSet(int nFlag);                                   /* GameState_IsFlagSet */
@@ -99,6 +99,6 @@ MissionState Ov008_MissionMenuCreate(int bHost)
         pNext = Ov008_MissionMenuTick;
     }
     Ov008_FreeResourceRecordBuffer(data_ov008_02090fa0->textLoader);
-    Ov008_VarTable_Load(data_ov008_02090fa0->textLoader, data_ov008_02090cf8);
+    Ov008_VarTable_Load(data_ov008_02090fa0->textLoader, gOv008UiMltMltTextPath);
     return pNext;
 }

@@ -58,7 +58,7 @@ extern int   func_020200b4(char *pszNumber);                        /* parse a n
 extern int   FX_Mul(int nA, int nB);                           /* FX_Mul */
 extern void  Ov023_PlaceActorModel(Ov023Actor *pActor, char *pszAnchor, VecFx32 *pPos, int nMode, int nActor); /* Ov023_PlaceActorModel */
 extern const short data_0203d210[];                                 /* FX_SinCosTable_: sin, cos pairs */
-extern char  data_ov023_0208a5cc[];                                 /* "AnchorPos" */
+extern char  gOv023AnchorPosName[];                                 /* "AnchorPos" */
 
 int Ov023_CmdPlaceActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 {
@@ -90,7 +90,7 @@ int Ov023_CmdPlaceActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
         }
     } else {
         pszAnchor = ByteCode_ResolveOperand(pCtx, pOperand + 2);
-        if (strncmp(pszAnchor, data_ov023_0208a5cc, 9) == 0) {
+        if (strncmp(pszAnchor, gOv023AnchorPosName, 9) == 0) {
             pszAnchor += 9;
             nAnchor = func_020200b4(pszAnchor);
             nSin = data_0203d210[(pCtx->pEvent->aAnchorAngle[nAnchor] >> 4) * 2];

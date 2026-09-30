@@ -64,5 +64,5 @@ data_ov200_020d182c kind:data(any) addr:0x020d182c
 data_ov200_020d1840 kind:data(any) addr:0x020d1840
 data_ov200_020d1844 kind:data(any) addr:0x020d1844
 gOv200PackPathFmt kind:data(any) addr:0x020d1860
-data_ov200_020d186c kind:data(any) addr:0x020d186c
-data_ov200_020d1874 kind:data(any) addr:0x020d1874
+gOv200TagLName kind:data(any) addr:0x020d186c
+gOv200TagRName kind:data(any) addr:0x020d1874

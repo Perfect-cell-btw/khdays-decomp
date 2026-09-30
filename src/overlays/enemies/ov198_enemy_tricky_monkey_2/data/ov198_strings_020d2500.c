@@ -6,6 +6,6 @@
 
 char gOv198PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov198_020d250c[8] = "S_fire";
+char gOv198SFireName[8] = "S_fire";
 
-char data_ov198_020d2514[12] = "BS_move";
+char gOv198BsMoveName[12] = "BS_move";

@@ -9,7 +9,7 @@ extern void Ov002_LoadAnimTables(int a, int b, int c, int d, int e);
 extern void ZeroHalfThenFree(int a);
 extern int data_ov099_020bcbc0;
 extern unsigned char data_0204c240;
-extern int data_ov099_020bcb1c;
+extern int gOv099RoxasWPath;
 
 void Ov099_ReloadSceneResources(int self) {
     int base = *(int *)&data_ov099_020bcbc0;
@@ -18,7 +18,7 @@ void Ov099_ReloadSceneResources(int self) {
     if ((data_0204c240 & 4) == 0 && GameState_IsFlagSet(0x208c) != 0) {
         ok = 0;
     }
-    *(int *)(self + 0x2bd0) = Msg_OpenContainerAndReadHeader(&data_ov099_020bcb1c, 6);
+    *(int *)(self + 0x2bd0) = Msg_OpenContainerAndReadHeader(&gOv099RoxasWPath, 6);
     if (ok != 0) {
         func_ov022_0209fb60(base, 1, 2);
         if (*(signed char *)(base + 0xf0d) != 0) {

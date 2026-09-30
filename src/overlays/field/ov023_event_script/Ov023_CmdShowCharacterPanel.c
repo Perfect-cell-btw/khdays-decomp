@@ -44,8 +44,8 @@ extern void  Ov023_SplitPath(char *pszPath, char *pszTail);     /* Ov023_SplitPa
 extern void  Utf8_ToUcs2(char *pszSrc, u16 *pDst);                /* widen a string */
 extern int   Ov002_TryBeginPanelRequest(Ov023PanelRequest *pRequest, int nArg); /* open an ov002 panel */
 extern void  Ov023_SetScriptSlotWord(int nValue, int nScreen);          /* Ov023_SetScreenModel */
-extern char  data_ov023_0208a5d8[];                                 /* "%s" */
-extern char  data_ov023_0208a5dc[];                                 /* "%d%s" */
+extern char  gOv023StrFmt[];                                 /* "%s" */
+extern char  gOv023IntStrFmt[];                                 /* "%d%s" */
 
 void Ov023_CmdShowCharacterPanel(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 {
@@ -58,12 +58,12 @@ void Ov023_CmdShowCharacterPanel(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     if (Ov002_GetPanelField018c() != 0) {
         nScreen = ScriptVm_ReadOperandInt(pCtx, pOperand + 1);
         if (pCtx->pEvent->szPendingName[0] != 0) {
-            OS_SPrintf(szPath, data_ov023_0208a5d8, pCtx->pEvent->szPendingName);
+            OS_SPrintf(szPath, gOv023StrFmt, pCtx->pEvent->szPendingName);
         } else if (pOperand[2].nType != 0) {
             nNumber = ScriptVm_ReadOperandInt(pCtx, pOperand + 2);
-            OS_SPrintf(szPath, data_ov023_0208a5dc, nNumber, ByteCode_ResolveOperand(pCtx, pOperand));
+            OS_SPrintf(szPath, gOv023IntStrFmt, nNumber, ByteCode_ResolveOperand(pCtx, pOperand));
         } else {
-            OS_SPrintf(szPath, data_ov023_0208a5d8, ByteCode_ResolveOperand(pCtx, pOperand));
+            OS_SPrintf(szPath, gOv023StrFmt, ByteCode_ResolveOperand(pCtx, pOperand));
         }
         Ov023_SplitPath(szPath, pCtx->pEvent->szPendingName);
         Utf8_ToUcs2(szPath, wszName);

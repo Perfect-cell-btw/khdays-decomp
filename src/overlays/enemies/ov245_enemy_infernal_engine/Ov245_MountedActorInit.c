@@ -30,8 +30,8 @@ extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(ShapeRequest *req);
-extern const char data_ov245_020d7254[];
-extern const char data_ov245_020d725c[];
+extern const char gOv245Tag00Name_4[];
+extern const char gOv245MoveItem02Name[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042258;
 
@@ -66,8 +66,8 @@ void Ov245_MountedActorInit(int self) {
     VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x14));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7254);
-    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(pool, 0xf), data_ov245_020d725c);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv245Tag00Name_4);
+    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(pool, 0xf), gOv245MoveItem02Name);
     for (i = 0; i < 3; i++) {
         item = ((struct Ov245Self *)self)->slots[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, i + 0x21));
         Ov107_EnqueueValue(self, item);

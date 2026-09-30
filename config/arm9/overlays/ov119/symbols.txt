@@ -57,8 +57,8 @@ Ov119_TimerBlinkParitySet kind:function(arm,size=0x78) addr:0x020cf8c4
 data_ov119_020cf93c kind:data(any) addr:0x020cf93c
 data_ov119_020cf94c kind:data(any) addr:0x020cf94c
 gOv119PackPathFmt kind:data(any) addr:0x020cf980
-data_ov119_020cf98c kind:data(any) addr:0x020cf98c
-data_ov119_020cf998 kind:data(any) addr:0x020cf998
-data_ov119_020cf9a4 kind:data(any) addr:0x020cf9a4
-data_ov119_020cf9b0 kind:data(any) addr:0x020cf9b0
-data_ov119_020cf9bc kind:data(any) addr:0x020cf9bc
+gOv119BoneLEyeName kind:data(any) addr:0x020cf98c
+gOv119BoneRFingName kind:data(any) addr:0x020cf998
+gOv119BoneLFingName kind:data(any) addr:0x020cf9a4
+gOv119BoneHeadName kind:data(any) addr:0x020cf9b0
+gOv119BoneTail02Name kind:data(any) addr:0x020cf9bc

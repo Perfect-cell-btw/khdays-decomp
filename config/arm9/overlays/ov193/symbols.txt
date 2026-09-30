@@ -62,5 +62,5 @@ data_ov193_020d69da kind:data(any) addr:0x020d69da
 data_ov193_020d69e8 kind:data(any) addr:0x020d69e8
 data_ov193_020d69f6 kind:data(any) addr:0x020d69f6
 gOv193PackPathFmt kind:data(any) addr:0x020d6a20
-data_ov193_020d6a2c kind:data(any) addr:0x020d6a2c
-data_ov193_020d6a34 kind:data(any) addr:0x020d6a34
+gOv193Head02Name kind:data(any) addr:0x020d6a2c
+gOv193HeadconName kind:data(any) addr:0x020d6a34

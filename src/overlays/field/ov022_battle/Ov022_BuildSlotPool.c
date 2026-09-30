@@ -49,8 +49,8 @@ struct NameTable {
 typedef void (*SlotCreateFn)(struct SlotPool *pPool, char *pszModel,
                              int nParts, struct SlotTemplate *pTpl);
 
-extern char data_ov022_020b2b2c[];             /* "ba/ch/mp.z" */
-extern char data_ov022_020b2b38[];             /* "ba/ma/%s.p.z" */
+extern char gOv022BaChMpPath[];             /* "ba/ch/mp.z" */
+extern char gOv022BaMaPackPathFmt[];             /* "ba/ma/%s.p.z" */
 extern struct NameTable data_ov022_020b23dc;
 extern SlotCreateFn data_ov022_020b29e4[];
 
@@ -69,7 +69,7 @@ void Ov022_BuildSlotPool(struct SlotPool *pPool, struct Actor *pActor)
 
     pPool->pActor = pActor;
     pPool->nFlags |= 1;
-    pTemplates = Archive_LoadFile(data_ov022_020b2b2c, TEMPLATE_HEAP);
+    pTemplates = Archive_LoadFile(gOv022BaChMpPath, TEMPLATE_HEAP);
     names = data_ov022_020b23dc;
     for (nKind = 0; nKind < SLOT_KINDS; nKind++) {
         nParts = Slot_EvalPackedParam(pActor->nId, nKind + 1);
@@ -77,7 +77,7 @@ void Ov022_BuildSlotPool(struct SlotPool *pPool, struct Actor *pActor)
             if (nParts > MAX_PARTS) {
                 nParts = MAX_PARTS;
             }
-            OS_SPrintf(szModel, data_ov022_020b2b38, names.ap[nKind]);
+            OS_SPrintf(szModel, gOv022BaMaPackPathFmt, names.ap[nKind]);
             data_ov022_020b29e4[nKind](pPool, szModel, nParts,
                                        &pTemplates[nParts - 1
                                                    + nKind * MAX_PARTS]);

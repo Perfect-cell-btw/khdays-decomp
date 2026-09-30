@@ -57,11 +57,11 @@ extern int Ov245_Variant_New(int self);
 extern int Ov245_FourShape_New(int self);
 extern int Ov245_Mounted_New(int self);
 extern void Res_RequestIdPair(int id);
-extern const char data_ov245_020d71ec[];
-extern const char data_ov245_020d71f4[];
-extern const char data_ov245_020d7200[];
-extern const char data_ov245_020d720c[];
-extern const char data_ov245_020d7218[];
+extern const char gOv245Tag00Name[];
+extern const char gOv245TagItemName[];
+extern const char gOv245TagTireFName[];
+extern const char gOv245TagTireRName[];
+extern const char gOv245MoveName[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042264;
@@ -101,10 +101,10 @@ void Ov245_ConstructBoss(int selfArg) {
     Snd_RegisterSeqAndBind((void *)(self + 0x390), ((struct Ov245Track *)*(int *)(self + 0x384))->track,
                   Ov107_PackTextureHandle(self, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), (void *)(self + 0x390));
-    *(int *)(self + 0x448) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d71ec);
-    *(int *)(self + 0x44c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d71f4);
-    *(int *)(self + 0x450) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7200);
-    *(int *)(self + 0x454) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d720c);
+    *(int *)(self + 0x448) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv245Tag00Name);
+    *(int *)(self + 0x44c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv245TagItemName);
+    *(int *)(self + 0x450) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv245TagTireFName);
+    *(int *)(self + 0x454) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv245TagTireRName);
     *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0xb));
     *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0xc));
     for (i = 0; i < 2; i++) {
@@ -114,8 +114,8 @@ void Ov245_ConstructBoss(int selfArg) {
     item = *(int *)(self + 0x4dc) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x20));
     Ov107_EnqueueValue(self, item);
     *(int *)(item + 0x5c) |= 2;
-    *(int *)(self + 0x4c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0xd), data_ov245_020d7218);
-    *(int *)(self + 0x4cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0xe), data_ov245_020d7218);
+    *(int *)(self + 0x4c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0xd), gOv245MoveName);
+    *(int *)(self + 0x4cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0xe), gOv245MoveName);
     *(VecFx32 *)(self + 0x3bc) = data_02041dc8;
     *(VecFx32 *)(self + 0x3c8) = data_02042270;
     *(VecFx32 *)(self + 0x3d4) = data_02042264;

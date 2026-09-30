@@ -41,11 +41,11 @@ struct Ov120Bone {
 
 extern VecFx32 data_ov121_020cfd04;
 extern VecFx32 data_02041dc8;
-extern const unsigned short data_ov121_020cfd4c[];
-extern const unsigned short data_ov121_020cfd58[];
-extern const unsigned short data_ov121_020cfd68[];
-extern const unsigned short data_ov121_020cfd78[];
-extern char data_ov121_020cfd80[];
+extern const unsigned short gOv121BoneRFingName[];
+extern const unsigned short gOv121Bip01RFootName[];
+extern const unsigned short gOv121Bip01LFootName[];
+extern const unsigned short gOv121Bip01Name[];
+extern char gOv121MoveName[];
 
 extern void Ov121_Destroy(void);
 extern void Ov121_ReleaseAndDestroy(void);
@@ -96,13 +96,13 @@ void Ov121_InitializeActor(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe4] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov121_020cfd4c);
-        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov121_020cfd58);
-        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov121_020cfd68);
-        ((void **)self)[0xe7] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov121_020cfd78);
+        ((void **)self)[0xe4] = InsertSortedEntryWithKey(self[0xe1], 1, gOv121BoneRFingName);
+        ((void **)self)[0xe5] = InsertSortedEntryWithKey(self[0xe1], 1, gOv121Bip01RFootName);
+        ((void **)self)[0xe6] = InsertSortedEntryWithKey(self[0xe1], 1, gOv121Bip01LFootName);
+        ((void **)self)[0xe7] = InsertSortedEntryWithKey(self[0xe1], 1, gOv121Bip01Name);
         ((char **)self)[0xb3] = (char *)((void **)self)[0xe7] + 0x14;
         ((void **)self)[0xe8] = Ov107_CreateNamedResourceBinding(
-            Ov107_PackTextureHandle(self, 1), data_ov121_020cfd80);
+            Ov107_PackTextureHandle(self, 1), gOv121MoveName);
         ((void **)self)[0xe9] = CallocInstance(0x18);
 
         for (i = 0; i < 3; i++) {

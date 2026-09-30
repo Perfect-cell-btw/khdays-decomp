@@ -6,11 +6,11 @@ extern void NNS_FndInitList(int list, int offset);
 extern void Ov004_InitResourceRecord(int a, void *b);
 extern int Archive_LoadFile(int a, int b);
 extern void Ov004_QueryFieldBySelector(int a, int b, int c);
-extern int data_ov004_020511e0;
+extern int gOv004UiCmStrWorldIdTextPath;
 void Ov004_InitObjectWithList(int param_1, int param_2) {
     MI_CpuFill8((void *)param_1, 0, 0x24);
     NNS_FndInitList(param_1 + 0x18, 0x4c);
-    Ov004_InitResourceRecord(param_1, &data_ov004_020511e0);
+    Ov004_InitResourceRecord(param_1, &gOv004UiCmStrWorldIdTextPath);
     *(int *)(param_1 + 0xc) = *(int *)(param_2 + 8);
     *(int *)(param_1 + 0x14) = Archive_LoadFile(*(int *)param_2, 0xe);
     Ov004_QueryFieldBySelector(param_1, *(int *)(param_2 + 8), *(int *)(param_2 + 4));

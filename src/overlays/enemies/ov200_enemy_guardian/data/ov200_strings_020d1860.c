@@ -6,6 +6,6 @@
 
 char gOv200PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov200_020d186c[8] = "tag_L";
+char gOv200TagLName[8] = "tag_L";
 
-char data_ov200_020d1874[12] = "tag_R";
+char gOv200TagRName[12] = "tag_R";

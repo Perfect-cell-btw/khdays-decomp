@@ -33,7 +33,7 @@ struct Run {
     u8 nCue;                     /* 0x0335 */
 };
 
-extern u8 data_ov022_020b2c50;
+extern u8 gOv022BaEfLPackPath;
 /* Per-id table of 0x44-byte records; only the cue byte matters here. */
 struct Record {
     u8 pad0000[0x33];
@@ -54,9 +54,9 @@ void Ov022_StartRun(struct Run *pRun, struct Actor *pActor)
 {
     struct Record *pRec;
 
-    RegisterSeqAndInit(&pRun->aSequences[0], &data_ov022_020b2c50, 1, 5);
-    RegisterSeqAndInit(&pRun->aSequences[1], &data_ov022_020b2c50, 1, 5);
-    RegisterSeqAndInit(&pRun->aSequences[2], &data_ov022_020b2c50, 1, 5);
+    RegisterSeqAndInit(&pRun->aSequences[0], &gOv022BaEfLPackPath, 1, 5);
+    RegisterSeqAndInit(&pRun->aSequences[1], &gOv022BaEfLPackPath, 1, 5);
+    RegisterSeqAndInit(&pRun->aSequences[2], &gOv022BaEfLPackPath, 1, 5);
     BindAnimTrack(&pRun->aSequences[0], 0, &pRun->aSequences[0].blkChannels, 3);
     BindAnimTrack(&pRun->aSequences[0], 2, &pRun->aSequences[0].blkChannels, 3);
     BindAnimTrack(&pRun->aSequences[0], 1, &pRun->aSequences[0].blkChannels, 3);

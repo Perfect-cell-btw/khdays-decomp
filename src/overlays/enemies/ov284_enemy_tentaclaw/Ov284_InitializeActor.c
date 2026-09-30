@@ -43,7 +43,7 @@ extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
 extern const IdTable data_ov284_020cd594;
 extern const NameTable data_ov284_020cd5a4;
-extern const char data_ov284_020cd60c[];
+extern const char gOv284Tag03Name[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042270;
 
@@ -77,7 +77,7 @@ void Ov284_InitializeActor(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov284_UpdateSegmentDirections;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
-    *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov284_020cd60c);
+    *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv284Tag03Name);
     *(int *)(self + 0x2cc) = *(int *)(self + 0x3a4) + 0x14;
     NameTable names;
     NameTable *pNames = &names;

@@ -11,7 +11,7 @@
  * Both locals live in ONE frame struct so the stack layout comes out as the ROM has it
  * (the word buffer at sp+0, the text buffer at sp+0x48). */
 extern int data_ov022_020b2394;
-extern int data_ov022_020b2b1c;
+extern int gOv022BaMaMoPackPathFmt;
 extern void OS_SPrintf(char *buf, const char *fmt, int value);
 extern int Ov022_AcquireGridSlot(char *text, int palette, int layer, int owner);
 
@@ -25,7 +25,7 @@ void Ov022_BuildEntryLabelText(int arg0, int arg1) {
     struct Frame0208a830 f;
 
     f.buf = *(struct Buf0208a830 *)&data_ov022_020b2394;
-    OS_SPrintf(f.tmp, (const char *)&data_ov022_020b2b1c, f.buf.w[arg1]);
+    OS_SPrintf(f.tmp, (const char *)&gOv022BaMaMoPackPathFmt, f.buf.w[arg1]);
     *(int *)(arg0 + 0x54) = Ov022_AcquireGridSlot(
         f.tmp, *(unsigned char *)(*(int *)(arg0 + 0x58) + 9), 1,
         *(int *)(arg0 + arg1 * 4 + 0x18) + 8);

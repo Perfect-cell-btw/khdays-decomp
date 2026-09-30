@@ -6,8 +6,8 @@
 
 char gOv276PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov276_020d2c2c[16] = "Bip01_Spine1";
+char gOv276Bip01Spine1Name[16] = "Bip01_Spine1";
 
-char data_ov276_020d2c3c[16] = "Bip01_L_Hand";
+char gOv276Bip01LHandName[16] = "Bip01_L_Hand";
 
-char data_ov276_020d2c4c[20] = "SA_move";
+char gOv276SaMoveName[20] = "SA_move";

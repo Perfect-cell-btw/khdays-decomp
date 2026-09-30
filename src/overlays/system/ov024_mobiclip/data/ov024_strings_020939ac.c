@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov024_020939ac[24] = "mobiclip_intr";
+char gOv024MobiclipIntrName[24] = "mobiclip_intr";

@@ -12,12 +12,12 @@ typedef struct {
     int reserved[3];
 } Ov022SlotInitParams;
 
-extern char data_ov057_020b73c0;
+extern char gOv057LexaeusLiE3PackPath;
 extern void Ov057_InitAndReturnNextState(void);
 extern void Ov057_setupTriple(void);
 
 const Ov022SlotInitParams data_ov057_020b738c = {
-    &data_ov057_020b73c0,
+    &gOv057LexaeusLiE3PackPath,
     3,
     {0, 0, 0},
 };

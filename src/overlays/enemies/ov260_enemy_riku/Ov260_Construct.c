@@ -45,10 +45,10 @@ extern int Ov260_New(char *self);
 extern void Res_RequestIdPair(int resourceId);
 extern u8 data_0204c240;
 extern const PartKits data_ov260_020d2a3c;
-extern char data_ov260_020d2aac[];
-extern char data_ov260_020d2ab4[];
-extern char data_ov260_020d2ac4[];
-extern char data_ov260_020d2ac8[];
+extern char gOv260Bip01Name[];
+extern char gOv260Bip01LHandName[];
+extern char gOv260WAName[];
+extern char gOv260B013MoveName[];
 
 void Ov260_Construct(char *self)
 {
@@ -90,18 +90,18 @@ void Ov260_Construct(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Snd_RegisterSeqAndBind(self + 0x394, *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(self, 2), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), self + 0x394);
-    *(int *)(self + 0x410) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov260_020d2aac);
-    *(int *)(self + 0x414) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov260_020d2ab4);
+    *(int *)(self + 0x410) = FindResourceIndexByName(*(int *)(self + 0x384), gOv260Bip01Name);
+    *(int *)(self + 0x414) = FindResourceIndexByName(*(int *)(self + 0x384), gOv260Bip01LHandName);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x390));
     SetSubitemState(*(int *)(self + 0x390), 1, 0, 0);
     RefreshObjectCallbacks(*(int *)(self + 0x390), 0);
-    *(int *)(self + 0x424) = InsertSortedEntryWithKey(*(int *)(self + 0x390), 3, data_ov260_020d2ac4);
+    *(int *)(self + 0x424) = InsertSortedEntryWithKey(*(int *)(self + 0x390), 3, gOv260WAName);
     *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x22));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
     *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x37));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
     *(int *)(*(int *)(self + 0x38c) + 0x5c) |= 4;
-    *(int *)(self + 0x428) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x23), data_ov260_020d2ac8);
+    *(int *)(self + 0x428) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x23), gOv260B013MoveName);
     for (i = 0; i < 12; i++) {
         ((struct Parts *)self)->part[i].obj = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, kits.id[i]));
         Ov107_EnqueueValue(self, ((struct Parts *)self)->part[i].obj);

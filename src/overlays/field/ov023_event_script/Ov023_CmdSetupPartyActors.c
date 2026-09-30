@@ -43,7 +43,7 @@ extern void  ZeroHalfThenFree(void *pContainer);                       /* close 
 extern int   Session_GetLocalPlayerIndex(void);                                   /* Session_GetLocalPlayerIndex */
 extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
 extern const char *data_02042a70[];                                 /* member names by kind */
-extern char  data_ov023_0208a5e4[];                                 /* "ba/ch/%s/w_.p2" */
+extern char  gOv023BaChWPathFmt[];                                 /* "ba/ch/%s/w_.p2" */
 extern Ov023MemberRecord gPartyMembers[];                           /* the party records */
 extern void *data_ov023_0208a334[];                                 /* resource tables by kind */
 extern u8    data_0204c240;                                         /* session bits */
@@ -70,7 +70,7 @@ int Ov023_CmdSetupPartyActors(void)
         if (nKind == 0xe) {
             nKind = 0;
         }
-        OS_SPrintf(szPath, data_ov023_0208a5e4, data_02042a70[nKind]);
+        OS_SPrintf(szPath, gOv023BaChWPathFmt, data_02042a70[nKind]);
         apText[i] = Msg_OpenContainerAndReadHeader(szPath, 6);
     }
     pRecord = gPartyMembers;

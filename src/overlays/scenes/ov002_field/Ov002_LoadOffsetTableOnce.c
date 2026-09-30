@@ -18,8 +18,8 @@
 #include "nitro/types.h"
 
 extern char *data_ov002_0207fa00;
-extern char data_ov002_0207efe8[];
-extern char data_ov002_0207eff4[];
+extern char gOv002MiMiTrBoxPath[];
+extern char gOv002MiMiEviPath[];
 extern void *Archive_LoadFile(char *path, int heap, int a, int b);
 
 void Ov002_LoadOffsetTableOnce(int which, int unused, int a, int b) {
@@ -31,7 +31,7 @@ void Ov002_LoadOffsetTableOnce(int which, int unused, int a, int b) {
         int off;
         u8 *blob;
 
-        *slot = Archive_LoadFile(which == 0 ? data_ov002_0207efe8 : data_ov002_0207eff4, 0xf, a, b);
+        *slot = Archive_LoadFile(which == 0 ? gOv002MiMiTrBoxPath : gOv002MiMiEviPath, 0xf, a, b);
         blob = *(u8 **)slot;
         i = 0;
         if ((int)blob[0] > 0) {

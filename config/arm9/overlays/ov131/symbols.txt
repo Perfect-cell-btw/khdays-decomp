@@ -61,6 +61,6 @@ data_ov131_020cef90 kind:data(any) addr:0x020cef90
 data_ov131_020cef9e kind:data(any) addr:0x020cef9e
 data_ov131_020cefac kind:data(any) addr:0x020cefac
 gOv131PackPathFmt kind:data(any) addr:0x020cefe0
-data_ov131_020cefec kind:data(any) addr:0x020cefec
-data_ov131_020ceff8 kind:data(any) addr:0x020ceff8
-data_ov131_020cf004 kind:data(any) addr:0x020cf004
+gOv131BoneHimoName kind:data(any) addr:0x020cefec
+gOv131BoneHeadName kind:data(any) addr:0x020ceff8
+gOv131MoveName kind:data(any) addr:0x020cf004

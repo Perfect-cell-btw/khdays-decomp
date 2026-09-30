@@ -53,13 +53,13 @@ extern void Ov088_ActorBuildStep(void);
 extern void Ov088_beginObjectSlotIfReady(void);
 
 extern void *data_ov088_020bc360;
-extern const char data_ov088_020bc29c[];
-extern const char data_ov088_020bc2b0[];
-extern int data_ov088_020bc230;
-extern int data_ov088_020bc240;
-extern int data_ov088_020bc210;
-extern int data_ov088_020bc200;
-extern int data_ov088_020bc220;
+extern const char gOv088AxelDefPackPath[];
+extern const char gOv088AxelDefHPackPath[];
+extern int gOv088AxelTgName;
+extern int gOv088AxHRName;
+extern int gOv088AxHLName;
+extern int gOv088AxelRName;
+extern int gOv088Bip01Name;
 
 void Ov088_ActorCtor(struct PanelInitConfig *config)
 {
@@ -82,10 +82,10 @@ void Ov088_ActorCtor(struct PanelInitConfig *config)
                          &params, 0);
 
     if (config->alternateName == 0) {
-        TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov088_020bc29c, 1,
+        TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)gOv088AxelDefPackPath, 1,
                       config->objectType + 7);
     } else {
-        TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov088_020bc2b0, 1,
+        TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)gOv088AxelDefHPackPath, 1,
                       config->objectType + 7);
     }
 
@@ -116,19 +116,19 @@ test:
 
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x520) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov088_020bc230) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv088AxelTgName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x518) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov088_020bc240) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv088AxHRName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x514) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov088_020bc210) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv088AxHLName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x51c) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov088_020bc200) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv088AxelRName) : -1;
     bone = Ov044_GetBoneBase(object);
     *(int *)(object + 0x524) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov088_020bc220) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv088Bip01Name) : -1;
 
     if (config->enableLowFlag != 0) {
         *(long long *)object |= 0x20;

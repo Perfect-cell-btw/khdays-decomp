@@ -6,6 +6,6 @@
 
 char gOv193PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov193_020d6a2c[8] = "head02";
+char gOv193Head02Name[8] = "head02";
 
-char data_ov193_020d6a34[12] = "headcon";
+char gOv193HeadconName[12] = "headcon";

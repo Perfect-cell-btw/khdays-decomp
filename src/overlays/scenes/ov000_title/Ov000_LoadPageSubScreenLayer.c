@@ -48,9 +48,9 @@ typedef struct Ov000LoadContext {
 } Ov000LoadContext;
 
 extern const Ov000ResourceTrackerConfig data_ov000_0205a6e0;
-extern const char data_ov000_0205aa60[];
-extern const char data_ov000_0205aa74[];
-extern const char data_ov000_0205aa8c[];
+extern const char gOv000UiLoadResI18NPath[];
+extern const char gOv000UiLoadLodB000Path[];
+extern const char gOv000UiLoadLoadPath[];
 extern Ov000LoadContext *data_ov000_0205ac24;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
@@ -91,14 +91,14 @@ void Ov000_LoadPageSubScreenLayer(void)
 
     NNSi_FndGetCurrentRootHeap();
     trackerConfig = data_ov000_0205a6e0;
-    container = Msg_OpenContainerAndReadHeader(data_ov000_0205aa60, 14);
+    container = Msg_OpenContainerAndReadHeader(gOv000UiLoadResI18NPath, 14);
     context = data_ov000_0205ac24;
     context->activeMode = 1;
     data_ov000_0205ac24->pendingMode = data_ov000_0205ac24->activeMode;
     *dispcnt = (*dispcnt & ~0x1f00) | 0x1e00;
     Ov000_Container_Init(context, &trackerConfig);
 
-    resource = Archive_LoadFile((u32)data_ov000_0205aa74, 14);
+    resource = Archive_LoadFile((u32)gOv000UiLoadLodB000Path, 14);
     Res_LoadSpriteSet(&cell, resource, 0, 0, 0);
     GXS_LoadBGPltt(cell.palette->data, 0, cell.palette->size);
 
@@ -145,7 +145,7 @@ void Ov000_LoadPageSubScreenLayer(void)
 
     scroll[0] = 0x01e601e3;
     scroll[2] = 0x01e601e3;
-    Ov000_LoadAndInitResourceSections(data_ov000_0205ac24, (u32)data_ov000_0205aa8c);
+    Ov000_LoadAndInitResourceSections(data_ov000_0205ac24, (u32)gOv000UiLoadLoadPath);
     entry = Ov000_FindEntryByTag(context, 0);
     Ov000_TagTracker_InvokeCallback(context, entry);
     entry = Ov000_FindEntryByTag(context, 1);

@@ -4,16 +4,16 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov241_020d0ca0;
-extern int data_ov241_020d0ca8;
-extern int data_ov241_020d0cb0;
+extern int gOv241Tag02Name;
+extern int gOv241Tag01Name;
+extern int gOv241Tag00Name;
 
 void *const data_ov241_020d0c84[3] = {
 
-    &data_ov241_020d0cb0,
+    &gOv241Tag00Name,
 
-    &data_ov241_020d0ca8,
+    &gOv241Tag01Name,
 
-    &data_ov241_020d0ca0,
+    &gOv241Tag02Name,
 
 };

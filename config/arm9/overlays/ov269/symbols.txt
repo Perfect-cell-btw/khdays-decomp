@@ -58,8 +58,8 @@ data_ov269_020d4a78 kind:data(any) addr:0x020d4a78
 data_ov269_020d4a88 kind:data(any) addr:0x020d4a88
 data_ov269_020d4a9c kind:data(any) addr:0x020d4a9c
 gOv269PackPathFmt kind:data(any) addr:0x020d4ac0
-data_ov269_020d4acc kind:data(any) addr:0x020d4acc
-data_ov269_020d4ad8 kind:data(any) addr:0x020d4ad8
-data_ov269_020d4ae0 kind:data(any) addr:0x020d4ae0
-data_ov269_020d4ae8 kind:data(any) addr:0x020d4ae8
-data_ov269_020d4aec kind:data(any) addr:0x020d4aec
+gOv269BoneHeadName kind:data(any) addr:0x020d4acc
+gOv269Tag00Name kind:data(any) addr:0x020d4ad8
+gOv269MoveName kind:data(any) addr:0x020d4ae0
+gOv269BName kind:data(any) addr:0x020d4ae8
+gOv269Guru0Name kind:data(any) addr:0x020d4aec

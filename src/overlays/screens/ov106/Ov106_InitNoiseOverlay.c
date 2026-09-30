@@ -14,7 +14,7 @@ typedef struct Ov023NoiseState {
 } Ov023NoiseState;
 
 extern void Ov106_LoadNoiseTexture(const char *pszTexture);           /* Ov023_LoadNoiseTexture */
-extern char data_ov106_020b8b34[];                                  /* "ev/tex_noise.nsbtx" */
+extern char gOv106EvTexNoiseTexturePath[];                                  /* "ev/tex_noise.nsbtx" */
 extern Ov023NoiseState *data_ov106_020b8b68;                        /* the noise overlay state */
 
 void Ov106_InitNoiseOverlay(void)
@@ -22,7 +22,7 @@ void Ov106_InitNoiseOverlay(void)
     int i;
     int j;
 
-    Ov106_LoadNoiseTexture(data_ov106_020b8b34);
+    Ov106_LoadNoiseTexture(gOv106EvTexNoiseTexturePath);
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 3; j++) {
             data_ov106_020b8b68->aTile[i * 3 + j].x = (0x20 + i * 0x40) << 12;

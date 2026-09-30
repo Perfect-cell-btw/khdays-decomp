@@ -10,12 +10,12 @@
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void *Msg_OpenContainerAndReadHeader(void *desc, int mode);
 extern void  OS_Terminate(void);
-extern char  data_ov000_0205aa18[];
-extern char  data_ov000_0205aa24[];
+extern char  gOv000TtlTtlPath[];
+extern char  gOv000TtlTtlPath_2[];
 
 void Ov000_PreloadLogoResources(void) {
     void **h = (void **)NNSi_FndGetCurrentRootHeap();
-    h[1] = Msg_OpenContainerAndReadHeader(data_ov000_0205aa18, 0xe);
+    h[1] = Msg_OpenContainerAndReadHeader(gOv000TtlTtlPath, 0xe);
     switch (GetLanguage()) {
     case 1:
         h[2] = 0;
@@ -24,7 +24,7 @@ void Ov000_PreloadLogoResources(void) {
     case 3:
     case 4:
     case 5:
-        h[2] = Msg_OpenContainerAndReadHeader(data_ov000_0205aa24, 0xe);
+        h[2] = Msg_OpenContainerAndReadHeader(gOv000TtlTtlPath_2, 0xe);
         break;
     default:
         OS_Terminate();

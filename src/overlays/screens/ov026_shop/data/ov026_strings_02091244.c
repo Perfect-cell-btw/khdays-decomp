@@ -4,22 +4,22 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov026_02091244[12] = "mi/ch/70.z";
+char gOv026MiCh70Path[12] = "mi/ch/70.z";
 
-char data_ov026_02091250[16] = "ui/shop/res.p2";
+char gOv026UiShopResPath[16] = "ui/shop/res.p2";
 
-char data_ov026_02091260[20] = "ui/shop/res_i18n.p2";
+char gOv026UiShopResI18NPath[20] = "ui/shop/res_i18n.p2";
 
-char data_ov026_02091274[20] = "ui/shop/shop.BGUI.z";
+char gOv026UiShopShopPath[20] = "ui/shop/shop.BGUI.z";
 
-char data_ov026_02091288[20] = "ui/shop/sp_uo.ui.z";
+char gOv026UiShopSpUoPath[20] = "ui/shop/sp_uo.ui.z";
 
-char data_ov026_0209129c[20] = "ui/shop/sp_lo.ui.z";
+char gOv026UiShopSpLoPath[20] = "ui/shop/sp_lo.ui.z";
 
-char data_ov026_020912b0[24] = "text/font_eu_10.nftr";
+char gOv026TextFontEu10Path[24] = "text/font_eu_10.nftr";
 
-char data_ov026_020912c8[24] = "text/font_eu_08.nftr";
+char gOv026TextFontEu08Path[24] = "text/font_eu_08.nftr";
 
-char data_ov026_020912e0[24] = "text/font_eu_08s.nftr";
+char gOv026TextFontEu08SPath[24] = "text/font_eu_08s.nftr";
 
-char data_ov026_020912f8[20] = "UI/shop/shp_&.s.z";
+char gOv026UiShopShpTextPath[20] = "UI/shop/shp_&.s.z";

@@ -8,14 +8,14 @@ struct slot { void *ptr; int pad; };
 
 extern struct v5 data_ov135_020d1bb8;
 extern struct v3 data_02041dc8;
-extern unsigned short data_ov135_020d1c38[];
+extern unsigned short gOv135MoveName[];
 extern unsigned short data_ov135_020d1c40[];
-extern unsigned short data_ov135_020d1c44[];
+extern unsigned short gOv135Guru0Name[];
 
 extern void Ov135_Destroy(void), Ov135_ReleaseAndDestroy(void), Ov135_HandleSpawnMessage(void);
 extern void Ov135_registryCreateEntry(void), Ov135_ReleaseSoundAndPublishPose(void), Ov135_OnHit(void);
 extern void Ov135_RequestSubState9IfIdle(void), Ov135_Model_SetTrack0(void);
-extern unsigned short data_ov135_020d1c2c[];
+extern unsigned short gOv135BoneHeadName[];
 
 extern void *Ov107_PackTextureHandle(int obj, unsigned offset);
 extern void *CreateSubitemInstance0xB4();
@@ -48,8 +48,8 @@ void Ov135_Construct(int param_1) {
     *(int *)(param_1 + 0x6c) = 0;
     *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
-    *(void **)(param_1 + 0x394) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov135_020d1c2c);
-    *(void **)(param_1 + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov135_020d1c38);
+    *(void **)(param_1 + 0x394) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv135BoneHeadName);
+    *(void **)(param_1 + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &gOv135MoveName);
     *(void **)(param_1 + 0x3a4) = CallocInstance(0x18);
     for (i = 0; i < 3; i++) {
         ((struct slot *)*(int *)(param_1 + 0x3a4))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, tbl.w[i]));
@@ -61,7 +61,7 @@ void Ov135_Construct(int param_1) {
     Ov107_Actor_SetAttachSlot(param_1, 2, 1, 0, 0x1333);
     Ov107_Actor_SetAttachSlot(param_1, 4, 1, 0, 0x1333);
     *(void **)(param_1 + 0x398) = InsertSortedEntryWithKey((int)((struct slot *)*(int *)(param_1 + 0x3a4))[0].ptr, 1, data_ov135_020d1c40);
-    *(void **)(param_1 + 0x39c) = InsertSortedEntryWithKey((int)((struct slot *)*(int *)(param_1 + 0x3a4))[0].ptr, 1, data_ov135_020d1c44);
+    *(void **)(param_1 + 0x39c) = InsertSortedEntryWithKey((int)((struct slot *)*(int *)(param_1 + 0x3a4))[0].ptr, 1, gOv135Guru0Name);
     g.t = data_02041dc8;
     g.scale = 0x99a;
     *(void **)(param_1 + 0x38c) = List_InsertSorted(param_1 + 0x22c, 0x10, 100);

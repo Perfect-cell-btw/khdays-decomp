@@ -36,4 +36,4 @@ Ov127_BeginWindUp kind:function(arm,size=0xf4) addr:0x020cd5a0
 Ov127_TimerFireNodeCallbackThenAdvance kind:function(arm,size=0xb0) addr:0x020cd694
 data_ov127_020cd744 kind:data(any) addr:0x020cd744
 gOv127PackPathFmt kind:data(any) addr:0x020cd760
-data_ov127_020cd76c kind:data(any) addr:0x020cd76c
+gOv127MoveName kind:data(any) addr:0x020cd76c

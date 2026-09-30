@@ -84,6 +84,6 @@ data_ov233_020d0d9c kind:data(any) addr:0x020d0d9c
 data_ov233_020d0e08 kind:data(any) addr:0x020d0e08
 data_ov233_020d0e20 kind:data(any) addr:0x020d0e20
 gOv233PackPathFmt kind:data(any) addr:0x020d0e40
-data_ov233_020d0e4c kind:data(any) addr:0x020d0e4c
-data_ov233_020d0e5c kind:data(any) addr:0x020d0e5c
-data_ov233_020d0e6c kind:data(any) addr:0x020d0e6c
+gOv233Bip01Spine1Name kind:data(any) addr:0x020d0e4c
+gOv233Bip01LHandName kind:data(any) addr:0x020d0e5c
+gOv233AMoveName kind:data(any) addr:0x020d0e6c

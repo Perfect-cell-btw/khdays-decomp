@@ -23,8 +23,8 @@ typedef struct Ov008UiContext {
 extern const Ov008SurfaceConfig data_ov025_020b37b0;
 extern const Ov008HeaderLimits data_ov025_020b37ac;
 extern int data_ov025_020b5744[];
-extern char data_ov025_020b4a48[];
-extern char data_ov025_020b4a54[];
+extern char gOv025UiCmCmPath[];
+extern char gOv025UiCmCmbPath[];
 extern char data_ov025_020b4a64[];
 extern char data_ov025_020b4aec[];
 extern u16 data_0204c23c;
@@ -74,11 +74,11 @@ void Ov025_InitCampaignMenuContext(int initialMode)
     *(int *)(CTX + 0x9604) = 1;
     LoadOverlaySync(0, 0x12e);
     *(void **)(CTX + 0x96b0) =
-        Msg_OpenContainerAndReadHeader(data_ov025_020b4a48, 0xe);
+        Msg_OpenContainerAndReadHeader(gOv025UiCmCmPath, 0xe);
     isModeOne = GetLanguage() == 1;
     if (isModeOne == 0) {
         *(void **)(CTX + 0x96b4) =
-            Msg_OpenContainerAndReadHeader(data_ov025_020b4a54, 0xe);
+            Msg_OpenContainerAndReadHeader(gOv025UiCmCmbPath, 0xe);
     }
     *(void **)(CTX + 0x96b8) =
         Msg_OpenContainerAndReadHeader(data_ov025_020b4a64, 0xe);

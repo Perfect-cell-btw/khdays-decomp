@@ -56,6 +56,6 @@ data_ov069_020ba7fa kind:data(any) addr:0x020ba7fa
 data_ov069_020ba9b8 kind:data(any) addr:0x020ba9b8
 data_ov069_020baa20 kind:data(any) addr:0x020baa20
 data_ov069_020baa2c kind:data(any) addr:0x020baa2c
-data_ov069_020baa70 kind:data(any) addr:0x020baa70
+gOv069UiCmMslPath kind:data(any) addr:0x020baa70
 data_ov069_020baa84 kind:data(any) addr:0x020baa84 ambiguous
-data_ov069_020baab4 kind:data(any) addr:0x020baab4
+gOv069UiCmMslPath_2 kind:data(any) addr:0x020baab4

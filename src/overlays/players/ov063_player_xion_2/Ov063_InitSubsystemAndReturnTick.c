@@ -10,13 +10,13 @@ extern void Ov063_initStateSlotsDispatch(int a, int b);
 extern void Ov022_RequestVoiceIds(int a, int b, int c);
 extern void Ov022_ArmDecoder(void);
 extern unsigned char data_0204c240;
-extern int data_ov063_020b7d14;
+extern int gOv063XionEtcPackPath;
 
 void *Ov063_InitSubsystemAndReturnTick(int *ctx) {
     int base = NNSi_FndGetCurrentRootHeap();
     Ov063_InitPanelObject(ctx);
     if ((data_0204c240 & 4) == 0) {
-        *(int *)(base + 0x2c50) = Archive_LoadFile(&data_ov063_020b7d14, ctx[0] + 7);
+        *(int *)(base + 0x2c50) = Archive_LoadFile(&gOv063XionEtcPackPath, ctx[0] + 7);
         Resource_BindFileToSlot(base + 0x2c2c, *(int *)(base + 0x20) + 4,
                       *(int *)(base + 0x2c50), ctx[0] + 7);
         *(int *)(base + 0x6bc) = -1;

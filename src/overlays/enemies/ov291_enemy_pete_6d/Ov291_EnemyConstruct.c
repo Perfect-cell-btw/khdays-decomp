@@ -54,8 +54,8 @@ extern int Ov107_CloneResourceTransform(char *pose);
 extern void Res_RequestIdPair(int id);
 extern void *CallocInstance(int size);
 extern void FreeInstanceMemory(void *p);
-extern const char data_ov291_020cd62c[];
-extern const char data_ov291_020cd638[];
+extern const char gOv291BoneHeadName[];
+extern const char gOv291MoveName[];
 
 void Ov291_EnemyConstruct(char *self)
 {
@@ -88,10 +88,10 @@ void Ov291_EnemyConstruct(char *self)
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(char **)(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x4c) = self;
-    *(u16 *)(self + 0x39c) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov291_020cd62c);
+    *(u16 *)(self + 0x39c) = FindResourceIndexByName(*(int *)(self + 0x384), gOv291BoneHeadName);
     NNS_G3dRenderObjSetCallBack(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, Ov291_HeadBoneCallback, 0, 6, 3);
     SetSubitemState(*(int *)(self + 0x384), 3, 0, 1);
-    *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 2), data_ov291_020cd638);
+    *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 2), gOv291MoveName);
     *(int *)(self + 0x398) = ModelNode_New();
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x398));
     ((struct Bit0 *)(*(int *)(self + 0x398) + 0x5c))->bit0 = 1;

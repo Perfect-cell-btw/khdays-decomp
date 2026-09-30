@@ -4,4 +4,4 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207eb10[20] = "UI/btl/&/magic.s.z";
+char gOv002UiBtlMagicTextPath[20] = "UI/btl/&/magic.s.z";

@@ -56,32 +56,32 @@ int data_020429c8[8] = { 1, 0, 0, 1, 0, 2, 0, 3 };
 /* A flag 020329e8 tests. */
 int data_020429e8 = 1;
 
-char data_020429ec[24] = "/snd/sound_data.sdat";
-char data_02042a04[12] = "/db/db.p2";
-char data_02042a10[12] = "/db/db_&.p2";   /* '&' takes the language code */
+char gSndSoundDataPath[24] = "/snd/sound_data.sdat";
+char gDbDbPath[12] = "/db/db.p2";
+char gDbDbPath_2[12] = "/db/db_&.p2";   /* '&' takes the language code */
 
 /* A byte flag and a 3-byte record, 0xff when unset; ov002 / ov022 and 020352cc read them. */
 u8 data_02042a1c[1] = { 0xff };   /* a lone byte; the array spelling keeps it out of the word-aligned run */
 u8 data_02042a1d[3] = { 0xff, 0, 0 };
 
 /* The two-letter world directory codes ("%s/%s/lv.b.z" of 02035730 takes one). */
-char data_02042a20[4] = "do";
-char data_02042a24[4] = "lu";
-char data_02042a28[4] = "ma";
-char data_02042a2c[4] = "le";
-char data_02042a30[4] = "de";
-char data_02042a34[4] = "r2";
-char data_02042a38[4] = "xa";
-char data_02042a3c[4] = "ve";
-char data_02042a40[4] = "xe";
-char data_02042a44[4] = "xo";
-char data_02042a48[4] = "ze";
-char data_02042a4c[4] = "mi";
-char data_02042a50[4] = "ro";
-char data_02042a54[4] = "ri";
-char data_02042a58[4] = "go";
-char data_02042a5c[4] = "ax";
-char data_02042a60[4] = "xi";
-char data_02042a64[4] = "la";
-char data_02042a68[4] = "sa";
-char data_02042a6c[4] = "so";
+char gDoName[4] = "do";
+char gLuName[4] = "lu";
+char gMaName[4] = "ma";
+char gLeName[4] = "le";
+char gDeName_2[4] = "de";
+char gR2Name[4] = "r2";
+char gXaName[4] = "xa";
+char gVeName[4] = "ve";
+char gXeName[4] = "xe";
+char gXoName[4] = "xo";
+char gZeName[4] = "ze";
+char gMiName[4] = "mi";
+char gRoName[4] = "ro";
+char gRiName[4] = "ri";
+char gGoName[4] = "go";
+char gAxName[4] = "ax";
+char gXiName[4] = "xi";
+char gLaName[4] = "la";
+char gSaName[4] = "sa";
+char gSoName[4] = "so";

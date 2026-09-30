@@ -43,8 +43,8 @@ data_ov122_020d1b30 kind:data(any) addr:0x020d1b30
 data_ov122_020d1b34 kind:data(any) addr:0x020d1b34
 data_ov122_020d1b42 kind:data(any) addr:0x020d1b42
 gOv122PackPathFmt kind:data(any) addr:0x020d1b60
-data_ov122_020d1b6c kind:data(any) addr:0x020d1b6c
-data_ov122_020d1b78 kind:data(any) addr:0x020d1b78
-data_ov122_020d1b88 kind:data(any) addr:0x020d1b88
-data_ov122_020d1b98 kind:data(any) addr:0x020d1b98
-data_ov122_020d1ba0 kind:data(any) addr:0x020d1ba0
+gOv122BoneRFingName kind:data(any) addr:0x020d1b6c
+gOv122Bip01RFootName kind:data(any) addr:0x020d1b78
+gOv122Bip01LFootName kind:data(any) addr:0x020d1b88
+gOv122Bip01Name kind:data(any) addr:0x020d1b98
+gOv122MoveName kind:data(any) addr:0x020d1ba0

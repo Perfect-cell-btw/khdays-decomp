@@ -4,50 +4,50 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov022_020b2958[4] = "a2";
+char gOv022A2Name[4] = "a2";
 
-char data_ov022_020b295c[4] = "bl";
+char gOv022BlName[4] = "bl";
 
-char data_ov022_020b2960[4] = "t0";
+char gOv022T0Name[4] = "t0";
 
-char data_ov022_020b2964[4] = "a1";
+char gOv022A1Name[4] = "a1";
 
-char data_ov022_020b2968[4] = "c2";
+char gOv022C2Name[4] = "c2";
 
-char data_ov022_020b296c[4] = "s2";
+char gOv022S2Name[4] = "s2";
 
-char data_ov022_020b2970[4] = "b0";
+char gOv022B0Name[4] = "b0";
 
-char data_ov022_020b2974[4] = "b2";
+char gOv022B2Name[4] = "b2";
 
-char data_ov022_020b2978[4] = "f0";
+char gOv022F0Name[4] = "f0";
 
-char data_ov022_020b297c[4] = "a0";
+char gOv022A0Name[4] = "a0";
 
-char data_ov022_020b2980[4] = "c0";
+char gOv022C0Name[4] = "c0";
 
-char data_ov022_020b2984[4] = "c1";
+char gOv022C1Name[4] = "c1";
 
-char data_ov022_020b2988[4] = "s0";
+char gOv022S0Name[4] = "s0";
 
-char data_ov022_020b298c[4] = "s1";
+char gOv022S1Name[4] = "s1";
 
-char data_ov022_020b2990[4] = "f1";
+char gOv022F1Name[4] = "f1";
 
-char data_ov022_020b2994[4] = "f2";
+char gOv022F2Name[4] = "f2";
 
-char data_ov022_020b2998[4] = "b1";
+char gOv022B1Name[4] = "b1";
 
-char data_ov022_020b299c[4] = "cu";
+char gOv022CuName[4] = "cu";
 
-char data_ov022_020b29a0[4] = "ae";
+char gOv022AeName[4] = "ae";
 
-char data_ov022_020b29a4[4] = "th";
+char gOv022ThName[4] = "th";
 
-char data_ov022_020b29a8[4] = "t1";
+char gOv022T1Name[4] = "t1";
 
-char data_ov022_020b29ac[4] = "t2";
+char gOv022T2Name[4] = "t2";
 
-char data_ov022_020b29b0[4] = "fi";
+char gOv022FiName[4] = "fi";
 
-char data_ov022_020b29b4[8] = "noting";
+char gOv022NotingName[8] = "noting";

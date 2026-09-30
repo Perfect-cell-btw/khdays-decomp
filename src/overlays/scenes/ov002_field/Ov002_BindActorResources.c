@@ -29,7 +29,7 @@ extern unsigned int Archive_LoadFile(unsigned int nKey, int nHeap);
 extern void Resource_BindFileToSlot(unsigned int *pSlot, int nNode, unsigned int *pFile,
                           int nHeap);
 
-extern char data_ov002_0207e85c[];   /* the fixed resource kind 0xe loads */
+extern char gOv002XionWMotPackPath[];   /* the fixed resource kind 0xe loads */
 
 void Ov002_BindActorResources(unsigned char *pActor, int nBank, int nSlot,
                          int nKind, unsigned int nAnimId, int nVariant)
@@ -92,7 +92,7 @@ void Ov002_BindActorResources(unsigned char *pActor, int nBank, int nSlot,
         break;
     case 0xe:
         *(unsigned int *)(pActor + 0x160) =
-            Archive_LoadFile((unsigned int)data_ov002_0207e85c, pActor[2] + 7);
+            Archive_LoadFile((unsigned int)gOv002XionWMotPackPath, pActor[2] + 7);
         Resource_BindFileToSlot((unsigned int *)(pActor + 0x13c), (int)(pActor + 4),
                       *(unsigned int **)(pActor + 0x160), pActor[2] + 7);
         pActor[0] = pActor[0] | 4;

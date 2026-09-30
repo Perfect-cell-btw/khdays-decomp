@@ -1,7 +1,7 @@
 /* Opens the mission enemy's secondary sub-object: resets slot 1 of the sub-object block at
  * +0x2644, opens it from a parameter block rebuilt on the stack (flags 0x349, sub-kind 1,
  * extents 0x666 / 0x1000 / 0x6000, the 0x100/0x300/0x100 triple, 0x25, tag 2) described by
- * data_ov043_020b58c4, and installs the slot's two handlers at +0x50 / +0x54.
+ * gOv043XemnasLiE1PackPath, and installs the slot's two handlers at +0x50 / +0x54.
  *
  * THUMB. Same shape as Ov092_OpenSecondarySubObjects with a single slot. */
 
@@ -37,7 +37,7 @@ extern void Ov022_TakeChannelBlock(void *pSub, int a, int b);
 extern void Ov022_PublishGroupUpdateFixed(void *pSub, char *self, void *pDesc, struct ActorSubCfg *pCfg);
 extern void Ov043_dispatchEntryList(void);
 extern void func_ov043_020b5330(void);
-extern int data_ov043_020b58c4;
+extern int gOv043XemnasLiE1PackPath;
 
 void Ov043_OpenSecondarySub(char *self)
 {
@@ -61,7 +61,7 @@ void Ov043_OpenSecondarySub(char *self)
     cfg.field38 = 0x25;
     cfg.field4c = 2;
     Ov022_PublishGroupUpdateFixed((char *)*(void **)(self + 0x2000 + 0x644) + 0x30, self,
-                        &data_ov043_020b58c4, &cfg);
+                        &gOv043XemnasLiE1PackPath, &cfg);
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x50) = (void *)&Ov043_dispatchEntryList;
     *(void **)((char *)*(void **)(self + 0x2000 + 0x644) + 0x54) = (void *)&func_ov043_020b5330;
 }

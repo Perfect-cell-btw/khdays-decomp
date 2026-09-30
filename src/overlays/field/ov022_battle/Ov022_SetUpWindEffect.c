@@ -54,9 +54,9 @@ struct Actor {
     u32 nContainerIndex;          /* 0x000c */
 };
 
-extern char data_ov022_020b2b94[];
-extern char data_ov022_020b2ba4[];
-extern char data_ov022_020b2bb0[];
+extern char gOv022BaEfAsPackPath[];
+extern char gOv022BaEfAsPath[];
+extern char gOv022BaChAsPath[];
 
 extern void Ov022_PlaceWindNode(void *pState);
 
@@ -85,8 +85,8 @@ void Ov022_SetUpWindEffect(struct WindEffect *pEffect, int nCount,
         return;
     }
     pEffect->nSlotId = pActor->nId;
-    RegisterSeqAndInit(&pEffect->anim, data_ov022_020b2b94, 1, 5);
-    pContainer = Msg_OpenContainerAndReadHeader(data_ov022_020b2ba4, 6);
+    RegisterSeqAndInit(&pEffect->anim, gOv022BaEfAsPackPath, 1, 5);
+    pContainer = Msg_OpenContainerAndReadHeader(gOv022BaEfAsPath, 6);
     /* The mask is one value: the ROM loads 0xfffffc once and shifts it right
      * by fifteen for the index mask. */
     nMask = 0xfffffc;
@@ -98,7 +98,7 @@ void Ov022_SetUpWindEffect(struct WindEffect *pEffect, int nCount,
                   pEffect->nSlotId + 7);
     ZeroHalfThenFree(pContainer);
     BindAnimTrack(&pEffect->anim, 0, pEffect->blkBind, 0);
-    pTable = Archive_LoadFile((u32)data_ov022_020b2bb0, 6);
+    pTable = Archive_LoadFile((u32)gOv022BaChAsPath, 6);
     if (nCount > 9) {
         nCount = 9;
     }

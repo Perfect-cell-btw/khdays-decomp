@@ -18,8 +18,8 @@ extern int OS_SPrintf(char *dst, const char *fmt, ...);
 extern void *Archive_LoadFile(const char *path, int heap);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern char *data_02042a70[];
-extern char data_02042ac0[];
-extern char data_02042ad0[];
+extern char gLvPathFmt[];
+extern char gBaChPath[];
 
 void LevelTable_ReadEntry(int kind, int index, LevelEntry *out)
 {
@@ -34,7 +34,7 @@ void LevelTable_ReadEntry(int kind, int index, LevelEntry *out)
         kind = 0xe;
         break;
     }
-    OS_SPrintf(path, data_02042ac0, data_02042ad0, data_02042a70[kind]);
+    OS_SPrintf(path, gLvPathFmt, gBaChPath, data_02042a70[kind]);
     file = Archive_LoadFile(path, 6);
     {
         LevelEntry *e = &file[index];

@@ -68,7 +68,7 @@ struct MobiClipFileBank {
 extern struct MobiClipFileBank data_ov024_02093a48;
 extern int data_ov024_0209ba48;
 extern struct MobiClipGlobals data_ov024_02093a2c;
-extern int data_ov024_020939ac;
+extern int gOv024MobiclipIntrName;
 extern struct MobiClipFrameTimer *data_ov024_02093a3c[3];
 
 extern void FS_InitFile(void *pFile);
@@ -215,7 +215,7 @@ int Ov024_MobiClip_OpenStreams(struct MobiClipOpenRequest *pRequest)
     }
 
     data_ov024_02093a2c.bStopped = 0;
-    RegisterNamedTask(1, &data_ov024_020939ac, (void *)&Ov024_MobiClip_PresentOnVBlank);
+    RegisterNamedTask(1, &gOv024MobiclipIntrName, (void *)&Ov024_MobiClip_PresentOnVBlank);
     OS_WaitVBlankIntr();
     return 1;
 

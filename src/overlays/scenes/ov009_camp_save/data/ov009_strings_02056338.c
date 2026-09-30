@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov009_02056338[24] = "UI/cm/sav_b_000.pbg.z";
+char gOv009UiCmSavB000Path[24] = "UI/cm/sav_b_000.pbg.z";
 
-char data_ov009_02056350[20] = "UI/cm/save.BGUI.z";
+char gOv009UiCmSavePath[20] = "UI/cm/save.BGUI.z";
 
-char data_ov009_02056364[20] = "UI/cm/cm_save.ui.z";
+char gOv009UiCmCmSavePath[20] = "UI/cm/cm_save.ui.z";
 
-char data_ov009_02056378[20] = "UI/cm/str/sav_&.s.z";
+char gOv009UiCmStrSavTextPath[20] = "UI/cm/str/sav_&.s.z";

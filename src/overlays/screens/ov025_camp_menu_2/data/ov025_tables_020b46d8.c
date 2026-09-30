@@ -23,7 +23,7 @@
  *   data_ov025_020b495d: (no C reader yet)
  *   data_ov025_020b4960: Ov025_ReportDetail_LoadBackground, Ov025_ReportDetail_SetupEntries
  *   data_ov025_020b4961: (no C reader yet)
- *   data_ov025_020b4962: (no C reader yet)
+ *   gOv025KptsName: (no C reader yet)
  */
 
 #include "nitro/types.h"
@@ -104,4 +104,4 @@ const u8 data_ov025_020b4961[1] = {
     76,
 };
 
-const char data_ov025_020b4962[6] = "KPTS";
+const char gOv025KptsName[6] = "KPTS";

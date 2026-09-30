@@ -31,4 +31,4 @@ Ov292_Action49Callback kind:function(arm,size=0xa0) addr:0x020d4784
 Ov292_TimerGateHw60FlipThenAdvance kind:function(arm,size=0x94) addr:0x020d4824
 data_ov292_020d48b8 kind:data(any) addr:0x020d48b8
 gOv292PackPathFmt kind:data(any) addr:0x020d48c0
-data_ov292_020d48cc kind:data(any) addr:0x020d48cc
+gOv292BodyName kind:data(any) addr:0x020d48cc

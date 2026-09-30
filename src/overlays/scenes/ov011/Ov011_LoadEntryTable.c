@@ -51,14 +51,14 @@ typedef struct Ov011Globals {
 } Ov011Globals;
 
 extern Ov011Globals data_ov011_0205e960;
-extern u32 data_ov011_0205e938[];
+extern u32 gOv011UiSfSfPath_2[];
 
 extern void *Archive_LoadFile(u32 nHandle, int nHeap);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 
 void Ov011_LoadEntryTable(void)
 {
-    Ov011PackedFile *pFile = Archive_LoadFile((u32)data_ov011_0205e938, 0xe);
+    Ov011PackedFile *pFile = Archive_LoadFile((u32)gOv011UiSfSfPath_2, 0xe);
     Ov011Table *pTable = NNSi_FndAllocFromDefaultExpHeap(pFile->nCount * 8 + 4);
     const u16 *pCursor;
     u32 i;

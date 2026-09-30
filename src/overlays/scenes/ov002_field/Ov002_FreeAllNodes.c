@@ -4,7 +4,7 @@ extern void *NNS_FndGetNextListObject(void *list, void *obj);
 extern void Ov002_RemoveAndFreeNode(void *obj);
 
 extern int data_ov002_0207f60c;
-extern char data_ov002_0207e8a8[];
+extern char gOv002BguivbfuncName[];
 
 /* Empty the node list at ctx+0xa4: walk it, and hand every node to
  * Ov002_RemoveAndFreeNode, which unlinks it from that same list and frees it.
@@ -23,5 +23,5 @@ void Ov002_FreeAllNodes(void) {
             node = next;
         } while (next != 0);
     }
-    VBlank_UnregisterCallback(1, data_ov002_0207e8a8);
+    VBlank_UnregisterCallback(1, gOv002BguivbfuncName);
 }

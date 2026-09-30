@@ -28,8 +28,8 @@ typedef struct GraphicsResourceCell {
     PaletteResourceBlock *palette;
 } GraphicsResourceCell;
 
-extern const char data_ov009_02056338[];
-extern const char data_ov009_02056350[];
+extern const char gOv009UiCmSavB000Path[];
+extern const char gOv009UiCmSavePath[];
 
 extern int   Ov009_GetCtxBlock9500(void);
 extern void *Archive_LoadFile(const void *handle, int heapId);
@@ -57,7 +57,7 @@ void Ov009_LoadMenuBgWithVariantChars(void)
     int entry;
 
     tracker = Ov009_GetCtxBlock9500();
-    resource = Archive_LoadFile(data_ov009_02056338, 14);
+    resource = Archive_LoadFile(gOv009UiCmSavB000Path, 14);
     Res_LoadSpriteSet(&cell, resource, 0, 0, 0);
     GX_LoadBGPltt(cell.palette->data, 0, cell.palette->size);
 
@@ -79,7 +79,7 @@ void Ov009_LoadMenuBgWithVariantChars(void)
     }
 
     *REG_DISPCAPCNT = 0x01e600e3;
-    Ov009_LoadAndInitResourceSections(tracker, data_ov009_02056350);
+    Ov009_LoadAndInitResourceSections(tracker, gOv009UiCmSavePath);
     entry = Ov009_FindEntryByTag(tracker, 0);
     Ov009_TagTracker_InvokeCallback(tracker, entry);
     entry = Ov009_FindEntryByTag(tracker, 1);

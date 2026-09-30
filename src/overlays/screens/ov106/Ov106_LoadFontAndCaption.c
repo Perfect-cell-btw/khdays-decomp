@@ -1,12 +1,12 @@
 #pragma thumb on
-/* Load the ov106 scene's font and caption: the player name is fetched, the data_ov106_020b8ac4 resource
+/* Load the ov106 scene's font and caption: the player name is fetched, the gOv106EvEvDpPath resource
  * loads (mode 0xf) and the +0x8e50 caption is drawn from it into +0x8594 (colour from the +0x8e52
  * number), the resource is released, the data_ov106_020b8b20 handle is stored in +0x8e40 and sound
  * 0x323 plays. Returns the next state (020b7918). */
 typedef struct { char s[12]; } ResName;
 
 extern char *data_ov106_020b8b60;
-extern const ResName data_ov106_020b8ac4;
+extern const ResName gOv106EvEvDpPath;
 extern char data_ov106_020b8b20[];
 extern void Ov002_FormatResultLine(int index, char *out);
 extern void *Msg_OpenContainerAndReadHeader(const void *descriptor, int mode);
@@ -26,7 +26,7 @@ void *Ov106_LoadFontAndCaption(void)
 
     Ov002_FormatResultLine(0, name);
     res = path;     /* one local serves as the request buffer, then as the loaded resource */
-    *(ResName *)res = data_ov106_020b8ac4;
+    *(ResName *)res = gOv106EvEvDpPath;
     res = Msg_OpenContainerAndReadHeader(path, 0xf);
     scene = data_ov106_020b8b60;
     Stream_DecodeIntoStagingBuffer(data_ov106_020b8b60,

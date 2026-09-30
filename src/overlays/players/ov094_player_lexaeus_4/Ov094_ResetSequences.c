@@ -5,11 +5,11 @@
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern int data_ov094_020bc240;
-extern int data_ov094_020bc1d4;
-extern int data_ov094_020bc1e8;
-extern int data_ov094_020bc1fc;
-extern int data_ov094_020bc210;
-extern int data_ov094_020bc224;
+extern int gOv094LexaeusLiE0PackPath;
+extern int gOv094LexaeusLiE1PackPath;
+extern int gOv094LexaeusLiE2PackPath;
+extern int gOv094LexaeusLiE4PackPath;
+extern int gOv094LexaeusLiE5PackPath;
 
 typedef struct { int w[5]; } Params;
 extern Params data_ov094_020bc12c;
@@ -26,15 +26,15 @@ void Ov094_ResetSequences(int self) {
     *(int *)(blk + 0x444) = 0;
     *(int *)(blk + 8) = 0;
     *(int *)(blk + 0x550) = 0;
-    RegisterSeqAndInit((int)(blk + 0x22c), &data_ov094_020bc1d4, 1,
+    RegisterSeqAndInit((int)(blk + 0x22c), &gOv094LexaeusLiE0PackPath, 1,
                   *(unsigned char *)(base + 9) + 7);
-    RegisterSeqAndInit((int)(blk + 0x10), &data_ov094_020bc1e8, 1,
+    RegisterSeqAndInit((int)(blk + 0x10), &gOv094LexaeusLiE1PackPath, 1,
                   *(unsigned char *)(base + 9) + 7);
-    RegisterSeqAndInit((int)(blk + 0x11c), &data_ov094_020bc1fc, 1,
+    RegisterSeqAndInit((int)(blk + 0x11c), &gOv094LexaeusLiE2PackPath, 1,
                   *(unsigned char *)(base + 9) + 7);
-    RegisterSeqAndInit((int)(blk + 0x33c), &data_ov094_020bc210, 1,
+    RegisterSeqAndInit((int)(blk + 0x33c), &gOv094LexaeusLiE4PackPath, 1,
                   *(unsigned char *)(base + 9) + 7);
-    RegisterSeqAndInit((int)(blk + 0x448), &data_ov094_020bc224, 1,
+    RegisterSeqAndInit((int)(blk + 0x448), &gOv094LexaeusLiE5PackPath, 1,
                   *(unsigned char *)(base + 9) + 7);
     p = data_ov094_020bc12c;
     Ov022_AllocateSlotWithClass(self + 0x248 + 0x2400, *(unsigned char *)(self + 9), 5, &p);

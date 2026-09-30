@@ -4,58 +4,58 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov008_020901fc[24] = "UI/cm/str/root_&.s.z";
+char gOv008UiCmStrRootTextPath[24] = "UI/cm/str/root_&.s.z";
 
-char data_ov008_02090214[4] = "r2";
+char gOv008R2Name[4] = "r2";
 
-char data_ov008_02090218[4] = "go";
+char gOv008GoName[4] = "go";
 
-char data_ov008_0209021c[4] = "do";
+char gOv008DoName[4] = "do";
 
-char data_ov008_02090220[4] = "mi";
+char gOv008MiName[4] = "mi";
 
-char data_ov008_02090224[4] = "ze";
+char gOv008ZeName[4] = "ze";
 
-char data_ov008_02090228[4] = "xo";
+char gOv008XoName[4] = "xo";
 
-char data_ov008_0209022c[4] = "xe";
+char gOv008XeName[4] = "xe";
 
-char data_ov008_02090230[4] = "ve";
+char gOv008VeName[4] = "ve";
 
-char data_ov008_02090234[4] = "ri";
+char gOv008RiName[4] = "ri";
 
-char data_ov008_02090238[4] = "ma";
+char gOv008MaName[4] = "ma";
 
-char data_ov008_0209023c[4] = "lu";
+char gOv008LuName[4] = "lu";
 
-char data_ov008_02090240[4] = "le";
+char gOv008LeName[4] = "le";
 
-char data_ov008_02090244[4] = "la";
+char gOv008LaName[4] = "la";
 
-char data_ov008_02090248[4] = "de";
+char gOv008DeName[4] = "de";
 
-char data_ov008_0209024c[4] = "so";
+char gOv008SoName[4] = "so";
 
-char data_ov008_02090250[4] = "xa";
+char gOv008XaName[4] = "xa";
 
-char data_ov008_02090254[4] = "sa";
+char gOv008SaName[4] = "sa";
 
-char data_ov008_02090258[4] = "xi";
+char gOv008XiName[4] = "xi";
 
-char data_ov008_0209025c[4] = "ax";
+char gOv008AxName[4] = "ax";
 
-char data_ov008_02090260[4] = "ro";
+char gOv008RoName[4] = "ro";
 
-char data_ov008_02090264[20] = "ba/ch/xo/w_mot.p.z";
+char gOv008XionWMotPackPath[20] = "ba/ch/xo/w_mot.p.z";
 
-char data_ov008_02090278[16] = "ba/ch/%s/w_.p2";
+char gOv008BaChWPathFmt[16] = "ba/ch/%s/w_.p2";
 
-char data_ov008_02090288[16] = "ba/ch/ro/w_.p2";
+char gOv008RoxasWPath[16] = "ba/ch/ro/w_.p2";
 
-char data_ov008_02090298[20] = "ba/ch/%s/def_hb.p.z";
+char gOv008BaChDefHbPackPathFmt[20] = "ba/ch/%s/def_hb.p.z";
 
-char data_ov008_020902ac[20] = "ba/ch/%s/def.p.z";
+char gOv008BaChDefPackPathFmt[20] = "ba/ch/%s/def.p.z";
 
-char data_ov008_020902c0[20] = "ba/ch/%s/def_h.p.z";
+char gOv008BaChDefHPackPathFmt[20] = "ba/ch/%s/def_h.p.z";
 
-char data_ov008_020902d4[20] = "UI/cm/msl_&.msi.z";
+char gOv008UiCmMslPath[20] = "UI/cm/msl_&.msi.z";

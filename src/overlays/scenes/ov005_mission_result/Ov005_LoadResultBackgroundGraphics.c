@@ -15,7 +15,7 @@ typedef struct Ov005Config {u16 sceneId;char unknown02[8];u16 resultLabelIndex;}
 typedef struct Ov005ResultContext {u32 *resultArchive;} Ov005ResultContext;
 extern Ov005Config data_ov005_0205b85c;
 extern Ov005ResultContext *data_ov005_0205b810;
-extern char data_ov005_0205b5a4[];
+extern char gOv005UiSrsltUbPath[];
 extern void *Archive_LoadFile(const char *,int);
 extern void GXS_LoadBGPltt(const void *,u32,u32);
 extern void GXS_LoadBG0Char(const void *,u32,u32);
@@ -45,7 +45,7 @@ void Ov005_LoadResultBackgroundGraphics(void) {
     Res_LoadSpriteSet(&resources,archive,-1,characterIndex,-1);
     GXS_LoadBG0Char(resources.pChar->pCharData,0,resources.pChar->nCharSize);
     if((unsigned int)(GetLanguage()==1)==0) {
-        void *extra=Archive_LoadFile(data_ov005_0205b5a4,14);
+        void *extra=Archive_LoadFile(gOv005UiSrsltUbPath,14);
         GetResourceSubBlock_CHAR2(extra,&extraCharacters);
         GXS_LoadBG1Char(extraCharacters->pCharData,0x3000,extraCharacters->nCharSize);
         if(extra!=0)NNSi_FndFreeFromDefaultHeap(extra);

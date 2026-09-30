@@ -26,7 +26,7 @@ struct Ov153SubitemSlot {
 extern const int data_ov155_020d588c[2];
 extern VecFx32 data_ov155_020d5894;
 extern const VecFx32 data_02042264;
-extern const char data_ov155_020d590c[];
+extern const char gOv155HeadconName[];
 
 extern void Ov155_Destroy(void);
 extern void func_ov155_020d3b10(void);   /* the game's tail-call veneer to the ov107 draw hook, named after the byte-identical SDK thunk */
@@ -88,7 +88,7 @@ void Ov155_ConstructActor(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe3] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov155_020d590c);
+        ((void **)self)[0xe3] = InsertSortedEntryWithKey(self[0xe1], 1, gOv155HeadconName);
         ((void **)self)[0xe5] = CallocInstance(0x10);
 
         for (i = 0; i < 2; i++) {

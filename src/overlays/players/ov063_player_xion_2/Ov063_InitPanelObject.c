@@ -51,15 +51,15 @@ extern void Ov063_SetupBuildBlock(void);
 extern void Ov063_ForwardArmPlayerTarget(void);
 
 extern void *data_ov063_020b7e20;
-extern const char data_ov063_020b7d28[];
-extern const char data_ov063_020b7d2c[];
-extern const char data_ov063_020b7d40[];
-extern const char data_ov063_020b7d54[];
-extern const char data_ov063_020b7d68[];
-extern int data_ov063_020b7ca4;
-extern int data_ov063_020b7cc4;
-extern int data_ov063_020b7cb4;
-extern int data_ov063_020b7c94;
+extern const char gOv063StrFmt[];
+extern const char gOv063XionDefHPackPath[];
+extern const char gOv063XionDefPackPath[];
+extern const char gOv063XionDefHhPackPath[];
+extern const char gOv063XionDefHoPackPath[];
+extern int gOv063XionTgName;
+extern int gOv063XoHRName;
+extern int gOv063XionRName;
+extern int gOv063Bip01Name;
 
 void Ov063_InitPanelObject(struct Ov063InitConfig *config)
 {
@@ -89,16 +89,16 @@ void Ov063_InitPanelObject(struct Ov063InitConfig *config)
     switch (nameGroup) {
     case 0:
         if (alternateName != 0) {
-            OS_SPrintf(name, data_ov063_020b7d28, data_ov063_020b7d2c);
+            OS_SPrintf(name, gOv063StrFmt, gOv063XionDefHPackPath);
         } else {
-            OS_SPrintf(name, data_ov063_020b7d28, data_ov063_020b7d40);
+            OS_SPrintf(name, gOv063StrFmt, gOv063XionDefPackPath);
         }
         break;
     case 1:
         if (alternateName != 0) {
-            OS_SPrintf(name, data_ov063_020b7d28, data_ov063_020b7d54);
+            OS_SPrintf(name, gOv063StrFmt, gOv063XionDefHhPackPath);
         } else {
-            OS_SPrintf(name, data_ov063_020b7d28, data_ov063_020b7d68);
+            OS_SPrintf(name, gOv063StrFmt, gOv063XionDefHoPackPath);
         }
         break;
     }
@@ -132,16 +132,16 @@ test:
 
     bone = Ov063_GetBoneBase(object);
     *(int *)(object + 0x520) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov063_020b7ca4) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv063XionTgName) : -1;
     bone = Ov063_GetBoneBase(object);
     *(int *)(object + 0x518) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov063_020b7cc4) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv063XoHRName) : -1;
     bone = Ov063_GetBoneBase(object);
     *(int *)(object + 0x51c) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov063_020b7cb4) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv063XionRName) : -1;
     bone = Ov063_GetBoneBase(object);
     *(int *)(object + 0x524) = bone != 0
-        ? NNS_G3dGetResDictIdxByName((void *)bone, &data_ov063_020b7c94) : -1;
+        ? NNS_G3dGetResDictIdxByName((void *)bone, &gOv063Bip01Name) : -1;
 
     if (config->enableLowFlag != 0) {
         *(long long *)object |= 0x20;

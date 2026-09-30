@@ -27,7 +27,7 @@ extern const int data_ov124_020d1ed8[2];
 extern VecFx32 data_ov124_020d1ee0;
 extern const VecFx32 data_02042264;
 extern void Ov124_Model_SetTracks0And3(void);
-extern const char data_ov124_020d1f4c[];
+extern const char gOv124HeadconName[];
 
 extern void Ov124_ReleaseSubObjectsListThenNotify(void);
 extern void func_ov124_020cfed4(void);   /* the game's tail-call veneer to the ov107 draw hook, named after the byte-identical SDK thunk */
@@ -90,7 +90,7 @@ void Ov124_Construct(int param)
 
         ((void **)self)[0xe1] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self[0x27], ((void **)self)[0xe1]);
-        ((void **)self)[0xe4] = InsertSortedEntryWithKey(self[0xe1], 1, data_ov124_020d1f4c);
+        ((void **)self)[0xe4] = InsertSortedEntryWithKey(self[0xe1], 1, gOv124HeadconName);
         ((void **)self)[0xe6] = CallocInstance(0x10);
 
         for (i = 0; i < 2; i++) {

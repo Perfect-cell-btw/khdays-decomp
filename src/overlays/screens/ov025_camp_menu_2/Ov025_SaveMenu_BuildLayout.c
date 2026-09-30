@@ -27,7 +27,7 @@ typedef struct Ov009ObjectConfig {
 } Ov009ObjectConfig;
 
 extern const Ov009ObjectConfig data_ov025_020b4060;
-extern const char data_ov025_020b4e9c[];
+extern const char gOv025UiCmCmSavePath[];
 extern const int data_ov025_020b40e8[3][8];
 extern void func_ov025_0209bccc(void);
 
@@ -65,7 +65,7 @@ void Ov025_SaveMenu_BuildLayout(Ov009PageContext *context)
     config.resource = Ov025_PackHandleTagB(3);
     object = Ov025_GetContext();
     Ov025_InitFromDescAndMark(object, &config);
-    Ov025_LoadBlockProcessAndFree(object, data_ov025_020b4e9c, 0x24);
+    Ov025_LoadBlockProcessAndFree(object, gOv025UiCmCmSavePath, 0x24);
     Ov025_StoreWordAt0x4a50(object, (int)func_ov025_0209bccc);
     ClampToRange0to16At0x4628(object, 8);
     G2x_SetBlendAlpha_((volatile void *)0x04000050, 4, 0x10, 8, 8);

@@ -1,6 +1,6 @@
 /* Ov023_CreateHintSprites -- Ov023_CreateHintSprites: create the event scene's three hint sprites.
  * The sprite manager at +0x144 is initialised with the "ev/hint_&.z" resource
- * (data_ov023_0208a098, enabled, 02032388); then three sprites are created (02032444) and kept
+ * (gOv023EvHintPath, enabled, 02032388); then three sprites are created (02032444) and kept
  * at +0x4b7c, each placed at its position from data_ov023_02089cfc (0203257c), sent to its
  * first animation entry (020325ec 0), shown (02032710 1) and left in the plain mode
  * (0203281c 0).
@@ -52,7 +52,7 @@ extern void  Slot_SetVisible(void *pManager, void *pSprite, int bVisible); /* Sp
 extern void  Slot_SetMode2Bit(void *pManager, void *pSprite, int nMode);  /* Sprite_SetMode */
 extern Ov023SceneRoot data_ov023_0208a784;
 extern const Ov023HintPositions data_ov023_02089cfc;                /* the hint positions */
-extern char  data_ov023_0208a098[];                                 /* "ev/hint_&.z" */
+extern char  gOv023EvHintPath[];                                 /* "ev/hint_&.z" */
 
 void Ov023_CreateHintSprites(void)
 {
@@ -63,7 +63,7 @@ void Ov023_CreateHintSprites(void)
 
     pManager = &data_ov023_0208a784.pScene->display;
     positions = data_ov023_02089cfc;
-    init.pResource = data_ov023_0208a098;
+    init.pResource = gOv023EvHintPath;
     init.bEnabled = 1;
     init.nReserved0 = 0;
     init.nReserved1 = 0;

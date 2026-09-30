@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207ee38[28] = "UI/btl/bm_lo_TT08.NSCR.z";
+char gOv002UiBtlBmLoTt08Path[28] = "UI/btl/bm_lo_TT08.NSCR.z";
 
-char data_ov002_0207ee54[28] = "UI/btl/bm_lo_bg002.NCGR.z";
+char gOv002UiBtlBmLoBg002Path[28] = "UI/btl/bm_lo_bg002.NCGR.z";

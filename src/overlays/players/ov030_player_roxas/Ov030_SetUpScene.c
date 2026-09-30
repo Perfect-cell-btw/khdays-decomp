@@ -18,7 +18,7 @@ extern void Ov030_initStateSlotsDispatch(int base, int slots);
 extern void Ov022_RequestVoiceIds(int base, int a, int b);
 extern void Ov022_ArmDecoder(void);
 extern unsigned char data_0204c240;
-extern int data_ov030_020b5908;
+extern int gOv030RoxasEtcPackPath;
 extern struct Ov030ClassArgs data_ov030_020b58b0;
 extern int data_ov022_020b2930;
 
@@ -33,7 +33,7 @@ void *Ov030_SetUpScene(int *self) {
 
     if ((data_0204c240 & 4) == 0) {
         *(int *)(base + 0x2c50) =
-            (int)Archive_LoadFile(&data_ov030_020b5908, *self + 7);
+            (int)Archive_LoadFile(&gOv030RoxasEtcPackPath, *self + 7);
         Resource_BindFileToSlot(base + 0x2c2c, *(int *)(base + 0x20) + 4,
                       *(int *)(base + 0x2c50), *self + 7);
         *(int *)(base + 0x6bc) = -1;

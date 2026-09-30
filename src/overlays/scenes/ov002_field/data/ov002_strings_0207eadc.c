@@ -4,6 +4,6 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207eadc[24] = "/text/font_eu_08s.nftr";
+char gOv002TextFontEu08SPath_2[24] = "/text/font_eu_08s.nftr";
 
-char data_ov002_0207eaf4[20] = "UI/btl/&/cmd.s.z";
+char gOv002UiBtlCmdTextPath[20] = "UI/btl/&/cmd.s.z";

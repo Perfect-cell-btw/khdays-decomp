@@ -8,7 +8,7 @@ typedef struct BgPlttSrc {int nFormat,n_pad;u32 dwSize;void *pData;} BgPlttSrc;
 typedef struct SpriteResSet {void *pScreen;Ov002PageChars *pChar;BgPlttSrc *pPalette;} SpriteResSet;
 typedef int (*Ov002LoadingScreenNextState)(void);
 extern Ov002BlinkState *data_ov002_0207fa18;
-extern char data_ov002_0207f420[],data_ov002_0207f434[],data_ov002_0207f444[];
+extern char gOv002UiNldgNldgPath[],gOv002UiSgBgPath[],gOv002UinowldtaskfuncName[];
 extern u8 data_0204c240;
 extern Ov002BlinkState *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *,int,u32);
@@ -54,7 +54,7 @@ Ov002LoadingScreenNextState Ov002_InitLoadingScreen(void)
     }
     *(volatile u16 *)0x0400000e=(*(volatile u16 *)0x0400000e&0x43)|0x1f00;
     Ov002_SaveOrRestoreLcdSwap(1);
-    pArchive=Archive_LoadFile(data_ov002_0207f420,14);
+    pArchive=Archive_LoadFile(gOv002UiNldgNldgPath,14);
     Res_LoadSpriteSet(&resources,pArchive,0,0,0);
     DC_FlushRange(resources.pPalette->pData,0x200);
     GX_LoadBG3Char(resources.pChar->pCharData,0x13c0,0x40);
@@ -68,7 +68,7 @@ Ov002LoadingScreenNextState Ov002_InitLoadingScreen(void)
     Ov002_DrawTileCursor2x2(0);
     if((data_0204c240&12)==4){
         pMap[0]=0xe086;pMap[1]=0xe087;pMap[32]=0xe088;pMap[33]=0xe089;
-        pArchive=Archive_LoadFile(data_ov002_0207f434,14);
+        pArchive=Archive_LoadFile(gOv002UiSgBgPath,14);
         Res_LoadSpriteSet(&resources,pArchive,0,0,0);
         pState->pTileData=NNSi_FndAllocFromDefaultExpHeap(resources.pChar->nCharSize);
         MIi_CpuCopyFast(resources.pChar->pCharData,pState->pTileData,resources.pChar->nCharSize);
@@ -77,7 +77,7 @@ Ov002LoadingScreenNextState Ov002_InitLoadingScreen(void)
     *(volatile u32 *)0x0400001c=0;
     pState->nLastTick=OS_GetTick();
     pState->nPhase=0;
-    RegisterNamedTask(1,data_ov002_0207f444,Ov002_TickBlink);
+    RegisterNamedTask(1,gOv002UinowldtaskfuncName,Ov002_TickBlink);
     SetMasterBrightnessMain(0);
     return Ov002_ConstReturn0;
 }

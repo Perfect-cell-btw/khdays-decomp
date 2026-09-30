@@ -41,7 +41,7 @@ extern int Ov146_Rider_New(char *self);
 extern int Ov146_Mount_New(char *self);
 extern void Res_RequestIdPair(int id);
 extern const PartIds data_ov146_020cf4f8;
-extern const char data_ov146_020cf52c[];
+extern const char gOv146BrootName[];
 extern const VecFx32 data_02041dc8;
 
 void Ov146_Actor_Construct(char *self)
@@ -81,7 +81,7 @@ void Ov146_Actor_Construct(char *self)
     *(Box *)(self + 0x1fc) = box;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x3c0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov146_020cf52c);
+    *(int *)(self + 0x3c0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv146BrootName);
     Snd_RegisterSeqAndBind(self + 0x388, *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(self, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), self + 0x388);
     for (i = 0; i < 5; i++) {

@@ -51,9 +51,9 @@ extern int Ov107_Mover_New(const Capsule *capsule);
 extern int Ov107_CloneResourceTransform(const Placement *placement);
 extern void Res_RequestIdPair(int resourceId);
 extern IdTable data_ov278_020d6244;
-extern char data_ov278_020d646c[];
-extern char data_ov278_020d6474[];
-extern const char data_ov278_020d6480[];
+extern char gOv278BBodyName[];
+extern char gOv278BHead02Name[];
+extern const char gOv278GaMoveName[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042264;
 
@@ -96,8 +96,8 @@ void Ov278_Construct(char *self)
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), *(int *)(self + 0x38c));
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov278_SetupModelPoses;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
-    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov278_020d646c);
-    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov278_020d6474);
+    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv278BBodyName);
+    *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv278BHead02Name);
     hw = *(u16 *)(self + 0x60);
     *(u16 *)(self + 0x60) = (hw & ~0xff00) |
         ((((((unsigned int)hw << 0x10) >> 0x18) | 0x80) << 0x18) >> 0x10);
@@ -109,7 +109,7 @@ void Ov278_Construct(char *self)
     Srt_SetScaleXYZ(*(int *)(self + 0x388) + 4, 0x1000, 1, 0x1000);
     Srt_SetTranslationXYZ(*(int *)(self + 0x388) + 4, 0, 0x200, 0);
     NNS_G3dMdlSetMdlAlphaAll(*(int *)(*(int *)(*(int *)(self + 0x388) + 0x88) + 0x78), 8);
-    *(int *)(self + 0x3ac) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x3f), data_ov278_020d6480);
+    *(int *)(self + 0x3ac) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x3f), gOv278GaMoveName);
     *(int *)(self + 0x3b0) = CallocInstance(0x50);
     for (i = 0; i < 10; i++) {
         ((struct Pair *)*(int *)(self + 0x3b0))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, ids.id[i]));

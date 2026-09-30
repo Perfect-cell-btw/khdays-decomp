@@ -4,11 +4,11 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov025_020b4ca0;
+extern int gOv025UiCmMslPath_2;
 
 void *const data_ov025_020b3934[3] = {
 
-    &data_ov025_020b4ca0,
+    &gOv025UiCmMslPath_2,
 
     0,
 

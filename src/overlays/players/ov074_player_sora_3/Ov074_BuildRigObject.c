@@ -33,12 +33,12 @@ typedef int (*StateHandler)(int *);
 extern u8 Ov074_RegisterHandlersAndArm(struct Runtime *);
 extern int Ov074_FlagLocalAndEnterState21(int *);
 extern void *data_ov074_020b9b80;
-extern char data_ov074_020b9afc[];
-extern char data_ov074_020b9a9c[];
-extern char data_ov074_020b9aac[];
-extern char data_ov074_020b9a8c[];
-extern char data_ov074_020b9a6c[];
-extern char data_ov074_020b9a7c[];
+extern char gOv074SoraDefPackPath[];
+extern char gOv074SoraTgName[];
+extern char gOv074SoWTg00Name[];
+extern char gOv074SoLeftDummyName[];
+extern char gOv074SoraRName[];
+extern char gOv074Bip01Name[];
 
 static inline int bone(char *obj) {
     int rig = ((struct RigHeader *)(*(int *)(obj + 0x20) + 0x24))->rig;
@@ -62,7 +62,7 @@ void Ov074_BuildRigObject(struct InitConfig *cfg) {
     p.limit = 0xf00;
     Entity_ForwardToSlot(*(signed char *)(obj + 0x4bc),
                   (unsigned short)(1 << *(u8 *)(obj + 8)), 0, &p, 0);
-    TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), data_ov074_020b9afc,
+    TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), gOv074SoraDefPackPath,
                   1, cfg->type + 7);
 
     *(void **)(obj + 0x664) = (void *)&Ov074_ApplyModeChange;
@@ -92,15 +92,15 @@ test:
     if (i < 5) goto body;
 
     b = bone(obj);
-    *(int *)(obj + 0x520) = b ? NNS_G3dGetResDictIdxByName((void *)b, data_ov074_020b9a9c) : -1;
+    *(int *)(obj + 0x520) = b ? NNS_G3dGetResDictIdxByName((void *)b, gOv074SoraTgName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x518) = b ? NNS_G3dGetResDictIdxByName((void *)b, data_ov074_020b9aac) : -1;
+    *(int *)(obj + 0x518) = b ? NNS_G3dGetResDictIdxByName((void *)b, gOv074SoWTg00Name) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x514) = b ? NNS_G3dGetResDictIdxByName((void *)b, data_ov074_020b9a8c) : -1;
+    *(int *)(obj + 0x514) = b ? NNS_G3dGetResDictIdxByName((void *)b, gOv074SoLeftDummyName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x51c) = b ? NNS_G3dGetResDictIdxByName((void *)b, data_ov074_020b9a6c) : -1;
+    *(int *)(obj + 0x51c) = b ? NNS_G3dGetResDictIdxByName((void *)b, gOv074SoraRName) : -1;
     b = bone(obj);
-    *(int *)(obj + 0x524) = b ? NNS_G3dGetResDictIdxByName((void *)b, data_ov074_020b9a7c) : -1;
+    *(int *)(obj + 0x524) = b ? NNS_G3dGetResDictIdxByName((void *)b, gOv074Bip01Name) : -1;
 
     if (cfg->low) *(long long *)obj |= 0x20;
     if (cfg->mid) *(long long *)obj |= 0x10000;

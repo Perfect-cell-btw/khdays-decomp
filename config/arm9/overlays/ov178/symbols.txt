@@ -63,5 +63,5 @@ Ov178_AiStep_QueueAction0OnAnimEnd kind:function(arm,size=0x30) addr:0x020cee40
 data_ov178_020cee70 kind:data(any) addr:0x020cee70
 data_ov178_020cee88 kind:data(any) addr:0x020cee88
 gOv178PackPathFmt kind:data(any) addr:0x020ceea0
-data_ov178_020ceeac kind:data(any) addr:0x020ceeac
-data_ov178_020ceeb4 kind:data(any) addr:0x020ceeb4
+gOv178Bone04Name kind:data(any) addr:0x020ceeac
+gOv178BodyName kind:data(any) addr:0x020ceeb4

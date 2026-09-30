@@ -4,10 +4,10 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207ed20[16] = "UI/btl/&/map.p2";
+char gOv002UiBtlMapPath[16] = "UI/btl/&/map.p2";
 
-char data_ov002_0207ed30[20] = "UI/btl/mapchr.p2";
+char gOv002UiBtlMapchrPath[20] = "UI/btl/mapchr.p2";
 
-char data_ov002_0207ed44[20] = "UI/btl/&/info.s.z";
+char gOv002UiBtlInfoTextPath[20] = "UI/btl/&/info.s.z";
 
-char data_ov002_0207ed58[28] = "UI/btl/bm_lo_bg004.NCGR.z";
+char gOv002UiBtlBmLoBg004Path[28] = "UI/btl/bm_lo_bg004.NCGR.z";

@@ -30,7 +30,7 @@ struct SlotNames {
 };
 
 extern struct SlotNames data_ov022_020b2510;
-extern char data_ov022_020b2c28[];
+extern char gOv022BaEfIPackPath[];
 
 void Ov022_BindReactionAnims(struct Request *pReq)
 {
@@ -39,7 +39,7 @@ void Ov022_BindReactionAnims(struct Request *pReq)
 
     names = data_ov022_020b2510;
     for (i = 0; i < 4; i++) {
-        RegisterSeqAndInit(&pReq->aAnims[i], data_ov022_020b2c28, 1, 5);
+        RegisterSeqAndInit(&pReq->aAnims[i], gOv022BaEfIPackPath, 1, 5);
     }
     for (i = 0; i < 4; i++) {
         Snd_RegisterSeqAndBind(&pReq->aBinds[i], &pReq->aAnims[i], names.apNames[i], 5);

@@ -7,7 +7,7 @@
 extern int NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void Ov022_TakeChannelBlock(int a, int b, int c);
 extern void Ov022_PublishGroupUpdateFixed(int a, int b, void *c, void *d);
-extern int data_ov055_020b7718;
+extern int gOv055Demyx00BPackPath;
 
 typedef struct {
     int f00;
@@ -54,5 +54,5 @@ void Ov055_AllocAndConfigureEmitter(int self) {
     if (Slot_EvalPackedParam(*(unsigned char *)(self + 9), 0x30) != 0) {
         p.f00 |= 1;
     }
-    Ov022_PublishGroupUpdateFixed(*(int *)(self + 0x2644), self, &data_ov055_020b7718, &p);
+    Ov022_PublishGroupUpdateFixed(*(int *)(self + 0x2644), self, &gOv055Demyx00BPackPath, &p);
 }

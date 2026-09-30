@@ -58,5 +58,5 @@ Ov170_SweepStep kind:function(arm,size=0x9c) addr:0x020d0bc8
 data_ov170_020d0c64 kind:data(any) addr:0x020d0c64
 data_ov170_020d0c74 kind:data(any) addr:0x020d0c74
 gOv170PackPathFmt kind:data(any) addr:0x020d0c80
-data_ov170_020d0c8c kind:data(any) addr:0x020d0c8c
-data_ov170_020d0c94 kind:data(any) addr:0x020d0c94
+gOv170Bone04Name kind:data(any) addr:0x020d0c8c
+gOv170BodyName kind:data(any) addr:0x020d0c94

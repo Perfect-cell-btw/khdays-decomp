@@ -22,7 +22,7 @@ typedef struct {
 extern u16 data_ov006_020561d0[];
 extern MissionMenuContext *data_ov006_02056660;
 extern u8 data_ov006_0205652c[];
-extern u8 data_ov006_02056508[];
+extern u8 gOv006UiMltMltTextPath[];
 
 extern MissionMenuContext *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -91,6 +91,6 @@ MissionState Ov006_CreateMissionMenu(int immediate)
 
     Ov006_FreeResourceRecordBuffer(&data_ov006_02056660->resourceRegion);
     Ov006_InitResourceRecord(
-        &data_ov006_02056660->resourceRegion, data_ov006_02056508);
+        &data_ov006_02056660->resourceRegion, gOv006UiMltMltTextPath);
     return nextState;
 }

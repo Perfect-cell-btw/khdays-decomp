@@ -51,7 +51,7 @@ extern void Ov022_TakeChannelBlock(void *pSub, int a, int b);
 extern void Ov022_PublishGroupUpdate(void *pSub, char *self, void *pDesc,
                                 struct PanelSubCfg *pCfg, int a, int b);
 extern void Ov047_dispatchEntryList(void);
-extern int data_ov047_020b4354;
+extern int gOv047DonaldLiE0PackPath;
 
 void Ov047_CreateSubObject(char *self)
 {
@@ -82,7 +82,7 @@ void Ov047_CreateSubObject(char *self)
     cfg[1].field38 |= 0x20;
 
     Ov022_PublishGroupUpdate(*(void **)(self + 0x2000 + 0x644), self,
-                        &data_ov047_020b4354, cfg, 2, 0xa);
+                        &gOv047DonaldLiE0PackPath, cfg, 2, 0xa);
     *(void **)(*(char **)(self + 0x2000 + 0x644) + 0x20) =
         (void *)&Ov047_dispatchEntryList;
 }

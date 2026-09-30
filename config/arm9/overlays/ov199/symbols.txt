@@ -63,5 +63,5 @@ Ov199_SeekTarget kind:function(arm,size=0x484) addr:0x020d5c90
 data_ov199_020d6114 kind:data(any) addr:0x020d6114
 data_ov199_020d611c kind:data(any) addr:0x020d611c
 gOv199PackPathFmt kind:data(any) addr:0x020d6140
-data_ov199_020d614c kind:data(any) addr:0x020d614c
-data_ov199_020d6154 kind:data(any) addr:0x020d6154
+gOv199SFireName kind:data(any) addr:0x020d614c
+gOv199BsMoveName kind:data(any) addr:0x020d6154

@@ -4,24 +4,24 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov002_0207efb0[12] = "mi/mi/%04d";
+char gOv002MiMiPathFmt[12] = "mi/mi/%04d";
 
-char data_ov002_0207efbc[4] = "_s";
+char gOv002SName[4] = "_s";
 
-char data_ov002_0207efc0[4] = "_i";
+char gOv002IName[4] = "_i";
 
-char data_ov002_0207efc4[4] = "_e";
+char gOv002EName[4] = "_e";
 
-char data_ov002_0207efc8[4] = "_m";
+char gOv002MName[4] = "_m";
 
-char data_ov002_0207efcc[20] = "/ba/ch/shadow.nsbmd";
+char gOv002BaChShadowModelPath[20] = "/ba/ch/shadow.nsbmd";
 
-char data_ov002_0207efe0[4] = "%s";
+char gOv002StrFmt[4] = "%s";
 
-char data_ov002_0207efe4[4] = "%d";
+char gOv002IntFmt[4] = "%d";
 
-char data_ov002_0207efe8[12] = "mi/mi/trBox";
+char gOv002MiMiTrBoxPath[12] = "mi/mi/trBox";
 
-char data_ov002_0207eff4[12] = "mi/mi/evi";
+char gOv002MiMiEviPath[12] = "mi/mi/evi";
 
-char data_ov002_0207f000[12] = "mi/mi/mdb.z";
+char gOv002MiMiMdbPath[12] = "mi/mi/mdb.z";

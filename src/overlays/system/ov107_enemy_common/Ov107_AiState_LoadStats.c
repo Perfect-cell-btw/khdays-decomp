@@ -94,7 +94,7 @@ typedef struct AiState {
     s16 field_370[10];
 } AiState;
 
-extern const char data_ov107_020cb638[10];
+extern const char gOv107MsBlPath[10];
 extern void *Archive_LoadFile(char *name, u32 heap);
 extern void NNSi_FndFreeFromDefaultHeap(void *user_ptr);
 extern int func_02020400(int value, int percent);
@@ -138,7 +138,7 @@ void Ov107_AiState_LoadStats(AiState *self, int recordIndex)
     s16 coefficient;
     int scale;
 
-    path = *(const Path *)data_ov107_020cb638;
+    path = *(const Path *)gOv107MsBlPath;
 
     file = Archive_LoadFile((char *)((((*(u32 *)((char *)Ov107_GetActorManager()
                                               + 0x80) + 0x8000) & 0xfffffc) << 7)

@@ -28,7 +28,7 @@ extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(ShapeRequest *req);
 extern int Ov245_Hopper_New(int self);
-extern const char data_ov245_020d722c[];
+extern const char gOv245Tag00Name_2[];
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042258;
 
@@ -55,7 +55,7 @@ void Ov245_ConstructVariant(int self) {
     *(int *)(self + 0x70) = 0x2000;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x15));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d722c);
+    *(int *)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv245Tag00Name_2);
     req.pos = data_02041dc8;
     req.axis = data_02042258;
     req.rate = 0x7000;

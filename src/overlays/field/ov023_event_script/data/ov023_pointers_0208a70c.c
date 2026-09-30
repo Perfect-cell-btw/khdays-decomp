@@ -4,34 +4,34 @@
  * a zero word is a null entry.
  */
 
-extern int data_ov023_0208a69c;
-extern int data_ov023_0208a6a8;
-extern int data_ov023_0208a6b4;
-extern int data_ov023_0208a6c0;
-extern int data_ov023_0208a6cc;
-extern int data_ov023_0208a6d8;
-extern int data_ov023_0208a6e4;
-extern int data_ov023_0208a6f0;
-extern int data_ov023_0208a6fc;
+extern int gOv023RoDash00Name;
+extern int gOv023RoWalk01Name;
+extern int gOv023RoWalk00Name;
+extern int gOv02313Dash01Name;
+extern int gOv02313Dash00Name;
+extern int gOv02313Walk01Name;
+extern int gOv02313Walk00Name;
+extern int gOv023RoDash01Name;
+extern int gOv02313Hakusyu00Name;
 
 void *data_ov023_0208a70c[9] = {
 
-    &data_ov023_0208a6b4,
+    &gOv023RoWalk00Name,
 
-    &data_ov023_0208a6a8,
+    &gOv023RoWalk01Name,
 
-    &data_ov023_0208a69c,
+    &gOv023RoDash00Name,
 
-    &data_ov023_0208a6f0,
+    &gOv023RoDash01Name,
 
-    &data_ov023_0208a6e4,
+    &gOv02313Walk00Name,
 
-    &data_ov023_0208a6d8,
+    &gOv02313Walk01Name,
 
-    &data_ov023_0208a6cc,
+    &gOv02313Dash00Name,
 
-    &data_ov023_0208a6c0,
+    &gOv02313Dash01Name,
 
-    &data_ov023_0208a6fc,
+    &gOv02313Hakusyu00Name,
 
 };

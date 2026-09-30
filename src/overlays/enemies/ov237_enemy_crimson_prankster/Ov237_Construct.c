@@ -61,13 +61,13 @@ extern void Res_RequestIdPair(int resourceId);
 extern const JointNames data_ov237_020d19f8;
 extern const IdTable19 data_ov237_020d1a20;
 extern const char gOv237PackPathFmt[];
-extern const char data_ov237_020d1c94[];
-extern const char data_ov237_020d1ca0[];
-extern const char data_ov237_020d1ca8[];
-extern const char data_ov237_020d1cb4[];
-extern const char data_ov237_020d1cbc[];
-extern const char data_ov237_020d1cc4[];
-extern const char data_ov237_020d1ccc[];
+extern const char gOv237BoneHeadName[];
+extern const char gOv237031AName[];
+extern const char gOv237BoneNeckName[];
+extern const char gOv237BTagName[];
+extern const char gOv237Tag00Name[];
+extern const char gOv237Tag01Name[];
+extern const char gOv237MoveName[];
 /* read through a const view: lets the check load hoist above the effect-rig stores (ROM order) */
 extern const signed char data_ov237_020d1ce0;
 extern const VecFx32 data_02041dc8;
@@ -131,10 +131,10 @@ void Ov237_Construct(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Snd_RegisterSeqAndBind(self + 0x388, *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(self, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), self + 0x388);
-    *(int *)(self + 0x444) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov237_020d1c94);
-    *(int *)(self + 0x448) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov237_020d1ca0);
-    *(int *)(self + 0x44c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov237_020d1ca8);
-    *(int *)(self + 0x3d4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov237_020d1cb4);
+    *(int *)(self + 0x444) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv237BoneHeadName);
+    *(int *)(self + 0x448) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv237031AName);
+    *(int *)(self + 0x44c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv237BoneNeckName);
+    *(int *)(self + 0x3d4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv237BTagName);
     *(int *)(self + 0x3ac) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x1a));
     for (k = 0; k < 2; k++) {
         for (i = 0; i < 5; i++) {
@@ -144,8 +144,8 @@ void Ov237_Construct(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x3ac));
     Snd_RegisterSeqAndBind(self + 0x3b0, *(int *)(*(int *)(self + 0x3ac) + 0x88), Ov107_PackTextureHandle(self, 0x1b), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x3ac), self + 0x3b0);
-    *(int *)(self + 0x454) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, data_ov237_020d1cbc);
-    *(int *)(self + 0x458) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, data_ov237_020d1cc4);
+    *(int *)(self + 0x454) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, gOv237Tag00Name);
+    *(int *)(self + 0x458) = InsertSortedEntryWithKey(*(int *)(self + 0x3ac), 3, gOv237Tag01Name);
     *(int *)(self + 0x58) = 0x800;
     *(int *)(self + 0x490) = CallocInstance(0x98);
     for (i = 0; i < 0x13; i++) {
@@ -153,7 +153,7 @@ void Ov237_Construct(char *self)
         Ov107_EnqueueValue(self, ((struct Pair *)*(int *)(self + 0x490))[i].res);
         *(int *)(((struct Pair *)*(int *)(self + 0x490))[i].res + 0x5c) |= 2;
     }
-    *(int *)(self + 0x3d8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x47), data_ov237_020d1ccc);
+    *(int *)(self + 0x3d8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x47), gOv237MoveName);
     *(int *)(self + 0x4b0) = 0;
     *(int *)(self + 0x4ac) = 0;
     zero = data_02041dc8;

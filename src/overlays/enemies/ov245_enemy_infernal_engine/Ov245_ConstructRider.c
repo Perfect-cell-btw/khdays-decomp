@@ -39,11 +39,11 @@ extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov245_020d71b0;
-extern const char data_ov245_020d7268[];
-extern const char data_ov245_020d7274[];
-extern const char data_ov245_020d7284[];
-extern const char data_ov245_020d7294[];
-extern const char data_ov245_020d729c[];
+extern const char gOv245BoneRFingName[];
+extern const char gOv245Bip01RFootName[];
+extern const char gOv245Bip01LFootName[];
+extern const char gOv245Bip01Name[];
+extern const char gOv245MoveName_2[];
 extern const VecFx32 data_02041dc8;
 
 void Ov245_ConstructRider(int selfArg) {
@@ -67,14 +67,14 @@ void Ov245_ConstructRider(int selfArg) {
     *(int *)(self + 0x6c) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x26));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7268);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7274);
-    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7284);
-    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7294);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv245BoneRFingName);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv245Bip01RFootName);
+    *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv245Bip01LFootName);
+    *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv245Bip01Name);
     Snd_RegisterSeqAndBind((void *)(self + 0x3a8), ((struct Ov245Model *)*(int *)(self + 0x384))->track,
                   Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x27), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), (void *)(self + 0x3a8));
-    *(int *)(self + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x32), data_ov245_020d729c);
+    *(int *)(self + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x32), gOv245MoveName_2);
     Ov107_Actor_SetAttachSlot(self, 1, 1, 0, 0x1800);
     Ov107_Actor_SetAttachSlot(self, 2, 1, 0, 0x1800);
     *(void **)(self + 0x3a4) = CallocInstance(0x28);

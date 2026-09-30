@@ -6,12 +6,12 @@
 
 char gOv119PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov119_020cf98c[12] = "Bone_L_eye";
+char gOv119BoneLEyeName[12] = "Bone_L_eye";
 
-char data_ov119_020cf998[12] = "Bone_R_fing";
+char gOv119BoneRFingName[12] = "Bone_R_fing";
 
-char data_ov119_020cf9a4[12] = "Bone_L_fing";
+char gOv119BoneLFingName[12] = "Bone_L_fing";
 
-char data_ov119_020cf9b0[12] = "Bone_head";
+char gOv119BoneHeadName[12] = "Bone_head";
 
-char data_ov119_020cf9bc[36] = "Bone_tail_02";
+char gOv119BoneTail02Name[36] = "Bone_tail_02";

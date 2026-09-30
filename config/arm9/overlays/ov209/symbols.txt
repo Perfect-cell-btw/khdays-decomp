@@ -86,11 +86,11 @@ data_ov209_020d65fc kind:data(any) addr:0x020d65fc
 data_ov209_020d660c kind:data(any) addr:0x020d660c
 data_ov209_020d662c kind:data(any) addr:0x020d662c
 gOv209PackPathFmt kind:data(any) addr:0x020d6640
-data_ov209_020d664c kind:data(any) addr:0x020d664c
-data_ov209_020d6658 kind:data(any) addr:0x020d6658
-data_ov209_020d6668 kind:data(any) addr:0x020d6668
-data_ov209_020d6678 kind:data(any) addr:0x020d6678
-data_ov209_020d6680 kind:data(any) addr:0x020d6680
-data_ov209_020d6690 kind:data(any) addr:0x020d6690
+gOv209Bip01HeadName kind:data(any) addr:0x020d664c
+gOv209Bip01LHandName kind:data(any) addr:0x020d6658
+gOv209Bip01RHandName kind:data(any) addr:0x020d6668
+gOv209Bip01Name kind:data(any) addr:0x020d6678
+gOv209Bip01Spine1Name kind:data(any) addr:0x020d6680
+gOv209RockMoveName kind:data(any) addr:0x020d6690
 data_ov209_020d669c kind:data(any) addr:0x020d669c
 data_ov209_020d66a0 kind:data(any) addr:0x020d66a0

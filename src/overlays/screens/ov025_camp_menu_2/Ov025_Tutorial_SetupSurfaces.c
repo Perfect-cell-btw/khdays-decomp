@@ -67,8 +67,8 @@ extern void  Ov025_InitResourceRecord(void *pLoader, const char *pszPath); /* Ov
 extern void *Ov025_GetCtxBlock968c(void);                             /* Ov008_GetCtxBlock968c */
 extern int   Ov025_LookupEntry(int nSlot);                        /* Ov008_ResetEntry: slot handle */
 extern TileSurfaceCfg data_ov025_020b41b4;
-extern char  data_ov025_020b51b0[];                                 /* "UI/cm/str/ttl_&.s.z" */
-extern char  data_ov025_020b51c4[];                                 /* "UI/tutorial/root_&.s.z" */
+extern char  gOv025UiCmStrTtlTextPath[];                                 /* "UI/cm/str/ttl_&.s.z" */
+extern char  gOv025UiTutorialRootTextPath[];                                 /* "UI/tutorial/root_&.s.z" */
 
 void Ov025_Tutorial_SetupSurfaces(void)
 {
@@ -77,8 +77,8 @@ void Ov025_Tutorial_SetupSurfaces(void)
 
     cfg = data_ov025_020b41b4;
     pPage = Ov025_GetPageA();
-    Ov025_InitResourceRecord(pPage->textTitle, data_ov025_020b51b0);
-    Ov025_InitResourceRecord(pPage->textTopics, data_ov025_020b51c4);
+    Ov025_InitResourceRecord(pPage->textTitle, gOv025UiCmStrTtlTextPath);
+    Ov025_InitResourceRecord(pPage->textTopics, gOv025UiTutorialRootTextPath);
     cfg.pPixels = Ov025_GetCtxBlock968c();
     cfg.nVramTarget = Ov025_LookupEntry(9);
     TileSurface_InitAndUpload4bpp(pPage->surface, &cfg);

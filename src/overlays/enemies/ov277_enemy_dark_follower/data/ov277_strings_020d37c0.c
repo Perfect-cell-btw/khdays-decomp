@@ -4,22 +4,22 @@
  * the literal supplies the text and the declared length pads the rest with NUL.
  */
 
-char data_ov277_020d37c0[12] = "UpperArm";
+char gOv277UpperArmName[12] = "UpperArm";
 
-char data_ov277_020d37cc[16] = "Bip01_R_Forearm";
+char gOv277Bip01RForearmName[16] = "Bip01_R_Forearm";
 
-char data_ov277_020d37dc[16] = "Bip01_R_Hand";
+char gOv277Bip01RHandName[16] = "Bip01_R_Hand";
 
-char data_ov277_020d37ec[16] = "Bip01_R_Finger1";
+char gOv277Bip01RFinger1Name[16] = "Bip01_R_Finger1";
 
-char data_ov277_020d37fc[20] = "Bip01_L_UpperArm";
+char gOv277Bip01LUpperArmName[20] = "Bip01_L_UpperArm";
 
-char data_ov277_020d3810[16] = "Bip01_L_Forearm";
+char gOv277Bip01LForearmName[16] = "Bip01_L_Forearm";
 
-char data_ov277_020d3820[16] = "Bip01_L_Hand";
+char gOv277Bip01LHandName[16] = "Bip01_L_Hand";
 
-char data_ov277_020d3830[16] = "Bip01_L_Finger1";
+char gOv277Bip01LFinger1Name[16] = "Bip01_L_Finger1";
 
-char data_ov277_020d3840[8] = "DM002";
+char gOv277Dm002Name[8] = "DM002";
 
 char gOv277PackPathFmt[24] = "Ms/%02x.p";

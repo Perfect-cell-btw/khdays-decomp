@@ -25,8 +25,8 @@ typedef struct {
 } Ov002PanelSession;
 
 extern Ov002PanelSession *data_ov002_0207f620;
-extern char data_ov002_0207eadc[];
-extern char data_ov002_0207eaf4[];
+extern char gOv002TextFontEu08SPath_2[];
+extern char gOv002UiBtlCmdTextPath[];
 extern int data_ov002_0207eb08[];
 extern int data_ov002_0207eb0c[];
 
@@ -64,9 +64,9 @@ void Ov002_DrawPanelRowText(char *pDst)
     int aBind[3];
 
     s = data_ov002_0207f620;
-    Resource_BindByName(aBind, data_ov002_0207eadc);
+    Resource_BindByName(aBind, gOv002TextFontEu08SPath_2);
     nFont = Ov002_Hud_GetBlock24();
-    Ov002_InitResourceRecord(aRecords, data_ov002_0207eaf4);
+    Ov002_InitResourceRecord(aRecords, gOv002UiBtlCmdTextPath);
 
     /* The y cursor is claimed here rather than in the class-2 body: with its
        live range starting before the switch, mwcc gives it the same register

@@ -4,7 +4,7 @@
 extern int OS_SPrintf(char *buf, char *fmt, int a, int b);
 extern int Archive_LoadFile(void *arg0, int arg1);
 extern void NNSi_FndFreeFromDefaultHeap(int arg0);
-extern int data_ov022_020b2cd8;
+extern int gOv022BaChCpPath;
 extern int data_02042a70;
 
 typedef struct { int w[13]; } Ov022Rec;
@@ -19,7 +19,7 @@ typedef struct {
 void Ov022_LoadMissionRecord(Ov022Context *arg0) {
     char buf[128];
     int x;
-    OS_SPrintf(buf, (char *)&data_ov022_020b2cd8,
+    OS_SPrintf(buf, (char *)&gOv022BaChCpPath,
                ((int *)&data_02042a70)[arg0->index0c],
                arg0->index0c * 4);
     x = Archive_LoadFile(buf, 6);

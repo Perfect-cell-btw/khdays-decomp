@@ -7,7 +7,7 @@ typedef struct {
 } Ov002SceneRef;
 
 extern Ov002SceneRef data_ov002_0207fa20;
-extern int data_ov002_0207f468[];
+extern int gOv002MoMoPath[];
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *pDst, u8 nValue, unsigned int nSize);
@@ -52,7 +52,7 @@ void *Ov002_SceneEnter(void)
     Ov002_List_ClearTable();
     *(u8 *)(pCtx + 0x68) = 0;
 
-    *(int *)(pCtx + 0x60) = Msg_OpenContainerAndReadHeader(data_ov002_0207f468, 3);
+    *(int *)(pCtx + 0x60) = Msg_OpenContainerAndReadHeader(gOv002MoMoPath, 3);
     Ov002_SetRootWord8a28(1, *(int *)(pCtx + 0x60));
 
     *(signed char *)(data_ov002_0207fa20.pContext + 0x260) = -1;

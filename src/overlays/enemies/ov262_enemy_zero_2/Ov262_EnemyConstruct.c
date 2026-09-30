@@ -50,8 +50,8 @@ extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int resourceId);
 extern struct Notice *CallocInstance(int size);
 extern void FreeInstanceMemory(struct Notice *p);
-extern const char data_ov262_020d51cc[];
-extern const char data_ov262_020d51dc[];
+extern const char gOv262ZeroEfDummyName[];
+extern const char gOv262Bip01Name[];
 
 void Ov262_EnemyConstruct(char *self)
 {
@@ -88,8 +88,8 @@ void Ov262_EnemyConstruct(char *self)
     *(int *)(self + 0x6c) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov262_020d51cc);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov262_020d51dc);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv262ZeroEfDummyName);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv262Bip01Name);
     *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 1));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
     ((struct Bit0 *)(*(int *)(self + 0x388) + 0x5c))->bit0 = 1;

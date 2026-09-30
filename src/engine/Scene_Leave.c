@@ -25,7 +25,7 @@ typedef struct GameHeap {
 
 extern char *data_0204be08;
 extern u8 data_0204c240;
-extern char data_02042748[16];
+extern char gPauseRefreshName[16];
 extern int LoadGlobalU16At0(void);
 extern void SetGameMode(int mode);
 extern void SetupTimer0Reload(int a, int b);
@@ -64,5 +64,5 @@ void Scene_Leave(void)
         heap->object = 0;
     }
     heap->state = 5;
-    RegisterNamedTask(1, data_02042748, Gfx_RestoreAfterPause);
+    RegisterNamedTask(1, gPauseRefreshName, Gfx_RestoreAfterPause);
 }

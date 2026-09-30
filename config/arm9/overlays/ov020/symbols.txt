@@ -10,8 +10,8 @@ Ov020_CreateEntity kind:function(thumb,size=0x54) addr:0x0207fcd4
 Ov020_OpenWallView kind:function(thumb,size=0x124) addr:0x0207fd28
 Ov020_StepWallView kind:function(arm,size=0x254) addr:0x0207fe4c
 data_ov020_020800c0 kind:data(any) addr:0x020800c0
-data_ov020_020800d8 kind:data(any) addr:0x020800d8
-data_ov020_020800e4 kind:data(any) addr:0x020800e4
-data_ov020_020800f0 kind:data(any) addr:0x020800f0
-data_ov020_020800fc kind:data(any) addr:0x020800fc
-data_ov020_02080100 kind:data(any) addr:0x02080100
+gOv020ColWallName kind:data(any) addr:0x020800d8
+gOv020ColWall10Name kind:data(any) addr:0x020800e4
+gOv020ColWall09Name kind:data(any) addr:0x020800f0
+gOv020UpName kind:data(any) addr:0x020800fc
+gOv020DownName kind:data(any) addr:0x02080100

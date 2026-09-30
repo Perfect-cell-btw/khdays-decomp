@@ -24,7 +24,7 @@ struct Placement { VecFx32 vec; int scale; };
 struct Box { VecFx32 min, max; };
 
 extern const VecFx32 data_02041dc8;
-extern unsigned short data_ov292_020d48cc[];
+extern unsigned short gOv292BodyName[];
 
 extern void Ov292_ReleaseSubObjectAndListThenNotify(void);
 extern void func_ov292_020d3ab4(void);
@@ -83,7 +83,7 @@ void Ov292_InitNamedEntityActor(char *self)
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(void **)(self + 0x384));
     Srt_SetTranslationXYZ(*(int *)(self + 0x384) + 4, 0, -0x1800, 0);
     *(void **)(self + 0x38c) =
-        InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov292_020d48cc);
+        InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv292BodyName);
 
     Ov107_Actor_SetAttachSlot(self, 0, 1, 0, 0x6000);
     Ov107_Actor_SetAttachSlot(self, 2, 1, 0, 0x6000);

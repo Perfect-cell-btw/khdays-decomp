@@ -86,11 +86,11 @@ data_ov268_020d4808 kind:data(any) addr:0x020d4808
 data_ov268_020d4818 kind:data(any) addr:0x020d4818
 data_ov268_020d4838 kind:data(any) addr:0x020d4838
 gOv268PackPathFmt kind:data(any) addr:0x020d4860
-data_ov268_020d486c kind:data(any) addr:0x020d486c
-data_ov268_020d4878 kind:data(any) addr:0x020d4878
-data_ov268_020d4888 kind:data(any) addr:0x020d4888
-data_ov268_020d4898 kind:data(any) addr:0x020d4898
-data_ov268_020d48a0 kind:data(any) addr:0x020d48a0
-data_ov268_020d48b0 kind:data(any) addr:0x020d48b0
+gOv268Bip01HeadName kind:data(any) addr:0x020d486c
+gOv268Bip01LHandName kind:data(any) addr:0x020d4878
+gOv268Bip01RHandName kind:data(any) addr:0x020d4888
+gOv268Bip01Name kind:data(any) addr:0x020d4898
+gOv268Bip01Spine1Name kind:data(any) addr:0x020d48a0
+gOv268SRockMoveName kind:data(any) addr:0x020d48b0
 data_ov268_020d48bc kind:data(any) addr:0x020d48bc
 data_ov268_020d48c0 kind:data(any) addr:0x020d48c0

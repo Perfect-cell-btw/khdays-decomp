@@ -43,8 +43,8 @@ extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
 extern const VecFx32 data_02041dc8;
 extern IdTable data_ov115_020ceb38;
-extern char data_ov115_020ceb8c[];
-extern char data_ov115_020ceb94[];
+extern char gOv115Bone04Name[];
+extern char gOv115BodyName[];
 
 void Ov115_EnemyConstruct(char *self)
 {
@@ -85,9 +85,9 @@ void Ov115_EnemyConstruct(char *self)
     *(Callback *)(*(int *)(self + 0x384) + 0x74) = Ov115_OrientPartAlongDirection;
     *(char **)(*(int *)(self + 0x384) + 0x84) = self;
     *(unsigned char *)(*(int *)(self + 0x384) + 0xad) = 0;
-    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov115_020ceb8c);
-    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov115_020ceb8c);
-    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov115_020ceb94);
+    *(int *)(self + 0x38c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv115Bone04Name);
+    *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv115Bone04Name);
+    *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, gOv115BodyName);
     *(int **)(self + 0x39c) = CallocInstance(0x38);
     for (i = 0; i < 7; i++) {
         if (i < 0) {

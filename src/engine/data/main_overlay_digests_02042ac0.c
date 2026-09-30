@@ -7,10 +7,10 @@
 #define OVERLAY_COUNT 303
 
 /* "%s/%s/lv.b.z": the level file path template (LevelTable_ReadEntry formats it). */
-char data_02042ac0[16] = "%s/%s/lv.b.z";
+char gLvPathFmt[16] = "%s/%s/lv.b.z";
 
 /* "ba/ch": the base directory of the level files. */
-char data_02042ad0[8] = "ba/ch";
+char gBaChPath[8] = "ba/ch";
 
 /* The next spawn id handed out by CreateRegistryEntry (child objects start at 0x01000000). */
 u32 data_02042ad8 = 0x00000001;

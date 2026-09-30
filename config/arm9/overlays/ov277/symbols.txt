@@ -162,20 +162,20 @@ data_ov277_020d3734 kind:data(any) addr:0x020d3734
 data_ov277_020d373c kind:data(any) addr:0x020d373c
 data_ov277_020d3740 kind:data(any) addr:0x020d3740
 gOv277PackPathFmt_2 kind:data(any) addr:0x020d3760
-data_ov277_020d376c kind:data(any) addr:0x020d376c
-data_ov277_020d377c kind:data(any) addr:0x020d377c
-data_ov277_020d3788 kind:data(any) addr:0x020d3788
-data_ov277_020d3794 kind:data(any) addr:0x020d3794
-data_ov277_020d37a4 kind:data(any) addr:0x020d37a4
-data_ov277_020d37ac kind:data(any) addr:0x020d37ac
-data_ov277_020d37b8 kind:data(any) addr:0x020d37b8
-data_ov277_020d37c0 kind:data(any) addr:0x020d37c0 ambiguous
-data_ov277_020d37cc kind:data(any) addr:0x020d37cc
-data_ov277_020d37dc kind:data(any) addr:0x020d37dc
-data_ov277_020d37ec kind:data(any) addr:0x020d37ec
-data_ov277_020d37fc kind:data(any) addr:0x020d37fc
-data_ov277_020d3810 kind:data(any) addr:0x020d3810
-data_ov277_020d3820 kind:data(any) addr:0x020d3820
-data_ov277_020d3830 kind:data(any) addr:0x020d3830
-data_ov277_020d3840 kind:data(any) addr:0x020d3840
+gOv277Bip01Spine1Name kind:data(any) addr:0x020d376c
+gOv277Bip01NeckName kind:data(any) addr:0x020d377c
+gOv277Bip01SpineName kind:data(any) addr:0x020d3788
+gOv277Bip01PelvisName kind:data(any) addr:0x020d3794
+gOv277Ds01Name kind:data(any) addr:0x020d37a4
+gOv277Bip01HeadName kind:data(any) addr:0x020d37ac
+gOv277Bip01RName kind:data(any) addr:0x020d37b8
+gOv277UpperArmName kind:data(any) addr:0x020d37c0 ambiguous
+gOv277Bip01RForearmName kind:data(any) addr:0x020d37cc
+gOv277Bip01RHandName kind:data(any) addr:0x020d37dc
+gOv277Bip01RFinger1Name kind:data(any) addr:0x020d37ec
+gOv277Bip01LUpperArmName kind:data(any) addr:0x020d37fc
+gOv277Bip01LForearmName kind:data(any) addr:0x020d3810
+gOv277Bip01LHandName kind:data(any) addr:0x020d3820
+gOv277Bip01LFinger1Name kind:data(any) addr:0x020d3830
+gOv277Dm002Name kind:data(any) addr:0x020d3840
 gOv277PackPathFmt kind:data(any) addr:0x020d3848

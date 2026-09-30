@@ -32,7 +32,7 @@ extern u8 data_0204c240;
 extern u8 gPartyState;
 extern u8 data_0204c4f2;
 extern u8 data_0204c4f3;
-extern int data_ov002_0207efcc;
+extern int gOv002BaChShadowModelPath;
 
 extern void Ov002_ArmPromptButtons(int nMode);
 extern void GameState_SetField(int nId, int a, int b);
@@ -76,12 +76,12 @@ dispatch:
         GameState_SetField(0x2484, 1, 0);
         GameState_SetField(0x248f, 1, 0);
         Ov002_BringUpMissionOverlays();
-        ModelFile_LoadFirst(&data_ov002_0207efcc);
+        ModelFile_LoadFirst(&gOv002BaChShadowModelPath);
         break;
 
     case 2:
         Ov002_EnterOverlay23();
-        ModelFile_LoadFirst(&data_ov002_0207efcc);
+        ModelFile_LoadFirst(&gOv002BaChShadowModelPath);
         break;
 
     case 8:

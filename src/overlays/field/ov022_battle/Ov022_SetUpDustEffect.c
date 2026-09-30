@@ -60,10 +60,10 @@ struct Owner {
     u64 nFlags;                      /* 0x00 */
 };
 
-extern u8 data_ov022_020b2bcc[];
+extern u8 gOv022BaEfAgPackPath[];
 extern const struct ObjectParams data_ov022_020b24fc;
 extern u8 data_ov022_020b2930[];
-extern u8 data_ov022_020b2bdc[];
+extern u8 gOv022BaChGlPath[];
 
 extern int FX_Mul(int nValue, int nScale);
 extern void BindAnimTrack(struct SeqBlock *pBlock, int nTrack, u8 *pStore,
@@ -93,7 +93,7 @@ void Ov022_SetUpDustEffect(struct Effect *pEffect, int nLevel,
         pBlock = pEffect->aBlocks;
         do {
             nFrame = FX_Mul(Session_RandNext(), SPIN_RANGE);
-            RegisterSeqAndInit(pBlock, data_ov022_020b2bcc, 1, 0);
+            RegisterSeqAndInit(pBlock, gOv022BaEfAgPackPath, 1, 0);
             BindAnimTrack(pBlock, 0, pBlock->track, 0);
             BindAnimTrack(pBlock, 2, pBlock->track, 0);
             BindAnimTrack(pBlock, 3, pBlock->track, 0);
@@ -107,7 +107,7 @@ void Ov022_SetUpDustEffect(struct Effect *pEffect, int nLevel,
         pEffect->pObject = InstantiateClass(data_ov022_020b2930, &params);
     }
     if (nLevel > 0) {
-        pTable = Archive_LoadFile(data_ov022_020b2bdc, 6);
+        pTable = Archive_LoadFile(gOv022BaChGlPath, 6);
         if (nLevel > MAX_LEVEL) {
             nLevel = MAX_LEVEL;
         }

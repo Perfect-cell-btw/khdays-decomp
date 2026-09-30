@@ -43,10 +43,10 @@ extern IdTable4 data_ov257_020d3064;
 extern NameTable4 data_ov257_020d3074;
 extern NameTable4 data_ov257_020d3084;
 extern IdTable data_ov257_020d3094;
-extern const char data_ov257_020d33cc[];
-extern const char data_ov257_020d33dc[];
-extern const char data_ov257_020d33e0[];
-extern const char data_ov257_020d33ec[];
+extern const char gOv257MsXionSharePackPath[];
+extern const char gOv25700Name[];
+extern const char gOv257BSpine01Name[];
+extern const char gOv257B50CMName[];
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042258;
@@ -77,7 +77,7 @@ void Ov257_EnemyConstruct(char *self)
     int *slot;
     u16 hw;
 
-    *(int *)(self + 0x404) = Ov107_OpenCachedResourceByName(data_ov257_020d33cc);
+    *(int *)(self + 0x404) = Ov107_OpenCachedResourceByName(gOv257MsXionSharePackPath);
     /* written three times: the dead copies are dropped after scheduling but spend its budget, which
      * keeps the ROM's order further down (as in Ov255_EnemyConstruct) */
     *(Callback *)(self + 0x8) = Ov257_Actor_Destroy;
@@ -101,12 +101,12 @@ void Ov257_EnemyConstruct(char *self)
     *(int *)(self + 0x68) = 0x2000;
     *(int *)(self + 0x6c) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
-    *(char **)(self + 0x3d8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov257_020d33dc);
+    *(char **)(self + 0x3d8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv25700Name);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(void **)(self + 0x388) = CallocInstance(0x24);
     Snd_RegisterSeqAndBind(*(void **)(self + 0x388), *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(self, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), *(void **)(self + 0x388));
-    *(char **)(self + 0x3d4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov257_020d33e0);
+    *(char **)(self + 0x3d4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, gOv257BSpine01Name);
     *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0x23));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
     *(void **)(self + 0x390) = CallocInstance(0x24);
@@ -129,7 +129,7 @@ void Ov257_EnemyConstruct(char *self)
         *(int *)(((int *)(self + 0x3a4))[i] + 0x5c) |= 2;
         ((struct Bit0 *)(((int *)(self + 0x3a4))[i] + 0x5c))->bit0 = 1;
     }
-    *(void **)(self + 0x3d0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x46), data_ov257_020d33ec);
+    *(void **)(self + 0x3d0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0x46), gOv257B50CMName);
     cap.length = 0xa00;
     cap.radius = 0x1200;
     cap.pos.x = 0;

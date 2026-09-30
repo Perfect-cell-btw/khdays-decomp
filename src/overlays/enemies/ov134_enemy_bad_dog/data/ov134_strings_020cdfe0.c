@@ -6,6 +6,6 @@
 
 char gOv134PackPathFmt[12] = "Ms/%02x.p";
 
-char data_ov134_020cdfec[12] = "Bone_head";
+char gOv134BoneHeadName[12] = "Bone_head";
 
-char data_ov134_020cdff8[8] = "move";
+char gOv134MoveName[8] = "move";

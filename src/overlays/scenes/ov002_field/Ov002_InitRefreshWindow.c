@@ -12,7 +12,7 @@ typedef struct Ov002RefreshWindowState {
 } Ov002RefreshWindowState;
 
 extern Ov002RefreshWindowState *data_ov002_0207f600;
-extern int data_ov002_0207e850;
+extern int gOv002RefreshWndName;
 
 extern int GetMasterBrightnessSub(void);
 extern void Ov002_DrawFlatRect(int nX, int nY, int nWidth,
@@ -30,5 +30,5 @@ void Ov002_InitRefreshWindow(void)
     data_ov002_0207f600->nLatch = 0;
     data_ov002_0207f600->bStatus = 0;
     Ov002_DrawFlatRect(0, 0, 0x100, 0xc0, 0);
-    RegisterNamedTask(1, &data_ov002_0207e850, Ov002_RefreshWindowCallback);
+    RegisterNamedTask(1, &gOv002RefreshWndName, Ov002_RefreshWindowCallback);
 }

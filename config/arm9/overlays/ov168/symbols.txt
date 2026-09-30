@@ -56,5 +56,5 @@ Ov168_DashTick kind:function(arm,size=0x38c) addr:0x020d5fc4
 data_ov168_020d6350 kind:data(any) addr:0x020d6350
 data_ov168_020d635c kind:data(any) addr:0x020d635c
 gOv168PackPathFmt kind:data(any) addr:0x020d6380
-data_ov168_020d638c kind:data(any) addr:0x020d638c
-data_ov168_020d6394 kind:data(any) addr:0x020d6394
+gOv168Bone04Name kind:data(any) addr:0x020d638c
+gOv168BodyName kind:data(any) addr:0x020d6394

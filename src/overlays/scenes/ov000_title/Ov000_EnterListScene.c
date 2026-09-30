@@ -20,7 +20,7 @@ typedef struct {
 } OverlaySharedContext;
 
 extern OverlaySharedContext *data_ov000_0205ac3c;
-extern u8 data_ov000_0205abe8[];
+extern u8 gOv000UiThrThrPath[];
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
 extern int Obj_IsIdFree(void *resource);
 extern void SetMasterBrightnessMain(int value);
@@ -52,7 +52,7 @@ OverlayCallback Ov000_EnterListScene(void) {
     SetMasterBrightnessMain(-16);
     SetMasterBrightnessSub(-16);
     Ov000_InitializeListScene2dEngines();
-    context->resource = Msg_OpenContainerAndReadHeader(data_ov000_0205abe8, 14);
+    context->resource = Msg_OpenContainerAndReadHeader(gOv000UiThrThrPath, 14);
     Ov000_LoadListSceneGraphics();
     Ov000_SetupMenuObjects();
     Ov000_InitSceneSurfaces();

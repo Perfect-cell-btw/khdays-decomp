@@ -10,7 +10,7 @@ extern void Ov022_RequestVoiceIds(void *ctx, int a, int b);
 extern void Ov052_MissionStart(void *ctx);
 extern void Ov022_ArmDecoder(void);
 
-extern char data_ov052_020b8008[];
+extern char gOv052XigbarEtcPackPath[];
 
 Ov052Handler Ov052_InitAndGetHandler(int *arg) {
     unsigned char *ctx;
@@ -20,7 +20,7 @@ Ov052Handler Ov052_InitAndGetHandler(int *arg) {
     ctx[0x2c30] &= ~4;
     Ov052_Boot(arg);
     Snd_RegisterSeqAndBind(ctx + 0x2e44, *(int *)(ctx + 0x20) + 4,
-                  (int)data_ov052_020b8008, *arg + 7);
+                  (int)gOv052XigbarEtcPackPath, *arg + 7);
     Ov022_RequestVoiceIds(ctx, 0x43, 0xc5);
     Ov052_MissionStart(ctx);
     return Ov022_ArmDecoder;

@@ -5,9 +5,9 @@ struct slot { void *ptr; int pad; };
 
 extern struct v5 data_ov164_020d2c74;
 extern struct v3 data_02041dc8;
-extern unsigned short data_ov164_020d2d0c[];
-extern unsigned short data_ov164_020d2d18[];
-extern int data_ov164_020d2d24;
+extern unsigned short gOv164BoneHimoName[];
+extern unsigned short gOv164BoneHeadName[];
+extern int gOv164MoveName;
 
 extern void Ov164_Destroy(void), Ov164_TickWithChildRefresh(void), Ov164_InitModelPose(void);
 extern void Ov164_HandleSpawnMessage(void), Ov164_SpawnActorRegistryEntry(void), Ov164_ReleaseTasks(void);
@@ -46,9 +46,9 @@ void Ov164_Construct(int param_1) {
     *(int *)(param_1 + 0x6c) = 0;
     *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
-    *(void **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov164_020d2d0c);
-    *(void **)(param_1 + 0x3c0) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov164_020d2d18);
-    *(void **)(param_1 + 0x3c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov164_020d2d24);
+    *(void **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv164BoneHimoName);
+    *(void **)(param_1 + 0x3c0) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, gOv164BoneHeadName);
+    *(void **)(param_1 + 0x3c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &gOv164MoveName);
     *(void **)(param_1 + 0x3c4) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
         ((struct slot *)*(int *)(param_1 + 0x3c4))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, tbl.w[i]));
