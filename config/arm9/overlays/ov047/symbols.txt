@@ -29,7 +29,7 @@ data_ov047_020b423c kind:data(any) addr:0x020b423c
 data_ov047_020b424c kind:data(any) addr:0x020b424c
 data_ov047_020b427c kind:data(any) addr:0x020b427c
 data_ov047_020b42e0 kind:data(any) addr:0x020b42e0
-data_ov047_020b42f4 kind:data(any) addr:0x020b42f4
+gOv047DonaldClass kind:data(any) addr:0x020b42f4
 data_ov047_020b4308 kind:data(any) addr:0x020b4308
 data_ov047_020b431c kind:data(any) addr:0x020b431c
 data_ov047_020b432c kind:data(any) addr:0x020b432c

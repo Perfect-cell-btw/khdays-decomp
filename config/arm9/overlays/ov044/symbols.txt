@@ -44,7 +44,7 @@ data_ov044_020b54b4 kind:data(any) addr:0x020b54b4
 data_ov044_020b54b8 kind:data(any) addr:0x020b54b8 ambiguous
 data_ov044_020b54c4 kind:data(any) addr:0x020b54c4
 data_ov044_020b54d4 kind:data(any) addr:0x020b54d4
-data_ov044_020b5500 kind:data(any) addr:0x020b5500
+gOv044XionClass kind:data(any) addr:0x020b5500
 data_ov044_020b5514 kind:data(any) addr:0x020b5514
 data_ov044_020b5528 kind:data(any) addr:0x020b5528
 data_ov044_020b552c kind:data(any) addr:0x020b552c

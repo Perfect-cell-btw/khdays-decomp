@@ -35,7 +35,7 @@ data_ov041_020b4c0c kind:data(any) addr:0x020b4c0c
 data_ov041_020b4c1c kind:data(any) addr:0x020b4c1c
 data_ov041_020b4c2c kind:data(any) addr:0x020b4c2c
 data_ov041_020b4c3c kind:data(any) addr:0x020b4c3c
-data_ov041_020b4c60 kind:data(any) addr:0x020b4c60
+gOv041RikuClass kind:data(any) addr:0x020b4c60
 data_ov041_020b4c74 kind:data(any) addr:0x020b4c74
 data_ov041_020b4c88 kind:data(any) addr:0x020b4c88
 data_ov041_020b4c9c kind:data(any) addr:0x020b4c9c

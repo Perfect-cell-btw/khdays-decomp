@@ -53,7 +53,7 @@ data_ov043_020b578c kind:data(any) addr:0x020b578c
 data_ov043_020b57a4 kind:data(any) addr:0x020b57a4
 data_ov043_020b57d4 kind:data(any) addr:0x020b57d4
 data_ov043_020b57e4 kind:data(any) addr:0x020b57e4
-data_ov043_020b5800 kind:data(any) addr:0x020b5800
+gOv043XemnasClass kind:data(any) addr:0x020b5800
 data_ov043_020b5814 kind:data(any) addr:0x020b5814
 data_ov043_020b5828 kind:data(any) addr:0x020b5828
 data_ov043_020b583c kind:data(any) addr:0x020b583c

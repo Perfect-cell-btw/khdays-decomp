@@ -21,16 +21,16 @@ typedef struct SceneEntry {
 extern void Boot_InitScene(void);   /* BootTask_Construct */
 extern void func_02020974(void);
 extern int data_0204c024;          /* the main heap arena */
-extern int data_ov000_0205a9c0, data_ov002_0207ef54, data_ov003_0204f8e4, data_ov004_02051210,
-           data_ov005_0205b4dc, data_ov006_020565c0, data_ov011_0205e8a0, data_ov006_02056220,
-           data_ov007_0204d3c4, data_ov012_0205c2bc, data_ov010_0204cfa0, data_ov008_0208ffa0;
+extern int gOv000TitleSceneClass, gOv002FieldSceneClass, data_ov003_0204f8e4, gOv004CalendarSceneClass,
+           gOv005MissionResultSceneClass, gOv006MissionSelectSceneClass, data_ov011_0205e8a0, data_ov006_02056220,
+           gOv007MonologueSceneClass, gOv012OpeningSceneClass, gOv010ConnectionErrorSceneClass, gOv008MissionCampSceneClass;
 
 /* Two words ov107 020c6624 reads. */
 int data_0204252c = 1;
 int data_02042530 = 5;
 
 /* The root task: class 0 / group 0xf, an 8-byte state block on the main arena. */
-GameClassDescriptor data_02042534 = {
+GameClassDescriptor gBootTaskClass = {
     0,     /* nClassId */
     0xf,   /* nGroupId */
     Boot_InitScene,  /* pfnCtor */
@@ -41,25 +41,25 @@ GameClassDescriptor data_02042534 = {
 
 SceneEntry gSceneTable[20] = {
     { -1, 0 },                        /* 0 */
-    { 0, &data_ov000_0205a9c0 },      /* 1: logos, title, menus, save files (ov000) */
-    { 2, &data_ov002_0207ef54 },      /* 2: field (ov002) */
+    { 0, &gOv000TitleSceneClass },      /* 1: logos, title, menus, save files (ov000) */
+    { 2, &gOv002FieldSceneClass },      /* 2: field (ov002) */
     { 3, &data_ov003_0204f8e4 },      /* 3 */
     { -1, 0 },                        /* 4 */
-    { 4, &data_ov004_02051210 },      /* 5: day title card (ov004) */
-    { 5, &data_ov005_0205b4dc },      /* 6: mission results (ov005) */
-    { 6, &data_ov006_020565c0 },      /* 7: mission-mode character select (ov006) */
+    { 4, &gOv004CalendarSceneClass },      /* 5: day title card (ov004) */
+    { 5, &gOv005MissionResultSceneClass },      /* 6: mission results (ov005) */
+    { 6, &gOv006MissionSelectSceneClass },      /* 7: mission-mode character select (ov006) */
     { 11, &data_ov011_0205e8a0 },     /* 8 */
     { 9, &data_ov006_02056220 },      /* 9: the descriptor at 0x02056220 inside ov009 (the delink names the address after ov006) */
-    { 7, &data_ov007_0204d3c4 },      /* 10: Roxas's monologue after the clock-tower scene (ov007) */
-    { 12, &data_ov012_0205c2bc },     /* 11: opening movie (ov012) */
-    { 10, &data_ov010_0204cfa0 },     /* 12: the connection-error screen (ov010) */
+    { 7, &gOv007MonologueSceneClass },      /* 10: Roxas's monologue after the clock-tower scene (ov007) */
+    { 12, &gOv012OpeningSceneClass },     /* 11: opening movie (ov012) */
+    { 10, &gOv010ConnectionErrorSceneClass },     /* 12: the connection-error screen (ov010) */
     { -1, 0 },                        /* 13 */
     { -1, 0 },                        /* 14 */
     { -1, 0 },                        /* 15 */
     { -1, 0 },                        /* 16 */
     { -1, 0 },                        /* 17 */
     { -1, 0 },                        /* 18 */
-    { 8, &data_ov008_0208ffa0 },      /* 19: Mission Mode's camp (ov008) */
+    { 8, &gOv008MissionCampSceneClass },      /* 19: Mission Mode's camp (ov008) */
 };
 
 /* A byte flag (0xff = unset) the pause / dialog helpers 02020cf8..02022410 read. */

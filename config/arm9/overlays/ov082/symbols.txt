@@ -43,7 +43,7 @@ data_ov082_020ba384 kind:data(any) addr:0x020ba384
 data_ov082_020ba394 kind:data(any) addr:0x020ba394
 data_ov082_020ba3a4 kind:data(any) addr:0x020ba3a4
 data_ov082_020ba3b4 kind:data(any) addr:0x020ba3b4
-data_ov082_020ba3e0 kind:data(any) addr:0x020ba3e0
+gOv082XionClass kind:data(any) addr:0x020ba3e0
 data_ov082_020ba3f4 kind:data(any) addr:0x020ba3f4
 data_ov082_020ba408 kind:data(any) addr:0x020ba408
 data_ov082_020ba40c kind:data(any) addr:0x020ba40c

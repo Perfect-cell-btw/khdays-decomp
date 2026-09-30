@@ -25,7 +25,7 @@ typedef struct Ov012OpeningEvent {
 extern void Ov012_InitOpeningScene(void);
 extern void Ov012_DestroyOpeningScene(void);
 
-Ov012OpeningSceneDescriptor data_ov012_0205c2bc = {
+Ov012OpeningSceneDescriptor gOv012OpeningSceneClass = {
     8, 13,
     Ov012_InitOpeningScene,
     Ov012_DestroyOpeningScene,

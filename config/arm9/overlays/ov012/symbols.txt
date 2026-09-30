@@ -42,7 +42,7 @@ Ov012_MobiClip_DrainStream kind:function(arm,size=0x54) addr:0x0205c224
 Ov012_ReleaseField50IfSet kind:function(arm,size=0x24) addr:0x0205c278
 data_ov012_0205c2a0 kind:data(any) addr:0x0205c2a0
 data_ov012_0205c2a4 kind:data(any) addr:0x0205c2a4
-data_ov012_0205c2bc kind:data(any) addr:0x0205c2bc
+gOv012OpeningSceneClass kind:data(any) addr:0x0205c2bc
 data_ov012_0205c2d0 kind:data(any) addr:0x0205c2d0
 data_ov012_0205c310 kind:data(any) addr:0x0205c310
 data_ov012_0205cac0 kind:data(any) addr:0x0205cac0

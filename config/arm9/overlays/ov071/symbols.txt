@@ -30,7 +30,7 @@ data_ov071_020b9998 kind:data(any) addr:0x020b9998
 data_ov071_020b99a8 kind:data(any) addr:0x020b99a8
 data_ov071_020b99b8 kind:data(any) addr:0x020b99b8
 data_ov071_020b99c8 kind:data(any) addr:0x020b99c8
-data_ov071_020b99e0 kind:data(any) addr:0x020b99e0
+gOv071SaixClass kind:data(any) addr:0x020b99e0
 data_ov071_020b99f4 kind:data(any) addr:0x020b99f4
 data_ov071_020b9a08 kind:data(any) addr:0x020b9a08
 data_ov071_020b9a1c kind:data(any) addr:0x020b9a1c

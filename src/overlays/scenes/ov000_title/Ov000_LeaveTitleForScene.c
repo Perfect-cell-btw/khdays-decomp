@@ -28,7 +28,7 @@ extern void Ov000_TeardownTitle(void);
 extern void *InstantiateClass(void *classDesc, int arg);
 extern void *data_ov000_0205ac3c;
 extern int data_ov011_0205e8a0;
-extern int data_ov012_0205c2bc;
+extern int gOv012OpeningSceneClass;
 extern void Ov000_WaitLaunchedSceneThenMenu(void);
 
 StateFn Ov000_LeaveTitleForScene(void) {
@@ -39,7 +39,7 @@ StateFn Ov000_LeaveTitleForScene(void) {
     data_ov000_0205ac3c = heap;
     if (*(int *)(heap + 0xd138) == 0) {
         LoadOverlaySync(0, FS_OVERLAY_ID_ov012);
-        obj = InstantiateClass((void *)&data_ov012_0205c2bc, 1);
+        obj = InstantiateClass((void *)&gOv012OpeningSceneClass, 1);
     } else {
         LoadOverlaySync(0, FS_OVERLAY_ID_ov011);
         obj = InstantiateClass((void *)&data_ov011_0205e8a0, 1);

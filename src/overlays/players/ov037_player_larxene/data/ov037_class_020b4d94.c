@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov037 class descriptor data_ov037_020b4d94, 0x020b4d94-0x020b4da8 (.data).
+/* ov037 class descriptor gOv037LarxeneClass, 0x020b4d94-0x020b4da8 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov037_CreateTaggedObjectHandler46Cf(void);
 extern void Ov037_initSubitemsClear(void);
 
-GameClassDescriptor data_ov037_020b4d94 = {
+GameClassDescriptor gOv037LarxeneClass = {
     10,  /* nClassId */
     6,  /* nGroupId */
     Ov037_CreateTaggedObjectHandler46Cf,  /* pfnCtor */

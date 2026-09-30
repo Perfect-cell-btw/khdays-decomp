@@ -46,7 +46,7 @@ data_ov039_020b5434 kind:data(any) addr:0x020b5434
 data_ov039_020b54ac kind:data(any) addr:0x020b54ac
 data_ov039_020b54b8 kind:data(any) addr:0x020b54b8 ambiguous
 data_ov039_020b5540 kind:data(any) addr:0x020b5540
-data_ov039_020b5554 kind:data(any) addr:0x020b5554
+gOv039LuxordClass kind:data(any) addr:0x020b5554
 data_ov039_020b5568 kind:data(any) addr:0x020b5568
 data_ov039_020b557c kind:data(any) addr:0x020b557c
 data_ov039_020b5590 kind:data(any) addr:0x020b5590

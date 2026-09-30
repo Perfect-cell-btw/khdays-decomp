@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov030 class descriptor data_ov030_020b58f4, 0x020b58f4-0x020b5908 (.data).
+/* ov030 class descriptor gOv030RoxasClass, 0x020b58f4-0x020b5908 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov030_SetUpScene(void);
 extern void Ov030_TeardownScene(void);
 
-GameClassDescriptor data_ov030_020b58f4 = {
+GameClassDescriptor gOv030RoxasClass = {
     10,  /* nClassId */
     6,  /* nGroupId */
     Ov030_SetUpScene,  /* pfnCtor */

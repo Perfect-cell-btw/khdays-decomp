@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov000 class descriptor data_ov000_0205a9c0, 0x0205a9c0-0x0205a9d4 (.data).
+/* ov000 class descriptor gOv000TitleSceneClass, 0x0205a9c0-0x0205a9d4 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov000_TitleInit(void);
 extern void Ov000_TeardownTitleScene(void);
 
-GameClassDescriptor data_ov000_0205a9c0 = {
+GameClassDescriptor gOv000TitleSceneClass = {
     8,  /* nClassId */
     15,  /* nGroupId */
     Ov000_TitleInit,  /* pfnCtor */

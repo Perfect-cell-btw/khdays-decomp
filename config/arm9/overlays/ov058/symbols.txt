@@ -45,7 +45,7 @@ data_ov058_020b7c24 kind:data(any) addr:0x020b7c24
 data_ov058_020b7c34 kind:data(any) addr:0x020b7c34
 data_ov058_020b7cac kind:data(any) addr:0x020b7cac
 data_ov058_020b7d40 kind:data(any) addr:0x020b7d40
-data_ov058_020b7d54 kind:data(any) addr:0x020b7d54
+gOv058LuxordClass kind:data(any) addr:0x020b7d54
 data_ov058_020b7d68 kind:data(any) addr:0x020b7d68
 data_ov058_020b7d7c kind:data(any) addr:0x020b7d7c
 data_ov058_020b7d90 kind:data(any) addr:0x020b7d90

@@ -37,7 +37,7 @@ data_ov048_020b4a6c kind:data(any) addr:0x020b4a6c
 data_ov048_020b4a7c kind:data(any) addr:0x020b4a7c
 data_ov048_020b4a8c kind:data(any) addr:0x020b4a8c
 data_ov048_020b4ac0 kind:data(any) addr:0x020b4ac0
-data_ov048_020b4ad4 kind:data(any) addr:0x020b4ad4
+gOv048GoofyClass kind:data(any) addr:0x020b4ad4
 data_ov048_020b4ae8 kind:data(any) addr:0x020b4ae8
 data_ov048_020b4afc kind:data(any) addr:0x020b4afc
 data_ov048_020b4b0c kind:data(any) addr:0x020b4b0c

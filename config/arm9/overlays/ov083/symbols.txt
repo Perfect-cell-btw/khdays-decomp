@@ -29,7 +29,7 @@ data_ov083_020b995c kind:data(any) addr:0x020b995c
 data_ov083_020b996c kind:data(any) addr:0x020b996c
 data_ov083_020b997c kind:data(any) addr:0x020b997c
 data_ov083_020b998c kind:data(any) addr:0x020b998c
-data_ov083_020b9a60 kind:data(any) addr:0x020b9a60
+gOv083ZexionClass kind:data(any) addr:0x020b9a60
 data_ov083_020b9a74 kind:data(any) addr:0x020b9a74
 data_ov083_020b9a88 kind:data(any) addr:0x020b9a88
 data_ov083_020b9a9c kind:data(any) addr:0x020b9a9c

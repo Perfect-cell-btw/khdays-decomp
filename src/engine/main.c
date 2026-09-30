@@ -15,8 +15,8 @@
  *    2. Read the boot mode (0..5) and pick the initial game mode:
  *         SetGameMode(valid boot mode 1..5, otherwise 1, 0)
  *    3. Load the boot resource tables and INSTANTIATE THE ROOT/BOOT TASK:
- *         InstantiateClass(&data_02042534, 1)
- *       data_02042534 -> BootTask_Construct (0x02020928, THUMB)
+ *         InstantiateClass(&gBootTaskClass, 1)
+ *       gBootTaskClass -> BootTask_Construct (0x02020928, THUMB)
  *       which, on a fresh boot (state @0x027ffc20 == 0), selects Scene 1 (the
  *       boot/logo scene) via Scene_RequestPending(SCENE_TITLE, 0).
  *    4. Run the frame loop forever (label FRAME @0x02000cac):
@@ -98,7 +98,7 @@ extern int           data_0204c024;   /* default arena ref                      
 extern unsigned char data_0204c215;   /* "present pending" flag                   */
 extern unsigned char gPauseMode;   /* display mode byte (0/1/2)                */
 extern unsigned char gObjSystem;   /* frame-rate/skip mode byte                */
-extern void         *data_02042534;       /* root task class descriptor           */
+extern void         *gBootTaskClass;       /* root task class descriptor           */
 
 /* scene-render state struct @ data_020442a0: +0x00 u8 displays off (lid closed), +0x04 handle */
 struct SceneState { unsigned char phase; unsigned char _p[3]; int handle; };
@@ -149,7 +149,7 @@ int main(void) {
     data_0204c215 = 0;
     Callbacks_Init();
     SoundCtx_Init();
-    InstantiateClass(&data_02042534, 1);   /* -> BootTask_Construct -> Scene 1 */
+    InstantiateClass(&gBootTaskClass, 1);   /* -> BootTask_Construct -> Scene 1 */
 
     /* --- 4. FRAME LOOP (0x02000cac) --- */
     for (;;) {

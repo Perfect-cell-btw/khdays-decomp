@@ -2,8 +2,8 @@
  * argument through. */
 
 extern void InstantiateClass(void *ptr, int arg);
-extern int data_ov058_020b7d54;
+extern int gOv058LuxordClass;
 
 void Ov058_InvokeWithDataTable(int arg) {
-    InstantiateClass(&data_ov058_020b7d54, arg);
+    InstantiateClass(&gOv058LuxordClass, arg);
 }

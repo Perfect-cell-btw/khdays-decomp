@@ -39,7 +39,7 @@ data_ov070_020b9b50 kind:data(any) addr:0x020b9b50
 data_ov070_020b9b60 kind:data(any) addr:0x020b9b60
 data_ov070_020b9b70 kind:data(any) addr:0x020b9b70
 data_ov070_020b9b80 kind:data(any) addr:0x020b9b80
-data_ov070_020b9ba0 kind:data(any) addr:0x020b9ba0
+gOv070AxelClass kind:data(any) addr:0x020b9ba0
 data_ov070_020b9bb4 kind:data(any) addr:0x020b9bb4
 data_ov070_020b9bc8 kind:data(any) addr:0x020b9bc8
 data_ov070_020b9bdc kind:data(any) addr:0x020b9bdc

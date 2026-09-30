@@ -29,7 +29,7 @@ data_ov100_020bc01c kind:data(any) addr:0x020bc01c
 data_ov100_020bc02c kind:data(any) addr:0x020bc02c
 data_ov100_020bc03c kind:data(any) addr:0x020bc03c
 data_ov100_020bc04c kind:data(any) addr:0x020bc04c
-data_ov100_020bc120 kind:data(any) addr:0x020bc120
+gOv100ZexionClass kind:data(any) addr:0x020bc120
 data_ov100_020bc134 kind:data(any) addr:0x020bc134
 data_ov100_020bc148 kind:data(any) addr:0x020bc148
 data_ov100_020bc15c kind:data(any) addr:0x020bc15c

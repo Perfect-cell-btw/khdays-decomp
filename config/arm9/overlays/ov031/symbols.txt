@@ -39,7 +39,7 @@ data_ov031_020b4c70 kind:data(any) addr:0x020b4c70
 data_ov031_020b4c80 kind:data(any) addr:0x020b4c80
 data_ov031_020b4c90 kind:data(any) addr:0x020b4c90
 data_ov031_020b4ca0 kind:data(any) addr:0x020b4ca0
-data_ov031_020b4cc0 kind:data(any) addr:0x020b4cc0
+gOv031AxelClass kind:data(any) addr:0x020b4cc0
 data_ov031_020b4cd4 kind:data(any) addr:0x020b4cd4
 data_ov031_020b4ce8 kind:data(any) addr:0x020b4ce8
 data_ov031_020b4cfc kind:data(any) addr:0x020b4cfc

@@ -29,7 +29,7 @@ data_ov066_020b6a3c kind:data(any) addr:0x020b6a3c
 data_ov066_020b6a4c kind:data(any) addr:0x020b6a4c
 data_ov066_020b6a7c kind:data(any) addr:0x020b6a7c
 data_ov066_020b6ae0 kind:data(any) addr:0x020b6ae0
-data_ov066_020b6af4 kind:data(any) addr:0x020b6af4
+gOv066DonaldClass kind:data(any) addr:0x020b6af4
 data_ov066_020b6b08 kind:data(any) addr:0x020b6b08
 data_ov066_020b6b1c kind:data(any) addr:0x020b6b1c
 data_ov066_020b6b2c kind:data(any) addr:0x020b6b2c

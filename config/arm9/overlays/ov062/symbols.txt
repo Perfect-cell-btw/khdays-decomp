@@ -53,7 +53,7 @@ data_ov062_020b7f8c kind:data(any) addr:0x020b7f8c
 data_ov062_020b7fa4 kind:data(any) addr:0x020b7fa4
 data_ov062_020b7fd4 kind:data(any) addr:0x020b7fd4
 data_ov062_020b7fe4 kind:data(any) addr:0x020b7fe4
-data_ov062_020b8000 kind:data(any) addr:0x020b8000
+gOv062XemnasClass kind:data(any) addr:0x020b8000
 data_ov062_020b8014 kind:data(any) addr:0x020b8014
 data_ov062_020b8028 kind:data(any) addr:0x020b8028
 data_ov062_020b803c kind:data(any) addr:0x020b803c

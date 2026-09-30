@@ -224,7 +224,7 @@ data_ov006_02056578 kind:data(any) addr:0x02056578
 data_ov006_02056588 kind:data(any) addr:0x02056588
 data_ov006_02056598 kind:data(any) addr:0x02056598
 data_ov006_020565ac kind:data(any) addr:0x020565ac
-data_ov006_020565c0 kind:data(any) addr:0x020565c0
+gOv006MissionSelectSceneClass kind:data(any) addr:0x020565c0
 data_ov006_020565e0 kind:bss addr:0x020565e0
 data_ov006_020565e4 kind:bss addr:0x020565e4
 data_ov006_02056600 kind:bss addr:0x02056600

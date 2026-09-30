@@ -43,7 +43,7 @@ data_ov063_020b7ca4 kind:data(any) addr:0x020b7ca4
 data_ov063_020b7cb4 kind:data(any) addr:0x020b7cb4
 data_ov063_020b7cc4 kind:data(any) addr:0x020b7cc4
 data_ov063_020b7cd4 kind:data(any) addr:0x020b7cd4
-data_ov063_020b7d00 kind:data(any) addr:0x020b7d00
+gOv063XionClass kind:data(any) addr:0x020b7d00
 data_ov063_020b7d14 kind:data(any) addr:0x020b7d14
 data_ov063_020b7d28 kind:data(any) addr:0x020b7d28
 data_ov063_020b7d2c kind:data(any) addr:0x020b7d2c

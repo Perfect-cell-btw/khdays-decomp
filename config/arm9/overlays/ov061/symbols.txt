@@ -34,7 +34,7 @@ data_ov061_020b6ec4 kind:data(any) addr:0x020b6ec4
 data_ov061_020b6ed4 kind:data(any) addr:0x020b6ed4
 data_ov061_020b6ee4 kind:data(any) addr:0x020b6ee4
 data_ov061_020b6ef4 kind:data(any) addr:0x020b6ef4
-data_ov061_020b6f40 kind:data(any) addr:0x020b6f40
+gOv061VexenClass kind:data(any) addr:0x020b6f40
 data_ov061_020b6f54 kind:data(any) addr:0x020b6f54
 data_ov061_020b6f68 kind:data(any) addr:0x020b6f68
 data_ov061_020b6f7c kind:data(any) addr:0x020b6f7c

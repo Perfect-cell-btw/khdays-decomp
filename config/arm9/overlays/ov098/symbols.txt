@@ -34,7 +34,7 @@ data_ov098_020bbc64 kind:data(any) addr:0x020bbc64
 data_ov098_020bbc74 kind:data(any) addr:0x020bbc74
 data_ov098_020bbc84 kind:data(any) addr:0x020bbc84
 data_ov098_020bbc94 kind:data(any) addr:0x020bbc94
-data_ov098_020bbce0 kind:data(any) addr:0x020bbce0
+gOv098VexenClass kind:data(any) addr:0x020bbce0
 data_ov098_020bbcf4 kind:data(any) addr:0x020bbcf4
 data_ov098_020bbd08 kind:data(any) addr:0x020bbd08
 data_ov098_020bbd1c kind:data(any) addr:0x020bbd1c

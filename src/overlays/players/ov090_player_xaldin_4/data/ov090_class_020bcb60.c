@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov090 class descriptor data_ov090_020bcb60, 0x020bcb60-0x020bcb74 (.data).
+/* ov090 class descriptor gOv090XaldinClass, 0x020bcb60-0x020bcb74 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov090_stateCtorConfigReturnHandler(void);
 extern void Ov090_initTwoRegionsClearGlobal(void);
 
-GameClassDescriptor data_ov090_020bcb60 = {
+GameClassDescriptor gOv090XaldinClass = {
     10,  /* nClassId */
     6,  /* nGroupId */
     Ov090_stateCtorConfigReturnHandler,  /* pfnCtor */

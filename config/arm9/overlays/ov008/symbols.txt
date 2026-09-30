@@ -1379,7 +1379,7 @@ data_ov008_0208ff3c kind:data(any) addr:0x0208ff3c
 data_ov008_0208ff64 kind:data(any) addr:0x0208ff64
 data_ov008_0208ff6c kind:data(any) addr:0x0208ff6c
 data_ov008_0208ff78 kind:data(any) addr:0x0208ff78
-data_ov008_0208ffa0 kind:data(any) addr:0x0208ffa0 ambiguous
+gOv008MissionCampSceneClass kind:data(any) addr:0x0208ffa0 ambiguous
 data_ov008_0208ffb4 kind:data(any) addr:0x0208ffb4
 data_ov008_0208ffc4 kind:data(any) addr:0x0208ffc4
 data_ov008_0208ffdc kind:data(any) addr:0x0208ffdc

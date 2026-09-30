@@ -41,7 +41,7 @@ Ov036_InvokeWithDataTable kind:function(arm,size=0x18) addr:0x020b4df0
 data_ov036_020b4e08 kind:data(any) addr:0x020b4e08
 data_ov036_020b4e18 kind:data(any) addr:0x020b4e18
 data_ov036_020b4e28 kind:data(any) addr:0x020b4e28
-data_ov036_020b4e40 kind:data(any) addr:0x020b4e40
+gOv036DemyxClass kind:data(any) addr:0x020b4e40
 data_ov036_020b4e54 kind:data(any) addr:0x020b4e54
 data_ov036_020b4e68 kind:data(any) addr:0x020b4e68
 data_ov036_020b4e7c kind:data(any) addr:0x020b4e7c

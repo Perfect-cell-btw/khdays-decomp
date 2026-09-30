@@ -37,7 +37,7 @@ data_ov103_020bc00c kind:data(any) addr:0x020bc00c
 data_ov103_020bc01c kind:data(any) addr:0x020bc01c
 data_ov103_020bc02c kind:data(any) addr:0x020bc02c
 data_ov103_020bc060 kind:data(any) addr:0x020bc060
-data_ov103_020bc074 kind:data(any) addr:0x020bc074
+gOv103GoofyClass kind:data(any) addr:0x020bc074
 data_ov103_020bc088 kind:data(any) addr:0x020bc088
 data_ov103_020bc09c kind:data(any) addr:0x020bc09c
 data_ov103_020bc0ac kind:data(any) addr:0x020bc0ac

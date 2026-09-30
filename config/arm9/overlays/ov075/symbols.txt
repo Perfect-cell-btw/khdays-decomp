@@ -41,7 +41,7 @@ Ov075_InvokeWithDataTable kind:function(arm,size=0x18) addr:0x020b9cd0
 data_ov075_020b9ce8 kind:data(any) addr:0x020b9ce8
 data_ov075_020b9cf8 kind:data(any) addr:0x020b9cf8
 data_ov075_020b9d08 kind:data(any) addr:0x020b9d08
-data_ov075_020b9d20 kind:data(any) addr:0x020b9d20
+gOv075DemyxClass kind:data(any) addr:0x020b9d20
 data_ov075_020b9d34 kind:data(any) addr:0x020b9d34
 data_ov075_020b9d48 kind:data(any) addr:0x020b9d48
 data_ov075_020b9d5c kind:data(any) addr:0x020b9d5c

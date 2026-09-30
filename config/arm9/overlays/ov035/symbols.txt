@@ -38,7 +38,7 @@ data_ov035_020b4bac kind:data(any) addr:0x020b4bac
 data_ov035_020b4bbc kind:data(any) addr:0x020b4bbc
 data_ov035_020b4bcc kind:data(any) addr:0x020b4bcc
 data_ov035_020b4be0 kind:data(any) addr:0x020b4be0
-data_ov035_020b4bf4 kind:data(any) addr:0x020b4bf4
+gOv035SoraClass kind:data(any) addr:0x020b4bf4
 data_ov035_020b4c08 kind:data(any) addr:0x020b4c08
 data_ov035_020b4c1c kind:data(any) addr:0x020b4c1c
 data_ov035_020b4c30 kind:data(any) addr:0x020b4c30

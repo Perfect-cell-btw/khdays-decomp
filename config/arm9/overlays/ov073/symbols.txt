@@ -35,7 +35,7 @@ data_ov073_020ba450 kind:data(any) addr:0x020ba450
 data_ov073_020ba45c kind:data(any) addr:0x020ba45c
 data_ov073_020ba46c kind:data(any) addr:0x020ba46c
 data_ov073_020ba47c kind:data(any) addr:0x020ba47c
-data_ov073_020ba4a0 kind:data(any) addr:0x020ba4a0
+gOv073XaldinClass kind:data(any) addr:0x020ba4a0
 data_ov073_020ba4b4 kind:data(any) addr:0x020ba4b4
 data_ov073_020ba4c8 kind:data(any) addr:0x020ba4c8
 data_ov073_020ba4dc kind:data(any) addr:0x020ba4dc

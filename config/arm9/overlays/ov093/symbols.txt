@@ -37,7 +37,7 @@ data_ov093_020bc2e4 kind:data(any) addr:0x020bc2e4
 data_ov093_020bc2f4 kind:data(any) addr:0x020bc2f4
 data_ov093_020bc304 kind:data(any) addr:0x020bc304
 data_ov093_020bc320 kind:data(any) addr:0x020bc320
-data_ov093_020bc334 kind:data(any) addr:0x020bc334
+gOv093LarxeneClass kind:data(any) addr:0x020bc334
 data_ov093_020bc348 kind:data(any) addr:0x020bc348
 data_ov093_020bc35c kind:data(any) addr:0x020bc35c
 data_ov093_020bc370 kind:data(any) addr:0x020bc370

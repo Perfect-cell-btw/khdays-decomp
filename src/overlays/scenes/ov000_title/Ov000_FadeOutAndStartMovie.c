@@ -26,7 +26,7 @@ extern void Scene_DrawNode(void *p);
 extern void Ov000_TeardownTitleScene(void);
 extern void *InstantiateClass(void *classDesc, int arg);
 extern void *data_ov000_0205ac20;
-extern int  data_ov012_0205c2bc;
+extern int  gOv012OpeningSceneClass;
 extern void Ov000_FinishMoviePlayback_2(void);
 
 StateFn Ov000_FadeOutAndStartMovie(void) {
@@ -40,7 +40,7 @@ StateFn Ov000_FadeOutAndStartMovie(void) {
         Ov000_TeardownTitleScene();
         data_ov000_0205ac20 = heap;
         LoadOverlaySync(0, FS_OVERLAY_ID_ov012);
-        *(void **)((char *)heap + 0x5078) = InstantiateClass((void *)&data_ov012_0205c2bc, 1);
+        *(void **)((char *)heap + 0x5078) = InstantiateClass((void *)&gOv012OpeningSceneClass, 1);
         return (StateFn)Ov000_FinishMoviePlayback_2;
     }
     heap[0] = heap[0] + 1;

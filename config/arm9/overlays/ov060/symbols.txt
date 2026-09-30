@@ -35,7 +35,7 @@ data_ov060_020b740c kind:data(any) addr:0x020b740c
 data_ov060_020b741c kind:data(any) addr:0x020b741c
 data_ov060_020b742c kind:data(any) addr:0x020b742c
 data_ov060_020b743c kind:data(any) addr:0x020b743c
-data_ov060_020b7460 kind:data(any) addr:0x020b7460
+gOv060RikuClass kind:data(any) addr:0x020b7460
 data_ov060_020b7474 kind:data(any) addr:0x020b7474
 data_ov060_020b7488 kind:data(any) addr:0x020b7488
 data_ov060_020b749c kind:data(any) addr:0x020b749c

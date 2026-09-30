@@ -38,7 +38,7 @@ data_ov065_020b7258 kind:data(any) addr:0x020b7258
 data_ov065_020b7268 kind:data(any) addr:0x020b7268
 data_ov065_020b7278 kind:data(any) addr:0x020b7278
 data_ov065_020b7288 kind:data(any) addr:0x020b7288
-data_ov065_020b72a0 kind:data(any) addr:0x020b72a0
+gOv065MickeyClass kind:data(any) addr:0x020b72a0
 data_ov065_020b72b4 kind:data(any) addr:0x020b72b4
 data_ov065_020b72c8 kind:data(any) addr:0x020b72c8
 data_ov065_020b72dc kind:data(any) addr:0x020b72dc

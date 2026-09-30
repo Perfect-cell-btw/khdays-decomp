@@ -1,7 +1,7 @@
 /* Ov062_InvokeWithDataTable -- instantiate the ov043 task class, ov062 (twin) (tail-call to
- * InstantiateClass with the class descriptor data_ov062_020b8000). */
+ * InstantiateClass with the class descriptor gOv062XemnasClass). */
 extern int InstantiateClass(void *classDesc, int arg);
-extern char data_ov062_020b8000[];
+extern char gOv062XemnasClass[];
 int Ov062_InvokeWithDataTable(int arg) {
-    return InstantiateClass(data_ov062_020b8000, arg);
+    return InstantiateClass(gOv062XemnasClass, arg);
 }

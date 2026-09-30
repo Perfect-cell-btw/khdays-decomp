@@ -2099,7 +2099,7 @@ data_02042510 kind:data(any) addr:0x02042510
 data_0204251c kind:data(any) addr:0x0204251c
 data_0204252c kind:data(any) addr:0x0204252c
 data_02042530 kind:data(any) addr:0x02042530
-data_02042534 kind:data(any) addr:0x02042534
+gBootTaskClass kind:data(any) addr:0x02042534
 gSceneTable kind:data(any) addr:0x02042548
 data_020425e8 kind:data(any) addr:0x020425e8
 data_020425ec kind:data(any) addr:0x020425ec

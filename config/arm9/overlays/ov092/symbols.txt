@@ -41,7 +41,7 @@ Ov092_InvokeWithDataTable kind:function(arm,size=0x18) addr:0x020bc390
 data_ov092_020bc3a8 kind:data(any) addr:0x020bc3a8
 data_ov092_020bc3b8 kind:data(any) addr:0x020bc3b8
 data_ov092_020bc3c8 kind:data(any) addr:0x020bc3c8
-data_ov092_020bc3e0 kind:data(any) addr:0x020bc3e0
+gOv092DemyxClass kind:data(any) addr:0x020bc3e0
 data_ov092_020bc3f4 kind:data(any) addr:0x020bc3f4
 data_ov092_020bc408 kind:data(any) addr:0x020bc408
 data_ov092_020bc41c kind:data(any) addr:0x020bc41c

@@ -286,7 +286,7 @@ data_ov000_0205a954 kind:data(any) addr:0x0205a954
 data_ov000_0205a95c kind:data(any) addr:0x0205a95c
 data_ov000_0205a970 kind:data(any) addr:0x0205a970
 data_ov000_0205a98c kind:data(any) addr:0x0205a98c
-data_ov000_0205a9c0 kind:data(any) addr:0x0205a9c0
+gOv000TitleSceneClass kind:data(any) addr:0x0205a9c0
 data_ov000_0205a9d4 kind:data(any) addr:0x0205a9d4
 data_ov000_0205a9ec kind:data(any) addr:0x0205a9ec
 data_ov000_0205aa00 kind:data(any) addr:0x0205aa00

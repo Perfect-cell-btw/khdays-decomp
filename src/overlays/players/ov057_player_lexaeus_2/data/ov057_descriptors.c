@@ -22,7 +22,7 @@ const Ov022SlotInitParams data_ov057_020b738c = {
     {0, 0, 0},
 };
 
-GameClassDescriptor data_ov057_020b73d4 = {
+GameClassDescriptor gOv057LexaeusClass = {
     10,
     6,
     Ov057_InitAndReturnNextState,

@@ -6,6 +6,6 @@ Ov010_SetupRootHeapField58 kind:function(arm,size=0x44) addr:0x0204cddc
 Ov010_InitFromRootHeapConfig kind:function(arm,size=0x40) addr:0x0204ce20
 Ov010_TitleBootStep kind:function(arm,size=0x128) addr:0x0204ce60
 data_ov010_0204cf88 kind:data(any) addr:0x0204cf88
-data_ov010_0204cfa0 kind:data(any) addr:0x0204cfa0
+gOv010ConnectionErrorSceneClass kind:data(any) addr:0x0204cfa0
 data_ov010_0204cfb4 kind:data(any) addr:0x0204cfb4
 data_ov010_0204cfc8 kind:data(any) addr:0x0204cfc8

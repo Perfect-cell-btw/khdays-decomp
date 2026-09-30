@@ -35,7 +35,7 @@ data_ov087_020b9a14 kind:data(any) addr:0x020b9a14
 data_ov087_020b9a24 kind:data(any) addr:0x020b9a24
 data_ov087_020b9a38 kind:data(any) addr:0x020b9a38
 data_ov087_020b9b00 kind:data(any) addr:0x020b9b00
-data_ov087_020b9b14 kind:data(any) addr:0x020b9b14
+gOv087RoxasDualClass kind:data(any) addr:0x020b9b14
 data_ov087_020b9b28 kind:data(any) addr:0x020b9b28
 data_ov087_020b9b3c kind:data(any) addr:0x020b9b3c
 data_ov087_020b9b50 kind:data(any) addr:0x020b9b50

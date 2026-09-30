@@ -35,7 +35,7 @@ data_ov104_020bc0d4 kind:data(any) addr:0x020bc0d4
 data_ov104_020bc0e4 kind:data(any) addr:0x020bc0e4
 data_ov104_020bc0f8 kind:data(any) addr:0x020bc0f8
 data_ov104_020bc1c0 kind:data(any) addr:0x020bc1c0
-data_ov104_020bc1d4 kind:data(any) addr:0x020bc1d4
+gOv104RoxasDualClass kind:data(any) addr:0x020bc1d4
 data_ov104_020bc1e8 kind:data(any) addr:0x020bc1e8
 data_ov104_020bc1fc kind:data(any) addr:0x020bc1fc
 data_ov104_020bc210 kind:data(any) addr:0x020bc210

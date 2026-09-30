@@ -38,7 +38,7 @@ data_ov084_020b9938 kind:data(any) addr:0x020b9938
 data_ov084_020b9948 kind:data(any) addr:0x020b9948
 data_ov084_020b9958 kind:data(any) addr:0x020b9958
 data_ov084_020b9968 kind:data(any) addr:0x020b9968
-data_ov084_020b9980 kind:data(any) addr:0x020b9980
+gOv084MickeyClass kind:data(any) addr:0x020b9980
 data_ov084_020b9994 kind:data(any) addr:0x020b9994
 data_ov084_020b99a8 kind:data(any) addr:0x020b99a8
 data_ov084_020b99bc kind:data(any) addr:0x020b99bc

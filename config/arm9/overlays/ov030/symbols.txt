@@ -47,7 +47,7 @@ data_ov030_020b58a0 kind:data(any) addr:0x020b58a0
 data_ov030_020b58b0 kind:data(any) addr:0x020b58b0
 data_ov030_020b58c4 kind:data(any) addr:0x020b58c4
 data_ov030_020b58e0 kind:data(any) addr:0x020b58e0
-data_ov030_020b58f4 kind:data(any) addr:0x020b58f4
+gOv030RoxasClass kind:data(any) addr:0x020b58f4
 data_ov030_020b5908 kind:data(any) addr:0x020b5908
 data_ov030_020b591c kind:data(any) addr:0x020b591c
 data_ov030_020b5920 kind:data(any) addr:0x020b5920

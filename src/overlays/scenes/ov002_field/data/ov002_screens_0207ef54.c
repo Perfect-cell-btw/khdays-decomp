@@ -18,6 +18,6 @@ typedef struct {
 extern void Ov002_ConstructGameplayScene(void);
 extern void Ov002_ShutDownMissionScene(void);
 
-Ov002ScreenDesc data_ov002_0207ef54 = {
+Ov002ScreenDesc gOv002FieldSceneClass = {
     0x0f0008, Ov002_ConstructGameplayScene, Ov002_ShutDownMissionScene, 36292, 0,
 };

@@ -43,7 +43,7 @@ data_ov094_020bc10c kind:data(any) addr:0x020bc10c
 data_ov094_020bc11c kind:data(any) addr:0x020bc11c
 data_ov094_020bc12c kind:data(any) addr:0x020bc12c
 data_ov094_020bc160 kind:data(any) addr:0x020bc160
-data_ov094_020bc174 kind:data(any) addr:0x020bc174
+gOv094LexaeusClass kind:data(any) addr:0x020bc174
 data_ov094_020bc188 kind:data(any) addr:0x020bc188
 data_ov094_020bc19c kind:data(any) addr:0x020bc19c
 data_ov094_020bc1b0 kind:data(any) addr:0x020bc1b0

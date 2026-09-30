@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov063 class descriptor data_ov063_020b7d00, 0x020b7d00-0x020b7d14 (.data).
+/* ov063 class descriptor gOv063XionClass, 0x020b7d00-0x020b7d14 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov063_InitSubsystemAndReturnTick(void);
 extern void Ov063_ShutdownAndFree(void);
 
-GameClassDescriptor data_ov063_020b7d00 = {
+GameClassDescriptor gOv063XionClass = {
     10,  /* nClassId */
     6,  /* nGroupId */
     Ov063_InitSubsystemAndReturnTick,  /* pfnCtor */

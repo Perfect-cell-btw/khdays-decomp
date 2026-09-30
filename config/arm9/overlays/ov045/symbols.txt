@@ -29,7 +29,7 @@ data_ov045_020b4a7c kind:data(any) addr:0x020b4a7c
 data_ov045_020b4a8c kind:data(any) addr:0x020b4a8c
 data_ov045_020b4a9c kind:data(any) addr:0x020b4a9c
 data_ov045_020b4aac kind:data(any) addr:0x020b4aac
-data_ov045_020b4b80 kind:data(any) addr:0x020b4b80
+gOv045ZexionClass kind:data(any) addr:0x020b4b80
 data_ov045_020b4b94 kind:data(any) addr:0x020b4b94
 data_ov045_020b4ba8 kind:data(any) addr:0x020b4ba8
 data_ov045_020b4bbc kind:data(any) addr:0x020b4bbc

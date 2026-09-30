@@ -4,7 +4,7 @@
  *   phase 0: reset the retry/attempt counters (heap+0x4c52/+0x4c53), run
  *            Ov000_BeginCardTransfer, force both screens dark, phase++.
  *   phase 1: poll Ov000_PollSaveLoad and act on its result (retry bookkeeping;
- *            on result 3 re-instantiate the scene class @data_ov000_0205a9c0; on
+ *            on result 3 re-instantiate the scene class @gOv000TitleSceneClass; on
  *            result 0 probe GameState_GetField and set a flag). Once the attempt counter
  *            (heap+0x4c52) reaches 3, phase++.
  *   phase 2: advance to Ov000_MenuFadeInState.
@@ -26,7 +26,7 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  Ov000_BeginCardTransfer(int a);
 extern int   Ov000_PollSaveLoad(void);
 extern void  InstantiateClass(void *classDesc, int arg);
-extern char  data_ov000_0205a9c0[];
+extern char  gOv000TitleSceneClass[];
 extern void  Ov000_MenuFadeInState(void);
 
 StateFn Ov000_HandoffState(void) {
@@ -44,7 +44,7 @@ StateFn Ov000_HandoffState(void) {
     case 1:
         switch (Ov000_PollSaveLoad()) {
         case 3:
-            InstantiateClass(data_ov000_0205a9c0, 2);
+            InstantiateClass(gOv000TitleSceneClass, 2);
             break;
         case 0:
             if (GameState_GetField(0x44e, 3) == 6) {

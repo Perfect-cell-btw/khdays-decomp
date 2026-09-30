@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov006 class descriptor data_ov006_020565c0, 0x020565c0-0x020565e0 (.data).
+/* ov006 class descriptor gOv006MissionSelectSceneClass, 0x020565c0-0x020565e0 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the u16 class / group
  * ids, the constructor whose return is the first state function, the method slot, the size of
@@ -14,7 +14,7 @@ extern void Ov006_MissionBootWatchdog(void);
 struct {
     GameClassDescriptor desc;
     int reserved[3];
-} data_ov006_020565c0 = {
+} gOv006MissionSelectSceneClass = {
     { 8, 14, Ov006_CreateSubObject, Ov006_MissionBootWatchdog, 8, 0 },
     { 0, 0, 0 },
 };

@@ -47,7 +47,7 @@ data_ov052_020b7f98 kind:data(any) addr:0x020b7f98
 data_ov052_020b7fa8 kind:data(any) addr:0x020b7fa8
 data_ov052_020b7fb8 kind:data(any) addr:0x020b7fb8
 data_ov052_020b7fe0 kind:data(any) addr:0x020b7fe0
-data_ov052_020b7ff4 kind:data(any) addr:0x020b7ff4
+gOv052XigbarClass kind:data(any) addr:0x020b7ff4
 data_ov052_020b8008 kind:data(any) addr:0x020b8008
 data_ov052_020b801c kind:data(any) addr:0x020b801c
 data_ov052_020b8030 kind:data(any) addr:0x020b8030

@@ -35,7 +35,7 @@ data_ov097_020bc1ac kind:data(any) addr:0x020bc1ac
 data_ov097_020bc1bc kind:data(any) addr:0x020bc1bc
 data_ov097_020bc1cc kind:data(any) addr:0x020bc1cc
 data_ov097_020bc1dc kind:data(any) addr:0x020bc1dc
-data_ov097_020bc200 kind:data(any) addr:0x020bc200
+gOv097RikuClass kind:data(any) addr:0x020bc200
 data_ov097_020bc214 kind:data(any) addr:0x020bc214
 data_ov097_020bc228 kind:data(any) addr:0x020bc228
 data_ov097_020bc23c kind:data(any) addr:0x020bc23c

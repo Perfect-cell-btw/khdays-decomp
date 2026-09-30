@@ -1647,7 +1647,7 @@ data_ov002_0207eefc kind:data(any) addr:0x0207eefc
 data_ov002_0207ef14 kind:data(any) addr:0x0207ef14
 data_ov002_0207ef28 kind:data(any) addr:0x0207ef28
 data_ov002_0207ef3c kind:data(any) addr:0x0207ef3c
-data_ov002_0207ef54 kind:data(any) addr:0x0207ef54
+gOv002FieldSceneClass kind:data(any) addr:0x0207ef54
 data_ov002_0207ef68 kind:data(any) addr:0x0207ef68
 data_ov002_0207ef80 kind:data(any) addr:0x0207ef80
 data_ov002_0207ef80_offsets kind:data(any) addr:0x0207ef80

@@ -89,7 +89,7 @@ data_ov004_020510b8 kind:data(any) addr:0x020510b8
 data_ov004_020510cc kind:data(any) addr:0x020510cc
 data_ov004_020511e0 kind:data(any) addr:0x020511e0
 data_ov004_020511fc kind:data(any) addr:0x020511fc
-data_ov004_02051210 kind:data(any) addr:0x02051210 ambiguous
+gOv004CalendarSceneClass kind:data(any) addr:0x02051210 ambiguous
 data_ov004_02051224 kind:data(any) addr:0x02051224
 data_ov004_02051238 kind:data(any) addr:0x02051238
 data_ov004_0205124c kind:data(any) addr:0x0205124c

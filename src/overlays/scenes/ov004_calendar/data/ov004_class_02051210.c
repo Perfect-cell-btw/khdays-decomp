@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov004 class descriptor data_ov004_02051210, 0x02051210-0x02051224 (.data).
+/* ov004 class descriptor gOv004CalendarSceneClass, 0x02051210-0x02051224 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov004_CreateMissionSelectScene(void);
 extern void Ov004_ClassTeardown(void);
 
-GameClassDescriptor data_ov004_02051210 = {
+GameClassDescriptor gOv004CalendarSceneClass = {
     8,  /* nClassId */
     15,  /* nGroupId */
     Ov004_CreateMissionSelectScene,  /* pfnCtor */

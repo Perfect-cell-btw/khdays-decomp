@@ -39,7 +39,7 @@ data_ov088_020bc210 kind:data(any) addr:0x020bc210
 data_ov088_020bc220 kind:data(any) addr:0x020bc220
 data_ov088_020bc230 kind:data(any) addr:0x020bc230
 data_ov088_020bc240 kind:data(any) addr:0x020bc240
-data_ov088_020bc260 kind:data(any) addr:0x020bc260
+gOv088AxelClass kind:data(any) addr:0x020bc260
 data_ov088_020bc274 kind:data(any) addr:0x020bc274
 data_ov088_020bc288 kind:data(any) addr:0x020bc288
 data_ov088_020bc29c kind:data(any) addr:0x020bc29c

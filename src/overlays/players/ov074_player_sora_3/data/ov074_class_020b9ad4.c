@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov074 class descriptor data_ov074_020b9ad4, 0x020b9ad4-0x020b9ae8 (.data).
+/* ov074 class descriptor gOv074SoraClass, 0x020b9ad4-0x020b9ae8 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov074_stateCtorCondConfigReturnHandler(void);
 extern void Ov074_initRegionCondClearGlobal(void);
 
-GameClassDescriptor data_ov074_020b9ad4 = {
+GameClassDescriptor gOv074SoraClass = {
     10,  /* nClassId */
     6,  /* nGroupId */
     Ov074_stateCtorCondConfigReturnHandler,  /* pfnCtor */

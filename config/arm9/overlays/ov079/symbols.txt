@@ -36,7 +36,7 @@ data_ov079_020b9904 kind:data(any) addr:0x020b9904
 data_ov079_020b9914 kind:data(any) addr:0x020b9914
 data_ov079_020b9924 kind:data(any) addr:0x020b9924
 data_ov079_020b9940 kind:data(any) addr:0x020b9940
-data_ov079_020b9954 kind:data(any) addr:0x020b9954
+gOv079MarluxiaClass kind:data(any) addr:0x020b9954
 data_ov079_020b9968 kind:data(any) addr:0x020b9968
 data_ov079_020b997c kind:data(any) addr:0x020b997c
 data_ov079_020b9990 kind:data(any) addr:0x020b9990

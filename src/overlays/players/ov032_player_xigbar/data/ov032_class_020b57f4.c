@@ -1,5 +1,5 @@
 #include "game/class_descriptor.h"
-/* ov032 class descriptor data_ov032_020b57f4, 0x020b57f4-0x020b5808 (.data).
+/* ov032 class descriptor gOv032XigbarClass, 0x020b57f4-0x020b5808 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
  * u16 class / group ids, the constructor whose return is the first state
@@ -10,7 +10,7 @@
 extern void Ov032_InitAndGetHandler(void);
 extern void Ov032_UnloadEnemyOverlay(void);
 
-GameClassDescriptor data_ov032_020b57f4 = {
+GameClassDescriptor gOv032XigbarClass = {
     10,  /* nClassId */
     6,  /* nGroupId */
     Ov032_InitAndGetHandler,  /* pfnCtor */

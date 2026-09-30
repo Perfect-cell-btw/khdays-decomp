@@ -35,7 +35,7 @@ data_ov080_020b9aec kind:data(any) addr:0x020b9aec
 data_ov080_020b9afc kind:data(any) addr:0x020b9afc
 data_ov080_020b9b0c kind:data(any) addr:0x020b9b0c
 data_ov080_020b9b1c kind:data(any) addr:0x020b9b1c
-data_ov080_020b9b40 kind:data(any) addr:0x020b9b40
+gOv080RikuClass kind:data(any) addr:0x020b9b40
 data_ov080_020b9b54 kind:data(any) addr:0x020b9b54
 data_ov080_020b9b68 kind:data(any) addr:0x020b9b68
 data_ov080_020b9b7c kind:data(any) addr:0x020b9b7c

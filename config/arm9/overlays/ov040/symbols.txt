@@ -36,7 +36,7 @@ data_ov040_020b4a24 kind:data(any) addr:0x020b4a24
 data_ov040_020b4a34 kind:data(any) addr:0x020b4a34
 data_ov040_020b4a44 kind:data(any) addr:0x020b4a44
 data_ov040_020b4a60 kind:data(any) addr:0x020b4a60
-data_ov040_020b4a74 kind:data(any) addr:0x020b4a74
+gOv040MarluxiaClass kind:data(any) addr:0x020b4a74
 data_ov040_020b4a88 kind:data(any) addr:0x020b4a88
 data_ov040_020b4a9c kind:data(any) addr:0x020b4a9c
 data_ov040_020b4ab0 kind:data(any) addr:0x020b4ab0
