@@ -86,7 +86,7 @@ data_ov222_020d6bc8 kind:data(any) addr:0x020d6bc8
 data_ov222_020d6be8 kind:data(any) addr:0x020d6be8
 data_ov222_020d6bec kind:data(any) addr:0x020d6bec
 data_ov222_020d6bfc kind:data(any) addr:0x020d6bfc
-data_ov222_020d6c20 kind:data(any) addr:0x020d6c20
+gOv222PackPathFmt kind:data(any) addr:0x020d6c20
 data_ov222_020d6c2c kind:data(any) addr:0x020d6c2c
 data_ov222_020d6c38 kind:data(any) addr:0x020d6c38
 data_ov222_020d6c48 kind:data(any) addr:0x020d6c48

@@ -7,13 +7,13 @@
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
 extern void func_ov107_020c6624(int a, int b);
-extern const char data_ov221_020d4e00[];
+extern const char gOv221PackPathFmt[];
 extern void Ov221_EnemyInit(int);
 int Ov221_CreateNamedEntity(int param_1) {
     char buf[0x1d] = {0};
     int obj = CallocInstance(0x464);
     *(signed char *)(obj + 0x19c) = 0x33;
-    OS_SPrintf(buf, data_ov221_020d4e00, ENEMY_TAILBUNKER);
+    OS_SPrintf(buf, gOv221PackPathFmt, ENEMY_TAILBUNKER);
     *(int *)(obj + 0x1a4) = Ov107_OpenCachedResourceByName(buf);
     *(int *)(obj + 0x18c) = (int)&Ov221_EnemyInit;
     func_ov107_020c6624(obj, param_1);
