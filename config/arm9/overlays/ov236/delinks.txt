@@ -4,622 +4,622 @@
     .data       start:0x020d64a0 end:0x020d6520 kind:data align:32
     .bss        start:0x020d6520 end:0x020d6520 kind:bss align:32
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RegisterEntityClass.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_CreateNamedEntity.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetupModelPoses.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetupModelPoses.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc110
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RenderAtOwnerModel.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RenderAtOwnerModel.c:
     complete
     .text       start:0x020cc110 end:0x020cc154
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_Construct.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_Construct.c:
     complete
     .text       start:0x020cc154 end:0x020cc5c0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_Destroy.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_Destroy.c:
     complete
     .text       start:0x020cc5c0 end:0x020cc630
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_UpdateShadowA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_UpdateShadowA.c:
     complete
     .text       start:0x020cc630 end:0x020cc6f8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RemoveFromDrawList.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RemoveFromDrawList.c:
     complete
     .text       start:0x020cc6f8 end:0x020cc838
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_VisitSubObjects.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_VisitSubObjects.c:
     complete
     .text       start:0x020cc838 end:0x020cc86c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_HandleMessage.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_HandleMessage.c:
     complete
     .text       start:0x020cc86c end:0x020cca44
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_PlayRiderMove.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_PlayRiderMove.c:
     complete
     .text       start:0x020cca44 end:0x020ccd14
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ForwardHitToSubObjects.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ForwardHitToSubObjects.c:
     complete
     .text       start:0x020ccd14 end:0x020ccd68
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SyncRiderHitPoints.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SyncRiderHitPoints.c:
     complete
     .text       start:0x020ccd68 end:0x020cce20
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_FrontRiders_New.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_FrontRiders_New.c:
     complete
     .text       start:0x020cce20 end:0x020cce54
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_FrontRidersConstruct.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_FrontRidersConstruct.c:
     complete
     .text       start:0x020cce54 end:0x020cd300
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_FrontRiders_Destroy.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_FrontRiders_Destroy.c:
     complete
     .text       start:0x020cd300 end:0x020cd368
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_UpdateShadowB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_UpdateShadowB.c:
     complete
     .text       start:0x020cd368 end:0x020cd450
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_InitModelPoses.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_InitModelPoses.c:
     complete
     .text       start:0x020cd450 end:0x020cd508
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SendStatusWithPos.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SendStatusWithPos.c:
     complete
     .text       start:0x020cd508 end:0x020cd5a0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_HandleRiderMessage.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_HandleRiderMessage.c:
     complete
     .text       start:0x020cd5a0 end:0x020cd780
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_TeardownHook.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_TeardownHook.c:
     complete
     .text       start:0x020cd780 end:0x020cd834
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_FrontRiders_Release.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_FrontRiders_Release.c:
     complete
     .text       start:0x020cd834 end:0x020cd8cc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_CopyPoseFromParent394.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_CopyPoseFromParent394.c:
     complete
     .text       start:0x020cd8cc end:0x020cd918
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RebuildRiderListsA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RebuildRiderListsA.c:
     complete
     .text       start:0x020cd918 end:0x020cda7c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RiderPresenceHook.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RiderPresenceHook.c:
     complete
     .text       start:0x020cda7c end:0x020cdc84
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RearRiders_New.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RearRiders_New.c:
     complete
     .text       start:0x020cdc84 end:0x020cdcb8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RearRidersConstruct.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RearRidersConstruct.c:
     complete
     .text       start:0x020cdcb8 end:0x020ce1c0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RearRiders_Destroy.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RearRiders_Destroy.c:
     complete
     .text       start:0x020ce1c0 end:0x020ce230
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_UpdateShadow.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_UpdateShadow.c:
     complete
     .text       start:0x020ce230 end:0x020ce2d0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_InitRiderAnchors.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_InitRiderAnchors.c:
     complete
     .text       start:0x020ce2d0 end:0x020ce430
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SendStatusWithPosB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SendStatusWithPosB.c:
     complete
     .text       start:0x020ce430 end:0x020ce4c8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_HandleRiderMessageB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_HandleRiderMessageB.c:
     complete
     .text       start:0x020ce4c8 end:0x020ce6fc
 
-src/overlays/enemies/ov236_enemy_3f/func_ov236_020ce6fc.c:
+src/overlays/enemies/ov236_enemy_guard_armor/func_ov236_020ce6fc.c:
     complete
     .text       start:0x020ce6fc end:0x020ce708
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SuspendSubObjects.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SuspendSubObjects.c:
     complete
     .text       start:0x020ce708 end:0x020ce7d4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_CopyPoseFromParent384.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_CopyPoseFromParent384.c:
     complete
     .text       start:0x020ce7d4 end:0x020ce820
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RebuildRiderListsB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RebuildRiderListsB.c:
     complete
     .text       start:0x020ce820 end:0x020ce984
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RefreshRearRiders.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RefreshRearRiders.c:
     complete
     .text       start:0x020ce984 end:0x020ced5c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ced5c end:0x020cedb8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_MountHitFilter.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_MountHitFilter.c:
     complete
     .text       start:0x020cedb8 end:0x020cf3b8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_InitMountState.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_InitMountState.c:
     complete
     .text       start:0x020cf3b8 end:0x020cf4b4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_MountMoveDispatch.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_MountMoveDispatch.c:
     complete
     .text       start:0x020cf4b4 end:0x020cf984
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_MountStep.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_MountStep.c:
     complete
     .text       start:0x020cf984 end:0x020cfa88
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cfa88 end:0x020cfaf0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cfaf0 end:0x020cfb2c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterRest.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterRest.c:
     complete
     .text       start:0x020cfb2c end:0x020cfb88
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetChild1c7Byte2.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetChild1c7Byte2.c:
     complete
     .text       start:0x020cfb88 end:0x020cfb9c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterRoll.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterRoll.c:
     complete
     .text       start:0x020cfb9c end:0x020cfc64
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RollTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RollTick.c:
     complete
     .text       start:0x020cfc64 end:0x020cfdb4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiPrepareJump.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiPrepareJump.c:
     complete
     .text       start:0x020cfdb4 end:0x020cfe10
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterJump.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterJump.c:
     complete
     .text       start:0x020cfe10 end:0x020cff4c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_JumpTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_JumpTick.c:
     complete
     .text       start:0x020cff4c end:0x020cfff8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterTailSweep.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterTailSweep.c:
     complete
     .text       start:0x020cfff8 end:0x020d0060
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_TailSweepTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_TailSweepTick.c:
     complete
     .text       start:0x020d0060 end:0x020d03ec
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterCharge.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterCharge.c:
     complete
     .text       start:0x020d03ec end:0x020d046c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiReleaseRidersOnAnimEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiReleaseRidersOnAnimEnd.c:
     complete
     .text       start:0x020d046c end:0x020d04d0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ChargeEnter.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ChargeEnter.c:
     complete
     .text       start:0x020d04d0 end:0x020d05dc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ChargeTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ChargeTick.c:
     complete
     .text       start:0x020d05dc end:0x020d0750
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ReleaseRiderItems.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ReleaseRiderItems.c:
     complete
     .text       start:0x020d0750 end:0x020d0860
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterRoar.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterRoar.c:
     complete
     .text       start:0x020d0860 end:0x020d0900
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RoarWaitTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RoarWaitTick.c:
     complete
     .text       start:0x020d0900 end:0x020d0a80
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RoarTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RoarTick.c:
     complete
     .text       start:0x020d0a80 end:0x020d0b20
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterSurprised.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterSurprised.c:
     complete
     .text       start:0x020d0b20 end:0x020d0b88
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiStartRollingCharge.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiStartRollingCharge.c:
     complete
     .text       start:0x020d0b88 end:0x020d0bf8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RollingChargeTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RollingChargeTick.c:
     complete
     .text       start:0x020d0bf8 end:0x020d1114
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ReactDecayAimAndCancelAction.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ReactDecayAimAndCancelAction.c:
     complete
     .text       start:0x020d1114 end:0x020d1180
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ReactDecayAimAndSetState.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ReactDecayAimAndSetState.c:
     complete
     .text       start:0x020d1180 end:0x020d11e8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterDown.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterDown.c:
     complete
     .text       start:0x020d11e8 end:0x020d1248
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiDownLoopStart.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiDownLoopStart.c:
     complete
     .text       start:0x020d1248 end:0x020d12b0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiDownTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiDownTick.c:
     complete
     .text       start:0x020d12b0 end:0x020d133c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiDownPickNext.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiDownPickNext.c:
     complete
     .text       start:0x020d133c end:0x020d13d0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiHidePartsAndEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiHidePartsAndEnd.c:
     complete
     .text       start:0x020d13d0 end:0x020d144c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterDash.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterDash.c:
     complete
     .text       start:0x020d144c end:0x020d14c4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_DashTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_DashTick.c:
     complete
     .text       start:0x020d14c4 end:0x020d159c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_DashSteerTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_DashSteerTick.c:
     complete
     .text       start:0x020d159c end:0x020d1704
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SpawnStep.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SpawnStep.c:
     complete
     .text       start:0x020d1704 end:0x020d1748
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiEnterLunge.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiEnterLunge.c:
     complete
     .text       start:0x020d1748 end:0x020d17b8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_LungeTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_LungeTick.c:
     complete
     .text       start:0x020d17b8 end:0x020d1848
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_CreateAiTask.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_CreateAiTask.c:
     complete
     .text       start:0x020d1848 end:0x020d1894
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RiderHitFilter.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RiderHitFilter.c:
     complete
     .text       start:0x020d1894 end:0x020d1c9c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_InitRiderStateA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_InitRiderStateA.c:
     complete
     .text       start:0x020d1c9c end:0x020d1d98
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiDispatchAction.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiDispatchAction.c:
     complete
     .text       start:0x020d1d98 end:0x020d2070
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RideStepA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RideStepA.c:
     complete
     .text       start:0x020d2070 end:0x020d2130
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetFlagsC6ClearBits.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetFlagsC6ClearBits.c:
     complete
     .text       start:0x020d2130 end:0x020d21c0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d21c0 end:0x020d21fc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiEnterInert.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiEnterInert.c:
     complete
     .text       start:0x020d21fc end:0x020d2258
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_InertIdleStep.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_InertIdleStep.c:
     complete
     .text       start:0x020d2258 end:0x020d225c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiPlayIdleAndEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiPlayIdleAndEnd.c:
     complete
     .text       start:0x020d225c end:0x020d228c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiEnterFire.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiEnterFire.c:
     complete
     .text       start:0x020d228c end:0x020d22c0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiFireWait.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiFireWait.c:
     complete
     .text       start:0x020d22c0 end:0x020d2300
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiPlayAnim12AndEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiPlayAnim12AndEnd.c:
     complete
     .text       start:0x020d2300 end:0x020d2330
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d2330 end:0x020d2364
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiFaceForwardQueue9.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiFaceForwardQueue9.c:
     complete
     .text       start:0x020d2364 end:0x020d23e8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiEnterSeek.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiEnterSeek.c:
     complete
     .text       start:0x020d23e8 end:0x020d2428
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiSeekTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiSeekTick.c:
     complete
     .text       start:0x020d2428 end:0x020d246c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiEnterApproach.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiEnterApproach.c:
     complete
     .text       start:0x020d246c end:0x020d24dc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ApproachTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ApproachTick.c:
     complete
     .text       start:0x020d24dc end:0x020d2628
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_StrafeTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_StrafeTick.c:
     complete
     .text       start:0x020d2628 end:0x020d2810
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiEnterChargeIn.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiEnterChargeIn.c:
     complete
     .text       start:0x020d2810 end:0x020d2848
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ChargeInTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ChargeInTick.c:
     complete
     .text       start:0x020d2848 end:0x020d29b8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_PublishPounceLanding.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_PublishPounceLanding.c:
     complete
     .text       start:0x020d29b8 end:0x020d2a28
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_StompLandingTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_StompLandingTick.c:
     complete
     .text       start:0x020d2a28 end:0x020d2d28
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterBuck.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterBuck.c:
     complete
     .text       start:0x020d2d28 end:0x020d2ed4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_BuckTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_BuckTick.c:
     complete
     .text       start:0x020d2ed4 end:0x020d30f4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RecoveryWaitA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RecoveryWaitA.c:
     complete
     .text       start:0x020d30f4 end:0x020d31e0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RiderWatchTickA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RiderWatchTickA.c:
     complete
     .text       start:0x020d31e0 end:0x020d32b8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ReleaseRiderA.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ReleaseRiderA.c:
     complete
     .text       start:0x020d32b8 end:0x020d3394
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiEnterReaction.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiEnterReaction.c:
     complete
     .text       start:0x020d3394 end:0x020d33c8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ReactionStepNotify.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ReactionStepNotify.c:
     complete
     .text       start:0x020d33c8 end:0x020d3440
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ClawSwipeTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ClawSwipeTick.c:
     complete
     .text       start:0x020d3440 end:0x020d36e4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_AiStep_StartTag15.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_AiStep_StartTag15.c:
     complete
     .text       start:0x020d36e4 end:0x020d3718
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersA_AiQueue2OnAnimEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersA_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020d3718 end:0x020d374c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_CreateAiTask.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_CreateAiTask.c:
     complete
     .text       start:0x020d374c end:0x020d3798
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RiderHitFilter_2.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RiderHitFilter_2.c:
     complete
     .text       start:0x020d3798 end:0x020d3ba0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_InitRiderStateB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_InitRiderStateB.c:
     complete
     .text       start:0x020d3ba0 end:0x020d3c90
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RearMoveDispatch.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RearMoveDispatch.c:
     complete
     .text       start:0x020d3c90 end:0x020d3f50
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RideStepB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RideStepB.c:
     complete
     .text       start:0x020d3f50 end:0x020d4010
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetFlagsC6ClearBits_b.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetFlagsC6ClearBits_b.c:
     complete
     .text       start:0x020d4010 end:0x020d40a0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d40a0 end:0x020d40dc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterInert.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterInert.c:
     complete
     .text       start:0x020d40dc end:0x020d4138
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_InertIdleStep.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_InertIdleStep.c:
     complete
     .text       start:0x020d4138 end:0x020d413c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiPlayIdleAndEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiPlayIdleAndEnd.c:
     complete
     .text       start:0x020d413c end:0x020d416c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterFire.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterFire.c:
     complete
     .text       start:0x020d416c end:0x020d41a8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RiderFireTickB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RiderFireTickB.c:
     complete
     .text       start:0x020d41a8 end:0x020d4300
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiPlayAnim12AndEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiPlayAnim12AndEnd.c:
     complete
     .text       start:0x020d4300 end:0x020d4330
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetPose4ThenAdvanceSlot_2.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetPose4ThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d4330 end:0x020d4364
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiFaceForwardQueue9.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiFaceForwardQueue9.c:
     complete
     .text       start:0x020d4364 end:0x020d43e8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterSeek.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterSeek.c:
     complete
     .text       start:0x020d43e8 end:0x020d4438
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiSeekTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiSeekTick.c:
     complete
     .text       start:0x020d4438 end:0x020d4498
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterStalk.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterStalk.c:
     complete
     .text       start:0x020d4498 end:0x020d4544
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiStalkStart.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiStalkStart.c:
     complete
     .text       start:0x020d4544 end:0x020d45bc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_StalkTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_StalkTick.c:
     complete
     .text       start:0x020d45bc end:0x020d4d34
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterStomp.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterStomp.c:
     complete
     .text       start:0x020d4d34 end:0x020d4d84
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_StompTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_StompTick.c:
     complete
     .text       start:0x020d4d84 end:0x020d5084
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterBuckB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterBuckB.c:
     complete
     .text       start:0x020d5084 end:0x020d528c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_DismountLeapTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_DismountLeapTick.c:
     complete
     .text       start:0x020d528c end:0x020d54e0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_DismountLandingTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_DismountLandingTick.c:
     complete
     .text       start:0x020d54e0 end:0x020d57a4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RiderWatchTickB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RiderWatchTickB.c:
     complete
     .text       start:0x020d57a4 end:0x020d587c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ReleaseRiderB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ReleaseRiderB.c:
     complete
     .text       start:0x020d587c end:0x020d5958
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterStampWalk.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterStampWalk.c:
     complete
     .text       start:0x020d5958 end:0x020d598c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiStampWalkStart.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiStampWalkStart.c:
     complete
     .text       start:0x020d598c end:0x020d59d8
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_StampWalkTick.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_StampWalkTick.c:
     complete
     .text       start:0x020d59d8 end:0x020d5da0
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiEnterFinish.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiEnterFinish.c:
     complete
     .text       start:0x020d5da0 end:0x020d5dd4
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RidersB_AiQueue2OnAnimEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RidersB_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020d5dd4 end:0x020d5e08
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SpawnReactionTaskAB.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SpawnReactionTaskAB.c:
     complete
     .text       start:0x020d5e08 end:0x020d5e68
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_ResetModelTracks.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_ResetModelTracks.c:
     complete
     .text       start:0x020d5e68 end:0x020d5efc
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_TaskTeardown_FlagPart.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_TaskTeardown_FlagPart.c:
     complete
     .text       start:0x020d5efc end:0x020d5f14
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d5f14 end:0x020d5f34
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SpawnReactionTaskFromHit.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SpawnReactionTaskFromHit.c:
     complete
     .text       start:0x020d5f34 end:0x020d5f9c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterRelease.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterRelease.c:
     complete
     .text       start:0x020d5f9c end:0x020d6068
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_SetField5cBit1BothEntries.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_SetField5cBit1BothEntries.c:
     complete
     .text       start:0x020d6068 end:0x020d6094
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_EnterRecall.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_EnterRecall.c:
     complete
     .text       start:0x020d6094 end:0x020d615c
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_RecallWait.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_RecallWait.c:
     complete
     .text       start:0x020d615c end:0x020d6250
 
-src/overlays/enemies/ov236_enemy_3f/Ov236_FinishWhenAnimsEnd.c:
+src/overlays/enemies/ov236_enemy_guard_armor/Ov236_FinishWhenAnimsEnd.c:
     complete
     .text       start:0x020d6250 end:0x020d627c
 
-src/overlays/enemies/ov236_enemy_3f/data/ov236_strings_020d64a0.c:
+src/overlays/enemies/ov236_enemy_guard_armor/data/ov236_strings_020d64a0.c:
     complete
     .data       start:0x020d64a0 end:0x020d6520
 
-src/overlays/enemies/ov236_enemy_3f/data/ov236_tables_020d627c.c:
+src/overlays/enemies/ov236_enemy_guard_armor/data/ov236_tables_020d627c.c:
     complete
     .rodata     start:0x020d627c end:0x020d649c

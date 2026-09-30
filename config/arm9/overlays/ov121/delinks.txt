@@ -4,170 +4,170 @@
     .data       start:0x020cfd40 end:0x020cfda0 kind:data align:32
     .bss        start:0x020cfda0 end:0x020cfda0 kind:bss align:32
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_RegisterEntityClass.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_CreateNamedEntity.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_InitializeActor.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_InitializeActor.c:
     complete
     .text       start:0x020cdde4 end:0x020ce058
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_Destroy.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_Destroy.c:
     complete
     .text       start:0x020ce058 end:0x020ce0a0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ReleaseAndDestroy.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ReleaseAndDestroy.c:
     complete
     .text       start:0x020ce0a0 end:0x020ce0c4
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_Actor_HandleEvent.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_Actor_HandleEvent.c:
     complete
     .text       start:0x020ce0c4 end:0x020ce264
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_Model_SetTrack0.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_Model_SetTrack0.c:
     complete
     .text       start:0x020ce264 end:0x020ce294
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_SyncAttachedPose.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_SyncAttachedPose.c:
     complete
     .text       start:0x020ce294 end:0x020ce32c
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ce32c end:0x020ce388
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_Actor_OnHit.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_Actor_OnHit.c:
     complete
     .text       start:0x020ce388 end:0x020ce5c0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_RequestSubState9IfIdle.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020ce5c0 end:0x020ce5f0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_InitAiState.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_InitAiState.c:
     complete
     .text       start:0x020ce5f0 end:0x020ce6b8
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_DispatchSubStateByte.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_DispatchSubStateByte.c:
     complete
     .text       start:0x020ce6b8 end:0x020ce860
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_RecomputeNodeVectorAndReloadTriple.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_RecomputeNodeVectorAndReloadTriple.c:
     complete
     .text       start:0x020ce860 end:0x020ce8d4
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ce8d4 end:0x020ce93c
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ce93c end:0x020ce978
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_SetupThenAction48.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_SetupThenAction48.c:
     complete
     .text       start:0x020ce978 end:0x020cea5c
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020cea5c end:0x020ceb24
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiStep_QueueAction2OnFlag48Clear.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiStep_QueueAction2OnFlag48Clear.c:
     complete
     .text       start:0x020ceb24 end:0x020ceb58
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiEnterApproach.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiEnterApproach.c:
     complete
     .text       start:0x020ceb58 end:0x020cebb0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AimPickMeleeReaction.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AimPickMeleeReaction.c:
     complete
     .text       start:0x020cebb0 end:0x020ced28
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_SeedTimerFireAttack2ThenAdvanceSlot.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_SeedTimerFireAttack2ThenAdvanceSlot.c:
     complete
     .text       start:0x020ced28 end:0x020ced8c
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ChargeTowardTarget_Step.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ChargeTowardTarget_Step.c:
     complete
     .text       start:0x020ced8c end:0x020cefc0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020cefc0 end:0x020cf030
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_CopyScaleVecCheckMagThenAdvance.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_CopyScaleVecCheckMagThenAdvance.c:
     complete
     .text       start:0x020cf030 end:0x020cf0c0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cf0c0 end:0x020cf11c
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AreaAttack_Broadcast.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AreaAttack_Broadcast.c:
     complete
     .text       start:0x020cf11c end:0x020cf458
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cf458 end:0x020cf4d4
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_SweepAttack_Step.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_SweepAttack_Step.c:
     complete
     .text       start:0x020cf4d4 end:0x020cf818
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_DecayCopyPosFireOnHitFlag.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_DecayCopyPosFireOnHitFlag.c:
     complete
     .text       start:0x020cf818 end:0x020cf878
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiStep_QueueAction2OnFlag48Clear_2.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiStep_QueueAction2OnFlag48Clear_2.c:
     complete
     .text       start:0x020cf878 end:0x020cf8ac
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_EnterRecoveryIdle.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_EnterRecoveryIdle.c:
     complete
     .text       start:0x020cf8ac end:0x020cf918
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiTrackOffsetTick.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiTrackOffsetTick.c:
     complete
     .text       start:0x020cf918 end:0x020cf9a0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_CopyVecThenSetupSubActionAndAdvance.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_CopyVecThenSetupSubActionAndAdvance.c:
     complete
     .text       start:0x020cf9a0 end:0x020cfa14
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ReaimStrafe.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ReaimStrafe.c:
     complete
     .text       start:0x020cfa14 end:0x020cfad0
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiPauseTick.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiPauseTick.c:
     complete
     .text       start:0x020cfad0 end:0x020cfb10
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_stIdlePose10Advance.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_stIdlePose10Advance.c:
     complete
     .text       start:0x020cfb10 end:0x020cfb54
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_AiStep_QueueAction2OnFlag48Clear_3.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_AiStep_QueueAction2OnFlag48Clear_3.c:
     complete
     .text       start:0x020cfb54 end:0x020cfb88
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020cfb88 end:0x020cfc50
 
-src/overlays/enemies/ov121_enemy_04_2/Ov121_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov121_enemy_soldier_2/Ov121_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cfc50 end:0x020cfd04
 
-src/overlays/enemies/ov121_enemy_04_2/data/ov121_strings_020cfd40.c:
+src/overlays/enemies/ov121_enemy_soldier_2/data/ov121_strings_020cfd40.c:
     complete
     .data       start:0x020cfd40 end:0x020cfda0
 
-src/overlays/enemies/ov121_enemy_04_2/data/ov121_tables_020cfd04.c:
+src/overlays/enemies/ov121_enemy_soldier_2/data/ov121_tables_020cfd04.c:
     complete
     .rodata     start:0x020cfd04 end:0x020cfd30

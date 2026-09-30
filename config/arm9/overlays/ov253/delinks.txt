@@ -4,702 +4,702 @@
     .data       start:0x020d4a40 end:0x020d4be0 kind:data align:32
     .bss        start:0x020d4be0 end:0x020d4be0 kind:bss align:32
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RegisterEntityClass.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CreateNamedEntity.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_DrawRingMarkEmpty.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_DrawRingMarkEmpty.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc090
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ChainUpdate.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ChainUpdate.c:
     complete
     .text       start:0x020cc090 end:0x020cc248
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarriedItemUpdate.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarriedItemUpdate.c:
     complete
     .text       start:0x020cc248 end:0x020cc358
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_EnemyConstruct.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_EnemyConstruct.c:
     complete
     .text       start:0x020cc358 end:0x020cc9fc
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ReleaseNodeResources.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ReleaseNodeResources.c:
     complete
     .text       start:0x020cc9fc end:0x020cca7c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ApplyFacing.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ApplyFacing.c:
     complete
     .text       start:0x020cca7c end:0x020ccad8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_DrawListRemove.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_DrawListRemove.c:
     complete
     .text       start:0x020ccad8 end:0x020ccb40
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_DrawListRegister.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_DrawListRegister.c:
     complete
     .text       start:0x020ccb40 end:0x020ccba8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SendHandleMsg.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SendHandleMsg.c:
     complete
     .text       start:0x020ccba8 end:0x020ccc1c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_MsgHook.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_MsgHook.c:
     complete
     .text       start:0x020ccc1c end:0x020cccf4
 
-src/overlays/enemies/ov253_enemy_4d/func_ov253_020cccf4.c:
+src/overlays/enemies/ov253_enemy_leechgrave/func_ov253_020cccf4.c:
     complete
     .text       start:0x020cccf4 end:0x020ccd00
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RebuildCarriedLists.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RebuildCarriedLists.c:
     complete
     .text       start:0x020ccd00 end:0x020cce54
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_NotifyPartsThenBase.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cce54 end:0x020cceb0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_IdIsFree.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_IdIsFree.c:
     complete
     .text       start:0x020cceb0 end:0x020ccef4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ccef4 end:0x020ccf40
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_HitFilterItem.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_HitFilterItem.c:
     complete
     .text       start:0x020ccf40 end:0x020cd0d8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_FindNearestTarget.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_FindNearestTarget.c:
     complete
     .text       start:0x020cd0d8 end:0x020cd1bc
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SubStateRootB.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SubStateRootB.c:
     complete
     .text       start:0x020cd1bc end:0x020cd2a4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SubStateDispatchB.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SubStateDispatchB.c:
     complete
     .text       start:0x020cd2a4 end:0x020cd484
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_FacingTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_FacingTick.c:
     complete
     .text       start:0x020cd484 end:0x020cd5a8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_HoldEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_HoldEnter.c:
     complete
     .text       start:0x020cd5a8 end:0x020cd638
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_HoldTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_HoldTick.c:
     complete
     .text       start:0x020cd638 end:0x020cd704
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterRest.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterRest.c:
     complete
     .text       start:0x020cd704 end:0x020cd760
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiStep_QueueAction2.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiStep_QueueAction2.c:
     complete
     .text       start:0x020cd760 end:0x020cd784
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterSeek.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterSeek.c:
     complete
     .text       start:0x020cd784 end:0x020cd7c0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SeekTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SeekTick.c:
     complete
     .text       start:0x020cd7c0 end:0x020cd98c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiQueueStoredOnAnimEnd.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiQueueStoredOnAnimEnd.c:
     complete
     .text       start:0x020cd98c end:0x020cd9e8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RecoverEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RecoverEnter.c:
     complete
     .text       start:0x020cd9e8 end:0x020cda5c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_TickSpin.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_TickSpin.c:
     complete
     .text       start:0x020cda5c end:0x020cddf0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddf0 end:0x020cde24
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiVolleyStart.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiVolleyStart.c:
     complete
     .text       start:0x020cde24 end:0x020cde74
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_VolleyTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_VolleyTick.c:
     complete
     .text       start:0x020cde74 end:0x020ce0ac
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterRecover.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterRecover.c:
     complete
     .text       start:0x020ce0ac end:0x020ce0f0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiRecoverRollTimer.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiRecoverRollTimer.c:
     complete
     .text       start:0x020ce0f0 end:0x020ce150
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterFall.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterFall.c:
     complete
     .text       start:0x020ce150 end:0x020ce19c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AnimWaitTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AnimWaitTick.c:
     complete
     .text       start:0x020ce19c end:0x020ce210
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RoarTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RoarTick.c:
     complete
     .text       start:0x020ce210 end:0x020ce2a8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiDownCountdown.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiDownCountdown.c:
     complete
     .text       start:0x020ce2a8 end:0x020ce310
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ReviveTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ReviveTick.c:
     complete
     .text       start:0x020ce310 end:0x020ce3a4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiHidePartsAndEnd.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiHidePartsAndEnd.c:
     complete
     .text       start:0x020ce3a4 end:0x020ce3f8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RenderMarkers.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RenderMarkers.c:
     complete
     .text       start:0x020ce3f8 end:0x020ce478
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_UpdateSegmentDirs.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_UpdateSegmentDirs.c:
     complete
     .text       start:0x020ce478 end:0x020ce4d4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Segment_New.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Segment_New.c:
     complete
     .text       start:0x020ce4d4 end:0x020ce50c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Setup.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Setup.c:
     complete
     .text       start:0x020ce50c end:0x020ce820
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Segment_Destroy.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Segment_Destroy.c:
     complete
     .text       start:0x020ce820 end:0x020ce868
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CopyBlockToLinkedNode.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CopyBlockToLinkedNode.c:
     complete
     .text       start:0x020ce868 end:0x020ce8a4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_MsgHookSlots.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_MsgHookSlots.c:
     complete
     .text       start:0x020ce8a4 end:0x020cea60
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Teardown.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Teardown.c:
     complete
     .text       start:0x020cea60 end:0x020cead4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Model_SetTrack0.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Model_SetTrack0.c:
     complete
     .text       start:0x020cead4 end:0x020ceaf4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020ceaf4 end:0x020ceb40
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_HitFilterCore.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_HitFilterCore.c:
     complete
     .text       start:0x020ceb40 end:0x020ced24
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SetupActorNodeAndStateSlots.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SetupActorNodeAndStateSlots.c:
     complete
     .text       start:0x020ced24 end:0x020cedc4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SubStateDispatchC.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SubStateDispatchC.c:
     complete
     .text       start:0x020cedc4 end:0x020ceff4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_EaseTowardTarget.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_EaseTowardTarget.c:
     complete
     .text       start:0x020ceff4 end:0x020cf04c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_stSetDispFlags82.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_stSetDispFlags82.c:
     complete
     .text       start:0x020cf04c end:0x020cf08c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RoamEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RoamEnter.c:
     complete
     .text       start:0x020cf08c end:0x020cf244
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ChargeEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ChargeEnter.c:
     complete
     .text       start:0x020cf244 end:0x020cf2c0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ChargeWaitTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ChargeWaitTick.c:
     complete
     .text       start:0x020cf2c0 end:0x020cf35c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_IdleEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_IdleEnter.c:
     complete
     .text       start:0x020cf35c end:0x020cf3d8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_IdleTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_IdleTick.c:
     complete
     .text       start:0x020cf3d8 end:0x020cf5f4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ReleaseEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ReleaseEnter.c:
     complete
     .text       start:0x020cf5f4 end:0x020cf66c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ReleaseWaitTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ReleaseWaitTick.c:
     complete
     .text       start:0x020cf66c end:0x020cf830
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_TurnEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_TurnEnter.c:
     complete
     .text       start:0x020cf830 end:0x020cfa44
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RoarPosTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RoarPosTick.c:
     complete
     .text       start:0x020cfa44 end:0x020cfbc4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ShoutEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ShoutEnter.c:
     complete
     .text       start:0x020cfbc4 end:0x020cfc60
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ShoutTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ShoutTick.c:
     complete
     .text       start:0x020cfc60 end:0x020cfd20
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_GrabTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_GrabTick.c:
     complete
     .text       start:0x020cfd20 end:0x020d01c0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarryHoldTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarryHoldTick.c:
     complete
     .text       start:0x020d01c0 end:0x020d0344
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarrySeatTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarrySeatTick.c:
     complete
     .text       start:0x020d0344 end:0x020d0410
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiPostPickupMessage.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiPostPickupMessage.c:
     complete
     .text       start:0x020d0410 end:0x020d0470
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiPickupFollow.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiPickupFollow.c:
     complete
     .text       start:0x020d0470 end:0x020d0500
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiCarryWait.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiCarryWait.c:
     complete
     .text       start:0x020d0500 end:0x020d05a0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiCarryQueuePush.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiCarryQueuePush.c:
     complete
     .text       start:0x020d05a0 end:0x020d0610
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiCarryWaitTurn.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiCarryWaitTurn.c:
     complete
     .text       start:0x020d0610 end:0x020d0674
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarryTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarryTick.c:
     complete
     .text       start:0x020d0674 end:0x020d0730
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ThrowRelease.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ThrowRelease.c:
     complete
     .text       start:0x020d0730 end:0x020d0884
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterDrop.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterDrop.c:
     complete
     .text       start:0x020d0884 end:0x020d08d8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiDropRollTimer.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiDropRollTimer.c:
     complete
     .text       start:0x020d08d8 end:0x020d0938
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_EnterReaction.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_EnterReaction.c:
     complete
     .text       start:0x020d0938 end:0x020d09a8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterTaunt.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterTaunt.c:
     complete
     .text       start:0x020d09a8 end:0x020d0a04
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_TauntTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_TauntTick.c:
     complete
     .text       start:0x020d0a04 end:0x020d0ab8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_TauntWaitTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_TauntWaitTick.c:
     complete
     .text       start:0x020d0ab8 end:0x020d0b88
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiQueue4OnAnimEnd.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiQueue4OnAnimEnd.c:
     complete
     .text       start:0x020d0b88 end:0x020d0bbc
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_StunEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_StunEnter.c:
     complete
     .text       start:0x020d0bbc end:0x020d0cac
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_BeginAnim3AndReset.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_BeginAnim3AndReset.c:
     complete
     .text       start:0x020d0cac end:0x020d0d18
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_HeadButtTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_HeadButtTick.c:
     complete
     .text       start:0x020d0d18 end:0x020d1078
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_WaitTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_WaitTick.c:
     complete
     .text       start:0x020d1078 end:0x020d1114
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SpawnHandleChild.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SpawnHandleChild.c:
     complete
     .text       start:0x020d1114 end:0x020d1170
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarriedSetup.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarriedSetup.c:
     complete
     .text       start:0x020d1170 end:0x020d1220
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ResetEntryMarkDirty.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ResetEntryMarkDirty.c:
     complete
     .text       start:0x020d1220 end:0x020d1248
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarriedLiftTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarriedLiftTick.c:
     complete
     .text       start:0x020d1248 end:0x020d139c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarriedHopTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarriedHopTick.c:
     complete
     .text       start:0x020d139c end:0x020d150c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarriedReturnTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarriedReturnTick.c:
     complete
     .text       start:0x020d150c end:0x020d1660
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CarriedClimbTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CarriedClimbTick.c:
     complete
     .text       start:0x020d1660 end:0x020d182c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SpawnItemChild.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SpawnItemChild.c:
     complete
     .text       start:0x020d182c end:0x020d1894
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RingLayout.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RingLayout.c:
     complete
     .text       start:0x020d1894 end:0x020d1aa0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ResetEntryList.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ResetEntryList.c:
     complete
     .text       start:0x020d1aa0 end:0x020d1af4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_NotifyIfQueryBit0Set.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_NotifyIfQueryBit0Set.c:
     complete
     .text       start:0x020d1af4 end:0x020d1b2c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CreateAimTask.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CreateAimTask.c:
     complete
     .text       start:0x020d1b2c end:0x020d1b80
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AimSetup.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AimSetup.c:
     complete
     .text       start:0x020d1b80 end:0x020d1c8c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_NotifyOwnerHooks.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_NotifyOwnerHooks.c:
     complete
     .text       start:0x020d1c8c end:0x020d1cf0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ForwardEvent4.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ForwardEvent4.c:
     complete
     .text       start:0x020d1cf0 end:0x020d1d28
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AimFollow.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AimFollow.c:
     complete
     .text       start:0x020d1d28 end:0x020d1dec
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CreateRingTask.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CreateRingTask.c:
     complete
     .text       start:0x020d1dec end:0x020d1e38
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RingPush.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RingPush.c:
     complete
     .text       start:0x020d1e38 end:0x020d1ea0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AdvanceRowPhases.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AdvanceRowPhases.c:
     complete
     .text       start:0x020d1ea0 end:0x020d1f7c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RingSetup.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RingSetup.c:
     complete
     .text       start:0x020d1f7c end:0x020d2058
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_DrawRing.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_DrawRing.c:
     complete
     .text       start:0x020d2058 end:0x020d210c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_New.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_New.c:
     complete
     .text       start:0x020d210c end:0x020d2140
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActorConstruct.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActorConstruct.c:
     complete
     .text       start:0x020d2140 end:0x020d2388
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_Destroy.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_Destroy.c:
     complete
     .text       start:0x020d2388 end:0x020d23d8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_PlaceMounted.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_PlaceMounted.c:
     complete
     .text       start:0x020d23d8 end:0x020d2474
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SendSlotsMsg.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SendSlotsMsg.c:
     complete
     .text       start:0x020d2474 end:0x020d24f8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_MsgHookB.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_MsgHookB.c:
     complete
     .text       start:0x020d24f8 end:0x020d25e4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueSubStateTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueSubStateTick.c:
     complete
     .text       start:0x020d25e4 end:0x020d26a8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ForwardAnimEvent.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ForwardAnimEvent.c:
     complete
     .text       start:0x020d26a8 end:0x020d26c8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_IsFull.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_IsFull.c:
     complete
     .text       start:0x020d26c8 end:0x020d26e0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueuePush.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueuePush.c:
     complete
     .text       start:0x020d26e0 end:0x020d2794
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueuePop.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueuePop.c:
     complete
     .text       start:0x020d2794 end:0x020d27f8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_FindEntryByKey.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_FindEntryByKey.c:
     complete
     .text       start:0x020d27f8 end:0x020d2824
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_CurrentKey.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_CurrentKey.c:
     complete
     .text       start:0x020d2824 end:0x020d283c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_CreateRegistryEntryAndLink_3.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_CreateRegistryEntryAndLink_3.c:
     complete
     .text       start:0x020d283c end:0x020d2888
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SubStateRoot.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SubStateRoot.c:
     complete
     .text       start:0x020d2888 end:0x020d2934
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SubStateDispatch.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SubStateDispatch.c:
     complete
     .text       start:0x020d2934 end:0x020d2a30
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiSlot2NoOp.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiSlot2NoOp.c:
     complete
     .text       start:0x020d2a30 end:0x020d2a34
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_stSetDispFlags82_2.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_stSetDispFlags82_2.c:
     complete
     .text       start:0x020d2a34 end:0x020d2a74
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiStep_QueueAction2IfActive.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiStep_QueueAction2IfActive.c:
     complete
     .text       start:0x020d2a74 end:0x020d2aac
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_AiEnterWait.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_AiEnterWait.c:
     complete
     .text       start:0x020d2aac end:0x020d2aec
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_AiWaitTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_AiWaitTick.c:
     complete
     .text       start:0x020d2aec end:0x020d2b74
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_QueueActor_AiWaitEntry.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_QueueActor_AiWaitEntry.c:
     complete
     .text       start:0x020d2b74 end:0x020d2bac
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterGrow.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterGrow.c:
     complete
     .text       start:0x020d2bac end:0x020d2be8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_GrowTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_GrowTick.c:
     complete
     .text       start:0x020d2be8 end:0x020d2db0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SquashTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SquashTick.c:
     complete
     .text       start:0x020d2db0 end:0x020d2e6c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ShrinkTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ShrinkTick.c:
     complete
     .text       start:0x020d2e6c end:0x020d2f24
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiEnterPulse.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiEnterPulse.c:
     complete
     .text       start:0x020d2f24 end:0x020d2f7c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiPulseTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiPulseTick.c:
     complete
     .text       start:0x020d2f7c end:0x020d2fc8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiPulseEnd.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiPulseEnd.c:
     complete
     .text       start:0x020d2fc8 end:0x020d3038
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SummonEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SummonEnter.c:
     complete
     .text       start:0x020d3038 end:0x020d30c8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiShrinkTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiShrinkTick.c:
     complete
     .text       start:0x020d30c8 end:0x020d3118
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiShrinkWait.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiShrinkWait.c:
     complete
     .text       start:0x020d3118 end:0x020d3164
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiShrinkEnd.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiShrinkEnd.c:
     complete
     .text       start:0x020d3164 end:0x020d31a0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_SpawnPosChild.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_SpawnPosChild.c:
     complete
     .text       start:0x020d31a0 end:0x020d3210
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RingSeed.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RingSeed.c:
     complete
     .text       start:0x020d3210 end:0x020d3388
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ClearPendingRecords.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ClearPendingRecords.c:
     complete
     .text       start:0x020d3388 end:0x020d33d8
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RingRiseTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RingRiseTick.c:
     complete
     .text       start:0x020d33d8 end:0x020d372c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_RingSpreadTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_RingSpreadTick.c:
     complete
     .text       start:0x020d372c end:0x020d3a30
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Item_StoreVecAndRelayout.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Item_StoreVecAndRelayout.c:
     complete
     .text       start:0x020d3a30 end:0x020d3a78
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Item_New.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Item_New.c:
     complete
     .text       start:0x020d3a78 end:0x020d3aac
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ItemConstruct.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ItemConstruct.c:
     complete
     .text       start:0x020d3aac end:0x020d3c38
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020d3c38 end:0x020d3c78
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Item_TickSyncXform.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Item_TickSyncXform.c:
     complete
     .text       start:0x020d3c78 end:0x020d3cac
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_MsgHookC.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_MsgHookC.c:
     complete
     .text       start:0x020d3cac end:0x020d3de0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_HitFilterFlip.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_HitFilterFlip.c:
     complete
     .text       start:0x020d3de0 end:0x020d3e3c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Item_CreateAiTask.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Item_CreateAiTask.c:
     complete
     .text       start:0x020d3e3c end:0x020d3e88
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_stateInitClearSlots.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_stateInitClearSlots.c:
     complete
     .text       start:0x020d3e88 end:0x020d3f30
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_AiDispatchPendingAction.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_AiDispatchPendingAction.c:
     complete
     .text       start:0x020d3f30 end:0x020d3fc4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_PublishPoseAndReset.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_PublishPoseAndReset.c:
     complete
     .text       start:0x020d3fc4 end:0x020d3ff4
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_StopEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_StopEnter.c:
     complete
     .text       start:0x020d3ff4 end:0x020d407c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_Item_AiWaitActive.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_Item_AiWaitActive.c:
     complete
     .text       start:0x020d407c end:0x020d40d0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_BurstEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_BurstEnter.c:
     complete
     .text       start:0x020d40d0 end:0x020d425c
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_ThrownSpearTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_ThrownSpearTick.c:
     complete
     .text       start:0x020d425c end:0x020d4548
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_BoxEnter.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_BoxEnter.c:
     complete
     .text       start:0x020d4548 end:0x020d46e0
 
-src/overlays/enemies/ov253_enemy_4d/Ov253_BoxSweepTick.c:
+src/overlays/enemies/ov253_enemy_leechgrave/Ov253_BoxSweepTick.c:
     complete
     .text       start:0x020d46e0 end:0x020d482c
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d482c.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d482c.c:
     complete
     .rodata     start:0x020d482c end:0x020d4844
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4844.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4844.c:
     complete
     .rodata     start:0x020d4844 end:0x020d4894
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4894.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4894.c:
     complete
     .rodata     start:0x020d4894 end:0x020d4940
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4940.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4940.c:
     complete
     .rodata     start:0x020d4940 end:0x020d4950
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4950.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4950.c:
     complete
     .rodata     start:0x020d4950 end:0x020d4964
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4964.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4964.c:
     complete
     .rodata     start:0x020d4964 end:0x020d49a8
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d49a8.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d49a8.c:
     complete
     .rodata     start:0x020d49a8 end:0x020d4a00
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4a00.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4a00.c:
     complete
     .rodata     start:0x020d4a00 end:0x020d4a08
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_rodata_020d4a08.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_rodata_020d4a08.c:
     complete
     .rodata     start:0x020d4a08 end:0x020d4a24
 
-src/overlays/enemies/ov253_enemy_4d/data/ov253_strings_020d4a40.c:
+src/overlays/enemies/ov253_enemy_leechgrave/data/ov253_strings_020d4a40.c:
     complete
     .data       start:0x020d4a40 end:0x020d4be0

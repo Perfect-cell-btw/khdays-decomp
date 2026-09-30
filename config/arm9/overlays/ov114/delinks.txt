@@ -4,182 +4,182 @@
     .data       start:0x020cdfe0 end:0x020ce000 kind:data align:32
     .bss        start:0x020ce000 end:0x020ce000 kind:bss align:32
 
-src/overlays/enemies/ov114_enemy_00/Ov114_RegisterEntityClass.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov114_enemy_00/Ov114_CreateNamedEntity.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov114_enemy_00/Ov114_Construct.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc184
 
-src/overlays/enemies/ov114_enemy_00/Ov114_Destroy.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_Destroy.c:
     complete
     .text       start:0x020cc184 end:0x020cc1c4
 
-src/overlays/enemies/ov114_enemy_00/Ov114_TickAndSyncTwoModelXforms.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020cc1c4 end:0x020cc220
 
-src/overlays/enemies/ov114_enemy_00/Ov114_SendMessage28.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_SendMessage28.c:
     complete
     .text       start:0x020cc220 end:0x020cc284
 
-src/overlays/enemies/ov114_enemy_00/Ov114_HandleMessage.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_HandleMessage.c:
     complete
     .text       start:0x020cc284 end:0x020cc398
 
-src/overlays/enemies/ov114_enemy_00/Ov114_Model_SetTrack0.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_Model_SetTrack0.c:
     complete
     .text       start:0x020cc398 end:0x020cc3c8
 
-src/overlays/enemies/ov114_enemy_00/Ov114_MaybeForceSubState5ThenReleaseSubObject.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_MaybeForceSubState5ThenReleaseSubObject.c:
     complete
     .text       start:0x020cc3c8 end:0x020cc444
 
-src/overlays/enemies/ov114_enemy_00/Ov114_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc444 end:0x020cc490
 
-src/overlays/enemies/ov114_enemy_00/Ov114_OnHit.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_OnHit.c:
     complete
     .text       start:0x020cc490 end:0x020cc68c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_UpdateNodeReservationState2.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_UpdateNodeReservationState2.c:
     complete
     .text       start:0x020cc68c end:0x020cc6f4
 
-src/overlays/enemies/ov114_enemy_00/Ov114_PerformSwingSweep.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_PerformSwingSweep.c:
     complete
     .text       start:0x020cc6f4 end:0x020cc98c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_InitNodeAndRegisterHandlers.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_InitNodeAndRegisterHandlers.c:
     complete
     .text       start:0x020cc98c end:0x020cca68
 
-src/overlays/enemies/ov114_enemy_00/Ov114_DispatchSubStateByte.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_DispatchSubStateByte.c:
     complete
     .text       start:0x020cca68 end:0x020ccc64
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AdvanceMotionPublish.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AdvanceMotionPublish.c:
     complete
     .text       start:0x020ccc64 end:0x020ccd24
 
-src/overlays/enemies/ov114_enemy_00/Ov114_SetVisFlagsEnterState.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_SetVisFlagsEnterState.c:
     complete
     .text       start:0x020ccd24 end:0x020ccd98
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ccd98 end:0x020ccdd4
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiTargetAndFace.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiTargetAndFace.c:
     complete
     .text       start:0x020ccdd4 end:0x020cce9c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiFadeInTick.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiFadeInTick.c:
     complete
     .text       start:0x020cce9c end:0x020ccf28
 
-src/overlays/enemies/ov114_enemy_00/Ov114_StartSidestep.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_StartSidestep.c:
     complete
     .text       start:0x020ccf28 end:0x020ccf74
 
-src/overlays/enemies/ov114_enemy_00/Ov114_CircleDecision.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_CircleDecision.c:
     complete
     .text       start:0x020ccf74 end:0x020cd114
 
-src/overlays/enemies/ov114_enemy_00/Ov114_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd114 end:0x020cd148
 
-src/overlays/enemies/ov114_enemy_00/Ov114_ApproachTick.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_ApproachTick.c:
     complete
     .text       start:0x020cd148 end:0x020cd2b0
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiEnterFadeIn.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiEnterFadeIn.c:
     complete
     .text       start:0x020cd2b0 end:0x020cd2ec
 
-src/overlays/enemies/ov114_enemy_00/Ov114_FadeInSubObject.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_FadeInSubObject.c:
     complete
     .text       start:0x020cd2ec end:0x020cd37c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_BounceEntry.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_BounceEntry.c:
     complete
     .text       start:0x020cd37c end:0x020cd560
 
-src/overlays/enemies/ov114_enemy_00/Ov114_BounceTick.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_BounceTick.c:
     complete
     .text       start:0x020cd560 end:0x020cd77c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiEnterPursuit.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiEnterPursuit.c:
     complete
     .text       start:0x020cd77c end:0x020cd800
 
-src/overlays/enemies/ov114_enemy_00/Ov114_EasePursuitSpeed.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_EasePursuitSpeed.c:
     complete
     .text       start:0x020cd800 end:0x020cd8a8
 
-src/overlays/enemies/ov114_enemy_00/Ov114_PoseSetAngleFieldsThenAdvance.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_PoseSetAngleFieldsThenAdvance.c:
     complete
     .text       start:0x020cd8a8 end:0x020cd8f8
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiBrakeUntilGrounded.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiBrakeUntilGrounded.c:
     complete
     .text       start:0x020cd8f8 end:0x020cd97c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiBrakeToStop.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiBrakeToStop.c:
     complete
     .text       start:0x020cd97c end:0x020cd9e0
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020cd9e0 end:0x020cda14
 
-src/overlays/enemies/ov114_enemy_00/Ov114_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cda14 end:0x020cda68
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiSwingTick.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiSwingTick.c:
     complete
     .text       start:0x020cda68 end:0x020cdb14
 
-src/overlays/enemies/ov114_enemy_00/Ov114_FaceTargetAndWindUp.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_FaceTargetAndWindUp.c:
     complete
     .text       start:0x020cdb14 end:0x020cdc04
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiSwingRecover.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiSwingRecover.c:
     complete
     .text       start:0x020cdc04 end:0x020cdc48
 
-src/overlays/enemies/ov114_enemy_00/Ov114_WindupTick.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_WindupTick.c:
     complete
     .text       start:0x020cdc48 end:0x020cdda4
 
-src/overlays/enemies/ov114_enemy_00/Ov114_Action6Callback.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_Action6Callback.c:
     complete
     .text       start:0x020cdda4 end:0x020cde70
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiEnterFadeOut.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiEnterFadeOut.c:
     complete
     .text       start:0x020cde70 end:0x020cdeac
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiFadeOutTick.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiFadeOutTick.c:
     complete
     .text       start:0x020cdeac end:0x020cdf3c
 
-src/overlays/enemies/ov114_enemy_00/Ov114_AiSetStanceAndEnd.c:
+src/overlays/enemies/ov114_enemy_shadow/Ov114_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020cdf3c end:0x020cdfb4
 
-src/overlays/enemies/ov114_enemy_00/data/ov114_strings_020cdfe0.c:
+src/overlays/enemies/ov114_enemy_shadow/data/ov114_strings_020cdfe0.c:
     complete
     .data       start:0x020cdfe0 end:0x020ce000
 
-src/overlays/enemies/ov114_enemy_00/data/ov114_tables_020cdfb4.c:
+src/overlays/enemies/ov114_enemy_shadow/data/ov114_tables_020cdfb4.c:
     complete
     .rodata     start:0x020cdfb4 end:0x020cdfd0

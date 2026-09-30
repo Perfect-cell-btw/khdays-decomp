@@ -4,246 +4,246 @@
     .data       start:0x020d07a0 end:0x020d07e0 kind:data align:32
     .bss        start:0x020d07e0 end:0x020d07e0 kind:bss align:32
 
-src/overlays/enemies/ov149_enemy_12/Ov149_RegisterEntityClass.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov149_enemy_12/Ov149_CreateNamedEntity.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Ov149ActorInit.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Ov149ActorInit.c:
     complete
     .text       start:0x020cdde4 end:0x020ce054
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020ce054 end:0x020ce09c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_TickAndSyncMarkerSrt.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_TickAndSyncMarkerSrt.c:
     complete
     .text       start:0x020ce09c end:0x020ce0e4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Model_SetTrack0.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Model_SetTrack0.c:
     complete
     .text       start:0x020ce0e4 end:0x020ce114
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Ov149HandleCommand.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Ov149HandleCommand.c:
     complete
     .text       start:0x020ce114 end:0x020ce370
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ForwardEventToChild.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ForwardEventToChild.c:
     complete
     .text       start:0x020ce370 end:0x020ce398
 
-src/overlays/enemies/ov149_enemy_12/Ov149_NotifyPartThenBase.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_NotifyPartThenBase.c:
     complete
     .text       start:0x020ce398 end:0x020ce3c0
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020ce3c0 end:0x020ce4ec
 
-src/overlays/enemies/ov149_enemy_12/Ov149_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce4ec end:0x020ce538
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Ov149TickStaggerAndFlipFacing.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Ov149TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020ce538 end:0x020ce6d4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_RequestSubState8IfIdle.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020ce6d4 end:0x020ce704
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stInitSlotsFlags6.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stInitSlotsFlags6.c:
     complete
     .text       start:0x020ce704 end:0x020ce7d8
 
-src/overlays/enemies/ov149_enemy_12/Ov149_DispatchSubStateByte.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_DispatchSubStateByte.c:
     complete
     .text       start:0x020ce7d8 end:0x020ce968
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020ce968 end:0x020cea00
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cea00 end:0x020cea68
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cea68 end:0x020ceaa4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stSetFlagsEffectClear82.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stSetFlagsEffectClear82.c:
     complete
     .text       start:0x020ceaa4 end:0x020ceb40
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stTickAimTimer.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stTickAimTimer.c:
     complete
     .text       start:0x020ceb40 end:0x020cec08
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiStep_QueueAction2OnFlag44Clear.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiStep_QueueAction2OnFlag44Clear.c:
     complete
     .text       start:0x020cec08 end:0x020cec3c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateTimerRandomRange.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateTimerRandomRange.c:
     complete
     .text       start:0x020cec3c end:0x020cecbc
 
-src/overlays/enemies/ov149_enemy_12/Ov149_TriggerWhenTargetInRange.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_TriggerWhenTargetInRange.c:
     complete
     .text       start:0x020cecbc end:0x020ced48
 
-src/overlays/enemies/ov149_enemy_12/Ov149_PickApproachHeading.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_PickApproachHeading.c:
     complete
     .text       start:0x020ced48 end:0x020ceee4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_PoseAdvanceUnlessField14AtLeast80.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_PoseAdvanceUnlessField14AtLeast80.c:
     complete
     .text       start:0x020ceee4 end:0x020cef2c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateFixedAngleMove.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateFixedAngleMove.c:
     complete
     .text       start:0x020cef2c end:0x020cf000
 
-src/overlays/enemies/ov149_enemy_12/Ov149_PickStrafeDirection.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_PickStrafeDirection.c:
     complete
     .text       start:0x020cf000 end:0x020cf0d4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ProjectileAction_Enter.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ProjectileAction_Enter.c:
     complete
     .text       start:0x020cf0d4 end:0x020cf188
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stTransformProjectilePose.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stTransformProjectilePose.c:
     complete
     .text       start:0x020cf188 end:0x020cf23c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stAimAngleToTarget.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stAimAngleToTarget.c:
     complete
     .text       start:0x020cf23c end:0x020cf2c0
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stAdvanceProjectilePose.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stAdvanceProjectilePose.c:
     complete
     .text       start:0x020cf2c0 end:0x020cf384
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020cf384 end:0x020cf44c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_FaceTarget.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_FaceTarget.c:
     complete
     .text       start:0x020cf44c end:0x020cf510
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateAnimCallbackEffect.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateAnimCallbackEffect.c:
     complete
     .text       start:0x020cf510 end:0x020cf5d4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateFixedAngleTimed.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateFixedAngleTimed.c:
     complete
     .text       start:0x020cf5d4 end:0x020cf6a8
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiStep_QueueAction2WhenFree.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiStep_QueueAction2WhenFree.c:
     complete
     .text       start:0x020cf6a8 end:0x020cf6dc
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stClearFlag1SetFlags86.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stClearFlag1SetFlags86.c:
     complete
     .text       start:0x020cf6dc end:0x020cf790
 
-src/overlays/enemies/ov149_enemy_12/Ov149_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020cf790 end:0x020cf7d0
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Actor_New.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Actor_New.c:
     complete
     .text       start:0x020cf7d0 end:0x020cf804
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Ov149EnemyConstruct.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Ov149EnemyConstruct.c:
     complete
     .text       start:0x020cf804 end:0x020cf9ac
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cf9ac end:0x020cf9ec
 
-src/overlays/enemies/ov149_enemy_12/Ov149_TickAndSyncModelXform.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cf9ec end:0x020cfa24
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiState_OnMessage.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiState_OnMessage.c:
     complete
     .text       start:0x020cfa24 end:0x020cfad8
 
-src/overlays/enemies/ov149_enemy_12/Ov149_BroadcastPositionMessage.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_BroadcastPositionMessage.c:
     complete
     .text       start:0x020cfad8 end:0x020cfc00
 
-src/overlays/enemies/ov149_enemy_12/Ov149_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020cfc00 end:0x020cfc4c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateInitClearSlots.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateInitClearSlots.c:
     complete
     .text       start:0x020cfc4c end:0x020cfcf4
 
-src/overlays/enemies/ov149_enemy_12/Ov149_dispatchByStatusByte.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_dispatchByStatusByte.c:
     complete
     .text       start:0x020cfcf4 end:0x020cfd6c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiApplyMoveVector.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiApplyMoveVector.c:
     complete
     .text       start:0x020cfd6c end:0x020cfd84
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020cfd84 end:0x020cfe34
 
-src/overlays/enemies/ov149_enemy_12/Ov149_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020cfe34 end:0x020cfe6c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_SeedDashVector.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_SeedDashVector.c:
     complete
     .text       start:0x020cfe6c end:0x020cff3c
 
-src/overlays/enemies/ov149_enemy_12/Ov149_Ov149ChargeStep.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_Ov149ChargeStep.c:
     complete
     .text       start:0x020cff3c end:0x020d04f8
 
-src/overlays/enemies/ov149_enemy_12/Ov149_bindSubitemsByTypeId.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_bindSubitemsByTypeId.c:
     complete
     .text       start:0x020d04f8 end:0x020d05dc
 
-src/overlays/enemies/ov149_enemy_12/Ov149_RenderPerSphere.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_RenderPerSphere.c:
     complete
     .text       start:0x020d05dc end:0x020d0648
 
-src/overlays/enemies/ov149_enemy_12/Ov149_stateAttachSubitemInit.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_stateAttachSubitemInit.c:
     complete
     .text       start:0x020d0648 end:0x020d06f0
 
-src/overlays/enemies/ov149_enemy_12/Ov149_ChildTaskTeardown.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_ChildTaskTeardown.c:
     complete
     .text       start:0x020d06f0 end:0x020d0718
 
-src/overlays/enemies/ov149_enemy_12/Ov149_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov149_enemy_flare_note/Ov149_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d0718 end:0x020d0738
 
-src/overlays/enemies/ov149_enemy_12/data/ov149_const_020d07ac.c:
+src/overlays/enemies/ov149_enemy_flare_note/data/ov149_const_020d07ac.c:
     complete
     .data       start:0x020d07ac end:0x020d07b0
 
-src/overlays/enemies/ov149_enemy_12/data/ov149_strings_020d07a0.c:
+src/overlays/enemies/ov149_enemy_flare_note/data/ov149_strings_020d07a0.c:
     complete
     .data       start:0x020d07a0 end:0x020d07ac
 
-src/overlays/enemies/ov149_enemy_12/data/ov149_strings_020d07b0.c:
+src/overlays/enemies/ov149_enemy_flare_note/data/ov149_strings_020d07b0.c:
     complete
     .data       start:0x020d07b0 end:0x020d07e0
 
-src/overlays/enemies/ov149_enemy_12/data/ov149_tables_020d0738.c:
+src/overlays/enemies/ov149_enemy_flare_note/data/ov149_tables_020d0738.c:
     complete
     .rodata     start:0x020d0738 end:0x020d0798

@@ -4,322 +4,322 @@
     .data       start:0x020d0c20 end:0x020d0c60 kind:data align:32
     .bss        start:0x020d0c60 end:0x020d0c60 kind:bss align:32
 
-src/overlays/enemies/ov248_enemy_49/Ov248_RegisterEntityClass.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov248_enemy_49/Ov248_CreateNamedEntity.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov248_enemy_49/Ov248_SyncEffectNodesToJoints.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_SyncEffectNodesToJoints.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc0b8
 
-src/overlays/enemies/ov248_enemy_49/Ov248_Construct.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_Construct.c:
     complete
     .text       start:0x020cc0b8 end:0x020cc4a4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_Destroy.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_Destroy.c:
     complete
     .text       start:0x020cc4a4 end:0x020cc4fc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_TickAndUpdateAnchor.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_TickAndUpdateAnchor.c:
     complete
     .text       start:0x020cc4fc end:0x020cc570
 
-src/overlays/enemies/ov248_enemy_49/Ov248_ForwardEventToChildren.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_ForwardEventToChildren.c:
     complete
     .text       start:0x020cc570 end:0x020cc5ac
 
-src/overlays/enemies/ov248_enemy_49/Ov248_NotifyPartsThenBase.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc5ac end:0x020cc5e8
 
-src/overlays/enemies/ov248_enemy_49/Ov248_OnEffectMessage.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_OnEffectMessage.c:
     complete
     .text       start:0x020cc5e8 end:0x020cc854
 
-src/overlays/enemies/ov248_enemy_49/Ov248_PostTickCleanup.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_PostTickCleanup.c:
     complete
     .text       start:0x020cc854 end:0x020cc9dc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_RebindClip.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_RebindClip.c:
     complete
     .text       start:0x020cc9dc end:0x020cca94
 
-src/overlays/enemies/ov248_enemy_49/Ov248_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cca94 end:0x020ccaf0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_OnHit.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_OnHit.c:
     complete
     .text       start:0x020ccaf0 end:0x020cd03c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_RequestSubState12IfNotCurrent.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_RequestSubState12IfNotCurrent.c:
     complete
     .text       start:0x020cd03c end:0x020cd068
 
-src/overlays/enemies/ov248_enemy_49/Ov248_RequestSubState13IfIdle.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_RequestSubState13IfIdle.c:
     complete
     .text       start:0x020cd068 end:0x020cd098
 
-src/overlays/enemies/ov248_enemy_49/Ov248_ContactSweep.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_ContactSweep.c:
     complete
     .text       start:0x020cd098 end:0x020cd330
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiPickMoveByRange.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiPickMoveByRange.c:
     complete
     .text       start:0x020cd330 end:0x020cd510
 
-src/overlays/enemies/ov248_enemy_49/Ov248_startAnim.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_startAnim.c:
     complete
     .text       start:0x020cd510 end:0x020cd524
 
-src/overlays/enemies/ov248_enemy_49/Ov248_MeasureTargetGap.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_MeasureTargetGap.c:
     complete
     .text       start:0x020cd524 end:0x020cd5cc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_BeginPhasedReaction.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_BeginPhasedReaction.c:
     complete
     .text       start:0x020cd5cc end:0x020cd65c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiDispatchAction.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiDispatchAction.c:
     complete
     .text       start:0x020cd65c end:0x020cd85c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiIntegrateMotion.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiIntegrateMotion.c:
     complete
     .text       start:0x020cd85c end:0x020cd9f0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020cd9f0 end:0x020cda58
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020cda58 end:0x020cdae4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_SetChargeFlagsAndDispatch.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_SetChargeFlagsAndDispatch.c:
     complete
     .text       start:0x020cdae4 end:0x020cdbc4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_PushLocalOffsetToOwner.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_PushLocalOffsetToOwner.c:
     complete
     .text       start:0x020cdbc4 end:0x020cdc48
 
-src/overlays/enemies/ov248_enemy_49/Ov248_TickTimerReleaseAtThreshold.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_TickTimerReleaseAtThreshold.c:
     complete
     .text       start:0x020cdc48 end:0x020cdcb0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiMoveUntilAnimEnd.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiMoveUntilAnimEnd.c:
     complete
     .text       start:0x020cdcb0 end:0x020cddf0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiEnterIdle.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiEnterIdle.c:
     complete
     .text       start:0x020cddf0 end:0x020cde2c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiIdleTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiIdleTick.c:
     complete
     .text       start:0x020cde2c end:0x020cdfbc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_RerollTimerThenDispatchSlot5c.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_RerollTimerThenDispatchSlot5c.c:
     complete
     .text       start:0x020cdfbc end:0x020ce08c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiPickStanceReaction.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiPickStanceReaction.c:
     complete
     .text       start:0x020ce08c end:0x020ce210
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStanceMoveTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStanceMoveTick.c:
     complete
     .text       start:0x020ce210 end:0x020ce3c8
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStanceMoveFinish.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStanceMoveFinish.c:
     complete
     .text       start:0x020ce3c8 end:0x020ce4c0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_GrabRelease.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_GrabRelease.c:
     complete
     .text       start:0x020ce4c0 end:0x020ce59c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiSlamWindup.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiSlamWindup.c:
     complete
     .text       start:0x020ce59c end:0x020ce680
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiSlamLeap.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiSlamLeap.c:
     complete
     .text       start:0x020ce680 end:0x020ce76c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_SlamSweepTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_SlamSweepTick.c:
     complete
     .text       start:0x020ce76c end:0x020ceae0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_PushOffsetTwiceAndReset.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_PushOffsetTwiceAndReset.c:
     complete
     .text       start:0x020ceae0 end:0x020ceb7c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_SpinAttackTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_SpinAttackTick.c:
     complete
     .text       start:0x020ceb7c end:0x020cee90
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiEnterCharge.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiEnterCharge.c:
     complete
     .text       start:0x020cee90 end:0x020cef94
 
-src/overlays/enemies/ov248_enemy_49/Ov248_ChargeTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_ChargeTick.c:
     complete
     .text       start:0x020cef94 end:0x020cf0b0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_CountdownTimer4cThenPose15.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_CountdownTimer4cThenPose15.c:
     complete
     .text       start:0x020cf0b0 end:0x020cf0fc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cf0fc end:0x020cf130
 
-src/overlays/enemies/ov248_enemy_49/Ov248_PushConstThenOffset.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_PushConstThenOffset.c:
     complete
     .text       start:0x020cf130 end:0x020cf1d0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_GuardedPushOffset.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_GuardedPushOffset.c:
     complete
     .text       start:0x020cf1d0 end:0x020cf280
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiBurstWindup.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiBurstWindup.c:
     complete
     .text       start:0x020cf280 end:0x020cf33c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_Burst.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_Burst.c:
     complete
     .text       start:0x020cf33c end:0x020cf450
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiLungeStrikeTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiLungeStrikeTick.c:
     complete
     .text       start:0x020cf450 end:0x020cf634
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiEnterRecoilWindup.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiEnterRecoilWindup.c:
     complete
     .text       start:0x020cf634 end:0x020cf6b0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_RecoilWindUpTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_RecoilWindUpTick.c:
     complete
     .text       start:0x020cf6b0 end:0x020cf7ac
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiHomingDriftTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiHomingDriftTick.c:
     complete
     .text       start:0x020cf7ac end:0x020cf9c4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_SlamTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_SlamTick.c:
     complete
     .text       start:0x020cf9c4 end:0x020cfb4c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiExpandingSweepTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiExpandingSweepTick.c:
     complete
     .text       start:0x020cfb4c end:0x020cfc64
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiEnterEmitRing.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiEnterEmitRing.c:
     complete
     .text       start:0x020cfc64 end:0x020cfcac
 
-src/overlays/enemies/ov248_enemy_49/Ov248_VolleyTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_VolleyTick.c:
     complete
     .text       start:0x020cfcac end:0x020cfe84
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStep_QueueAction2OnAnimEnd_2.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020cfe84 end:0x020cfeb8
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020cfeb8 end:0x020cff80
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStep_QueueAction0.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStep_QueueAction0.c:
     complete
     .text       start:0x020cff80 end:0x020cffa0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiEnterHold.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiEnterHold.c:
     complete
     .text       start:0x020cffa0 end:0x020d0068
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiHoldTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiHoldTick.c:
     complete
     .text       start:0x020d0068 end:0x020d00fc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiEnterApproach.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiEnterApproach.c:
     complete
     .text       start:0x020d00fc end:0x020d013c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiApproachTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiApproachTick.c:
     complete
     .text       start:0x020d013c end:0x020d0264
 
-src/overlays/enemies/ov248_enemy_49/Ov248_SetTwoVecsAndFlag.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_SetTwoVecsAndFlag.c:
     complete
     .text       start:0x020d0264 end:0x020d02b4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_New.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_New.c:
     complete
     .text       start:0x020d02b4 end:0x020d02e8
 
-src/overlays/enemies/ov248_enemy_49/Ov248_Setup.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_Setup.c:
     complete
     .text       start:0x020d02e8 end:0x020d03cc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_Destroy_2.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_Destroy_2.c:
     complete
     .text       start:0x020d03cc end:0x020d03fc
 
-src/overlays/enemies/ov248_enemy_49/Ov248_ActorOnMessage.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_ActorOnMessage.c:
     complete
     .text       start:0x020d03fc end:0x020d0534
 
-src/overlays/enemies/ov248_enemy_49/Ov248_Release.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_Release.c:
     complete
     .text       start:0x020d0534 end:0x020d0578
 
-src/overlays/enemies/ov248_enemy_49/Ov248_CreateAiTask.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_CreateAiTask.c:
     complete
     .text       start:0x020d0578 end:0x020d05d4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_stateInitClearSlots.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_stateInitClearSlots.c:
     complete
     .text       start:0x020d05d4 end:0x020d067c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_dispatchByStatusByte.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_dispatchByStatusByte.c:
     complete
     .text       start:0x020d067c end:0x020d06f4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiSlot2_ClearVelocity.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiSlot2_ClearVelocity.c:
     complete
     .text       start:0x020d06f4 end:0x020d0714
 
-src/overlays/enemies/ov248_enemy_49/Ov248_FollowStart.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_FollowStart.c:
     complete
     .text       start:0x020d0714 end:0x020d079c
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d079c end:0x020d07d4
 
-src/overlays/enemies/ov248_enemy_49/Ov248_HitStart.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_HitStart.c:
     complete
     .text       start:0x020d07d4 end:0x020d08a0
 
-src/overlays/enemies/ov248_enemy_49/Ov248_BeamTick.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_BeamTick.c:
     complete
     .text       start:0x020d08a0 end:0x020d0b28
 
-src/overlays/enemies/ov248_enemy_49/Ov248_AiStep_QueueAction0OnAnimEnd.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/Ov248_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d0b28 end:0x020d0b58
 
-src/overlays/enemies/ov248_enemy_49/data/ov248_strings_020d0c20.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/data/ov248_strings_020d0c20.c:
     complete
     .data       start:0x020d0c20 end:0x020d0c60
 
-src/overlays/enemies/ov248_enemy_49/data/ov248_tables_020d0b58.c:
+src/overlays/enemies/ov248_enemy_chill_ripper/data/ov248_tables_020d0b58.c:
     complete
     .rodata     start:0x020d0b58 end:0x020d0c0c

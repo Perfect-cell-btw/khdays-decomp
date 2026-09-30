@@ -4,250 +4,250 @@
     .data       start:0x020d1100 end:0x020d1140 kind:data align:32
     .bss        start:0x020d1140 end:0x020d1140 kind:bss align:32
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_RegisterEntityClass.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_CreateNamedEntity.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_Construct.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_Construct.c:
     complete
     .text       start:0x020cdde4 end:0x020ce034
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_Destroy.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_Destroy.c:
     complete
     .text       start:0x020ce034 end:0x020ce07c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_TickWithChildRefresh.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_TickWithChildRefresh.c:
     complete
     .text       start:0x020ce07c end:0x020ce0a0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_TickAndPlaceBelowCamera.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_TickAndPlaceBelowCamera.c:
     complete
     .text       start:0x020ce0a0 end:0x020ce114
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_HandleSpawnMessage.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_HandleSpawnMessage.c:
     complete
     .text       start:0x020ce114 end:0x020ce29c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_Model_SetTrack0.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_Model_SetTrack0.c:
     complete
     .text       start:0x020ce29c end:0x020ce2cc
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ReleaseTasks.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ReleaseTasks.c:
     complete
     .text       start:0x020ce2cc end:0x020ce414
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_SpawnChild10AndBackLink.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020ce414 end:0x020ce45c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_RenderAtOwnerScaled.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020ce45c end:0x020ce4b4
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stInitChildActor.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stInitChildActor.c:
     complete
     .text       start:0x020ce4b4 end:0x020ce560
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ChildTaskTeardownAndFlag.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ChildTaskTeardownAndFlag.c:
     complete
     .text       start:0x020ce560 end:0x020ce59c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_TickTimerAdvanceSubState.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020ce59c end:0x020ce600
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_SpawnChild0cAndBackLink.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020ce600 end:0x020ce648
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_RenderAtOwnerModel.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_RenderAtOwnerModel.c:
     complete
     .text       start:0x020ce648 end:0x020ce690
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateInitSubitem.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateInitSubitem.c:
     complete
     .text       start:0x020ce690 end:0x020ce710
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ChildTaskTeardown.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ChildTaskTeardown.c:
     complete
     .text       start:0x020ce710 end:0x020ce738
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ConfigureActorUnlessBusy.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020ce738 end:0x020ce77c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateSubitemStateTransition.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateSubitemStateTransition.c:
     complete
     .text       start:0x020ce77c end:0x020ce7dc
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020ce7dc end:0x020ce7fc
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_SpawnChild0cAndBackLink_2.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_SpawnChild0cAndBackLink_2.c:
     complete
     .text       start:0x020ce7fc end:0x020ce844
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_BindSubObjectResetAndInstallSlots.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_BindSubObjectResetAndInstallSlots.c:
     complete
     .text       start:0x020ce844 end:0x020ce8c0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ChildTaskTeardown_2.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ChildTaskTeardown_2.c:
     complete
     .text       start:0x020ce8c0 end:0x020ce8e8
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_CopyBoundBlock44.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_CopyBoundBlock44.c:
     complete
     .text       start:0x020ce8e8 end:0x020ce91c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ConfigureSubObjectTwiceThenAdvance.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ConfigureSubObjectTwiceThenAdvance.c:
     complete
     .text       start:0x020ce91c end:0x020ce970
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_collectChildrenInBox.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_collectChildrenInBox.c:
     complete
     .text       start:0x020ce970 end:0x020cea50
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020cea50 end:0x020cec04
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cec04 end:0x020cec60
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_OnHit.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_OnHit.c:
     complete
     .text       start:0x020cec60 end:0x020cef10
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_RequestSubState10IfIdleUnless7Or8.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020cef10 end:0x020cef54
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_AiStateInit.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_AiStateInit.c:
     complete
     .text       start:0x020cef54 end:0x020cf050
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stDispatchByStateByte.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stDispatchByStateByte.c:
     complete
     .text       start:0x020cf050 end:0x020cf210
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_UpdateHeadingAndVelocity.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_UpdateHeadingAndVelocity.c:
     complete
     .text       start:0x020cf210 end:0x020cf2ec
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cf2ec end:0x020cf354
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cf354 end:0x020cf390
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_BeginRecoveryStance.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_BeginRecoveryStance.c:
     complete
     .text       start:0x020cf390 end:0x020cf458
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stAdvanceTimerAimTarget.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stAdvanceTimerAimTarget.c:
     complete
     .text       start:0x020cf458 end:0x020cf520
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_AiRollTimerQueue2.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_AiRollTimerQueue2.c:
     complete
     .text       start:0x020cf520 end:0x020cf580
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stDiv30Store.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stDiv30Store.c:
     complete
     .text       start:0x020cf580 end:0x020cf5e0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ReactWhenTargetInReach.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020cf5e0 end:0x020cf650
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stDiv30Store_2.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stDiv30Store_2.c:
     complete
     .text       start:0x020cf650 end:0x020cf6b0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stIdlePose2Advance.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stIdlePose2Advance.c:
     complete
     .text       start:0x020cf6b0 end:0x020cf6f4
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stSeekTargetSteer.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stSeekTargetSteer.c:
     complete
     .text       start:0x020cf6f4 end:0x020cf89c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_AiStep_QueueAction9OnFlag48Clear.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020cf89c end:0x020cf8d0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_PickRandomSpinDirection.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_PickRandomSpinDirection.c:
     complete
     .text       start:0x020cf8d0 end:0x020cf954
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_StrafeThenReact.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_StrafeThenReact.c:
     complete
     .text       start:0x020cf954 end:0x020cfb40
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateAnimAimAtTarget.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020cfb40 end:0x020cfbb0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_AiDecelUntilFlagClear.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_AiDecelUntilFlagClear.c:
     complete
     .text       start:0x020cfbb0 end:0x020cfc2c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateSetFlagEffect.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateSetFlagEffect.c:
     complete
     .text       start:0x020cfc2c end:0x020cfc98
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateTransformAimVec.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateTransformAimVec.c:
     complete
     .text       start:0x020cfc98 end:0x020cfd64
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_HomingDashTick.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_HomingDashTick.c:
     complete
     .text       start:0x020cfd64 end:0x020d01fc
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_HomingDash_Recover.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_HomingDash_Recover.c:
     complete
     .text       start:0x020d01fc end:0x020d02b0
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_SetPose6ThenAdvanceSlot.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020d02b0 end:0x020d02e4
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_BeginRecoil.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_BeginRecoil.c:
     complete
     .text       start:0x020d02e4 end:0x020d038c
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_RecoilTick.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_RecoilTick.c:
     complete
     .text       start:0x020d038c end:0x020d05f8
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_BeginThrowRelease.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_BeginThrowRelease.c:
     complete
     .text       start:0x020d05f8 end:0x020d07c4
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ThrowReleaseTick.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ThrowReleaseTick.c:
     complete
     .text       start:0x020d07c4 end:0x020d0f30
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_ConfigHw60NoResetBeginAction4a.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_ConfigHw60NoResetBeginAction4a.c:
     complete
     .text       start:0x020d0f30 end:0x020d0fcc
 
-src/overlays/enemies/ov162_enemy_18_2/Ov162_stateToggleFlagsEffectClear.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/Ov162_stateToggleFlagsEffectClear.c:
     complete
     .text       start:0x020d0fcc end:0x020d1080
 
-src/overlays/enemies/ov162_enemy_18_2/data/ov162_strings_020d1100.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/data/ov162_strings_020d1100.c:
     complete
     .data       start:0x020d1100 end:0x020d1140
 
-src/overlays/enemies/ov162_enemy_18_2/data/ov162_tables_020d1080.c:
+src/overlays/enemies/ov162_enemy_storm_bomb_2/data/ov162_tables_020d1080.c:
     complete
     .rodata     start:0x020d1080 end:0x020d10f8

@@ -4,154 +4,154 @@
     .data       start:0x020d6e00 end:0x020d6e20 kind:data align:32
     .bss        start:0x020d6e20 end:0x020d6e20 kind:bss align:32
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_RegisterEntityClass.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_RegisterEntityClass.c:
     complete
     .text       start:0x020d55c0 end:0x020d55d8
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_CreateNamedEntity.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_CreateNamedEntity.c:
     complete
     .text       start:0x020d55d8 end:0x020d5664
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_ChaserInit.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_ChaserInit.c:
     complete
     .text       start:0x020d5664 end:0x020d5870
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020d5870 end:0x020d58b0
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_PropagateBlockChain.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_PropagateBlockChain.c:
     complete
     .text       start:0x020d58b0 end:0x020d5924
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_Model_SetTrack0.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_Model_SetTrack0.c:
     complete
     .text       start:0x020d5924 end:0x020d5954
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_SpawnSlotEffectOnce.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_SpawnSlotEffectOnce.c:
     complete
     .text       start:0x020d5954 end:0x020d59d0
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_RebuildIdList.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_RebuildIdList.c:
     complete
     .text       start:0x020d59d0 end:0x020d5a30
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_registryCreateEntry.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_registryCreateEntry.c:
     complete
     .text       start:0x020d5a30 end:0x020d5a8c
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_FireEffectOnRandomListId.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_FireEffectOnRandomListId.c:
     complete
     .text       start:0x020d5a8c end:0x020d5b08
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_DecaySpinOverElapsed.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_DecaySpinOverElapsed.c:
     complete
     .text       start:0x020d5b08 end:0x020d5c58
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_UpdateChaseFacing.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_UpdateChaseFacing.c:
     complete
     .text       start:0x020d5c58 end:0x020d5dfc
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_HandleHit.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_HandleHit.c:
     complete
     .text       start:0x020d5dfc end:0x020d5f64
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_BeginPhasedReaction.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_BeginPhasedReaction.c:
     complete
     .text       start:0x020d5f64 end:0x020d6028
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_DispatchSubStateByte.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_DispatchSubStateByte.c:
     complete
     .text       start:0x020d6028 end:0x020d61b0
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_SpinAndDriftTick.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_SpinAndDriftTick.c:
     complete
     .text       start:0x020d61b0 end:0x020d62bc
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d62bc end:0x020d6324
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_AdvanceStateSlotIfHw60Bit0.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020d6324 end:0x020d6368
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d6368 end:0x020d6434
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d6434 end:0x020d64fc
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d64fc end:0x020d6530
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d6530 end:0x020d6564
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_PrepSubState4IfChildIdle.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_PrepSubState4IfChildIdle.c:
     complete
     .text       start:0x020d6564 end:0x020d65a4
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_AiEnterChase.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_AiEnterChase.c:
     complete
     .text       start:0x020d65a4 end:0x020d65fc
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_DecideChaseMove.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_DecideChaseMove.c:
     complete
     .text       start:0x020d65fc end:0x020d67fc
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_SetHw60Flag40ThenAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_SetHw60Flag40ThenAdvance.c:
     complete
     .text       start:0x020d67fc end:0x020d6860
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_ArmThenAttack.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_ArmThenAttack.c:
     complete
     .text       start:0x020d6860 end:0x020d68ec
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_ClearHiFlagAndAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_ClearHiFlagAndAdvance.c:
     complete
     .text       start:0x020d68ec end:0x020d6960
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_PrepSubState2IfChildIdle.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_PrepSubState2IfChildIdle.c:
     complete
     .text       start:0x020d6960 end:0x020d69a0
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d69a0 end:0x020d69d4
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_AiStep_QueueAction4OnAnimEnd.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d69d4 end:0x020d6a08
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_SetFlagsAndAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_SetFlagsAndAdvance.c:
     complete
     .text       start:0x020d6a08 end:0x020d6ab0
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020d6ab0 end:0x020d6b70
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_ConfigHw60ActionCallSubThenAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_ConfigHw60ActionCallSubThenAdvance.c:
     complete
     .text       start:0x020d6b70 end:0x020d6c40
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_BeginWindUp.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_BeginWindUp.c:
     complete
     .text       start:0x020d6c40 end:0x020d6d34
 
-src/overlays/enemies/ov129_enemy_07_3/Ov129_TimerFireNodeCallbackThenAdvance.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/Ov129_TimerFireNodeCallbackThenAdvance.c:
     complete
     .text       start:0x020d6d34 end:0x020d6de4
 
-src/overlays/enemies/ov129_enemy_07_3/data/ov129_const_020d6de4.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/data/ov129_const_020d6de4.c:
     complete
     .rodata     start:0x020d6de4 end:0x020d6de8
 
-src/overlays/enemies/ov129_enemy_07_3/data/ov129_strings_020d6e00.c:
+src/overlays/enemies/ov129_enemy_bulky_vendor_3/data/ov129_strings_020d6e00.c:
     complete
     .data       start:0x020d6e00 end:0x020d6e20

@@ -4,342 +4,342 @@
     .data       start:0x020d4780 end:0x020d47e0 kind:data align:32
     .bss        start:0x020d47e0 end:0x020d47e0 kind:bss align:32
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RegisterEntityClass.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_CreateNamedEntity.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_Construct.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfee8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_Destroy.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_Destroy.c:
     complete
     .text       start:0x020cfee8 end:0x020cff40
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_TickWithChildRefresh.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_TickWithChildRefresh.c:
     complete
     .text       start:0x020cff40 end:0x020cff64
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_ForwardRegionEventToShield.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_ForwardRegionEventToShield.c:
     complete
     .text       start:0x020cff64 end:0x020cff90
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_NotifyShieldThenBase.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_NotifyShieldThenBase.c:
     complete
     .text       start:0x020cff90 end:0x020cffbc
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_HandleMessage.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_HandleMessage.c:
     complete
     .text       start:0x020cffbc end:0x020d01cc
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_MessageMapSetupSubObject.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_MessageMapSetupSubObject.c:
     complete
     .text       start:0x020d01cc end:0x020d024c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_Update.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_Update.c:
     complete
     .text       start:0x020d024c end:0x020d0388
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_SetupSubObject.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_SetupSubObject.c:
     complete
     .text       start:0x020d0388 end:0x020d03f4
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_CreateAiTask.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_CreateAiTask.c:
     complete
     .text       start:0x020d03f4 end:0x020d0440
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_HandleHit.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_HandleHit.c:
     complete
     .text       start:0x020d0440 end:0x020d06b4
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_UpdateNodeReservationState.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_UpdateNodeReservationState.c:
     complete
     .text       start:0x020d06b4 end:0x020d0720
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_InitSubStateRegister3B.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_InitSubStateRegister3B.c:
     complete
     .text       start:0x020d0720 end:0x020d07d0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiDispatchAction.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiDispatchAction.c:
     complete
     .text       start:0x020d07d0 end:0x020d0a48
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d0a48 end:0x020d0b48
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d0b48 end:0x020d0bb0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d0bb0 end:0x020d0c18
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterRecover.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterRecover.c:
     complete
     .text       start:0x020d0c18 end:0x020d0c94
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d0c94 end:0x020d0cc8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_SeedRandomTimer.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_SeedRandomTimer.c:
     complete
     .text       start:0x020d0cc8 end:0x020d0d24
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiPickMove.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiPickMove.c:
     complete
     .text       start:0x020d0d24 end:0x020d0f5c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_PickMeleeReaction.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_PickMeleeReaction.c:
     complete
     .text       start:0x020d0f5c end:0x020d10e8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiLandPickNext.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiLandPickNext.c:
     complete
     .text       start:0x020d10e8 end:0x020d114c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RiseDecision.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RiseDecision.c:
     complete
     .text       start:0x020d114c end:0x020d145c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RiseTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RiseTick.c:
     complete
     .text       start:0x020d145c end:0x020d1584
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_FlagsKickSubNode.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_FlagsKickSubNode.c:
     complete
     .text       start:0x020d1584 end:0x020d162c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiWaitThenTrackLeader.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiWaitThenTrackLeader.c:
     complete
     .text       start:0x020d162c end:0x020d1660
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_TrackLeaderRangeCheck.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_TrackLeaderRangeCheck.c:
     complete
     .text       start:0x020d1660 end:0x020d1750
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_EnterLeap.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_EnterLeap.c:
     complete
     .text       start:0x020d1750 end:0x020d193c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_LeapTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_LeapTick.c:
     complete
     .text       start:0x020d193c end:0x020d1af4
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AimSetupNotifyArm.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AimSetupNotifyArm.c:
     complete
     .text       start:0x020d1af4 end:0x020d1c04
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_ChargeTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_ChargeTick.c:
     complete
     .text       start:0x020d1c04 end:0x020d1f14
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiRetarget.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiRetarget.c:
     complete
     .text       start:0x020d1f14 end:0x020d1fd4
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterFire.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterFire.c:
     complete
     .text       start:0x020d1fd4 end:0x020d2008
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d2008 end:0x020d203c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_EnterRiseStrike.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_EnterRiseStrike.c:
     complete
     .text       start:0x020d203c end:0x020d2230
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiFollowLeaderTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiFollowLeaderTick.c:
     complete
     .text       start:0x020d2230 end:0x020d233c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_BurstTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_BurstTick.c:
     complete
     .text       start:0x020d233c end:0x020d25ec
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterSteerFire.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterSteerFire.c:
     complete
     .text       start:0x020d25ec end:0x020d263c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RebuildSteerFireChild.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RebuildSteerFireChild.c:
     complete
     .text       start:0x020d263c end:0x020d26e0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AimCloseInRange.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AimCloseInRange.c:
     complete
     .text       start:0x020d26e0 end:0x020d280c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AimSteerFireWhenReady.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AimSteerFireWhenReady.c:
     complete
     .text       start:0x020d280c end:0x020d2918
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RebuildSteerAndGate.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RebuildSteerAndGate.c:
     complete
     .text       start:0x020d2918 end:0x020d2998
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterAim.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterAim.c:
     complete
     .text       start:0x020d2998 end:0x020d29e8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AimGiveUpOnFree.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AimGiveUpOnFree.c:
     complete
     .text       start:0x020d29e8 end:0x020d2ad8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AcquireOrTimedRecover.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AcquireOrTimedRecover.c:
     complete
     .text       start:0x020d2ad8 end:0x020d2b60
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_StrafeSameTarget.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_StrafeSameTarget.c:
     complete
     .text       start:0x020d2b60 end:0x020d2c44
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_StrafeSameTargetTimed.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_StrafeSameTargetTimed.c:
     complete
     .text       start:0x020d2c44 end:0x020d2d38
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AimPerpStrafe.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AimPerpStrafe.c:
     complete
     .text       start:0x020d2d38 end:0x020d2df0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AcquireOrTimedRecoverB.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AcquireOrTimedRecoverB.c:
     complete
     .text       start:0x020d2df0 end:0x020d2e78
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_StrafeSameTargetNeg.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_StrafeSameTargetNeg.c:
     complete
     .text       start:0x020d2e78 end:0x020d2f5c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_StrafeSameTargetTimedNeg.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_StrafeSameTargetTimedNeg.c:
     complete
     .text       start:0x020d2f5c end:0x020d3050
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AimPerpStrafeNeg.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AimPerpStrafeNeg.c:
     complete
     .text       start:0x020d3050 end:0x020d3108
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterRise.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterRise.c:
     complete
     .text       start:0x020d3108 end:0x020d3158
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiRiseTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiRiseTick.c:
     complete
     .text       start:0x020d3158 end:0x020d31d8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AdvanceLungeOrCommit.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AdvanceLungeOrCommit.c:
     complete
     .text       start:0x020d31d8 end:0x020d326c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiQueue2OnFlagClearB.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiQueue2OnFlagClearB.c:
     complete
     .text       start:0x020d326c end:0x020d32a0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_BeginPounce.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_BeginPounce.c:
     complete
     .text       start:0x020d32a0 end:0x020d3364
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_DoubleClawTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_DoubleClawTick.c:
     complete
     .text       start:0x020d3364 end:0x020d38b8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_SpawnEffect4dReconfigureFlags.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_SpawnEffect4dReconfigureFlags.c:
     complete
     .text       start:0x020d38b8 end:0x020d3980
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_EnterRise.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_EnterRise.c:
     complete
     .text       start:0x020d3980 end:0x020d3b28
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RiseTickLate.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RiseTickLate.c:
     complete
     .text       start:0x020d3b28 end:0x020d3c50
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterDefeat.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterDefeat.c:
     complete
     .text       start:0x020d3c50 end:0x020d3cc8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_ShieldPart_New.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_ShieldPart_New.c:
     complete
     .text       start:0x020d3cc8 end:0x020d3cf0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_ShieldPartInit.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_ShieldPartInit.c:
     complete
     .text       start:0x020d3cf0 end:0x020d3e40
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_Destroy_2.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_Destroy_2.c:
     complete
     .text       start:0x020d3e40 end:0x020d3e5c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_ReaimEmitterCone.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_ReaimEmitterCone.c:
     complete
     .text       start:0x020d3e5c end:0x020d3f1c
 
-src/overlays/enemies/ov210_enemy_2b/func_ov210_020d3f1c.c:
+src/overlays/enemies/ov210_enemy_neoshadow/func_ov210_020d3f1c.c:
     complete
     .text       start:0x020d3f1c end:0x020d3f28
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_SendBlankStatus.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_SendBlankStatus.c:
     complete
     .text       start:0x020d3f28 end:0x020d3f98
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_RebuildSubObjectNotify.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_RebuildSubObjectNotify.c:
     complete
     .text       start:0x020d3f98 end:0x020d3fd0
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_FinishPendingRequest.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_FinishPendingRequest.c:
     complete
     .text       start:0x020d3fd0 end:0x020d3ffc
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_BindOwnerAndAttach.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_BindOwnerAndAttach.c:
     complete
     .text       start:0x020d3ffc end:0x020d402c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_CreateSwoopTask.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_CreateSwoopTask.c:
     complete
     .text       start:0x020d402c end:0x020d4078
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiGoToIdle.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiGoToIdle.c:
     complete
     .text       start:0x020d4078 end:0x020d40a8
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_SwoopTaskReleaseNoOp.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_SwoopTaskReleaseNoOp.c:
     complete
     .text       start:0x020d40a8 end:0x020d40ac
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiEnterIdle.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiEnterIdle.c:
     complete
     .text       start:0x020d40ac end:0x020d4118
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiIdleTick.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiIdleTick.c:
     complete
     .text       start:0x020d4118 end:0x020d4140
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_SetupScatter.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_SetupScatter.c:
     complete
     .text       start:0x020d4140 end:0x020d4368
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiSwoopDelay.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiSwoopDelay.c:
     complete
     .text       start:0x020d4368 end:0x020d43a4
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_TickSwoop.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_TickSwoop.c:
     complete
     .text       start:0x020d43a4 end:0x020d463c
 
-src/overlays/enemies/ov210_enemy_2b/Ov210_AiReturnToIdleWhenClear.c:
+src/overlays/enemies/ov210_enemy_neoshadow/Ov210_AiReturnToIdleWhenClear.c:
     complete
     .text       start:0x020d463c end:0x020d4664
 
-src/overlays/enemies/ov210_enemy_2b/data/ov210_strings_020d4780.c:
+src/overlays/enemies/ov210_enemy_neoshadow/data/ov210_strings_020d4780.c:
     complete
     .data       start:0x020d4780 end:0x020d47e0
 
-src/overlays/enemies/ov210_enemy_2b/data/ov210_tables_020d4664.c:
+src/overlays/enemies/ov210_enemy_neoshadow/data/ov210_tables_020d4664.c:
     complete
     .rodata     start:0x020d4664 end:0x020d476c

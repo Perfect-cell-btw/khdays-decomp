@@ -4,238 +4,238 @@
     .data       start:0x020d0c80 end:0x020d0ca0 kind:data align:32
     .bss        start:0x020d0ca0 end:0x020d0ca0 kind:bss align:32
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_RegisterEntityClass.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_CreateNamedEntity.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_OrientPartAlongDirection.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cdde4 end:0x020cde40
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_Construct.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_Construct.c:
     complete
     .text       start:0x020cde40 end:0x020ce15c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020ce15c end:0x020ce19c
 
-src/overlays/enemies/ov170_enemy_1b_2/func_ov170_020ce19c.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/func_ov170_020ce19c.c:
     complete
     .text       start:0x020ce19c end:0x020ce1a8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_ForwardEventToChild.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_ForwardEventToChild.c:
     complete
     .text       start:0x020ce1a8 end:0x020ce1d0
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_NotifyPartThenBase.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_NotifyPartThenBase.c:
     complete
     .text       start:0x020ce1d0 end:0x020ce1f8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_HandleSpawnMessage.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_HandleSpawnMessage.c:
     complete
     .text       start:0x020ce1f8 end:0x020ce440
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_Model_SetTrack0.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_Model_SetTrack0.c:
     complete
     .text       start:0x020ce440 end:0x020ce470
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020ce470 end:0x020ce5a8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_registryCreateEntry.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_registryCreateEntry.c:
     complete
     .text       start:0x020ce5a8 end:0x020ce604
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_OnHit.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_OnHit.c:
     complete
     .text       start:0x020ce604 end:0x020ce828
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020ce828 end:0x020ce854
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_FaceTargetGetClearance.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_FaceTargetGetClearance.c:
     complete
     .text       start:0x020ce854 end:0x020ce8ec
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_IsChildInactive.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_IsChildInactive.c:
     complete
     .text       start:0x020ce8ec end:0x020ce92c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateInitTransformSlots.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateInitTransformSlots.c:
     complete
     .text       start:0x020ce92c end:0x020cea18
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020cea18 end:0x020cec04
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stDivStoreField.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stDivStoreField.c:
     complete
     .text       start:0x020cec04 end:0x020ceca4
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ceca4 end:0x020ced0c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020ced0c end:0x020ced90
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ced90 end:0x020cee5c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cee5c end:0x020cef34
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cef34 end:0x020cef68
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateRandomInitFull.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateRandomInitFull.c:
     complete
     .text       start:0x020cef68 end:0x020ceff4
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_OrbitTick.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_OrbitTick.c:
     complete
     .text       start:0x020ceff4 end:0x020cf374
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cf374 end:0x020cf3b8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_HoverBobTick.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_HoverBobTick.c:
     complete
     .text       start:0x020cf3b8 end:0x020cf5b0
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiStep_StartTag1.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiStep_StartTag1.c:
     complete
     .text       start:0x020cf5b0 end:0x020cf5ec
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_HoverApproachTick.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_HoverApproachTick.c:
     complete
     .text       start:0x020cf5ec end:0x020cf7b8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateRandomDirValue.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateRandomDirValue.c:
     complete
     .text       start:0x020cf7b8 end:0x020cf828
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_CircleStrafeTarget.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_CircleStrafeTarget.c:
     complete
     .text       start:0x020cf828 end:0x020cf9a4
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cf9a4 end:0x020cfa40
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_HoverHoldTick.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_HoverHoldTick.c:
     complete
     .text       start:0x020cfa40 end:0x020cfc0c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cfc0c end:0x020cfc40
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cfc40 end:0x020cfc74
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cfc74 end:0x020cfd68
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiEndWithUpdate.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiEndWithUpdate.c:
     complete
     .text       start:0x020cfd68 end:0x020cfe54
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020cfe54 end:0x020cfef4
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateTimerToggleFlags.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateTimerToggleFlags.c:
     complete
     .text       start:0x020cfef4 end:0x020cff88
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020cff88 end:0x020cffc8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_Actor_New.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_Actor_New.c:
     complete
     .text       start:0x020cffc8 end:0x020cfffc
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_SubObject_ConstructB.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_SubObject_ConstructB.c:
     complete
     .text       start:0x020cfffc end:0x020d015c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_OnDespawn.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_OnDespawn.c:
     complete
     .text       start:0x020d015c end:0x020d0178
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_TickAndSyncModelXform.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d0178 end:0x020d01b0
 
-src/overlays/enemies/ov170_enemy_1b_2/func_ov170_020d01b0.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/func_ov170_020d01b0.c:
     complete
     .text       start:0x020d01b0 end:0x020d01bc
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_TryTriggerEffect.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_TryTriggerEffect.c:
     complete
     .text       start:0x020d01bc end:0x020d0244
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AttackSweep.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AttackSweep.c:
     complete
     .text       start:0x020d0244 end:0x020d03c8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d03c8 end:0x020d0414
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_stateInitClearSlots.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_stateInitClearSlots.c:
     complete
     .text       start:0x020d0414 end:0x020d04bc
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d04bc end:0x020d0534
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiApplyMoveVector.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiApplyMoveVector.c:
     complete
     .text       start:0x020d0534 end:0x020d054c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_ConfigHw60CopyVec3ConstToCThenAdvance.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020d054c end:0x020d05fc
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d05fc end:0x020d0634
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_BeginLeap.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_BeginLeap.c:
     complete
     .text       start:0x020d0634 end:0x020d086c
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_LeapTick.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_LeapTick.c:
     complete
     .text       start:0x020d086c end:0x020d0bc8
 
-src/overlays/enemies/ov170_enemy_1b_2/Ov170_SweepStep.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/Ov170_SweepStep.c:
     complete
     .text       start:0x020d0bc8 end:0x020d0c64
 
-src/overlays/enemies/ov170_enemy_1b_2/data/ov170_strings_020d0c80.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/data/ov170_strings_020d0c80.c:
     complete
     .data       start:0x020d0c80 end:0x020d0ca0
 
-src/overlays/enemies/ov170_enemy_1b_2/data/ov170_tables_020d0c64.c:
+src/overlays/enemies/ov170_enemy_turquoise_march_2/data/ov170_tables_020d0c64.c:
     complete
     .rodata     start:0x020d0c64 end:0x020d0c78

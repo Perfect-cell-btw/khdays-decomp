@@ -3,18 +3,18 @@
     .data       start:0x020cc020 end:0x020cc040 kind:data align:32
     .bss        start:0x020cc040 end:0x020cc040 kind:bss align:32
 
-src/overlays/enemies/ov290_enemy_6c/Ov290_RegisterEntityClass.c:
+src/overlays/enemies/ov290_enemy_dummy_player/Ov290_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov290_enemy_6c/Ov290_CreateNamedEntity.c:
+src/overlays/enemies/ov290_enemy_dummy_player/Ov290_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov290_enemy_6c/Ov290_Construct.c:
+src/overlays/enemies/ov290_enemy_dummy_player/Ov290_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc000
 
-src/overlays/enemies/ov290_enemy_6c/data/ov290_strings_020cc020.c:
+src/overlays/enemies/ov290_enemy_dummy_player/data/ov290_strings_020cc020.c:
     complete
     .data       start:0x020cc020 end:0x020cc040

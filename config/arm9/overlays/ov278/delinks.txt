@@ -4,622 +4,622 @@
     .data       start:0x020d6460 end:0x020d64e0 kind:data align:32
     .bss        start:0x020d64e0 end:0x020d64e0 kind:bss align:32
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RegisterEntityClass.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov278_enemy_63/Ov278_CreateNamedEntity.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetupModelPoses.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetupModelPoses.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc110
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RenderAtOwnerModel.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RenderAtOwnerModel.c:
     complete
     .text       start:0x020cc110 end:0x020cc154
 
-src/overlays/enemies/ov278_enemy_63/Ov278_Construct.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_Construct.c:
     complete
     .text       start:0x020cc154 end:0x020cc5c0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_Destroy.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_Destroy.c:
     complete
     .text       start:0x020cc5c0 end:0x020cc630
 
-src/overlays/enemies/ov278_enemy_63/Ov278_UpdateShadowA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_UpdateShadowA.c:
     complete
     .text       start:0x020cc630 end:0x020cc6f8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RemoveFromDrawList.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RemoveFromDrawList.c:
     complete
     .text       start:0x020cc6f8 end:0x020cc838
 
-src/overlays/enemies/ov278_enemy_63/Ov278_VisitSubObjects.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_VisitSubObjects.c:
     complete
     .text       start:0x020cc838 end:0x020cc86c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_HandleMessage.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_HandleMessage.c:
     complete
     .text       start:0x020cc86c end:0x020cca44
 
-src/overlays/enemies/ov278_enemy_63/Ov278_PlayRiderMove.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_PlayRiderMove.c:
     complete
     .text       start:0x020cca44 end:0x020ccd14
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ForwardHitToSubObjects.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ForwardHitToSubObjects.c:
     complete
     .text       start:0x020ccd14 end:0x020ccd68
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SyncRiderHitPoints.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SyncRiderHitPoints.c:
     complete
     .text       start:0x020ccd68 end:0x020cce20
 
-src/overlays/enemies/ov278_enemy_63/Ov278_New.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_New.c:
     complete
     .text       start:0x020cce20 end:0x020cce54
 
-src/overlays/enemies/ov278_enemy_63/Ov278_FrontRidersConstruct.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_FrontRidersConstruct.c:
     complete
     .text       start:0x020cce54 end:0x020cd300
 
-src/overlays/enemies/ov278_enemy_63/Ov278_Destroy_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_Destroy_2.c:
     complete
     .text       start:0x020cd300 end:0x020cd368
 
-src/overlays/enemies/ov278_enemy_63/Ov278_UpdateShadowB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_UpdateShadowB.c:
     complete
     .text       start:0x020cd368 end:0x020cd450
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InitModelPoses.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InitModelPoses.c:
     complete
     .text       start:0x020cd450 end:0x020cd508
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SendStatusWithPos.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SendStatusWithPos.c:
     complete
     .text       start:0x020cd508 end:0x020cd5a0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_HandleRiderMessage.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_HandleRiderMessage.c:
     complete
     .text       start:0x020cd5a0 end:0x020cd780
 
-src/overlays/enemies/ov278_enemy_63/Ov278_TeardownHook.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_TeardownHook.c:
     complete
     .text       start:0x020cd780 end:0x020cd834
 
-src/overlays/enemies/ov278_enemy_63/Ov278_Release.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_Release.c:
     complete
     .text       start:0x020cd834 end:0x020cd8cc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_CopyPoseFromParent394.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_CopyPoseFromParent394.c:
     complete
     .text       start:0x020cd8cc end:0x020cd918
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RebuildRiderListsA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RebuildRiderListsA.c:
     complete
     .text       start:0x020cd918 end:0x020cda7c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RiderPresenceHook.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RiderPresenceHook.c:
     complete
     .text       start:0x020cda7c end:0x020cdc84
 
-src/overlays/enemies/ov278_enemy_63/Ov278_New_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_New_2.c:
     complete
     .text       start:0x020cdc84 end:0x020cdcb8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RearRidersConstruct.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RearRidersConstruct.c:
     complete
     .text       start:0x020cdcb8 end:0x020ce1c0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_Destroy_3.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_Destroy_3.c:
     complete
     .text       start:0x020ce1c0 end:0x020ce230
 
-src/overlays/enemies/ov278_enemy_63/Ov278_UpdateShadow.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_UpdateShadow.c:
     complete
     .text       start:0x020ce230 end:0x020ce2d0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InitRiderAnchors.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InitRiderAnchors.c:
     complete
     .text       start:0x020ce2d0 end:0x020ce430
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SendStatusWithPosB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SendStatusWithPosB.c:
     complete
     .text       start:0x020ce430 end:0x020ce4c8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_HandleRiderMessageB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_HandleRiderMessageB.c:
     complete
     .text       start:0x020ce4c8 end:0x020ce6fc
 
-src/overlays/enemies/ov278_enemy_63/func_ov278_020ce6fc.c:
+src/overlays/enemies/ov278_enemy_powered_armor/func_ov278_020ce6fc.c:
     complete
     .text       start:0x020ce6fc end:0x020ce708
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SuspendSubObjects.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SuspendSubObjects.c:
     complete
     .text       start:0x020ce708 end:0x020ce7d4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_CopyPoseFromParent384.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_CopyPoseFromParent384.c:
     complete
     .text       start:0x020ce7d4 end:0x020ce820
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RebuildRiderListsB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RebuildRiderListsB.c:
     complete
     .text       start:0x020ce820 end:0x020ce984
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RefreshRearRiders.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RefreshRearRiders.c:
     complete
     .text       start:0x020ce984 end:0x020ced5c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ced5c end:0x020cedb8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_MountHitFilter.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_MountHitFilter.c:
     complete
     .text       start:0x020cedb8 end:0x020cf3b8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InitMountState.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InitMountState.c:
     complete
     .text       start:0x020cf3b8 end:0x020cf4b4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_MountMoveDispatch.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_MountMoveDispatch.c:
     complete
     .text       start:0x020cf4b4 end:0x020cf984
 
-src/overlays/enemies/ov278_enemy_63/Ov278_MountStep.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_MountStep.c:
     complete
     .text       start:0x020cf984 end:0x020cfa30
 
-src/overlays/enemies/ov278_enemy_63/Ov278_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cfa30 end:0x020cfa98
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cfa98 end:0x020cfad4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterRest.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterRest.c:
     complete
     .text       start:0x020cfad4 end:0x020cfb30
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetChild1c7Byte2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetChild1c7Byte2.c:
     complete
     .text       start:0x020cfb30 end:0x020cfb44
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterRoll.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterRoll.c:
     complete
     .text       start:0x020cfb44 end:0x020cfc0c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RollTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RollTick.c:
     complete
     .text       start:0x020cfc0c end:0x020cfd5c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiPrepareJump.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiPrepareJump.c:
     complete
     .text       start:0x020cfd5c end:0x020cfdb8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterJump.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterJump.c:
     complete
     .text       start:0x020cfdb8 end:0x020cfef8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_JumpTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_JumpTick.c:
     complete
     .text       start:0x020cfef8 end:0x020cffa4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterTailSweep.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterTailSweep.c:
     complete
     .text       start:0x020cffa4 end:0x020d000c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_TailSweepTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_TailSweepTick.c:
     complete
     .text       start:0x020d000c end:0x020d039c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterCharge.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterCharge.c:
     complete
     .text       start:0x020d039c end:0x020d041c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiReleaseRidersOnAnimEnd.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiReleaseRidersOnAnimEnd.c:
     complete
     .text       start:0x020d041c end:0x020d0480
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ChargeEnter.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ChargeEnter.c:
     complete
     .text       start:0x020d0480 end:0x020d058c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ChargeTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ChargeTick.c:
     complete
     .text       start:0x020d058c end:0x020d0700
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ReleaseRiderItems.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ReleaseRiderItems.c:
     complete
     .text       start:0x020d0700 end:0x020d0810
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterRoar.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterRoar.c:
     complete
     .text       start:0x020d0810 end:0x020d08b0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RoarWaitTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RoarWaitTick.c:
     complete
     .text       start:0x020d08b0 end:0x020d0a30
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RoarTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RoarTick.c:
     complete
     .text       start:0x020d0a30 end:0x020d0ad4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterSurprised.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterSurprised.c:
     complete
     .text       start:0x020d0ad4 end:0x020d0b3c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStartRollingCharge.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStartRollingCharge.c:
     complete
     .text       start:0x020d0b3c end:0x020d0bac
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RollingChargeTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RollingChargeTick.c:
     complete
     .text       start:0x020d0bac end:0x020d10c8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ReactDecayAimAndCancelAction.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ReactDecayAimAndCancelAction.c:
     complete
     .text       start:0x020d10c8 end:0x020d1134
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ReactDecayAimAndSetState.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ReactDecayAimAndSetState.c:
     complete
     .text       start:0x020d1134 end:0x020d119c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterDown.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterDown.c:
     complete
     .text       start:0x020d119c end:0x020d11fc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiDownLoopStart.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiDownLoopStart.c:
     complete
     .text       start:0x020d11fc end:0x020d1264
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiDownTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiDownTick.c:
     complete
     .text       start:0x020d1264 end:0x020d12f0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiDownPickNext.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiDownPickNext.c:
     complete
     .text       start:0x020d12f0 end:0x020d1384
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiHidePartsAndEnd.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiHidePartsAndEnd.c:
     complete
     .text       start:0x020d1384 end:0x020d1400
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterDash.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterDash.c:
     complete
     .text       start:0x020d1400 end:0x020d1478
 
-src/overlays/enemies/ov278_enemy_63/Ov278_DashTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_DashTick.c:
     complete
     .text       start:0x020d1478 end:0x020d1550
 
-src/overlays/enemies/ov278_enemy_63/Ov278_DashSteerTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_DashSteerTick.c:
     complete
     .text       start:0x020d1550 end:0x020d16b8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SpawnStep.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SpawnStep.c:
     complete
     .text       start:0x020d16b8 end:0x020d16fc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterLunge.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterLunge.c:
     complete
     .text       start:0x020d16fc end:0x020d176c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_LungeTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_LungeTick.c:
     complete
     .text       start:0x020d176c end:0x020d17fc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_CreateAiTask.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_CreateAiTask.c:
     complete
     .text       start:0x020d17fc end:0x020d1848
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RiderHitFilter.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RiderHitFilter.c:
     complete
     .text       start:0x020d1848 end:0x020d1c50
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InitRiderStateA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InitRiderStateA.c:
     complete
     .text       start:0x020d1c50 end:0x020d1d4c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiDispatchAction.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiDispatchAction.c:
     complete
     .text       start:0x020d1d4c end:0x020d2024
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RideStepA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RideStepA.c:
     complete
     .text       start:0x020d2024 end:0x020d20e4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetFlagsC6ClearBits.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetFlagsC6ClearBits.c:
     complete
     .text       start:0x020d20e4 end:0x020d2174
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d2174 end:0x020d21b0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterInert.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterInert.c:
     complete
     .text       start:0x020d21b0 end:0x020d220c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InertIdleStep.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InertIdleStep.c:
     complete
     .text       start:0x020d220c end:0x020d2210
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiPlayIdleAndEnd.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiPlayIdleAndEnd.c:
     complete
     .text       start:0x020d2210 end:0x020d2240
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterFire.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterFire.c:
     complete
     .text       start:0x020d2240 end:0x020d2274
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiFireWait.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiFireWait.c:
     complete
     .text       start:0x020d2274 end:0x020d22b4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiPlayAnim12AndEnd.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiPlayAnim12AndEnd.c:
     complete
     .text       start:0x020d22b4 end:0x020d22e4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d22e4 end:0x020d2318
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiFaceForwardQueue9.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiFaceForwardQueue9.c:
     complete
     .text       start:0x020d2318 end:0x020d239c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterSeek.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterSeek.c:
     complete
     .text       start:0x020d239c end:0x020d23dc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiSeekTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiSeekTick.c:
     complete
     .text       start:0x020d23dc end:0x020d2420
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterApproach.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterApproach.c:
     complete
     .text       start:0x020d2420 end:0x020d2490
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ApproachTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ApproachTick.c:
     complete
     .text       start:0x020d2490 end:0x020d25dc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_StrafeTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_StrafeTick.c:
     complete
     .text       start:0x020d25dc end:0x020d27c4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterChargeIn.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterChargeIn.c:
     complete
     .text       start:0x020d27c4 end:0x020d27fc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ChargeInTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ChargeInTick.c:
     complete
     .text       start:0x020d27fc end:0x020d296c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_PublishPounceLanding.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_PublishPounceLanding.c:
     complete
     .text       start:0x020d296c end:0x020d29dc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_StompLandingTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_StompLandingTick.c:
     complete
     .text       start:0x020d29dc end:0x020d2cdc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterBuck.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterBuck.c:
     complete
     .text       start:0x020d2cdc end:0x020d2e88
 
-src/overlays/enemies/ov278_enemy_63/Ov278_BuckTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_BuckTick.c:
     complete
     .text       start:0x020d2e88 end:0x020d30a8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RecoveryWaitA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RecoveryWaitA.c:
     complete
     .text       start:0x020d30a8 end:0x020d3194
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RiderWatchTickA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RiderWatchTickA.c:
     complete
     .text       start:0x020d3194 end:0x020d326c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ReleaseRiderA.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ReleaseRiderA.c:
     complete
     .text       start:0x020d326c end:0x020d3348
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterReaction.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterReaction.c:
     complete
     .text       start:0x020d3348 end:0x020d337c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ReactionStepNotify.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ReactionStepNotify.c:
     complete
     .text       start:0x020d337c end:0x020d33f4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ClawSwipeTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ClawSwipeTick.c:
     complete
     .text       start:0x020d33f4 end:0x020d3698
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStep_StartTag15.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStep_StartTag15.c:
     complete
     .text       start:0x020d3698 end:0x020d36cc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiQueue2OnAnimEnd.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020d36cc end:0x020d3700
 
-src/overlays/enemies/ov278_enemy_63/Ov278_CreateAiTask_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_CreateAiTask_2.c:
     complete
     .text       start:0x020d3700 end:0x020d374c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RiderHitFilterB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RiderHitFilterB.c:
     complete
     .text       start:0x020d374c end:0x020d3b54
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InitRiderStateB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InitRiderStateB.c:
     complete
     .text       start:0x020d3b54 end:0x020d3c44
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RearMoveDispatch.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RearMoveDispatch.c:
     complete
     .text       start:0x020d3c44 end:0x020d3f04
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RideStepB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RideStepB.c:
     complete
     .text       start:0x020d3f04 end:0x020d3fc4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetFlagsC6ClearBits_b.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetFlagsC6ClearBits_b.c:
     complete
     .text       start:0x020d3fc4 end:0x020d4054
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStep_ResumeStoredAction_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStep_ResumeStoredAction_2.c:
     complete
     .text       start:0x020d4054 end:0x020d4090
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterInert_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterInert_2.c:
     complete
     .text       start:0x020d4090 end:0x020d40ec
 
-src/overlays/enemies/ov278_enemy_63/Ov278_InertIdleStep_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_InertIdleStep_2.c:
     complete
     .text       start:0x020d40ec end:0x020d40f0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiPlayIdleAndEnd_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiPlayIdleAndEnd_2.c:
     complete
     .text       start:0x020d40f0 end:0x020d4120
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterFire_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterFire_2.c:
     complete
     .text       start:0x020d4120 end:0x020d415c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RiderFireTickB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RiderFireTickB.c:
     complete
     .text       start:0x020d415c end:0x020d42b4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiPlayAnim12AndEnd_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiPlayAnim12AndEnd_2.c:
     complete
     .text       start:0x020d42b4 end:0x020d42e4
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetPose4ThenAdvanceSlot_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetPose4ThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d42e4 end:0x020d4318
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiFaceForwardQueue9_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiFaceForwardQueue9_2.c:
     complete
     .text       start:0x020d4318 end:0x020d439c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterSeek_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterSeek_2.c:
     complete
     .text       start:0x020d439c end:0x020d43ec
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiSeekTick_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiSeekTick_2.c:
     complete
     .text       start:0x020d43ec end:0x020d444c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterStalk.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterStalk.c:
     complete
     .text       start:0x020d444c end:0x020d44f8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStalkStart.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStalkStart.c:
     complete
     .text       start:0x020d44f8 end:0x020d4570
 
-src/overlays/enemies/ov278_enemy_63/Ov278_StalkTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_StalkTick.c:
     complete
     .text       start:0x020d4570 end:0x020d4ce8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterStomp.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterStomp.c:
     complete
     .text       start:0x020d4ce8 end:0x020d4d38
 
-src/overlays/enemies/ov278_enemy_63/Ov278_StompTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_StompTick.c:
     complete
     .text       start:0x020d4d38 end:0x020d5038
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterBuckB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterBuckB.c:
     complete
     .text       start:0x020d5038 end:0x020d5240
 
-src/overlays/enemies/ov278_enemy_63/Ov278_DismountLeapTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_DismountLeapTick.c:
     complete
     .text       start:0x020d5240 end:0x020d5494
 
-src/overlays/enemies/ov278_enemy_63/Ov278_DismountLandingTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_DismountLandingTick.c:
     complete
     .text       start:0x020d5494 end:0x020d5758
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RiderWatchTickB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RiderWatchTickB.c:
     complete
     .text       start:0x020d5758 end:0x020d5830
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ReleaseRiderB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ReleaseRiderB.c:
     complete
     .text       start:0x020d5830 end:0x020d590c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterStampWalk.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterStampWalk.c:
     complete
     .text       start:0x020d590c end:0x020d5940
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiStampWalkStart.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiStampWalkStart.c:
     complete
     .text       start:0x020d5940 end:0x020d598c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_StampWalkTick.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_StampWalkTick.c:
     complete
     .text       start:0x020d598c end:0x020d5d54
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiEnterFinish.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiEnterFinish.c:
     complete
     .text       start:0x020d5d54 end:0x020d5d88
 
-src/overlays/enemies/ov278_enemy_63/Ov278_AiQueue2OnAnimEnd_2.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_AiQueue2OnAnimEnd_2.c:
     complete
     .text       start:0x020d5d88 end:0x020d5dbc
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SpawnReactionTaskAB.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SpawnReactionTaskAB.c:
     complete
     .text       start:0x020d5dbc end:0x020d5e1c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_ResetModelTracks.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_ResetModelTracks.c:
     complete
     .text       start:0x020d5e1c end:0x020d5eb0
 
-src/overlays/enemies/ov278_enemy_63/Ov278_TaskTeardown_FlagPart.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_TaskTeardown_FlagPart.c:
     complete
     .text       start:0x020d5eb0 end:0x020d5ec8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d5ec8 end:0x020d5ee8
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SpawnReactionTaskFromHit.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SpawnReactionTaskFromHit.c:
     complete
     .text       start:0x020d5ee8 end:0x020d5f50
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterRelease.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterRelease.c:
     complete
     .text       start:0x020d5f50 end:0x020d601c
 
-src/overlays/enemies/ov278_enemy_63/Ov278_SetField5cBit1BothEntries.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_SetField5cBit1BothEntries.c:
     complete
     .text       start:0x020d601c end:0x020d6048
 
-src/overlays/enemies/ov278_enemy_63/Ov278_EnterRecall.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_EnterRecall.c:
     complete
     .text       start:0x020d6048 end:0x020d6110
 
-src/overlays/enemies/ov278_enemy_63/Ov278_RecallWait.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_RecallWait.c:
     complete
     .text       start:0x020d6110 end:0x020d6204
 
-src/overlays/enemies/ov278_enemy_63/Ov278_FinishWhenAnimsEnd.c:
+src/overlays/enemies/ov278_enemy_powered_armor/Ov278_FinishWhenAnimsEnd.c:
     complete
     .text       start:0x020d6204 end:0x020d6230
 
-src/overlays/enemies/ov278_enemy_63/data/ov278_strings_020d6460.c:
+src/overlays/enemies/ov278_enemy_powered_armor/data/ov278_strings_020d6460.c:
     complete
     .data       start:0x020d6460 end:0x020d64e0
 
-src/overlays/enemies/ov278_enemy_63/data/ov278_tables_020d6230.c:
+src/overlays/enemies/ov278_enemy_powered_armor/data/ov278_tables_020d6230.c:
     complete
     .rodata     start:0x020d6230 end:0x020d6450

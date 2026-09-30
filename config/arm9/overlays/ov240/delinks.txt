@@ -4,178 +4,178 @@
     .data       start:0x020cfb80 end:0x020cfbc0 kind:data align:32
     .bss        start:0x020cfbc0 end:0x020cfbc0 kind:bss align:32
 
-src/overlays/enemies/ov240_enemy_43/Ov240_RegisterEntityClass.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov240_enemy_43/Ov240_CreateNamedEntity.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov240_enemy_43/Ov240_InitializeActor.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_InitializeActor.c:
     complete
     .text       start:0x020cdde4 end:0x020ce07c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_ReleaseSubObjectsAndSlotsThenNotify.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_ReleaseSubObjectsAndSlotsThenNotify.c:
     complete
     .text       start:0x020ce07c end:0x020ce0c4
 
-src/overlays/enemies/ov240_enemy_43/Ov240_PropagateBlockChain.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_PropagateBlockChain.c:
     complete
     .text       start:0x020ce0c4 end:0x020ce138
 
-src/overlays/enemies/ov240_enemy_43/Ov240_HandleMessage.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_HandleMessage.c:
     complete
     .text       start:0x020ce138 end:0x020ce2ac
 
-src/overlays/enemies/ov240_enemy_43/Ov240_ApplyActorConfig310.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_ApplyActorConfig310.c:
     complete
     .text       start:0x020ce2ac end:0x020ce2e4
 
-src/overlays/enemies/ov240_enemy_43/Ov240_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020ce2e4 end:0x020ce340
 
-src/overlays/enemies/ov240_enemy_43/Ov240_OnHit.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_OnHit.c:
     complete
     .text       start:0x020ce340 end:0x020ce568
 
-src/overlays/enemies/ov240_enemy_43/Ov240_RequestSubState9IfNotCurrent.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_RequestSubState9IfNotCurrent.c:
     complete
     .text       start:0x020ce568 end:0x020ce594
 
-src/overlays/enemies/ov240_enemy_43/Ov240_TryBeginSubState10IfIdle.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_TryBeginSubState10IfIdle.c:
     complete
     .text       start:0x020ce594 end:0x020ce5c4
 
-src/overlays/enemies/ov240_enemy_43/Ov240_ContactSweep.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_ContactSweep.c:
     complete
     .text       start:0x020ce5c4 end:0x020ce804
 
-src/overlays/enemies/ov240_enemy_43/Ov240_IdleCountdown.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_IdleCountdown.c:
     complete
     .text       start:0x020ce804 end:0x020ce8d4
 
-src/overlays/enemies/ov240_enemy_43/Ov240_startAnim.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_startAnim.c:
     complete
     .text       start:0x020ce8d4 end:0x020ce8e8
 
-src/overlays/enemies/ov240_enemy_43/Ov240_DistanceToTarget.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_DistanceToTarget.c:
     complete
     .text       start:0x020ce8e8 end:0x020ce97c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiStateInit.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiStateInit.c:
     complete
     .text       start:0x020ce97c end:0x020cea34
 
-src/overlays/enemies/ov240_enemy_43/Ov240_DispatchSubStateByte.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_DispatchSubStateByte.c:
     complete
     .text       start:0x020cea34 end:0x020cebec
 
-src/overlays/enemies/ov240_enemy_43/Ov240_OrientFromYaw.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_OrientFromYaw.c:
     complete
     .text       start:0x020cebec end:0x020cec88
 
-src/overlays/enemies/ov240_enemy_43/Ov240_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cec88 end:0x020cecf0
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cecf0 end:0x020ced2c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_RecoverEntry.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_RecoverEntry.c:
     complete
     .text       start:0x020ced2c end:0x020cedbc
 
-src/overlays/enemies/ov240_enemy_43/Ov240_stClearReadyFlag_cedbc.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_stClearReadyFlag_cedbc.c:
     complete
     .text       start:0x020cedbc end:0x020cee04
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiEnterIdle.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiEnterIdle.c:
     complete
     .text       start:0x020cee04 end:0x020cee40
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiIdleCountdown.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiIdleCountdown.c:
     complete
     .text       start:0x020cee40 end:0x020cee7c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiEnterWalk.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiEnterWalk.c:
     complete
     .text       start:0x020cee7c end:0x020ceee0
 
-src/overlays/enemies/ov240_enemy_43/Ov240_WanderTick.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_WanderTick.c:
     complete
     .text       start:0x020ceee0 end:0x020cf004
 
-src/overlays/enemies/ov240_enemy_43/Ov240_LungeEntry.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_LungeEntry.c:
     complete
     .text       start:0x020cf004 end:0x020cf0c8
 
-src/overlays/enemies/ov240_enemy_43/Ov240_LungeTick.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_LungeTick.c:
     complete
     .text       start:0x020cf0c8 end:0x020cf208
 
-src/overlays/enemies/ov240_enemy_43/Ov240_stClearReadyFlag.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_stClearReadyFlag.c:
     complete
     .text       start:0x020cf208 end:0x020cf250
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiEnterAnim8.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiEnterAnim8.c:
     complete
     .text       start:0x020cf250 end:0x020cf294
 
-src/overlays/enemies/ov240_enemy_43/Ov240_TimedAction4ThenDispatch.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_TimedAction4ThenDispatch.c:
     complete
     .text       start:0x020cf294 end:0x020cf334
 
-src/overlays/enemies/ov240_enemy_43/Ov240_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020cf334 end:0x020cf424
 
-src/overlays/enemies/ov240_enemy_43/Ov240_PoseResetTimerFieldsThenAdvance.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_PoseResetTimerFieldsThenAdvance.c:
     complete
     .text       start:0x020cf424 end:0x020cf474
 
-src/overlays/enemies/ov240_enemy_43/Ov240_SpinTick.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_SpinTick.c:
     complete
     .text       start:0x020cf474 end:0x020cf6e0
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AimAtTarget.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AimAtTarget.c:
     complete
     .text       start:0x020cf6e0 end:0x020cf74c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cf74c end:0x020cf7a8
 
-src/overlays/enemies/ov240_enemy_43/Ov240_GuardBreakEntry.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_GuardBreakEntry.c:
     complete
     .text       start:0x020cf7a8 end:0x020cf8a0
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiStep_QueueAction0.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiStep_QueueAction0.c:
     complete
     .text       start:0x020cf8a0 end:0x020cf8c0
 
-src/overlays/enemies/ov240_enemy_43/Ov240_BeginPushAway.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_BeginPushAway.c:
     complete
     .text       start:0x020cf8c0 end:0x020cf998
 
-src/overlays/enemies/ov240_enemy_43/Ov240_WaitThenSetFlagsAndAdvance.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_WaitThenSetFlagsAndAdvance.c:
     complete
     .text       start:0x020cf998 end:0x020cfa2c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_AiEnterWalkB.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_AiEnterWalkB.c:
     complete
     .text       start:0x020cfa2c end:0x020cfa6c
 
-src/overlays/enemies/ov240_enemy_43/Ov240_stateFixedAngleMatrix_2.c:
+src/overlays/enemies/ov240_enemy_samurai/Ov240_stateFixedAngleMatrix_2.c:
     complete
     .text       start:0x020cfa6c end:0x020cfb60
 
-src/overlays/enemies/ov240_enemy_43/data/ov240_const_020cfb60.c:
+src/overlays/enemies/ov240_enemy_samurai/data/ov240_const_020cfb60.c:
     complete
     .rodata     start:0x020cfb60 end:0x020cfb64
 
-src/overlays/enemies/ov240_enemy_43/data/ov240_strings_020cfb80.c:
+src/overlays/enemies/ov240_enemy_samurai/data/ov240_strings_020cfb80.c:
     complete
     .data       start:0x020cfb80 end:0x020cfbc0

@@ -4,190 +4,190 @@
     .data       start:0x020d28c0 end:0x020d28e0 kind:data align:32
     .bss        start:0x020d28e0 end:0x020d28e0 kind:bss align:32
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_RegisterEntityClass.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_CreateNamedEntity.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_Construct.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe00
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020cfe00 end:0x020cfe48
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_TickAndSyncChildren.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_TickAndSyncChildren.c:
     complete
     .text       start:0x020cfe48 end:0x020cfeb8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_Model_SetTrack0.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_Model_SetTrack0.c:
     complete
     .text       start:0x020cfeb8 end:0x020cfee8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_HandleMessage.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_HandleMessage.c:
     complete
     .text       start:0x020cfee8 end:0x020cffd8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cffd8 end:0x020d0024
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_OnHit.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_OnHit.c:
     complete
     .text       start:0x020d0024 end:0x020d0294
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_RequestSubState10IfIdle.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_RequestSubState10IfIdle.c:
     complete
     .text       start:0x020d0294 end:0x020d02d4
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_EnterAimStateInstallCallbacks.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_EnterAimStateInstallCallbacks.c:
     complete
     .text       start:0x020d02d4 end:0x020d03a8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_DispatchSubStateByte.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_DispatchSubStateByte.c:
     complete
     .text       start:0x020d03a8 end:0x020d0560
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_RecomputeBlendedTransformAndTickTimer.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_RecomputeBlendedTransformAndTickTimer.c:
     complete
     .text       start:0x020d0560 end:0x020d0614
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_TestSubObjectHelperNonzero.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_TestSubObjectHelperNonzero.c:
     complete
     .text       start:0x020d0614 end:0x020d0654
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0654 end:0x020d06bc
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d06bc end:0x020d06f8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d06f8 end:0x020d07c4
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d07c4 end:0x020d088c
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AiRollTimerOnFlagClear.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AiRollTimerOnFlagClear.c:
     complete
     .text       start:0x020d088c end:0x020d08ec
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_stDiv5Store.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_stDiv5Store.c:
     complete
     .text       start:0x020d08ec end:0x020d0948
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ApproachDecision.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ApproachDecision.c:
     complete
     .text       start:0x020d0948 end:0x020d0b74
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AiEnterChase.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AiEnterChase.c:
     complete
     .text       start:0x020d0b74 end:0x020d0c08
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ApproachEntry.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ApproachEntry.c:
     complete
     .text       start:0x020d0c08 end:0x020d0d54
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ApproachTick.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ApproachTick.c:
     complete
     .text       start:0x020d0d54 end:0x020d0e64
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AcquireTargetTransformScaleThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AcquireTargetTransformScaleThenAdvance.c:
     complete
     .text       start:0x020d0e64 end:0x020d0f24
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_PrepSubState2GuardField50.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_PrepSubState2GuardField50.c:
     complete
     .text       start:0x020d0f24 end:0x020d0f58
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_Pose5ClearHitFlagAimAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_Pose5ClearHitFlagAimAdvance.c:
     complete
     .text       start:0x020d0f58 end:0x020d0ff4
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020d0ff4 end:0x020d1070
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d1070 end:0x020d1138
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_stateSetFlagEffect.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_stateSetFlagEffect.c:
     complete
     .text       start:0x020d1138 end:0x020d11e4
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_TransformScaleNodeVectorThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_TransformScaleNodeVectorThenAdvance.c:
     complete
     .text       start:0x020d11e4 end:0x020d1280
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_Action6IfHitFlagsSet.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_Action6IfHitFlagsSet.c:
     complete
     .text       start:0x020d1280 end:0x020d1324
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_TransformScaleUntilObjectReady.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_TransformScaleUntilObjectReady.c:
     complete
     .text       start:0x020d1324 end:0x020d13c8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_TriggerEffectSetFlag40ThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_TriggerEffectSetFlag40ThenAdvance.c:
     complete
     .text       start:0x020d13c8 end:0x020d145c
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_SweepTick.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_SweepTick.c:
     complete
     .text       start:0x020d145c end:0x020d176c
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_stateSetFlagEffect_2.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_stateSetFlagEffect_2.c:
     complete
     .text       start:0x020d176c end:0x020d182c
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_SlamTick.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_SlamTick.c:
     complete
     .text       start:0x020d182c end:0x020d1d2c
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_SetPose9ThenAdvanceSlot.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_SetPose9ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1d2c end:0x020d1d60
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_GuardField50Pose10ClearAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_GuardField50Pose10ClearAdvance.c:
     complete
     .text       start:0x020d1d60 end:0x020d1dac
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AiWaitThenAnim11.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AiWaitThenAnim11.c:
     complete
     .text       start:0x020d1dac end:0x020d1df8
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AiRollTimerOnFlagClear_2.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AiRollTimerOnFlagClear_2.c:
     complete
     .text       start:0x020d1df8 end:0x020d1e58
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_InitRush.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_InitRush.c:
     complete
     .text       start:0x020d1e58 end:0x020d1f18
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_RushTick.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_RushTick.c:
     complete
     .text       start:0x020d1f18 end:0x020d2728
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_AiRollTimerOnFlagClear_3.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_AiRollTimerOnFlagClear_3.c:
     complete
     .text       start:0x020d2728 end:0x020d2788
 
-src/overlays/enemies/ov140_enemy_0c_2/Ov140_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/Ov140_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d2788 end:0x020d283c
 
-src/overlays/enemies/ov140_enemy_0c_2/data/ov140_strings_020d28c0.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/data/ov140_strings_020d28c0.c:
     complete
     .data       start:0x020d28c0 end:0x020d28e0
 
-src/overlays/enemies/ov140_enemy_0c_2/data/ov140_tables_020d283c.c:
+src/overlays/enemies/ov140_enemy_icy_cube_2/data/ov140_tables_020d283c.c:
     complete
     .rodata     start:0x020d283c end:0x020d28a8

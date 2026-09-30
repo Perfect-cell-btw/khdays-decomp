@@ -4,190 +4,190 @@
     .data       start:0x020cec80 end:0x020ceca0 kind:data align:32
     .bss        start:0x020ceca0 end:0x020ceca0 kind:bss align:32
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_RegisterEntityClass.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_CreateNamedEntity.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_Construct.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc1c0
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020cc1c0 end:0x020cc208
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_TickAndSyncChildren.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_TickAndSyncChildren.c:
     complete
     .text       start:0x020cc208 end:0x020cc278
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_Model_SetTrack0.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_Model_SetTrack0.c:
     complete
     .text       start:0x020cc278 end:0x020cc2a8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_HandleMessage.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_HandleMessage.c:
     complete
     .text       start:0x020cc2a8 end:0x020cc398
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc398 end:0x020cc3e4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_OnHit.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_OnHit.c:
     complete
     .text       start:0x020cc3e4 end:0x020cc654
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_RequestSubState10IfIdle.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_RequestSubState10IfIdle.c:
     complete
     .text       start:0x020cc654 end:0x020cc694
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_EnterAimStateInstallCallbacks.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_EnterAimStateInstallCallbacks.c:
     complete
     .text       start:0x020cc694 end:0x020cc768
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_DispatchSubStateByte.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc768 end:0x020cc920
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_RecomputeBlendedTransformAndTickTimer.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_RecomputeBlendedTransformAndTickTimer.c:
     complete
     .text       start:0x020cc920 end:0x020cc9d4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_TestSubObjectHelperNonzero.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_TestSubObjectHelperNonzero.c:
     complete
     .text       start:0x020cc9d4 end:0x020cca14
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cca14 end:0x020cca7c
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cca7c end:0x020ccab8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020ccab8 end:0x020ccb84
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020ccb84 end:0x020ccc4c
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AiRollTimerOnFlagClear.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AiRollTimerOnFlagClear.c:
     complete
     .text       start:0x020ccc4c end:0x020cccac
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_stDiv5Store_cccac.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_stDiv5Store_cccac.c:
     complete
     .text       start:0x020cccac end:0x020ccd08
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ApproachDecision.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ApproachDecision.c:
     complete
     .text       start:0x020ccd08 end:0x020ccf34
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AiEnterChase.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AiEnterChase.c:
     complete
     .text       start:0x020ccf34 end:0x020ccfc8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ApproachEntry.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ApproachEntry.c:
     complete
     .text       start:0x020ccfc8 end:0x020cd114
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ApproachTick.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ApproachTick.c:
     complete
     .text       start:0x020cd114 end:0x020cd224
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AcquireTargetTransformScaleThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AcquireTargetTransformScaleThenAdvance.c:
     complete
     .text       start:0x020cd224 end:0x020cd2e4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_PrepSubState2GuardField50.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_PrepSubState2GuardField50.c:
     complete
     .text       start:0x020cd2e4 end:0x020cd318
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_Pose5ClearHitFlagAimAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_Pose5ClearHitFlagAimAdvance.c:
     complete
     .text       start:0x020cd318 end:0x020cd3b4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020cd3b4 end:0x020cd430
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020cd430 end:0x020cd4f8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_stateSetFlagEffect.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_stateSetFlagEffect.c:
     complete
     .text       start:0x020cd4f8 end:0x020cd5a4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_TransformScaleNodeVectorThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_TransformScaleNodeVectorThenAdvance.c:
     complete
     .text       start:0x020cd5a4 end:0x020cd640
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_Action6IfHitFlagsSet.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_Action6IfHitFlagsSet.c:
     complete
     .text       start:0x020cd640 end:0x020cd6e4
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_TransformScaleUntilObjectReady.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_TransformScaleUntilObjectReady.c:
     complete
     .text       start:0x020cd6e4 end:0x020cd788
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_TriggerEffectSetFlag40ThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_TriggerEffectSetFlag40ThenAdvance.c:
     complete
     .text       start:0x020cd788 end:0x020cd81c
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_SweepTick.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_SweepTick.c:
     complete
     .text       start:0x020cd81c end:0x020cdb2c
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_stateSetFlagEffect_2.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_stateSetFlagEffect_2.c:
     complete
     .text       start:0x020cdb2c end:0x020cdbec
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_SlamTick.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_SlamTick.c:
     complete
     .text       start:0x020cdbec end:0x020ce0ec
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_SetPose9ThenAdvanceSlot.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_SetPose9ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce0ec end:0x020ce120
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_GuardField50Pose10ClearAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_GuardField50Pose10ClearAdvance.c:
     complete
     .text       start:0x020ce120 end:0x020ce16c
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AiWaitThenAnim11.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AiWaitThenAnim11.c:
     complete
     .text       start:0x020ce16c end:0x020ce1b8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AiRollTimerOnFlagClear_2.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AiRollTimerOnFlagClear_2.c:
     complete
     .text       start:0x020ce1b8 end:0x020ce218
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_InitRush.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_InitRush.c:
     complete
     .text       start:0x020ce218 end:0x020ce2d8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_RushTick.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_RushTick.c:
     complete
     .text       start:0x020ce2d8 end:0x020ceae8
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_AiRollTimerOnFlagClear_3.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_AiRollTimerOnFlagClear_3.c:
     complete
     .text       start:0x020ceae8 end:0x020ceb48
 
-src/overlays/enemies/ov139_enemy_0c/Ov139_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov139_enemy_icy_cube/Ov139_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020ceb48 end:0x020cebfc
 
-src/overlays/enemies/ov139_enemy_0c/data/ov139_strings_020cec80.c:
+src/overlays/enemies/ov139_enemy_icy_cube/data/ov139_strings_020cec80.c:
     complete
     .data       start:0x020cec80 end:0x020ceca0
 
-src/overlays/enemies/ov139_enemy_0c/data/ov139_tables_020cebfc.c:
+src/overlays/enemies/ov139_enemy_icy_cube/data/ov139_tables_020cebfc.c:
     complete
     .rodata     start:0x020cebfc end:0x020cec68

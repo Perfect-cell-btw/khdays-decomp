@@ -4,334 +4,334 @@
     .data       start:0x020d0e40 end:0x020d0e80 kind:data align:32
     .bss        start:0x020d0e80 end:0x020d0e80 kind:bss align:32
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_RegisterEntityClass.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_CreateNamedEntity.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SyncEffectNodesToJoints.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SyncEffectNodesToJoints.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc0b8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_Construct.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_Construct.c:
     complete
     .text       start:0x020cc0b8 end:0x020cc4a0
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_Destroy.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_Destroy.c:
     complete
     .text       start:0x020cc4a0 end:0x020cc4f8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_TickAndUpdateAnchor.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_TickAndUpdateAnchor.c:
     complete
     .text       start:0x020cc4f8 end:0x020cc56c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_ForwardEventToChildren.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_ForwardEventToChildren.c:
     complete
     .text       start:0x020cc56c end:0x020cc5a8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_NotifyPartsThenBase.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc5a8 end:0x020cc5e4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_OnEffectMessage.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_OnEffectMessage.c:
     complete
     .text       start:0x020cc5e4 end:0x020cc84c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_PostTickCleanup.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_PostTickCleanup.c:
     complete
     .text       start:0x020cc84c end:0x020cc9d4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_RebindClip.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_RebindClip.c:
     complete
     .text       start:0x020cc9d4 end:0x020cca8c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cca8c end:0x020ccae8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_OnHit.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_OnHit.c:
     complete
     .text       start:0x020ccae8 end:0x020ccfcc
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_RequestSubState12IfNotCurrent.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_RequestSubState12IfNotCurrent.c:
     complete
     .text       start:0x020ccfcc end:0x020ccff8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_RequestSubState13IfIdle.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_RequestSubState13IfIdle.c:
     complete
     .text       start:0x020ccff8 end:0x020cd028
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_ContactSweep.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_ContactSweep.c:
     complete
     .text       start:0x020cd028 end:0x020cd2bc
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiPickMoveByRange.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiPickMoveByRange.c:
     complete
     .text       start:0x020cd2bc end:0x020cd49c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_startAnim.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_startAnim.c:
     complete
     .text       start:0x020cd49c end:0x020cd4b0
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_MeasureTargetGap.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_MeasureTargetGap.c:
     complete
     .text       start:0x020cd4b0 end:0x020cd558
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_BeginPhasedReaction.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_BeginPhasedReaction.c:
     complete
     .text       start:0x020cd558 end:0x020cd5e8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiDispatchAction.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiDispatchAction.c:
     complete
     .text       start:0x020cd5e8 end:0x020cd7e8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiIntegrateMotion.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiIntegrateMotion.c:
     complete
     .text       start:0x020cd7e8 end:0x020cd97c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020cd97c end:0x020cd9e4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020cd9e4 end:0x020cda70
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SetChargeFlagsAndDispatch.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SetChargeFlagsAndDispatch.c:
     complete
     .text       start:0x020cda70 end:0x020cdb50
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_PushLocalOffsetToOwner.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_PushLocalOffsetToOwner.c:
     complete
     .text       start:0x020cdb50 end:0x020cdbd4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_TickTimerReleaseAtThreshold.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_TickTimerReleaseAtThreshold.c:
     complete
     .text       start:0x020cdbd4 end:0x020cdc3c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiMoveUntilAnimEnd.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiMoveUntilAnimEnd.c:
     complete
     .text       start:0x020cdc3c end:0x020cdd7c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiEnterIdle.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiEnterIdle.c:
     complete
     .text       start:0x020cdd7c end:0x020cddb8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiIdleTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiIdleTick.c:
     complete
     .text       start:0x020cddb8 end:0x020cdf48
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_RerollTimerThenDispatchSlot5c.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_RerollTimerThenDispatchSlot5c.c:
     complete
     .text       start:0x020cdf48 end:0x020ce018
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiPickStanceReaction.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiPickStanceReaction.c:
     complete
     .text       start:0x020ce018 end:0x020ce19c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStanceMoveTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStanceMoveTick.c:
     complete
     .text       start:0x020ce19c end:0x020ce354
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStanceMoveFinish.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStanceMoveFinish.c:
     complete
     .text       start:0x020ce354 end:0x020ce44c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_GrabRelease.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_GrabRelease.c:
     complete
     .text       start:0x020ce44c end:0x020ce524
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiSlamWindup.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiSlamWindup.c:
     complete
     .text       start:0x020ce524 end:0x020ce608
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiSlamLeap.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiSlamLeap.c:
     complete
     .text       start:0x020ce608 end:0x020ce6f4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SlamSweepTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SlamSweepTick.c:
     complete
     .text       start:0x020ce6f4 end:0x020cea64
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_PushOffsetTwiceAndReset.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_PushOffsetTwiceAndReset.c:
     complete
     .text       start:0x020cea64 end:0x020ceb00
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SpinAttackTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SpinAttackTick.c:
     complete
     .text       start:0x020ceb00 end:0x020cee10
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiEnterCharge.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiEnterCharge.c:
     complete
     .text       start:0x020cee10 end:0x020cef14
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_ChargeTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_ChargeTick.c:
     complete
     .text       start:0x020cef14 end:0x020cf02c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_CountdownTimer4cThenPose15.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_CountdownTimer4cThenPose15.c:
     complete
     .text       start:0x020cf02c end:0x020cf078
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cf078 end:0x020cf0ac
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_PushConstThenOffset.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_PushConstThenOffset.c:
     complete
     .text       start:0x020cf0ac end:0x020cf14c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_GuardedPushOffset.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_GuardedPushOffset.c:
     complete
     .text       start:0x020cf14c end:0x020cf1fc
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiBurstWindup.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiBurstWindup.c:
     complete
     .text       start:0x020cf1fc end:0x020cf288
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_Burst.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_Burst.c:
     complete
     .text       start:0x020cf288 end:0x020cf398
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiLungeStrikeTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiLungeStrikeTick.c:
     complete
     .text       start:0x020cf398 end:0x020cf57c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiEnterRecoilWindup.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiEnterRecoilWindup.c:
     complete
     .text       start:0x020cf57c end:0x020cf5f8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_RecoilWindUpTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_RecoilWindUpTick.c:
     complete
     .text       start:0x020cf5f8 end:0x020cf6f0
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiHomingDriftTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiHomingDriftTick.c:
     complete
     .text       start:0x020cf6f0 end:0x020cf908
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SlamTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SlamTick.c:
     complete
     .text       start:0x020cf908 end:0x020cfa8c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiExpandingSweepTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiExpandingSweepTick.c:
     complete
     .text       start:0x020cfa8c end:0x020cfba4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiEnterEmitRing.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiEnterEmitRing.c:
     complete
     .text       start:0x020cfba4 end:0x020cfbec
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_EmitChildOnRing.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_EmitChildOnRing.c:
     complete
     .text       start:0x020cfbec end:0x020cfd64
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStep_QueueAction2OnAnimEnd_2.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020cfd64 end:0x020cfd98
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020cfd98 end:0x020cfe60
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStep_QueueAction0.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStep_QueueAction0.c:
     complete
     .text       start:0x020cfe60 end:0x020cfe80
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiEnterHold.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiEnterHold.c:
     complete
     .text       start:0x020cfe80 end:0x020cff48
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiHoldTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiHoldTick.c:
     complete
     .text       start:0x020cff48 end:0x020cffdc
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiEnterApproach.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiEnterApproach.c:
     complete
     .text       start:0x020cffdc end:0x020d001c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiApproachTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiApproachTick.c:
     complete
     .text       start:0x020d001c end:0x020d0144
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SetTwoVecsAndFlag.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SetTwoVecsAndFlag.c:
     complete
     .text       start:0x020d0144 end:0x020d0194
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_Companion_New.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_Companion_New.c:
     complete
     .text       start:0x020d0194 end:0x020d01c8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_CompanionSetup.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_CompanionSetup.c:
     complete
     .text       start:0x020d01c8 end:0x020d0324
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_Destroy_2.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_Destroy_2.c:
     complete
     .text       start:0x020d0324 end:0x020d0348
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_TickAndSyncModelXform.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d0348 end:0x020d0380
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_EventArmEmitterForward.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_EventArmEmitterForward.c:
     complete
     .text       start:0x020d0380 end:0x020d03f8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_Model_ReapplyTracks.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d03f8 end:0x020d0490
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0490 end:0x020d04dc
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_ScanNearbyEntitiesReact.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_ScanNearbyEntitiesReact.c:
     complete
     .text       start:0x020d04dc end:0x020d05c4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_stateInitClearSlots.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_stateInitClearSlots.c:
     complete
     .text       start:0x020d05c4 end:0x020d066c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_dispatchByStatusByte.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_dispatchByStatusByte.c:
     complete
     .text       start:0x020d066c end:0x020d06e4
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_SeedOffsetVecPublish.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_SeedOffsetVecPublish.c:
     complete
     .text       start:0x020d06e4 end:0x020d0728
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d0728 end:0x020d07d8
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d07d8 end:0x020d0810
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_EnterDash.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_EnterDash.c:
     complete
     .text       start:0x020d0810 end:0x020d0950
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiDashWindup.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiDashWindup.c:
     complete
     .text       start:0x020d0950 end:0x020d0994
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_DashTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_DashTick.c:
     complete
     .text       start:0x020d0994 end:0x020d0d1c
 
-src/overlays/enemies/ov233_enemy_3c/Ov233_AiScanReactTick.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/Ov233_AiScanReactTick.c:
     complete
     .text       start:0x020d0d1c end:0x020d0d74
 
-src/overlays/enemies/ov233_enemy_3c/data/ov233_strings_020d0e40.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/data/ov233_strings_020d0e40.c:
     complete
     .data       start:0x020d0e40 end:0x020d0e80
 
-src/overlays/enemies/ov233_enemy_3c/data/ov233_tables_020d0d74.c:
+src/overlays/enemies/ov233_enemy_stalwart_blade/data/ov233_tables_020d0d74.c:
     complete
     .rodata     start:0x020d0d74 end:0x020d0e24

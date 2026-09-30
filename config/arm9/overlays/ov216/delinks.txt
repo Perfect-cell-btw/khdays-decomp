@@ -4,210 +4,210 @@
     .data       start:0x020cec40 end:0x020cec60 kind:data align:32
     .bss        start:0x020cec60 end:0x020cec60 kind:bss align:32
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_RegisterEntityClass.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AllocActorWithName.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AllocActorWithName.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_SyncSubitemPoseToJoint.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_SyncSubitemPoseToJoint.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc0b0
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_initSubitemPathTarget.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_initSubitemPathTarget.c:
     complete
     .text       start:0x020cc0b0 end:0x020cc210
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_Construct.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_Construct.c:
     complete
     .text       start:0x020cc210 end:0x020cc5d8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_destroyObjectSlots.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_destroyObjectSlots.c:
     complete
     .text       start:0x020cc5d8 end:0x020cc630
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_resetChildAndDispatch.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_resetChildAndDispatch.c:
     complete
     .text       start:0x020cc630 end:0x020cc660
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_releaseHandles.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_releaseHandles.c:
     complete
     .text       start:0x020cc660 end:0x020cc6bc
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_HandleSpawnMessage.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc6bc end:0x020cc8f8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stSyncChildPauseFlag.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stSyncChildPauseFlag.c:
     complete
     .text       start:0x020cc8f8 end:0x020cc97c
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_initChildProjectile.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_initChildProjectile.c:
     complete
     .text       start:0x020cc97c end:0x020cc9f4
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_spawnFromTable.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_spawnFromTable.c:
     complete
     .text       start:0x020cc9f4 end:0x020cca6c
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stCreateRegistryEntry.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stCreateRegistryEntry.c:
     complete
     .text       start:0x020cca6c end:0x020ccac8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_ApplyHitEvent.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_ApplyHitEvent.c:
     complete
     .text       start:0x020ccac8 end:0x020ccdf8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_RequestSubState7IfNotCurrent.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020ccdf8 end:0x020cce24
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_RequestSubState8IfIdle.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020cce24 end:0x020cce54
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_ProcessHitTargets.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_ProcessHitTargets.c:
     complete
     .text       start:0x020cce54 end:0x020cd0f8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AiCountdownQueue6.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AiCountdownQueue6.c:
     complete
     .text       start:0x020cd0f8 end:0x020cd148
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_loadDefaultPoseVecs.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_loadDefaultPoseVecs.c:
     complete
     .text       start:0x020cd148 end:0x020cd1a8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stInitSlotsFlags6.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stInitSlotsFlags6.c:
     complete
     .text       start:0x020cd1a8 end:0x020cd260
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stDispatchByStateByte.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stDispatchByStateByte.c:
     complete
     .text       start:0x020cd260 end:0x020cd3e8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stUpdateMatrixAdvance.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stUpdateMatrixAdvance.c:
     complete
     .text       start:0x020cd3e8 end:0x020cd4cc
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020cd4cc end:0x020cd534
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stEnterClearAndPose.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stEnterClearAndPose.c:
     complete
     .text       start:0x020cd534 end:0x020cd5ac
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stSetFlags82ClearC.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stSetFlags82ClearC.c:
     complete
     .text       start:0x020cd5ac end:0x020cd678
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_Action4AfterTimerThreshold.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_Action4AfterTimerThreshold.c:
     complete
     .text       start:0x020cd678 end:0x020cd70c
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AiStep_QueueAction5OnAnimEnd.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AiStep_QueueAction5OnAnimEnd.c:
     complete
     .text       start:0x020cd70c end:0x020cd740
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AiEnterAim.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AiEnterAim.c:
     complete
     .text       start:0x020cd740 end:0x020cd798
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AimSubtractVecSetAngleThenGatedAdvance.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AimSubtractVecSetAngleThenGatedAdvance.c:
     complete
     .text       start:0x020cd798 end:0x020cd854
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stEnterRandDelay.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stEnterRandDelay.c:
     complete
     .text       start:0x020cd854 end:0x020cd8b8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_SteerTowardTarget.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_SteerTowardTarget.c:
     complete
     .text       start:0x020cd8b8 end:0x020cda10
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_ComputeAimAngleThenAction6.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_ComputeAimAngleThenAction6.c:
     complete
     .text       start:0x020cda10 end:0x020cdac8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stEnterSetFlag40.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stEnterSetFlag40.c:
     complete
     .text       start:0x020cdac8 end:0x020cdb3c
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_StepChargeLaunch.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_StepChargeLaunch.c:
     complete
     .text       start:0x020cdb3c end:0x020cdcf4
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_DashTick.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_DashTick.c:
     complete
     .text       start:0x020cdcf4 end:0x020cdde8
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_EnterAdvancePhase.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_EnterAdvancePhase.c:
     complete
     .text       start:0x020cdde8 end:0x020cdf28
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stActivateWhenReady.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stActivateWhenReady.c:
     complete
     .text       start:0x020cdf28 end:0x020cdf6c
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_StepBounceOffContact.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_StepBounceOffContact.c:
     complete
     .text       start:0x020cdf6c end:0x020ce5f0
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_TimerActionOnceThenAdvance.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_TimerActionOnceThenAdvance.c:
     complete
     .text       start:0x020ce5f0 end:0x020ce684
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stSetFlags86Effect4d.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stSetFlags86Effect4d.c:
     complete
     .text       start:0x020ce684 end:0x020ce748
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AiStep_QueueAction0.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AiStep_QueueAction0.c:
     complete
     .text       start:0x020ce748 end:0x020ce768
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_EnterGroundedState.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_EnterGroundedState.c:
     complete
     .text       start:0x020ce768 end:0x020ce860
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stTimerSetFlag80ClearBit0.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stTimerSetFlag80ClearBit0.c:
     complete
     .text       start:0x020ce860 end:0x020ce8f4
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce8f4 end:0x020ce928
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_AimAndFacePointTick.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_AimAndFacePointTick.c:
     complete
     .text       start:0x020ce928 end:0x020cea1c
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_createRegistryEntryStoreField.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_createRegistryEntryStoreField.c:
     complete
     .text       start:0x020cea1c end:0x020cea68
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_initEntrySlotAdvanceIndex.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_initEntrySlotAdvanceIndex.c:
     complete
     .text       start:0x020cea68 end:0x020cead4
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_tickActiveEntryCooldowns.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_tickActiveEntryCooldowns.c:
     complete
     .text       start:0x020cead4 end:0x020ceb30
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_stEnterInstallTickHandler.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_stEnterInstallTickHandler.c:
     complete
     .text       start:0x020ceb30 end:0x020cebe0
 
-src/overlays/enemies/ov216_enemy_2f/Ov216_EmptyTickHandler.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/Ov216_EmptyTickHandler.c:
     complete
     .text       start:0x020cebe0 end:0x020cebe4
 
-src/overlays/enemies/ov216_enemy_2f/data/ov216_strings_020cec40.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/data/ov216_strings_020cec40.c:
     complete
     .data       start:0x020cec40 end:0x020cec60
 
-src/overlays/enemies/ov216_enemy_2f/data/ov216_tables_020cebe4.c:
+src/overlays/enemies/ov216_enemy_scorching_sphere/data/ov216_tables_020cebe4.c:
     complete
     .rodata     start:0x020cebe4 end:0x020cec28

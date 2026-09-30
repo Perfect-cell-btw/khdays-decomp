@@ -4,242 +4,242 @@
     .data       start:0x020cec60 end:0x020ceca0 kind:data align:32
     .bss        start:0x020ceca0 end:0x020ceca0 kind:bss align:32
 
-src/overlays/enemies/ov151_enemy_13/Ov151_RegisterEntityClass.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov151_enemy_13/Ov151_CreateNamedEntity.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_Construct.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc24c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_DestroySubListAndArraySlotsThenNotify.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_DestroySubListAndArraySlotsThenNotify.c:
     complete
     .text       start:0x020cc24c end:0x020cc29c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_TickAndSyncMarkerSrt.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_TickAndSyncMarkerSrt.c:
     complete
     .text       start:0x020cc29c end:0x020cc2e4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_Model_SetTrack0.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_Model_SetTrack0.c:
     complete
     .text       start:0x020cc2e4 end:0x020cc314
 
-src/overlays/enemies/ov151_enemy_13/Ov151_HandleCommand.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_HandleCommand.c:
     complete
     .text       start:0x020cc314 end:0x020cc570
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc570 end:0x020cc5ac
 
-src/overlays/enemies/ov151_enemy_13/Ov151_NotifyPartsThenBase.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc5ac end:0x020cc5e8
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc5e8 end:0x020cc714
 
-src/overlays/enemies/ov151_enemy_13/Ov151_bindSubitemsByTypeId.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_bindSubitemsByTypeId.c:
     complete
     .text       start:0x020cc714 end:0x020cc7f8
 
-src/overlays/enemies/ov151_enemy_13/Ov151_RenderPerSphere.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_RenderPerSphere.c:
     complete
     .text       start:0x020cc7f8 end:0x020cc864
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateAttachSubitemInit.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateAttachSubitemInit.c:
     complete
     .text       start:0x020cc864 end:0x020cc90c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ChildTaskTeardown.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ChildTaskTeardown.c:
     complete
     .text       start:0x020cc90c end:0x020cc934
 
-src/overlays/enemies/ov151_enemy_13/Ov151_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020cc934 end:0x020cc954
 
-src/overlays/enemies/ov151_enemy_13/Ov151_Store4WordsAndSetHw60HighBit0.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_Store4WordsAndSetHw60HighBit0.c:
     complete
     .text       start:0x020cc954 end:0x020cc994
 
-src/overlays/enemies/ov151_enemy_13/Ov151_New.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_New.c:
     complete
     .text       start:0x020cc994 end:0x020cc9c8
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ConstructPet.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ConstructPet.c:
     complete
     .text       start:0x020cc9c8 end:0x020ccbc4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020ccbc4 end:0x020ccc04
 
-src/overlays/enemies/ov151_enemy_13/Ov151_CopyBlockToTwoNodes.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_CopyBlockToTwoNodes.c:
     complete
     .text       start:0x020ccc04 end:0x020ccc60
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiState_OnMessage.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiState_OnMessage.c:
     complete
     .text       start:0x020ccc60 end:0x020ccd14
 
-src/overlays/enemies/ov151_enemy_13/Ov151_BroadcastPositionMessage.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_BroadcastPositionMessage.c:
     complete
     .text       start:0x020ccd14 end:0x020cce34
 
-src/overlays/enemies/ov151_enemy_13/Ov151_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cce34 end:0x020cce80
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateInitClearSlots.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateInitClearSlots.c:
     complete
     .text       start:0x020cce80 end:0x020ccf28
 
-src/overlays/enemies/ov151_enemy_13/Ov151_dispatchByStatusByte.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_dispatchByStatusByte.c:
     complete
     .text       start:0x020ccf28 end:0x020ccfa0
 
-src/overlays/enemies/ov151_enemy_13/Ov151_HoverBob.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_HoverBob.c:
     complete
     .text       start:0x020ccfa0 end:0x020cd084
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ClearAndSetNodeFlags.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ClearAndSetNodeFlags.c:
     complete
     .text       start:0x020cd084 end:0x020cd118
 
-src/overlays/enemies/ov151_enemy_13/Ov151_CopyBlock394ThenAdvance.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_CopyBlock394ThenAdvance.c:
     complete
     .text       start:0x020cd118 end:0x020cd16c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ShotLaunch.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ShotLaunch.c:
     complete
     .text       start:0x020cd16c end:0x020cd3ac
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ShotTick.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ShotTick.c:
     complete
     .text       start:0x020cd3ac end:0x020cd8c4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020cd8c4 end:0x020cd910
 
-src/overlays/enemies/ov151_enemy_13/Ov151_StaggerFlipTick.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_StaggerFlipTick.c:
     complete
     .text       start:0x020cd910 end:0x020cdaac
 
-src/overlays/enemies/ov151_enemy_13/Ov151_EnterAimStateInstallCallbacks.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_EnterAimStateInstallCallbacks.c:
     complete
     .text       start:0x020cdaac end:0x020cdb80
 
-src/overlays/enemies/ov151_enemy_13/Ov151_DispatchSubStateByte.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_DispatchSubStateByte.c:
     complete
     .text       start:0x020cdb80 end:0x020cdd08
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020cdd08 end:0x020cdda0
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cdda0 end:0x020cde08
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cde08 end:0x020cde44
 
-src/overlays/enemies/ov151_enemy_13/Ov151_Action48Callback.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_Action48Callback.c:
     complete
     .text       start:0x020cde44 end:0x020cdf0c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020cdf0c end:0x020cdfd4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiStep_QueueAction2OnFlag48Clear.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiStep_QueueAction2OnFlag48Clear.c:
     complete
     .text       start:0x020cdfd4 end:0x020ce008
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateTimerRandomRange.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateTimerRandomRange.c:
     complete
     .text       start:0x020ce008 end:0x020ce088
 
-src/overlays/enemies/ov151_enemy_13/Ov151_TriggerWhenTargetInRange.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_TriggerWhenTargetInRange.c:
     complete
     .text       start:0x020ce088 end:0x020ce114
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiEnterApproachArc.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiEnterApproachArc.c:
     complete
     .text       start:0x020ce114 end:0x020ce2b0
 
-src/overlays/enemies/ov151_enemy_13/Ov151_PoseAdvanceUnlessField14AtLeast80.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_PoseAdvanceUnlessField14AtLeast80.c:
     complete
     .text       start:0x020ce2b0 end:0x020ce2f8
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateFixedAngleMove.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateFixedAngleMove.c:
     complete
     .text       start:0x020ce2f8 end:0x020ce3cc
 
-src/overlays/enemies/ov151_enemy_13/Ov151_StrafePick.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_StrafePick.c:
     complete
     .text       start:0x020ce3cc end:0x020ce4f0
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ProjectileAction_Enter.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ProjectileAction_Enter.c:
     complete
     .text       start:0x020ce4f0 end:0x020ce5a4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiTrackOffsetThenNotify.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiTrackOffsetThenNotify.c:
     complete
     .text       start:0x020ce5a4 end:0x020ce658
 
-src/overlays/enemies/ov151_enemy_13/Ov151_Pose3AimYawAdvance.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_Pose3AimYawAdvance.c:
     complete
     .text       start:0x020ce658 end:0x020ce6d8
 
-src/overlays/enemies/ov151_enemy_13/Ov151_AiTrackOffsetUntilLanded.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_AiTrackOffsetUntilLanded.c:
     complete
     .text       start:0x020ce6d8 end:0x020ce79c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020ce79c end:0x020ce864
 
-src/overlays/enemies/ov151_enemy_13/Ov151_BeginAimAtTarget.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_BeginAimAtTarget.c:
     complete
     .text       start:0x020ce864 end:0x020ce930
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateAnimCallbackEffect.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateAnimCallbackEffect.c:
     complete
     .text       start:0x020ce930 end:0x020ce9f4
 
-src/overlays/enemies/ov151_enemy_13/Ov151_SummonTick.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_SummonTick.c:
     complete
     .text       start:0x020ce9f4 end:0x020cea90
 
-src/overlays/enemies/ov151_enemy_13/Ov151_SummonWait.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_SummonWait.c:
     complete
     .text       start:0x020cea90 end:0x020ceb2c
 
-src/overlays/enemies/ov151_enemy_13/Ov151_stateToggleFlagsEffectClear.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/Ov151_stateToggleFlagsEffectClear.c:
     complete
     .text       start:0x020ceb2c end:0x020cebe0
 
-src/overlays/enemies/ov151_enemy_13/data/ov151_const_020cec6c.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/data/ov151_const_020cec6c.c:
     complete
     .data       start:0x020cec6c end:0x020cec70
 
-src/overlays/enemies/ov151_enemy_13/data/ov151_strings_020cec60.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/data/ov151_strings_020cec60.c:
     complete
     .data       start:0x020cec60 end:0x020cec6c
 
-src/overlays/enemies/ov151_enemy_13/data/ov151_strings_020cec70.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/data/ov151_strings_020cec70.c:
     complete
     .data       start:0x020cec70 end:0x020ceca0
 
-src/overlays/enemies/ov151_enemy_13/data/ov151_tables_020cebe0.c:
+src/overlays/enemies/ov151_enemy_bubble_beat/data/ov151_tables_020cebe0.c:
     complete
     .rodata     start:0x020cebe0 end:0x020cec40

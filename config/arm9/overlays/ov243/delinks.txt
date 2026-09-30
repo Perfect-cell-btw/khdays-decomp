@@ -4,114 +4,114 @@
     .data       start:0x020d4760 end:0x020d4780 kind:data align:32
     .bss        start:0x020d4780 end:0x020d4780 kind:bss align:32
 
-src/overlays/enemies/ov243_enemy_45/Ov243_RegisterEntityClass.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov243_enemy_45/Ov243_CreateNamedEntity.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov243_enemy_45/Ov243_JointCallback.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_JointCallback.c:
     complete
     .text       start:0x020d3844 end:0x020d393c
 
-src/overlays/enemies/ov243_enemy_45/Ov243_Construct.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_Construct.c:
     complete
     .text       start:0x020d393c end:0x020d3b18
 
-src/overlays/enemies/ov243_enemy_45/Ov243_ReleaseSubObjectsGuardedThenNotify.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_ReleaseSubObjectsGuardedThenNotify.c:
     complete
     .text       start:0x020d3b18 end:0x020d3b64
 
-src/overlays/enemies/ov243_enemy_45/Ov243_SetupAndCopyBlock.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_SetupAndCopyBlock.c:
     complete
     .text       start:0x020d3b64 end:0x020d3bac
 
-src/overlays/enemies/ov243_enemy_45/Ov243_Model_SetTrack0.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_Model_SetTrack0.c:
     complete
     .text       start:0x020d3bac end:0x020d3bdc
 
-src/overlays/enemies/ov243_enemy_45/Ov243_AllocCopyEntryTable.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_AllocCopyEntryTable.c:
     complete
     .text       start:0x020d3bdc end:0x020d3c48
 
-src/overlays/enemies/ov243_enemy_45/Ov243_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3c48 end:0x020d3c94
 
-src/overlays/enemies/ov243_enemy_45/Ov243_IsPathToTargetClear.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_IsPathToTargetClear.c:
     complete
     .text       start:0x020d3c94 end:0x020d3d78
 
-src/overlays/enemies/ov243_enemy_45/Ov243_FindTarget.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_FindTarget.c:
     complete
     .text       start:0x020d3d78 end:0x020d3f70
 
-src/overlays/enemies/ov243_enemy_45/Ov243_InitNode.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_InitNode.c:
     complete
     .text       start:0x020d3f70 end:0x020d3fe4
 
-src/overlays/enemies/ov243_enemy_45/Ov243_SubStateDispatch.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_SubStateDispatch.c:
     complete
     .text       start:0x020d3fe4 end:0x020d4198
 
-src/overlays/enemies/ov243_enemy_45/Ov243_UpdateFacing.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_UpdateFacing.c:
     complete
     .text       start:0x020d4198 end:0x020d4208
 
-src/overlays/enemies/ov243_enemy_45/Ov243_stSetDispFlags86.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_stSetDispFlags86.c:
     complete
     .text       start:0x020d4208 end:0x020d4248
 
-src/overlays/enemies/ov243_enemy_45/Ov243_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d4248 end:0x020d429c
 
-src/overlays/enemies/ov243_enemy_45/Ov243_stAdvanceState.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_stAdvanceState.c:
     complete
     .text       start:0x020d429c end:0x020d42c0
 
-src/overlays/enemies/ov243_enemy_45/Ov243_ArriveWaypoint.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_ArriveWaypoint.c:
     complete
     .text       start:0x020d42c0 end:0x020d4370
 
-src/overlays/enemies/ov243_enemy_45/Ov243_CountdownTimer2cThenPose6.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_CountdownTimer2cThenPose6.c:
     complete
     .text       start:0x020d4370 end:0x020d43c4
 
-src/overlays/enemies/ov243_enemy_45/Ov243_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d43c4 end:0x020d4418
 
-src/overlays/enemies/ov243_enemy_45/Ov243_AiWaypointWaitB.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_AiWaypointWaitB.c:
     complete
     .text       start:0x020d4418 end:0x020d444c
 
-src/overlays/enemies/ov243_enemy_45/Ov243_NextWaypoint.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_NextWaypoint.c:
     complete
     .text       start:0x020d444c end:0x020d44b4
 
-src/overlays/enemies/ov243_enemy_45/Ov243_ConfigSubStateThenAdvanceSlot_3.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_ConfigSubStateThenAdvanceSlot_3.c:
     complete
     .text       start:0x020d44b4 end:0x020d4504
 
-src/overlays/enemies/ov243_enemy_45/Ov243_WalkTick.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_WalkTick.c:
     complete
     .text       start:0x020d4504 end:0x020d46cc
 
-src/overlays/enemies/ov243_enemy_45/Ov243_ConfigSubStateThenAdvanceSlot_4.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_ConfigSubStateThenAdvanceSlot_4.c:
     complete
     .text       start:0x020d46cc end:0x020d4720
 
-src/overlays/enemies/ov243_enemy_45/Ov243_CallTargetHook.c:
+src/overlays/enemies/ov243_enemy_cogsworth/Ov243_CallTargetHook.c:
     complete
     .text       start:0x020d4720 end:0x020d4748
 
-src/overlays/enemies/ov243_enemy_45/data/ov243_pointers_020d4748.c:
+src/overlays/enemies/ov243_enemy_cogsworth/data/ov243_pointers_020d4748.c:
     complete
     .rodata     start:0x020d4748 end:0x020d4754
 
-src/overlays/enemies/ov243_enemy_45/data/ov243_strings_020d4760.c:
+src/overlays/enemies/ov243_enemy_cogsworth/data/ov243_strings_020d4760.c:
     complete
     .data       start:0x020d4760 end:0x020d4780

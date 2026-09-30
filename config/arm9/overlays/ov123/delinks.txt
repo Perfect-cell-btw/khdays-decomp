@@ -4,198 +4,198 @@
     .data       start:0x020ce300 end:0x020ce320 kind:data align:32
     .bss        start:0x020ce320 end:0x020ce320 kind:bss align:32
 
-src/overlays/enemies/ov123_enemy_05/Ov123_RegisterEntityClass.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov123_enemy_05/Ov123_CreateNamedEntity.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Construct.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc254
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cc254 end:0x020cc294
 
-src/overlays/enemies/ov123_enemy_05/func_ov123_020cc294.c:
+src/overlays/enemies/ov123_enemy_dire_plant/func_ov123_020cc294.c:
     complete
     .text       start:0x020cc294 end:0x020cc2a0
 
-src/overlays/enemies/ov123_enemy_05/Ov123_HandleMessage.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_HandleMessage.c:
     complete
     .text       start:0x020cc2a0 end:0x020cc33c
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc33c end:0x020cc364
 
-src/overlays/enemies/ov123_enemy_05/Ov123_NotifyPartsThenBase.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc364 end:0x020cc38c
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Model_SetTracks0And3.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cc38c end:0x020cc3dc
 
-src/overlays/enemies/ov123_enemy_05/Ov123_RefreshPose.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_RefreshPose.c:
     complete
     .text       start:0x020cc3dc end:0x020cc420
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Tick.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Tick.c:
     complete
     .text       start:0x020cc420 end:0x020cc518
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Slot38_SetFlag3C8.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Slot38_SetFlag3C8.c:
     complete
     .text       start:0x020cc518 end:0x020cc524
 
-src/overlays/enemies/ov123_enemy_05/Ov123_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc524 end:0x020cc570
 
-src/overlays/enemies/ov123_enemy_05/Ov123_OnHit.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_OnHit.c:
     complete
     .text       start:0x020cc570 end:0x020cc6e8
 
-src/overlays/enemies/ov123_enemy_05/Ov123_TryClaimReactionSlot.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_TryClaimReactionSlot.c:
     complete
     .text       start:0x020cc6e8 end:0x020cc718
 
-src/overlays/enemies/ov123_enemy_05/Ov123_InitNode.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_InitNode.c:
     complete
     .text       start:0x020cc718 end:0x020cc7e8
 
-src/overlays/enemies/ov123_enemy_05/Ov123_DispatchSubStateByte.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc7e8 end:0x020cc948
 
-src/overlays/enemies/ov123_enemy_05/Ov123_OrientationTick.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_OrientationTick.c:
     complete
     .text       start:0x020cc948 end:0x020cc9f0
 
-src/overlays/enemies/ov123_enemy_05/Ov123_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cc9f0 end:0x020cca58
 
-src/overlays/enemies/ov123_enemy_05/Ov123_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cca58 end:0x020cca94
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Action48Callback.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Action48Callback.c:
     complete
     .text       start:0x020cca94 end:0x020ccb34
 
-src/overlays/enemies/ov123_enemy_05/Ov123_AimTimerTick.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_AimTimerTick.c:
     complete
     .text       start:0x020ccb34 end:0x020ccbf8
 
-src/overlays/enemies/ov123_enemy_05/Ov123_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020ccbf8 end:0x020ccc2c
 
-src/overlays/enemies/ov123_enemy_05/Ov123_AiEnterAnim1WithTimer.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_AiEnterAnim1WithTimer.c:
     complete
     .text       start:0x020ccc2c end:0x020ccc84
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ApproachDecision.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ApproachDecision.c:
     complete
     .text       start:0x020ccc84 end:0x020cce74
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ResetAndInvokeMethodThenAdvance.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ResetAndInvokeMethodThenAdvance.c:
     complete
     .text       start:0x020cce74 end:0x020cceec
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ShotWindup.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ShotWindup.c:
     complete
     .text       start:0x020cceec end:0x020cd018
 
-src/overlays/enemies/ov123_enemy_05/Ov123_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd018 end:0x020cd04c
 
-src/overlays/enemies/ov123_enemy_05/Ov123_stDiv5Store.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_stDiv5Store.c:
     complete
     .text       start:0x020cd04c end:0x020cd0a8
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020cd0a8 end:0x020cd170
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cd170 end:0x020cd224
 
-src/overlays/enemies/ov123_enemy_05/Ov123_FindTarget.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_FindTarget.c:
     complete
     .text       start:0x020cd224 end:0x020cd484
 
-src/overlays/enemies/ov123_enemy_05/Ov123_StoreVec3ThenSetupAndSetHw60.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_StoreVec3ThenSetupAndSetHw60.c:
     complete
     .text       start:0x020cd484 end:0x020cd4cc
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Actor_New.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Actor_New.c:
     complete
     .text       start:0x020cd4cc end:0x020cd500
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ConstructShot.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ConstructShot.c:
     complete
     .text       start:0x020cd500 end:0x020cd6e8
 
-src/overlays/enemies/ov123_enemy_05/Ov123_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cd6e8 end:0x020cd728
 
-src/overlays/enemies/ov123_enemy_05/Ov123_TickAndSyncModelXform.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cd728 end:0x020cd760
 
-src/overlays/enemies/ov123_enemy_05/Ov123_AiState_OnMessage.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_AiState_OnMessage.c:
     complete
     .text       start:0x020cd760 end:0x020cd814
 
-src/overlays/enemies/ov123_enemy_05/Ov123_InvertVecOnceIfFlagSet.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_InvertVecOnceIfFlagSet.c:
     complete
     .text       start:0x020cd814 end:0x020cd870
 
-src/overlays/enemies/ov123_enemy_05/Ov123_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cd870 end:0x020cd8cc
 
-src/overlays/enemies/ov123_enemy_05/Ov123_stateInitClearSlots.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_stateInitClearSlots.c:
     complete
     .text       start:0x020cd8cc end:0x020cd974
 
-src/overlays/enemies/ov123_enemy_05/Ov123_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020cd974 end:0x020cd9ec
 
-src/overlays/enemies/ov123_enemy_05/Ov123_SetPoseVecFromStateOrConst.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_SetPoseVecFromStateOrConst.c:
     complete
     .text       start:0x020cd9ec end:0x020cda50
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ClearAndSetNodeFlags.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ClearAndSetNodeFlags.c:
     complete
     .text       start:0x020cda50 end:0x020cdae4
 
-src/overlays/enemies/ov123_enemy_05/Ov123_CopyVecSetSubState1IfHw60.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_CopyVecSetSubState1IfHw60.c:
     complete
     .text       start:0x020cdae4 end:0x020cdb38
 
-src/overlays/enemies/ov123_enemy_05/Ov123_SetupVecCopyThenAction4.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_SetupVecCopyThenAction4.c:
     complete
     .text       start:0x020cdb38 end:0x020cdbf8
 
-src/overlays/enemies/ov123_enemy_05/Ov123_ShotFlightTick.c:
+src/overlays/enemies/ov123_enemy_dire_plant/Ov123_ShotFlightTick.c:
     complete
     .text       start:0x020cdbf8 end:0x020ce298
 
-src/overlays/enemies/ov123_enemy_05/data/ov123_strings_020ce300.c:
+src/overlays/enemies/ov123_enemy_dire_plant/data/ov123_strings_020ce300.c:
     complete
     .data       start:0x020ce300 end:0x020ce320
 
-src/overlays/enemies/ov123_enemy_05/data/ov123_tables_020ce298.c:
+src/overlays/enemies/ov123_enemy_dire_plant/data/ov123_tables_020ce298.c:
     complete
     .rodata     start:0x020ce298 end:0x020ce2f0

@@ -3,78 +3,78 @@
     .data       start:0x020cc760 end:0x020cc780 kind:data align:32
     .bss        start:0x020cc780 end:0x020cc780 kind:bss align:32
 
-src/overlays/enemies/ov301_enemy_75/Ov301_RegisterEntityClass.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov301_enemy_75/Ov301_CreateNamedEntity.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov301_enemy_75/Ov301_InitObject.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_InitObject.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc15c
 
-src/overlays/enemies/ov301_enemy_75/Ov301_OnDespawn.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_OnDespawn.c:
     complete
     .text       start:0x020cc15c end:0x020cc178
 
-src/overlays/enemies/ov301_enemy_75/Ov301_PropagateBlockToLinkedNodes.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_PropagateBlockToLinkedNodes.c:
     complete
     .text       start:0x020cc178 end:0x020cc1d8
 
-src/overlays/enemies/ov301_enemy_75/func_ov301_020cc1d8.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/func_ov301_020cc1d8.c:
     complete
     .text       start:0x020cc1d8 end:0x020cc1e4
 
-src/overlays/enemies/ov301_enemy_75/func_ov301_020cc1e4.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/func_ov301_020cc1e4.c:
     complete
     .text       start:0x020cc1e4 end:0x020cc1f0
 
-src/overlays/enemies/ov301_enemy_75/Ov301_SetSubitemStatesAndConfig.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_SetSubitemStatesAndConfig.c:
     complete
     .text       start:0x020cc1f0 end:0x020cc240
 
-src/overlays/enemies/ov301_enemy_75/Ov301_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020cc240 end:0x020cc28c
 
-src/overlays/enemies/ov301_enemy_75/Ov301_OnHitQueueAction3.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_OnHitQueueAction3.c:
     complete
     .text       start:0x020cc28c end:0x020cc2a4
 
-src/overlays/enemies/ov301_enemy_75/Ov301_InitStateSlots.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_InitStateSlots.c:
     complete
     .text       start:0x020cc2a4 end:0x020cc338
 
-src/overlays/enemies/ov301_enemy_75/Ov301_EnemyEnterSubState.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_EnemyEnterSubState.c:
     complete
     .text       start:0x020cc338 end:0x020cc458
 
-src/overlays/enemies/ov301_enemy_75/Ov301_EnemyMoveTick.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_EnemyMoveTick.c:
     complete
     .text       start:0x020cc458 end:0x020cc63c
 
-src/overlays/enemies/ov301_enemy_75/Ov301_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cc63c end:0x020cc6a4
 
-src/overlays/enemies/ov301_enemy_75/Ov301_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cc6a4 end:0x020cc6f8
 
-src/overlays/enemies/ov301_enemy_75/Ov301_AiSlot1NoOp.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_AiSlot1NoOp.c:
     complete
     .text       start:0x020cc6f8 end:0x020cc6fc
 
-src/overlays/enemies/ov301_enemy_75/Ov301_SetupNodeCallback.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_SetupNodeCallback.c:
     complete
     .text       start:0x020cc6fc end:0x020cc748
 
-src/overlays/enemies/ov301_enemy_75/Ov301_NodeCallbackIdleStep.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/Ov301_NodeCallbackIdleStep.c:
     complete
     .text       start:0x020cc748 end:0x020cc74c
 
-src/overlays/enemies/ov301_enemy_75/data/ov301_strings_020cc760.c:
+src/overlays/enemies/ov301_enemy_tt_leaf/data/ov301_strings_020cc760.c:
     complete
     .data       start:0x020cc760 end:0x020cc780

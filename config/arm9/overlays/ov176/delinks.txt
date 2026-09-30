@@ -4,230 +4,230 @@
     .data       start:0x020d26e0 end:0x020d2700 kind:data align:32
     .bss        start:0x020d2700 end:0x020d2700 kind:bss align:32
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_RegisterEntityClass.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_CreateNamedEntity.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_OrientPartAlongDirection.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc60
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_Construct.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_Construct.c:
     complete
     .text       start:0x020cfc60 end:0x020cff7c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cff7c end:0x020cffbc
 
-src/overlays/enemies/ov176_enemy_1e_2/func_ov176_020cffbc.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/func_ov176_020cffbc.c:
     complete
     .text       start:0x020cffbc end:0x020cffc8
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_ForwardEventToChild.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_ForwardEventToChild.c:
     complete
     .text       start:0x020cffc8 end:0x020cfff0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_NotifyPartThenBase.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_NotifyPartThenBase.c:
     complete
     .text       start:0x020cfff0 end:0x020d0018
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_HandleSpawnMessage.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_HandleSpawnMessage.c:
     complete
     .text       start:0x020d0018 end:0x020d0234
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_Model_SetTrack0.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_Model_SetTrack0.c:
     complete
     .text       start:0x020d0234 end:0x020d0264
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d0264 end:0x020d039c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_registryCreateEntry.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_registryCreateEntry.c:
     complete
     .text       start:0x020d039c end:0x020d03f8
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_OnHit.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_OnHit.c:
     complete
     .text       start:0x020d03f8 end:0x020d06b0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d06b0 end:0x020d06dc
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_FaceTargetGetClearance.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d06dc end:0x020d0774
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_IsChildInactive.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_IsChildInactive.c:
     complete
     .text       start:0x020d0774 end:0x020d07b4
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateInitTransformSlots.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateInitTransformSlots.c:
     complete
     .text       start:0x020d07b4 end:0x020d08a0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020d08a0 end:0x020d0a8c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stDivStoreField.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stDivStoreField.c:
     complete
     .text       start:0x020d0a8c end:0x020d0b2c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0b2c end:0x020d0b94
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d0b94 end:0x020d0c18
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d0c18 end:0x020d0ce4
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d0ce4 end:0x020d0dbc
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d0dbc end:0x020d0df0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateRandomInitFull.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateRandomInitFull.c:
     complete
     .text       start:0x020d0df0 end:0x020d0e7c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_OrbitTick.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_OrbitTick.c:
     complete
     .text       start:0x020d0e7c end:0x020d11fc
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020d11fc end:0x020d1240
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_HoverBobTick.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_HoverBobTick.c:
     complete
     .text       start:0x020d1240 end:0x020d1438
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AiStep_StartTag1.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AiStep_StartTag1.c:
     complete
     .text       start:0x020d1438 end:0x020d1474
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_HoverApproachTick.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_HoverApproachTick.c:
     complete
     .text       start:0x020d1474 end:0x020d1640
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateRandomDirValue.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateRandomDirValue.c:
     complete
     .text       start:0x020d1640 end:0x020d16b0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_CircleStrafeTarget.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_CircleStrafeTarget.c:
     complete
     .text       start:0x020d16b0 end:0x020d182c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d182c end:0x020d18c8
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_HoverHoldTick.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_HoverHoldTick.c:
     complete
     .text       start:0x020d18c8 end:0x020d1a94
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1a94 end:0x020d1ac8
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1ac8 end:0x020d1afc
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d1afc end:0x020d1bf0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AiEndWithUpdate.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AiEndWithUpdate.c:
     complete
     .text       start:0x020d1bf0 end:0x020d1cdc
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d1cdc end:0x020d1d7c
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateTimerToggleFlags.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d1d7c end:0x020d1e10
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d1e10 end:0x020d1e50
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_Actor_New.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_Actor_New.c:
     complete
     .text       start:0x020d1e50 end:0x020d1e84
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_SubObject_ConstructB.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_SubObject_ConstructB.c:
     complete
     .text       start:0x020d1e84 end:0x020d1fe4
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_OnDespawn.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_OnDespawn.c:
     complete
     .text       start:0x020d1fe4 end:0x020d2000
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_TickAndSyncModelXform.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d2000 end:0x020d2038
 
-src/overlays/enemies/ov176_enemy_1e_2/func_ov176_020d2038.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/func_ov176_020d2038.c:
     complete
     .text       start:0x020d2038 end:0x020d2044
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_OnHitMessage.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_OnHitMessage.c:
     complete
     .text       start:0x020d2044 end:0x020d20cc
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d20cc end:0x020d2118
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_stateInitClearSlots.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_stateInitClearSlots.c:
     complete
     .text       start:0x020d2118 end:0x020d21c0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_dispatchByStatusByte.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_dispatchByStatusByte.c:
     complete
     .text       start:0x020d21c0 end:0x020d2238
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_SetPoseVecOrTransform.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_SetPoseVecOrTransform.c:
     complete
     .text       start:0x020d2238 end:0x020d22c0
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d22c0 end:0x020d2370
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d2370 end:0x020d23a8
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_Action5ThenScaleVec.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_Action5ThenScaleVec.c:
     complete
     .text       start:0x020d23a8 end:0x020d2484
 
-src/overlays/enemies/ov176_enemy_1e_2/Ov176_DashTick.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/Ov176_DashTick.c:
     complete
     .text       start:0x020d2484 end:0x020d26b8
 
-src/overlays/enemies/ov176_enemy_1e_2/data/ov176_strings_020d26e0.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/data/ov176_strings_020d26e0.c:
     complete
     .data       start:0x020d26e0 end:0x020d2700
 
-src/overlays/enemies/ov176_enemy_1e_2/data/ov176_tables_020d26b8.c:
+src/overlays/enemies/ov176_enemy_striped_aria_2/data/ov176_tables_020d26b8.c:
     complete
     .rodata     start:0x020d26b8 end:0x020d26c8

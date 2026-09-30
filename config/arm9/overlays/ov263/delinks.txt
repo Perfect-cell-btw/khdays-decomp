@@ -4,275 +4,275 @@
     .data       start:0x020d36c0 end:0x020d3720 kind:data align:32
     .bss        start:0x020d3720 end:0x020d3720 kind:bss align:32
 
-src/overlays/enemies/ov263_enemy_57/Ov263_RegisterEntityClass.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov263_enemy_57/Ov263_CreateNamedEntity.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Construct.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Construct.c:
     complete
     .text       start:0x020cfc08 end:0x020d009c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Destroy.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Destroy.c:
     complete
     .text       start:0x020d009c end:0x020d00f4
 
-src/overlays/enemies/ov263_enemy_57/Ov263_TickWithChildRefresh.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_TickWithChildRefresh.c:
     complete
     .text       start:0x020d00f4 end:0x020d0118
 
-src/overlays/enemies/ov263_enemy_57/Ov263_RebindClip.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_RebindClip.c:
     complete
     .text       start:0x020d0118 end:0x020d019c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_OnEffectMessage.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_OnEffectMessage.c:
     complete
     .text       start:0x020d019c end:0x020d02d0
 
-src/overlays/enemies/ov263_enemy_57/Ov263_ForwardEventToChildren.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_ForwardEventToChildren.c:
     complete
     .text       start:0x020d02d0 end:0x020d030c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_NotifyPartsThenBase.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d030c end:0x020d0348
 
-src/overlays/enemies/ov263_enemy_57/Ov263_DrawPrePass.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_DrawPrePass.c:
     complete
     .text       start:0x020d0348 end:0x020d05c4
 
-src/overlays/enemies/ov263_enemy_57/Ov263_CreateAiTask.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_CreateAiTask.c:
     complete
     .text       start:0x020d05c4 end:0x020d0628
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AcquireTarget.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AcquireTarget.c:
     complete
     .text       start:0x020d0628 end:0x020d06bc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_rotateVecByOwnerYaw.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_rotateVecByOwnerYaw.c:
     complete
     .text       start:0x020d06bc end:0x020d0750
 
-src/overlays/enemies/ov263_enemy_57/Ov263_ProbeGround.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_ProbeGround.c:
     complete
     .text       start:0x020d0750 end:0x020d0890
 
-src/overlays/enemies/ov263_enemy_57/Ov263_ProbeSpawnPoint.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_ProbeSpawnPoint.c:
     complete
     .text       start:0x020d0890 end:0x020d09a0
 
-src/overlays/enemies/ov263_enemy_57/Ov263_FilterHit.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_FilterHit.c:
     complete
     .text       start:0x020d09a0 end:0x020d0c00
     .rodata     start:0x020d3694 end:0x020d3698
 
-src/overlays/enemies/ov263_enemy_57/Ov263_ChooseAttack.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_ChooseAttack.c:
     complete
     .text       start:0x020d0c00 end:0x020d0cf4
 
-src/overlays/enemies/ov263_enemy_57/Ov263_PlayPoseAnims.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_PlayPoseAnims.c:
     complete
     .text       start:0x020d0cf4 end:0x020d0d3c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_TryRequestState13.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_TryRequestState13.c:
     complete
     .text       start:0x020d0d3c end:0x020d0d78
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiStateInit.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiStateInit.c:
     complete
     .text       start:0x020d0d78 end:0x020d0e74
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterStandby.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterStandby.c:
     complete
     .text       start:0x020d0e74 end:0x020d0edc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d0edc end:0x020d0f14
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiDispatchAction.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiDispatchAction.c:
     complete
     .text       start:0x020d0f14 end:0x020d1170
 
-src/overlays/enemies/ov263_enemy_57/Ov263_ChaseTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_ChaseTick.c:
     complete
     .text       start:0x020d1170 end:0x020d13c8
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterWait.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterWait.c:
     complete
     .text       start:0x020d13c8 end:0x020d146c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiWaitTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiWaitTick.c:
     complete
     .text       start:0x020d146c end:0x020d14ec
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiFollowUntilAnimEnd.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiFollowUntilAnimEnd.c:
     complete
     .text       start:0x020d14ec end:0x020d155c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterIdle.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterIdle.c:
     complete
     .text       start:0x020d155c end:0x020d1580
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiIdleTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiIdleTick.c:
     complete
     .text       start:0x020d1580 end:0x020d1708
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterStrafe.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterStrafe.c:
     complete
     .text       start:0x020d1708 end:0x020d18f0
 
-src/overlays/enemies/ov263_enemy_57/Ov263_UpdateAimPoint.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_UpdateAimPoint.c:
     complete
     .text       start:0x020d18f0 end:0x020d199c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiDiveTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiDiveTick.c:
     complete
     .text       start:0x020d199c end:0x020d1c5c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Reaction_BiasFramesAndDispatch.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Reaction_BiasFramesAndDispatch.c:
     complete
     .text       start:0x020d1c5c end:0x020d1d6c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiFollowThenChooseAttack.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiFollowThenChooseAttack.c:
     complete
     .text       start:0x020d1d6c end:0x020d1e34
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterFireVolley.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterFireVolley.c:
     complete
     .text       start:0x020d1e34 end:0x020d1e70
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiFireVolleyTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiFireVolleyTick.c:
     complete
     .text       start:0x020d1e70 end:0x020d20cc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterLunge.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterLunge.c:
     complete
     .text       start:0x020d20cc end:0x020d2110
 
-src/overlays/enemies/ov263_enemy_57/Ov263_LungeTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_LungeTick.c:
     complete
     .text       start:0x020d2110 end:0x020d237c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterLungeB.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterLungeB.c:
     complete
     .text       start:0x020d237c end:0x020d23b4
 
-src/overlays/enemies/ov263_enemy_57/Ov263_LungeTick_2.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_LungeTick_2.c:
     complete
     .text       start:0x020d23b4 end:0x020d2600
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterSlam.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterSlam.c:
     complete
     .text       start:0x020d2600 end:0x020d2634
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiSlamWindupTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiSlamWindupTick.c:
     complete
     .text       start:0x020d2634 end:0x020d2750
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiSlamDashTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiSlamDashTick.c:
     complete
     .text       start:0x020d2750 end:0x020d2890
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiFollowThenQueueAction9.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiFollowThenQueueAction9.c:
     complete
     .text       start:0x020d2890 end:0x020d2900
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterPoseSequence.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterPoseSequence.c:
     complete
     .text       start:0x020d2900 end:0x020d292c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiPoseSequenceTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiPoseSequenceTick.c:
     complete
     .text       start:0x020d292c end:0x020d2a04
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterPoseSequenceB.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterPoseSequenceB.c:
     complete
     .text       start:0x020d2a04 end:0x020d2a58
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiPoseSequenceTickB.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiPoseSequenceTickB.c:
     complete
     .text       start:0x020d2a58 end:0x020d2b04
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterAim.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterAim.c:
     complete
     .text       start:0x020d2b04 end:0x020d2b34
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d2b34 end:0x020d2bfc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiEnterHold.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiEnterHold.c:
     complete
     .text       start:0x020d2bfc end:0x020d2cac
 
-src/overlays/enemies/ov263_enemy_57/Ov263_AiHoldTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_AiHoldTick.c:
     complete
     .text       start:0x020d2cac end:0x020d2d40
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d2d40 end:0x020d2d88
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_New.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_New.c:
     complete
     .text       start:0x020d2d88 end:0x020d2dbc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_ItemConstruct.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_ItemConstruct.c:
     complete
     .text       start:0x020d2dbc end:0x020d2ef0
 
-src/overlays/enemies/ov263_enemy_57/Ov263_OnDespawn.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_OnDespawn.c:
     complete
     .text       start:0x020d2ef0 end:0x020d2f0c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_SetField1cIfFlags1And10.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_SetField1cIfFlags1And10.c:
     complete
     .text       start:0x020d2f0c end:0x020d2f44
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_CreateAiTask.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_CreateAiTask.c:
     complete
     .text       start:0x020d2f44 end:0x020d2f9c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_stateInitClearSlots.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_stateInitClearSlots.c:
     complete
     .text       start:0x020d2f9c end:0x020d3044
 
-src/overlays/enemies/ov263_enemy_57/Ov263_dispatchByStatusByte.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_dispatchByStatusByte.c:
     complete
     .text       start:0x020d3044 end:0x020d30bc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_ApplyOrientation.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_ApplyOrientation.c:
     complete
     .text       start:0x020d30bc end:0x020d311c
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_AiEnterWait.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_AiEnterWait.c:
     complete
     .text       start:0x020d311c end:0x020d31a4
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_AiWaitActive.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_AiWaitActive.c:
     complete
     .text       start:0x020d31a4 end:0x020d31dc
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_AiEnterCharge.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_AiEnterCharge.c:
     complete
     .text       start:0x020d31dc end:0x020d32d0
 
-src/overlays/enemies/ov263_enemy_57/Ov263_Item_AiChargeTick.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/Ov263_Item_AiChargeTick.c:
     complete
     .text       start:0x020d32d0 end:0x020d3674
 
-src/overlays/enemies/ov263_enemy_57/data/ov263_strings_020d36c0.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/data/ov263_strings_020d36c0.c:
     complete
     .data       start:0x020d36c0 end:0x020d3720
 
-src/overlays/enemies/ov263_enemy_57/data/ov263_tables_020d3674.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/data/ov263_tables_020d3674.c:
     complete
     .rodata     start:0x020d3674 end:0x020d3694
 
-src/overlays/enemies/ov263_enemy_57/data/ov263_tables_020d3698.c:
+src/overlays/enemies/ov263_enemy_sky_grappler/data/ov263_tables_020d3698.c:
     complete
     .rodata     start:0x020d3698 end:0x020d36bc

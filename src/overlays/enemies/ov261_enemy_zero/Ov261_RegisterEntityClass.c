@@ -1,0 +1,10 @@
+/* Registers Ov261_CreateNamedEntity as the factory for enemy class 0x55 (Zero) with the shared
+ * enemy framework. */
+#include "game/enemy_id.h"
+
+extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
+extern void Ov261_CreateNamedEntity(int);
+
+void Ov261_RegisterEntityClass(void) {
+    Ov107_RegisterHandler(ENEMY_ZERO, Ov261_CreateNamedEntity);
+}

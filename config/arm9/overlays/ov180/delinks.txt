@@ -4,258 +4,258 @@
     .data       start:0x020d6720 end:0x020d6740 kind:data align:32
     .bss        start:0x020d6740 end:0x020d6740 kind:bss align:32
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_RegisterEntityClass.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_CreateNamedEntity.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_OrientPartAlongDirection.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_OrientPartAlongDirection.c:
     complete
     .text       start:0x020d3844 end:0x020d38a0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_Construct.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_Construct.c:
     complete
     .text       start:0x020d38a0 end:0x020d3bc4
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020d3bc4 end:0x020d3c04
 
-src/overlays/enemies/ov180_enemy_1f_3/func_ov180_020d3c04.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/func_ov180_020d3c04.c:
     complete
     .text       start:0x020d3c04 end:0x020d3c10
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ForwardEventToChild.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ForwardEventToChild.c:
     complete
     .text       start:0x020d3c10 end:0x020d3c38
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_NotifyPartThenBase.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_NotifyPartThenBase.c:
     complete
     .text       start:0x020d3c38 end:0x020d3c60
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_HandleSpawnMessage.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_HandleSpawnMessage.c:
     complete
     .text       start:0x020d3c60 end:0x020d3f08
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_Model_SetTrack0.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_Model_SetTrack0.c:
     complete
     .text       start:0x020d3f08 end:0x020d3f38
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_Tick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_Tick.c:
     complete
     .text       start:0x020d3f38 end:0x020d40c8
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_registryCreateEntry.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_registryCreateEntry.c:
     complete
     .text       start:0x020d40c8 end:0x020d4124
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_OnHit.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_OnHit.c:
     complete
     .text       start:0x020d4124 end:0x020d4348
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d4348 end:0x020d4374
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_FaceTargetGetClearance.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d4374 end:0x020d440c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_IsChildInactive.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_IsChildInactive.c:
     complete
     .text       start:0x020d440c end:0x020d444c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateInitTransformSlots.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateInitTransformSlots.c:
     complete
     .text       start:0x020d444c end:0x020d4538
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ov115_DispatchSubStateByte.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ov115_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4538 end:0x020d4738
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stDivStoreField.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stDivStoreField.c:
     complete
     .text       start:0x020d4738 end:0x020d47d8
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d47d8 end:0x020d4840
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d4840 end:0x020d48c4
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d48c4 end:0x020d4990
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d4990 end:0x020d4a68
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d4a68 end:0x020d4a9c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateRandomInitFull.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateRandomInitFull.c:
     complete
     .text       start:0x020d4a9c end:0x020d4b28
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_OrbitTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_OrbitTick.c:
     complete
     .text       start:0x020d4b28 end:0x020d4f1c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiEnterHover.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiEnterHover.c:
     complete
     .text       start:0x020d4f1c end:0x020d4f60
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_HoverBobTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_HoverBobTick.c:
     complete
     .text       start:0x020d4f60 end:0x020d51b8
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiStep_StartTag1.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiStep_StartTag1.c:
     complete
     .text       start:0x020d51b8 end:0x020d51f4
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_StalkTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_StalkTick.c:
     complete
     .text       start:0x020d51f4 end:0x020d53d8
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateRandomDirValue.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateRandomDirValue.c:
     complete
     .text       start:0x020d53d8 end:0x020d5448
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_CircleTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_CircleTick.c:
     complete
     .text       start:0x020d5448 end:0x020d5630
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_BeginGuardPose.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_BeginGuardPose.c:
     complete
     .text       start:0x020d5630 end:0x020d5708
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_TrackTargetUntilCharge.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_TrackTargetUntilCharge.c:
     complete
     .text       start:0x020d5708 end:0x020d582c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_DashTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_DashTick.c:
     complete
     .text       start:0x020d582c end:0x020d5a04
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d5a04 end:0x020d5aa0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ApproachTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ApproachTick.c:
     complete
     .text       start:0x020d5aa0 end:0x020d5bc0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiEnterAnim3WithPartReset.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiEnterAnim3WithPartReset.c:
     complete
     .text       start:0x020d5bc0 end:0x020d5c00
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5c00 end:0x020d5c34
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_HoverTick.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_HoverTick.c:
     complete
     .text       start:0x020d5c34 end:0x020d5d70
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiEndWithUpdate.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiEndWithUpdate.c:
     complete
     .text       start:0x020d5d70 end:0x020d5e5c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d5e5c end:0x020d5efc
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateTimerToggleFlags.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d5efc end:0x020d5f90
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_RunSetupThenSetHw60HighBit0.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_RunSetupThenSetHw60HighBit0.c:
     complete
     .text       start:0x020d5f90 end:0x020d5fc0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ForwardToAiTaskWhenReady.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020d5fc0 end:0x020d5fdc
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AllocLinkChild390.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AllocLinkChild390.c:
     complete
     .text       start:0x020d5fdc end:0x020d6010
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_Construct_2.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_Construct_2.c:
     complete
     .text       start:0x020d6010 end:0x020d60e4
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_OnDespawn.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_OnDespawn.c:
     complete
     .text       start:0x020d60e4 end:0x020d6100
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ConfigureSubObjectThenForward.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ConfigureSubObjectThenForward.c:
     complete
     .text       start:0x020d6100 end:0x020d6128
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_HandleMessage.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_HandleMessage.c:
     complete
     .text       start:0x020d6128 end:0x020d6198
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_Model_ReapplyTracks.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d6198 end:0x020d6230
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ReleaseField38cUnlessState1ThenAdvance.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ReleaseField38cUnlessState1ThenAdvance.c:
     complete
     .text       start:0x020d6230 end:0x020d6268
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_SetTimerA000.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_SetTimerA000.c:
     complete
     .text       start:0x020d6268 end:0x020d6274
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d6274 end:0x020d62d0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_stateInitClearSlots.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_stateInitClearSlots.c:
     complete
     .text       start:0x020d62d0 end:0x020d6378
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d6378 end:0x020d63f0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiSlot2NoOp.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiSlot2NoOp.c:
     complete
     .text       start:0x020d63f0 end:0x020d63f4
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_ToggleStanceFlags.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_ToggleStanceFlags.c:
     complete
     .text       start:0x020d63f4 end:0x020d6460
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d6460 end:0x020d6498
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_SettleEnter.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_SettleEnter.c:
     complete
     .text       start:0x020d6498 end:0x020d655c
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_SettleHold.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_SettleHold.c:
     complete
     .text       start:0x020d655c end:0x020d66c0
 
-src/overlays/enemies/ov180_enemy_1f_3/Ov180_AiStep_QueueAction0OnAnimEnd.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/Ov180_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d66c0 end:0x020d66f0
 
-src/overlays/enemies/ov180_enemy_1f_3/data/ov180_strings_020d6720.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/data/ov180_strings_020d6720.c:
     complete
     .data       start:0x020d6720 end:0x020d6740
 
-src/overlays/enemies/ov180_enemy_1f_3/data/ov180_tables_020d66f0.c:
+src/overlays/enemies/ov180_enemy_pink_concerto_3/data/ov180_tables_020d66f0.c:
     complete
     .rodata     start:0x020d66f0 end:0x020d670c

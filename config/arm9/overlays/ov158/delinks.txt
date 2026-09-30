@@ -4,266 +4,266 @@
     .data       start:0x020cf580 end:0x020cf5a0 kind:data align:32
     .bss        start:0x020cf5a0 end:0x020cf5a0 kind:bss align:32
 
-src/overlays/enemies/ov158_enemy_16/Ov158_RegisterEntityClass.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov158_enemy_16/Ov158_CreateNamedEntity.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov158_enemy_16/Ov158_Construct.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc244
 
-src/overlays/enemies/ov158_enemy_16/Ov158_Destroy.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_Destroy.c:
     complete
     .text       start:0x020cc244 end:0x020cc28c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_RebindClip.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_RebindClip.c:
     complete
     .text       start:0x020cc28c end:0x020cc2d8
 
-src/overlays/enemies/ov158_enemy_16/Ov158_RetuneRigRearmEmitter.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_RetuneRigRearmEmitter.c:
     complete
     .text       start:0x020cc2d8 end:0x020cc394
 
-src/overlays/enemies/ov158_enemy_16/Ov158_HandleSpawnMessage.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc394 end:0x020cc548
 
-src/overlays/enemies/ov158_enemy_16/Ov158_ForwardEventToChild.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_ForwardEventToChild.c:
     complete
     .text       start:0x020cc548 end:0x020cc570
 
-src/overlays/enemies/ov158_enemy_16/Ov158_NotifyPartThenBase.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc570 end:0x020cc598
 
-src/overlays/enemies/ov158_enemy_16/Ov158_TickHandler.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_TickHandler.c:
     complete
     .text       start:0x020cc598 end:0x020cc734
 
-src/overlays/enemies/ov158_enemy_16/Ov158_stCreateRegistryEntry.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_stCreateRegistryEntry.c:
     complete
     .text       start:0x020cc734 end:0x020cc790
 
-src/overlays/enemies/ov158_enemy_16/Ov158_HandleHit.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_HandleHit.c:
     complete
     .text       start:0x020cc790 end:0x020cc9a4
 
-src/overlays/enemies/ov158_enemy_16/Ov158_RequestState8.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_RequestState8.c:
     complete
     .text       start:0x020cc9a4 end:0x020cc9e8
 
-src/overlays/enemies/ov158_enemy_16/Ov158_PickApproachDir.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_PickApproachDir.c:
     complete
     .text       start:0x020cc9e8 end:0x020ccb84
 
-src/overlays/enemies/ov158_enemy_16/Ov158_InitChase.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_InitChase.c:
     complete
     .text       start:0x020ccb84 end:0x020ccc68
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiDispatchAction.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiDispatchAction.c:
     complete
     .text       start:0x020ccc68 end:0x020ccdf0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020ccdf0 end:0x020ccea4
 
-src/overlays/enemies/ov158_enemy_16/Ov158_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccea4 end:0x020ccf0c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_PickRandomOffsetThenAdvanceSlot.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_PickRandomOffsetThenAdvanceSlot.c:
     complete
     .text       start:0x020ccf0c end:0x020ccf74
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SpawnEffect48ReconfigureFlags.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SpawnEffect48ReconfigureFlags.c:
     complete
     .text       start:0x020ccf74 end:0x020cd03c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_Reaction_ChargeThenAim.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_Reaction_ChargeThenAim.c:
     complete
     .text       start:0x020cd03c end:0x020cd104
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd104 end:0x020cd138
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiEnterReach.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiEnterReach.c:
     complete
     .text       start:0x020cd138 end:0x020cd174
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiMeasureTarget.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiMeasureTarget.c:
     complete
     .text       start:0x020cd174 end:0x020cd200
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cd200 end:0x020cd2d0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_StartLeapMotion.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_StartLeapMotion.c:
     complete
     .text       start:0x020cd2d0 end:0x020cd40c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_StepLeapMotion.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_StepLeapMotion.c:
     complete
     .text       start:0x020cd40c end:0x020cd450
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiJumpRiseTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiJumpRiseTick.c:
     complete
     .text       start:0x020cd450 end:0x020cd50c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiJumpFallTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiJumpFallTick.c:
     complete
     .text       start:0x020cd50c end:0x020cd59c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiLandPickAction.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiLandPickAction.c:
     complete
     .text       start:0x020cd59c end:0x020cd608
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiEnterTurnToTarget.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiEnterTurnToTarget.c:
     complete
     .text       start:0x020cd608 end:0x020cd678
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cd678 end:0x020cd6f4
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiEnterApproach.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiEnterApproach.c:
     complete
     .text       start:0x020cd6f4 end:0x020cd7cc
 
-src/overlays/enemies/ov158_enemy_16/Ov158_ArmMovePhase2.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_ArmMovePhase2.c:
     complete
     .text       start:0x020cd7cc end:0x020cd898
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AttackWaitTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AttackWaitTick.c:
     complete
     .text       start:0x020cd898 end:0x020cda0c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_Reaction_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_Reaction_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cda0c end:0x020cdad0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_CommitMove.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_CommitMove.c:
     complete
     .text       start:0x020cdad0 end:0x020cdb88
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AimedAttackWaitTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AimedAttackWaitTick.c:
     complete
     .text       start:0x020cdb88 end:0x020cdd5c
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SpawnEffect4aReconfigureFlagsB.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SpawnEffect4aReconfigureFlagsB.c:
     complete
     .text       start:0x020cdd5c end:0x020cde24
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SpawnEffectReconfigureFlags.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SpawnEffectReconfigureFlags.c:
     complete
     .text       start:0x020cde24 end:0x020cded8
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SpawnAndInitRegistryEntry.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SpawnAndInitRegistryEntry.c:
     complete
     .text       start:0x020cded8 end:0x020cdfb0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_ProbeGround.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_ProbeGround.c:
     complete
     .text       start:0x020cdfb0 end:0x020ce1ac
 
-src/overlays/enemies/ov158_enemy_16/Ov158_Reaction_ResetTwoSubObjects.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_Reaction_ResetTwoSubObjects.c:
     complete
     .text       start:0x020ce1ac end:0x020ce250
 
-src/overlays/enemies/ov158_enemy_16/Ov158_TaskTeardown_FlagParts.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_TaskTeardown_FlagParts.c:
     complete
     .text       start:0x020ce250 end:0x020ce288
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiDescentProbe.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiDescentProbe.c:
     complete
     .text       start:0x020ce288 end:0x020ce3e0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_DescentTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_DescentTick.c:
     complete
     .text       start:0x020ce3e0 end:0x020ce6dc
 
-src/overlays/enemies/ov158_enemy_16/Ov158_EnterGroundDrop.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_EnterGroundDrop.c:
     complete
     .text       start:0x020ce6dc end:0x020ce7ec
 
-src/overlays/enemies/ov158_enemy_16/Ov158_GroundDropTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_GroundDropTick.c:
     complete
     .text       start:0x020ce7ec end:0x020ce960
 
-src/overlays/enemies/ov158_enemy_16/Ov158_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce960 end:0x020ce9a0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_Actor_New.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_Actor_New.c:
     complete
     .text       start:0x020ce9a0 end:0x020ce9d4
 
-src/overlays/enemies/ov158_enemy_16/Ov158_ConstructItem.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_ConstructItem.c:
     complete
     .text       start:0x020ce9d4 end:0x020ceb74
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SubObject_Destroy.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SubObject_Destroy.c:
     complete
     .text       start:0x020ceb74 end:0x020ceba4
 
-src/overlays/enemies/ov158_enemy_16/Ov158_TickAndSyncModelXform.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ceba4 end:0x020cebdc
 
-src/overlays/enemies/ov158_enemy_16/Ov158_HandleMsgTag5BuildChild.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_HandleMsgTag5BuildChild.c:
     complete
     .text       start:0x020cebdc end:0x020cec50
 
-src/overlays/enemies/ov158_enemy_16/Ov158_HandleBounce.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_HandleBounce.c:
     complete
     .text       start:0x020cec50 end:0x020cecac
 
-src/overlays/enemies/ov158_enemy_16/Ov158_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cecac end:0x020cecf8
 
-src/overlays/enemies/ov158_enemy_16/Ov158_stateInitClearSlots.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_stateInitClearSlots.c:
     complete
     .text       start:0x020cecf8 end:0x020ceda0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_dispatchByStatusByte.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_dispatchByStatusByte.c:
     complete
     .text       start:0x020ceda0 end:0x020cee18
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiApplyMoveVector.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiApplyMoveVector.c:
     complete
     .text       start:0x020cee18 end:0x020cee30
 
-src/overlays/enemies/ov158_enemy_16/Ov158_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020cee30 end:0x020ceee0
 
-src/overlays/enemies/ov158_enemy_16/Ov158_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ceee0 end:0x020cef18
 
-src/overlays/enemies/ov158_enemy_16/Ov158_ArmDashAndDispatch.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_ArmDashAndDispatch.c:
     complete
     .text       start:0x020cef18 end:0x020cefec
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SweepStrikeTick.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SweepStrikeTick.c:
     complete
     .text       start:0x020cefec end:0x020cf418
 
-src/overlays/enemies/ov158_enemy_16/Ov158_SendPositionMessage.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/Ov158_SendPositionMessage.c:
     complete
     .text       start:0x020cf418 end:0x020cf520
 
-src/overlays/enemies/ov158_enemy_16/data/ov158_strings_020cf580.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/data/ov158_strings_020cf580.c:
     complete
     .data       start:0x020cf580 end:0x020cf5a0
 
-src/overlays/enemies/ov158_enemy_16/data/ov158_tables_020cf520.c:
+src/overlays/enemies/ov158_enemy_ice_cannon/data/ov158_tables_020cf520.c:
     complete
     .rodata     start:0x020cf520 end:0x020cf574

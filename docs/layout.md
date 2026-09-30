@@ -75,8 +75,9 @@ Still to do, in this order:
     that value with a real type. `tools/sharedecls.py` does this for a module: it writes the
     header from the definitions and keeps a source only if it still compiles to the same bytes.
   - named numbers the running game identifies: `game/scene.h` (the scene ids
-    `Scene_RequestPending` takes, for the scenes seen running) and `game/config.h` (the Config
-    page's game-state fields, whose value is the index of the option the page shows).
+    `Scene_RequestPending` takes, for the scenes seen running), `game/config.h` (the Config
+    page's game-state fields, whose value is the index of the option the page shows) and
+    `game/enemy_id.h` (the enemy class ids, named as the battle UI names them).
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
   the prototypes of every other module and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per
@@ -121,9 +122,13 @@ Players: `ba/ch/<code>/` in each overlay's data names the character (`ro` Roxas,
 ov070-087, ov088-104), the later ones with fewer characters; they are separate load slots,
 presumably one per Mission Mode player. Enemies: every overlay from ov114 to ov301 registers one
 entity class with the shared framework (ov107) and loads `Ms/<class>.p`; several classes have
-two or three identical copies for the same reason. Enemy names are not established yet, so the
-directories use the class id; strings that hint at a boss (`XionShare`, `xig_h_*`, `sa_h_R`) are
-listed as evidence.
+two or three identical copies for the same reason. The class id is also the index of the enemy's
+name in the battle UI's name list (`UI/btl/<lang>/enemy.s`), so each directory carries that name
+(`game/enemy_id.h` lists them with the model each `Ms/<class>.p` holds): the list agrees with the
+packs wherever a model is named (`shadow`, `Icecube`, `n_shadow`, `DS01`, `xigbar`, ...) and with
+the strings listed as evidence (`XionShare`, `xig_h_*`, `sa_h_R`, `zero_ef_dummy`). Classes shown
+under the same name carry their id (`xion_3e`, `pete_41`, ...); 0x71 and 0x72, shown as "? ? ? ?",
+are `mystery_71`/`mystery_72`, and 0x75, with no name of its own, is named after its model.
 
 Each directory sits in the group its kind names: scene -> `scenes/`, sub-screen -> `screens/`,
 field module -> `field/`, player -> `players/`, enemy -> `enemies/`, system -> `system/`.
@@ -247,192 +252,192 @@ keeps the bare `ovNNN` until it is confirmed).
 | ov111 | (no code or data) | empty | 0 | no code or data | H |
 | ov112 | (no code or data) | empty | 0 | no code or data | H |
 | ov113 | (no code or data) | empty | 0 | no code or data | H |
-| ov114 | `ov114_enemy_00` | enemy | 43 | entity class 0x00, Ms/00.p | H |
-| ov115 | `ov115_enemy_01` | enemy | 47 | entity class 0x01, Ms/01.p | H |
-| ov116 | `ov116_enemy_01_2` | enemy | 47 | entity class 0x01, Ms/01.p | H |
-| ov117 | `ov117_enemy_02` | enemy | 39 | entity class 0x02, Ms/02.p | H |
-| ov118 | `ov118_enemy_02_2` | enemy | 39 | entity class 0x02, Ms/02.p | H |
-| ov119 | `ov119_enemy_03` | enemy | 56 | entity class 0x03, Ms/03.p | H |
-| ov120 | `ov120_enemy_04` | enemy | 40 | entity class 0x04, Ms/04.p | H |
-| ov121 | `ov121_enemy_04_2` | enemy | 40 | entity class 0x04, Ms/04.p | H |
-| ov122 | `ov122_enemy_04_3` | enemy | 40 | entity class 0x04, Ms/04.p | H |
-| ov123 | `ov123_enemy_05` | enemy | 47 | entity class 0x05, Ms/05.p | H |
-| ov124 | `ov124_enemy_05_2` | enemy | 47 | entity class 0x05, Ms/05.p | H |
-| ov125 | `ov125_enemy_06` | enemy | 66 | entity class 0x06, Ms/06.p | H |
-| ov126 | `ov126_enemy_06_2` | enemy | 66 | entity class 0x06, Ms/06.p | H |
-| ov127 | `ov127_enemy_07` | enemy | 36 | entity class 0x07, Ms/07.p | H |
-| ov128 | `ov128_enemy_07_2` | enemy | 36 | entity class 0x07, Ms/07.p | H |
-| ov129 | `ov129_enemy_07_3` | enemy | 36 | entity class 0x07, Ms/07.p | H |
-| ov130 | `ov130_enemy_08` | enemy | 36 | entity class 0x08, Ms/08.p | H |
-| ov131 | `ov131_enemy_09` | enemy | 55 | entity class 0x09, Ms/09.p | H |
-| ov132 | `ov132_enemy_09_2` | enemy | 55 | entity class 0x09, Ms/09.p | H |
-| ov133 | `ov133_enemy_09_3` | enemy | 55 | entity class 0x09, Ms/09.p | H |
-| ov134 | `ov134_enemy_0a` | enemy | 39 | entity class 0x0a, Ms/0a.p | H |
-| ov135 | `ov135_enemy_0a_2` | enemy | 39 | entity class 0x0a, Ms/0a.p | H |
-| ov136 | `ov136_enemy_0a_3` | enemy | 39 | entity class 0x0a, Ms/0a.p | H |
-| ov137 | `ov137_enemy_0b` | enemy | 64 | entity class 0x0b, Ms/0b.p | H |
-| ov138 | `ov138_enemy_0b_2` | enemy | 64 | entity class 0x0b, Ms/0b.p | H |
-| ov139 | `ov139_enemy_0c` | enemy | 45 | entity class 0x0c, Ms/0c.p | H |
-| ov140 | `ov140_enemy_0c_2` | enemy | 45 | entity class 0x0c, Ms/0c.p | H |
-| ov141 | `ov141_enemy_0d` | enemy | 57 | entity class 0x0d, Ms/0d.p | H |
-| ov142 | `ov142_enemy_0d_2` | enemy | 57 | entity class 0x0d, Ms/0d.p | H |
-| ov143 | `ov143_enemy_0d_3` | enemy | 57 | entity class 0x0d, Ms/0d.p | H |
-| ov144 | `ov144_enemy_0e` | enemy | 38 | entity class 0x0e, Ms/0e.p | H |
-| ov145 | `ov145_enemy_0f` | enemy | 38 | entity class 0x0f, Ms/0f.p | H |
-| ov146 | `ov146_enemy_10` | enemy | 88 | entity class 0x10, Ms/10.p | H |
-| ov147 | `ov147_enemy_11` | enemy | 62 | entity class 0x11, Ms/11.p | H |
-| ov148 | `ov148_enemy_11_2` | enemy | 62 | entity class 0x11, Ms/11.p | H |
-| ov149 | `ov149_enemy_12` | enemy | 57 | entity class 0x12, Ms/12.p | H |
-| ov150 | `ov150_enemy_12_2` | enemy | 57 | entity class 0x12, Ms/12.p | H |
-| ov151 | `ov151_enemy_13` | enemy | 56 | entity class 0x13, Ms/13.p | H |
-| ov152 | `ov152_enemy_13_2` | enemy | 56 | entity class 0x13, Ms/13.p | H |
-| ov153 | `ov153_enemy_14` | enemy | 45 | entity class 0x14, Ms/14.p | H |
-| ov154 | `ov154_enemy_14_2` | enemy | 45 | entity class 0x14, Ms/14.p | H |
-| ov155 | `ov155_enemy_14_3` | enemy | 45 | entity class 0x14, Ms/14.p | H |
-| ov156 | `ov156_enemy_15` | enemy | 50 | entity class 0x15, Ms/15.p | H |
-| ov157 | `ov157_enemy_15_2` | enemy | 50 | entity class 0x15, Ms/15.p | H |
-| ov158 | `ov158_enemy_16` | enemy | 64 | entity class 0x16, Ms/16.p | H |
-| ov159 | `ov159_enemy_16_2` | enemy | 64 | entity class 0x16, Ms/16.p | H |
-| ov160 | `ov160_enemy_17` | enemy | 63 | entity class 0x17, Ms/17.p | H |
-| ov161 | `ov161_enemy_18` | enemy | 60 | entity class 0x18, Ms/18.p | H |
-| ov162 | `ov162_enemy_18_2` | enemy | 60 | entity class 0x18, Ms/18.p | H |
-| ov163 | `ov163_enemy_19` | enemy | 56 | entity class 0x19, Ms/19.p | H |
-| ov164 | `ov164_enemy_19_2` | enemy | 56 | entity class 0x19, Ms/19.p | H |
-| ov165 | `ov165_enemy_19_3` | enemy | 56 | entity class 0x19, Ms/19.p | H |
-| ov166 | `ov166_enemy_1a` | enemy | 55 | entity class 0x1a, Ms/1a.p | H |
-| ov167 | `ov167_enemy_1a_2` | enemy | 55 | entity class 0x1a, Ms/1a.p | H |
-| ov168 | `ov168_enemy_1a_3` | enemy | 55 | entity class 0x1a, Ms/1a.p | H |
-| ov169 | `ov169_enemy_1b` | enemy | 57 | entity class 0x1b, Ms/1b.p | H |
-| ov170 | `ov170_enemy_1b_2` | enemy | 57 | entity class 0x1b, Ms/1b.p | H |
-| ov171 | `ov171_enemy_1c` | enemy | 56 | entity class 0x1c, Ms/1c.p | H |
-| ov172 | `ov172_enemy_1c_2` | enemy | 56 | entity class 0x1c, Ms/1c.p | H |
-| ov173 | `ov173_enemy_1d` | enemy | 51 | entity class 0x1d, Ms/1d.p | H |
-| ov174 | `ov174_enemy_1d_2` | enemy | 51 | entity class 0x1d, Ms/1d.p | H |
-| ov175 | `ov175_enemy_1e` | enemy | 55 | entity class 0x1e, Ms/1e.p | H |
-| ov176 | `ov176_enemy_1e_2` | enemy | 55 | entity class 0x1e, Ms/1e.p | H |
-| ov177 | `ov177_enemy_1e_3` | enemy | 55 | entity class 0x1e, Ms/1e.p | H |
-| ov178 | `ov178_enemy_1f` | enemy | 62 | entity class 0x1f, Ms/1f.p | H |
-| ov179 | `ov179_enemy_1f_2` | enemy | 62 | entity class 0x1f, Ms/1f.p | H |
-| ov180 | `ov180_enemy_1f_3` | enemy | 62 | entity class 0x1f, Ms/1f.p | H |
-| ov181 | `ov181_enemy_20` | enemy | 52 | entity class 0x20, Ms/20.p | H |
-| ov182 | `ov182_enemy_20_2` | enemy | 52 | entity class 0x20, Ms/20.p | H |
-| ov183 | `ov183_enemy_20_3` | enemy | 52 | entity class 0x20, Ms/20.p | H |
-| ov184 | `ov184_enemy_20_4` | enemy | 52 | entity class 0x20, Ms/20.p | H |
-| ov185 | `ov185_enemy_21` | enemy | 76 | entity class 0x21, Ms/21.p | H |
-| ov186 | `ov186_enemy_21_2` | enemy | 76 | entity class 0x21, Ms/21.p | H |
-| ov187 | `ov187_enemy_21_3` | enemy | 76 | entity class 0x21, Ms/21.p | H |
-| ov188 | `ov188_enemy_22` | enemy | 48 | entity class 0x22, Ms/22.p | H |
-| ov189 | `ov189_enemy_22_2` | enemy | 48 | entity class 0x22, Ms/22.p | H |
-| ov190 | `ov190_enemy_22_3` | enemy | 48 | entity class 0x22, Ms/22.p | H |
-| ov191 | `ov191_enemy_23` | enemy | 54 | entity class 0x23, Ms/23.p | H |
-| ov192 | `ov192_enemy_23_2` | enemy | 54 | entity class 0x23, Ms/23.p | H |
-| ov193 | `ov193_enemy_23_3` | enemy | 54 | entity class 0x23, Ms/23.p | H |
-| ov194 | `ov194_enemy_24` | enemy | 50 | entity class 0x24, Ms/24.p | H |
-| ov195 | `ov195_enemy_24_2` | enemy | 50 | entity class 0x24, Ms/24.p | H |
-| ov196 | `ov196_enemy_24_3` | enemy | 50 | entity class 0x24, Ms/24.p | H |
-| ov197 | `ov197_enemy_25` | enemy | 62 | entity class 0x25, Ms/25.p | H |
-| ov198 | `ov198_enemy_25_2` | enemy | 62 | entity class 0x25, Ms/25.p | H |
-| ov199 | `ov199_enemy_25_3` | enemy | 62 | entity class 0x25, Ms/25.p | H |
-| ov200 | `ov200_enemy_26` | enemy | 60 | entity class 0x26, Ms/26.p | H |
-| ov201 | `ov201_enemy_26_2` | enemy | 60 | entity class 0x26, Ms/26.p | H |
-| ov202 | `ov202_enemy_27` | enemy | 56 | entity class 0x27, Ms/27.p | H |
-| ov203 | `ov203_enemy_27_2` | enemy | 56 | entity class 0x27, Ms/27.p | H |
-| ov204 | `ov204_enemy_28` | enemy | 54 | entity class 0x28, Ms/28.p | H |
-| ov205 | `ov205_enemy_28_2` | enemy | 54 | entity class 0x28, Ms/28.p | H |
-| ov206 | `ov206_enemy_29` | enemy | 63 | entity class 0x29, Ms/29.p | H |
-| ov207 | `ov207_enemy_29_2` | enemy | 63 | entity class 0x29, Ms/29.p | H |
-| ov208 | `ov208_enemy_2a` | enemy | 81 | entity class 0x2a, Ms/2a.p | H |
-| ov209 | `ov209_enemy_2a_2` | enemy | 81 | entity class 0x2a, Ms/2a.p | H |
-| ov210 | `ov210_enemy_2b` | enemy | 83 | entity class 0x2b, Ms/2b.p; n_shadow | H |
-| ov211 | `ov211_enemy_2b_2` | enemy | 83 | entity class 0x2b, Ms/2b.p; n_shadow | H |
-| ov212 | `ov212_enemy_2c` | enemy | 119 | entity class 0x2c, Ms/2c.p | H |
-| ov213 | `ov213_enemy_2d` | enemy | 116 | entity class 0x2d, Ms/2d.p; sword | H |
-| ov214 | `ov214_enemy_2e` | enemy | 50 | entity class 0x2e, Ms/2e.p | H |
-| ov215 | `ov215_enemy_2e_2` | enemy | 50 | entity class 0x2e, Ms/2e.p | H |
-| ov216 | `ov216_enemy_2f` | enemy | 50 | entity class 0x2f, Ms/2f.p | H |
-| ov217 | `ov217_enemy_2f_2` | enemy | 50 | entity class 0x2f, Ms/2f.p | H |
-| ov218 | `ov218_enemy_30` | enemy | 73 | entity class 0x30, Ms/30.p | H |
-| ov219 | `ov219_enemy_31` | enemy | 42 | entity class 0x31, Ms/31.p | H |
-| ov220 | `ov220_enemy_32` | enemy | 50 | entity class 0x32, Ms/32.p | H |
-| ov221 | `ov221_enemy_33` | enemy | 84 | entity class 0x33, Ms/33.p | H |
-| ov222 | `ov222_enemy_33_2` | enemy | 84 | entity class 0x33, Ms/33.p | H |
-| ov223 | `ov223_enemy_34` | enemy | 91 | entity class 0x34, Ms/34.p | H |
-| ov224 | `ov224_enemy_35` | enemy | 84 | entity class 0x35, Ms/35.p | H |
-| ov225 | `ov225_enemy_36` | enemy | 87 | entity class 0x36, Ms/36.p | H |
-| ov226 | `ov226_enemy_37` | enemy | 80 | entity class 0x37, Ms/37.p | H |
-| ov227 | `ov227_enemy_38` | enemy | 84 | entity class 0x38, Ms/38.p | H |
-| ov228 | `ov228_enemy_39` | enemy | 81 | entity class 0x39, Ms/39.p | H |
-| ov229 | `ov229_enemy_39_2` | enemy | 81 | entity class 0x39, Ms/39.p | H |
-| ov230 | `ov230_enemy_3a` | enemy | 74 | entity class 0x3a, Ms/3a.p | H |
-| ov231 | `ov231_enemy_3b` | enemy | 65 | entity class 0x3b, Ms/3b.p | H |
-| ov232 | `ov232_enemy_3b_2` | enemy | 65 | entity class 0x3b, Ms/3b.p | H |
-| ov233 | `ov233_enemy_3c` | enemy | 81 | entity class 0x3c, Ms/3c.p | H |
-| ov234 | `ov234_enemy_3d` | enemy | 21 | entity class 0x3d, Ms/3d.p | H |
-| ov235 | `ov235_enemy_3e` | enemy | 97 | entity class 0x3e, Ms/3e.p; 1_1_sword, Ms/XionShare.p | H |
-| ov236 | `ov236_enemy_3f` | enemy | 153 | entity class 0x3f, Ms/3f.p | H |
-| ov237 | `ov237_enemy_40` | enemy | 86 | entity class 0x40, Ms/40.p | H |
-| ov238 | `ov238_enemy_41` | enemy | 72 | entity class 0x41, Ms/41.p | H |
-| ov239 | `ov239_enemy_42` | enemy | 42 | entity class 0x42, Ms/42.p; Ms/NBShare.p | H |
-| ov240 | `ov240_enemy_43` | enemy | 42 | entity class 0x43, Ms/43.p; Ms/NBShare.p | H |
-| ov241 | `ov241_enemy_44` | enemy | 26 | entity class 0x44, Ms/44.p | H |
-| ov242 | `ov242_enemy_44_2` | enemy | 26 | entity class 0x44, Ms/44.p | H |
-| ov243 | `ov243_enemy_45` | enemy | 26 | entity class 0x45, Ms/45.p | H |
-| ov244 | `ov244_enemy_46` | enemy | 143 | entity class 0x46, Ms/46.p | H |
-| ov245 | `ov245_enemy_47` | enemy | 264 | entity class 0x47, Ms/47.p | H |
-| ov246 | `ov246_enemy_48` | enemy | 64 | entity class 0x48, Ms/48.p | H |
-| ov247 | `ov247_enemy_48_2` | enemy | 64 | entity class 0x48, Ms/48.p | H |
-| ov248 | `ov248_enemy_49` | enemy | 78 | entity class 0x49, Ms/49.p | H |
-| ov249 | `ov249_enemy_4a` | enemy | 78 | entity class 0x4a, Ms/4a.p | H |
-| ov250 | `ov250_enemy_4b` | enemy | 52 | entity class 0x4b, Ms/4b.p | H |
-| ov251 | `ov251_enemy_4b_2` | enemy | 52 | entity class 0x4b, Ms/4b.p | H |
-| ov252 | `ov252_enemy_4c` | enemy | 94 | entity class 0x4c, Ms/4c.p | H |
-| ov253 | `ov253_enemy_4d` | enemy | 165 | entity class 0x4d, Ms/4d.p | H |
-| ov254 | `ov254_enemy_4e` | enemy | 183 | entity class 0x4e, Ms/4e.p | H |
-| ov255 | `ov255_enemy_4f` | enemy | 112 | entity class 0x4f, Ms/4f.p; Ms/XionShare.p | H |
-| ov256 | `ov256_enemy_50` | enemy | 113 | entity class 0x50, Ms/50.p | H |
-| ov257 | `ov257_enemy_51` | enemy | 95 | entity class 0x51, Ms/51.p; Ms/XionShare.p | H |
-| ov258 | `ov258_enemy_52` | enemy | 81 | entity class 0x52, Ms/52.p | H |
-| ov259 | `ov259_enemy_53` | enemy | 121 | entity class 0x53, Ms/53.p; sa_h_R | H |
-| ov260 | `ov260_enemy_54` | enemy | 110 | entity class 0x54, Ms/54.p | H |
-| ov261 | `ov261_enemy_55` | enemy | 35 | entity class 0x55, Ms/55.p; zero_ef_dummy | H |
-| ov262 | `ov262_enemy_55_2` | enemy | 35 | entity class 0x55, Ms/55.p; zero_ef_dummy | H |
-| ov263 | `ov263_enemy_57` | enemy | 65 | entity class 0x57, Ms/57.p | H |
-| ov264 | `ov264_enemy_58` | enemy | 50 | entity class 0x58, Ms/58.p | H |
-| ov265 | `ov265_enemy_59` | enemy | 65 | entity class 0x59, Ms/59.p | H |
-| ov266 | `ov266_enemy_5a` | enemy | 119 | entity class 0x5a, Ms/5a.p | H |
-| ov267 | `ov267_enemy_5a_2` | enemy | 119 | entity class 0x5a, Ms/5a.p | H |
-| ov268 | `ov268_enemy_5b` | enemy | 81 | entity class 0x5b, Ms/5b.p | H |
-| ov269 | `ov269_enemy_5c` | enemy | 50 | entity class 0x5c, Ms/5c.p | H |
-| ov270 | `ov270_enemy_5c_2` | enemy | 50 | entity class 0x5c, Ms/5c.p | H |
-| ov271 | `ov271_enemy_5d` | enemy | 60 | entity class 0x5d, Ms/5d.p | H |
-| ov272 | `ov272_enemy_5e` | enemy | 56 | entity class 0x5e, Ms/5e.p | H |
-| ov273 | `ov273_enemy_5f` | enemy | 116 | entity class 0x5f, Ms/5f.p; sword | H |
-| ov274 | `ov274_enemy_60` | enemy | 63 | entity class 0x60, Ms/60.p | H |
-| ov275 | `ov275_enemy_60_2` | enemy | 63 | entity class 0x60, Ms/60.p | H |
-| ov276 | `ov276_enemy_61` | enemy | 50 | entity class 0x61, Ms/61.p | H |
-| ov277 | `ov277_enemy_62` | enemy | 143 | entity class 0x62, Ms/62.p | H |
-| ov278 | `ov278_enemy_63` | enemy | 153 | entity class 0x63, Ms/63.p | H |
-| ov279 | `ov279_enemy_64` | enemy | 56 | entity class 0x64, Ms/64.p | H |
-| ov280 | `ov280_enemy_65` | enemy | 65 | entity class 0x65, Ms/65.p | H |
-| ov281 | `ov281_enemy_66` | enemy | 48 | entity class 0x66, Ms/66.p | H |
-| ov282 | `ov282_enemy_67` | enemy | 83 | entity class 0x67, Ms/67.p; Sn_shadow | H |
-| ov283 | `ov283_enemy_68` | enemy | 81 | entity class 0x68, Ms/68.p; xig_h_L, xig_h_R | H |
-| ov284 | `ov284_enemy_69` | enemy | 33 | entity class 0x69, Ms/69.p | H |
-| ov285 | `ov285_enemy_6a` | enemy | 23 | entity class 0x6a, Ms/6a.p | H |
-| ov286 | `ov286_enemy_6a_2` | enemy | 23 | entity class 0x6a, Ms/6a.p | H |
-| ov287 | `ov287_enemy_6b` | enemy | 26 | entity class 0x6b, Ms/6b.p | H |
-| ov288 | `ov288_enemy_6b_2` | enemy | 26 | entity class 0x6b, Ms/6b.p | H |
-| ov289 | `ov289_enemy_6b_3` | enemy | 26 | entity class 0x6b, Ms/6b.p | H |
-| ov290 | `ov290_enemy_6c` | enemy | 3 | entity class 0x6c, Ms/6c.p | H |
-| ov291 | `ov291_enemy_6d` | enemy | 32 | entity class 0x6d, Ms/6d.p | H |
-| ov292 | `ov292_enemy_6e` | enemy | 31 | entity class 0x6e, Ms/6e.p | H |
-| ov293 | `ov293_enemy_6f` | enemy | 37 | entity class 0x6f, Ms/6f.p | H |
-| ov294 | `ov294_enemy_70` | enemy | 14 | entity class 0x70, Ms/70.p | H |
-| ov295 | `ov295_enemy_70_2` | enemy | 14 | entity class 0x70, Ms/70.p | H |
-| ov296 | `ov296_enemy_70_3` | enemy | 14 | entity class 0x70, Ms/70.p | H |
-| ov297 | `ov297_enemy_71` | enemy | 39 | entity class 0x71, Ms/71.p | H |
-| ov298 | `ov298_enemy_72` | enemy | 37 | entity class 0x72, Ms/72.p | H |
-| ov299 | `ov299_enemy_73` | enemy | 31 | entity class 0x73, Ms/73.p | H |
-| ov300 | `ov300_enemy_74` | enemy | 3 | entity class 0x74, Ms/74.p | H |
-| ov301 | `ov301_enemy_75` | enemy | 18 | entity class 0x75, Ms/75.p | H |
+| ov114 | `ov114_enemy_shadow` | enemy | 43 | entity class 0x00 (Shadow), Ms/00.p | H |
+| ov115 | `ov115_enemy_yellow_opera` | enemy | 47 | entity class 0x01 (Yellow Opera), Ms/01.p | H |
+| ov116 | `ov116_enemy_yellow_opera_2` | enemy | 47 | entity class 0x01 (Yellow Opera), Ms/01.p | H |
+| ov117 | `ov117_enemy_possessor` | enemy | 39 | entity class 0x02 (Possessor), Ms/02.p | H |
+| ov118 | `ov118_enemy_possessor_2` | enemy | 39 | entity class 0x02 (Possessor), Ms/02.p | H |
+| ov119 | `ov119_enemy_hover_ghost` | enemy | 56 | entity class 0x03 (Hover Ghost), Ms/03.p | H |
+| ov120 | `ov120_enemy_soldier` | enemy | 40 | entity class 0x04 (Soldier), Ms/04.p | H |
+| ov121 | `ov121_enemy_soldier_2` | enemy | 40 | entity class 0x04 (Soldier), Ms/04.p | H |
+| ov122 | `ov122_enemy_soldier_3` | enemy | 40 | entity class 0x04 (Soldier), Ms/04.p | H |
+| ov123 | `ov123_enemy_dire_plant` | enemy | 47 | entity class 0x05 (Dire Plant), Ms/05.p | H |
+| ov124 | `ov124_enemy_dire_plant_2` | enemy | 47 | entity class 0x05 (Dire Plant), Ms/05.p | H |
+| ov125 | `ov125_enemy_watcher` | enemy | 66 | entity class 0x06 (Watcher), Ms/06.p | H |
+| ov126 | `ov126_enemy_watcher_2` | enemy | 66 | entity class 0x06 (Watcher), Ms/06.p | H |
+| ov127 | `ov127_enemy_bulky_vendor` | enemy | 36 | entity class 0x07 (Bulky Vendor), Ms/07.p | H |
+| ov128 | `ov128_enemy_bulky_vendor_2` | enemy | 36 | entity class 0x07 (Bulky Vendor), Ms/07.p | H |
+| ov129 | `ov129_enemy_bulky_vendor_3` | enemy | 36 | entity class 0x07 (Bulky Vendor), Ms/07.p | H |
+| ov130 | `ov130_enemy_rare_vendor` | enemy | 36 | entity class 0x08 (Rare Vendor), Ms/08.p | H |
+| ov131 | `ov131_enemy_minute_bomb` | enemy | 55 | entity class 0x09 (Minute Bomb), Ms/09.p | H |
+| ov132 | `ov132_enemy_minute_bomb_2` | enemy | 55 | entity class 0x09 (Minute Bomb), Ms/09.p | H |
+| ov133 | `ov133_enemy_minute_bomb_3` | enemy | 55 | entity class 0x09 (Minute Bomb), Ms/09.p | H |
+| ov134 | `ov134_enemy_bad_dog` | enemy | 39 | entity class 0x0a (Bad Dog), Ms/0a.p | H |
+| ov135 | `ov135_enemy_bad_dog_2` | enemy | 39 | entity class 0x0a (Bad Dog), Ms/0a.p | H |
+| ov136 | `ov136_enemy_bad_dog_3` | enemy | 39 | entity class 0x0a (Bad Dog), Ms/0a.p | H |
+| ov137 | `ov137_enemy_lil_cannon` | enemy | 64 | entity class 0x0b (Li'l Cannon), Ms/0b.p | H |
+| ov138 | `ov138_enemy_lil_cannon_2` | enemy | 64 | entity class 0x0b (Li'l Cannon), Ms/0b.p | H |
+| ov139 | `ov139_enemy_icy_cube` | enemy | 45 | entity class 0x0c (Icy Cube), Ms/0c.p | H |
+| ov140 | `ov140_enemy_icy_cube_2` | enemy | 45 | entity class 0x0c (Icy Cube), Ms/0c.p | H |
+| ov141 | `ov141_enemy_loudmouth` | enemy | 57 | entity class 0x0d (Loudmouth), Ms/0d.p | H |
+| ov142 | `ov142_enemy_loudmouth_2` | enemy | 57 | entity class 0x0d (Loudmouth), Ms/0d.p | H |
+| ov143 | `ov143_enemy_loudmouth_3` | enemy | 57 | entity class 0x0d (Loudmouth), Ms/0d.p | H |
+| ov144 | `ov144_enemy_red_card_soldier` | enemy | 38 | entity class 0x0e (Red Card Soldier), Ms/0e.p | H |
+| ov145 | `ov145_enemy_black_card_soldier` | enemy | 38 | entity class 0x0f (Black Card Soldier), Ms/0f.p | H |
+| ov146 | `ov146_enemy_barrier_master` | enemy | 88 | entity class 0x10 (Barrier Master), Ms/10.p | H |
+| ov147 | `ov147_enemy_cymbal_monkey` | enemy | 62 | entity class 0x11 (Cymbal Monkey), Ms/11.p | H |
+| ov148 | `ov148_enemy_cymbal_monkey_2` | enemy | 62 | entity class 0x11 (Cymbal Monkey), Ms/11.p | H |
+| ov149 | `ov149_enemy_flare_note` | enemy | 57 | entity class 0x12 (Flare Note), Ms/12.p | H |
+| ov150 | `ov150_enemy_flare_note_2` | enemy | 57 | entity class 0x12 (Flare Note), Ms/12.p | H |
+| ov151 | `ov151_enemy_bubble_beat` | enemy | 56 | entity class 0x13 (Bubble Beat), Ms/13.p | H |
+| ov152 | `ov152_enemy_bubble_beat_2` | enemy | 56 | entity class 0x13 (Bubble Beat), Ms/13.p | H |
+| ov153 | `ov153_enemy_fire_plant` | enemy | 45 | entity class 0x14 (Fire Plant), Ms/14.p | H |
+| ov154 | `ov154_enemy_fire_plant_2` | enemy | 45 | entity class 0x14 (Fire Plant), Ms/14.p | H |
+| ov155 | `ov155_enemy_fire_plant_3` | enemy | 45 | entity class 0x14 (Fire Plant), Ms/14.p | H |
+| ov156 | `ov156_enemy_blizzard_plant` | enemy | 50 | entity class 0x15 (Blizzard Plant), Ms/15.p | H |
+| ov157 | `ov157_enemy_blizzard_plant_2` | enemy | 50 | entity class 0x15 (Blizzard Plant), Ms/15.p | H |
+| ov158 | `ov158_enemy_ice_cannon` | enemy | 64 | entity class 0x16 (Ice Cannon), Ms/16.p | H |
+| ov159 | `ov159_enemy_ice_cannon_2` | enemy | 64 | entity class 0x16 (Ice Cannon), Ms/16.p | H |
+| ov160 | `ov160_enemy_switch_launcher` | enemy | 63 | entity class 0x17 (Switch Launcher), Ms/17.p | H |
+| ov161 | `ov161_enemy_storm_bomb` | enemy | 60 | entity class 0x18 (Storm Bomb), Ms/18.p | H |
+| ov162 | `ov162_enemy_storm_bomb_2` | enemy | 60 | entity class 0x18 (Storm Bomb), Ms/18.p | H |
+| ov163 | `ov163_enemy_skater_bomb` | enemy | 56 | entity class 0x19 (Skater Bomb), Ms/19.p | H |
+| ov164 | `ov164_enemy_skater_bomb_2` | enemy | 56 | entity class 0x19 (Skater Bomb), Ms/19.p | H |
+| ov165 | `ov165_enemy_skater_bomb_3` | enemy | 56 | entity class 0x19 (Skater Bomb), Ms/19.p | H |
+| ov166 | `ov166_enemy_scarlet_tango` | enemy | 55 | entity class 0x1a (Scarlet Tango), Ms/1a.p | H |
+| ov167 | `ov167_enemy_scarlet_tango_2` | enemy | 55 | entity class 0x1a (Scarlet Tango), Ms/1a.p | H |
+| ov168 | `ov168_enemy_scarlet_tango_3` | enemy | 55 | entity class 0x1a (Scarlet Tango), Ms/1a.p | H |
+| ov169 | `ov169_enemy_turquoise_march` | enemy | 57 | entity class 0x1b (Turquoise March), Ms/1b.p | H |
+| ov170 | `ov170_enemy_turquoise_march_2` | enemy | 57 | entity class 0x1b (Turquoise March), Ms/1b.p | H |
+| ov171 | `ov171_enemy_grey_caprice` | enemy | 56 | entity class 0x1c (Grey Caprice), Ms/1c.p | H |
+| ov172 | `ov172_enemy_grey_caprice_2` | enemy | 56 | entity class 0x1c (Grey Caprice), Ms/1c.p | H |
+| ov173 | `ov173_enemy_sapphire_elegy` | enemy | 51 | entity class 0x1d (Sapphire Elegy), Ms/1d.p | H |
+| ov174 | `ov174_enemy_sapphire_elegy_2` | enemy | 51 | entity class 0x1d (Sapphire Elegy), Ms/1d.p | H |
+| ov175 | `ov175_enemy_striped_aria` | enemy | 55 | entity class 0x1e (Striped Aria), Ms/1e.p | H |
+| ov176 | `ov176_enemy_striped_aria_2` | enemy | 55 | entity class 0x1e (Striped Aria), Ms/1e.p | H |
+| ov177 | `ov177_enemy_striped_aria_3` | enemy | 55 | entity class 0x1e (Striped Aria), Ms/1e.p | H |
+| ov178 | `ov178_enemy_pink_concerto` | enemy | 62 | entity class 0x1f (Pink Concerto), Ms/1f.p | H |
+| ov179 | `ov179_enemy_pink_concerto_2` | enemy | 62 | entity class 0x1f (Pink Concerto), Ms/1f.p | H |
+| ov180 | `ov180_enemy_pink_concerto_3` | enemy | 62 | entity class 0x1f (Pink Concerto), Ms/1f.p | H |
+| ov181 | `ov181_enemy_mega_shadow` | enemy | 52 | entity class 0x20 (Mega-Shadow), Ms/20.p | H |
+| ov182 | `ov182_enemy_mega_shadow_2` | enemy | 52 | entity class 0x20 (Mega-Shadow), Ms/20.p | H |
+| ov183 | `ov183_enemy_mega_shadow_3` | enemy | 52 | entity class 0x20 (Mega-Shadow), Ms/20.p | H |
+| ov184 | `ov184_enemy_mega_shadow_4` | enemy | 52 | entity class 0x20 (Mega-Shadow), Ms/20.p | H |
+| ov185 | `ov185_enemy_massive_possessor` | enemy | 76 | entity class 0x21 (Massive Possessor), Ms/21.p | H |
+| ov186 | `ov186_enemy_massive_possessor_2` | enemy | 76 | entity class 0x21 (Massive Possessor), Ms/21.p | H |
+| ov187 | `ov187_enemy_massive_possessor_3` | enemy | 76 | entity class 0x21 (Massive Possessor), Ms/21.p | H |
+| ov188 | `ov188_enemy_sergeant` | enemy | 48 | entity class 0x22 (Sergeant), Ms/22.p | H |
+| ov189 | `ov189_enemy_sergeant_2` | enemy | 48 | entity class 0x22 (Sergeant), Ms/22.p | H |
+| ov190 | `ov190_enemy_sergeant_3` | enemy | 48 | entity class 0x22 (Sergeant), Ms/22.p | H |
+| ov191 | `ov191_enemy_poison_plant` | enemy | 54 | entity class 0x23 (Poison Plant), Ms/23.p | H |
+| ov192 | `ov192_enemy_poison_plant_2` | enemy | 54 | entity class 0x23 (Poison Plant), Ms/23.p | H |
+| ov193 | `ov193_enemy_poison_plant_3` | enemy | 54 | entity class 0x23 (Poison Plant), Ms/23.p | H |
+| ov194 | `ov194_enemy_snapper_dog` | enemy | 50 | entity class 0x24 (Snapper Dog), Ms/24.p | H |
+| ov195 | `ov195_enemy_snapper_dog_2` | enemy | 50 | entity class 0x24 (Snapper Dog), Ms/24.p | H |
+| ov196 | `ov196_enemy_snapper_dog_3` | enemy | 50 | entity class 0x24 (Snapper Dog), Ms/24.p | H |
+| ov197 | `ov197_enemy_tricky_monkey` | enemy | 62 | entity class 0x25 (Tricky Monkey), Ms/25.p | H |
+| ov198 | `ov198_enemy_tricky_monkey_2` | enemy | 62 | entity class 0x25 (Tricky Monkey), Ms/25.p | H |
+| ov199 | `ov199_enemy_tricky_monkey_3` | enemy | 62 | entity class 0x25 (Tricky Monkey), Ms/25.p | H |
+| ov200 | `ov200_enemy_guardian` | enemy | 60 | entity class 0x26 (Guardian), Ms/26.p | H |
+| ov201 | `ov201_enemy_guardian_2` | enemy | 60 | entity class 0x26 (Guardian), Ms/26.p | H |
+| ov202 | `ov202_enemy_detonator` | enemy | 56 | entity class 0x27 (Detonator), Ms/27.p | H |
+| ov203 | `ov203_enemy_detonator_2` | enemy | 56 | entity class 0x27 (Detonator), Ms/27.p | H |
+| ov204 | `ov204_enemy_snowy_crystal` | enemy | 54 | entity class 0x28 (Snowy Crystal), Ms/28.p | H |
+| ov205 | `ov205_enemy_snowy_crystal_2` | enemy | 54 | entity class 0x28 (Snowy Crystal), Ms/28.p | H |
+| ov206 | `ov206_enemy_large_armor` | enemy | 63 | entity class 0x29 (Large Armor), Ms/29.p | H |
+| ov207 | `ov207_enemy_large_armor_2` | enemy | 63 | entity class 0x29 (Large Armor), Ms/29.p | H |
+| ov208 | `ov208_enemy_clay_armor` | enemy | 81 | entity class 0x2a (Clay Armor), Ms/2a.p | H |
+| ov209 | `ov209_enemy_clay_armor_2` | enemy | 81 | entity class 0x2a (Clay Armor), Ms/2a.p | H |
+| ov210 | `ov210_enemy_neoshadow` | enemy | 83 | entity class 0x2b (Neoshadow), Ms/2b.p; n_shadow | H |
+| ov211 | `ov211_enemy_neoshadow_2` | enemy | 83 | entity class 0x2b (Neoshadow), Ms/2b.p; n_shadow | H |
+| ov212 | `ov212_enemy_veil_lizard` | enemy | 119 | entity class 0x2c (Veil Lizard), Ms/2c.p | H |
+| ov213 | `ov213_enemy_invisible` | enemy | 116 | entity class 0x2d (Invisible), Ms/2d.p; sword | H |
+| ov214 | `ov214_enemy_morning_star` | enemy | 50 | entity class 0x2e (Morning Star), Ms/2e.p | H |
+| ov215 | `ov215_enemy_morning_star_2` | enemy | 50 | entity class 0x2e (Morning Star), Ms/2e.p | H |
+| ov216 | `ov216_enemy_scorching_sphere` | enemy | 50 | entity class 0x2f (Scorching Sphere), Ms/2f.p | H |
+| ov217 | `ov217_enemy_scorching_sphere_2` | enemy | 50 | entity class 0x2f (Scorching Sphere), Ms/2f.p | H |
+| ov218 | `ov218_enemy_lock` | enemy | 73 | entity class 0x30 (Lock), Ms/30.p | H |
+| ov219 | `ov219_enemy_shock` | enemy | 42 | entity class 0x31 (Shock), Ms/31.p | H |
+| ov220 | `ov220_enemy_barrel` | enemy | 50 | entity class 0x32 (Barrel), Ms/32.p | H |
+| ov221 | `ov221_enemy_tailbunker` | enemy | 84 | entity class 0x33 (Tailbunker), Ms/33.p | H |
+| ov222 | `ov222_enemy_tailbunker_2` | enemy | 84 | entity class 0x33 (Tailbunker), Ms/33.p | H |
+| ov223 | `ov223_enemy_wavecrest` | enemy | 91 | entity class 0x34 (Wavecrest), Ms/34.p | H |
+| ov224 | `ov224_enemy_avalanche` | enemy | 84 | entity class 0x35 (Avalanche), Ms/35.p | H |
+| ov225 | `ov225_enemy_phantomtail` | enemy | 87 | entity class 0x36 (Phantomtail), Ms/36.p | H |
+| ov226 | `ov226_enemy_windstorm` | enemy | 80 | entity class 0x37 (Windstorm), Ms/37.p | H |
+| ov227 | `ov227_enemy_dustflier` | enemy | 84 | entity class 0x38 (Dustflier), Ms/38.p | H |
+| ov228 | `ov228_enemy_dual_blade` | enemy | 81 | entity class 0x39 (Dual Blade), Ms/39.p | H |
+| ov229 | `ov229_enemy_dual_blade_2` | enemy | 81 | entity class 0x39 (Dual Blade), Ms/39.p | H |
+| ov230 | `ov230_enemy_blitz_spear` | enemy | 74 | entity class 0x3a (Blitz Spear), Ms/3a.p | H |
+| ov231 | `ov231_enemy_air_battler` | enemy | 65 | entity class 0x3b (Air Battler), Ms/3b.p | H |
+| ov232 | `ov232_enemy_air_battler_2` | enemy | 65 | entity class 0x3b (Air Battler), Ms/3b.p | H |
+| ov233 | `ov233_enemy_stalwart_blade` | enemy | 81 | entity class 0x3c (Stalwart Blade), Ms/3c.p | H |
+| ov234 | `ov234_enemy_ball` | enemy | 21 | entity class 0x3d (Ball), Ms/3d.p | H |
+| ov235 | `ov235_enemy_xion_3e` | enemy | 97 | entity class 0x3e (Xion), Ms/3e.p; 1_1_sword, Ms/XionShare.p | H |
+| ov236 | `ov236_enemy_guard_armor` | enemy | 153 | entity class 0x3f (Guard Armor), Ms/3f.p | H |
+| ov237 | `ov237_enemy_crimson_prankster` | enemy | 86 | entity class 0x40 (Crimson Prankster), Ms/40.p | H |
+| ov238 | `ov238_enemy_pete_41` | enemy | 72 | entity class 0x41 (Pete), Ms/41.p | H |
+| ov239 | `ov239_enemy_dusk` | enemy | 42 | entity class 0x42 (Dusk), Ms/42.p; Ms/NBShare.p | H |
+| ov240 | `ov240_enemy_samurai` | enemy | 42 | entity class 0x43 (Samurai), Ms/43.p; Ms/NBShare.p | H |
+| ov241 | `ov241_enemy_lumiere` | enemy | 26 | entity class 0x44 (Lumiere), Ms/44.p | H |
+| ov242 | `ov242_enemy_lumiere_2` | enemy | 26 | entity class 0x44 (Lumiere), Ms/44.p | H |
+| ov243 | `ov243_enemy_cogsworth` | enemy | 26 | entity class 0x45 (Cogsworth), Ms/45.p | H |
+| ov244 | `ov244_enemy_darkside` | enemy | 143 | entity class 0x46 (Darkside), Ms/46.p | H |
+| ov245 | `ov245_enemy_infernal_engine` | enemy | 264 | entity class 0x47 (Infernal Engine), Ms/47.p | H |
+| ov246 | `ov246_enemy_jumbo_cannon` | enemy | 64 | entity class 0x48 (Jumbo Cannon), Ms/48.p | H |
+| ov247 | `ov247_enemy_jumbo_cannon_2` | enemy | 64 | entity class 0x48 (Jumbo Cannon), Ms/48.p | H |
+| ov248 | `ov248_enemy_chill_ripper` | enemy | 78 | entity class 0x49 (Chill Ripper), Ms/49.p | H |
+| ov249 | `ov249_enemy_heat_saber` | enemy | 78 | entity class 0x4a (Heat Saber), Ms/4a.p | H |
+| ov250 | `ov250_enemy_gigas_shadow` | enemy | 52 | entity class 0x4b (Gigas Shadow), Ms/4b.p | H |
+| ov251 | `ov251_enemy_gigas_shadow_2` | enemy | 52 | entity class 0x4b (Gigas Shadow), Ms/4b.p | H |
+| ov252 | `ov252_enemy_ruler_of_the_sky` | enemy | 94 | entity class 0x4c (Ruler of the Sky), Ms/4c.p | H |
+| ov253 | `ov253_enemy_leechgrave` | enemy | 165 | entity class 0x4d (Leechgrave), Ms/4d.p | H |
+| ov254 | `ov254_enemy_antlion` | enemy | 183 | entity class 0x4e (Antlion), Ms/4e.p | H |
+| ov255 | `ov255_enemy_xion_4f` | enemy | 112 | entity class 0x4f (Xion), Ms/4f.p; Ms/XionShare.p | H |
+| ov256 | `ov256_enemy_crooked_chariot` | enemy | 113 | entity class 0x50 (Crooked Chariot), Ms/50.p | H |
+| ov257 | `ov257_enemy_xion_51` | enemy | 95 | entity class 0x51 (Xion), Ms/51.p; Ms/XionShare.p | H |
+| ov258 | `ov258_enemy_xion_52` | enemy | 81 | entity class 0x52 (Xion), Ms/52.p | H |
+| ov259 | `ov259_enemy_saix` | enemy | 121 | entity class 0x53 (Saix), Ms/53.p; sa_h_R | H |
+| ov260 | `ov260_enemy_riku` | enemy | 110 | entity class 0x54 (Riku), Ms/54.p | H |
+| ov261 | `ov261_enemy_zero` | enemy | 35 | entity class 0x55 (Zero), Ms/55.p; zero_ef_dummy | H |
+| ov262 | `ov262_enemy_zero_2` | enemy | 35 | entity class 0x55 (Zero), Ms/55.p; zero_ef_dummy | H |
+| ov263 | `ov263_enemy_sky_grappler` | enemy | 65 | entity class 0x57 (Sky Grappler), Ms/57.p | H |
+| ov264 | `ov264_enemy_spiked_crawler` | enemy | 50 | entity class 0x58 (Spiked Crawler), Ms/58.p | H |
+| ov265 | `ov265_enemy_aerial_master` | enemy | 65 | entity class 0x59 (Aerial Master), Ms/59.p | H |
+| ov266 | `ov266_enemy_lurk_lizard` | enemy | 119 | entity class 0x5a (Lurk Lizard), Ms/5a.p | H |
+| ov267 | `ov267_enemy_lurk_lizard_2` | enemy | 119 | entity class 0x5a (Lurk Lizard), Ms/5a.p | H |
+| ov268 | `ov268_enemy_land_armor` | enemy | 81 | entity class 0x5b (Land Armor), Ms/5b.p | H |
+| ov269 | `ov269_enemy_bully_dog` | enemy | 50 | entity class 0x5c (Bully Dog), Ms/5c.p | H |
+| ov270 | `ov270_enemy_bully_dog_2` | enemy | 50 | entity class 0x5c (Bully Dog), Ms/5c.p | H |
+| ov271 | `ov271_enemy_destroyer` | enemy | 60 | entity class 0x5d (Destroyer), Ms/5d.p | H |
+| ov272 | `ov272_enemy_living_pod` | enemy | 56 | entity class 0x5e (Living Pod), Ms/5e.p | H |
+| ov273 | `ov273_enemy_orcus` | enemy | 116 | entity class 0x5f (Orcus), Ms/5f.p; sword | H |
+| ov274 | `ov274_enemy_solid_armor` | enemy | 63 | entity class 0x60 (Solid Armor), Ms/60.p | H |
+| ov275 | `ov275_enemy_solid_armor_2` | enemy | 63 | entity class 0x60 (Solid Armor), Ms/60.p | H |
+| ov276 | `ov276_enemy_zip_slasher` | enemy | 50 | entity class 0x61 (Zip Slasher), Ms/61.p | H |
+| ov277 | `ov277_enemy_dark_follower` | enemy | 143 | entity class 0x62 (Dark Follower), Ms/62.p | H |
+| ov278 | `ov278_enemy_powered_armor` | enemy | 153 | entity class 0x63 (Powered Armor), Ms/63.p | H |
+| ov279 | `ov279_enemy_carrier_ghost` | enemy | 56 | entity class 0x64 (Carrier Ghost), Ms/64.p | H |
+| ov280 | `ov280_enemy_artful_flyer` | enemy | 65 | entity class 0x65 (Artful Flyer), Ms/65.p | H |
+| ov281 | `ov281_enemy_commander` | enemy | 48 | entity class 0x66 (Commander), Ms/66.p | H |
+| ov282 | `ov282_enemy_novashadow` | enemy | 83 | entity class 0x67 (Novashadow), Ms/67.p; Sn_shadow | H |
+| ov283 | `ov283_enemy_xigbar` | enemy | 81 | entity class 0x68 (Xigbar), Ms/68.p; xig_h_L, xig_h_R | H |
+| ov284 | `ov284_enemy_tentaclaw` | enemy | 33 | entity class 0x69 (Tentaclaw), Ms/69.p | H |
+| ov285 | `ov285_enemy_creepworm` | enemy | 23 | entity class 0x6a (Creepworm), Ms/6a.p | H |
+| ov286 | `ov286_enemy_creepworm_2` | enemy | 23 | entity class 0x6a (Creepworm), Ms/6a.p | H |
+| ov287 | `ov287_enemy_training_barrel` | enemy | 26 | entity class 0x6b (Training Barrel), Ms/6b.p | H |
+| ov288 | `ov288_enemy_training_barrel_2` | enemy | 26 | entity class 0x6b (Training Barrel), Ms/6b.p | H |
+| ov289 | `ov289_enemy_training_barrel_3` | enemy | 26 | entity class 0x6b (Training Barrel), Ms/6b.p | H |
+| ov290 | `ov290_enemy_dummy_player` | enemy | 3 | entity class 0x6c (Dummy Player), Ms/6c.p | H |
+| ov291 | `ov291_enemy_pete_6d` | enemy | 32 | entity class 0x6d (Pete), Ms/6d.p | H |
+| ov292 | `ov292_enemy_emerald_serenade` | enemy | 31 | entity class 0x6e (Emerald Serenade), Ms/6e.p | H |
+| ov293 | `ov293_enemy_deserter` | enemy | 37 | entity class 0x6f (Deserter), Ms/6f.p | H |
+| ov294 | `ov294_enemy_shadow_glob` | enemy | 14 | entity class 0x70 (Shadow Glob), Ms/70.p | H |
+| ov295 | `ov295_enemy_shadow_glob_2` | enemy | 14 | entity class 0x70 (Shadow Glob), Ms/70.p | H |
+| ov296 | `ov296_enemy_shadow_glob_3` | enemy | 14 | entity class 0x70 (Shadow Glob), Ms/70.p | H |
+| ov297 | `ov297_enemy_mystery_71` | enemy | 39 | entity class 0x71 (shown as "? ? ? ?"), Ms/71.p | H |
+| ov298 | `ov298_enemy_mystery_72` | enemy | 37 | entity class 0x72 (shown as "? ? ? ?"), Ms/72.p | H |
+| ov299 | `ov299_enemy_turret` | enemy | 31 | entity class 0x73 (Turret), Ms/73.p | H |
+| ov300 | `ov300_enemy_device` | enemy | 3 | entity class 0x74 (Device), Ms/74.p | H |
+| ov301 | `ov301_enemy_tt_leaf` | enemy | 18 | entity class 0x75 (no name of its own), Ms/75.p | H |
 | ov302 | `ov302` | field module | 25 | world-id record filters | L |

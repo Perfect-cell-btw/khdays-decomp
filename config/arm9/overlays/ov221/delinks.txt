@@ -4,350 +4,350 @@
     .data       start:0x020d4e00 end:0x020d4e60 kind:data align:32
     .bss        start:0x020d4e60 end:0x020d4e60 kind:bss align:32
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RegisterEntityClass.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov221_enemy_33/Ov221_CreateNamedEntity.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/enemies/ov221_enemy_33/Ov221_SyncPartNodesToJoint.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_SyncPartNodesToJoint.c:
     complete
     .text       start:0x020cfc08 end:0x020cfd80
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ArmModelCallback.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ArmModelCallback.c:
     complete
     .text       start:0x020cfd80 end:0x020cfdbc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_EnemyInit.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_EnemyInit.c:
     complete
     .text       start:0x020cfdbc end:0x020d0204
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Destroy.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Destroy.c:
     complete
     .text       start:0x020d0204 end:0x020d025c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_TickWithChildRefresh.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_TickWithChildRefresh.c:
     complete
     .text       start:0x020d025c end:0x020d0280
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ForwardEventToChildren.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ForwardEventToChildren.c:
     complete
     .text       start:0x020d0280 end:0x020d02c4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_NotifyPartsThenBase.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d02c4 end:0x020d0308
 
-src/overlays/enemies/ov221_enemy_33/Ov221_OnEffectMessage.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_OnEffectMessage.c:
     complete
     .text       start:0x020d0308 end:0x020d05b4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ReleaseHeldSoundsAndTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ReleaseHeldSoundsAndTick.c:
     complete
     .text       start:0x020d05b4 end:0x020d0620
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RebindClip.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RebindClip.c:
     complete
     .text       start:0x020d0620 end:0x020d06a4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_CreateAiTask.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_CreateAiTask.c:
     complete
     .text       start:0x020d06a4 end:0x020d0700
 
-src/overlays/enemies/ov221_enemy_33/Ov221_HandleHit.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_HandleHit.c:
     complete
     .text       start:0x020d0700 end:0x020d09d0
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d09d0 end:0x020d09fc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RequestSubState15IfIdle.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RequestSubState15IfIdle.c:
     complete
     .text       start:0x020d09fc end:0x020d0a2c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_StrikeSweepEntities.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_StrikeSweepEntities.c:
     complete
     .text       start:0x020d0a2c end:0x020d0d20
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ChooseMove.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ChooseMove.c:
     complete
     .text       start:0x020d0d20 end:0x020d0fb8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_startAnim.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_startAnim.c:
     complete
     .text       start:0x020d0fb8 end:0x020d0fcc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_SetModeAndResetCounters.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_SetModeAndResetCounters.c:
     complete
     .text       start:0x020d0fcc end:0x020d1044
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RunSubStateScript.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RunSubStateScript.c:
     complete
     .text       start:0x020d1044 end:0x020d132c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_MeasureTargetGap.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_MeasureTargetGap.c:
     complete
     .text       start:0x020d132c end:0x020d13ec
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ResetSubObjectsAndArm.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ResetSubObjectsAndArm.c:
     complete
     .text       start:0x020d13ec end:0x020d14d4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiDispatchAction.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiDispatchAction.c:
     complete
     .text       start:0x020d14d4 end:0x020d17f8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_HoverTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_HoverTick.c:
     complete
     .text       start:0x020d17f8 end:0x020d1b80
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RaiseFlagsAndArmChildren.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RaiseFlagsAndArmChildren.c:
     complete
     .text       start:0x020d1b80 end:0x020d1bfc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d1bfc end:0x020d1c4c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterWait.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterWait.c:
     complete
     .text       start:0x020d1c4c end:0x020d1d28
 
-src/overlays/enemies/ov221_enemy_33/Ov221_WaitThenAdvanceState.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_WaitThenAdvanceState.c:
     complete
     .text       start:0x020d1d28 end:0x020d1da8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiRollTimerOnAnimEnd.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiRollTimerOnAnimEnd.c:
     complete
     .text       start:0x020d1da8 end:0x020d1e3c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterCuedAnim.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterCuedAnim.c:
     complete
     .text       start:0x020d1e3c end:0x020d1ea8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiCuedAnimTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiCuedAnimTick.c:
     complete
     .text       start:0x020d1ea8 end:0x020d1f68
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterRetreatB.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterRetreatB.c:
     complete
     .text       start:0x020d1f68 end:0x020d1fb8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterRetreat.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterRetreat.c:
     complete
     .text       start:0x020d1fb8 end:0x020d2020
 
-src/overlays/enemies/ov221_enemy_33/Ov221_RetreatTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_RetreatTick.c:
     complete
     .text       start:0x020d2020 end:0x020d22fc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterCooldown.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterCooldown.c:
     complete
     .text       start:0x020d22fc end:0x020d2344
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiCooldownTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiCooldownTick.c:
     complete
     .text       start:0x020d2344 end:0x020d2384
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Steer.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Steer.c:
     complete
     .text       start:0x020d2384 end:0x020d2538
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterChase.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterChase.c:
     complete
     .text       start:0x020d2538 end:0x020d2574
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiChaseTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiChaseTick.c:
     complete
     .text       start:0x020d2574 end:0x020d27bc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_GuardedAimOrHandoff.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_GuardedAimOrHandoff.c:
     complete
     .text       start:0x020d27bc end:0x020d2888
 
-src/overlays/enemies/ov221_enemy_33/Ov221_EnterAttack.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_EnterAttack.c:
     complete
     .text       start:0x020d2888 end:0x020d2930
 
-src/overlays/enemies/ov221_enemy_33/Ov221_SpawnWindupTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_SpawnWindupTick.c:
     complete
     .text       start:0x020d2930 end:0x020d2ca8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterChargeWindup.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterChargeWindup.c:
     complete
     .text       start:0x020d2ca8 end:0x020d2d18
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ChargeWindupTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ChargeWindupTick.c:
     complete
     .text       start:0x020d2d18 end:0x020d2f94
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ChargeTimerThenFire.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ChargeTimerThenFire.c:
     complete
     .text       start:0x020d2f94 end:0x020d3064
 
-src/overlays/enemies/ov221_enemy_33/Ov221_DashTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_DashTick.c:
     complete
     .text       start:0x020d3064 end:0x020d324c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiStep_QueueAction4OnAnimEnd.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d324c end:0x020d3280
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterRecoilTurn.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterRecoilTurn.c:
     complete
     .text       start:0x020d3280 end:0x020d32d4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiRecoilTurnWait.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiRecoilTurnWait.c:
     complete
     .text       start:0x020d32d4 end:0x020d3318
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiRecoilTurnStart.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiRecoilTurnStart.c:
     complete
     .text       start:0x020d3318 end:0x020d3368
 
-src/overlays/enemies/ov221_enemy_33/Ov221_TurnTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_TurnTick.c:
     complete
     .text       start:0x020d3368 end:0x020d34cc
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterLeap.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterLeap.c:
     complete
     .text       start:0x020d34cc end:0x020d3610
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiLeapWindup.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiLeapWindup.c:
     complete
     .text       start:0x020d3610 end:0x020d3678
 
-src/overlays/enemies/ov221_enemy_33/Ov221_LeapTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_LeapTick.c:
     complete
     .text       start:0x020d3678 end:0x020d3948
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterAttackB.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterAttackB.c:
     complete
     .text       start:0x020d3948 end:0x020d3998
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AttackTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AttackTick.c:
     complete
     .text       start:0x020d3998 end:0x020d3a98
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterCuedAnimB.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterCuedAnimB.c:
     complete
     .text       start:0x020d3a98 end:0x020d3ad8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiCuedAnimTickB.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiCuedAnimTickB.c:
     complete
     .text       start:0x020d3ad8 end:0x020d3b90
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d3b90 end:0x020d3c68
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiStep_QueueAction0.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d3c68 end:0x020d3c88
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterHold.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterHold.c:
     complete
     .text       start:0x020d3c88 end:0x020d3d60
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiHoldTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiHoldTick.c:
     complete
     .text       start:0x020d3d60 end:0x020d3df4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiEnterApproach.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiEnterApproach.c:
     complete
     .text       start:0x020d3df4 end:0x020d3e24
 
-src/overlays/enemies/ov221_enemy_33/Ov221_AiApproachTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_AiApproachTick.c:
     complete
     .text       start:0x020d3e24 end:0x020d3f38
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_Fire.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_Fire.c:
     complete
     .text       start:0x020d3f38 end:0x020d3fec
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_New.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_New.c:
     complete
     .text       start:0x020d3fec end:0x020d4020
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Construct.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Construct.c:
     complete
     .text       start:0x020d4020 end:0x020d4218
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_Destroy.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_Destroy.c:
     complete
     .text       start:0x020d4218 end:0x020d424c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_TickSyncXform.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_TickSyncXform.c:
     complete
     .text       start:0x020d424c end:0x020d42b0
 
-src/overlays/enemies/ov221_enemy_33/Ov221_CmdSpawnChild.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_CmdSpawnChild.c:
     complete
     .text       start:0x020d42b0 end:0x020d43a0
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_SetupFlight.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_SetupFlight.c:
     complete
     .text       start:0x020d43a0 end:0x020d443c
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_CreateAiTask.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_CreateAiTask.c:
     complete
     .text       start:0x020d443c end:0x020d4498
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ForwardVecToOwner.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ForwardVecToOwner.c:
     complete
     .text       start:0x020d4498 end:0x020d44e0
 
-src/overlays/enemies/ov221_enemy_33/Ov221_SweepStrike.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_SweepStrike.c:
     complete
     .text       start:0x020d44e0 end:0x020d45e8
 
-src/overlays/enemies/ov221_enemy_33/Ov221_stateInitClearSlots.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_stateInitClearSlots.c:
     complete
     .text       start:0x020d45e8 end:0x020d4690
 
-src/overlays/enemies/ov221_enemy_33/Ov221_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d4690 end:0x020d4708
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_ApplyOrientation.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_ApplyOrientation.c:
     complete
     .text       start:0x020d4708 end:0x020d4768
 
-src/overlays/enemies/ov221_enemy_33/Ov221_EnterReaction.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_EnterReaction.c:
     complete
     .text       start:0x020d4768 end:0x020d4824
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ReactionIdleStep.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ReactionIdleStep.c:
     complete
     .text       start:0x020d4824 end:0x020d4828
 
-src/overlays/enemies/ov221_enemy_33/Ov221_EnterChargeState.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_EnterChargeState.c:
     complete
     .text       start:0x020d4828 end:0x020d4950
 
-src/overlays/enemies/ov221_enemy_33/Ov221_ProjectileTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_ProjectileTick.c:
     complete
     .text       start:0x020d4950 end:0x020d4ba0
 
-src/overlays/enemies/ov221_enemy_33/Ov221_SpinLungeTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_SpinLungeTick.c:
     complete
     .text       start:0x020d4ba0 end:0x020d4cd4
 
-src/overlays/enemies/ov221_enemy_33/Ov221_Projectile_FlightTick.c:
+src/overlays/enemies/ov221_enemy_tailbunker/Ov221_Projectile_FlightTick.c:
     complete
     .text       start:0x020d4cd4 end:0x020d4da8
 
-src/overlays/enemies/ov221_enemy_33/data/ov221_strings_020d4e00.c:
+src/overlays/enemies/ov221_enemy_tailbunker/data/ov221_strings_020d4e00.c:
     complete
     .data       start:0x020d4e00 end:0x020d4e58
 
-src/overlays/enemies/ov221_enemy_33/data/ov221_tables_020d4da8.c:
+src/overlays/enemies/ov221_enemy_tailbunker/data/ov221_tables_020d4da8.c:
     complete
     .rodata     start:0x020d4da8 end:0x020d4de0
 
-src/overlays/enemies/ov221_enemy_33/data/ov221_zero_020d4e58.c:
+src/overlays/enemies/ov221_enemy_tailbunker/data/ov221_zero_020d4e58.c:
     complete
     .data       start:0x020d4e58 end:0x020d4e60

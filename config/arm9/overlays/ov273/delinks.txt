@@ -4,474 +4,474 @@
     .data       start:0x020d6be0 end:0x020d6c20 kind:data align:32
     .bss        start:0x020d6c20 end:0x020d6c20 kind:bss align:32
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_RegisterEntityClass.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CreateNamedEntity.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_BroadcastWorkingPose.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_BroadcastWorkingPose.c:
     complete
     .text       start:0x020cfc08 end:0x020cfc94
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Construct.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Construct.c:
     complete
     .text       start:0x020cfc94 end:0x020d00a4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ReleaseNodeResources.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ReleaseNodeResources.c:
     complete
     .text       start:0x020d00a4 end:0x020d010c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_UpdateModelTransform.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_UpdateModelTransform.c:
     complete
     .text       start:0x020d010c end:0x020d01c4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SendEnabledStatusMsg.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SendEnabledStatusMsg.c:
     complete
     .text       start:0x020d01c4 end:0x020d0240
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_HandleMessage.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_HandleMessage.c:
     complete
     .text       start:0x020d0240 end:0x020d07d8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_TeardownHook.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_TeardownHook.c:
     complete
     .text       start:0x020d07d8 end:0x020d0898
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020d0898 end:0x020d0900
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_NotifyPartsThenBase.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d0900 end:0x020d0968
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_RebindCollisionSlot.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_RebindCollisionSlot.c:
     complete
     .text       start:0x020d0968 end:0x020d0b88
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AppendWorkEntryFinalize.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AppendWorkEntryFinalize.c:
     complete
     .text       start:0x020d0b88 end:0x020d0c04
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CreateAiTask.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CreateAiTask.c:
     complete
     .text       start:0x020d0c04 end:0x020d0c50
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_OnHit.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_OnHit.c:
     complete
     .text       start:0x020d0c50 end:0x020d0e98
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ReserveNodeIfStateActive.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ReserveNodeIfStateActive.c:
     complete
     .text       start:0x020d0e98 end:0x020d0eec
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_InitActionState.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_InitActionState.c:
     complete
     .text       start:0x020d0eec end:0x020d0f9c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiDispatchAction.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiDispatchAction.c:
     complete
     .text       start:0x020d0f9c end:0x020d1224
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SlerpPoseCountdownAndFlushVelocity.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SlerpPoseCountdownAndFlushVelocity.c:
     complete
     .text       start:0x020d1224 end:0x020d1294
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterStopAnimRaiseFlags86.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterStopAnimRaiseFlags86.c:
     complete
     .text       start:0x020d1294 end:0x020d1314
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_PublishFinishPose.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_PublishFinishPose.c:
     complete
     .text       start:0x020d1314 end:0x020d13b4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterRetreat.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterRetreat.c:
     complete
     .text       start:0x020d13b4 end:0x020d152c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AlertWaitTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AlertWaitTick.c:
     complete
     .text       start:0x020d152c end:0x020d1640
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiQueue2OnAnimEnd.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020d1640 end:0x020d1674
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterWander.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterWander.c:
     complete
     .text       start:0x020d1674 end:0x020d16d0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterWander.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterWander.c:
     complete
     .text       start:0x020d16d0 end:0x020d175c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CircleStrafeTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CircleStrafeTick.c:
     complete
     .text       start:0x020d175c end:0x020d18f8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ApproachTickDecay09.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ApproachTickDecay09.c:
     complete
     .text       start:0x020d18f8 end:0x020d1980
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterIdle.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterIdle.c:
     complete
     .text       start:0x020d1980 end:0x020d1a24
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_IdleTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_IdleTick.c:
     complete
     .text       start:0x020d1a24 end:0x020d1cc0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterScaleBranch.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterScaleBranch.c:
     complete
     .text       start:0x020d1cc0 end:0x020d1d1c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Reaction_ScaleThenBranch.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Reaction_ScaleThenBranch.c:
     complete
     .text       start:0x020d1d1c end:0x020d1de4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CloseInTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CloseInTick.c:
     complete
     .text       start:0x020d1de4 end:0x020d1f3c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ApproachTickDecay08.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ApproachTickDecay08.c:
     complete
     .text       start:0x020d1f3c end:0x020d1fc4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterBackOff.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterBackOff.c:
     complete
     .text       start:0x020d1fc4 end:0x020d2020
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiBackOffStart.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiBackOffStart.c:
     complete
     .text       start:0x020d2020 end:0x020d2094
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_BackOffTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_BackOffTick.c:
     complete
     .text       start:0x020d2094 end:0x020d2210
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ApproachDecisionTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ApproachDecisionTick.c:
     complete
     .text       start:0x020d2210 end:0x020d22f0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Reaction_BuildTransformAndDispatch.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Reaction_BuildTransformAndDispatch.c:
     complete
     .text       start:0x020d22f0 end:0x020d23c4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterCharge.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterCharge.c:
     complete
     .text       start:0x020d23c4 end:0x020d24cc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_LockOnEntry.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_LockOnEntry.c:
     complete
     .text       start:0x020d24cc end:0x020d276c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterAlert.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterAlert.c:
     complete
     .text       start:0x020d276c end:0x020d27bc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_RegroupTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_RegroupTick.c:
     complete
     .text       start:0x020d27bc end:0x020d293c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_PairUpWaitTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_PairUpWaitTick.c:
     complete
     .text       start:0x020d293c end:0x020d2a4c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterFaceTarget.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterFaceTarget.c:
     complete
     .text       start:0x020d2a4c end:0x020d2af8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterSubState9.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterSubState9.c:
     complete
     .text       start:0x020d2af8 end:0x020d2b60
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_PrepSubState9IfChildIdle.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_PrepSubState9IfChildIdle.c:
     complete
     .text       start:0x020d2b60 end:0x020d2b94
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterShockwave.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterShockwave.c:
     complete
     .text       start:0x020d2b94 end:0x020d2be0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ShockwaveTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ShockwaveTick.c:
     complete
     .text       start:0x020d2be0 end:0x020d3030
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterSink.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterSink.c:
     complete
     .text       start:0x020d3030 end:0x020d3090
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiSinkStart.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiSinkStart.c:
     complete
     .text       start:0x020d3090 end:0x020d30f0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiSinkTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiSinkTick.c:
     complete
     .text       start:0x020d30f0 end:0x020d312c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterScatter.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterScatter.c:
     complete
     .text       start:0x020d312c end:0x020d323c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterFastSink.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterFastSink.c:
     complete
     .text       start:0x020d323c end:0x020d3290
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiQueue5OnAnimEnd.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiQueue5OnAnimEnd.c:
     complete
     .text       start:0x020d3290 end:0x020d32c4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterAttack.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterAttack.c:
     complete
     .text       start:0x020d32c4 end:0x020d33a8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_WindupTickA.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_WindupTickA.c:
     complete
     .text       start:0x020d33a8 end:0x020d345c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_WindupTickB.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_WindupTickB.c:
     complete
     .text       start:0x020d345c end:0x020d3510
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterLunge.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterLunge.c:
     complete
     .text       start:0x020d3510 end:0x020d3568
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_LungeTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_LungeTick.c:
     complete
     .text       start:0x020d3568 end:0x020d3834
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_RetreatTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_RetreatTick.c:
     complete
     .text       start:0x020d3834 end:0x020d38d0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiEnterHover.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiEnterHover.c:
     complete
     .text       start:0x020d38d0 end:0x020d3910
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_HoverTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_HoverTick.c:
     complete
     .text       start:0x020d3910 end:0x020d3a88
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_VolleyTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_VolleyTick.c:
     complete
     .text       start:0x020d3a88 end:0x020d3be4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterPose19State.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterPose19State.c:
     complete
     .text       start:0x020d3be4 end:0x020d3c60
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_TailSweepTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_TailSweepTick.c:
     complete
     .text       start:0x020d3c60 end:0x020d3f58
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterGuard.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterGuard.c:
     complete
     .text       start:0x020d3f58 end:0x020d401c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterStagger.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterStagger.c:
     complete
     .text       start:0x020d401c end:0x020d41b4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_New.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_New.c:
     complete
     .text       start:0x020d41b4 end:0x020d41e8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CompanionConstruct.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CompanionConstruct.c:
     complete
     .text       start:0x020d41e8 end:0x020d4398
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Destroy.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Destroy.c:
     complete
     .text       start:0x020d4398 end:0x020d43d0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_PushPose.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_PushPose.c:
     complete
     .text       start:0x020d43d0 end:0x020d4404
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CmdSpawnChildAtOffsetB.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CmdSpawnChildAtOffsetB.c:
     complete
     .text       start:0x020d4404 end:0x020d44f0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_RearmHitSlots.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_RearmHitSlots.c:
     complete
     .text       start:0x020d44f0 end:0x020d459c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d459c end:0x020d45e8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_InitChaseState.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_InitChaseState.c:
     complete
     .text       start:0x020d45e8 end:0x020d46ac
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiDispatchAction_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiDispatchAction_2.c:
     complete
     .text       start:0x020d46ac end:0x020d4750
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SlerpPoseAndFlushVelocity.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SlerpPoseAndFlushVelocity.c:
     complete
     .text       start:0x020d4750 end:0x020d47b0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterRaiseFlags86ClearLocks.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterRaiseFlags86ClearLocks.c:
     complete
     .text       start:0x020d47b0 end:0x020d482c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d482c end:0x020d4868
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterSweep.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterSweep.c:
     complete
     .text       start:0x020d4868 end:0x020d49cc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SweepPassTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SweepPassTick.c:
     complete
     .text       start:0x020d49cc end:0x020d4b54
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SweepTurnTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SweepTurnTick.c:
     complete
     .text       start:0x020d4b54 end:0x020d4cf0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_HomingTurnTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_HomingTurnTick.c:
     complete
     .text       start:0x020d4cf0 end:0x020d4e48
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_HomingDashTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_HomingDashTick.c:
     complete
     .text       start:0x020d4e48 end:0x020d4fa4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SweepPassHitTest.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SweepPassHitTest.c:
     complete
     .text       start:0x020d4fa4 end:0x020d5268
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_New_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_New_2.c:
     complete
     .text       start:0x020d5268 end:0x020d529c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ConstructThirdForm.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ConstructThirdForm.c:
     complete
     .text       start:0x020d529c end:0x020d5464
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Destroy_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Destroy_2.c:
     complete
     .text       start:0x020d5464 end:0x020d54a4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_TickSyncXformFirst.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_TickSyncXformFirst.c:
     complete
     .text       start:0x020d54a4 end:0x020d54e4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SendMessage24.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SendMessage24.c:
     complete
     .text       start:0x020d54e4 end:0x020d5548
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CmdSpawnChildTwoSlots.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CmdSpawnChildTwoSlots.c:
     complete
     .text       start:0x020d5548 end:0x020d56ec
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CreateAiTask_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CreateAiTask_2.c:
     complete
     .text       start:0x020d56ec end:0x020d573c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_BroadcastPosition.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_BroadcastPosition.c:
     complete
     .text       start:0x020d573c end:0x020d5864
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_InitStateSlots.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_InitStateSlots.c:
     complete
     .text       start:0x020d5864 end:0x020d58d0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiTaskReleaseNoOp.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiTaskReleaseNoOp.c:
     complete
     .text       start:0x020d58d0 end:0x020d58d4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ConsumePoseRequestB.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ConsumePoseRequestB.c:
     complete
     .text       start:0x020d58d4 end:0x020d599c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_PublishPoseAndReset.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_PublishPoseAndReset.c:
     complete
     .text       start:0x020d599c end:0x020d59cc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiLockAndResume.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiLockAndResume.c:
     complete
     .text       start:0x020d59cc end:0x020d5a44
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d5a44 end:0x020d5a80
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_EnterLeap.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_EnterLeap.c:
     complete
     .text       start:0x020d5a80 end:0x020d5ba0
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_LeapTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_LeapTick.c:
     complete
     .text       start:0x020d5ba0 end:0x020d5fcc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_New_3.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_New_3.c:
     complete
     .text       start:0x020d5fcc end:0x020d6000
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Construct_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Construct_2.c:
     complete
     .text       start:0x020d6000 end:0x020d6144
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_Destroy_3.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_Destroy_3.c:
     complete
     .text       start:0x020d6144 end:0x020d6170
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SendMessage24_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SendMessage24_2.c:
     complete
     .text       start:0x020d6170 end:0x020d61d4
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CmdSpawnChildAtOffset.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CmdSpawnChildAtOffset.c:
     complete
     .text       start:0x020d61d4 end:0x020d62b8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_SelectCollisionSet.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_SelectCollisionSet.c:
     complete
     .text       start:0x020d62b8 end:0x020d639c
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020d639c end:0x020d63e8
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiStateInit.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiStateInit.c:
     complete
     .text       start:0x020d63e8 end:0x020d6440
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_ConsumePoseRequest.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_ConsumePoseRequest.c:
     complete
     .text       start:0x020d6440 end:0x020d64dc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiLockAndResume_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiLockAndResume_2.c:
     complete
     .text       start:0x020d64dc end:0x020d6554
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiStep_ResumeStoredAction_2.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiStep_ResumeStoredAction_2.c:
     complete
     .text       start:0x020d6554 end:0x020d6590
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_StartRecoilSlide.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_StartRecoilSlide.c:
     complete
     .text       start:0x020d6590 end:0x020d65fc
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_AiCountdownToSlam.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_AiCountdownToSlam.c:
     complete
     .text       start:0x020d65fc end:0x020d6654
 
-src/overlays/enemies/ov273_enemy_5f/Ov273_GroundSlamTick.c:
+src/overlays/enemies/ov273_enemy_orcus/Ov273_GroundSlamTick.c:
     complete
     .text       start:0x020d6654 end:0x020d69b4
 
-src/overlays/enemies/ov273_enemy_5f/data/ov273_strings_020d6be0.c:
+src/overlays/enemies/ov273_enemy_orcus/data/ov273_strings_020d6be0.c:
     complete
     .data       start:0x020d6be0 end:0x020d6c20
 
-src/overlays/enemies/ov273_enemy_5f/data/ov273_tables_020d69b4.c:
+src/overlays/enemies/ov273_enemy_orcus/data/ov273_tables_020d69b4.c:
     complete
     .rodata     start:0x020d69b4 end:0x020d6bc4

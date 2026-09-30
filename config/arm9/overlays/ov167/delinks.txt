@@ -4,230 +4,230 @@
     .data       start:0x020d2740 end:0x020d2760 kind:data align:32
     .bss        start:0x020d2760 end:0x020d2760 kind:bss align:32
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_RegisterEntityClass.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_CreateNamedEntity.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_OrientPartAlongDirection.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc60
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_Construct.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_Construct.c:
     complete
     .text       start:0x020cfc60 end:0x020cff7c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cff7c end:0x020cffbc
 
-src/overlays/enemies/ov167_enemy_1a_2/func_ov167_020cffbc.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/func_ov167_020cffbc.c:
     complete
     .text       start:0x020cffbc end:0x020cffc8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_ForwardEventToChild.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_ForwardEventToChild.c:
     complete
     .text       start:0x020cffc8 end:0x020cfff0
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_NotifyPartThenBase.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_NotifyPartThenBase.c:
     complete
     .text       start:0x020cfff0 end:0x020d0018
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_HandleSpawnMessage.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_HandleSpawnMessage.c:
     complete
     .text       start:0x020d0018 end:0x020d0234
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_Model_SetTrack0.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_Model_SetTrack0.c:
     complete
     .text       start:0x020d0234 end:0x020d0264
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d0264 end:0x020d039c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_registryCreateEntry.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_registryCreateEntry.c:
     complete
     .text       start:0x020d039c end:0x020d03f8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_OnHit.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_OnHit.c:
     complete
     .text       start:0x020d03f8 end:0x020d061c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d061c end:0x020d0648
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_FaceTargetGetClearance.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d0648 end:0x020d06e0
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_IsChildInactive.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_IsChildInactive.c:
     complete
     .text       start:0x020d06e0 end:0x020d0720
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateInitTransformSlots.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateInitTransformSlots.c:
     complete
     .text       start:0x020d0720 end:0x020d080c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020d080c end:0x020d09f8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stDivStoreField.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stDivStoreField.c:
     complete
     .text       start:0x020d09f8 end:0x020d0a98
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0a98 end:0x020d0b00
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d0b00 end:0x020d0b84
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d0b84 end:0x020d0c50
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d0c50 end:0x020d0d28
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d0d28 end:0x020d0d5c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateRandomInitFull.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateRandomInitFull.c:
     complete
     .text       start:0x020d0d5c end:0x020d0de8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_OrbitTick.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_OrbitTick.c:
     complete
     .text       start:0x020d0de8 end:0x020d1164
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020d1164 end:0x020d11a8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_HoverBobTick.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_HoverBobTick.c:
     complete
     .text       start:0x020d11a8 end:0x020d139c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiStep_StartTag1.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiStep_StartTag1.c:
     complete
     .text       start:0x020d139c end:0x020d13d8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_HoverApproachTick.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_HoverApproachTick.c:
     complete
     .text       start:0x020d13d8 end:0x020d15a4
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateRandomDirValue.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateRandomDirValue.c:
     complete
     .text       start:0x020d15a4 end:0x020d1614
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_CircleTick.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_CircleTick.c:
     complete
     .text       start:0x020d1614 end:0x020d1790
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d1790 end:0x020d182c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_HoverHoldTick.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_HoverHoldTick.c:
     complete
     .text       start:0x020d182c end:0x020d19f8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d19f8 end:0x020d1a2c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1a2c end:0x020d1a60
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d1a60 end:0x020d1b54
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiEndWithUpdate.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiEndWithUpdate.c:
     complete
     .text       start:0x020d1b54 end:0x020d1c40
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d1c40 end:0x020d1ce0
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateTimerToggleFlags.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d1ce0 end:0x020d1d74
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d1d74 end:0x020d1db4
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_Actor_New.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_Actor_New.c:
     complete
     .text       start:0x020d1db4 end:0x020d1de8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_SubObject_Construct.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_SubObject_Construct.c:
     complete
     .text       start:0x020d1de8 end:0x020d1f48
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_OnDespawn.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_OnDespawn.c:
     complete
     .text       start:0x020d1f48 end:0x020d1f64
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_TickAndSyncModelXform.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d1f64 end:0x020d1f9c
 
-src/overlays/enemies/ov167_enemy_1a_2/func_ov167_020d1f9c.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/func_ov167_020d1f9c.c:
     complete
     .text       start:0x020d1f9c end:0x020d1fa8
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_TryTriggerEffect.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_TryTriggerEffect.c:
     complete
     .text       start:0x020d1fa8 end:0x020d2030
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d2030 end:0x020d207c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_stateInitClearSlots.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_stateInitClearSlots.c:
     complete
     .text       start:0x020d207c end:0x020d2124
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d2124 end:0x020d219c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiApplyMoveVector.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiApplyMoveVector.c:
     complete
     .text       start:0x020d219c end:0x020d21b4
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_ConfigHw60CopyVec3ConstToCThenAdvance.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020d21b4 end:0x020d2264
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d2264 end:0x020d229c
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_BeginDash.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_BeginDash.c:
     complete
     .text       start:0x020d229c end:0x020d2384
 
-src/overlays/enemies/ov167_enemy_1a_2/Ov167_DashTick.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/Ov167_DashTick.c:
     complete
     .text       start:0x020d2384 end:0x020d2710
 
-src/overlays/enemies/ov167_enemy_1a_2/data/ov167_strings_020d2740.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/data/ov167_strings_020d2740.c:
     complete
     .data       start:0x020d2740 end:0x020d2760
 
-src/overlays/enemies/ov167_enemy_1a_2/data/ov167_tables_020d2710.c:
+src/overlays/enemies/ov167_enemy_scarlet_tango_2/data/ov167_tables_020d2710.c:
     complete
     .rodata     start:0x020d2710 end:0x020d2720

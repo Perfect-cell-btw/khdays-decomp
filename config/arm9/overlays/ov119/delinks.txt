@@ -4,234 +4,234 @@
     .data       start:0x020cf980 end:0x020cf9e0 kind:data align:32
     .bss        start:0x020cf9e0 end:0x020cf9e0 kind:bss align:32
 
-src/overlays/enemies/ov119_enemy_03/Ov119_RegisterEntityClass.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov119_enemy_03/Ov119_CreateNamedEntity.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_RefreshAndPublishTransform.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_RefreshAndPublishTransform.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc02c
 
-src/overlays/enemies/ov119_enemy_03/Ov119_Construct.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_Construct.c:
     complete
     .text       start:0x020cc02c end:0x020cc2ec
 
-src/overlays/enemies/ov119_enemy_03/Ov119_Destroy.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_Destroy.c:
     complete
     .text       start:0x020cc2ec end:0x020cc32c
 
-src/overlays/enemies/ov119_enemy_03/Ov119_PlayAnimWithParts.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_PlayAnimWithParts.c:
     complete
     .text       start:0x020cc32c end:0x020cc3a8
 
-src/overlays/enemies/ov119_enemy_03/Ov119_OnEffectMessage.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_OnEffectMessage.c:
     complete
     .text       start:0x020cc3a8 end:0x020cc534
 
-src/overlays/enemies/ov119_enemy_03/Ov119_Tick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_Tick.c:
     complete
     .text       start:0x020cc534 end:0x020cc768
 
-src/overlays/enemies/ov119_enemy_03/Ov119_CreateAiTask.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_CreateAiTask.c:
     complete
     .text       start:0x020cc768 end:0x020cc7c4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_OnHit.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_OnHit.c:
     complete
     .text       start:0x020cc7c4 end:0x020cc9d0
 
-src/overlays/enemies/ov119_enemy_03/Ov119_RequestSubState11IfIdle.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020cc9d0 end:0x020cca00
 
-src/overlays/enemies/ov119_enemy_03/Ov119_PickBestFacingTarget.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_PickBestFacingTarget.c:
     complete
     .text       start:0x020cca00 end:0x020ccb10
 
-src/overlays/enemies/ov119_enemy_03/Ov119_ChooseNextAttack.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_ChooseNextAttack.c:
     complete
     .text       start:0x020ccb10 end:0x020ccc48
 
-src/overlays/enemies/ov119_enemy_03/Ov119_PushOutOfWorld.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_PushOutOfWorld.c:
     complete
     .text       start:0x020ccc48 end:0x020cce30
 
-src/overlays/enemies/ov119_enemy_03/Ov119_InitStateRegister3HwFlags.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_InitStateRegister3HwFlags.c:
     complete
     .text       start:0x020cce30 end:0x020ccef4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiDispatchAction.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiDispatchAction.c:
     complete
     .text       start:0x020ccef4 end:0x020cd0f0
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiSlerpHeading.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiSlerpHeading.c:
     complete
     .text       start:0x020cd0f0 end:0x020cd144
 
-src/overlays/enemies/ov119_enemy_03/Ov119_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd144 end:0x020cd1ac
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiStep_ResumeStoredActionRaised.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiStep_ResumeStoredActionRaised.c:
     complete
     .text       start:0x020cd1ac end:0x020cd224
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SpawnEffect48SetTurnRate.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SpawnEffect48SetTurnRate.c:
     complete
     .text       start:0x020cd224 end:0x020cd314
 
-src/overlays/enemies/ov119_enemy_03/Ov119_ChargeAndAim.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_ChargeAndAim.c:
     complete
     .text       start:0x020cd314 end:0x020cd3ec
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd3ec end:0x020cd420
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020cd420 end:0x020cd454
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiStep_QueueAction5.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiStep_QueueAction5.c:
     complete
     .text       start:0x020cd454 end:0x020cd478
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiStep_PickLandingPoint.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiStep_PickLandingPoint.c:
     complete
     .text       start:0x020cd478 end:0x020cd4d0
 
-src/overlays/enemies/ov119_enemy_03/Ov119_IdleFloatTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_IdleFloatTick.c:
     complete
     .text       start:0x020cd4d0 end:0x020cd6a0
 
-src/overlays/enemies/ov119_enemy_03/Ov119_HoverTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_HoverTick.c:
     complete
     .text       start:0x020cd6a0 end:0x020cd7f4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_FaceTargetLookAt.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_FaceTargetLookAt.c:
     complete
     .text       start:0x020cd7f4 end:0x020cd8a8
 
-src/overlays/enemies/ov119_enemy_03/Ov119_DecayOffsetGiveUpLatch.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_DecayOffsetGiveUpLatch.c:
     complete
     .text       start:0x020cd8a8 end:0x020cd988
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SpawnEffect4aReconfigureFlags.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SpawnEffect4aReconfigureFlags.c:
     complete
     .text       start:0x020cd988 end:0x020cda50
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cda50 end:0x020cda84
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiQueue7OnAnimEnd.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiQueue7OnAnimEnd.c:
     complete
     .text       start:0x020cda84 end:0x020cdab8
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SetPoseThenAdvanceSlot_2.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SetPoseThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cdab8 end:0x020cdaec
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TickApproachTarget.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TickApproachTarget.c:
     complete
     .text       start:0x020cdaec end:0x020cdc88
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SwipeHitWindow.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SwipeHitWindow.c:
     complete
     .text       start:0x020cdc88 end:0x020cde44
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiEnterBackOff.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiEnterBackOff.c:
     complete
     .text       start:0x020cde44 end:0x020cdec4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_BackOffTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_BackOffTick.c:
     complete
     .text       start:0x020cdec4 end:0x020ce0f0
 
-src/overlays/enemies/ov119_enemy_03/Ov119_CircleTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_CircleTick.c:
     complete
     .text       start:0x020ce0f0 end:0x020ce318
 
-src/overlays/enemies/ov119_enemy_03/Ov119_StalkTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_StalkTick.c:
     complete
     .text       start:0x020ce318 end:0x020ce52c
 
-src/overlays/enemies/ov119_enemy_03/Ov119_EnterBite.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_EnterBite.c:
     complete
     .text       start:0x020ce52c end:0x020ce610
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TimerReseedRandom.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TimerReseedRandom.c:
     complete
     .text       start:0x020ce610 end:0x020ce674
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TickOrbitTarget.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TickOrbitTarget.c:
     complete
     .text       start:0x020ce674 end:0x020ce8a8
 
-src/overlays/enemies/ov119_enemy_03/Ov119_EnterPounce.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_EnterPounce.c:
     complete
     .text       start:0x020ce8a8 end:0x020ce9a8
 
-src/overlays/enemies/ov119_enemy_03/Ov119_AiTimerQueueAction7.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_AiTimerQueueAction7.c:
     complete
     .text       start:0x020ce9a8 end:0x020ce9e4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_EnterLunge.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_EnterLunge.c:
     complete
     .text       start:0x020ce9e4 end:0x020ceac8
 
-src/overlays/enemies/ov119_enemy_03/Ov119_RepositionTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_RepositionTick.c:
     complete
     .text       start:0x020ceac8 end:0x020cec1c
 
-src/overlays/enemies/ov119_enemy_03/Ov119_GrabApproachFinish.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_GrabApproachFinish.c:
     complete
     .text       start:0x020cec1c end:0x020cedc4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TickHoldTarget.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TickHoldTarget.c:
     complete
     .text       start:0x020cedc4 end:0x020cf158
 
-src/overlays/enemies/ov119_enemy_03/Ov119_HoldTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_HoldTick.c:
     complete
     .text       start:0x020cf158 end:0x020cf370
 
-src/overlays/enemies/ov119_enemy_03/Ov119_CarryTick.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_CarryTick.c:
     complete
     .text       start:0x020cf370 end:0x020cf6fc
 
-src/overlays/enemies/ov119_enemy_03/Ov119_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cf6fc end:0x020cf7b0
 
-src/overlays/enemies/ov119_enemy_03/Ov119_SpawnChildStoreSelfAndArg.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_SpawnChildStoreSelfAndArg.c:
     complete
     .text       start:0x020cf7b0 end:0x020cf804
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TimerBlinkStart.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TimerBlinkStart.c:
     complete
     .text       start:0x020cf804 end:0x020cf848
 
-src/overlays/enemies/ov119_enemy_03/Ov119_ChildReleaseNoOp.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_ChildReleaseNoOp.c:
     complete
     .text       start:0x020cf848 end:0x020cf84c
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TimerBlinkParityClear.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TimerBlinkParityClear.c:
     complete
     .text       start:0x020cf84c end:0x020cf8c4
 
-src/overlays/enemies/ov119_enemy_03/Ov119_TimerBlinkParitySet.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/Ov119_TimerBlinkParitySet.c:
     complete
     .text       start:0x020cf8c4 end:0x020cf93c
 
-src/overlays/enemies/ov119_enemy_03/data/ov119_strings_020cf980.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/data/ov119_strings_020cf980.c:
     complete
     .data       start:0x020cf980 end:0x020cf9e0
 
-src/overlays/enemies/ov119_enemy_03/data/ov119_tables_020cf93c.c:
+src/overlays/enemies/ov119_enemy_hover_ghost/data/ov119_tables_020cf93c.c:
     complete
     .rodata     start:0x020cf93c end:0x020cf960

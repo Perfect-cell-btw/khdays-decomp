@@ -4,190 +4,190 @@
     .data       start:0x020d5900 end:0x020d5920 kind:data align:32
     .bss        start:0x020d5920 end:0x020d5920 kind:bss align:32
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_RegisterEntityClass.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_CreateNamedEntity.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_ConstructActor.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_ConstructActor.c:
     complete
     .text       start:0x020d3844 end:0x020d3ad0
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_Destroy.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_Destroy.c:
     complete
     .text       start:0x020d3ad0 end:0x020d3b10
 
-src/overlays/enemies/ov155_enemy_14_3/func_ov155_020d3b10.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/func_ov155_020d3b10.c:
     complete
     .text       start:0x020d3b10 end:0x020d3b1c
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_Model_SetTracks0And3.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_Model_SetTracks0And3.c:
     complete
     .text       start:0x020d3b1c end:0x020d3b6c
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_HandleMessage.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_HandleMessage.c:
     complete
     .text       start:0x020d3b6c end:0x020d3c08
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020d3c08 end:0x020d3c30
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_NotifyPartsThenBase.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d3c30 end:0x020d3c58
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_RefreshPose.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_RefreshPose.c:
     complete
     .text       start:0x020d3c58 end:0x020d3c9c
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_Tick.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_Tick.c:
     complete
     .text       start:0x020d3c9c end:0x020d3d94
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d3d94 end:0x020d3dd4
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_Actor_New.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_Actor_New.c:
     complete
     .text       start:0x020d3dd4 end:0x020d3e08
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_Construct.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_Construct.c:
     complete
     .text       start:0x020d3e08 end:0x020d3fe8
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d3fe8 end:0x020d4028
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_TickAndSyncModelXform.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d4028 end:0x020d4060
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiState_OnMessage.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiState_OnMessage.c:
     complete
     .text       start:0x020d4060 end:0x020d4114
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_BroadcastPositionMessage.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_BroadcastPositionMessage.c:
     complete
     .text       start:0x020d4114 end:0x020d423c
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d423c end:0x020d4288
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_stateInitClearSlots.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_stateInitClearSlots.c:
     complete
     .text       start:0x020d4288 end:0x020d4330
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_dispatchByStatusByte.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_dispatchByStatusByte.c:
     complete
     .text       start:0x020d4330 end:0x020d43a8
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiApplyMoveVector.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiApplyMoveVector.c:
     complete
     .text       start:0x020d43a8 end:0x020d43c0
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d43c0 end:0x020d4470
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d4470 end:0x020d44a8
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_SeedDashVector.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_SeedDashVector.c:
     complete
     .text       start:0x020d44a8 end:0x020d4578
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_HomingFlightTick.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_HomingFlightTick.c:
     complete
     .text       start:0x020d4578 end:0x020d4b70
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d4b70 end:0x020d4bbc
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_OnHit.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_OnHit.c:
     complete
     .text       start:0x020d4bbc end:0x020d4cf0
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_TryBeginSubState4.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_TryBeginSubState4.c:
     complete
     .text       start:0x020d4cf0 end:0x020d4d20
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_InitNode.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_InitNode.c:
     complete
     .text       start:0x020d4d20 end:0x020d4df0
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_DispatchSubStateByte.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4df0 end:0x020d4f50
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_UpdateFacing.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_UpdateFacing.c:
     complete
     .text       start:0x020d4f50 end:0x020d4fd4
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d4fd4 end:0x020d503c
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d503c end:0x020d5078
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d5078 end:0x020d5144
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiWaitThenTarget.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiWaitThenTarget.c:
     complete
     .text       start:0x020d5144 end:0x020d5210
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d5210 end:0x020d5244
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AiEnterStalk.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AiEnterStalk.c:
     complete
     .text       start:0x020d5244 end:0x020d529c
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_StalkTick.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_StalkTick.c:
     complete
     .text       start:0x020d529c end:0x020d5488
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5488 end:0x020d54bc
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_stDiv5Store.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_stDiv5Store.c:
     complete
     .text       start:0x020d54bc end:0x020d5518
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d5518 end:0x020d55e0
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d55e0 end:0x020d5694
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_stateAnimFlagCallback.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_stateAnimFlagCallback.c:
     complete
     .text       start:0x020d5694 end:0x020d5744
 
-src/overlays/enemies/ov155_enemy_14_3/Ov155_AimTick.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/Ov155_AimTick.c:
     complete
     .text       start:0x020d5744 end:0x020d588c
 
-src/overlays/enemies/ov155_enemy_14_3/data/ov155_strings_020d5900.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/data/ov155_strings_020d5900.c:
     complete
     .data       start:0x020d5900 end:0x020d5920
 
-src/overlays/enemies/ov155_enemy_14_3/data/ov155_tables_020d588c.c:
+src/overlays/enemies/ov155_enemy_fire_plant_3/data/ov155_tables_020d588c.c:
     complete
     .rodata     start:0x020d588c end:0x020d58e4

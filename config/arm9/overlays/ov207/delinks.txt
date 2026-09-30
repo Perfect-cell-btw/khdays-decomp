@@ -4,262 +4,262 @@
     .data       start:0x020d42a0 end:0x020d4320 kind:data align:32
     .bss        start:0x020d4320 end:0x020d4320 kind:bss align:32
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_RegisterEntityClass.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_CreateNamedEntity.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_Construct.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020d0080
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_Destroy.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_Destroy.c:
     complete
     .text       start:0x020d0080 end:0x020d00d8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_DrawHandler.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_DrawHandler.c:
     complete
     .text       start:0x020d00d8 end:0x020d0330
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_HandleResourceMessage.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_HandleResourceMessage.c:
     complete
     .text       start:0x020d0330 end:0x020d0444
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_FinishPartTasksThenBase.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_FinishPartTasksThenBase.c:
     complete
     .text       start:0x020d0444 end:0x020d049c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_BindClip.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_BindClip.c:
     complete
     .text       start:0x020d049c end:0x020d0508
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_MessageArmEmitterTable.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_MessageArmEmitterTable.c:
     complete
     .text       start:0x020d0508 end:0x020d05f4
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_TickHandler.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_TickHandler.c:
     complete
     .text       start:0x020d05f4 end:0x020d07b8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_RenderAtOwnerNode.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_RenderAtOwnerNode.c:
     complete
     .text       start:0x020d07b8 end:0x020d0800
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_SpawnAndLinkNode.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_SpawnAndLinkNode.c:
     complete
     .text       start:0x020d0800 end:0x020d087c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_ResetRigTracks.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_ResetRigTracks.c:
     complete
     .text       start:0x020d087c end:0x020d0900
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_ResetEntryMarkDirty.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_ResetEntryMarkDirty.c:
     complete
     .text       start:0x020d0900 end:0x020d0928
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_WaitRigIdle.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_WaitRigIdle.c:
     complete
     .text       start:0x020d0928 end:0x020d09a8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_WaitNotStaggered.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_WaitNotStaggered.c:
     complete
     .text       start:0x020d09a8 end:0x020d0a34
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d0a34 end:0x020d0a54
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_TestEntitiesAgainstRect.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_TestEntitiesAgainstRect.c:
     complete
     .text       start:0x020d0a54 end:0x020d0b34
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d0b34 end:0x020d0ce8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0ce8 end:0x020d0d34
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_HandleHit.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_HandleHit.c:
     complete
     .text       start:0x020d0d34 end:0x020d105c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_RequestSubState12IfIdleIn2Or4.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_RequestSubState12IfIdleIn2Or4.c:
     complete
     .text       start:0x020d105c end:0x020d10a4
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_EnterMoveState.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_EnterMoveState.c:
     complete
     .text       start:0x020d10a4 end:0x020d115c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiDispatchAction.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiDispatchAction.c:
     complete
     .text       start:0x020d115c end:0x020d136c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_MotionTickTimers.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_MotionTickTimers.c:
     complete
     .text       start:0x020d136c end:0x020d1458
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d1458 end:0x020d1500
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d1500 end:0x020d153c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterHold.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterHold.c:
     complete
     .text       start:0x020d153c end:0x020d1604
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiWaitThenTarget.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiWaitThenTarget.c:
     complete
     .text       start:0x020d1604 end:0x020d16cc
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d16cc end:0x020d1700
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d1700 end:0x020d1734
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiWaitForTarget.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiWaitForTarget.c:
     complete
     .text       start:0x020d1734 end:0x020d1780
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiQueue4OnFlagClear.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiQueue4OnFlagClear.c:
     complete
     .text       start:0x020d1780 end:0x020d17b4
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterSteer.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterSteer.c:
     complete
     .text       start:0x020d17b4 end:0x020d1814
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiSteerStart.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiSteerStart.c:
     complete
     .text       start:0x020d1814 end:0x020d186c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_SteerHeadingGate.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_SteerHeadingGate.c:
     complete
     .text       start:0x020d186c end:0x020d19b8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_FireAttackCOnIdle.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_FireAttackCOnIdle.c:
     complete
     .text       start:0x020d19b8 end:0x020d1a98
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_DecisionTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_DecisionTick.c:
     complete
     .text       start:0x020d1a98 end:0x020d1cd8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterAttack2.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterAttack2.c:
     complete
     .text       start:0x020d1cd8 end:0x020d1d14
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_FireAttack2OnIdle.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_FireAttack2OnIdle.c:
     complete
     .text       start:0x020d1d14 end:0x020d1e08
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_FaceTargetAndGate.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_FaceTargetAndGate.c:
     complete
     .text       start:0x020d1e08 end:0x020d1f68
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiSpawnEffectOnIdle.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiSpawnEffectOnIdle.c:
     complete
     .text       start:0x020d1f68 end:0x020d2000
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_FallTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_FallTick.c:
     complete
     .text       start:0x020d2000 end:0x020d20b0
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_ChargeTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_ChargeTick.c:
     complete
     .text       start:0x020d20b0 end:0x020d2460
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d2460 end:0x020d2494
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterLanding.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterLanding.c:
     complete
     .text       start:0x020d2494 end:0x020d24d8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_LandingTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_LandingTick.c:
     complete
     .text       start:0x020d24d8 end:0x020d29fc
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterChargeBreak.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterChargeBreak.c:
     complete
     .text       start:0x020d29fc end:0x020d2a50
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_Reaction_ChargeThenBreak.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_Reaction_ChargeThenBreak.c:
     complete
     .text       start:0x020d2a50 end:0x020d2b54
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiChargeTimeout.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiChargeTimeout.c:
     complete
     .text       start:0x020d2b54 end:0x020d2ba4
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiQueue8OnFlagClear.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiQueue8OnFlagClear.c:
     complete
     .text       start:0x020d2ba4 end:0x020d2bd8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_SpawnEffect4dTwoNodeClearB.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_SpawnEffect4dTwoNodeClearB.c:
     complete
     .text       start:0x020d2bd8 end:0x020d2cc8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterStomp.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterStomp.c:
     complete
     .text       start:0x020d2cc8 end:0x020d2d24
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_StompTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_StompTick.c:
     complete
     .text       start:0x020d2d24 end:0x020d31f0
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterIdle.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterIdle.c:
     complete
     .text       start:0x020d31f0 end:0x020d322c
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiIdleTimer.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiIdleTimer.c:
     complete
     .text       start:0x020d322c end:0x020d3268
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterThrow.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterThrow.c:
     complete
     .text       start:0x020d3268 end:0x020d32c8
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_JumpWindupTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_JumpWindupTick.c:
     complete
     .text       start:0x020d32c8 end:0x020d3554
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiBallisticTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiBallisticTick.c:
     complete
     .text       start:0x020d3554 end:0x020d35fc
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiEnterRockFlight.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiEnterRockFlight.c:
     complete
     .text       start:0x020d35fc end:0x020d3680
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_RockFlightTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_RockFlightTick.c:
     complete
     .text       start:0x020d3680 end:0x020d3de4
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_ShockwaveTick.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_ShockwaveTick.c:
     complete
     .text       start:0x020d3de4 end:0x020d40b4
 
-src/overlays/enemies/ov207_enemy_29_2/Ov207_AiLockAndPostUpdateB.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/Ov207_AiLockAndPostUpdateB.c:
     complete
     .text       start:0x020d40b4 end:0x020d4190
 
-src/overlays/enemies/ov207_enemy_29_2/data/ov207_strings_020d42a0.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/data/ov207_strings_020d42a0.c:
     complete
     .data       start:0x020d42a0 end:0x020d4320
 
-src/overlays/enemies/ov207_enemy_29_2/data/ov207_tables_020d4190.c:
+src/overlays/enemies/ov207_enemy_large_armor_2/data/ov207_tables_020d4190.c:
     complete
     .rodata     start:0x020d4190 end:0x020d429c

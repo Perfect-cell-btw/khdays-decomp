@@ -3,146 +3,146 @@
     .data       start:0x020d51c0 end:0x020d5200 kind:data align:32
     .bss        start:0x020d5200 end:0x020d5200 kind:bss align:32
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_RegisterEntityClass.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_CreateNamedEntity.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_EnemyConstruct.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_EnemyConstruct.c:
     complete
     .text       start:0x020d3844 end:0x020d3aec
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_TeardownWithGuardedSlotNotify.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_TeardownWithGuardedSlotNotify.c:
     complete
     .text       start:0x020d3aec end:0x020d3b80
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_CopyBlockThenNotify.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_CopyBlockThenNotify.c:
     complete
     .text       start:0x020d3b80 end:0x020d3bd0
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_Model_SetTrack0.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_Model_SetTrack0.c:
     complete
     .text       start:0x020d3bd0 end:0x020d3c00
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_RefreshAndCopyTwoBlocks.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_RefreshAndCopyTwoBlocks.c:
     complete
     .text       start:0x020d3c00 end:0x020d3c60
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_GrabReleaseHook.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_GrabReleaseHook.c:
     complete
     .text       start:0x020d3c60 end:0x020d3d00
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_TickHook.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_TickHook.c:
     complete
     .text       start:0x020d3d00 end:0x020d3e4c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_ReallocBufferInitConsts.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_ReallocBufferInitConsts.c:
     complete
     .text       start:0x020d3e4c end:0x020d3ec8
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_RequestAction2.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_RequestAction2.c:
     complete
     .text       start:0x020d3ec8 end:0x020d3ee8
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_RequestAction3WithParams.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_RequestAction3WithParams.c:
     complete
     .text       start:0x020d3ee8 end:0x020d3f08
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_RequestAction4WithParams.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_RequestAction4WithParams.c:
     complete
     .text       start:0x020d3f08 end:0x020d3f28
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_RequestAction5WithValue.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_RequestAction5WithValue.c:
     complete
     .text       start:0x020d3f28 end:0x020d3f3c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3f3c end:0x020d3f88
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_SetFacingAnchor.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_SetFacingAnchor.c:
     complete
     .text       start:0x020d3f88 end:0x020d402c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_FindGrabSlotPath.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_FindGrabSlotPath.c:
     complete
     .text       start:0x020d402c end:0x020d4130
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_FindGrabPath.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_FindGrabPath.c:
     complete
     .text       start:0x020d4130 end:0x020d4340
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_HoverSetup.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_HoverSetup.c:
     complete
     .text       start:0x020d4340 end:0x020d4458
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_DispatchSubStateByte.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4458 end:0x020d4560
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_HoverMotionTick.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_HoverMotionTick.c:
     complete
     .text       start:0x020d4560 end:0x020d4648
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_stSetDispFlags6.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_stSetDispFlags6.c:
     complete
     .text       start:0x020d4648 end:0x020d4688
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_PublishFinishPose.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_PublishFinishPose.c:
     complete
     .text       start:0x020d4688 end:0x020d4728
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_SetPoseClearField3a8ThenAdvanceSlot.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_SetPoseClearField3a8ThenAdvanceSlot.c:
     complete
     .text       start:0x020d4728 end:0x020d4768
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_FloatHeightTick.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_FloatHeightTick.c:
     complete
     .text       start:0x020d4768 end:0x020d47f0
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d47f0 end:0x020d484c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_AimTick.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_AimTick.c:
     complete
     .text       start:0x020d484c end:0x020d4918
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_HoverEntryTick.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_HoverEntryTick.c:
     complete
     .text       start:0x020d4918 end:0x020d49c0
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_ApproachDecision.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_ApproachDecision.c:
     complete
     .text       start:0x020d49c0 end:0x020d4a8c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_ApproachTick.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_ApproachTick.c:
     complete
     .text       start:0x020d4a8c end:0x020d4bd0
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_GrabWalk.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_GrabWalk.c:
     complete
     .text       start:0x020d4bd0 end:0x020d4d4c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_HoverReleaseDecision.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_HoverReleaseDecision.c:
     complete
     .text       start:0x020d4d4c end:0x020d4e6c
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_GrabSlotFlight.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_GrabSlotFlight.c:
     complete
     .text       start:0x020d4e6c end:0x020d50ac
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_PoseInvokeClearField40ThenAdvance.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_PoseInvokeClearField40ThenAdvance.c:
     complete
     .text       start:0x020d50ac end:0x020d50fc
 
-src/overlays/enemies/ov262_enemy_55_2/Ov262_stateDualTimerDivide.c:
+src/overlays/enemies/ov262_enemy_zero_2/Ov262_stateDualTimerDivide.c:
     complete
     .text       start:0x020d50fc end:0x020d51ac
 
-src/overlays/enemies/ov262_enemy_55_2/data/ov262_strings_020d51c0.c:
+src/overlays/enemies/ov262_enemy_zero_2/data/ov262_strings_020d51c0.c:
     complete
     .data       start:0x020d51c0 end:0x020d5200

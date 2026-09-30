@@ -4,334 +4,334 @@
     .data       start:0x020cfbe0 end:0x020cfc00 kind:data align:32
     .bss        start:0x020cfc00 end:0x020cfc00 kind:bss align:32
 
-src/overlays/enemies/ov283_enemy_68/Ov283_RegisterEntityClass.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov283_enemy_68/Ov283_CreateNamedEntity.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Construct.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Construct.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc224
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Destroy_2.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Destroy_2.c:
     complete
     .text       start:0x020cc224 end:0x020cc25c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_PropagateBlockToLinkedNodes.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_PropagateBlockToLinkedNodes.c:
     complete
     .text       start:0x020cc25c end:0x020cc2bc
 
-src/overlays/enemies/ov283_enemy_68/Ov283_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc2bc end:0x020cc318
 
-src/overlays/enemies/ov283_enemy_68/Ov283_NotifyPartsThenBase.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc318 end:0x020cc374
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc374 end:0x020cc3ac
 
-src/overlays/enemies/ov283_enemy_68/Ov283_ActorOnMessage.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_ActorOnMessage.c:
     complete
     .text       start:0x020cc3ac end:0x020cc628
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Slot38_StoreValue.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Slot38_StoreValue.c:
     complete
     .text       start:0x020cc628 end:0x020cc634
 
-src/overlays/enemies/ov283_enemy_68/Ov283_CreateAiTask.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_CreateAiTask.c:
     complete
     .text       start:0x020cc634 end:0x020cc690
 
-src/overlays/enemies/ov283_enemy_68/Ov283_OnDamage.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_OnDamage.c:
     complete
     .text       start:0x020cc690 end:0x020cc830
 
-src/overlays/enemies/ov283_enemy_68/Ov283_MapHeldItemKindToAnim.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_MapHeldItemKindToAnim.c:
     complete
     .text       start:0x020cc830 end:0x020cc92c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_PostItemUpdate.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_PostItemUpdate.c:
     complete
     .text       start:0x020cc92c end:0x020cc9e0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_LaunchHelper.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_LaunchHelper.c:
     complete
     .text       start:0x020cc9e0 end:0x020ccb48
 
-src/overlays/enemies/ov283_enemy_68/Ov283_MeasureTargetGap.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_MeasureTargetGap.c:
     complete
     .text       start:0x020ccb48 end:0x020ccbe0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AimVelocity.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AimVelocity.c:
     complete
     .text       start:0x020ccbe0 end:0x020ccca8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiCheckTargetDistance.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiCheckTargetDistance.c:
     complete
     .text       start:0x020ccca8 end:0x020ccd28
 
-src/overlays/enemies/ov283_enemy_68/Ov283_BrainStart.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_BrainStart.c:
     complete
     .text       start:0x020ccd28 end:0x020ccdfc
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiDispatchAction.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiDispatchAction.c:
     complete
     .text       start:0x020ccdfc end:0x020ccfb8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_PhysicsTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_PhysicsTick.c:
     complete
     .text       start:0x020ccfb8 end:0x020cd108
 
-src/overlays/enemies/ov283_enemy_68/Ov283_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd108 end:0x020cd170
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020cd170 end:0x020cd200
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiEnterWalk.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiEnterWalk.c:
     complete
     .text       start:0x020cd200 end:0x020cd27c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_WalkTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_WalkTick.c:
     complete
     .text       start:0x020cd27c end:0x020cd558
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiEnterCircle.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiEnterCircle.c:
     complete
     .text       start:0x020cd558 end:0x020cd5a8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_CircleTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_CircleTick.c:
     complete
     .text       start:0x020cd5a8 end:0x020cd8f8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_HopEntry.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_HopEntry.c:
     complete
     .text       start:0x020cd8f8 end:0x020cd9e0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_ScaleDescentVectorThenAdvance.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_ScaleDescentVectorThenAdvance.c:
     complete
     .text       start:0x020cd9e0 end:0x020cda58
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiFallTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiFallTick.c:
     complete
     .text       start:0x020cda58 end:0x020cdae4
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiFallTickB.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiFallTickB.c:
     complete
     .text       start:0x020cdae4 end:0x020cdb88
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiEnterBarrage.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiEnterBarrage.c:
     complete
     .text       start:0x020cdb88 end:0x020cdbfc
 
-src/overlays/enemies/ov283_enemy_68/Ov283_VolleyCloseTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_VolleyCloseTick.c:
     complete
     .text       start:0x020cdbfc end:0x020cddec
 
-src/overlays/enemies/ov283_enemy_68/Ov283_BounceEntry.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_BounceEntry.c:
     complete
     .text       start:0x020cddec end:0x020cdeac
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiBarrageStart.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiBarrageStart.c:
     complete
     .text       start:0x020cdeac end:0x020cdf1c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_BarrageTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_BarrageTick.c:
     complete
     .text       start:0x020cdf1c end:0x020ce0bc
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AimStart.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AimStart.c:
     complete
     .text       start:0x020ce0bc end:0x020ce214
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiFaceTarget.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiFaceTarget.c:
     complete
     .text       start:0x020ce214 end:0x020ce2a0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiLandStart.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiLandStart.c:
     complete
     .text       start:0x020ce2a0 end:0x020ce2e4
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiLandTurnEnd.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiLandTurnEnd.c:
     complete
     .text       start:0x020ce2e4 end:0x020ce328
 
-src/overlays/enemies/ov283_enemy_68/Ov283_WarpStart.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_WarpStart.c:
     complete
     .text       start:0x020ce328 end:0x020ce620
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiFaceTargetB.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiFaceTargetB.c:
     complete
     .text       start:0x020ce620 end:0x020ce6ac
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiPickNextAttack.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiPickNextAttack.c:
     complete
     .text       start:0x020ce6ac end:0x020ce6e0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiEnterVolley.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiEnterVolley.c:
     complete
     .text       start:0x020ce6e0 end:0x020ce73c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_VolleyTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_VolleyTick.c:
     complete
     .text       start:0x020ce73c end:0x020ce8c8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiLandWithItem.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiLandWithItem.c:
     complete
     .text       start:0x020ce8c8 end:0x020ce918
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiLandBounce.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiLandBounce.c:
     complete
     .text       start:0x020ce918 end:0x020ce95c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiQueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiQueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020ce95c end:0x020ce97c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_TickBounce.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_TickBounce.c:
     complete
     .text       start:0x020ce97c end:0x020cea48
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cea48 end:0x020cea7c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_SwipePick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_SwipePick.c:
     complete
     .text       start:0x020cea7c end:0x020cebb4
 
-src/overlays/enemies/ov283_enemy_68/Ov283_DecideTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_DecideTick.c:
     complete
     .text       start:0x020cebb4 end:0x020ced2c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiEnterPatrol.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiEnterPatrol.c:
     complete
     .text       start:0x020ced2c end:0x020ced7c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_PatrolIdleStep.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_PatrolIdleStep.c:
     complete
     .text       start:0x020ced7c end:0x020ced80
 
-src/overlays/enemies/ov283_enemy_68/Ov283_ForwardToAiTaskWhenReady.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020ced80 end:0x020ced9c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AllocLinkChild390.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AllocLinkChild390.c:
     complete
     .text       start:0x020ced9c end:0x020cedd0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_BuildHelper.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_BuildHelper.c:
     complete
     .text       start:0x020cedd0 end:0x020ceee8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_OnDespawn.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_OnDespawn.c:
     complete
     .text       start:0x020ceee8 end:0x020cef04
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_TickSyncXform.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_TickSyncXform.c:
     complete
     .text       start:0x020cef04 end:0x020cef38
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_Launch.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_Launch.c:
     complete
     .text       start:0x020cef38 end:0x020cef4c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_CreateAiTask.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_CreateAiTask.c:
     complete
     .text       start:0x020cef4c end:0x020cef98
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_AiStateInit.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_AiStateInit.c:
     complete
     .text       start:0x020cef98 end:0x020cf034
 
-src/overlays/enemies/ov283_enemy_68/Ov283_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020cf034 end:0x020cf0ac
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_AiFollowHolder.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_AiFollowHolder.c:
     complete
     .text       start:0x020cf0ac end:0x020cf0f0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_EnterRecoverPose.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_EnterRecoverPose.c:
     complete
     .text       start:0x020cf0f0 end:0x020cf158
 
-src/overlays/enemies/ov283_enemy_68/Ov283_ResetReactionFlags.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_ResetReactionFlags.c:
     complete
     .text       start:0x020cf158 end:0x020cf1c0
 
-src/overlays/enemies/ov283_enemy_68/Ov283_InvokeHookAndRearm.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_InvokeHookAndRearm.c:
     complete
     .text       start:0x020cf1c0 end:0x020cf21c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_New.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_New.c:
     complete
     .text       start:0x020cf21c end:0x020cf250
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Build.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Build.c:
     complete
     .text       start:0x020cf250 end:0x020cf328
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Destroy.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Destroy.c:
     complete
     .text       start:0x020cf328 end:0x020cf34c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_OnMessage.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_OnMessage.c:
     complete
     .text       start:0x020cf34c end:0x020cf43c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_AiAimAtTarget.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_AiAimAtTarget.c:
     complete
     .text       start:0x020cf43c end:0x020cf488
 
-src/overlays/enemies/ov283_enemy_68/Ov283_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cf488 end:0x020cf4d4
 
-src/overlays/enemies/ov283_enemy_68/Ov283_stateInitClearSlots.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_stateInitClearSlots.c:
     complete
     .text       start:0x020cf4d4 end:0x020cf57c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_dispatchByStatusByteReset_2.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_dispatchByStatusByteReset_2.c:
     complete
     .text       start:0x020cf57c end:0x020cf5f4
 
-src/overlays/enemies/ov283_enemy_68/Ov283_HelperChaseTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_HelperChaseTick.c:
     complete
     .text       start:0x020cf5f4 end:0x020cf740
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_AiEnterRest.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_AiEnterRest.c:
     complete
     .text       start:0x020cf740 end:0x020cf7d4
 
-src/overlays/enemies/ov283_enemy_68/Ov283_Item_RestIdleStep.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_Item_RestIdleStep.c:
     complete
     .text       start:0x020cf7d4 end:0x020cf7d8
 
-src/overlays/enemies/ov283_enemy_68/Ov283_EnterReactionSnapshotTarget.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_EnterReactionSnapshotTarget.c:
     complete
     .text       start:0x020cf7d8 end:0x020cf844
 
-src/overlays/enemies/ov283_enemy_68/Ov283_AiEnterHop.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_AiEnterHop.c:
     complete
     .text       start:0x020cf844 end:0x020cf88c
 
-src/overlays/enemies/ov283_enemy_68/Ov283_ShotFlightTick.c:
+src/overlays/enemies/ov283_enemy_xigbar/Ov283_ShotFlightTick.c:
     complete
     .text       start:0x020cf88c end:0x020cfb4c
 
-src/overlays/enemies/ov283_enemy_68/data/ov283_strings_020cfbe0.c:
+src/overlays/enemies/ov283_enemy_xigbar/data/ov283_strings_020cfbe0.c:
     complete
     .data       start:0x020cfbe0 end:0x020cfc00
 
-src/overlays/enemies/ov283_enemy_68/data/ov283_tables_020cfb4c.c:
+src/overlays/enemies/ov283_enemy_xigbar/data/ov283_tables_020cfb4c.c:
     complete
     .rodata     start:0x020cfb4c end:0x020cfbcc

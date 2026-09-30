@@ -4,234 +4,234 @@
     .data       start:0x020d35a0 end:0x020d3600 kind:data align:32
     .bss        start:0x020d3600 end:0x020d3600 kind:bss align:32
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_RegisterEntityClass.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_CreateNamedEntity.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_RefreshAndPublishTransform.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_RefreshAndPublishTransform.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc6c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_Construct.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_Construct.c:
     complete
     .text       start:0x020cfc6c end:0x020cff34
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_Destroy.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_Destroy.c:
     complete
     .text       start:0x020cff34 end:0x020cff74
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_PlayAnimWithParts.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_PlayAnimWithParts.c:
     complete
     .text       start:0x020cff74 end:0x020cfff0
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_OnEffectMessage.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_OnEffectMessage.c:
     complete
     .text       start:0x020cfff0 end:0x020d0158
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_Tick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_Tick.c:
     complete
     .text       start:0x020d0158 end:0x020d0374
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_CreateAiTask.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_CreateAiTask.c:
     complete
     .text       start:0x020d0374 end:0x020d03d0
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_OnHit.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_OnHit.c:
     complete
     .text       start:0x020d03d0 end:0x020d05dc
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_RequestSubState11IfIdle.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020d05dc end:0x020d060c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_PickBestFacingTarget.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_PickBestFacingTarget.c:
     complete
     .text       start:0x020d060c end:0x020d071c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_DecideAttackByDistanceRoll.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_DecideAttackByDistanceRoll.c:
     complete
     .text       start:0x020d071c end:0x020d0854
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_PushOutOfWorld.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_PushOutOfWorld.c:
     complete
     .text       start:0x020d0854 end:0x020d0a3c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_InitStateRegister3HwFlags.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_InitStateRegister3HwFlags.c:
     complete
     .text       start:0x020d0a3c end:0x020d0b00
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiDispatchAction.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiDispatchAction.c:
     complete
     .text       start:0x020d0b00 end:0x020d0cfc
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiSlerpHeading.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiSlerpHeading.c:
     complete
     .text       start:0x020d0cfc end:0x020d0d50
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0d50 end:0x020d0db8
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_LandingTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_LandingTick.c:
     complete
     .text       start:0x020d0db8 end:0x020d0e38
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SpawnEffect48SetTurnRate.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SpawnEffect48SetTurnRate.c:
     complete
     .text       start:0x020d0e38 end:0x020d0f28
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TimerReAimLookAtFire.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TimerReAimLookAtFire.c:
     complete
     .text       start:0x020d0f28 end:0x020d1000
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d1000 end:0x020d1034
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d1034 end:0x020d1068
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiStep_QueueAction5.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiStep_QueueAction5.c:
     complete
     .text       start:0x020d1068 end:0x020d108c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiStep_PickLandingPoint.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiStep_PickLandingPoint.c:
     complete
     .text       start:0x020d108c end:0x020d10e4
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_IdleFloatTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_IdleFloatTick.c:
     complete
     .text       start:0x020d10e4 end:0x020d12b4
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_HoverTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_HoverTick.c:
     complete
     .text       start:0x020d12b4 end:0x020d1408
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_FaceTargetLookAt.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_FaceTargetLookAt.c:
     complete
     .text       start:0x020d1408 end:0x020d14bc
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_DecayOffsetGiveUpLatch.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_DecayOffsetGiveUpLatch.c:
     complete
     .text       start:0x020d14bc end:0x020d159c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SpawnEffect4aReconfigureFlags.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SpawnEffect4aReconfigureFlags.c:
     complete
     .text       start:0x020d159c end:0x020d1664
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1664 end:0x020d1698
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiQueue7OnAnimEnd.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiQueue7OnAnimEnd.c:
     complete
     .text       start:0x020d1698 end:0x020d16cc
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SetPoseThenAdvanceSlot_2.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SetPoseThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d16cc end:0x020d1700
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TickApproachTarget.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TickApproachTarget.c:
     complete
     .text       start:0x020d1700 end:0x020d18b4
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SwipeHitWindow.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SwipeHitWindow.c:
     complete
     .text       start:0x020d18b4 end:0x020d1a74
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiEnterBackOff.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiEnterBackOff.c:
     complete
     .text       start:0x020d1a74 end:0x020d1af4
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_BackOffTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_BackOffTick.c:
     complete
     .text       start:0x020d1af4 end:0x020d1d20
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_CircleTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_CircleTick.c:
     complete
     .text       start:0x020d1d20 end:0x020d1f48
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_StalkTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_StalkTick.c:
     complete
     .text       start:0x020d1f48 end:0x020d215c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_EnterBite.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_EnterBite.c:
     complete
     .text       start:0x020d215c end:0x020d2240
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_OrbitWindUpTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_OrbitWindUpTick.c:
     complete
     .text       start:0x020d2240 end:0x020d22a4
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TickOrbitTarget.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TickOrbitTarget.c:
     complete
     .text       start:0x020d22a4 end:0x020d24d8
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_EnterPounce.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_EnterPounce.c:
     complete
     .text       start:0x020d24d8 end:0x020d25d8
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_AiTimerQueueAction7.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_AiTimerQueueAction7.c:
     complete
     .text       start:0x020d25d8 end:0x020d2614
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_EnterLunge.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_EnterLunge.c:
     complete
     .text       start:0x020d2614 end:0x020d26f8
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_RepositionTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_RepositionTick.c:
     complete
     .text       start:0x020d26f8 end:0x020d284c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_GrabApproachFinish.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_GrabApproachFinish.c:
     complete
     .text       start:0x020d284c end:0x020d29f0
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TickHoldTarget.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TickHoldTarget.c:
     complete
     .text       start:0x020d29f0 end:0x020d2d84
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_HoldTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_HoldTick.c:
     complete
     .text       start:0x020d2d84 end:0x020d2f9c
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_CarryTick.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_CarryTick.c:
     complete
     .text       start:0x020d2f9c end:0x020d3328
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d3328 end:0x020d33dc
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_SpawnChildStoreSelfAndArg.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_SpawnChildStoreSelfAndArg.c:
     complete
     .text       start:0x020d33dc end:0x020d3430
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TimerBlinkStart.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TimerBlinkStart.c:
     complete
     .text       start:0x020d3430 end:0x020d3474
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_ChildReleaseNoOp.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_ChildReleaseNoOp.c:
     complete
     .text       start:0x020d3474 end:0x020d3478
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TimerBlinkParityClear.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TimerBlinkParityClear.c:
     complete
     .text       start:0x020d3478 end:0x020d34f0
 
-src/overlays/enemies/ov272_enemy_5e/Ov272_TimerBlinkParitySet.c:
+src/overlays/enemies/ov272_enemy_living_pod/Ov272_TimerBlinkParitySet.c:
     complete
     .text       start:0x020d34f0 end:0x020d3568
 
-src/overlays/enemies/ov272_enemy_5e/data/ov272_strings_020d35a0.c:
+src/overlays/enemies/ov272_enemy_living_pod/data/ov272_strings_020d35a0.c:
     complete
     .data       start:0x020d35a0 end:0x020d3600
 
-src/overlays/enemies/ov272_enemy_5e/data/ov272_tables_020d3568.c:
+src/overlays/enemies/ov272_enemy_living_pod/data/ov272_tables_020d3568.c:
     complete
     .rodata     start:0x020d3568 end:0x020d358c

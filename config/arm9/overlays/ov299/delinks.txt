@@ -4,134 +4,134 @@
     .data       start:0x020d4e00 end:0x020d4e20 kind:data align:32
     .bss        start:0x020d4e20 end:0x020d4e20 kind:bss align:32
 
-src/overlays/enemies/ov299_enemy_73/Ov299_RegisterEntityClass.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov299_enemy_73/Ov299_CreateNamedEntity.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov299_enemy_73/Ov299_Actor_InitCallbacksAndChildren.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_Actor_InitCallbacksAndChildren.c:
     complete
     .text       start:0x020d3844 end:0x020d3960
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AttachThreeSubNodesThenFinalize.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AttachThreeSubNodesThenFinalize.c:
     complete
     .text       start:0x020d3960 end:0x020d399c
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AttachThreeSubNodesThenFinalize_2.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AttachThreeSubNodesThenFinalize_2.c:
     complete
     .text       start:0x020d399c end:0x020d39d8
 
-src/overlays/enemies/ov299_enemy_73/Ov299_Slot38_StoreValue.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_Slot38_StoreValue.c:
     complete
     .text       start:0x020d39d8 end:0x020d39e4
 
-src/overlays/enemies/ov299_enemy_73/Ov299_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d39e4 end:0x020d3a30
 
-src/overlays/enemies/ov299_enemy_73/Ov299_InitStateSlots.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_InitStateSlots.c:
     complete
     .text       start:0x020d3a30 end:0x020d3a9c
 
-src/overlays/enemies/ov299_enemy_73/Ov299_CommitSubStateAndReset.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_CommitSubStateAndReset.c:
     complete
     .text       start:0x020d3a9c end:0x020d3b14
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AiSlot2NoOp.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AiSlot2NoOp.c:
     complete
     .text       start:0x020d3b14 end:0x020d3b18
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d3b18 end:0x020d3b54
 
-src/overlays/enemies/ov299_enemy_73/Ov299_SetRandomFieldFromScaled390.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_SetRandomFieldFromScaled390.c:
     complete
     .text       start:0x020d3b54 end:0x020d3b94
 
-src/overlays/enemies/ov299_enemy_73/Ov299_SpawnTimerTick.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_SpawnTimerTick.c:
     complete
     .text       start:0x020d3b94 end:0x020d3d68
 
-src/overlays/enemies/ov299_enemy_73/Ov299_RunSetupThenForwardIfState1.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_RunSetupThenForwardIfState1.c:
     complete
     .text       start:0x020d3d68 end:0x020d3d9c
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AllocInitObject3ac.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AllocInitObject3ac.c:
     complete
     .text       start:0x020d3d9c end:0x020d3dd8
 
-src/overlays/enemies/ov299_enemy_73/Ov299_Construct.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_Construct.c:
     complete
     .text       start:0x020d3dd8 end:0x020d3f44
 
-src/overlays/enemies/ov299_enemy_73/Ov299_ReleaseSubObjectsLoopThenNotify.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_ReleaseSubObjectsLoopThenNotify.c:
     complete
     .text       start:0x020d3f44 end:0x020d3f7c
 
-src/overlays/enemies/ov299_enemy_73/Ov299_TickAndSyncModelXform.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d3f7c end:0x020d3fb4
 
-src/overlays/enemies/ov299_enemy_73/Ov299_HandleMessage.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_HandleMessage.c:
     complete
     .text       start:0x020d3fb4 end:0x020d410c
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AimAtTarget.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AimAtTarget.c:
     complete
     .text       start:0x020d410c end:0x020d41c0
 
-src/overlays/enemies/ov299_enemy_73/Ov299_BounceOnHit.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_BounceOnHit.c:
     complete
     .text       start:0x020d41c0 end:0x020d4284
 
-src/overlays/enemies/ov299_enemy_73/Ov299_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d4284 end:0x020d42d0
 
-src/overlays/enemies/ov299_enemy_73/Ov299_stateInitClearSlots.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_stateInitClearSlots.c:
     complete
     .text       start:0x020d42d0 end:0x020d4378
 
-src/overlays/enemies/ov299_enemy_73/Ov299_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d4378 end:0x020d43f0
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AiApplyMoveVector.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AiApplyMoveVector.c:
     complete
     .text       start:0x020d43f0 end:0x020d4408
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AiEnterRest.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AiEnterRest.c:
     complete
     .text       start:0x020d4408 end:0x020d44c4
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d44c4 end:0x020d44fc
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AttackEntry.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AttackEntry.c:
     complete
     .text       start:0x020d44fc end:0x020d45d4
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AttackTick.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AttackTick.c:
     complete
     .text       start:0x020d45d4 end:0x020d47dc
 
-src/overlays/enemies/ov299_enemy_73/Ov299_AiEnterProjectileFlight.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_AiEnterProjectileFlight.c:
     complete
     .text       start:0x020d47dc end:0x020d4870
 
-src/overlays/enemies/ov299_enemy_73/Ov299_ProjectileFlightTick.c:
+src/overlays/enemies/ov299_enemy_turret/Ov299_ProjectileFlightTick.c:
     complete
     .text       start:0x020d4870 end:0x020d4de8
 
-src/overlays/enemies/ov299_enemy_73/data/ov299_const_020d4de8.c:
+src/overlays/enemies/ov299_enemy_turret/data/ov299_const_020d4de8.c:
     complete
     .rodata     start:0x020d4de8 end:0x020d4dec
 
-src/overlays/enemies/ov299_enemy_73/data/ov299_strings_020d4e00.c:
+src/overlays/enemies/ov299_enemy_turret/data/ov299_strings_020d4e00.c:
     complete
     .data       start:0x020d4e00 end:0x020d4e20

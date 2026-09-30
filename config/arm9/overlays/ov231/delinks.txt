@@ -4,275 +4,275 @@
     .data       start:0x020cfa60 end:0x020cfac0 kind:data align:32
     .bss        start:0x020cfac0 end:0x020cfac0 kind:bss align:32
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_RegisterEntityClass.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_CreateNamedEntity.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Construct.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Construct.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc45c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Destroy.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Destroy.c:
     complete
     .text       start:0x020cc45c end:0x020cc4b4
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_TickWithChildRefresh.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_TickWithChildRefresh.c:
     complete
     .text       start:0x020cc4b4 end:0x020cc4d8
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_RebindClip.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_RebindClip.c:
     complete
     .text       start:0x020cc4d8 end:0x020cc55c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_OnEffectMessage.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_OnEffectMessage.c:
     complete
     .text       start:0x020cc55c end:0x020cc68c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_ForwardEventToChildren.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_ForwardEventToChildren.c:
     complete
     .text       start:0x020cc68c end:0x020cc6c8
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_NotifyPartsThenBase.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc6c8 end:0x020cc704
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_DrawPrePass.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_DrawPrePass.c:
     complete
     .text       start:0x020cc704 end:0x020cc97c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_CreateAiTask.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_CreateAiTask.c:
     complete
     .text       start:0x020cc97c end:0x020cc9e0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AcquireTarget.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AcquireTarget.c:
     complete
     .text       start:0x020cc9e0 end:0x020cca74
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_rotateVecByOwnerYaw.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_rotateVecByOwnerYaw.c:
     complete
     .text       start:0x020cca74 end:0x020ccb08
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_ProbeGround.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_ProbeGround.c:
     complete
     .text       start:0x020ccb08 end:0x020ccc48
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_ProbeSpawnPoint.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_ProbeSpawnPoint.c:
     complete
     .text       start:0x020ccc48 end:0x020ccd58
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_FilterHit.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_FilterHit.c:
     complete
     .text       start:0x020ccd58 end:0x020ccfb8
     .rodata     start:0x020cfa30 end:0x020cfa34
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_ChooseAttack.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_ChooseAttack.c:
     complete
     .text       start:0x020ccfb8 end:0x020cd094
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_PlayPoseAnims.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_PlayPoseAnims.c:
     complete
     .text       start:0x020cd094 end:0x020cd0dc
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_TryRequestState13.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_TryRequestState13.c:
     complete
     .text       start:0x020cd0dc end:0x020cd118
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiStateInit.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiStateInit.c:
     complete
     .text       start:0x020cd118 end:0x020cd214
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterStandby.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterStandby.c:
     complete
     .text       start:0x020cd214 end:0x020cd27c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020cd27c end:0x020cd2b4
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiDispatchAction.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiDispatchAction.c:
     complete
     .text       start:0x020cd2b4 end:0x020cd510
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_ChaseTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_ChaseTick.c:
     complete
     .text       start:0x020cd510 end:0x020cd768
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterWait.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterWait.c:
     complete
     .text       start:0x020cd768 end:0x020cd80c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiWaitTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiWaitTick.c:
     complete
     .text       start:0x020cd80c end:0x020cd88c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiFollowUntilAnimEnd.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiFollowUntilAnimEnd.c:
     complete
     .text       start:0x020cd88c end:0x020cd8fc
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterIdle.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterIdle.c:
     complete
     .text       start:0x020cd8fc end:0x020cd920
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiIdleTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiIdleTick.c:
     complete
     .text       start:0x020cd920 end:0x020cdaa8
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterStrafe.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterStrafe.c:
     complete
     .text       start:0x020cdaa8 end:0x020cdc90
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_UpdateAimPoint.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_UpdateAimPoint.c:
     complete
     .text       start:0x020cdc90 end:0x020cdd3c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiDiveTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiDiveTick.c:
     complete
     .text       start:0x020cdd3c end:0x020cdffc
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Reaction_BiasFramesAndDispatch.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Reaction_BiasFramesAndDispatch.c:
     complete
     .text       start:0x020cdffc end:0x020ce10c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiFollowThenChooseAttack.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiFollowThenChooseAttack.c:
     complete
     .text       start:0x020ce10c end:0x020ce1d4
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterFireVolley.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterFireVolley.c:
     complete
     .text       start:0x020ce1d4 end:0x020ce210
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiFireVolleyTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiFireVolleyTick.c:
     complete
     .text       start:0x020ce210 end:0x020ce46c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterLunge.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterLunge.c:
     complete
     .text       start:0x020ce46c end:0x020ce4b0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_LungeTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_LungeTick.c:
     complete
     .text       start:0x020ce4b0 end:0x020ce718
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterLungeB.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterLungeB.c:
     complete
     .text       start:0x020ce718 end:0x020ce750
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_LungeTick_2.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_LungeTick_2.c:
     complete
     .text       start:0x020ce750 end:0x020ce99c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterSlam.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterSlam.c:
     complete
     .text       start:0x020ce99c end:0x020ce9d0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiSlamWindupTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiSlamWindupTick.c:
     complete
     .text       start:0x020ce9d0 end:0x020ceaec
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiSlamDashTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiSlamDashTick.c:
     complete
     .text       start:0x020ceaec end:0x020cec2c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiFollowThenQueueAction9.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiFollowThenQueueAction9.c:
     complete
     .text       start:0x020cec2c end:0x020cec9c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterPoseSequence.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterPoseSequence.c:
     complete
     .text       start:0x020cec9c end:0x020cecc8
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiPoseSequenceTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiPoseSequenceTick.c:
     complete
     .text       start:0x020cecc8 end:0x020ceda0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterPoseSequenceB.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterPoseSequenceB.c:
     complete
     .text       start:0x020ceda0 end:0x020cedf4
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiPoseSequenceTickB.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiPoseSequenceTickB.c:
     complete
     .text       start:0x020cedf4 end:0x020ceea0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterAim.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterAim.c:
     complete
     .text       start:0x020ceea0 end:0x020ceed0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020ceed0 end:0x020cef98
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiEnterHold.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiEnterHold.c:
     complete
     .text       start:0x020cef98 end:0x020cf048
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_AiHoldTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_AiHoldTick.c:
     complete
     .text       start:0x020cf048 end:0x020cf0dc
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020cf0dc end:0x020cf124
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_New.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_New.c:
     complete
     .text       start:0x020cf124 end:0x020cf158
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_ItemConstruct.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_ItemConstruct.c:
     complete
     .text       start:0x020cf158 end:0x020cf288
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_OnDespawn.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_OnDespawn.c:
     complete
     .text       start:0x020cf288 end:0x020cf2a4
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_SetField1cIfFlags1And10.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_SetField1cIfFlags1And10.c:
     complete
     .text       start:0x020cf2a4 end:0x020cf2dc
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_CreateAiTask.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_CreateAiTask.c:
     complete
     .text       start:0x020cf2dc end:0x020cf338
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_stateInitClearSlots.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_stateInitClearSlots.c:
     complete
     .text       start:0x020cf338 end:0x020cf3e0
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_dispatchByStatusByte.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_dispatchByStatusByte.c:
     complete
     .text       start:0x020cf3e0 end:0x020cf458
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_ApplyOrientation.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_ApplyOrientation.c:
     complete
     .text       start:0x020cf458 end:0x020cf4b8
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_AiEnterWait.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_AiEnterWait.c:
     complete
     .text       start:0x020cf4b8 end:0x020cf540
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_AiWaitActive.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_AiWaitActive.c:
     complete
     .text       start:0x020cf540 end:0x020cf578
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_AiEnterCharge.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_AiEnterCharge.c:
     complete
     .text       start:0x020cf578 end:0x020cf66c
 
-src/overlays/enemies/ov231_enemy_3b/Ov231_Item_AiChargeTick.c:
+src/overlays/enemies/ov231_enemy_air_battler/Ov231_Item_AiChargeTick.c:
     complete
     .text       start:0x020cf66c end:0x020cfa10
 
-src/overlays/enemies/ov231_enemy_3b/data/ov231_strings_020cfa60.c:
+src/overlays/enemies/ov231_enemy_air_battler/data/ov231_strings_020cfa60.c:
     complete
     .data       start:0x020cfa60 end:0x020cfac0
 
-src/overlays/enemies/ov231_enemy_3b/data/ov231_tables_020cfa10.c:
+src/overlays/enemies/ov231_enemy_air_battler/data/ov231_tables_020cfa10.c:
     complete
     .rodata     start:0x020cfa10 end:0x020cfa30
 
-src/overlays/enemies/ov231_enemy_3b/data/ov231_tables_020cfa34.c:
+src/overlays/enemies/ov231_enemy_air_battler/data/ov231_tables_020cfa34.c:
     complete
     .rodata     start:0x020cfa34 end:0x020cfa58

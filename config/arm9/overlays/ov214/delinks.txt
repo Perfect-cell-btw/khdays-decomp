@@ -4,210 +4,210 @@
     .data       start:0x020cec40 end:0x020cec60 kind:data align:32
     .bss        start:0x020cec60 end:0x020cec60 kind:bss align:32
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_RegisterEntityClass.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AllocActorWithName.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AllocActorWithName.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_syncSubitemPoseToJoint.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_syncSubitemPoseToJoint.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc09c
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_initSubitemPathTarget.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_initSubitemPathTarget.c:
     complete
     .text       start:0x020cc09c end:0x020cc1fc
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_ConstructActor.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_ConstructActor.c:
     complete
     .text       start:0x020cc1fc end:0x020cc5c4
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_destroyObjectSlots.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_destroyObjectSlots.c:
     complete
     .text       start:0x020cc5c4 end:0x020cc61c
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_resetChildAndDispatch.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_resetChildAndDispatch.c:
     complete
     .text       start:0x020cc61c end:0x020cc64c
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_releaseHandles.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_releaseHandles.c:
     complete
     .text       start:0x020cc64c end:0x020cc6a8
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_HandleSpawnCommand.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_HandleSpawnCommand.c:
     complete
     .text       start:0x020cc6a8 end:0x020cc8e4
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stSyncChildPauseFlag.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stSyncChildPauseFlag.c:
     complete
     .text       start:0x020cc8e4 end:0x020cc968
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_initChildProjectile.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_initChildProjectile.c:
     complete
     .text       start:0x020cc968 end:0x020cc9e0
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_spawnFromTable.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_spawnFromTable.c:
     complete
     .text       start:0x020cc9e0 end:0x020cca58
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stCreateRegistryEntry.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stCreateRegistryEntry.c:
     complete
     .text       start:0x020cca58 end:0x020ccab4
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_ApplyHitEvent.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_ApplyHitEvent.c:
     complete
     .text       start:0x020ccab4 end:0x020ccde8
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_RequestSubState7IfNotCurrent.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020ccde8 end:0x020cce14
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_RequestSubState8IfIdle.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020cce14 end:0x020cce44
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_ProcessHitTargets.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_ProcessHitTargets.c:
     complete
     .text       start:0x020cce44 end:0x020cd0e8
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AiCountdownQueue6.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AiCountdownQueue6.c:
     complete
     .text       start:0x020cd0e8 end:0x020cd138
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_loadDefaultPoseVecs.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_loadDefaultPoseVecs.c:
     complete
     .text       start:0x020cd138 end:0x020cd198
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stInitSlotsFlags6.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stInitSlotsFlags6.c:
     complete
     .text       start:0x020cd198 end:0x020cd250
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stDispatchByStateByte.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stDispatchByStateByte.c:
     complete
     .text       start:0x020cd250 end:0x020cd3d8
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stUpdateMatrixAdvance.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stUpdateMatrixAdvance.c:
     complete
     .text       start:0x020cd3d8 end:0x020cd4bc
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020cd4bc end:0x020cd524
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stEnterClearAndPose.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stEnterClearAndPose.c:
     complete
     .text       start:0x020cd524 end:0x020cd59c
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stSetFlags82ClearC.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stSetFlags82ClearC.c:
     complete
     .text       start:0x020cd59c end:0x020cd668
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_Action4AfterTimerThreshold.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_Action4AfterTimerThreshold.c:
     complete
     .text       start:0x020cd668 end:0x020cd700
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AiStep_QueueAction5OnAnimEnd.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AiStep_QueueAction5OnAnimEnd.c:
     complete
     .text       start:0x020cd700 end:0x020cd734
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AiEnterAim.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AiEnterAim.c:
     complete
     .text       start:0x020cd734 end:0x020cd78c
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AimSubtractVecSetAngleThenGatedAdvance.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AimSubtractVecSetAngleThenGatedAdvance.c:
     complete
     .text       start:0x020cd78c end:0x020cd848
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stEnterRandDelay.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stEnterRandDelay.c:
     complete
     .text       start:0x020cd848 end:0x020cd8ac
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_SteerTowardTarget.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_SteerTowardTarget.c:
     complete
     .text       start:0x020cd8ac end:0x020cda04
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stAimAtTargetOrIdle.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stAimAtTargetOrIdle.c:
     complete
     .text       start:0x020cda04 end:0x020cdac0
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stEnterSetFlag40.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stEnterSetFlag40.c:
     complete
     .text       start:0x020cdac0 end:0x020cdb34
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_StepChargeLaunch.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_StepChargeLaunch.c:
     complete
     .text       start:0x020cdb34 end:0x020cdcf0
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_TickDash.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_TickDash.c:
     complete
     .text       start:0x020cdcf0 end:0x020cdde4
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_EnterAdvancePhase.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_EnterAdvancePhase.c:
     complete
     .text       start:0x020cdde4 end:0x020cdf24
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stActivateWhenReady.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stActivateWhenReady.c:
     complete
     .text       start:0x020cdf24 end:0x020cdf68
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_StepBounceOffContact.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_StepBounceOffContact.c:
     complete
     .text       start:0x020cdf68 end:0x020ce5ec
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_TimerActionOnceThenAdvance.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_TimerActionOnceThenAdvance.c:
     complete
     .text       start:0x020ce5ec end:0x020ce684
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stSetFlags86Effect4d.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stSetFlags86Effect4d.c:
     complete
     .text       start:0x020ce684 end:0x020ce748
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AiStep_QueueAction0.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AiStep_QueueAction0.c:
     complete
     .text       start:0x020ce748 end:0x020ce768
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_EnterGroundedState.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_EnterGroundedState.c:
     complete
     .text       start:0x020ce768 end:0x020ce860
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stTimerSetFlag80ClearBit0.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stTimerSetFlag80ClearBit0.c:
     complete
     .text       start:0x020ce860 end:0x020ce8f4
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce8f4 end:0x020ce928
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_AimAndFacePointTick.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_AimAndFacePointTick.c:
     complete
     .text       start:0x020ce928 end:0x020cea1c
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_createRegistryEntryStoreField.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_createRegistryEntryStoreField.c:
     complete
     .text       start:0x020cea1c end:0x020cea68
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_initEntrySlotAdvanceIndex.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_initEntrySlotAdvanceIndex.c:
     complete
     .text       start:0x020cea68 end:0x020cead4
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_tickActiveEntryCooldowns.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_tickActiveEntryCooldowns.c:
     complete
     .text       start:0x020cead4 end:0x020ceb30
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_stEnterInstallTickHandler.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_stEnterInstallTickHandler.c:
     complete
     .text       start:0x020ceb30 end:0x020cebe0
 
-src/overlays/enemies/ov214_enemy_2e/Ov214_EmptyTickHandler.c:
+src/overlays/enemies/ov214_enemy_morning_star/Ov214_EmptyTickHandler.c:
     complete
     .text       start:0x020cebe0 end:0x020cebe4
 
-src/overlays/enemies/ov214_enemy_2e/data/ov214_strings_020cec40.c:
+src/overlays/enemies/ov214_enemy_morning_star/data/ov214_strings_020cec40.c:
     complete
     .data       start:0x020cec40 end:0x020cec60
 
-src/overlays/enemies/ov214_enemy_2e/data/ov214_tables_020cebe4.c:
+src/overlays/enemies/ov214_enemy_morning_star/data/ov214_tables_020cebe4.c:
     complete
     .rodata     start:0x020cebe4 end:0x020cec28

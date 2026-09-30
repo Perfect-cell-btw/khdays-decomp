@@ -4,94 +4,94 @@
     .data       start:0x020cd120 end:0x020cd140 kind:data align:32
     .bss        start:0x020cd140 end:0x020cd140 kind:bss align:32
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_RegisterEntityClass.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_CreateNamedEntity.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_InitEffectActor.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_InitEffectActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc1d8
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_Destroy.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_Destroy.c:
     complete
     .text       start:0x020cc1d8 end:0x020cc1fc
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_PropagateBlockToLinkedNodes.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_PropagateBlockToLinkedNodes.c:
     complete
     .text       start:0x020cc1fc end:0x020cc25c
 
-src/overlays/enemies/ov234_enemy_3d/func_ov234_020cc25c.c:
+src/overlays/enemies/ov234_enemy_ball/func_ov234_020cc25c.c:
     complete
     .text       start:0x020cc25c end:0x020cc268
 
-src/overlays/enemies/ov234_enemy_3d/func_ov234_020cc268.c:
+src/overlays/enemies/ov234_enemy_ball/func_ov234_020cc268.c:
     complete
     .text       start:0x020cc268 end:0x020cc274
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_PlaceActorWithTransform.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_PlaceActorWithTransform.c:
     complete
     .text       start:0x020cc274 end:0x020cc4e0
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc4e0 end:0x020cc518
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cc518 end:0x020cc574
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_ResolveHitReaction.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_ResolveHitReaction.c:
     complete
     .text       start:0x020cc574 end:0x020cc864
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_EnterRecoilState.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_EnterRecoilState.c:
     complete
     .text       start:0x020cc864 end:0x020cc95c
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_DispatchSubStateByte.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc95c end:0x020cca84
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_TurnTowardDirection.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_TurnTowardDirection.c:
     complete
     .text       start:0x020cca84 end:0x020ccedc
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_stAdvanceState_ccedc.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_stAdvanceState_ccedc.c:
     complete
     .text       start:0x020ccedc end:0x020ccef4
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_CopyVecAdvanceSubStateIfHw60.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_CopyVecAdvanceSubStateIfHw60.c:
     complete
     .text       start:0x020ccef4 end:0x020ccf4c
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_stAdvanceState.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_stAdvanceState.c:
     complete
     .text       start:0x020ccf4c end:0x020ccf64
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_AdvanceStateIdleStep.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_AdvanceStateIdleStep.c:
     complete
     .text       start:0x020ccf64 end:0x020ccf68
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_stAdvanceState_2.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_stAdvanceState_2.c:
     complete
     .text       start:0x020ccf68 end:0x020ccf80
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_KnockbackSlide.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_KnockbackSlide.c:
     complete
     .text       start:0x020ccf80 end:0x020cd0d4
 
-src/overlays/enemies/ov234_enemy_3d/Ov234_AiStep_SetFlags3AndEnd.c:
+src/overlays/enemies/ov234_enemy_ball/Ov234_AiStep_SetFlags3AndEnd.c:
     complete
     .text       start:0x020cd0d4 end:0x020cd100
 
-src/overlays/enemies/ov234_enemy_3d/data/ov234_strings_020cd120.c:
+src/overlays/enemies/ov234_enemy_ball/data/ov234_strings_020cd120.c:
     complete
     .data       start:0x020cd120 end:0x020cd140
 
-src/overlays/enemies/ov234_enemy_3d/data/ov234_tables_020cd100.c:
+src/overlays/enemies/ov234_enemy_ball/data/ov234_tables_020cd100.c:
     complete
     .rodata     start:0x020cd100 end:0x020cd108

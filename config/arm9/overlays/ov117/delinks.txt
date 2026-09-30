@@ -4,170 +4,170 @@
     .data       start:0x020cdc60 end:0x020cdc80 kind:data align:32
     .bss        start:0x020cdc80 end:0x020cdc80 kind:bss align:32
 
-src/overlays/enemies/ov117_enemy_02/Ov117_RegisterEntityClass.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov117_enemy_02/Ov117_CreateNamedEntity.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov117_enemy_02/Ov117_InitEffectActor.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_InitEffectActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc150
 
-src/overlays/enemies/ov117_enemy_02/Ov117_OnDespawn.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_OnDespawn.c:
     complete
     .text       start:0x020cc150 end:0x020cc16c
 
-src/overlays/enemies/ov117_enemy_02/Ov117_TickAndSyncTwoModelXforms.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020cc16c end:0x020cc1c8
 
-src/overlays/enemies/ov117_enemy_02/Ov117_UnlinkHeldNode.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_UnlinkHeldNode.c:
     complete
     .text       start:0x020cc1c8 end:0x020cc1e4
 
-src/overlays/enemies/ov117_enemy_02/Ov117_SpawnAuraOnTag5.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_SpawnAuraOnTag5.c:
     complete
     .text       start:0x020cc1e4 end:0x020cc258
 
-src/overlays/enemies/ov117_enemy_02/Ov117_CallSetupThenSharedHandler.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_CallSetupThenSharedHandler.c:
     complete
     .text       start:0x020cc258 end:0x020cc270
 
-src/overlays/enemies/ov117_enemy_02/Ov117_PlayAnimPair.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_PlayAnimPair.c:
     complete
     .text       start:0x020cc270 end:0x020cc354
 
-src/overlays/enemies/ov117_enemy_02/Ov117_RunHandlerUnlessBit0OnlyThenAdvance.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_RunHandlerUnlessBit0OnlyThenAdvance.c:
     complete
     .text       start:0x020cc354 end:0x020cc38c
 
-src/overlays/enemies/ov117_enemy_02/Ov117_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020cc38c end:0x020cc3d8
 
-src/overlays/enemies/ov117_enemy_02/Ov117_TickStaggerAndFlipFacing.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc568
 
-src/overlays/enemies/ov117_enemy_02/Ov117_ReactionRequestSubState8.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_ReactionRequestSubState8.c:
     complete
     .text       start:0x020cc568 end:0x020cc5c0
 
-src/overlays/enemies/ov117_enemy_02/Ov117_LookAtQuat.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_LookAtQuat.c:
     complete
     .text       start:0x020cc5c0 end:0x020cc5fc
 
-src/overlays/enemies/ov117_enemy_02/Ov117_SeedVecAndArm.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_SeedVecAndArm.c:
     complete
     .text       start:0x020cc5fc end:0x020cc6e8
 
-src/overlays/enemies/ov117_enemy_02/Ov117_DispatchSubStateByte.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc6e8 end:0x020cc8f8
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiSlerpHeading.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiSlerpHeading.c:
     complete
     .text       start:0x020cc8f8 end:0x020cc9fc
 
-src/overlays/enemies/ov117_enemy_02/Ov117_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cc9fc end:0x020cca64
 
-src/overlays/enemies/ov117_enemy_02/Ov117_PublishFinishPose.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_PublishFinishPose.c:
     complete
     .text       start:0x020cca64 end:0x020ccafc
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AcquireAimTransform.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AcquireAimTransform.c:
     complete
     .text       start:0x020ccafc end:0x020ccbcc
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiRollTimerQueue2B.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiRollTimerQueue2B.c:
     complete
     .text       start:0x020ccbcc end:0x020ccc2c
 
-src/overlays/enemies/ov117_enemy_02/Ov117_PickRandomSignedSpeed.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_PickRandomSignedSpeed.c:
     complete
     .text       start:0x020ccc2c end:0x020cccb4
 
-src/overlays/enemies/ov117_enemy_02/Ov117_ChaseTargetOrReposition.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_ChaseTargetOrReposition.c:
     complete
     .text       start:0x020cccb4 end:0x020ccdc0
 
-src/overlays/enemies/ov117_enemy_02/Ov117_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020ccdc0 end:0x020ccdf4
 
-src/overlays/enemies/ov117_enemy_02/Ov117_KeepDistanceOrRetreat.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_KeepDistanceOrRetreat.c:
     complete
     .text       start:0x020ccdf4 end:0x020ccf38
 
-src/overlays/enemies/ov117_enemy_02/Ov117_BuildTransformMatrixThenAdvance.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_BuildTransformMatrixThenAdvance.c:
     complete
     .text       start:0x020ccf38 end:0x020ccfb4
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiDecelUntilSlow.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiDecelUntilSlow.c:
     complete
     .text       start:0x020ccfb4 end:0x020cd08c
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiEndWithUpdate.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiEndWithUpdate.c:
     complete
     .text       start:0x020cd08c end:0x020cd154
 
-src/overlays/enemies/ov117_enemy_02/Ov117_SeedTimerFireThenAdvanceSlot.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_SeedTimerFireThenAdvanceSlot.c:
     complete
     .text       start:0x020cd154 end:0x020cd1b0
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AimAtTarget.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AimAtTarget.c:
     complete
     .text       start:0x020cd1b0 end:0x020cd2f4
 
-src/overlays/enemies/ov117_enemy_02/Ov117_OrbitStep.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_OrbitStep.c:
     complete
     .text       start:0x020cd2f4 end:0x020cd494
 
-src/overlays/enemies/ov117_enemy_02/Ov117_PublishLanding.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_PublishLanding.c:
     complete
     .text       start:0x020cd494 end:0x020cd594
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiReaimStrafe.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiReaimStrafe.c:
     complete
     .text       start:0x020cd594 end:0x020cd698
 
-src/overlays/enemies/ov117_enemy_02/Ov117_BeginTumble.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_BeginTumble.c:
     complete
     .text       start:0x020cd698 end:0x020cd78c
 
-src/overlays/enemies/ov117_enemy_02/Ov117_EmitAtOrbit.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_EmitAtOrbit.c:
     complete
     .text       start:0x020cd78c end:0x020cda58
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiFallTick.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiFallTick.c:
     complete
     .text       start:0x020cda58 end:0x020cdae8
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiEnterDown.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiEnterDown.c:
     complete
     .text       start:0x020cdae8 end:0x020cdb7c
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiStep_QueueAction9OnFlag48Clear.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020cdb7c end:0x020cdbb0
 
-src/overlays/enemies/ov117_enemy_02/Ov117_AiEnterDefeat.c:
+src/overlays/enemies/ov117_enemy_possessor/Ov117_AiEnterDefeat.c:
     complete
     .text       start:0x020cdbb0 end:0x020cdc28
 
-src/overlays/enemies/ov117_enemy_02/data/ov117_const_020cdc60.c:
+src/overlays/enemies/ov117_enemy_possessor/data/ov117_const_020cdc60.c:
     complete
     .data       start:0x020cdc60 end:0x020cdc64
 
-src/overlays/enemies/ov117_enemy_02/data/ov117_strings_020cdc64.c:
+src/overlays/enemies/ov117_enemy_possessor/data/ov117_strings_020cdc64.c:
     complete
     .data       start:0x020cdc64 end:0x020cdc80
 
-src/overlays/enemies/ov117_enemy_02/data/ov117_tables_020cdc28.c:
+src/overlays/enemies/ov117_enemy_possessor/data/ov117_tables_020cdc28.c:
     complete
     .rodata     start:0x020cdc28 end:0x020cdc44

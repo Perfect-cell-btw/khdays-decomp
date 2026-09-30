@@ -3,146 +3,146 @@
     .data       start:0x020d1580 end:0x020d15c0 kind:data align:32
     .bss        start:0x020d15c0 end:0x020d15c0 kind:bss align:32
 
-src/overlays/enemies/ov261_enemy_55/Ov261_RegisterEntityClass.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov261_enemy_55/Ov261_CreateNamedEntity.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/enemies/ov261_enemy_55/Ov261_EnemyConstruct.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_EnemyConstruct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfeac
 
-src/overlays/enemies/ov261_enemy_55/Ov261_TeardownWithGuardedSlotNotify.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_TeardownWithGuardedSlotNotify.c:
     complete
     .text       start:0x020cfeac end:0x020cff40
 
-src/overlays/enemies/ov261_enemy_55/Ov261_CopyBlockThenNotify.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_CopyBlockThenNotify.c:
     complete
     .text       start:0x020cff40 end:0x020cff90
 
-src/overlays/enemies/ov261_enemy_55/Ov261_Model_SetTrack0.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_Model_SetTrack0.c:
     complete
     .text       start:0x020cff90 end:0x020cffc0
 
-src/overlays/enemies/ov261_enemy_55/Ov261_RefreshAndCopyTwoBlocks.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_RefreshAndCopyTwoBlocks.c:
     complete
     .text       start:0x020cffc0 end:0x020d0020
 
-src/overlays/enemies/ov261_enemy_55/Ov261_GrabReleaseHook.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_GrabReleaseHook.c:
     complete
     .text       start:0x020d0020 end:0x020d00c0
 
-src/overlays/enemies/ov261_enemy_55/Ov261_TickHook.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_TickHook.c:
     complete
     .text       start:0x020d00c0 end:0x020d020c
 
-src/overlays/enemies/ov261_enemy_55/Ov261_ReallocBufferInitConsts.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_ReallocBufferInitConsts.c:
     complete
     .text       start:0x020d020c end:0x020d0288
 
-src/overlays/enemies/ov261_enemy_55/Ov261_RequestAction2.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_RequestAction2.c:
     complete
     .text       start:0x020d0288 end:0x020d02a8
 
-src/overlays/enemies/ov261_enemy_55/Ov261_RequestAction3WithParams.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_RequestAction3WithParams.c:
     complete
     .text       start:0x020d02a8 end:0x020d02c8
 
-src/overlays/enemies/ov261_enemy_55/Ov261_RequestAction4WithParams.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_RequestAction4WithParams.c:
     complete
     .text       start:0x020d02c8 end:0x020d02e8
 
-src/overlays/enemies/ov261_enemy_55/Ov261_RequestAction5WithValue.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_RequestAction5WithValue.c:
     complete
     .text       start:0x020d02e8 end:0x020d02fc
 
-src/overlays/enemies/ov261_enemy_55/Ov261_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d02fc end:0x020d0348
 
-src/overlays/enemies/ov261_enemy_55/Ov261_SetFacingAnchor.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_SetFacingAnchor.c:
     complete
     .text       start:0x020d0348 end:0x020d03ec
 
-src/overlays/enemies/ov261_enemy_55/Ov261_FindGrabSlotPath.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_FindGrabSlotPath.c:
     complete
     .text       start:0x020d03ec end:0x020d04f0
 
-src/overlays/enemies/ov261_enemy_55/Ov261_FindGrabPath.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_FindGrabPath.c:
     complete
     .text       start:0x020d04f0 end:0x020d0700
 
-src/overlays/enemies/ov261_enemy_55/Ov261_HoverSetup.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_HoverSetup.c:
     complete
     .text       start:0x020d0700 end:0x020d0818
 
-src/overlays/enemies/ov261_enemy_55/Ov261_DispatchSubStateByte.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0818 end:0x020d0920
 
-src/overlays/enemies/ov261_enemy_55/Ov261_HoverMotionTick.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_HoverMotionTick.c:
     complete
     .text       start:0x020d0920 end:0x020d0a08
 
-src/overlays/enemies/ov261_enemy_55/Ov261_stSetDispFlags6.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_stSetDispFlags6.c:
     complete
     .text       start:0x020d0a08 end:0x020d0a48
 
-src/overlays/enemies/ov261_enemy_55/Ov261_PublishFinishPose.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_PublishFinishPose.c:
     complete
     .text       start:0x020d0a48 end:0x020d0ae8
 
-src/overlays/enemies/ov261_enemy_55/Ov261_SetPoseClearField3a8ThenAdvanceSlot.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_SetPoseClearField3a8ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0ae8 end:0x020d0b28
 
-src/overlays/enemies/ov261_enemy_55/Ov261_FloatHeightTick.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_FloatHeightTick.c:
     complete
     .text       start:0x020d0b28 end:0x020d0bb0
 
-src/overlays/enemies/ov261_enemy_55/Ov261_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d0bb0 end:0x020d0c0c
 
-src/overlays/enemies/ov261_enemy_55/Ov261_AimTick.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_AimTick.c:
     complete
     .text       start:0x020d0c0c end:0x020d0cd8
 
-src/overlays/enemies/ov261_enemy_55/Ov261_HoverEntryTick.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_HoverEntryTick.c:
     complete
     .text       start:0x020d0cd8 end:0x020d0d80
 
-src/overlays/enemies/ov261_enemy_55/Ov261_ApproachDecision.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_ApproachDecision.c:
     complete
     .text       start:0x020d0d80 end:0x020d0e4c
 
-src/overlays/enemies/ov261_enemy_55/Ov261_ApproachTick.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_ApproachTick.c:
     complete
     .text       start:0x020d0e4c end:0x020d0f90
 
-src/overlays/enemies/ov261_enemy_55/Ov261_GrabWalk.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_GrabWalk.c:
     complete
     .text       start:0x020d0f90 end:0x020d110c
 
-src/overlays/enemies/ov261_enemy_55/Ov261_HoverReleaseDecision.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_HoverReleaseDecision.c:
     complete
     .text       start:0x020d110c end:0x020d122c
 
-src/overlays/enemies/ov261_enemy_55/Ov261_GrabSlotFlight.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_GrabSlotFlight.c:
     complete
     .text       start:0x020d122c end:0x020d146c
 
-src/overlays/enemies/ov261_enemy_55/Ov261_PoseInvokeClearField40ThenAdvance.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_PoseInvokeClearField40ThenAdvance.c:
     complete
     .text       start:0x020d146c end:0x020d14bc
 
-src/overlays/enemies/ov261_enemy_55/Ov261_stateDualTimerDivide.c:
+src/overlays/enemies/ov261_enemy_zero/Ov261_stateDualTimerDivide.c:
     complete
     .text       start:0x020d14bc end:0x020d156c
 
-src/overlays/enemies/ov261_enemy_55/data/ov261_strings_020d1580.c:
+src/overlays/enemies/ov261_enemy_zero/data/ov261_strings_020d1580.c:
     complete
     .data       start:0x020d1580 end:0x020d15c0

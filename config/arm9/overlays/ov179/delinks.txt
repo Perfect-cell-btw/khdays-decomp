@@ -4,258 +4,258 @@
     .data       start:0x020d4900 end:0x020d4920 kind:data align:32
     .bss        start:0x020d4920 end:0x020d4920 kind:bss align:32
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_RegisterEntityClass.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_CreateNamedEntity.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_OrientPartAlongDirection.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_OrientPartAlongDirection.c:
     complete
     .text       start:0x020d1a24 end:0x020d1a80
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_Construct.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_Construct.c:
     complete
     .text       start:0x020d1a80 end:0x020d1da4
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020d1da4 end:0x020d1de4
 
-src/overlays/enemies/ov179_enemy_1f_2/func_ov179_020d1de4.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/func_ov179_020d1de4.c:
     complete
     .text       start:0x020d1de4 end:0x020d1df0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ForwardEventToChild.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ForwardEventToChild.c:
     complete
     .text       start:0x020d1df0 end:0x020d1e18
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_NotifyPartThenBase.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_NotifyPartThenBase.c:
     complete
     .text       start:0x020d1e18 end:0x020d1e40
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_HandleSpawnMessage.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_HandleSpawnMessage.c:
     complete
     .text       start:0x020d1e40 end:0x020d20e8
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_Model_SetTrack0.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_Model_SetTrack0.c:
     complete
     .text       start:0x020d20e8 end:0x020d2118
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_Tick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_Tick.c:
     complete
     .text       start:0x020d2118 end:0x020d22a8
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_registryCreateEntry.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_registryCreateEntry.c:
     complete
     .text       start:0x020d22a8 end:0x020d2304
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_OnHit.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_OnHit.c:
     complete
     .text       start:0x020d2304 end:0x020d2528
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d2528 end:0x020d2554
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_FaceTargetGetClearance.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d2554 end:0x020d25ec
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_IsChildInactive.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_IsChildInactive.c:
     complete
     .text       start:0x020d25ec end:0x020d262c
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateInitTransformSlots.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateInitTransformSlots.c:
     complete
     .text       start:0x020d262c end:0x020d2718
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ov115_DispatchSubStateByte.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ov115_DispatchSubStateByte.c:
     complete
     .text       start:0x020d2718 end:0x020d2918
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stDivStoreField.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stDivStoreField.c:
     complete
     .text       start:0x020d2918 end:0x020d29b8
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d29b8 end:0x020d2a20
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d2a20 end:0x020d2aa4
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d2aa4 end:0x020d2b70
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d2b70 end:0x020d2c48
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d2c48 end:0x020d2c7c
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateRandomInitFull.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateRandomInitFull.c:
     complete
     .text       start:0x020d2c7c end:0x020d2d08
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_OrbitTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_OrbitTick.c:
     complete
     .text       start:0x020d2d08 end:0x020d30fc
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiEnterHover.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiEnterHover.c:
     complete
     .text       start:0x020d30fc end:0x020d3140
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_HoverBobTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_HoverBobTick.c:
     complete
     .text       start:0x020d3140 end:0x020d3398
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiStep_StartTag1.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiStep_StartTag1.c:
     complete
     .text       start:0x020d3398 end:0x020d33d4
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_StalkTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_StalkTick.c:
     complete
     .text       start:0x020d33d4 end:0x020d35b8
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateRandomDirValue.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateRandomDirValue.c:
     complete
     .text       start:0x020d35b8 end:0x020d3628
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_CircleTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_CircleTick.c:
     complete
     .text       start:0x020d3628 end:0x020d3810
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_BeginGuardPose.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_BeginGuardPose.c:
     complete
     .text       start:0x020d3810 end:0x020d38e8
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_TrackTargetUntilCharge.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_TrackTargetUntilCharge.c:
     complete
     .text       start:0x020d38e8 end:0x020d3a0c
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_DashTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_DashTick.c:
     complete
     .text       start:0x020d3a0c end:0x020d3be4
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d3be4 end:0x020d3c80
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ApproachTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ApproachTick.c:
     complete
     .text       start:0x020d3c80 end:0x020d3da0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiEnterAnim3WithPartReset.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiEnterAnim3WithPartReset.c:
     complete
     .text       start:0x020d3da0 end:0x020d3de0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d3de0 end:0x020d3e14
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_HoverTick.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_HoverTick.c:
     complete
     .text       start:0x020d3e14 end:0x020d3f50
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiEndWithUpdate.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiEndWithUpdate.c:
     complete
     .text       start:0x020d3f50 end:0x020d403c
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d403c end:0x020d40dc
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateTimerToggleFlags.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d40dc end:0x020d4170
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_RunSetupThenSetHw60HighBit0.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_RunSetupThenSetHw60HighBit0.c:
     complete
     .text       start:0x020d4170 end:0x020d41a0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ForwardToAiTaskWhenReady.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020d41a0 end:0x020d41bc
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AllocLinkChild390.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AllocLinkChild390.c:
     complete
     .text       start:0x020d41bc end:0x020d41f0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_Construct_2.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_Construct_2.c:
     complete
     .text       start:0x020d41f0 end:0x020d42c4
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_OnDespawn.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_OnDespawn.c:
     complete
     .text       start:0x020d42c4 end:0x020d42e0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ConfigureSubObjectThenForward.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ConfigureSubObjectThenForward.c:
     complete
     .text       start:0x020d42e0 end:0x020d4308
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_HandleMessage.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_HandleMessage.c:
     complete
     .text       start:0x020d4308 end:0x020d4378
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_Model_ReapplyTracks.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d4378 end:0x020d4410
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ReleaseField38cUnlessState1ThenAdvance.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ReleaseField38cUnlessState1ThenAdvance.c:
     complete
     .text       start:0x020d4410 end:0x020d4448
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_SetTimerA000.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_SetTimerA000.c:
     complete
     .text       start:0x020d4448 end:0x020d4454
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d4454 end:0x020d44b0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_stateInitClearSlots.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_stateInitClearSlots.c:
     complete
     .text       start:0x020d44b0 end:0x020d4558
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d4558 end:0x020d45d0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiSlot2NoOp.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiSlot2NoOp.c:
     complete
     .text       start:0x020d45d0 end:0x020d45d4
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_ToggleStanceFlags.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_ToggleStanceFlags.c:
     complete
     .text       start:0x020d45d4 end:0x020d4640
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d4640 end:0x020d4678
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_SettleEnter.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_SettleEnter.c:
     complete
     .text       start:0x020d4678 end:0x020d473c
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_SettleHold.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_SettleHold.c:
     complete
     .text       start:0x020d473c end:0x020d48a0
 
-src/overlays/enemies/ov179_enemy_1f_2/Ov179_AiStep_QueueAction0OnAnimEnd.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/Ov179_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d48a0 end:0x020d48d0
 
-src/overlays/enemies/ov179_enemy_1f_2/data/ov179_strings_020d4900.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/data/ov179_strings_020d4900.c:
     complete
     .data       start:0x020d4900 end:0x020d4920
 
-src/overlays/enemies/ov179_enemy_1f_2/data/ov179_tables_020d48d0.c:
+src/overlays/enemies/ov179_enemy_pink_concerto_2/data/ov179_tables_020d48d0.c:
     complete
     .rodata     start:0x020d48d0 end:0x020d48ec

@@ -4,238 +4,238 @@
     .data       start:0x020cee60 end:0x020cee80 kind:data align:32
     .bss        start:0x020cee80 end:0x020cee80 kind:bss align:32
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_RegisterEntityClass.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_CreateNamedEntity.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_OrientPartAlongDirection.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_Construct.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc33c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cc33c end:0x020cc37c
 
-src/overlays/enemies/ov169_enemy_1b/func_ov169_020cc37c.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/func_ov169_020cc37c.c:
     complete
     .text       start:0x020cc37c end:0x020cc388
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_ForwardEventToChild.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_ForwardEventToChild.c:
     complete
     .text       start:0x020cc388 end:0x020cc3b0
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_NotifyPartThenBase.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b0 end:0x020cc3d8
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_HandleSpawnMessage.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc620
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_Model_SetTrack0.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_Model_SetTrack0.c:
     complete
     .text       start:0x020cc620 end:0x020cc650
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc650 end:0x020cc788
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_registryCreateEntry.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_registryCreateEntry.c:
     complete
     .text       start:0x020cc788 end:0x020cc7e4
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_OnHit.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_OnHit.c:
     complete
     .text       start:0x020cc7e4 end:0x020cca08
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cca08 end:0x020cca34
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_FaceTargetGetClearance.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cca34 end:0x020ccacc
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_IsChildInactive.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_IsChildInactive.c:
     complete
     .text       start:0x020ccacc end:0x020ccb0c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateInitTransformSlots.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccb0c end:0x020ccbf8
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020ccbf8 end:0x020ccde4
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stDivStoreField.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stDivStoreField.c:
     complete
     .text       start:0x020ccde4 end:0x020cce84
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cce84 end:0x020cceec
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020cceec end:0x020ccf70
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ccf70 end:0x020cd03c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd03c end:0x020cd114
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd114 end:0x020cd148
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateRandomInitFull.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateRandomInitFull.c:
     complete
     .text       start:0x020cd148 end:0x020cd1d4
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_OrbitTick.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_OrbitTick.c:
     complete
     .text       start:0x020cd1d4 end:0x020cd554
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cd554 end:0x020cd598
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_HoverBobTick.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_HoverBobTick.c:
     complete
     .text       start:0x020cd598 end:0x020cd790
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiStep_StartTag1.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd790 end:0x020cd7cc
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_HoverApproachTick.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_HoverApproachTick.c:
     complete
     .text       start:0x020cd7cc end:0x020cd998
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateRandomDirValue.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateRandomDirValue.c:
     complete
     .text       start:0x020cd998 end:0x020cda08
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_CircleStrafeTarget.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_CircleStrafeTarget.c:
     complete
     .text       start:0x020cda08 end:0x020cdb84
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cdb84 end:0x020cdc20
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_HoverHoldTick.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_HoverHoldTick.c:
     complete
     .text       start:0x020cdc20 end:0x020cddec
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddec end:0x020cde20
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cde20 end:0x020cde54
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cde54 end:0x020cdf48
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiEndWithUpdate.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiEndWithUpdate.c:
     complete
     .text       start:0x020cdf48 end:0x020ce034
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020ce034 end:0x020ce0d4
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateTimerToggleFlags.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce0d4 end:0x020ce168
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce168 end:0x020ce1a8
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_Actor_New.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_Actor_New.c:
     complete
     .text       start:0x020ce1a8 end:0x020ce1dc
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_SubObject_ConstructB.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_SubObject_ConstructB.c:
     complete
     .text       start:0x020ce1dc end:0x020ce33c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_OnDespawn.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_OnDespawn.c:
     complete
     .text       start:0x020ce33c end:0x020ce358
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_TickAndSyncModelXform.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ce358 end:0x020ce390
 
-src/overlays/enemies/ov169_enemy_1b/func_ov169_020ce390.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/func_ov169_020ce390.c:
     complete
     .text       start:0x020ce390 end:0x020ce39c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_TryTriggerEffect.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_TryTriggerEffect.c:
     complete
     .text       start:0x020ce39c end:0x020ce424
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AttackSweep.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AttackSweep.c:
     complete
     .text       start:0x020ce424 end:0x020ce5a8
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce5a8 end:0x020ce5f4
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_stateInitClearSlots.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_stateInitClearSlots.c:
     complete
     .text       start:0x020ce5f4 end:0x020ce69c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ce69c end:0x020ce714
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiApplyMoveVector.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiApplyMoveVector.c:
     complete
     .text       start:0x020ce714 end:0x020ce72c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_ConfigHw60CopyVec3ConstToCThenAdvance.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020ce72c end:0x020ce7dc
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce7dc end:0x020ce814
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_BeginLeap.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_BeginLeap.c:
     complete
     .text       start:0x020ce814 end:0x020cea4c
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_LeapTick.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_LeapTick.c:
     complete
     .text       start:0x020cea4c end:0x020ceda8
 
-src/overlays/enemies/ov169_enemy_1b/Ov169_SweepStep.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/Ov169_SweepStep.c:
     complete
     .text       start:0x020ceda8 end:0x020cee44
 
-src/overlays/enemies/ov169_enemy_1b/data/ov169_strings_020cee60.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/data/ov169_strings_020cee60.c:
     complete
     .data       start:0x020cee60 end:0x020cee80
 
-src/overlays/enemies/ov169_enemy_1b/data/ov169_tables_020cee44.c:
+src/overlays/enemies/ov169_enemy_turquoise_march/data/ov169_tables_020cee44.c:
     complete
     .rodata     start:0x020cee44 end:0x020cee58

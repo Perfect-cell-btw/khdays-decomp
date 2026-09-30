@@ -4,134 +4,134 @@
     .data       start:0x020d48c0 end:0x020d48e0 kind:data align:32
     .bss        start:0x020d48e0 end:0x020d48e0 kind:bss align:32
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_RegisterEntityClass.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_CreateNamedEntity.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_InitNamedEntityActor.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_InitNamedEntityActor.c:
     complete
     .text       start:0x020d3844 end:0x020d3a90
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ReleaseSubObjectAndListThenNotify.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ReleaseSubObjectAndListThenNotify.c:
     complete
     .text       start:0x020d3a90 end:0x020d3ab4
 
-src/overlays/enemies/ov292_enemy_6e/func_ov292_020d3ab4.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/func_ov292_020d3ab4.c:
     complete
     .text       start:0x020d3ab4 end:0x020d3ac0
 
-src/overlays/enemies/ov292_enemy_6e/func_ov292_020d3ac0.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/func_ov292_020d3ac0.c:
     complete
     .text       start:0x020d3ac0 end:0x020d3acc
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_Model_SetTrack0.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_Model_SetTrack0.c:
     complete
     .text       start:0x020d3acc end:0x020d3afc
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_PropagateBlockChainThenNotify.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_PropagateBlockChainThenNotify.c:
     complete
     .text       start:0x020d3afc end:0x020d3b64
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ReloadPointList.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ReloadPointList.c:
     complete
     .text       start:0x020d3b64 end:0x020d3bdc
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d3bdc end:0x020d3c38
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_HandleHitEvent.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_HandleHitEvent.c:
     complete
     .text       start:0x020d3c38 end:0x020d3dd0
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_RequestSubState7IfNotCurrent.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020d3dd0 end:0x020d3dfc
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_SeekPointAtIndex.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_SeekPointAtIndex.c:
     complete
     .text       start:0x020d3dfc end:0x020d3e58
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_StepSteering.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_StepSteering.c:
     complete
     .text       start:0x020d3e58 end:0x020d4030
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_EnterChase.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_EnterChase.c:
     complete
     .text       start:0x020d4030 end:0x020d4124
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_DispatchSubStateByte.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4124 end:0x020d42b8
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_StepChaseMotion.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_StepChaseMotion.c:
     complete
     .text       start:0x020d42b8 end:0x020d4324
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d4324 end:0x020d438c
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_AdvanceStateSlotIfHw60Bit0.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020d438c end:0x020d43dc
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d43dc end:0x020d44a8
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_WaitThenAdvanceState.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_WaitThenAdvanceState.c:
     complete
     .text       start:0x020d44a8 end:0x020d4528
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_AiStep_QueueAction4OnAnimEnd.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d4528 end:0x020d455c
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_stAdvanceState.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_stAdvanceState.c:
     complete
     .text       start:0x020d455c end:0x020d4580
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d4580 end:0x020d45bc
 
-src/overlays/enemies/ov292_enemy_6e/func_ov292_020d45bc.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/func_ov292_020d45bc.c:
     complete
     .text       start:0x020d45bc end:0x020d45cc
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d45cc end:0x020d4610
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ConfigSubStateThenAdvanceSlot_3.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ConfigSubStateThenAdvanceSlot_3.c:
     complete
     .text       start:0x020d4610 end:0x020d4654
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_SetSubState4UnlessFlagAd.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_SetSubState4UnlessFlagAd.c:
     complete
     .text       start:0x020d4654 end:0x020d4698
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_ExitChase.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_ExitChase.c:
     complete
     .text       start:0x020d4698 end:0x020d4784
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_Action49Callback.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_Action49Callback.c:
     complete
     .text       start:0x020d4784 end:0x020d4824
 
-src/overlays/enemies/ov292_enemy_6e/Ov292_TimerGateHw60FlipThenAdvance.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/Ov292_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020d4824 end:0x020d48b8
 
-src/overlays/enemies/ov292_enemy_6e/data/ov292_const_020d48b8.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/data/ov292_const_020d48b8.c:
     complete
     .rodata     start:0x020d48b8 end:0x020d48bc
 
-src/overlays/enemies/ov292_enemy_6e/data/ov292_strings_020d48c0.c:
+src/overlays/enemies/ov292_enemy_emerald_serenade/data/ov292_strings_020d48c0.c:
     complete
     .data       start:0x020d48c0 end:0x020d48e0

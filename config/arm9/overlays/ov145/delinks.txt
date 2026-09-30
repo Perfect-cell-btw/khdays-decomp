@@ -3,158 +3,158 @@
     .data       start:0x020cfae0 end:0x020cfb00 kind:data align:32
     .bss        start:0x020cfb00 end:0x020cfb00 kind:bss align:32
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_RegisterEntityClass.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_CreateNamedEntity.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_NodeMatrixCallback.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_NodeMatrixCallback.c:
     complete
     .text       start:0x020cdde4 end:0x020cdec4
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_Construct.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_Construct.c:
     complete
     .text       start:0x020cdec4 end:0x020ce1b8
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_ReleaseActorSubObjects.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_ReleaseActorSubObjects.c:
     complete
     .text       start:0x020ce1b8 end:0x020ce214
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_SetupAndPropagateBlock.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_SetupAndPropagateBlock.c:
     complete
     .text       start:0x020ce214 end:0x020ce25c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_Model_SetTracks0And3.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_Model_SetTracks0And3.c:
     complete
     .text       start:0x020ce25c end:0x020ce2ac
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_Configure.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_Configure.c:
     complete
     .text       start:0x020ce2ac end:0x020ce38c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_SendBlankStatus.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_SendBlankStatus.c:
     complete
     .text       start:0x020ce38c end:0x020ce3e8
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_StampActorBytesToMsgAndForward.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_StampActorBytesToMsgAndForward.c:
     complete
     .text       start:0x020ce3e8 end:0x020ce41c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_HandleMessage.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_HandleMessage.c:
     complete
     .text       start:0x020ce41c end:0x020ce618
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_ChargeRange.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_ChargeRange.c:
     complete
     .text       start:0x020ce618 end:0x020ce700
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_HasLineOfSight.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_HasLineOfSight.c:
     complete
     .text       start:0x020ce700 end:0x020ce78c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_LureToPiece.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_LureToPiece.c:
     complete
     .text       start:0x020ce78c end:0x020ce86c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_AimYawToTarget.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_AimYawToTarget.c:
     complete
     .text       start:0x020ce86c end:0x020ce8d8
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce8d8 end:0x020ce924
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_RequestSubState9IfNotCurrent.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_RequestSubState9IfNotCurrent.c:
     complete
     .text       start:0x020ce924 end:0x020ce950
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_FindPiece.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_FindPiece.c:
     complete
     .text       start:0x020ce950 end:0x020cebbc
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_InitAimStateSlots.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_InitAimStateSlots.c:
     complete
     .text       start:0x020cebbc end:0x020cec28
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_SubStateDispatch.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_SubStateDispatch.c:
     complete
     .text       start:0x020cec28 end:0x020ceea0
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_OrientationTick.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_OrientationTick.c:
     complete
     .text       start:0x020ceea0 end:0x020cf028
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_stSetDispFlags86.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_stSetDispFlags86.c:
     complete
     .text       start:0x020cf028 end:0x020cf068
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_SpawnReadyTick.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_SpawnReadyTick.c:
     complete
     .text       start:0x020cf068 end:0x020cf1a8
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_ChargeDecision.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_ChargeDecision.c:
     complete
     .text       start:0x020cf1a8 end:0x020cf238
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_AiCountdownThenBranch.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_AiCountdownThenBranch.c:
     complete
     .text       start:0x020cf238 end:0x020cf26c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_BranchInvokeOrCopySlotThenAdvance.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_BranchInvokeOrCopySlotThenAdvance.c:
     complete
     .text       start:0x020cf26c end:0x020cf300
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_BeginRecover.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_BeginRecover.c:
     complete
     .text       start:0x020cf300 end:0x020cf37c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cf37c end:0x020cf3d4
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_AdvanceTick.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_AdvanceTick.c:
     complete
     .text       start:0x020cf3d4 end:0x020cf63c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_FacingAlignedTick.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_FacingAlignedTick.c:
     complete
     .text       start:0x020cf63c end:0x020cf744
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_PoseThenAction4OrIdle.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_PoseThenAction4OrIdle.c:
     complete
     .text       start:0x020cf744 end:0x020cf7c4
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_AimHoldTick.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_AimHoldTick.c:
     complete
     .text       start:0x020cf7c4 end:0x020cf828
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cf828 end:0x020cf85c
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cf85c end:0x020cf8b4
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_CountdownTimer38ThenPose5.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_CountdownTimer38ThenPose5.c:
     complete
     .text       start:0x020cf8b4 end:0x020cf900
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_stateScanSlotRoundRobin.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_stateScanSlotRoundRobin.c:
     complete
     .text       start:0x020cf900 end:0x020cf988
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_BeginRetreat.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_BeginRetreat.c:
     complete
     .text       start:0x020cf988 end:0x020cfa44
 
-src/overlays/enemies/ov145_enemy_0f/Ov145_TimerGateHw60FlipThenAdvance.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/Ov145_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020cfa44 end:0x020cfad8
 
-src/overlays/enemies/ov145_enemy_0f/data/ov145_strings_020cfae0.c:
+src/overlays/enemies/ov145_enemy_black_card_soldier/data/ov145_strings_020cfae0.c:
     complete
     .data       start:0x020cfae0 end:0x020cfb00

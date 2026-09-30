@@ -4,250 +4,250 @@
     .data       start:0x020d1860 end:0x020d1880 kind:data align:32
     .bss        start:0x020d1880 end:0x020d1880 kind:bss align:32
 
-src/overlays/enemies/ov200_enemy_26/Ov200_RegisterEntityClass.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/enemies/ov200_enemy_26/Ov200_CreateNamedEntity.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_Construct.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_Construct.c:
     complete
     .text       start:0x020cdde4 end:0x020ce0d0
 
-src/overlays/enemies/ov200_enemy_26/Ov200_Destroy.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_Destroy.c:
     complete
     .text       start:0x020ce0d0 end:0x020ce134
 
-src/overlays/enemies/ov200_enemy_26/Ov200_TickAndSyncTwoModelXforms.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020ce134 end:0x020ce190
 
-src/overlays/enemies/ov200_enemy_26/Ov200_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020ce190 end:0x020ce1c8
 
-src/overlays/enemies/ov200_enemy_26/Ov200_OnEffectMessage.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_OnEffectMessage.c:
     complete
     .text       start:0x020ce1c8 end:0x020ce4b8
 
-src/overlays/enemies/ov200_enemy_26/Ov200_PostTickCleanup.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_PostTickCleanup.c:
     complete
     .text       start:0x020ce4b8 end:0x020ce638
 
-src/overlays/enemies/ov200_enemy_26/func_ov200_020ce638.c:
+src/overlays/enemies/ov200_enemy_guardian/func_ov200_020ce638.c:
     complete
     .text       start:0x020ce638 end:0x020ce644
 
-src/overlays/enemies/ov200_enemy_26/func_ov200_020ce644.c:
+src/overlays/enemies/ov200_enemy_guardian/func_ov200_020ce644.c:
     complete
     .text       start:0x020ce644 end:0x020ce650
 
-src/overlays/enemies/ov200_enemy_26/Ov200_CreateAiTask.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_CreateAiTask.c:
     complete
     .text       start:0x020ce650 end:0x020ce6ac
 
-src/overlays/enemies/ov200_enemy_26/Ov200_HandleHit.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_HandleHit.c:
     complete
     .text       start:0x020ce6ac end:0x020ce8c4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_RequestSubState9IfNotCurrent.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_RequestSubState9IfNotCurrent.c:
     complete
     .text       start:0x020ce8c4 end:0x020ce8f0
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AimLeadTarget.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AimLeadTarget.c:
     complete
     .text       start:0x020ce8f0 end:0x020ce9b0
 
-src/overlays/enemies/ov200_enemy_26/Ov200_ResetAimArmDispatch.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_ResetAimArmDispatch.c:
     complete
     .text       start:0x020ce9b0 end:0x020ceac8
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiDispatchAction.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiDispatchAction.c:
     complete
     .text       start:0x020ceac8 end:0x020cec8c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiSlerpHeading.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiSlerpHeading.c:
     complete
     .text       start:0x020cec8c end:0x020ced2c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ced2c end:0x020ced94
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020ced94 end:0x020cee14
 
-src/overlays/enemies/ov200_enemy_26/Ov200_SpawnEffect48ReconfigureFlagsB.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_SpawnEffect48ReconfigureFlagsB.c:
     complete
     .text       start:0x020cee14 end:0x020ceee0
 
-src/overlays/enemies/ov200_enemy_26/Ov200_TimerAimFireReroll.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_TimerAimFireReroll.c:
     complete
     .text       start:0x020ceee0 end:0x020cefdc
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cefdc end:0x020cf010
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiEnterHover.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiEnterHover.c:
     complete
     .text       start:0x020cf010 end:0x020cf074
 
-src/overlays/enemies/ov200_enemy_26/Ov200_HoverTick.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_HoverTick.c:
     complete
     .text       start:0x020cf074 end:0x020cf1f4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020cf1f4 end:0x020cf228
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiChooseMoveSteering.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiChooseMoveSteering.c:
     complete
     .text       start:0x020cf228 end:0x020cf508
 
-src/overlays/enemies/ov200_enemy_26/Ov200_StrafeMove.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_StrafeMove.c:
     complete
     .text       start:0x020cf508 end:0x020cf7d4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_SeedRandomStrafeSign.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_SeedRandomStrafeSign.c:
     complete
     .text       start:0x020cf7d4 end:0x020cf828
 
-src/overlays/enemies/ov200_enemy_26/Ov200_CircleTick.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_CircleTick.c:
     complete
     .text       start:0x020cf828 end:0x020cfa60
 
-src/overlays/enemies/ov200_enemy_26/Ov200_FireAimPoseAndGate.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_FireAimPoseAndGate.c:
     complete
     .text       start:0x020cfa60 end:0x020cfaec
 
-src/overlays/enemies/ov200_enemy_26/Ov200_DecayOffsetPickGiveUp.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_DecayOffsetPickGiveUp.c:
     complete
     .text       start:0x020cfaec end:0x020cfbc4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_SpawnEffect4bReconfigureFlags.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_SpawnEffect4bReconfigureFlags.c:
     complete
     .text       start:0x020cfbc4 end:0x020cfc8c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiEnterSwing.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiEnterSwing.c:
     complete
     .text       start:0x020cfc8c end:0x020cfcfc
 
-src/overlays/enemies/ov200_enemy_26/Ov200_PublishSwing.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_PublishSwing.c:
     complete
     .text       start:0x020cfcfc end:0x020cfda0
 
-src/overlays/enemies/ov200_enemy_26/Ov200_OrientReadyTimerNodeGate.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_OrientReadyTimerNodeGate.c:
     complete
     .text       start:0x020cfda0 end:0x020cfef4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiRollTimerOnAnimEnd.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiRollTimerOnAnimEnd.c:
     complete
     .text       start:0x020cfef4 end:0x020cff54
 
-src/overlays/enemies/ov200_enemy_26/Ov200_EnterAttackState.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_EnterAttackState.c:
     complete
     .text       start:0x020cff54 end:0x020d0008
 
-src/overlays/enemies/ov200_enemy_26/Ov200_OrientTimerNodeGate.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_OrientTimerNodeGate.c:
     complete
     .text       start:0x020d0008 end:0x020d013c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiRollTimerQueue2.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d013c end:0x020d018c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_SpawnEffectSetFlags.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_SpawnEffectSetFlags.c:
     complete
     .text       start:0x020d018c end:0x020d0250
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiHoldTick.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiHoldTick.c:
     complete
     .text       start:0x020d0250 end:0x020d02e4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_PushTowardAnchorMidpoint.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_PushTowardAnchorMidpoint.c:
     complete
     .text       start:0x020d02e4 end:0x020d032c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_BuildBeamState.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_BuildBeamState.c:
     complete
     .text       start:0x020d032c end:0x020d04e4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AimNode_Destroy.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AimNode_Destroy.c:
     complete
     .text       start:0x020d04e4 end:0x020d0508
 
-src/overlays/enemies/ov200_enemy_26/Ov200_SetNodeActiveState.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_SetNodeActiveState.c:
     complete
     .text       start:0x020d0508 end:0x020d0540
 
-src/overlays/enemies/ov200_enemy_26/Ov200_IsMode1.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_IsMode1.c:
     complete
     .text       start:0x020d0540 end:0x020d055c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_IsField38NibbleZero.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_IsField38NibbleZero.c:
     complete
     .text       start:0x020d055c end:0x020d0574
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AimNode_GetState.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AimNode_GetState.c:
     complete
     .text       start:0x020d0574 end:0x020d057c
 
-src/overlays/enemies/ov200_enemy_26/Ov200_WireSubNodesRegister2.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_WireSubNodesRegister2.c:
     complete
     .text       start:0x020d057c end:0x020d06a4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AimNode_AiDispatch.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AimNode_AiDispatch.c:
     complete
     .text       start:0x020d06a4 end:0x020d0764
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AimNode_HideAll.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AimNode_HideAll.c:
     complete
     .text       start:0x020d0764 end:0x020d07bc
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AimSubNodeArmRegions.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AimSubNodeArmRegions.c:
     complete
     .text       start:0x020d07bc end:0x020d0878
 
-src/overlays/enemies/ov200_enemy_26/Ov200_BeamChargeTick.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_BeamChargeTick.c:
     complete
     .text       start:0x020d0878 end:0x020d0ac4
 
-src/overlays/enemies/ov200_enemy_26/Ov200_BeamFireTick.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_BeamFireTick.c:
     complete
     .text       start:0x020d0ac4 end:0x020d0bf0
 
-src/overlays/enemies/ov200_enemy_26/Ov200_AiGoToTimerEaseInterp.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_AiGoToTimerEaseInterp.c:
     complete
     .text       start:0x020d0bf0 end:0x020d0c14
 
-src/overlays/enemies/ov200_enemy_26/Ov200_TimerEaseInterp.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_TimerEaseInterp.c:
     complete
     .text       start:0x020d0c14 end:0x020d0c94
 
-src/overlays/enemies/ov200_enemy_26/Ov200_TickBeam.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_TickBeam.c:
     complete
     .text       start:0x020d0c94 end:0x020d1688
 
-src/overlays/enemies/ov200_enemy_26/Ov200_RingBufferFillSlot.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_RingBufferFillSlot.c:
     complete
     .text       start:0x020d1688 end:0x020d1708
 
-src/overlays/enemies/ov200_enemy_26/Ov200_DecayActiveEntriesMirror.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_DecayActiveEntriesMirror.c:
     complete
     .text       start:0x020d1708 end:0x020d1768
 
-src/overlays/enemies/ov200_enemy_26/Ov200_RingBufferReset.c:
+src/overlays/enemies/ov200_enemy_guardian/Ov200_RingBufferReset.c:
     complete
     .text       start:0x020d1768 end:0x020d1804
 
-src/overlays/enemies/ov200_enemy_26/data/ov200_strings_020d1860.c:
+src/overlays/enemies/ov200_enemy_guardian/data/ov200_strings_020d1860.c:
     complete
     .data       start:0x020d1860 end:0x020d1880
 
-src/overlays/enemies/ov200_enemy_26/data/ov200_tables_020d1804.c:
+src/overlays/enemies/ov200_enemy_guardian/data/ov200_tables_020d1804.c:
     complete
     .rodata     start:0x020d1804 end:0x020d1850

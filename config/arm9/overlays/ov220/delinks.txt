@@ -4,210 +4,210 @@
     .data       start:0x020d3ba0 end:0x020d3bc0 kind:data align:32
     .bss        start:0x020d3bc0 end:0x020d3bc0 kind:bss align:32
 
-src/overlays/enemies/ov220_enemy_32/Ov220_RegisterEntityClass.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/enemies/ov220_enemy_32/Ov220_CreateNamedEntity.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/enemies/ov220_enemy_32/Ov220_Construct.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_Construct.c:
     complete
     .text       start:0x020d1a24 end:0x020d1c1c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_ReleaseSubObjectsAndSlotArrayThenNotify.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_ReleaseSubObjectsAndSlotArrayThenNotify.c:
     complete
     .text       start:0x020d1c1c end:0x020d1c5c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_ModelUpdateHook.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_ModelUpdateHook.c:
     complete
     .text       start:0x020d1c5c end:0x020d1d04
 
-src/overlays/enemies/ov220_enemy_32/Ov220_HandleMessage.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_HandleMessage.c:
     complete
     .text       start:0x020d1d04 end:0x020d1e10
 
-src/overlays/enemies/ov220_enemy_32/Ov220_ReleaseSubObjectsUnlessActive.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_ReleaseSubObjectsUnlessActive.c:
     complete
     .text       start:0x020d1e10 end:0x020d1e74
 
-src/overlays/enemies/ov220_enemy_32/Ov220_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020d1e74 end:0x020d1eac
 
-src/overlays/enemies/ov220_enemy_32/Ov220_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d1eac end:0x020d1f08
 
-src/overlays/enemies/ov220_enemy_32/Ov220_HandleHit.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_HandleHit.c:
     complete
     .text       start:0x020d1f08 end:0x020d2148
 
-src/overlays/enemies/ov220_enemy_32/Ov220_RequestState3.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_RequestState3.c:
     complete
     .text       start:0x020d2148 end:0x020d2168
 
-src/overlays/enemies/ov220_enemy_32/Ov220_RequestSubState11IfNotAlready.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_RequestSubState11IfNotAlready.c:
     complete
     .text       start:0x020d2168 end:0x020d2194
 
-src/overlays/enemies/ov220_enemy_32/Ov220_TryBeginSubState12IfIdle.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_TryBeginSubState12IfIdle.c:
     complete
     .text       start:0x020d2194 end:0x020d21c4
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AttackSweep.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AttackSweep.c:
     complete
     .text       start:0x020d21c4 end:0x020d2384
 
-src/overlays/enemies/ov220_enemy_32/Ov220_IdleCountdown.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_IdleCountdown.c:
     complete
     .text       start:0x020d2384 end:0x020d2434
 
-src/overlays/enemies/ov220_enemy_32/Ov220_startAnim.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_startAnim.c:
     complete
     .text       start:0x020d2434 end:0x020d2448
 
-src/overlays/enemies/ov220_enemy_32/Ov220_DistanceToTarget.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_DistanceToTarget.c:
     complete
     .text       start:0x020d2448 end:0x020d24f0
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiStateInit.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiStateInit.c:
     complete
     .text       start:0x020d24f0 end:0x020d25a8
 
-src/overlays/enemies/ov220_enemy_32/Ov220_DispatchSubStateByte.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_DispatchSubStateByte.c:
     complete
     .text       start:0x020d25a8 end:0x020d27b8
 
-src/overlays/enemies/ov220_enemy_32/Ov220_FlightOrientationTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_FlightOrientationTick.c:
     complete
     .text       start:0x020d27b8 end:0x020d291c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d291c end:0x020d2984
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AdvanceStateSlotIfHw60Bit0.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020d2984 end:0x020d29c8
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiStep_QueueAction2.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiStep_QueueAction2.c:
     complete
     .text       start:0x020d29c8 end:0x020d29ec
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiEnterIdle.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiEnterIdle.c:
     complete
     .text       start:0x020d29ec end:0x020d2a28
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiIdleCountdown.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiIdleCountdown.c:
     complete
     .text       start:0x020d2a28 end:0x020d2a64
 
-src/overlays/enemies/ov220_enemy_32/Ov220_BeginWander.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_BeginWander.c:
     complete
     .text       start:0x020d2a64 end:0x020d2b08
 
-src/overlays/enemies/ov220_enemy_32/Ov220_WanderTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_WanderTick.c:
     complete
     .text       start:0x020d2b08 end:0x020d2c0c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_FlightTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_FlightTick.c:
     complete
     .text       start:0x020d2c0c end:0x020d2ee8
 
-src/overlays/enemies/ov220_enemy_32/Ov220_SetupGuardThenAction4.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_SetupGuardThenAction4.c:
     complete
     .text       start:0x020d2ee8 end:0x020d2f5c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_ChaseDecision.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_ChaseDecision.c:
     complete
     .text       start:0x020d2f5c end:0x020d2ffc
 
-src/overlays/enemies/ov220_enemy_32/Ov220_ChaseTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_ChaseTick.c:
     complete
     .text       start:0x020d2ffc end:0x020d3124
 
-src/overlays/enemies/ov220_enemy_32/Ov220_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020d3124 end:0x020d31e4
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiEnterAnim5.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiEnterAnim5.c:
     complete
     .text       start:0x020d31e4 end:0x020d3224
 
-src/overlays/enemies/ov220_enemy_32/Ov220_stateFixedAngleMatrix_2.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_stateFixedAngleMatrix_2.c:
     complete
     .text       start:0x020d3224 end:0x020d32e4
 
-src/overlays/enemies/ov220_enemy_32/Ov220_SetupGuardThenPose6.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_SetupGuardThenPose6.c:
     complete
     .text       start:0x020d32e4 end:0x020d333c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiStep_QueueAction4OnAnimEnd.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d333c end:0x020d3370
 
-src/overlays/enemies/ov220_enemy_32/Ov220_Pose2ThenAimAngle.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_Pose2ThenAimAngle.c:
     complete
     .text       start:0x020d3370 end:0x020d3404
 
-src/overlays/enemies/ov220_enemy_32/Ov220_ScaleVecThenSubState9.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_ScaleVecThenSubState9.c:
     complete
     .text       start:0x020d3404 end:0x020d3460
 
-src/overlays/enemies/ov220_enemy_32/Ov220_Action6ThenAimAngle.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_Action6ThenAimAngle.c:
     complete
     .text       start:0x020d3460 end:0x020d3510
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AttackEnd.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AttackEnd.c:
     complete
     .text       start:0x020d3510 end:0x020d3614
 
-src/overlays/enemies/ov220_enemy_32/Ov220_GuardTimerTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_GuardTimerTick.c:
     complete
     .text       start:0x020d3614 end:0x020d3704
 
-src/overlays/enemies/ov220_enemy_32/Ov220_GuardEnd.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_GuardEnd.c:
     complete
     .text       start:0x020d3704 end:0x020d37b4
 
-src/overlays/enemies/ov220_enemy_32/Ov220_Action6AfterSubDispatch.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_Action6AfterSubDispatch.c:
     complete
     .text       start:0x020d37b4 end:0x020d380c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_stateFixedAngleMatrix_3.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_stateFixedAngleMatrix_3.c:
     complete
     .text       start:0x020d380c end:0x020d38e0
 
-src/overlays/enemies/ov220_enemy_32/Ov220_GuardTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_GuardTick.c:
     complete
     .text       start:0x020d38e0 end:0x020d3960
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d3960 end:0x020d3994
 
-src/overlays/enemies/ov220_enemy_32/Ov220_stAdvanceState.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_stAdvanceState.c:
     complete
     .text       start:0x020d3994 end:0x020d39c0
 
-src/overlays/enemies/ov220_enemy_32/Ov220_Release.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_Release.c:
     complete
     .text       start:0x020d39c0 end:0x020d3a6c
 
-src/overlays/enemies/ov220_enemy_32/Ov220_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d3a6c end:0x020d3aa0
 
-src/overlays/enemies/ov220_enemy_32/Ov220_AimAndFaceTick.c:
+src/overlays/enemies/ov220_enemy_barrel/Ov220_AimAndFaceTick.c:
     complete
     .text       start:0x020d3aa0 end:0x020d3b94
 
-src/overlays/enemies/ov220_enemy_32/data/ov220_strings_020d3ba0.c:
+src/overlays/enemies/ov220_enemy_barrel/data/ov220_strings_020d3ba0.c:
     complete
     .data       start:0x020d3ba0 end:0x020d3bc0
 
-src/overlays/enemies/ov220_enemy_32/data/ov220_tables_020d3b94.c:
+src/overlays/enemies/ov220_enemy_barrel/data/ov220_tables_020d3b94.c:
     complete
     .rodata     start:0x020d3b94 end:0x020d3b9c

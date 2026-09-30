@@ -4,114 +4,114 @@
     .data       start:0x020d7140 end:0x020d7160 kind:data align:32
     .bss        start:0x020d7160 end:0x020d7160 kind:bss align:32
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_RegisterEntityClass.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_RegisterEntityClass.c:
     complete
     .text       start:0x020d55c0 end:0x020d55d8
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_CreateNamedEntity.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_CreateNamedEntity.c:
     complete
     .text       start:0x020d55d8 end:0x020d5664
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_Actor_InitClassAndSpawnParts.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_Actor_InitClassAndSpawnParts.c:
     complete
     .text       start:0x020d5664 end:0x020d5858
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_TeardownActorSlotsAndDoubleList.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_TeardownActorSlotsAndDoubleList.c:
     complete
     .text       start:0x020d5858 end:0x020d58a0
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_CopyBlockThenNotify.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_CopyBlockThenNotify.c:
     complete
     .text       start:0x020d58a0 end:0x020d58ec
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_SendMessage26.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_SendMessage26.c:
     complete
     .text       start:0x020d58ec end:0x020d5954
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_StampField394ToMsgAndForward.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_StampField394ToMsgAndForward.c:
     complete
     .text       start:0x020d5954 end:0x020d5970
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_Actor_HandleEvent.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_Actor_HandleEvent.c:
     complete
     .text       start:0x020d5970 end:0x020d5bb8
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_Actor_SetSubStateAndNotify.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_Actor_SetSubStateAndNotify.c:
     complete
     .text       start:0x020d5bb8 end:0x020d5c88
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_LoadWaypoints.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_LoadWaypoints.c:
     complete
     .text       start:0x020d5c88 end:0x020d5d08
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d5d08 end:0x020d5d64
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_Actor_ResolveHit.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_Actor_ResolveHit.c:
     complete
     .text       start:0x020d5d64 end:0x020d5f0c
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_InitActorStateSlots.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_InitActorStateSlots.c:
     complete
     .text       start:0x020d5f0c end:0x020d5fa8
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_DispatchSubStateByte.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_DispatchSubStateByte.c:
     complete
     .text       start:0x020d5fa8 end:0x020d60d0
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_StageVecUnlessState2ThenCommit.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_StageVecUnlessState2ThenCommit.c:
     complete
     .text       start:0x020d60d0 end:0x020d6114
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_SetHw60Bit15ClearSubBit0ThenAdvanceSlot.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_SetHw60Bit15ClearSubBit0ThenAdvanceSlot.c:
     complete
     .text       start:0x020d6114 end:0x020d6188
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_RollFlag38cCopySubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_RollFlag38cCopySubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d6188 end:0x020d61fc
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_AiEnterHold.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_AiEnterHold.c:
     complete
     .text       start:0x020d61fc end:0x020d62d8
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_AccumulateTimer34ThenAdvanceAt2a8.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_AccumulateTimer34ThenAdvanceAt2a8.c:
     complete
     .text       start:0x020d62d8 end:0x020d6378
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d6378 end:0x020d63ac
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_StageVecsResetFieldsThenAdvanceSlot.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_StageVecsResetFieldsThenAdvanceSlot.c:
     complete
     .text       start:0x020d63ac end:0x020d641c
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_Throw_Tick.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_Throw_Tick.c:
     complete
     .text       start:0x020d641c end:0x020d69ec
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_SetupActionVariantThenAdvanceSlot.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_SetupActionVariantThenAdvanceSlot.c:
     complete
     .text       start:0x020d69ec end:0x020d6ab8
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_AreaSweepAttack_Tick.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_AreaSweepAttack_Tick.c:
     complete
     .text       start:0x020d6ab8 end:0x020d6f94
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_ResetHw60FlagsAndTimer34ThenAdvance.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_ResetHw60FlagsAndTimer34ThenAdvance.c:
     complete
     .text       start:0x020d6f94 end:0x020d7038
 
-src/overlays/enemies/ov289_enemy_6b_3/Ov289_ChargeAndPickTarget.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/Ov289_ChargeAndPickTarget.c:
     complete
     .text       start:0x020d7038 end:0x020d7134
 
-src/overlays/enemies/ov289_enemy_6b_3/data/ov289_strings_020d7140.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/data/ov289_strings_020d7140.c:
     complete
     .data       start:0x020d7140 end:0x020d7160
 
-src/overlays/enemies/ov289_enemy_6b_3/data/ov289_tables_020d7134.c:
+src/overlays/enemies/ov289_enemy_training_barrel_3/data/ov289_tables_020d7134.c:
     complete
     .rodata     start:0x020d7134 end:0x020d713c

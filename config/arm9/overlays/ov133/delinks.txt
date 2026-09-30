@@ -4,230 +4,230 @@
     .data       start:0x020d4a40 end:0x020d4a80 kind:data align:32
     .bss        start:0x020d4a80 end:0x020d4a80 kind:bss align:32
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_RegisterEntityClass.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_CreateNamedEntity.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_nodeConstructor.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_nodeConstructor.c:
     complete
     .text       start:0x020d1a24 end:0x020d1c74
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_Destroy.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_Destroy.c:
     complete
     .text       start:0x020d1c74 end:0x020d1cbc
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_TickWithChildRefresh.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_TickWithChildRefresh.c:
     complete
     .text       start:0x020d1cbc end:0x020d1ce0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_TickAndPlaceBelowCamera.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_TickAndPlaceBelowCamera.c:
     complete
     .text       start:0x020d1ce0 end:0x020d1d54
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_OnEffectMessage.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_OnEffectMessage.c:
     complete
     .text       start:0x020d1d54 end:0x020d1ea8
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_Model_SetTrack0.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_Model_SetTrack0.c:
     complete
     .text       start:0x020d1ea8 end:0x020d1ed8
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d1ed8 end:0x020d200c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_collectChildrenInBox.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_collectChildrenInBox.c:
     complete
     .text       start:0x020d200c end:0x020d20ec
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d20ec end:0x020d22a0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d22a0 end:0x020d22fc
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ApplyHitAndRequestState.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ApplyHitAndRequestState.c:
     complete
     .text       start:0x020d22fc end:0x020d25b0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_RequestSubState10IfIdleUnless7Or8.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020d25b0 end:0x020d25f4
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_AiStateInit.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_AiStateInit.c:
     complete
     .text       start:0x020d25f4 end:0x020d26f0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stDispatchByStateByte.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stDispatchByStateByte.c:
     complete
     .text       start:0x020d26f0 end:0x020d28b0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_UpdateHeadingAndVelocity.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_UpdateHeadingAndVelocity.c:
     complete
     .text       start:0x020d28b0 end:0x020d298c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d298c end:0x020d29f4
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d29f4 end:0x020d2a30
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_BeginRecoveryStance.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_BeginRecoveryStance.c:
     complete
     .text       start:0x020d2a30 end:0x020d2af8
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stAdvanceTimerAimTarget.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stAdvanceTimerAimTarget.c:
     complete
     .text       start:0x020d2af8 end:0x020d2bc0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_AiRollTimerQueue2.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d2bc0 end:0x020d2c20
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stDiv30Store.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stDiv30Store.c:
     complete
     .text       start:0x020d2c20 end:0x020d2c80
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ReactWhenTargetInReach.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020d2c80 end:0x020d2cf0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stDiv30Store_2.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stDiv30Store_2.c:
     complete
     .text       start:0x020d2cf0 end:0x020d2d50
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stIdlePose2Advance.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stIdlePose2Advance.c:
     complete
     .text       start:0x020d2d50 end:0x020d2d94
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stSeekTargetSteer.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stSeekTargetSteer.c:
     complete
     .text       start:0x020d2d94 end:0x020d2f3c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_AiStep_QueueAction9OnFlag48Clear.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020d2f3c end:0x020d2f70
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_PickRandomSpinDirection.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_PickRandomSpinDirection.c:
     complete
     .text       start:0x020d2f70 end:0x020d2ff4
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_StrafeThenReact.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_StrafeThenReact.c:
     complete
     .text       start:0x020d2ff4 end:0x020d31e0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateAnimAimAtTarget.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020d31e0 end:0x020d3250
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_AiDecelUntilFlagClear.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_AiDecelUntilFlagClear.c:
     complete
     .text       start:0x020d3250 end:0x020d32cc
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateSetFlagEffect.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateSetFlagEffect.c:
     complete
     .text       start:0x020d32cc end:0x020d3338
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateTransformAimVec.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateTransformAimVec.c:
     complete
     .text       start:0x020d3338 end:0x020d3404
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_HomingDash_Tick.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_HomingDash_Tick.c:
     complete
     .text       start:0x020d3404 end:0x020d3898
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_HomingDash_Recover.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_HomingDash_Recover.c:
     complete
     .text       start:0x020d3898 end:0x020d394c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_SetPose6ThenAdvanceSlot.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020d394c end:0x020d3980
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateStartThrow.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateStartThrow.c:
     complete
     .text       start:0x020d3980 end:0x020d3a54
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ThrowCharge_Tick.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ThrowCharge_Tick.c:
     complete
     .text       start:0x020d3a54 end:0x020d3b48
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ThrowRelease_Enter.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ThrowRelease_Enter.c:
     complete
     .text       start:0x020d3b48 end:0x020d3d14
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_throwRelease_tick.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_throwRelease_tick.c:
     complete
     .text       start:0x020d3d14 end:0x020d4454
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d4454 end:0x020d451c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateToggleFlagsEffectClear.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateToggleFlagsEffectClear.c:
     complete
     .text       start:0x020d451c end:0x020d45d0
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_SpawnChild10AndBackLink.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020d45d0 end:0x020d4618
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_RenderAtOwnerScaled.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020d4618 end:0x020d4670
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stInitChildActor.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stInitChildActor.c:
     complete
     .text       start:0x020d4670 end:0x020d471c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ChildTaskTeardownAndFlag.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ChildTaskTeardownAndFlag.c:
     complete
     .text       start:0x020d471c end:0x020d4758
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_TickTimerAdvanceSubState.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020d4758 end:0x020d47bc
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_SpawnChild0cAndBackLink.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020d47bc end:0x020d4804
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_RenderAtOwnerModel.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_RenderAtOwnerModel.c:
     complete
     .text       start:0x020d4804 end:0x020d484c
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateInitSubitem.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateInitSubitem.c:
     complete
     .text       start:0x020d484c end:0x020d48cc
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ChildTaskTeardown.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ChildTaskTeardown.c:
     complete
     .text       start:0x020d48cc end:0x020d48f4
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_ConfigureActorUnlessBusy.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020d48f4 end:0x020d4938
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_stateSubitemStateTransition.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_stateSubitemStateTransition.c:
     complete
     .text       start:0x020d4938 end:0x020d4998
 
-src/overlays/enemies/ov133_enemy_09_3/Ov133_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/Ov133_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d4998 end:0x020d49b8
 
-src/overlays/enemies/ov133_enemy_09_3/data/ov133_strings_020d4a40.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/data/ov133_strings_020d4a40.c:
     complete
     .data       start:0x020d4a40 end:0x020d4a80
 
-src/overlays/enemies/ov133_enemy_09_3/data/ov133_tables_020d49b8.c:
+src/overlays/enemies/ov133_enemy_minute_bomb_3/data/ov133_tables_020d49b8.c:
     complete
     .rodata     start:0x020d49b8 end:0x020d4a2c

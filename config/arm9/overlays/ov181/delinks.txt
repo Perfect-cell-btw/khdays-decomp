@@ -4,218 +4,218 @@
     .data       start:0x020cea40 end:0x020cea60 kind:data align:32
     .bss        start:0x020cea60 end:0x020cea60 kind:bss align:32
 
-src/overlays/enemies/ov181_enemy_20/Ov181_RegisterEntityClass.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov181_enemy_20/Ov181_CreateNamedEntity.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov181_enemy_20/Ov181_Construct.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc190
 
-src/overlays/enemies/ov181_enemy_20/Ov181_Destroy.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_Destroy.c:
     complete
     .text       start:0x020cc190 end:0x020cc1d8
 
-src/overlays/enemies/ov181_enemy_20/Ov181_TickAndSyncChildren.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_TickAndSyncChildren.c:
     complete
     .text       start:0x020cc1d8 end:0x020cc248
 
-src/overlays/enemies/ov181_enemy_20/Ov181_Model_SetTrack0.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_Model_SetTrack0.c:
     complete
     .text       start:0x020cc248 end:0x020cc278
 
-src/overlays/enemies/ov181_enemy_20/Ov181_SendMessage28.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_SendMessage28.c:
     complete
     .text       start:0x020cc278 end:0x020cc2dc
 
-src/overlays/enemies/ov181_enemy_20/Ov181_HandleMessage.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_HandleMessage.c:
     complete
     .text       start:0x020cc2dc end:0x020cc400
 
-src/overlays/enemies/ov181_enemy_20/Ov181_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc400 end:0x020cc44c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_OnHit.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_OnHit.c:
     complete
     .text       start:0x020cc44c end:0x020cc69c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_ReactionRequestSubState11.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_ReactionRequestSubState11.c:
     complete
     .text       start:0x020cc69c end:0x020cc704
 
-src/overlays/enemies/ov181_enemy_20/Ov181_SwingSweep.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_SwingSweep.c:
     complete
     .text       start:0x020cc704 end:0x020cc98c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_InitNodeAndRegisterHandlers.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_InitNodeAndRegisterHandlers.c:
     complete
     .text       start:0x020cc98c end:0x020cca68
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stDispatchByStateByte.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stDispatchByStateByte.c:
     complete
     .text       start:0x020cca68 end:0x020ccc60
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020ccc60 end:0x020ccd14
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateSetFlagsClearBitInit.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateSetFlagsClearBitInit.c:
     complete
     .text       start:0x020ccd14 end:0x020ccd88
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ccd88 end:0x020ccdc4
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateAcquireAimInit.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateAcquireAimInit.c:
     complete
     .text       start:0x020ccdc4 end:0x020cce8c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiFadeInSlowTick.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiFadeInSlowTick.c:
     complete
     .text       start:0x020cce8c end:0x020ccf18
 
-src/overlays/enemies/ov181_enemy_20/Ov181_SpawnHook.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_SpawnHook.c:
     complete
     .text       start:0x020ccf18 end:0x020ccf64
 
-src/overlays/enemies/ov181_enemy_20/Ov181_CircleTick.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_CircleTick.c:
     complete
     .text       start:0x020ccf64 end:0x020cd1ac
 
-src/overlays/enemies/ov181_enemy_20/Ov181_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd1ac end:0x020cd1e0
 
-src/overlays/enemies/ov181_enemy_20/Ov181_BeginCharge.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_BeginCharge.c:
     complete
     .text       start:0x020cd1e0 end:0x020cd300
 
-src/overlays/enemies/ov181_enemy_20/Ov181_ApproachTick.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_ApproachTick.c:
     complete
     .text       start:0x020cd300 end:0x020cd458
 
-src/overlays/enemies/ov181_enemy_20/Ov181_BeginLunge.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_BeginLunge.c:
     complete
     .text       start:0x020cd458 end:0x020cd578
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020cd578 end:0x020cd5ac
 
-src/overlays/enemies/ov181_enemy_20/Ov181_SetPose5ThenAdvanceSlot.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd5ac end:0x020cd5e0
 
-src/overlays/enemies/ov181_enemy_20/Ov181_GuardFieldCClearField1cAdvance.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_GuardFieldCClearField1cAdvance.c:
     complete
     .text       start:0x020cd5e0 end:0x020cd614
 
-src/overlays/enemies/ov181_enemy_20/Ov181_ChargeUpTick.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_ChargeUpTick.c:
     complete
     .text       start:0x020cd614 end:0x020cd844
 
-src/overlays/enemies/ov181_enemy_20/Ov181_evalHermiteSplinePath.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_evalHermiteSplinePath.c:
     complete
     .text       start:0x020cd844 end:0x020cdaa8
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiFadeInTick.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiFadeInTick.c:
     complete
     .text       start:0x020cdaa8 end:0x020cdb4c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateAnimAimAtTarget.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020cdb4c end:0x020cdbb8
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stEasePoseCheckFlags.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stEasePoseCheckFlags.c:
     complete
     .text       start:0x020cdbb8 end:0x020cdc3c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateScaleVecMagnitudeGate.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateScaleVecMagnitudeGate.c:
     complete
     .text       start:0x020cdc3c end:0x020cdca0
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020cdca0 end:0x020cdcd4
 
-src/overlays/enemies/ov181_enemy_20/Ov181_ConfigHw60FlagsBeginAction6.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_ConfigHw60FlagsBeginAction6.c:
     complete
     .text       start:0x020cdcd4 end:0x020cdda0
 
-src/overlays/enemies/ov181_enemy_20/Ov181_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cdda0 end:0x020cddf4
 
-src/overlays/enemies/ov181_enemy_20/Ov181_TickWindupThenPickWait.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_TickWindupThenPickWait.c:
     complete
     .text       start:0x020cddf4 end:0x020cde9c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_BeginApproach.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_BeginApproach.c:
     complete
     .text       start:0x020cde9c end:0x020cdfc0
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiSwingRecover.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiSwingRecover.c:
     complete
     .text       start:0x020cdfc0 end:0x020ce004
 
-src/overlays/enemies/ov181_enemy_20/Ov181_StepWindUp.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_StepWindUp.c:
     complete
     .text       start:0x020ce004 end:0x020ce150
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateAnimSetFlagClear.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateAnimSetFlagClear.c:
     complete
     .text       start:0x020ce150 end:0x020ce1bc
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateTimerTransformVec.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateTimerTransformVec.c:
     complete
     .text       start:0x020ce1bc end:0x020ce24c
 
-src/overlays/enemies/ov181_enemy_20/Ov181_DiveTick.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_DiveTick.c:
     complete
     .text       start:0x020ce24c end:0x020ce5a8
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiRollTimerQueue2.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiRollTimerQueue2.c:
     complete
     .text       start:0x020ce5a8 end:0x020ce608
 
-src/overlays/enemies/ov181_enemy_20/Ov181_stateAnimNegateClamp.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_stateAnimNegateClamp.c:
     complete
     .text       start:0x020ce608 end:0x020ce664
 
-src/overlays/enemies/ov181_enemy_20/Ov181_BeginSteerSweep.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_BeginSteerSweep.c:
     complete
     .text       start:0x020ce664 end:0x020ce748
 
-src/overlays/enemies/ov181_enemy_20/Ov181_SteerSweep.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_SteerSweep.c:
     complete
     .text       start:0x020ce748 end:0x020ce838
 
-src/overlays/enemies/ov181_enemy_20/Ov181_BeginState5AndClear.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_BeginState5AndClear.c:
     complete
     .text       start:0x020ce838 end:0x020ce8d4
 
-src/overlays/enemies/ov181_enemy_20/Ov181_GuardFieldCClearField1cAdvance_2.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_GuardFieldCClearField1cAdvance_2.c:
     complete
     .text       start:0x020ce8d4 end:0x020ce908
 
-src/overlays/enemies/ov181_enemy_20/Ov181_TimerInterp394ThenAdvance.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_TimerInterp394ThenAdvance.c:
     complete
     .text       start:0x020ce908 end:0x020ce980
 
-src/overlays/enemies/ov181_enemy_20/Ov181_AiSetStanceAndEnd.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/Ov181_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020ce980 end:0x020ce9f8
 
-src/overlays/enemies/ov181_enemy_20/data/ov181_strings_020cea40.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/data/ov181_strings_020cea40.c:
     complete
     .data       start:0x020cea40 end:0x020cea60
 
-src/overlays/enemies/ov181_enemy_20/data/ov181_tables_020ce9f8.c:
+src/overlays/enemies/ov181_enemy_mega_shadow/data/ov181_tables_020ce9f8.c:
     complete
     .rodata     start:0x020ce9f8 end:0x020cea20

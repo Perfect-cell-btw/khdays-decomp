@@ -4,230 +4,230 @@
     .data       start:0x020d6380 end:0x020d63a0 kind:data align:32
     .bss        start:0x020d63a0 end:0x020d63a0 kind:bss align:32
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_RegisterEntityClass.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_CreateNamedEntity.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_OrientPartAlongDirection.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_OrientPartAlongDirection.c:
     complete
     .text       start:0x020d3844 end:0x020d38a0
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_Construct.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_Construct.c:
     complete
     .text       start:0x020d38a0 end:0x020d3bbc
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d3bbc end:0x020d3bfc
 
-src/overlays/enemies/ov168_enemy_1a_3/func_ov168_020d3bfc.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/func_ov168_020d3bfc.c:
     complete
     .text       start:0x020d3bfc end:0x020d3c08
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_ForwardEventToChild.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_ForwardEventToChild.c:
     complete
     .text       start:0x020d3c08 end:0x020d3c30
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_NotifyPartThenBase.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_NotifyPartThenBase.c:
     complete
     .text       start:0x020d3c30 end:0x020d3c58
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_HandleSpawnMessage.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_HandleSpawnMessage.c:
     complete
     .text       start:0x020d3c58 end:0x020d3e74
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_Model_SetTrack0.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_Model_SetTrack0.c:
     complete
     .text       start:0x020d3e74 end:0x020d3ea4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d3ea4 end:0x020d3fdc
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_registryCreateEntry.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_registryCreateEntry.c:
     complete
     .text       start:0x020d3fdc end:0x020d4038
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_OnHit.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_OnHit.c:
     complete
     .text       start:0x020d4038 end:0x020d425c
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d425c end:0x020d4288
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_FaceTargetGetClearance.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d4288 end:0x020d4320
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_IsChildInactive.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_IsChildInactive.c:
     complete
     .text       start:0x020d4320 end:0x020d4360
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateInitTransformSlots.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateInitTransformSlots.c:
     complete
     .text       start:0x020d4360 end:0x020d444c
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020d444c end:0x020d4638
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stDivStoreField.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stDivStoreField.c:
     complete
     .text       start:0x020d4638 end:0x020d46d8
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d46d8 end:0x020d4740
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d4740 end:0x020d47c4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d47c4 end:0x020d4890
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d4890 end:0x020d4968
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d4968 end:0x020d499c
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateRandomInitFull.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateRandomInitFull.c:
     complete
     .text       start:0x020d499c end:0x020d4a28
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_OrbitTick.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_OrbitTick.c:
     complete
     .text       start:0x020d4a28 end:0x020d4da4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020d4da4 end:0x020d4de8
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_HoverBobTick.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_HoverBobTick.c:
     complete
     .text       start:0x020d4de8 end:0x020d4fdc
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiStep_StartTag1.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiStep_StartTag1.c:
     complete
     .text       start:0x020d4fdc end:0x020d5018
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_HoverApproachTick.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_HoverApproachTick.c:
     complete
     .text       start:0x020d5018 end:0x020d51e4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateRandomDirValue.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateRandomDirValue.c:
     complete
     .text       start:0x020d51e4 end:0x020d5254
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_CircleTick.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_CircleTick.c:
     complete
     .text       start:0x020d5254 end:0x020d53d0
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d53d0 end:0x020d546c
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_HoverHoldTick.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_HoverHoldTick.c:
     complete
     .text       start:0x020d546c end:0x020d5638
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5638 end:0x020d566c
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d566c end:0x020d56a0
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d56a0 end:0x020d5794
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiEndWithUpdate.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiEndWithUpdate.c:
     complete
     .text       start:0x020d5794 end:0x020d5880
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d5880 end:0x020d5920
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateTimerToggleFlags.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d5920 end:0x020d59b4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d59b4 end:0x020d59f4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_Actor_New.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_Actor_New.c:
     complete
     .text       start:0x020d59f4 end:0x020d5a28
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_SubObject_Construct.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_SubObject_Construct.c:
     complete
     .text       start:0x020d5a28 end:0x020d5b88
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_OnDespawn.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_OnDespawn.c:
     complete
     .text       start:0x020d5b88 end:0x020d5ba4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_TickAndSyncModelXform.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d5ba4 end:0x020d5bdc
 
-src/overlays/enemies/ov168_enemy_1a_3/func_ov168_020d5bdc.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/func_ov168_020d5bdc.c:
     complete
     .text       start:0x020d5bdc end:0x020d5be8
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_TryTriggerEffect.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_TryTriggerEffect.c:
     complete
     .text       start:0x020d5be8 end:0x020d5c70
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d5c70 end:0x020d5cbc
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_stateInitClearSlots.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_stateInitClearSlots.c:
     complete
     .text       start:0x020d5cbc end:0x020d5d64
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d5d64 end:0x020d5ddc
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiApplyMoveVector.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiApplyMoveVector.c:
     complete
     .text       start:0x020d5ddc end:0x020d5df4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_ConfigHw60CopyVec3ConstToCThenAdvance.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020d5df4 end:0x020d5ea4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d5ea4 end:0x020d5edc
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_BeginDash.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_BeginDash.c:
     complete
     .text       start:0x020d5edc end:0x020d5fc4
 
-src/overlays/enemies/ov168_enemy_1a_3/Ov168_DashTick.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/Ov168_DashTick.c:
     complete
     .text       start:0x020d5fc4 end:0x020d6350
 
-src/overlays/enemies/ov168_enemy_1a_3/data/ov168_strings_020d6380.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/data/ov168_strings_020d6380.c:
     complete
     .data       start:0x020d6380 end:0x020d63a0
 
-src/overlays/enemies/ov168_enemy_1a_3/data/ov168_tables_020d6350.c:
+src/overlays/enemies/ov168_enemy_scarlet_tango_3/data/ov168_tables_020d6350.c:
     complete
     .rodata     start:0x020d6350 end:0x020d6360

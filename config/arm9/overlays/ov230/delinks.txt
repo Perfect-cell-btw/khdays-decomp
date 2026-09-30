@@ -4,306 +4,306 @@
     .data       start:0x020d6480 end:0x020d64c0 kind:data align:32
     .bss        start:0x020d64c0 end:0x020d64c0 kind:bss align:32
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_RegisterEntityClass.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_CreateNamedEntity.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a28
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SyncEffectNodesToJoints.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SyncEffectNodesToJoints.c:
     complete
     .text       start:0x020d1a28 end:0x020d1b18
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_Construct.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_Construct.c:
     complete
     .text       start:0x020d1b18 end:0x020d1f04
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_Destroy.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_Destroy.c:
     complete
     .text       start:0x020d1f04 end:0x020d1f5c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_TickAndUpdateAnchor.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_TickAndUpdateAnchor.c:
     complete
     .text       start:0x020d1f5c end:0x020d1fd0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_ForwardEventToChildren.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_ForwardEventToChildren.c:
     complete
     .text       start:0x020d1fd0 end:0x020d200c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_NotifyPartsThenBase.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d200c end:0x020d2048
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_OnEffectMessage.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_OnEffectMessage.c:
     complete
     .text       start:0x020d2048 end:0x020d22b4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_PostTickCleanup.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_PostTickCleanup.c:
     complete
     .text       start:0x020d22b4 end:0x020d243c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_RebindClip.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_RebindClip.c:
     complete
     .text       start:0x020d243c end:0x020d24f4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d24f4 end:0x020d2550
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_OnHit.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_OnHit.c:
     complete
     .text       start:0x020d2550 end:0x020d2a9c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_RequestSubState12IfNotCurrent.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_RequestSubState12IfNotCurrent.c:
     complete
     .text       start:0x020d2a9c end:0x020d2ac8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_RequestSubState13IfIdle.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_RequestSubState13IfIdle.c:
     complete
     .text       start:0x020d2ac8 end:0x020d2af8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_ContactSweep.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_ContactSweep.c:
     complete
     .text       start:0x020d2af8 end:0x020d2d90
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_ContactCheck.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_ContactCheck.c:
     complete
     .text       start:0x020d2d90 end:0x020d2ed4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_PickMove.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_PickMove.c:
     complete
     .text       start:0x020d2ed4 end:0x020d3028
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_startAnim.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_startAnim.c:
     complete
     .text       start:0x020d3028 end:0x020d303c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_MeasureTargetGap.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_MeasureTargetGap.c:
     complete
     .text       start:0x020d303c end:0x020d30e4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_BeginPhasedReaction.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_BeginPhasedReaction.c:
     complete
     .text       start:0x020d30e4 end:0x020d3174
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiDispatchAction.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiDispatchAction.c:
     complete
     .text       start:0x020d3174 end:0x020d3360
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiIntegrateMotion.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiIntegrateMotion.c:
     complete
     .text       start:0x020d3360 end:0x020d34f4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020d34f4 end:0x020d355c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d355c end:0x020d35e8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SetChargeFlagsAndDispatch.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SetChargeFlagsAndDispatch.c:
     complete
     .text       start:0x020d35e8 end:0x020d36c8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_PushLocalOffsetToOwner.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_PushLocalOffsetToOwner.c:
     complete
     .text       start:0x020d36c8 end:0x020d374c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_TickTimerReleaseAtThreshold.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_TickTimerReleaseAtThreshold.c:
     complete
     .text       start:0x020d374c end:0x020d37b4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiMoveUntilAnimEnd.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiMoveUntilAnimEnd.c:
     complete
     .text       start:0x020d37b4 end:0x020d38f4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiEnterIdle.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiEnterIdle.c:
     complete
     .text       start:0x020d38f4 end:0x020d3930
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiIdleTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiIdleTick.c:
     complete
     .text       start:0x020d3930 end:0x020d3ac0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_RerollTimerThenDispatchSlot5c.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_RerollTimerThenDispatchSlot5c.c:
     complete
     .text       start:0x020d3ac0 end:0x020d3b90
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiPickStanceReaction.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiPickStanceReaction.c:
     complete
     .text       start:0x020d3b90 end:0x020d3d14
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiStanceMoveTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiStanceMoveTick.c:
     complete
     .text       start:0x020d3d14 end:0x020d3ecc
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiStanceMoveFinish.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiStanceMoveFinish.c:
     complete
     .text       start:0x020d3ecc end:0x020d3fc4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_GrabRelease.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_GrabRelease.c:
     complete
     .text       start:0x020d3fc4 end:0x020d40a0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_WindUpTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_WindUpTick.c:
     complete
     .text       start:0x020d40a0 end:0x020d4198
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SwingTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SwingTick.c:
     complete
     .text       start:0x020d4198 end:0x020d4298
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SlamSweepTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SlamSweepTick.c:
     complete
     .text       start:0x020d4298 end:0x020d45b0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_PushOffsetTwiceAndReset.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_PushOffsetTwiceAndReset.c:
     complete
     .text       start:0x020d45b0 end:0x020d464c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SpinAttackTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SpinAttackTick.c:
     complete
     .text       start:0x020d464c end:0x020d4960
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiEnterCharge.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiEnterCharge.c:
     complete
     .text       start:0x020d4960 end:0x020d4a64
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_ChargeTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_ChargeTick.c:
     complete
     .text       start:0x020d4a64 end:0x020d4b80
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_CountdownTimer4cThenPose15.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_CountdownTimer4cThenPose15.c:
     complete
     .text       start:0x020d4b80 end:0x020d4bcc
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d4bcc end:0x020d4c00
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_PushConstThenOffset.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_PushConstThenOffset.c:
     complete
     .text       start:0x020d4c00 end:0x020d4ca0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_GuardedPushOffset.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_GuardedPushOffset.c:
     complete
     .text       start:0x020d4ca0 end:0x020d4d50
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiBurstWindup.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiBurstWindup.c:
     complete
     .text       start:0x020d4d50 end:0x020d4de8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_Burst.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_Burst.c:
     complete
     .text       start:0x020d4de8 end:0x020d4efc
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiLungeStrikeTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiLungeStrikeTick.c:
     complete
     .text       start:0x020d4efc end:0x020d50e0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiEnterRecoilWindup.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiEnterRecoilWindup.c:
     complete
     .text       start:0x020d50e0 end:0x020d515c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_RecoilWindUpTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_RecoilWindUpTick.c:
     complete
     .text       start:0x020d515c end:0x020d5258
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiHomingDriftTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiHomingDriftTick.c:
     complete
     .text       start:0x020d5258 end:0x020d5470
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SlamTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SlamTick.c:
     complete
     .text       start:0x020d5470 end:0x020d5794
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiExpandingSweepTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiExpandingSweepTick.c:
     complete
     .text       start:0x020d5794 end:0x020d58ac
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d58ac end:0x020d5974
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiStep_QueueAction0.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d5974 end:0x020d5994
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiEnterHold.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiEnterHold.c:
     complete
     .text       start:0x020d5994 end:0x020d5a5c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiHoldTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiHoldTick.c:
     complete
     .text       start:0x020d5a5c end:0x020d5af0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiEnterApproach.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiEnterApproach.c:
     complete
     .text       start:0x020d5af0 end:0x020d5b30
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiApproachTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiApproachTick.c:
     complete
     .text       start:0x020d5b30 end:0x020d5c58
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_SetTwoVecsAndFlag.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_SetTwoVecsAndFlag.c:
     complete
     .text       start:0x020d5c58 end:0x020d5ca8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_New.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_New.c:
     complete
     .text       start:0x020d5ca8 end:0x020d5cdc
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_CompanionSetup.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_CompanionSetup.c:
     complete
     .text       start:0x020d5cdc end:0x020d5dd0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_Destroy_2.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_Destroy_2.c:
     complete
     .text       start:0x020d5dd0 end:0x020d5df4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_HandleMessage.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_HandleMessage.c:
     complete
     .text       start:0x020d5df4 end:0x020d5e6c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_Model_ReapplyTracks.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d5e6c end:0x020d5f04
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_CreateAiTask.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_CreateAiTask.c:
     complete
     .text       start:0x020d5f04 end:0x020d5f60
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_AiStateInit.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_AiStateInit.c:
     complete
     .text       start:0x020d5f60 end:0x020d5ff4
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_dispatchByStatusByte.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_dispatchByStatusByte.c:
     complete
     .text       start:0x020d5ff4 end:0x020d606c
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_ClearSetVisFlagsAdvance.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_ClearSetVisFlagsAdvance.c:
     complete
     .text       start:0x020d606c end:0x020d60d8
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_StartRandomTurn.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_StartRandomTurn.c:
     complete
     .text       start:0x020d60d8 end:0x020d6128
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_WaitTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_WaitTick.c:
     complete
     .text       start:0x020d6128 end:0x020d61d0
 
-src/overlays/enemies/ov230_enemy_3a/Ov230_BeamTick.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/Ov230_BeamTick.c:
     complete
     .text       start:0x020d61d0 end:0x020d63b8
 
-src/overlays/enemies/ov230_enemy_3a/data/ov230_strings_020d6480.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/data/ov230_strings_020d6480.c:
     complete
     .data       start:0x020d6480 end:0x020d64c0
 
-src/overlays/enemies/ov230_enemy_3a/data/ov230_tables_020d63b8.c:
+src/overlays/enemies/ov230_enemy_blitz_spear/data/ov230_tables_020d63b8.c:
     complete
     .rodata     start:0x020d63b8 end:0x020d6468

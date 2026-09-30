@@ -4,234 +4,234 @@
     .data       start:0x020d4b20 end:0x020d4b60 kind:data align:32
     .bss        start:0x020d4b60 end:0x020d4b60 kind:bss align:32
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_RegisterEntityClass.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_CreateNamedEntity.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_Construct.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_Construct.c:
     complete
     .text       start:0x020d1a24 end:0x020d1c74
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_Destroy.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_Destroy.c:
     complete
     .text       start:0x020d1c74 end:0x020d1cbc
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_TickWithChildRefresh.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_TickWithChildRefresh.c:
     complete
     .text       start:0x020d1cbc end:0x020d1ce0
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_InitModelPose.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_InitModelPose.c:
     complete
     .text       start:0x020d1ce0 end:0x020d1d6c
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_HandleSpawnMessage.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_HandleSpawnMessage.c:
     complete
     .text       start:0x020d1d6c end:0x020d1ec0
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_Model_SetTrack0.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_Model_SetTrack0.c:
     complete
     .text       start:0x020d1ec0 end:0x020d1ef0
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ReleaseTasks.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ReleaseTasks.c:
     complete
     .text       start:0x020d1ef0 end:0x020d1ffc
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_collectChildrenInBox.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_collectChildrenInBox.c:
     complete
     .text       start:0x020d1ffc end:0x020d20dc
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d20dc end:0x020d2290
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d2290 end:0x020d22ec
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_OnHit.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_OnHit.c:
     complete
     .text       start:0x020d22ec end:0x020d25f4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_RequestSubState10IfIdleUnless7Or8.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020d25f4 end:0x020d2638
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_EnterRandomDwellState.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_EnterRandomDwellState.c:
     complete
     .text       start:0x020d2638 end:0x020d2734
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stDispatchByStateByte.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stDispatchByStateByte.c:
     complete
     .text       start:0x020d2734 end:0x020d28f4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_UpdateHeadingAndVelocity.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_UpdateHeadingAndVelocity.c:
     complete
     .text       start:0x020d28f4 end:0x020d29d0
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d29d0 end:0x020d2a38
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d2a38 end:0x020d2a74
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_Action48Callback.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_Action48Callback.c:
     complete
     .text       start:0x020d2a74 end:0x020d2b3c
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d2b3c end:0x020d2c04
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d2c04 end:0x020d2c64
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stDiv30Store.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stDiv30Store.c:
     complete
     .text       start:0x020d2c64 end:0x020d2cc4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ReactWhenTargetInReach.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020d2cc4 end:0x020d2d34
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stDiv30Store_2.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stDiv30Store_2.c:
     complete
     .text       start:0x020d2d34 end:0x020d2d94
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_Pose2GuardField58Advance.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_Pose2GuardField58Advance.c:
     complete
     .text       start:0x020d2d94 end:0x020d2dd8
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stSeekTargetSteer.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stSeekTargetSteer.c:
     complete
     .text       start:0x020d2dd8 end:0x020d2f80
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_PrepSubState9GuardField58.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_PrepSubState9GuardField58.c:
     complete
     .text       start:0x020d2f80 end:0x020d2fb4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_AiEnterAim.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_AiEnterAim.c:
     complete
     .text       start:0x020d2fb4 end:0x020d3038
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_AiAimTick.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_AiAimTick.c:
     complete
     .text       start:0x020d3038 end:0x020d3224
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020d3224 end:0x020d3294
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020d3294 end:0x020d3310
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stateSetFlagEffect.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stateSetFlagEffect.c:
     complete
     .text       start:0x020d3310 end:0x020d337c
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_AiTrackOffsetTick.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_AiTrackOffsetTick.c:
     complete
     .text       start:0x020d337c end:0x020d3448
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_HomingDashTick.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_HomingDashTick.c:
     complete
     .text       start:0x020d3448 end:0x020d38dc
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_AiReleaseHeldAndAim.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_AiReleaseHeldAndAim.c:
     complete
     .text       start:0x020d38dc end:0x020d3990
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_SetPose6ThenAdvanceSlot.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020d3990 end:0x020d39c4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_EnterRecoil.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_EnterRecoil.c:
     complete
     .text       start:0x020d39c4 end:0x020d3a6c
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_TickRecoil.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_TickRecoil.c:
     complete
     .text       start:0x020d3a6c end:0x020d3b18
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_BounceTick.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_BounceTick.c:
     complete
     .text       start:0x020d3b18 end:0x020d3c28
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_BeginThrowRelease.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_BeginThrowRelease.c:
     complete
     .text       start:0x020d3c28 end:0x020d3df4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ThrowReleaseTick.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ThrowReleaseTick.c:
     complete
     .text       start:0x020d3df4 end:0x020d455c
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ConfigHw60NoResetBeginAction4a.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ConfigHw60NoResetBeginAction4a.c:
     complete
     .text       start:0x020d455c end:0x020d45f8
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d45f8 end:0x020d46ac
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_SpawnChild10AndBackLink.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020d46ac end:0x020d46f4
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_RenderAtOwnerScaled.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020d46f4 end:0x020d474c
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stInitChildActor.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stInitChildActor.c:
     complete
     .text       start:0x020d474c end:0x020d47f8
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ChildTaskTeardown_2.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ChildTaskTeardown_2.c:
     complete
     .text       start:0x020d47f8 end:0x020d4834
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_TickTimerAdvanceSubState.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020d4834 end:0x020d4898
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_SpawnChild0cAndBackLink.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020d4898 end:0x020d48e0
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_RenderAtOwnerModel.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_RenderAtOwnerModel.c:
     complete
     .text       start:0x020d48e0 end:0x020d4928
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stateInitSubitem.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stateInitSubitem.c:
     complete
     .text       start:0x020d4928 end:0x020d49a8
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ChildTaskTeardown.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ChildTaskTeardown.c:
     complete
     .text       start:0x020d49a8 end:0x020d49d0
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_ConfigureActorUnlessBusy.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020d49d0 end:0x020d4a14
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_stateSubitemStateTransition.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_stateSubitemStateTransition.c:
     complete
     .text       start:0x020d4a14 end:0x020d4a74
 
-src/overlays/enemies/ov165_enemy_19_3/Ov165_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/Ov165_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d4a74 end:0x020d4a94
 
-src/overlays/enemies/ov165_enemy_19_3/data/ov165_strings_020d4b20.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/data/ov165_strings_020d4b20.c:
     complete
     .data       start:0x020d4b20 end:0x020d4b60
 
-src/overlays/enemies/ov165_enemy_19_3/data/ov165_tables_020d4a94.c:
+src/overlays/enemies/ov165_enemy_skater_bomb_3/data/ov165_tables_020d4a94.c:
     complete
     .rodata     start:0x020d4a94 end:0x020d4b08

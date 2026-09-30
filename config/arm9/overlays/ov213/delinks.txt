@@ -4,474 +4,474 @@
     .data       start:0x020d2fa0 end:0x020d2fe0 kind:data align:32
     .bss        start:0x020d2fe0 end:0x020d2fe0 kind:bss align:32
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_RegisterEntityClass.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CreateNamedEntity.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_BroadcastWorkingPose.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_BroadcastWorkingPose.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc054
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Construct.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Construct.c:
     complete
     .text       start:0x020cc054 end:0x020cc464
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ReleaseNodeResources.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ReleaseNodeResources.c:
     complete
     .text       start:0x020cc464 end:0x020cc4cc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_UpdateModelTransform.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_UpdateModelTransform.c:
     complete
     .text       start:0x020cc4cc end:0x020cc584
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SendEnabledStatusMsg.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SendEnabledStatusMsg.c:
     complete
     .text       start:0x020cc584 end:0x020cc600
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_HandleMessage.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_HandleMessage.c:
     complete
     .text       start:0x020cc600 end:0x020ccb98
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_TeardownHook.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_TeardownHook.c:
     complete
     .text       start:0x020ccb98 end:0x020ccc58
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020ccc58 end:0x020cccc0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_NotifyPartsThenBase.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cccc0 end:0x020ccd28
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_RebindCollisionSlot.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_RebindCollisionSlot.c:
     complete
     .text       start:0x020ccd28 end:0x020ccf48
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AppendWorkEntryFinalize.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AppendWorkEntryFinalize.c:
     complete
     .text       start:0x020ccf48 end:0x020ccfc4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CreateAiTask.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CreateAiTask.c:
     complete
     .text       start:0x020ccfc4 end:0x020cd010
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_OnHit.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_OnHit.c:
     complete
     .text       start:0x020cd010 end:0x020cd258
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ReserveNodeIfStateActive.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ReserveNodeIfStateActive.c:
     complete
     .text       start:0x020cd258 end:0x020cd2ac
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_InitActionState.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_InitActionState.c:
     complete
     .text       start:0x020cd2ac end:0x020cd35c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiDispatchAction.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiDispatchAction.c:
     complete
     .text       start:0x020cd35c end:0x020cd5e4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SlerpPoseCountdownAndFlushVelocity.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SlerpPoseCountdownAndFlushVelocity.c:
     complete
     .text       start:0x020cd5e4 end:0x020cd654
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterStopAnimRaiseFlags86.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterStopAnimRaiseFlags86.c:
     complete
     .text       start:0x020cd654 end:0x020cd6d4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_PublishFinishPose.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_PublishFinishPose.c:
     complete
     .text       start:0x020cd6d4 end:0x020cd774
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterRetreat.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterRetreat.c:
     complete
     .text       start:0x020cd774 end:0x020cd8ec
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AlertWaitTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AlertWaitTick.c:
     complete
     .text       start:0x020cd8ec end:0x020cda00
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiQueue2OnAnimEnd.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020cda00 end:0x020cda34
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterWander.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterWander.c:
     complete
     .text       start:0x020cda34 end:0x020cda90
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterWander.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterWander.c:
     complete
     .text       start:0x020cda90 end:0x020cdb1c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CircleStrafeTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CircleStrafeTick.c:
     complete
     .text       start:0x020cdb1c end:0x020cdcb8
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ApproachTickDecay09.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ApproachTickDecay09.c:
     complete
     .text       start:0x020cdcb8 end:0x020cdd40
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterIdle.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterIdle.c:
     complete
     .text       start:0x020cdd40 end:0x020cdde4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_IdleTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_IdleTick.c:
     complete
     .text       start:0x020cdde4 end:0x020ce080
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterScaleBranch.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterScaleBranch.c:
     complete
     .text       start:0x020ce080 end:0x020ce0dc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Reaction_ScaleThenBranch.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Reaction_ScaleThenBranch.c:
     complete
     .text       start:0x020ce0dc end:0x020ce1a4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CloseInTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CloseInTick.c:
     complete
     .text       start:0x020ce1a4 end:0x020ce2fc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ApproachTickDecay08.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ApproachTickDecay08.c:
     complete
     .text       start:0x020ce2fc end:0x020ce384
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterBackOff.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterBackOff.c:
     complete
     .text       start:0x020ce384 end:0x020ce3e0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiBackOffStart.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiBackOffStart.c:
     complete
     .text       start:0x020ce3e0 end:0x020ce454
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_BackOffTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_BackOffTick.c:
     complete
     .text       start:0x020ce454 end:0x020ce5d0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ApproachDecisionTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ApproachDecisionTick.c:
     complete
     .text       start:0x020ce5d0 end:0x020ce6b0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Reaction_BuildTransformAndDispatch.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Reaction_BuildTransformAndDispatch.c:
     complete
     .text       start:0x020ce6b0 end:0x020ce784
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterCharge.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterCharge.c:
     complete
     .text       start:0x020ce784 end:0x020ce88c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_LockOnEntry.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_LockOnEntry.c:
     complete
     .text       start:0x020ce88c end:0x020ceb2c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterAlert.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterAlert.c:
     complete
     .text       start:0x020ceb2c end:0x020ceb7c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_RegroupTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_RegroupTick.c:
     complete
     .text       start:0x020ceb7c end:0x020cecfc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_PairUpWaitTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_PairUpWaitTick.c:
     complete
     .text       start:0x020cecfc end:0x020cee0c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterFaceTarget.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterFaceTarget.c:
     complete
     .text       start:0x020cee0c end:0x020ceeb8
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterSubState9.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterSubState9.c:
     complete
     .text       start:0x020ceeb8 end:0x020cef20
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_PrepSubState9IfChildIdle.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_PrepSubState9IfChildIdle.c:
     complete
     .text       start:0x020cef20 end:0x020cef54
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterShockwave.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterShockwave.c:
     complete
     .text       start:0x020cef54 end:0x020cefa0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ShockwaveTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ShockwaveTick.c:
     complete
     .text       start:0x020cefa0 end:0x020cf3f0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterSink.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterSink.c:
     complete
     .text       start:0x020cf3f0 end:0x020cf450
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiSinkStart.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiSinkStart.c:
     complete
     .text       start:0x020cf450 end:0x020cf4b0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiSinkTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiSinkTick.c:
     complete
     .text       start:0x020cf4b0 end:0x020cf4ec
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterScatter.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterScatter.c:
     complete
     .text       start:0x020cf4ec end:0x020cf5fc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterFastSink.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterFastSink.c:
     complete
     .text       start:0x020cf5fc end:0x020cf650
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiQueue5OnAnimEnd.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiQueue5OnAnimEnd.c:
     complete
     .text       start:0x020cf650 end:0x020cf684
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterAttack.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterAttack.c:
     complete
     .text       start:0x020cf684 end:0x020cf768
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_WindupTickA.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_WindupTickA.c:
     complete
     .text       start:0x020cf768 end:0x020cf81c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_WindupTickB.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_WindupTickB.c:
     complete
     .text       start:0x020cf81c end:0x020cf8d0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterLunge.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterLunge.c:
     complete
     .text       start:0x020cf8d0 end:0x020cf928
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_LungeTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_LungeTick.c:
     complete
     .text       start:0x020cf928 end:0x020cfbf4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_RetreatTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_RetreatTick.c:
     complete
     .text       start:0x020cfbf4 end:0x020cfc90
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiEnterHover.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiEnterHover.c:
     complete
     .text       start:0x020cfc90 end:0x020cfcd0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_HoverTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_HoverTick.c:
     complete
     .text       start:0x020cfcd0 end:0x020cfe48
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_VolleyTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_VolleyTick.c:
     complete
     .text       start:0x020cfe48 end:0x020cffa4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterPose19State.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterPose19State.c:
     complete
     .text       start:0x020cffa4 end:0x020d0020
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_TailSweepTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_TailSweepTick.c:
     complete
     .text       start:0x020d0020 end:0x020d0318
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterGuard.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterGuard.c:
     complete
     .text       start:0x020d0318 end:0x020d03dc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterStagger.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterStagger.c:
     complete
     .text       start:0x020d03dc end:0x020d0574
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Companion_New.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Companion_New.c:
     complete
     .text       start:0x020d0574 end:0x020d05a8
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CompanionConstruct.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CompanionConstruct.c:
     complete
     .text       start:0x020d05a8 end:0x020d0758
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Companion_Destroy.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Companion_Destroy.c:
     complete
     .text       start:0x020d0758 end:0x020d0790
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_PushPose.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_PushPose.c:
     complete
     .text       start:0x020d0790 end:0x020d07c4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CmdSpawnChildAtOffsetB.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CmdSpawnChildAtOffsetB.c:
     complete
     .text       start:0x020d07c4 end:0x020d08b0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_RearmHitSlots.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_RearmHitSlots.c:
     complete
     .text       start:0x020d08b0 end:0x020d095c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d095c end:0x020d09a8
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_InitChaseState.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_InitChaseState.c:
     complete
     .text       start:0x020d09a8 end:0x020d0a6c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Companion_AiDispatchAction.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Companion_AiDispatchAction.c:
     complete
     .text       start:0x020d0a6c end:0x020d0b10
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SlerpPoseAndFlushVelocity.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SlerpPoseAndFlushVelocity.c:
     complete
     .text       start:0x020d0b10 end:0x020d0b70
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterRaiseFlags86ClearLocks.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterRaiseFlags86ClearLocks.c:
     complete
     .text       start:0x020d0b70 end:0x020d0bec
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d0bec end:0x020d0c28
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterSweep.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterSweep.c:
     complete
     .text       start:0x020d0c28 end:0x020d0d8c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SweepPassTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SweepPassTick.c:
     complete
     .text       start:0x020d0d8c end:0x020d0f14
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SweepTurnTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SweepTurnTick.c:
     complete
     .text       start:0x020d0f14 end:0x020d10b0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_HomingTurnTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_HomingTurnTick.c:
     complete
     .text       start:0x020d10b0 end:0x020d1208
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_HomingDashTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_HomingDashTick.c:
     complete
     .text       start:0x020d1208 end:0x020d1364
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SweepPassHitTest.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SweepPassHitTest.c:
     complete
     .text       start:0x020d1364 end:0x020d1628
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ThirdForm_New.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ThirdForm_New.c:
     complete
     .text       start:0x020d1628 end:0x020d165c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ConstructThirdForm.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ConstructThirdForm.c:
     complete
     .text       start:0x020d165c end:0x020d1824
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ThirdForm_Destroy.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ThirdForm_Destroy.c:
     complete
     .text       start:0x020d1824 end:0x020d1864
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_TickSyncXformFirst.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_TickSyncXformFirst.c:
     complete
     .text       start:0x020d1864 end:0x020d18a4
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SendMessage24.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SendMessage24.c:
     complete
     .text       start:0x020d18a4 end:0x020d1908
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CmdSpawnChildTwoSlots.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CmdSpawnChildTwoSlots.c:
     complete
     .text       start:0x020d1908 end:0x020d1aac
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ThirdForm_CreateAiTask.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ThirdForm_CreateAiTask.c:
     complete
     .text       start:0x020d1aac end:0x020d1afc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_BroadcastPosition.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_BroadcastPosition.c:
     complete
     .text       start:0x020d1afc end:0x020d1c24
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_InitStateSlots.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_InitStateSlots.c:
     complete
     .text       start:0x020d1c24 end:0x020d1c90
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ThirdForm_AiTaskReleaseNoOp.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ThirdForm_AiTaskReleaseNoOp.c:
     complete
     .text       start:0x020d1c90 end:0x020d1c94
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ConsumePoseRequestB.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ConsumePoseRequestB.c:
     complete
     .text       start:0x020d1c94 end:0x020d1d5c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_PublishPoseAndReset.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_PublishPoseAndReset.c:
     complete
     .text       start:0x020d1d5c end:0x020d1d8c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiLockAndResume.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiLockAndResume.c:
     complete
     .text       start:0x020d1d8c end:0x020d1e04
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d1e04 end:0x020d1e40
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_EnterLeap.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_EnterLeap.c:
     complete
     .text       start:0x020d1e40 end:0x020d1f60
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_LeapTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_LeapTick.c:
     complete
     .text       start:0x020d1f60 end:0x020d238c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Minion_New.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Minion_New.c:
     complete
     .text       start:0x020d238c end:0x020d23c0
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Construct_2.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Construct_2.c:
     complete
     .text       start:0x020d23c0 end:0x020d2504
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Minion_Destroy.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Minion_Destroy.c:
     complete
     .text       start:0x020d2504 end:0x020d2530
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SendMessage24_2.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SendMessage24_2.c:
     complete
     .text       start:0x020d2530 end:0x020d2594
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CmdSpawnChildAtOffset.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CmdSpawnChildAtOffset.c:
     complete
     .text       start:0x020d2594 end:0x020d2678
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_SelectCollisionSet.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_SelectCollisionSet.c:
     complete
     .text       start:0x020d2678 end:0x020d275c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020d275c end:0x020d27a8
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Minion_AiStateInit.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Minion_AiStateInit.c:
     complete
     .text       start:0x020d27a8 end:0x020d2800
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_ConsumePoseRequest.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_ConsumePoseRequest.c:
     complete
     .text       start:0x020d2800 end:0x020d289c
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Minion_AiLockAndResume.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Minion_AiLockAndResume.c:
     complete
     .text       start:0x020d289c end:0x020d2914
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_AiStep_ResumeStoredAction_2.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_AiStep_ResumeStoredAction_2.c:
     complete
     .text       start:0x020d2914 end:0x020d2950
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_StartRecoilSlide.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_StartRecoilSlide.c:
     complete
     .text       start:0x020d2950 end:0x020d29bc
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_Minion_AiCountdownToSlam.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_Minion_AiCountdownToSlam.c:
     complete
     .text       start:0x020d29bc end:0x020d2a14
 
-src/overlays/enemies/ov213_enemy_2d/Ov213_GroundSlamTick.c:
+src/overlays/enemies/ov213_enemy_invisible/Ov213_GroundSlamTick.c:
     complete
     .text       start:0x020d2a14 end:0x020d2d74
 
-src/overlays/enemies/ov213_enemy_2d/data/ov213_strings_020d2fa0.c:
+src/overlays/enemies/ov213_enemy_invisible/data/ov213_strings_020d2fa0.c:
     complete
     .data       start:0x020d2fa0 end:0x020d2fe0
 
-src/overlays/enemies/ov213_enemy_2d/data/ov213_tables_020d2d74.c:
+src/overlays/enemies/ov213_enemy_invisible/data/ov213_tables_020d2d74.c:
     complete
     .rodata     start:0x020d2d74 end:0x020d2f84

@@ -4,298 +4,298 @@
     .data       start:0x020d3700 end:0x020d3740 kind:data align:32
     .bss        start:0x020d3740 end:0x020d3740 kind:bss align:32
 
-src/overlays/enemies/ov238_enemy_41/Ov238_RegisterEntityClass.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/enemies/ov238_enemy_41/Ov238_CreateNamedEntity.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ModelAnimTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ModelAnimTick.c:
     complete
     .text       start:0x020cfc08 end:0x020cfd74
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Construct.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Construct.c:
     complete
     .text       start:0x020cfd74 end:0x020d00b4
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Actor_Destroy.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Actor_Destroy.c:
     complete
     .text       start:0x020d00b4 end:0x020d0104
 
-src/overlays/enemies/ov238_enemy_41/Ov238_TickWithChildRefresh.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_TickWithChildRefresh.c:
     complete
     .text       start:0x020d0104 end:0x020d0128
 
-src/overlays/enemies/ov238_enemy_41/Ov238_RebuildAnim.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_RebuildAnim.c:
     complete
     .text       start:0x020d0128 end:0x020d02f8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ForwardRegionEventToPart.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ForwardRegionEventToPart.c:
     complete
     .text       start:0x020d02f8 end:0x020d0320
 
-src/overlays/enemies/ov238_enemy_41/Ov238_NotifyPartThenBase.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_NotifyPartThenBase.c:
     complete
     .text       start:0x020d0320 end:0x020d0348
 
-src/overlays/enemies/ov238_enemy_41/Ov238_OnSpawnMessage.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_OnSpawnMessage.c:
     complete
     .text       start:0x020d0348 end:0x020d04e0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_CarrierTeardown.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_CarrierTeardown.c:
     complete
     .text       start:0x020d04e0 end:0x020d05dc
 
-src/overlays/enemies/ov238_enemy_41/Ov238_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d05dc end:0x020d0638
 
-src/overlays/enemies/ov238_enemy_41/Ov238_PartnerOnDamage.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_PartnerOnDamage.c:
     complete
     .text       start:0x020d0638 end:0x020d0760
 
-src/overlays/enemies/ov238_enemy_41/Ov238_BeginPhasedReaction.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_BeginPhasedReaction.c:
     complete
     .text       start:0x020d0760 end:0x020d07f0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_TurnVelocity.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_TurnVelocity.c:
     complete
     .text       start:0x020d07f0 end:0x020d0878
 
-src/overlays/enemies/ov238_enemy_41/Ov238_TargetGap.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_TargetGap.c:
     complete
     .text       start:0x020d0878 end:0x020d0910
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AttackHitTest.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AttackHitTest.c:
     complete
     .text       start:0x020d0910 end:0x020d0b2c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_PickMove.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_PickMove.c:
     complete
     .text       start:0x020d0b2c end:0x020d0c68
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiDispatchAction.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiDispatchAction.c:
     complete
     .text       start:0x020d0c68 end:0x020d0e08
 
-src/overlays/enemies/ov238_enemy_41/Ov238_SpinPhysicsTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_SpinPhysicsTick.c:
     complete
     .text       start:0x020d0e08 end:0x020d0f0c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_TimedCue.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_TimedCue.c:
     complete
     .text       start:0x020d0f0c end:0x020d0f54
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Reaction_ForwardTwoUpdates.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Reaction_ForwardTwoUpdates.c:
     complete
     .text       start:0x020d0f54 end:0x020d0f9c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterRecover.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterRecover.c:
     complete
     .text       start:0x020d0f9c end:0x020d0fe0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_RecoverTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_RecoverTick.c:
     complete
     .text       start:0x020d0fe0 end:0x020d1058
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiStep_QueueAction2.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiStep_QueueAction2.c:
     complete
     .text       start:0x020d1058 end:0x020d107c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterIdle.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterIdle.c:
     complete
     .text       start:0x020d107c end:0x020d10b4
 
-src/overlays/enemies/ov238_enemy_41/Ov238_IdleDecide.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_IdleDecide.c:
     complete
     .text       start:0x020d10b4 end:0x020d120c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiTurnUntilAnimEnd.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiTurnUntilAnimEnd.c:
     complete
     .text       start:0x020d120c end:0x020d1258
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterWalk.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterWalk.c:
     complete
     .text       start:0x020d1258 end:0x020d1290
 
-src/overlays/enemies/ov238_enemy_41/Ov238_WalkTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_WalkTick.c:
     complete
     .text       start:0x020d1290 end:0x020d1400
 
-src/overlays/enemies/ov238_enemy_41/Ov238_SwipeTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_SwipeTick.c:
     complete
     .text       start:0x020d1400 end:0x020d14a4
 
-src/overlays/enemies/ov238_enemy_41/Ov238_EnterTaunt.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_EnterTaunt.c:
     complete
     .text       start:0x020d14a4 end:0x020d1510
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiWalkStep.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiWalkStep.c:
     complete
     .text       start:0x020d1510 end:0x020d1594
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AdvanceTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AdvanceTick.c:
     complete
     .text       start:0x020d1594 end:0x020d16e8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ClawTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ClawTick.c:
     complete
     .text       start:0x020d16e8 end:0x020d178c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterSwipe.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterSwipe.c:
     complete
     .text       start:0x020d178c end:0x020d17d0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiSwipeTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiSwipeTick.c:
     complete
     .text       start:0x020d17d0 end:0x020d1860
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterCombo.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterCombo.c:
     complete
     .text       start:0x020d1860 end:0x020d18a4
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiComboStart.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiComboStart.c:
     complete
     .text       start:0x020d18a4 end:0x020d190c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ComboTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ComboTick.c:
     complete
     .text       start:0x020d190c end:0x020d1e74
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d1e74 end:0x020d1ea8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterRoar.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterRoar.c:
     complete
     .text       start:0x020d1ea8 end:0x020d1f54
 
-src/overlays/enemies/ov238_enemy_41/Ov238_StompTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_StompTick.c:
     complete
     .text       start:0x020d1f54 end:0x020d1fe0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterCharge.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterCharge.c:
     complete
     .text       start:0x020d1fe0 end:0x020d2020
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ChargeTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ChargeTick.c:
     complete
     .text       start:0x020d2020 end:0x020d212c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_SpinTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_SpinTick.c:
     complete
     .text       start:0x020d212c end:0x020d244c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_RoarTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_RoarTick.c:
     complete
     .text       start:0x020d244c end:0x020d24d0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterRoarTurn.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterRoarTurn.c:
     complete
     .text       start:0x020d24d0 end:0x020d24fc
 
-src/overlays/enemies/ov238_enemy_41/Ov238_RoarEntry.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_RoarEntry.c:
     complete
     .text       start:0x020d24fc end:0x020d2560
 
-src/overlays/enemies/ov238_enemy_41/Ov238_LandingTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_LandingTick.c:
     complete
     .text       start:0x020d2560 end:0x020d2600
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ForwardToAiTaskWhenReady.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020d2600 end:0x020d261c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_FlagDoneAndNotify.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_FlagDoneAndNotify.c:
     complete
     .text       start:0x020d261c end:0x020d2640
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Partner_New.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Partner_New.c:
     complete
     .text       start:0x020d2640 end:0x020d2674
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Partner_Build.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Partner_Build.c:
     complete
     .text       start:0x020d2674 end:0x020d2810
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Destroy.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Destroy.c:
     complete
     .text       start:0x020d2810 end:0x020d2834
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Update.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Update.c:
     complete
     .text       start:0x020d2834 end:0x020d290c
 
-src/overlays/enemies/ov238_enemy_41/Ov238_OnMessage.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_OnMessage.c:
     complete
     .text       start:0x020d290c end:0x020d2978
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Teardown.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Teardown.c:
     complete
     .text       start:0x020d2978 end:0x020d29b8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_QueueAction1.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_QueueAction1.c:
     complete
     .text       start:0x020d29b8 end:0x020d29c8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_SetPendingState2.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_SetPendingState2.c:
     complete
     .text       start:0x020d29c8 end:0x020d29d8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_CreateAiTask.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_CreateAiTask.c:
     complete
     .text       start:0x020d29d8 end:0x020d2a34
 
-src/overlays/enemies/ov238_enemy_41/Ov238_stateInitClearSlots.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_stateInitClearSlots.c:
     complete
     .text       start:0x020d2a34 end:0x020d2adc
 
-src/overlays/enemies/ov238_enemy_41/Ov238_HelperMoveDispatch.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_HelperMoveDispatch.c:
     complete
     .text       start:0x020d2adc end:0x020d2b84
 
-src/overlays/enemies/ov238_enemy_41/Ov238_PhysicsTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_PhysicsTick.c:
     complete
     .text       start:0x020d2b84 end:0x020d2c44
 
-src/overlays/enemies/ov238_enemy_41/Ov238_EnterReaction.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_EnterReaction.c:
     complete
     .text       start:0x020d2c44 end:0x020d2cf4
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEndStep.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEndStep.c:
     complete
     .text       start:0x020d2cf4 end:0x020d2d08
 
-src/overlays/enemies/ov238_enemy_41/Ov238_WakeEntry.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_WakeEntry.c:
     complete
     .text       start:0x020d2d08 end:0x020d2dd0
 
-src/overlays/enemies/ov238_enemy_41/Ov238_Partner_AiWaitRelease.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_Partner_AiWaitRelease.c:
     complete
     .text       start:0x020d2dd0 end:0x020d2e30
 
-src/overlays/enemies/ov238_enemy_41/Ov238_AiEnterCircle.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_AiEnterCircle.c:
     complete
     .text       start:0x020d2e30 end:0x020d2e58
 
-src/overlays/enemies/ov238_enemy_41/Ov238_CircleTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_CircleTick.c:
     complete
     .text       start:0x020d2e58 end:0x020d30b8
 
-src/overlays/enemies/ov238_enemy_41/Ov238_CollapseEntry.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_CollapseEntry.c:
     complete
     .text       start:0x020d30b8 end:0x020d3184
 
-src/overlays/enemies/ov238_enemy_41/Ov238_ChargeSweepTick.c:
+src/overlays/enemies/ov238_enemy_pete_41/Ov238_ChargeSweepTick.c:
     complete
     .text       start:0x020d3184 end:0x020d3668
 
-src/overlays/enemies/ov238_enemy_41/data/ov238_strings_020d3700.c:
+src/overlays/enemies/ov238_enemy_pete_41/data/ov238_strings_020d3700.c:
     complete
     .data       start:0x020d3700 end:0x020d3740
 
-src/overlays/enemies/ov238_enemy_41/data/ov238_tables_020d3668.c:
+src/overlays/enemies/ov238_enemy_pete_41/data/ov238_tables_020d3668.c:
     complete
     .rodata     start:0x020d3668 end:0x020d36f0

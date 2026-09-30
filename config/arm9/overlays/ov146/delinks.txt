@@ -4,366 +4,366 @@
     .data       start:0x020cf520 end:0x020cf540 kind:data align:32
     .bss        start:0x020cf540 end:0x020cf540 kind:bss align:32
 
-src/overlays/enemies/ov146_enemy_10/Ov146_RegisterEntityClass.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/enemies/ov146_enemy_10/Ov146_CreateNamedEntity.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Actor_Construct.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Actor_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc2ac
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Actor_Destroy.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Actor_Destroy.c:
     complete
     .text       start:0x020cc2ac end:0x020cc2f4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc2f4 end:0x020cc328
 
-src/overlays/enemies/ov146_enemy_10/Ov146_NotifyPartsThenBase.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc328 end:0x020cc35c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_OnSpawnMessage.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_OnSpawnMessage.c:
     complete
     .text       start:0x020cc35c end:0x020cc508
 
-src/overlays/enemies/ov146_enemy_10/Ov146_PropagateBlockChainThenNotify.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_PropagateBlockChainThenNotify.c:
     complete
     .text       start:0x020cc508 end:0x020cc570
 
-src/overlays/enemies/ov146_enemy_10/Ov146_BindMotion.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_BindMotion.c:
     complete
     .text       start:0x020cc570 end:0x020cc5ec
 
-src/overlays/enemies/ov146_enemy_10/Ov146_CreateAiTask.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_CreateAiTask.c:
     complete
     .text       start:0x020cc5ec end:0x020cc658
 
-src/overlays/enemies/ov146_enemy_10/Ov146_OnDamage.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_OnDamage.c:
     complete
     .text       start:0x020cc658 end:0x020cc7dc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_RequestSubState10IfNotCurrent.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_RequestSubState10IfNotCurrent.c:
     complete
     .text       start:0x020cc7dc end:0x020cc808
 
-src/overlays/enemies/ov146_enemy_10/Ov146_RequestSubState11IfIdle.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020cc808 end:0x020cc838
 
-src/overlays/enemies/ov146_enemy_10/Ov146_InitReactionSlots.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_InitReactionSlots.c:
     complete
     .text       start:0x020cc838 end:0x020cc8f0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiDispatchAction.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiDispatchAction.c:
     complete
     .text       start:0x020cc8f0 end:0x020ccae4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_CarryTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_CarryTick.c:
     complete
     .text       start:0x020ccae4 end:0x020ccd78
 
-src/overlays/enemies/ov146_enemy_10/Ov146_HideEntry.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_HideEntry.c:
     complete
     .text       start:0x020ccd78 end:0x020ccdf4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_BeginQueuedPose.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_BeginQueuedPose.c:
     complete
     .text       start:0x020ccdf4 end:0x020cce4c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_GrabEntry.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_GrabEntry.c:
     complete
     .text       start:0x020cce4c end:0x020ccfe8
 
-src/overlays/enemies/ov146_enemy_10/Ov146_WakeTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_WakeTick.c:
     complete
     .text       start:0x020ccfe8 end:0x020cd0a4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiQueue7OnAnimEnd.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiQueue7OnAnimEnd.c:
     complete
     .text       start:0x020cd0a4 end:0x020cd0d8
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiEnterIdle.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiEnterIdle.c:
     complete
     .text       start:0x020cd0d8 end:0x020cd138
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiIdleCountdown.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiIdleCountdown.c:
     complete
     .text       start:0x020cd138 end:0x020cd174
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiEnterApproach.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiEnterApproach.c:
     complete
     .text       start:0x020cd174 end:0x020cd1b4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ApproachTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ApproachTick.c:
     complete
     .text       start:0x020cd1b4 end:0x020cd3b4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_SwoopTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_SwoopTick.c:
     complete
     .text       start:0x020cd3b4 end:0x020cd700
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiEnterMount.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiEnterMount.c:
     complete
     .text       start:0x020cd700 end:0x020cd7bc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiQueue7OnAnimEnd_2.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiQueue7OnAnimEnd_2.c:
     complete
     .text       start:0x020cd7bc end:0x020cd7f0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiEnterDismount.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiEnterDismount.c:
     complete
     .text       start:0x020cd7f0 end:0x020cd88c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiDismountRiderWait.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiDismountRiderWait.c:
     complete
     .text       start:0x020cd88c end:0x020cd8d8
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiQueue7OnBothAnimsEnd.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiQueue7OnBothAnimsEnd.c:
     complete
     .text       start:0x020cd8d8 end:0x020cd91c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ChargeDecide.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ChargeDecide.c:
     complete
     .text       start:0x020cd91c end:0x020cdaa4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ChargeTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ChargeTick.c:
     complete
     .text       start:0x020cdaa4 end:0x020cdb78
 
-src/overlays/enemies/ov146_enemy_10/Ov146_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cdb78 end:0x020cdbac
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiEnterFace.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiEnterFace.c:
     complete
     .text       start:0x020cdbac end:0x020cdbf8
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiFaceWait.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiFaceWait.c:
     complete
     .text       start:0x020cdbf8 end:0x020cdc38
 
-src/overlays/enemies/ov146_enemy_10/Ov146_FaceTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_FaceTick.c:
     complete
     .text       start:0x020cdc38 end:0x020cdcb4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_GuardEntry.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_GuardEntry.c:
     complete
     .text       start:0x020cdcb4 end:0x020cdd74
 
-src/overlays/enemies/ov146_enemy_10/Ov146_HopTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_HopTick.c:
     complete
     .text       start:0x020cdd74 end:0x020cdeb8
 
-src/overlays/enemies/ov146_enemy_10/Ov146_KnockDownEntry.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_KnockDownEntry.c:
     complete
     .text       start:0x020cdeb8 end:0x020cdfdc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_HitEntry.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_HitEntry.c:
     complete
     .text       start:0x020cdfdc end:0x020ce0bc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_RecoverTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_RecoverTick.c:
     complete
     .text       start:0x020ce0bc end:0x020ce170
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiEnterApproachB.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiEnterApproachB.c:
     complete
     .text       start:0x020ce170 end:0x020ce1a4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ApproachTick_2.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ApproachTick_2.c:
     complete
     .text       start:0x020ce1a4 end:0x020ce298
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_SetFlagIfReady.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_SetFlagIfReady.c:
     complete
     .text       start:0x020ce298 end:0x020ce2b4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ForwardToAiTaskWhenReady.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020ce2b4 end:0x020ce2d0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_LaunchIfReady.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_LaunchIfReady.c:
     complete
     .text       start:0x020ce2d0 end:0x020ce308
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_New.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_New.c:
     complete
     .text       start:0x020ce308 end:0x020ce344
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ActorConstruct.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ActorConstruct.c:
     complete
     .text       start:0x020ce344 end:0x020ce514
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Destroy.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Destroy.c:
     complete
     .text       start:0x020ce514 end:0x020ce538
 
-src/overlays/enemies/ov146_enemy_10/Ov146_TickUnlessFrozen.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_TickUnlessFrozen.c:
     complete
     .text       start:0x020ce538 end:0x020ce564
 
-src/overlays/enemies/ov146_enemy_10/Ov146_RebindAnimSlot.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_RebindAnimSlot.c:
     complete
     .text       start:0x020ce564 end:0x020ce608
 
-src/overlays/enemies/ov146_enemy_10/Ov146_PropagateBlockChainThenNotify_2.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_PropagateBlockChainThenNotify_2.c:
     complete
     .text       start:0x020ce608 end:0x020ce670
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_SetFlag.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_SetFlag.c:
     complete
     .text       start:0x020ce670 end:0x020ce684
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiQueueAction0.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiQueueAction0.c:
     complete
     .text       start:0x020ce684 end:0x020ce694
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Launch.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Launch.c:
     complete
     .text       start:0x020ce694 end:0x020ce6e4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_OnKnockback.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_OnKnockback.c:
     complete
     .text       start:0x020ce6e4 end:0x020ce7e0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_CreateAiTask.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_CreateAiTask.c:
     complete
     .text       start:0x020ce7e0 end:0x020ce83c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_BrainStart.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_BrainStart.c:
     complete
     .text       start:0x020ce83c end:0x020ce930
 
-src/overlays/enemies/ov146_enemy_10/Ov146_BrainSlot0.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_BrainSlot0.c:
     complete
     .text       start:0x020ce930 end:0x020ceaf0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_PhysicsTick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_PhysicsTick.c:
     complete
     .text       start:0x020ceaf0 end:0x020cec08
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiClearMoveVector.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiClearMoveVector.c:
     complete
     .text       start:0x020cec08 end:0x020cec24
 
-src/overlays/enemies/ov146_enemy_10/Ov146_stAdvanceState_ccedc.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_stAdvanceState_ccedc.c:
     complete
     .text       start:0x020cec24 end:0x020cec3c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_AiLandPick.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_AiLandPick.c:
     complete
     .text       start:0x020cec3c end:0x020ceca0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_SetPose4ThenAdvanceSlot_2.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_SetPose4ThenAdvanceSlot_2.c:
     complete
     .text       start:0x020ceca0 end:0x020cecd4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_AiLoop5OnAnimEnd.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_AiLoop5OnAnimEnd.c:
     complete
     .text       start:0x020cecd4 end:0x020ced18
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Rider_IdleStep.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Rider_IdleStep.c:
     complete
     .text       start:0x020ced18 end:0x020ced1c
 
-src/overlays/enemies/ov146_enemy_10/Ov146_stAdvanceState_ccedc_2.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_stAdvanceState_ccedc_2.c:
     complete
     .text       start:0x020ced1c end:0x020ced34
 
-src/overlays/enemies/ov146_enemy_10/Ov146_DrawMarkedEntities.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_DrawMarkedEntities.c:
     complete
     .text       start:0x020ced34 end:0x020cee14
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_SetStateIfReady.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_SetStateIfReady.c:
     complete
     .text       start:0x020cee14 end:0x020cee30
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_New.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_New.c:
     complete
     .text       start:0x020cee30 end:0x020cee64
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Setup.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Setup.c:
     complete
     .text       start:0x020cee64 end:0x020cef24
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Update.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Update.c:
     complete
     .text       start:0x020cef24 end:0x020cf084
 
-src/overlays/enemies/ov146_enemy_10/Ov146_OnMessage.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_OnMessage.c:
     complete
     .text       start:0x020cf084 end:0x020cf0cc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_SendMessage26.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_SendMessage26.c:
     complete
     .text       start:0x020cf0cc end:0x020cf134
 
-src/overlays/enemies/ov146_enemy_10/Ov146_SendPoseWithFlags.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_SendPoseWithFlags.c:
     complete
     .text       start:0x020cf134 end:0x020cf168
 
-src/overlays/enemies/ov146_enemy_10/Ov146_ReplayArmourAnim.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_ReplayArmourAnim.c:
     complete
     .text       start:0x020cf168 end:0x020cf200
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_SetState.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_SetState.c:
     complete
     .text       start:0x020cf200 end:0x020cf220
 
-src/overlays/enemies/ov146_enemy_10/Ov146_SpawnHelper.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_SpawnHelper.c:
     complete
     .text       start:0x020cf220 end:0x020cf290
 
-src/overlays/enemies/ov146_enemy_10/Ov146_HelperStart.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_HelperStart.c:
     complete
     .text       start:0x020cf290 end:0x020cf320
 
-src/overlays/enemies/ov146_enemy_10/Ov146_HelperTaskTeardown.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_HelperTaskTeardown.c:
     complete
     .text       start:0x020cf320 end:0x020cf338
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiDispatchPendingAction.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiDispatchPendingAction.c:
     complete
     .text       start:0x020cf338 end:0x020cf3cc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiSlot2NoOp.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiSlot2NoOp.c:
     complete
     .text       start:0x020cf3cc end:0x020cf3d0
 
-src/overlays/enemies/ov146_enemy_10/Ov146_AiSlot1NoOp.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_AiSlot1NoOp.c:
     complete
     .text       start:0x020cf3d0 end:0x020cf3d4
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_AiEnterRise.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_AiEnterRise.c:
     complete
     .text       start:0x020cf3d4 end:0x020cf430
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_AiRiseWait.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_AiRiseWait.c:
     complete
     .text       start:0x020cf430 end:0x020cf478
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_AiEnterSink.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_AiEnterSink.c:
     complete
     .text       start:0x020cf478 end:0x020cf4bc
 
-src/overlays/enemies/ov146_enemy_10/Ov146_Mount_AiSinkWait.c:
+src/overlays/enemies/ov146_enemy_barrier_master/Ov146_Mount_AiSinkWait.c:
     complete
     .text       start:0x020cf4bc end:0x020cf4f8
 
-src/overlays/enemies/ov146_enemy_10/data/ov146_strings_020cf520.c:
+src/overlays/enemies/ov146_enemy_barrier_master/data/ov146_strings_020cf520.c:
     complete
     .data       start:0x020cf520 end:0x020cf534
 
-src/overlays/enemies/ov146_enemy_10/data/ov146_tables_020cf4f8.c:
+src/overlays/enemies/ov146_enemy_barrier_master/data/ov146_tables_020cf4f8.c:
     complete
     .rodata     start:0x020cf4f8 end:0x020cf514
 
-src/overlays/enemies/ov146_enemy_10/data/ov146_tables_020cf534.c:
+src/overlays/enemies/ov146_enemy_barrier_master/data/ov146_tables_020cf534.c:
     complete
     .data       start:0x020cf534 end:0x020cf540
