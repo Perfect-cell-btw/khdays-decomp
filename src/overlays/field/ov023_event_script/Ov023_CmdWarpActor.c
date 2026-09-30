@@ -145,6 +145,8 @@ int Ov023_CmdWarpActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
             } else {
                 Actor_SetVecAndSyncChild(pEntity, &vPos);
             }
+            /* A spot the stage's collision model does not have leaves nAngle unset, as in the
+             * ROM; the event scripts only name spots that exist. */
             if (pCtx->pEvent->pActors != 0 && pCtx->pEvent->pActors[nActor].pResource != 0) {
                 Ov023_SetScrollAndMarkDirty(&pCtx->pEvent->pActors[nActor], nAngle);
             } else {

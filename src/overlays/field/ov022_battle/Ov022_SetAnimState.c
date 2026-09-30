@@ -239,6 +239,8 @@ void Ov022_SetAnimState(struct Actor *pActor, int nAnim)
         break;
     }
     nBlend = Ov002_GetModeBlendFrames(nAnim, pActor->nAnimId, pActor->nModelId);
+    /* No case sets pAnim and nSub for 0x1b..0x1d (below ANIM_COMBO_FIRST, past the last case):
+     * such an id would reach func_ov022_020a3c78 with both unset, as in the ROM. */
     if (!bSkip) {
         func_ov022_020a3c78(pActor, pAnim, nSub, nBlend);
     }

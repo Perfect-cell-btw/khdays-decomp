@@ -103,6 +103,8 @@ void Ov002_MapTouchToCell(int bWithSound)
                 nCell = (point.nX - 0x58) / 24 + 0x18;
             }
         }
+        /* A touch at x <= 0x30 sets no cell: the ROM clamps r4 as its caller left it into
+         * 0x16..0x1d -- an original bug, kept as is. */
         if (nCell > 0x1d) {
             nCell = 0x1d;
         } else if (nCell < 0x16) {

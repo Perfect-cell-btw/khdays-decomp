@@ -63,6 +63,10 @@ void Ov291_TurnTick(int *node)
         return;
     }
     state[0xd] = 0;
+    /* With no actor of the scene's list clear of flag 0x10000 (count == 0) handle is never
+     * set: the ROM passes r8 as its callers left it (ObjList_Update and Ov107_ContainerNode_Tick
+     * above do not touch r8), and func_ov022_02086834 follows it (+0x20) to clear the lock-on
+     * flags -- an original bug. The value meant is func_ov022_02083f5c()'s. */
     func_ov022_02086834(handle, 0);
     Ov002_RefreshCaptionWidget(0);
 }

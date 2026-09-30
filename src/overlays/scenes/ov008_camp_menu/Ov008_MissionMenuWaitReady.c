@@ -113,6 +113,9 @@ MissionState Ov008_MissionMenuWaitReady(void)
                 Ov008_GetMissionRowInfo(i, &data_ov008_02090fa0->rows[i]);
             }
         }
+        /* With the parameters ready (the single-row path) nValue is never set: the ROM passes r4
+         * as its caller left it, and Ov008_MissionScene_SetMode ignores anything but 1 to 4 --
+         * the same as `input` in Ov006_MissionBuildOptionRows. */
         Ov008_MissionScene_SetMode(nValue);
         Ov008_ResetTextLayers();
         Ov008_FlushTextLayers();
