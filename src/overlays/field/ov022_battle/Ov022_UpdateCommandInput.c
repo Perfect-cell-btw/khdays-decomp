@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 
+#include "game/config.h"
 struct Equip {
     u8 pad00[0x17];
     u8 nKind;                    /* 0x17 */
@@ -82,7 +83,7 @@ extern int Ov022_IsInputAllowedForActiveSlot(void);
 extern int GameState_GetField(int nFlag, int nWhich);
 extern int Ov002_Hud_IsPanelOpen(void);
 extern void Ov002_Hud_SetSecondaryFlag(int bOn);
-extern void Ov002_SetPanelModeForRequest(int nCommand);
+extern void Ov002_SelectShortcut(int nCommand);
 extern int Ov002_IsMissionClearFinished(int nWhich);
 extern void Ov002_Hud_ActivatePanelSlot(void);
 extern void Ov002_RequestCrawlSkip(void);
@@ -90,7 +91,7 @@ extern int Ov002_AcceptRequestAndNotify(int nWhich);
 extern void Ov002_PanelCursorNext(void);
 extern int func_ov022_02083f0c(void);
 extern int Ov002_IsObjectFlag2000Set(int nSlot);
-extern unsigned short func_ov022_02088cdc(void);
+extern unsigned short Ov022_GetRepeatKeys(void);
 extern void Ov002_PanelCursorPrev(void);
 extern void Ov002_PanelCursorStepLeft(void);
 extern void Ov002_PanelCursorStepRight(void);
@@ -232,7 +233,7 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
     if (func_ov022_020ab350(pActor) == 0
         && Ov022_IsInputAllowedForActiveSlot() == 0 && bLock == 0) {
         bBtn = 0;
-        if (GameState_GetField(0x37c4, 1) == 0) {
+        if (GameState_GetField(CONFIG_CONTROLS, 1) == 0) {
             if ((data_0204c18c & 0x200) != 0) {
                 bBtn = 1;
             }
@@ -264,7 +265,7 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
             if (nCmd < 0) {
                 bMenuActive = 0;
             } else {
-                Ov002_SetPanelModeForRequest(nCmd);
+                Ov002_SelectShortcut(nCmd);
                 bCommandChosen = 1;
             }
         } else {
@@ -287,7 +288,7 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
             if ((data_0204c190 & 0x800) != 0 && bNoRepeat != 0) {
                 Ov002_RequestCrawlSkip();
             }
-            if (GameState_GetField(0x37c6, 1) != 0) {
+            if (GameState_GetField(CONFIG_COMMAND_LIST, 1) != 0) {
                 if ((data_0204c190 & 0x400) != 0
                     && Ov002_Hud_IsPanelOpen() == 0 && bCommandChosen == 0) {
                     Ov002_PanelCursorNext();
@@ -309,10 +310,10 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
                             pMenu[1] = 2;
                         }
                     } else if (pMenu[1] == 2 && bOk != 0) {
-                        if ((func_ov022_02088cdc() & 0x80) != 0) {
+                        if ((Ov022_GetRepeatKeys() & 0x80) != 0) {
                             pMenu[0] = 0;
                             Ov002_PanelCursorNext();
-                        } else if ((func_ov022_02088cdc() & 0x40) != 0) {
+                        } else if ((Ov022_GetRepeatKeys() & 0x40) != 0) {
                             pMenu[0] = 0;
                             Ov002_PanelCursorPrev();
                         } else if ((data_0204c190 & 0x20) != 0) {

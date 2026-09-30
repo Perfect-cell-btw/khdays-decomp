@@ -3,6 +3,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/scene.h"
 typedef struct SceneTransition {u8 flags,submode;u16 transitionValue,parameter;} SceneTransition;
 typedef struct ModeSource {char opaque[8];int mode;} ModeSource;
 extern u16 data_0204c190;
@@ -35,7 +36,7 @@ int Ov005_UpdateMenuExitTransition(void) {
         Ov005_ClampEquippedItemCounts();
         PartyState_ResetBuffers();
         Ov005_ResetPartyMemberAndLayout(0,0);
-        if(data_0204c240.flags&4)Scene_RequestPending(0x13,0);
+        if(data_0204c240.flags&4)Scene_RequestPending(SCENE_MISSION_CAMP,0);
         else if((data_0204c240.flags&2)||(data_0204c240.flags&1)||(data_0204c300[0x4c]&1)) {
             GameState_ClearFlag(0x18ae);
             if(data_0204c240.flags&2)GameState_SetFlag(0x18c9);
@@ -44,13 +45,13 @@ int Ov005_UpdateMenuExitTransition(void) {
             data_0204c240.parameter=0;
             data_0204c240.submode=0;
             data_0204c240.flags=0;
-            Scene_RequestPending(2,0);
+            Scene_RequestPending(SCENE_FIELD,0);
         } else {
             int mode=data_ov005_0205b808->mode;
             if(mode!=999) {
                 int day=GameState_GetField(0,9);
-                if(day>=7 && day<=13)Scene_RequestPending(10,mode);
-                else Scene_RequestPending(5,mode);
+                if(day>=7 && day<=13)Scene_RequestPending(SCENE_MONOLOGUE,mode);
+                else Scene_RequestPending(SCENE_CALENDAR,mode);
             } else Scene_RequestPending(13,0);
         }
         result=-2;

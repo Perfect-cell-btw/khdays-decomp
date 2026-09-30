@@ -7,7 +7,7 @@
  * movie); either way ov028 is unloaded again.  The predicates are: always true; not a flashcart
  * (the ROM pages below 0x8000 must mirror 0x8000); not an emulator (judged by the MAC address).
  * When one fails no scene is requested at all, and the game stays on a black screen with no
- * error.  Anything else falls back to Scene_RequestPending(5, selector), the day title card.
+ * error.  Anything else falls back to Scene_RequestPending(SCENE_CALENDAR, selector), the day title card.
  * Always reports -2.
  *
  * The overlay id is the ADDRESS of a linker-absolute symbol (NitroSDK FS_OVERLAY_ID); dsd emits
@@ -18,6 +18,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/scene.h"
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_28_ID[1];
@@ -83,7 +84,7 @@ int Ov000_BootRunSelector(void) {
         }
         UnloadOverlaySync(0, FS_OVERLAY_ID_ov028);
     } else {
-        Scene_RequestPending(5, selector);
+        Scene_RequestPending(SCENE_CALENDAR, selector);
     }
     return -2;
 }

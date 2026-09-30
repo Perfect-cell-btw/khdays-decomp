@@ -1,5 +1,6 @@
 #include "game/engine.h"
 
+#include "game/scene.h"
 extern void Ov009_FreeResourceRecordBuffer(char *p);
 extern void FreeAllListNodeSubBuffers(char *p);
 extern int Ov009_GetCtxBlock9500(void);
@@ -31,5 +32,5 @@ void Ov009_TeardownScene(char *self) {
     MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
     MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
     G3X_SetHOffset(0);
-    Scene_RequestPending(1, 0);
+    Scene_RequestPending(SCENE_TITLE, 0);
 }

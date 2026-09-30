@@ -11,8 +11,7 @@
 
 #include "nitro/types.h"
 
-#define STOP_EVENT_ID 0x37c5
-
+#include "game/config.h"
 struct Owner {
     u8 pad00[8];
     u8 nChannel;                 /* 0x08 */
@@ -43,7 +42,7 @@ void Ov022_DriveOwnedSound(struct Owner *pOwner, int nSecond, int nFirst,
     } else if (nDir < 0) {
         if (pOwner->nChannel == Session_GetLocalPlayerIndex()) {
             Ov002_RemoveEntryAndReopen((u16)nFirst, (u16)nSecond);
-            if (GameState_GetField(STOP_EVENT_ID, 1) == 0) {
+            if (GameState_GetField(CONFIG_CURSOR_POSITION, 1) == 0) {
                 Ov002_AcceptRequestAndNotify(0);
             } else {
                 Ov002_RefreshMemberPanel();

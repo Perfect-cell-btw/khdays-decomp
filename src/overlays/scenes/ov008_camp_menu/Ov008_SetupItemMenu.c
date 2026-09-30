@@ -63,7 +63,7 @@ extern void  Ov008_InitFromDescAndMark(int nCtx, Ov008LayoutTemplate *pLayout);
 extern void  Ov008_LoadBlockProcessAndFree(int nCtx, void *pResource, int nCount);/* Ov008_LoadBlockProcessAndFree */
 extern void  Ov008_StoreWordAt0x4a50(int nCtx, void *pCallback);            /* ov008_StoreWordAt0x4a50 */
 extern void  Ov008_ForEachListNode(int nCtx, int nMode);                  /* Ov008_ForEachListNode */
-extern void  Ov008_LoadItemCounts(void);
+extern void  Ov008_Config_LoadValues(void);
 extern void *Ov008_FindEntryById(int nCtx, int nId);                    /* FindEntryById */
 extern void  Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
 extern int   Ov008_GetSlideTableValue(int nId);
@@ -90,7 +90,7 @@ void Ov008_SetupItemMenu(void)
     Ov008_LoadBlockProcessAndFree(nCtx, (void *)Ov008_PackSlotTag(6), 0x5d);
     Ov008_StoreWordAt0x4a50(nCtx, (void *)Ov008_DispatchMenuInput);
     Ov008_ForEachListNode(nCtx, 2);
-    Ov008_LoadItemCounts();
+    Ov008_Config_LoadValues();
     for (i = 0; i < WIDGET_COUNT; i++) {
         Ov008_SetEntrySlotsVisible(nCtx, Ov008_FindEntryById(nCtx, i + WIDGET_FIRST), 0);
     }

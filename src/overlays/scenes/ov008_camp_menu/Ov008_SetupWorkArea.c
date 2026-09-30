@@ -16,6 +16,7 @@
 
 #include "game/engine.h"
 
+#include "game/config.h"
 extern void *data_0204be14;
 extern void *data_0204be18;
 
@@ -39,13 +40,13 @@ void Ov008_SetupWorkArea(int slot) {
     MIi_CpuClear16(0, (char *)data_0204be18 + 0xee0, 0xf0);
     MIi_CpuClear16(0, (char *)data_0204be18 + 0xc10, 0x2d0);
 
-    GameState_SetField(0x37c4, 1, 0);
-    GameState_SetField(0x37bf, 1, 0);
-    GameState_SetField(0x37c0, 2, 1);
-    GameState_SetField(0x37c3, 1, 0);
-    GameState_SetField(0x37c2, 1, 0);
-    GameState_SetField(0x37c5, 1, 0);
-    GameState_SetField(0x37c6, 1, 1);
+    GameState_SetField(CONFIG_CONTROLS, 1, 0);
+    GameState_SetField(CONFIG_CHASE_CAM, 1, 0);
+    GameState_SetField(CONFIG_CAM_SPEED, 2, 1);
+    GameState_SetField(CONFIG_CAM_X_AXIS, 1, 0);
+    GameState_SetField(CONFIG_CAM_Y_AXIS, 1, 0);
+    GameState_SetField(CONFIG_CURSOR_POSITION, 1, 0);
+    GameState_SetField(CONFIG_COMMAND_LIST, 1, 1);
     GameState_SetField(0x37c7, 2, 0);
     GameState_SetField(0x35bf, 2, 0);
     GameState_SetField(0x3c15, 1, 1);

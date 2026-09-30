@@ -9,6 +9,7 @@
 
 #include "game/engine.h"
 
+#include "game/scene.h"
 struct Cfg4 { int w[4]; };
 extern char *data_ov008_02090f00;
 extern int  Ov008_GetCtxField9678(void);
@@ -40,7 +41,7 @@ void Ov008_MainMenuExit(void) {
             cfg = *(struct Cfg4 *)Session_GetSetup();
             cfg.w[1] = Ov008_CountOccupiedSlots();
             Session_StoreSetup(&cfg);
-            Scene_RequestPending(2, 0);
+            Scene_RequestPending(SCENE_FIELD, 0);
         }
     } else {
         if (Session_Exists() != 0) {
@@ -48,7 +49,7 @@ void Ov008_MainMenuExit(void) {
         }
         PartyState_ResetBuffers();
         OS_ResetSystem(-2);
-        Scene_RequestPending(1, 0);
+        Scene_RequestPending(SCENE_TITLE, 0);
     }
     data_ov008_02090f00 = 0;
 }

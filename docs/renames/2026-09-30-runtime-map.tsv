@@ -1,0 +1,6 @@
+# old_name	new_name	module  -- from what the running game shows (field controls, Config page)
+Ov008_LoadItemCounts	Ov008_Config_LoadValues	ov008
+Ov008_SaveItemCounts	Ov008_Config_SaveValues	ov008
+Ov002_SetPanelModeForRequest	Ov002_SelectShortcut	ov002
+func_ov022_020a0814	Ov022_HeadingFromHeldDpad	ov022
+func_ov022_02088cdc	Ov022_GetRepeatKeys	ov022

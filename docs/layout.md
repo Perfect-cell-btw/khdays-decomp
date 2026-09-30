@@ -81,6 +81,9 @@ Still to do, in this order:
     cast to a basic type (`(void *)`, `(int)`) keeps its own declarations until its code holds
     that value with a real type. `tools/sharedecls.py` does this for a module: it writes the
     header from the definitions and keeps a source only if it still compiles to the same bytes.
+  - named numbers the running game identifies: `game/scene.h` (the scene ids
+    `Scene_RequestPending` takes, for the scenes seen running) and `game/config.h` (the Config
+    page's game-state fields, whose value is the index of the option the page shows).
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
   the prototypes of every other module and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per

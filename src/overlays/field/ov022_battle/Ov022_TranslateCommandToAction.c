@@ -66,7 +66,7 @@ extern u8 data_0204be04;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int PauseMenu_GetMode(void);
-extern int func_ov022_020a0814(struct Actor *pActor);
+extern int Ov022_HeadingFromHeldDpad(struct Actor *pActor);
 extern void Ov022_SwapPairedStateFlags(struct Actor *pActor);
 extern int Ov022_IsActionAllowed(u8 *pBlk);
 extern int func_ov022_0209fc78(struct Actor *pActor, int nSlot);
@@ -116,7 +116,7 @@ void Ov022_TranslateCommandToAction(struct Actor *pActor)
         return;
     }
 
-    pActor->nAimAngle = func_ov022_020a0814(pActor);
+    pActor->nAimAngle = Ov022_HeadingFromHeldDpad(pActor);
     if (pActor->nKnockdownKind == 5) {
         Ov022_SwapPairedStateFlags(pActor);
     }

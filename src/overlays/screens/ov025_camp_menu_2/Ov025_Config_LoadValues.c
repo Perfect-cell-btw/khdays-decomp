@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 
+#include "game/config.h"
 typedef struct Ov025ConfigPage {
     u8   pad_00[0x4e];
     s16  aValue[10];          /* 0x4e: the option values (7 unused) */
@@ -29,13 +30,13 @@ void Ov025_Config_LoadValues(void)
     if (data_0204be18->aItemCount[0x1a0] == 0) {
         GameState_SetField(0x3c29, 2, 1);
     }
-    pPage->aValue[0] = GameState_GetField(0x37c4, 1);
-    pPage->aValue[1] = GameState_GetField(0x37bf, 1);
-    pPage->aValue[2] = GameState_GetField(0x37c0, 2);
-    pPage->aValue[3] = GameState_GetField(0x37c3, 1);
-    pPage->aValue[4] = GameState_GetField(0x37c2, 1);
-    pPage->aValue[5] = GameState_GetField(0x37c5, 1);
-    pPage->aValue[6] = GameState_GetField(0x37c6, 1);
+    pPage->aValue[0] = GameState_GetField(CONFIG_CONTROLS, 1);
+    pPage->aValue[1] = GameState_GetField(CONFIG_CHASE_CAM, 1);
+    pPage->aValue[2] = GameState_GetField(CONFIG_CAM_SPEED, 2);
+    pPage->aValue[3] = GameState_GetField(CONFIG_CAM_X_AXIS, 1);
+    pPage->aValue[4] = GameState_GetField(CONFIG_CAM_Y_AXIS, 1);
+    pPage->aValue[5] = GameState_GetField(CONFIG_CURSOR_POSITION, 1);
+    pPage->aValue[6] = GameState_GetField(CONFIG_COMMAND_LIST, 1);
     pPage->aValue[8] = GameState_GetField(0x37c7, 2) % 3;
     pPage->aValue[9] = GameState_GetField(0x35bf, 2) % 3;
 }

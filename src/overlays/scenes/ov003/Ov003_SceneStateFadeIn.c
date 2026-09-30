@@ -2,6 +2,7 @@
 
 #include "game/engine.h"
 
+#include "game/scene.h"
 typedef struct {
     unsigned char pad0000[0x1774];
     int nFadeTicks;
@@ -30,7 +31,7 @@ int Ov003_SceneStateFadeIn(void) {
         SetMasterBrightnessMain(-n);
         SetMasterBrightnessSub(-root->nFadeTicks);
     } else {
-        Scene_RequestPending(6, 0);
+        Scene_RequestPending(SCENE_MISSION_RESULT, 0);
         return -2;
     }
     Ov003_AdvanceAnims((int)root);

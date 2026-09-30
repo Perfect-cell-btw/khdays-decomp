@@ -2589,11 +2589,11 @@ src/overlays/scenes/ov008_camp_menu/Ov008_WidgetRef_Hide.c:
     complete
     .text       start:0x02069c68 end:0x02069ca4
 
-src/overlays/scenes/ov008_camp_menu/Ov008_LoadItemCounts.c:
+src/overlays/scenes/ov008_camp_menu/Ov008_Config_LoadValues.c:
     complete
     .text       start:0x02069ca4 end:0x02069eec
 
-src/overlays/scenes/ov008_camp_menu/Ov008_SaveItemCounts.c:
+src/overlays/scenes/ov008_camp_menu/Ov008_Config_SaveValues.c:
     complete
     .text       start:0x02069eec end:0x0206a138
 

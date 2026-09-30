@@ -4,6 +4,7 @@
 #include "nitro/fx_types.h"
 #include "game/engine.h"
 
+#include "game/config.h"
 typedef struct {
     int radialX;                   /* +0x00 */
     int radialZ;                   /* +0x04 */
@@ -110,21 +111,21 @@ void *Ov002_InitWorldState(int enabled)
     state->orbitAngleA = 0x1555;
     state->orbitAngleB = 0x1555;
 
-    if (GameState_GetField(0x37c4, 1) == 1)
+    if (GameState_GetField(CONFIG_CONTROLS, 1) == 1)
         state->featureFlags |= 0x20;
-    if (GameState_GetField(0x37bf, 1) == 1) {
+    if (GameState_GetField(CONFIG_CHASE_CAM, 1) == 1) {
         state->featureFlags |= 1;
         state->stateFlags |= 0x10000000;
     }
 
-    query = GameState_GetField(0x37c0, 2);
+    query = GameState_GetField(CONFIG_CAM_SPEED, 2);
     if (query == 0)
         state->featureFlags |= 2;
     if (query == 2)
         state->featureFlags |= 4;
-    if (GameState_GetField(0x37c2, 1) == 1)
+    if (GameState_GetField(CONFIG_CAM_Y_AXIS, 1) == 1)
         state->featureFlags |= 8;
-    if (GameState_GetField(0x37c3, 1) == 1)
+    if (GameState_GetField(CONFIG_CAM_X_AXIS, 1) == 1)
         state->featureFlags |= 0x10;
 
     state->enabled = enabled != 0;

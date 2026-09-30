@@ -69,7 +69,7 @@ extern u16 data_0204c18c;
 extern short data_0203d210[];
 
 extern int Session_GetLocalPlayerIndex(void);
-extern int func_ov022_020a0814(struct Actor *pActor);
+extern int Ov022_HeadingFromHeldDpad(struct Actor *pActor);
 extern void VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);
 extern int Ov002_RunShutdownHook(void);
 extern int func_ov022_02095450(u8 *pBlk);
@@ -117,7 +117,7 @@ void Ov022_TrackWallPress(struct Actor *pActor)
     } else {
         nSaved = pActor->nButtons2;
         pActor->nButtons2 = data_0204c18c;
-        nAngle = func_ov022_020a0814(pActor);
+        nAngle = Ov022_HeadingFromHeldDpad(pActor);
         pActor->nButtons2 = nSaved;
     }
     if (nAngle == -1) {

@@ -18,7 +18,7 @@
  *         InstantiateClass(&data_02042534, 1)
  *       data_02042534 -> BootTask_Construct (0x02020928, THUMB)
  *       which, on a fresh boot (state @0x027ffc20 == 0), selects Scene 1 (the
- *       boot/logo scene) via Scene_RequestPending(1, 0).
+ *       boot/logo scene) via Scene_RequestPending(SCENE_TITLE, 0).
  *    4. Run the frame loop forever (label FRAME @0x02000cac):
  *         VBlank sync -> update the task queue -> 3D/capture render -> present ->
  *         poll the current scene; when it ends, run the fade/teardown transition
@@ -27,6 +27,7 @@
 
 #include "nitro/types.h"
 
+#include "game/scene.h"
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_1_ID[1];

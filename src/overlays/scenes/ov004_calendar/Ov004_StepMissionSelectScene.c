@@ -4,6 +4,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/scene.h"
 typedef struct BootModeState {
     u8 flags;
     u8 state;
@@ -34,7 +35,7 @@ int Ov004_StepMissionSelectScene(void) {
 
         PartyState_ResetBuffers();
         Ov004_ResetPartyMemberAndLayout(0, 0);
-        Scene_RequestPending(2, 0);
+        Scene_RequestPending(SCENE_FIELD, 0);
         return -2;
     }
     return 0;

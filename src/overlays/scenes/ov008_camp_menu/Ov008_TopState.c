@@ -5,6 +5,7 @@
 
 #include "game/engine.h"
 
+#include "game/scene.h"
 extern int *data_ov008_02090fa8;
 extern int  Ov008_PollMenuBusyState(void);
 void *Ov008_TopState(void) {
@@ -14,11 +15,11 @@ void *Ov008_TopState(void) {
     case 0:
         break;
     case 1:
-        Scene_RequestPending(0x13, 0);
+        Scene_RequestPending(SCENE_MISSION_CAMP, 0);
         result = -2;
         break;
     case 2:
-        Scene_RequestPending(1, 0);
+        Scene_RequestPending(SCENE_TITLE, 0);
         result = -2;
         break;
     }

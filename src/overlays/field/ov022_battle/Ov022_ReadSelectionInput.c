@@ -5,6 +5,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/config.h"
 typedef struct Ov022ActiveActor {
     u64 flags0;
     char pad_0008[0x45c];
@@ -159,7 +160,7 @@ keep_runtime_latch:
         }
 
         if ((context->flags0 & 4) != 0 && context->activationState == 0) {
-            if (GameState_GetField(0x37c4, 1) == 0) {
+            if (GameState_GetField(CONFIG_CONTROLS, 1) == 0) {
                 if (suppressInput != 0) {
                     if (Ov022_PickSelectorTarget(0x100) != 0) {
                         Ov022_SetSelectionEnabled(1);

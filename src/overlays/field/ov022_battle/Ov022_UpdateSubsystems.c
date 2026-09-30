@@ -15,6 +15,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
+#include "game/config.h"
 struct Node {
     u8 pad00[0x80];
     u16 nAngle;                   /* 0x80 */
@@ -242,8 +243,8 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
     if ((pActor->nFlags & (1ULL << 20)) == 0) {
         return;
     }
-    if (GameState_GetField(0x37c5, 1) == 0) {
-        if (GameState_GetField(0x37c4, 1) == 0) {
+    if (GameState_GetField(CONFIG_CURSOR_POSITION, 1) == 0) {
+        if (GameState_GetField(CONFIG_CONTROLS, 1) == 0) {
             nMask = 0x200;
         } else {
             nMask = 0x100;

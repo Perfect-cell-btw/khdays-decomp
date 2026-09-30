@@ -2,6 +2,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/scene.h"
 extern u8 data_0204c240;                /* g_modeAndDayClock */
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
@@ -87,7 +88,7 @@ void *Ov002_RetireSubFlow(void)
             EntityManager_ResetSingleton();
             Ov002_ResetNineSlots();
             Ov002_ScheduleRetry();
-            Scene_RequestPending(1, 0);
+            Scene_RequestPending(SCENE_TITLE, 0);
             return (void *)-2;
         }
         break;

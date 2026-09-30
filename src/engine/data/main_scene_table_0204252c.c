@@ -50,16 +50,16 @@ SceneEntry data_02042548[20] = {
     { 6, &data_ov006_020565c0 },      /* 7: mission-mode character select (ov006) */
     { 11, &data_ov011_0205e8a0 },     /* 8 */
     { 9, &data_ov006_02056220 },      /* 9: the descriptor at 0x02056220 inside ov009 (the delink names the address after ov006) */
-    { 7, &data_ov007_0204d3c4 },      /* 10: Roxas's narration (ov007) */
+    { 7, &data_ov007_0204d3c4 },      /* 10: Roxas's monologue after the clock-tower scene (ov007) */
     { 12, &data_ov012_0205c2bc },     /* 11: opening movie (ov012) */
-    { 10, &data_ov010_0204cfa0 },     /* 12 */
+    { 10, &data_ov010_0204cfa0 },     /* 12: the connection-error screen (ov010) */
     { -1, 0 },                        /* 13 */
     { -1, 0 },                        /* 14 */
     { -1, 0 },                        /* 15 */
     { -1, 0 },                        /* 16 */
     { -1, 0 },                        /* 17 */
     { -1, 0 },                        /* 18 */
-    { 8, &data_ov008_0208ffa0 },      /* 19: mission lobby (ov008) */
+    { 8, &data_ov008_0208ffa0 },      /* 19: Mission Mode's camp (ov008) */
 };
 
 /* A byte flag (0xff = unset) the pause / dialog helpers 02020cf8..02022410 read. */

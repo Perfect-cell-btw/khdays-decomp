@@ -1,5 +1,6 @@
 #include "nitro/fx_types.h"
 
+#include "game/config.h"
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef long long longlong;
@@ -661,7 +662,7 @@ LAB_arm9_ov002__0204d9ac:
         if (sVar6 == 0)
           goto camera_input_inactive;
       }
-      if (((uVar18 = GameState_GetField(0x37c6,1), uVar18 != 0 ||
+      if (((uVar18 = GameState_GetField(CONFIG_COMMAND_LIST,1), uVar18 != 0 ||
            (((data_0204c18c & 0x400) == 0 || (*(char *)(iVar11 + 1) != '\x02')))) &&
           ((((puVar10->flags & 0x800) == 0 &&
             (uVar23 = Ov022_GetStreamTimestamp(idx), (uVar23 & 0x3710) == 0)) &&

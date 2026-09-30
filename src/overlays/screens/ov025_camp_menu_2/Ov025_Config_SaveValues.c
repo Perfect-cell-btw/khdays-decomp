@@ -7,6 +7,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/config.h"
 typedef struct Ov025ConfigPage {
     u8   pad_00[0x4e];
     s16  aValue[10];          /* 0x4e: the option values (7 unused) */
@@ -25,13 +26,13 @@ void Ov025_Config_SaveValues(void)
     Ov025ConfigPage *pPage;
 
     pPage = Ov025_GetPageA();
-    GameState_SetField(0x37c4, 1, (s16)(pPage->aValue[0] & 1));
-    GameState_SetField(0x37bf, 1, (s16)(pPage->aValue[1] & 1));
-    GameState_SetField(0x37c0, 2, (s16)(pPage->aValue[2] & 3));
-    GameState_SetField(0x37c3, 1, (s16)(pPage->aValue[3] & 1));
-    GameState_SetField(0x37c2, 1, (s16)(pPage->aValue[4] & 1));
-    GameState_SetField(0x37c5, 1, (s16)(pPage->aValue[5] & 1));
-    GameState_SetField(0x37c6, 1, (s16)(pPage->aValue[6] & 1));
+    GameState_SetField(CONFIG_CONTROLS, 1, (s16)(pPage->aValue[0] & 1));
+    GameState_SetField(CONFIG_CHASE_CAM, 1, (s16)(pPage->aValue[1] & 1));
+    GameState_SetField(CONFIG_CAM_SPEED, 2, (s16)(pPage->aValue[2] & 3));
+    GameState_SetField(CONFIG_CAM_X_AXIS, 1, (s16)(pPage->aValue[3] & 1));
+    GameState_SetField(CONFIG_CAM_Y_AXIS, 1, (s16)(pPage->aValue[4] & 1));
+    GameState_SetField(CONFIG_CURSOR_POSITION, 1, (s16)(pPage->aValue[5] & 1));
+    GameState_SetField(CONFIG_COMMAND_LIST, 1, (s16)(pPage->aValue[6] & 1));
     GameState_SetField(0x37c7, 2, (s16)(pPage->aValue[8] & 3));
     GameState_SetField(0x35bf, 2, (s16)(pPage->aValue[9] & 3));
 }

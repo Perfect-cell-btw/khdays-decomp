@@ -1,6 +1,8 @@
 /* BootTask_Construct: constructor of g_BootTaskClassDesc (run by RunClassConstructor).
- * Inits subsystems, then selects the first scene from the persisted state word @0x027ffc20:
- * 0 (fresh boot) -> Scene 1 (boot/logo); -2 -> Scene 1; else -> Scene 12. The scene request
+ * Inits subsystems, then selects the first scene from the word OS_ResetSystem leaves at
+ * 0x027ffc20 (HW_RESET_PARAMETER_BUF): 0 (a cold boot) and -2 give scene 1 (logos, title);
+ * anything else -- Game_RunSceneLoop resets with the wireless state and bit 31 set -- gives
+ * scene 12, the connection-error screen. The scene request
  * is latched by Scene_RequestPending (Scene_RequestPending). Returns the boot task's initial
  * per-frame state fn (Scene_StepAndContinue), stored by the caller into obj+0x14.
  *
@@ -16,6 +18,7 @@
 
 #include "game/engine.h"
 
+#include "game/scene.h"
 void *Boot_InitScene(void) {
     unsigned int state;
     FileLoader_Init();
@@ -25,13 +28,13 @@ void *Boot_InitScene(void) {
     state = *(unsigned int *)0x027ffc20;
     switch (state) {
     case 0:
-        Scene_RequestPending(1, 0);
+        Scene_RequestPending(SCENE_TITLE, 0);
         break;
     case 0xfffffffeu:
-        Scene_RequestPending(1, state);
+        Scene_RequestPending(SCENE_TITLE, state);
         break;
     default:
-        Scene_RequestPending(0xc, state);
+        Scene_RequestPending(SCENE_CONNECTION_ERROR, state);
         break;
     }
     return (void *)Scene_StepAndContinue;

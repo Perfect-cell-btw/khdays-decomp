@@ -4,6 +4,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
+#include "game/scene.h"
 typedef struct Ov002SessionMember {
     s16 nValue;             /* value published onto the shared board */
     s8 bActive;             /* non-zero while this member holds its slot */
@@ -98,7 +99,7 @@ void *Ov002_StepSessionMenu(void)
         case 0:
             Ov002_FillMissionResult();
             if (GameState_IsFlagSet(0x2087) != 0 || Session_IsActive() == 0) {
-                Scene_RequestPending(6, 0);
+                Scene_RequestPending(SCENE_MISSION_RESULT, 0);
                 break;
             }
             if (Session_IsReady() == 0) {
@@ -125,22 +126,22 @@ void *Ov002_StepSessionMenu(void)
 
         case 1:
             if (pLink->nChoiceValue < 0) {
-                Scene_RequestPending(5, -pLink->nChoiceValue);
+                Scene_RequestPending(SCENE_CALENDAR, -pLink->nChoiceValue);
                 break;
             }
             data_0204c240.nMinutes = (u16)pLink->nChoiceValue;
             data_0204c240.nMinutesElapsed = 0;
             data_0204c240.nArmedKind = 2;
-            Scene_RequestPending(2, 0);
+            Scene_RequestPending(SCENE_FIELD, 0);
             break;
 
         case 2:
             nCount = GameState_GetField(0, 9);
             nStamp = pScreen->nStamp;
             if (nStamp == 0x191 || (nCount >= 7 && nCount <= 0xd)) {
-                Scene_RequestPending(0xa, nStamp);
+                Scene_RequestPending(SCENE_MONOLOGUE, nStamp);
             } else {
-                Scene_RequestPending(5, nStamp);
+                Scene_RequestPending(SCENE_CALENDAR, nStamp);
             }
             break;
 
@@ -149,7 +150,7 @@ void *Ov002_StepSessionMenu(void)
             data_0204c240.nMinutesElapsed = 0;
             data_0204c240.nArmedKind = 2;
             data_0204c240.nModeFlags = 0;
-            Scene_RequestPending(2, 0);
+            Scene_RequestPending(SCENE_FIELD, 0);
             break;
 
         case 4:

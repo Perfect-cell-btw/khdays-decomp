@@ -672,7 +672,7 @@ src/overlays/field/ov022_battle/func_ov022_02088cac.c:
     complete
     .text       start:0x02088cac end:0x02088cdc
 
-src/overlays/field/ov022_battle/func_ov022_02088cdc.c:
+src/overlays/field/ov022_battle/Ov022_GetRepeatKeys.c:
     complete
     .text       start:0x02088cdc end:0x02088d04
 
@@ -2314,7 +2314,7 @@ src/overlays/field/ov022_battle/Ov022_TickSubObjectChain.c:
     complete
     .text       start:0x020a0710 end:0x020a0814
 
-src/overlays/field/ov022_battle/func_ov022_020a0814.c:
+src/overlays/field/ov022_battle/Ov022_HeadingFromHeldDpad.c:
     complete
     .text       start:0x020a0814 end:0x020a0870
 

@@ -1056,7 +1056,7 @@ src/overlays/scenes/ov002_field/Ov002_Hud_SetSecondaryFlag.c:
     complete
     .text       start:0x02056e04 end:0x02056e38
 
-src/overlays/scenes/ov002_field/Ov002_SetPanelModeForRequest.c:
+src/overlays/scenes/ov002_field/Ov002_SelectShortcut.c:
     complete
     .text       start:0x02056e38 end:0x02056e80
 
