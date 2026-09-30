@@ -3,19 +3,12 @@
 This document maps the binary to the source tree, so a reader can find a system without knowing
 its address.
 
-## How finished decompilations lay out their code
+## Principles
 
-| | zeldaret/oot | n64decomp/sm64 | pret/pokeplatinum | this repo |
-|---|---|---|---|---|
-| Game code | `src/code/` plus `src/overlays/{actors,effects,gamestates,misc}/ovl_<Name>/` | `src/{engine,game,menu,audio,...}/` | `src/{battle,applications,savedata,...}/`, named overlays | `src/engine/` plus `src/overlays/{scenes,screens,field,players,enemies,system}/ovNNN_<name>/` |
-| System libraries | `src/libultra/` | `lib/` | `lib/` plus NitroSDK | `libs/{nitro,nns,msl,mobiclip}/` |
-| Files | one per original translation unit (`z_en_horse.c` + `.h`) | one per translation unit | one per translation unit | one per function |
-| Headers | `include/` with the shared structs | `include/` | `include/` mirroring `src/` | not yet |
-| Unknown names | stay `func_8xxxxxxx` until documented | same | `unk_*`, `ov5_021D*` | same |
-
-The common points are: directories say what the code does, not how it was matched; overlays sit
-in named directories grouped by kind; shared types live in `include/`. KH Days fits the OoT model
-closely -- every enemy is its own overlay, like OoT's actors.
+Directories say what the code does, not how it was matched; overlays sit in named directories
+grouped by kind; the system libraries sit apart in `libs/`; shared types live in `include/`; a
+name that is not established yet stays `func_<addr>` / `data_<addr>`. Every enemy is its own
+overlay.
 
 ## Layout
 
@@ -37,8 +30,8 @@ docs/
 
 Every function is one `.c` named after it. Overlay directories keep the `ovNNN` prefix: the number
 is the FS overlay id the game loads by, and the build and tools key on it (`tools/srctree.py`
-finds the directories). Overlays whose purpose is not established keep the bare `ovNNN` (the pret
-convention); the confidence column below says which. `auto/` versus `calls/` (a function with or
+finds the directories). Overlays whose purpose is not established keep the bare `ovNNN`; the
+confidence column below says which. `auto/` versus `calls/` (a function with or
 without relocations) was a working-process split and is gone from `src/`; `libs/` still uses it.
 
 Still to do, in this order:
