@@ -45,7 +45,7 @@ extern void Ov022_UpdateSelectionMarker(void);
 extern int Ov022_CollectActorCandidates(void *state, int actorIndex);
 extern void Ov022_UpdateSelectionController(void);
 extern void Ov022_ResetSelectorOrigin(void);
-extern void func_ov022_02085280(void);
+extern void Ov022_TryLockOn(void);
 extern void *Ov022_PickSelectorTarget(int mask);
 extern int Ov002_Panel_IsMode9(void);
 extern int Ov002_IsObjectFlag2000Set(int object);
@@ -152,7 +152,7 @@ keep_runtime_latch:
                 if (context->activationState == 0) {
                     Ov022_SetSelectionEnabled(0);
                 } else {
-                    func_ov022_02085280();
+                    Ov022_TryLockOn();
                 }
             }
             context->repeatAny = 0;
@@ -199,7 +199,7 @@ keep_runtime_latch:
     } else if (Ov002_IsObjectFlag2000Set(object) == 0) {
         if ((pressed & 0x100) != 0) {
             if (context->repeatAny < 0x9000) {
-                func_ov022_02085280();
+                Ov022_TryLockOn();
             }
             context->repeatAny = 0;
         }
@@ -208,7 +208,7 @@ keep_runtime_latch:
             actor = (Ov022ActiveActor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
             if ((actor->flags464 & 0x10ULL) != 0 ||
                 (actor->flags464 & 0x1000ULL) != 0) {
-                func_ov022_02085280();
+                Ov022_TryLockOn();
             }
         }
     }

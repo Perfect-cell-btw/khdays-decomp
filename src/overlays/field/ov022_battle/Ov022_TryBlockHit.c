@@ -188,7 +188,7 @@ extern int VEC_Mag(VecFx32 *pVec);
 extern void Ov022_SendInterruptRecord(struct Actor *pActor);                          /* Ov022_SendInterruptRecord */
 extern void func_ov022_0208a0b4(int nId, int nEvent, int nArg);                 /* MarshalEventPacketSix */
 extern void func_ov022_02097038(struct Actor *pActor, int nArg);                /* SetField7b0AndDispatch */
-extern void func_ov022_020acebc(struct Actor *pActor, int nScale);              /* ConfigFlag40AndScale */
+extern void Ov022_SetAnimSpeed(struct Actor *pActor, int nScale);              /* ConfigFlag40AndScale */
 extern void SceneNode_Disable(u16 *pAnimFlags);                                     /* SceneNode_Disable */
 extern int Ov107_AiState_ApplyHit(struct Actor *pAttacker, void *pSub, struct HitPacket *pPacket);   /* the attacker takes the block */
 
@@ -346,7 +346,7 @@ int Ov022_TryBlockHit(struct Actor *pActor, struct HitRequest *pReq)
         if ((pActor->nFlags2 & FLAG2_BIT9) != 0) {
             pActor->pfnPreDraw(pActor, PREDRAW_BLOCK);
             func_ov022_02097038(pActor, 0);
-            func_ov022_020acebc(pActor, 0x1000);
+            Ov022_SetAnimSpeed(pActor, 0x1000);
             pActor->nFlags &= ~FLAG_BIT49;
             if ((pActor->pNode->nFlags & NODE_NO_ANIM) == 0) {
                 SceneNode_Disable(&pActor->pNode->nAnimFlags);

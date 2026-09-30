@@ -301,7 +301,7 @@ extern void Ov022_EnterState0E(struct Actor *pActor);                          /
 extern void Ov022_CopyBlock2c00(struct Actor *pActor);                          /* Ov022_CopyBlock2c00 */
 extern void Ov022_TurnAwayFromDrift(struct Actor *pActor);                          /* Ov022_TurnAwayFromDrift */
 extern int func_ov022_0209d7a4(struct Actor *pActor);                           /* IsField7b0LEField117c */
-extern void func_ov022_020acebc(struct Actor *pActor, int nScale);              /* ConfigFlag40AndScale */
+extern void Ov022_SetAnimSpeed(struct Actor *pActor, int nScale);              /* ConfigFlag40AndScale */
 extern void func_ov022_020acf14(struct Actor *pActor, int nFlags);              /* SetEntryFlagsAndBroadcast */
 extern VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);                      /* GetSubBufferByState4f0 */
 extern int func_ov022_020ad1b4(struct Actor *pActor);                           /* GetField4f4UnlessState5 */
@@ -427,7 +427,7 @@ int Ov022_EnterActorState(struct Actor *pActor, int nState, u32 nPrevTimer)
         break;
     case 0xb:
         pActor->pfnPreDraw(pActor, 0x11);
-        func_ov022_020acebc(pActor, pActor->nRunScale);
+        Ov022_SetAnimSpeed(pActor, pActor->nRunScale);
         if (func_ov022_020ad1b4(pActor) != 0) {
             pTarget = func_ov022_020ad0c0(pActor);
             VEC_Subtract(pTarget, &pActor->vecAim, &vecDir);
@@ -452,7 +452,7 @@ int Ov022_EnterActorState(struct Actor *pActor, int nState, u32 nPrevTimer)
             pActor->nStateTimer = nPrevTimer;
             pActor->nFlags |= FLAG_BIT41;
             pActor->pfnPreDraw(pActor, 0x11);
-            func_ov022_020acebc(pActor, pActor->nRunScale);
+            Ov022_SetAnimSpeed(pActor, pActor->nRunScale);
         }
         if (Session_GetLocalPlayerIndex() == 0) {
             pActor->nFlags2 |= FLAG2_BIT9;
@@ -482,7 +482,7 @@ int Ov022_EnterActorState(struct Actor *pActor, int nState, u32 nPrevTimer)
         if (pActor->nInterruptCharge < pDodge->nCharge << 12) {
             pActor->nInterruptCharge = pDodge->nCharge << 12;
         }
-        func_ov022_020acebc(pActor, pDodge->nScale);
+        Ov022_SetAnimSpeed(pActor, pDodge->nScale);
         nResult = (int)Ov022_StepDodgeRollState;
         break;
     case 0x15:
@@ -805,7 +805,7 @@ int Ov022_EnterActorState(struct Actor *pActor, int nState, u32 nPrevTimer)
         }
         nResult = (int)Ov022_StepComboState;
         pActor->pfnPreDraw(pActor, pCombo->pLock->pRecord->nAnimSlot + 0x1e);
-        func_ov022_020acebc(pActor, pCombo->nChaseScale);
+        Ov022_SetAnimSpeed(pActor, pCombo->nChaseScale);
         pActor->nAnimSpeed = ONE;
         if ((pActor->nFlags2 & FLAG2_BIT36) != 0) {
             func_ov022_020acf14(pActor, pCombo->pLock->pRecord->nEntryFlags);

@@ -1,15 +1,15 @@
 /*
- * Ov002_PanelStepCursorBack - move the panel cursor back up one row, or refuse.
+ * Ov002_PanelCursorStepRight - move the panel cursor one step to the right (Right with X held),
+ * or refuse; the counterpart of Ov002_PanelCursorStepLeft.
  *
- * What "back up" means again depends on what the current mode classifies as.
- * From the top of the slot ring the cursor either goes to row 1, or, when the
- * first cell is empty, the move is refused with a buzz. From the top of the
- * grid it hands over to whichever list has entries. Inside the grid or either
- * list it just steps to the previous row, and the second list is offered as the
- * fallback when the first one has run out above.
+ * What the step means depends on what the current mode classifies as. From the slot ring the
+ * cursor goes to mode 1, or, when the first cell is empty, the move is refused with a buzz. From
+ * the grid it hands over to whichever list has entries (mode 4 for the first, 6 for the second).
+ * Inside the grid or either list it steps to the next mode while there is room, and the second
+ * list is offered when the first one has run out.
  *
- * Every path that does move asks for direction 2; the ones that cannot simply
- * return, which is why so many of the arms end in their own epilogue.
+ * Every path that does move asks for direction 2; the ones that cannot simply return, which is
+ * why so many of the arms end in their own epilogue.
  *
  * THUMB.
  */
@@ -34,7 +34,7 @@ extern int Ov002_CountPanelListEntries(void);
 extern int Ov002_CountSecondListEntries(void);
 extern void Ov002_HandlePanelInput(int nTarget, int nValue);
 
-void Ov002_Panel_HandleConfirm(void)
+void Ov002_PanelCursorStepRight(void)
 {
     Ov002PanelSession *s;
     int nRow;

@@ -6148,15 +6148,15 @@ src/engine/StoreToGlobalIndexedIfSet.c:
     complete
     .text       start:0x0202c1d8 end:0x0202c208
 
-src/engine/func_0202c208.c:
+src/engine/EntityMgr_RayCastWithParams.c:
     complete
     .text       start:0x0202c208 end:0x0202c228
 
-src/engine/func_0202c228.c:
+src/engine/EntityMgr_CastNearestWithParams.c:
     complete
     .text       start:0x0202c228 end:0x0202c248
 
-src/engine/func_0202c248.c:
+src/engine/EntityMgr_SphereCastWithParams.c:
     complete
     .text       start:0x0202c248 end:0x0202c268
 

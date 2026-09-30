@@ -1,7 +1,7 @@
 /* Drives the ov032 enemy's effect block state machine (and its byte-identical twins). A
  * running block whose owner (+0x22f8) is no longer busy goes idle. State 1 waits for the
  * +0x7b0 timer to reach 0x1d000, then restarts sequences 0, 2 and 1 from zero and advances
- * to 2; states 2 and 4 poll the block against the +0x2aba rate, 4 ending in state 5 once
+ * to 2; states 2 and 4 poll the block against the animation step (+0x2aba), 4 ending in state 5 once
  * the poll reports done. */
 
 #include "nitro/types.h"

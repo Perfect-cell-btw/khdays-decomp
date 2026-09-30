@@ -280,7 +280,7 @@ src/overlays/field/ov022_battle/Ov022_AcceptCandidate.c:
     complete
     .text       start:0x02085140 end:0x02085280
 
-src/overlays/field/ov022_battle/func_ov022_02085280.c:
+src/overlays/field/ov022_battle/Ov022_TryLockOn.c:
     complete
     .text       start:0x02085280 end:0x020852c0
 
@@ -2106,7 +2106,7 @@ src/overlays/field/ov022_battle/func_ov022_0209c9fc.c:
     complete
     .text       start:0x0209c9fc end:0x0209ca88
 
-src/overlays/field/ov022_battle/func_ov022_0209ca88.c:
+src/overlays/field/ov022_battle/Ov022_StepScaledAnimTracks.c:
     complete
     .text       start:0x0209ca88 end:0x0209cac0
 
@@ -2618,7 +2618,7 @@ src/overlays/field/ov022_battle/Ov022_ApplyDamageAndFlagHit.c:
     complete
     .text       start:0x020ace24 end:0x020acebc
 
-src/overlays/field/ov022_battle/func_ov022_020acebc.c:
+src/overlays/field/ov022_battle/Ov022_SetAnimSpeed.c:
     complete
     .text       start:0x020acebc end:0x020acf14
 

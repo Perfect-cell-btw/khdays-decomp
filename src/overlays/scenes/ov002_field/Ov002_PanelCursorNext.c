@@ -1,6 +1,6 @@
-/* Play the panel's confirm feedback, but only once the transition has finished
- * AND the panel actually has a target at +0x1a8 -- the two guards share one
- * predicated chain in the ROM. Ov002_PanelAdvanceCursor has the final say. */
+/* Moves the command deck's cursor one step forward (Ov002_PanelAdvanceCursor) once the panel's
+ * transition has finished and it has a target (+0x1a8), with the cursor sound when it moved.
+ * Down with X held calls it (Ov022_UpdateCommandInput), and X alone with Config option 6 = 1. */
 
 #include "game/engine.h"
 
@@ -14,7 +14,7 @@ extern int Ov002_PanelAdvanceCursor(void);
 
 extern Ov002PanelContext *data_ov002_0207f614;
 
-void Ov002_PlayPanelConfirm(void) {
+void Ov002_PanelCursorNext(void) {
     Ov002PanelContext *ctx = data_ov002_0207f614;
 
     if (Ov002_GetPanelField018c() != 0 && ctx->pTarget != 0) {

@@ -138,7 +138,7 @@ struct Actor {
     u8 pad2688[0x2c];
     void *hShadow;               /* 0x26b4 */
     u8 pad26b8[0x402];
-    short nAreaFrame;            /* 0x2aba */
+    short nAnimStep;            /* 0x2aba */
     int nAimAngle;               /* 0x2abc */
     u8 pad2ac0[0xf0];
     u8 nAimSlot;                 /* 0x2bb0 */
@@ -162,8 +162,8 @@ struct Actor {
 #define TURN_FAST 0x4cd
 #define TURN_SLOW 0x333
 #define BODY_REACH 0x900
-#define AREA_FRAME_ALT 0x1800
-#define AREA_FRAME 0x1000
+#define ANIM_STEP_20FPS 0x1800
+#define ANIM_STEP_30FPS 0x1000
 #define RULE_RATE 0x4c
 #define RATE_UNIT 0x555
 #define SUB_RATE_SLOW 0x3000
@@ -251,7 +251,7 @@ void Ov022_InitActor(struct Actor *pActor)
     pActor->nSpare694 = 0;
     pActor->nBodyReach = BODY_REACH;
     pActor->pCurAnim = 0;
-    pActor->nAreaFrame = GetFrameRateMode() == 1 ? AREA_FRAME_ALT : AREA_FRAME;
+    pActor->nAnimStep = GetFrameRateMode() == 1 ? ANIM_STEP_20FPS : ANIM_STEP_30FPS;
     pActor->nAimAngle = -1;
     pActor->nField4e4 = 0xffff;
     func_ov022_02097ff0(pActor);

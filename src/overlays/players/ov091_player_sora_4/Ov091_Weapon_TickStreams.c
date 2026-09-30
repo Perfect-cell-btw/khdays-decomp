@@ -18,7 +18,7 @@ struct Runtime {
     u8 padf14[0x1730];
     struct StreamGroup *groups2644;
     u8 pad2648[0x472];
-    short row2aba;
+    short nAnimStep;
     u8 pad2abc[0x194];
     struct Scroll scroll2c50;
 };
@@ -37,7 +37,7 @@ int Ov091_Weapon_TickStreams(struct Runtime *self)
 {
     struct Runtime *base = data_ov091_020bc240;
     int row = Anim_GetFrame(&self->part20->flags, 0);
-    Ov002_WidgetScrollCommit(&self->widgetf0c, &base->scroll2c50, self->row2aba, row);
+    Ov002_WidgetScrollCommit(&self->widgetf0c, &base->scroll2c50, self->nAnimStep, row);
     if (LoadGlobalU16At0() != 0x2a) {
         int i;
         for (i = 0; i < 2; i++) {

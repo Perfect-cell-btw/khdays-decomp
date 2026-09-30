@@ -1,7 +1,7 @@
 /* Hover step of the ov045 enemy (x4: ov045/064/083/100): on the local player both 64-bit flag
  * words at +0x464 and +0x46c get bit 16; a zero motion sample is folded into the position at
  * +0x498 (in the air bit 7 of +0x24 is dropped, bit 46 raised and the vertical speed cleared);
- * the effect spawner runs with the heading at +0x2aba, the actor's hook decides bit 1 of +0x694
+ * the effect spawner runs with the animation step at +0x2aba, the actor's hook decides bit 1 of +0x694
  * (becoming active raises bit 49, shows the node and, for the local player, sets bit 1 of
  * +0x464), a hit (bit 1 of +0x18) latches the rig's +0x2f08 marker, and an active enemy with a
  * busy emitter and no marker either hands over to state 0x21 once (busy effect context, latched

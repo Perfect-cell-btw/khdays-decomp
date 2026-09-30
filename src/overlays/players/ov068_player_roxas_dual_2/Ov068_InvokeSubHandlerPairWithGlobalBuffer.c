@@ -1,5 +1,5 @@
 /* Calls two sub-handlers passing a shared buffer pointer (*globalData + 0xfc + 0x2c00) and the s16
- * field at this+0x2aba to the first, buffer only to the second. */
+ * animation step at this+0x2aba to the first, buffer only to the second. */
 
 extern int data_ov068_020b7500;
 extern void Ov068_StepEffectSlot();

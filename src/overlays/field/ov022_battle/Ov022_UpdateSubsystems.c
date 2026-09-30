@@ -61,7 +61,7 @@ struct Actor {
     u8 pad2289[0x6f];
     u8 chipBlk;                   /* 0x22f8 */
     u8 pad22f9[0x7c0];
-    short nAreaFrame;             /* 0x2aba */
+    short nAnimStep;             /* 0x2aba */
     u8 pad2abc[0x134];
     int nWrapA;                   /* 0x2bf0 */
     u8 pad2bf4[4];
@@ -190,7 +190,7 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
     }
     Ov022_StepReactionPhase(&pActor->reactionBlk);
     Ov022_StepSpinEffect(&pActor->reactBlk, &vecFacing, (u16)(pActor->pNode->nAngle - 0x8000),
-                         pActor->nHitReaction == 0x13, pActor->nAreaFrame);
+                         pActor->nHitReaction == 0x13, pActor->nAnimStep);
     if ((pActor->nFlags2 & (1ULL << 27)) != 0
         || (pActor->nFlags2 & (1ULL << 28)) != 0) {
         Ov022_ResetFields135_168_174(&pActor->reactBlk);
@@ -200,8 +200,8 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
         Ov022_StartSlotEffect(&pActor->slotBlk, &pActor->vecPos,
                               (u16)(pActor->pNode->nAngle - 0x8000), 0x1000);
     }
-    func_ov022_02092808(&pActor->slotBlk, pActor->nAreaFrame);
-    func_ov022_02094224(&pActor->timerBlk, &pActor->vecPos, pActor->nAreaFrame);
+    func_ov022_02092808(&pActor->slotBlk, pActor->nAnimStep);
+    func_ov022_02094224(&pActor->timerBlk, &pActor->vecPos, pActor->nAnimStep);
     nDelta = Ov022_GetGlobal34();
     Ov022_StepDustEmitter(&pActor->comboBlk, &pActor->vecPos, &vecFacing, nDelta,
                           pActor->nHitReaction, (u16)(pActor->pNode->nAngle - 0x8000),

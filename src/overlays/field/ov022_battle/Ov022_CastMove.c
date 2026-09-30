@@ -66,9 +66,9 @@ struct CollSurfaceAttr {
 
 struct ReactionCtx;
 
-extern struct Hit *func_0202c248(int nSlotIndex, struct CollCastParams *pQry);
-extern struct Hit *func_0202c208(int nSlotIndex, struct CollCastParams *pQry);
-extern struct Hit *func_0202c228(int nSlotIndex, struct CollCastParams *pQry);
+extern struct Hit *EntityMgr_SphereCastWithParams(int nSlotIndex, struct CollCastParams *pQry);
+extern struct Hit *EntityMgr_RayCastWithParams(int nSlotIndex, struct CollCastParams *pQry);
+extern struct Hit *EntityMgr_CastNearestWithParams(int nSlotIndex, struct CollCastParams *pQry);
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, int nTag);
 extern void VecFx32FromVecS16(void *pModel, u8 *pFace, VecFx32 *pOut);
 /* VEC_Normalize is VEC_Normalize and Vec3ScaleAddQ27 is Vec3ScaleAddQ27; both
@@ -96,7 +96,7 @@ int Ov022_CastMove(struct ReactionCtx *pCtx, struct MoveProbe *pProbe)
     qry.wDirIsUnit = 0;
     qry.pExtra = 0;
     qry.wFlagE = CAST_FLAGS;
-    pHit = func_0202c248((u16)pProbe->nSlotIndex, &qry);
+    pHit = EntityMgr_SphereCastWithParams((u16)pProbe->nSlotIndex, &qry);
     if (pHit != 0) {
         if (pHit->pState == 0) {
             for (i = 0; i < 4; i++) {
@@ -116,7 +116,7 @@ int Ov022_CastMove(struct ReactionCtx *pCtx, struct MoveProbe *pProbe)
     if (pHit == 0) {
         vecDir = pProbe->vecDir;
         vecDir.y = vecDir.y - pProbe->nDrop;
-        pHit = func_0202c208((u16)pProbe->nSlotIndex, &qry);
+        pHit = EntityMgr_RayCastWithParams((u16)pProbe->nSlotIndex, &qry);
         if (pHit != 0) {
             VecFx32FromVecS16(pHit->pModel, pHit->pInfo + 0x14, &vecNormal);
             VEC_Normalize(&vecNormal, &vecNormal);
@@ -139,7 +139,7 @@ int Ov022_CastMove(struct ReactionCtx *pCtx, struct MoveProbe *pProbe)
         vecDir.x = 0;
         vecDir.z = 0;
         vecDir.y = nDrop + pProbe->vecDir.y;
-        pHit = func_0202c228((u16)pProbe->nSlotIndex, &qry);
+        pHit = EntityMgr_CastNearestWithParams((u16)pProbe->nSlotIndex, &qry);
         if (pHit != 0) {
             nRet = 3;
             Vec3ScaleAddQ27(pHit->nNearestHit, &vecDir, &pProbe->vecPos,

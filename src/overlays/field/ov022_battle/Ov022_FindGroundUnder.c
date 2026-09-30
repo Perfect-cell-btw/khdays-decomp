@@ -43,7 +43,7 @@ struct Hit {
     int nNearestHit;             /* 0x0c */
 };
 
-extern struct Hit *func_0202c208(int nSlotIndex, struct CollCastParams *pQry);
+extern struct Hit *EntityMgr_RayCastWithParams(int nSlotIndex, struct CollCastParams *pQry);
 /* Vec3ScaleAddQ27 is Vec3ScaleAddQ27; it still carries its address name. */
 
 int Ov022_FindGroundUnder(int nSlotIndex, const VecFx32 *pvecPos,
@@ -67,7 +67,7 @@ int Ov022_FindGroundUnder(int nSlotIndex, const VecFx32 *pvecPos,
     qry.wDirIsUnit = 0;
     qry.wFlagE = CAST_FLAGS;
     qry.pExtra = 0;
-    pHit = func_0202c208((u16)nSlotIndex, &qry);
+    pHit = EntityMgr_RayCastWithParams((u16)nSlotIndex, &qry);
     if (pHit != 0) {
         if (pHit->pState != 0 && pHit->pState->pOwner->pElement == 0) {
             return 0;

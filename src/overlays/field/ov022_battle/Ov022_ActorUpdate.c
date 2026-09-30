@@ -100,7 +100,7 @@ struct Actor {
 extern u8 data_0204be04;
 
 extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
-extern void func_ov022_0209ca88(struct Actor *pActor);
+extern void Ov022_StepScaledAnimTracks(struct Actor *pActor);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_IsInputAllowedForActiveSlot(void);
 extern void Ov022_UpdateCommandInput(struct Actor *pActor);
@@ -156,7 +156,7 @@ void Ov022_ActorUpdate(struct Actor *pActor)
     pActor->nField47b = 0;
     func_ov022_020ad44c(&vecFacing, pActor);
     VEC_COPY(&pActor->vecFacing, &vecFacing);
-    func_ov022_0209ca88(pActor);
+    Ov022_StepScaledAnimTracks(pActor);
 
     if (((pActor->nFlags & (1ULL << 33)) != 0 || (pActor->nFlags & (1ULL << 28)) != 0)
         && Session_GetLocalPlayerIndex() == 0) {

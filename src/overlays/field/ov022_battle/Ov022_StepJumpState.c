@@ -133,7 +133,7 @@ struct Actor {
     u8 pad07b5[0x9d7];
     u8 blkFollow;                /* 0x118c */
     u8 pad118d[0x192d];
-    short nAreaFrame;            /* 0x2aba */
+    short nAnimStep;            /* 0x2aba */
     int nAimAngle;               /* 0x2abc */
     u8 pad2ac0[0xf0];
     struct AimState aim;         /* 0x2bb0 */
@@ -315,12 +315,12 @@ int Ov022_StepJumpState(struct Actor *pActor)
             }
         }
         if (pActor->nRecoil < 0) {
-            pAim->nAirTimer -= pActor->nAreaFrame;
+            pAim->nAirTimer -= pActor->nAnimStep;
             pAim->nAimMode = 2;
         }
     case 2:
         if (pAim->nAimMode == 2) {
-            pAim->nAirTimer += pActor->nAreaFrame;
+            pAim->nAirTimer += pActor->nAnimStep;
         }
         if (pActor->nRecoil < RECOIL_FLOOR) {
             pActor->nRecoil = RECOIL_FLOOR;
@@ -389,7 +389,7 @@ int Ov022_StepJumpState(struct Actor *pActor)
                 }
             }
             if (bOnFloor) {
-                pAim->nLandTimer += pActor->nAreaFrame;
+                pAim->nLandTimer += pActor->nAnimStep;
                 if (pAim->nLandTimer >= LAND_TIME) {
                     nRet = Ov022_ActorSetState(pActor, STATE_END);
                     if (nRet != 0) {

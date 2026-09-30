@@ -26,7 +26,7 @@ struct Actor {
     u8 pad046c[0x250];
     int nReaction;               /* 0x06bc */
     u8 pad06c0[0x23fa];
-    short nStep;                 /* 0x2aba */
+    short nAnimStep;             /* 0x2aba */
 };
 
 struct Request {
@@ -71,7 +71,7 @@ void Ov022_StepReactionPhase(struct Request *pReq)
     pAnim = pReq->aAnims;
     do {
         if ((pReq->nKindMask & (1 << i)) != 0) {
-            if (Sequence_UpdateTracks(pAnim, pActor->nStep) == 0) {
+            if (Sequence_UpdateTracks(pAnim, pActor->nAnimStep) == 0) {
                 bAllDone = 0;
             } else {
                 pReq->nKindMask &= ~(1 << i);
@@ -94,7 +94,7 @@ void Ov022_StepReactionPhase(struct Request *pReq)
         break;
     case 2:
         bFire = 0;
-        *(int *)((u8 *)pReq + 0x4d0) += pActor->nStep;
+        *(int *)((u8 *)pReq + 0x4d0) += pActor->nAnimStep;
         if (pReq->nKind < 0xc) {
             if (bAllDone != 0) {
                 bFire = (pReq->nFlags & 0x10) != 0;

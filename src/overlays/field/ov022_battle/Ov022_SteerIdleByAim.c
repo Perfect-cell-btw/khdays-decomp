@@ -112,7 +112,7 @@ extern int Ov022_ActorSetState(struct Actor *pActor, int nState);              /
 extern int Slot_EvalPackedParam(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int Ov022_ClampAngleTowardTarget(struct Actor *pActor, u32 nAngle);               /* Ov022_ClampAngleTowardTarget */
 extern int Ov022_ResetTimersAndMaybeSignal(struct Actor *pActor, int bSignal);              /* Ov022_ResetTimersAndMaybeSignal */
-extern void func_ov022_020acebc(struct Actor *pActor, int nScale);              /* ConfigFlag40AndScale */
+extern void Ov022_SetAnimSpeed(struct Actor *pActor, int nScale);              /* ConfigFlag40AndScale */
 extern int Ov022_StepGlideState(struct Actor *pActor);                           /* the held-end state step */
 
 static inline int FxMul(int nValue, int nScale)
@@ -223,7 +223,7 @@ int Ov022_SteerIdleByAim(struct Actor *pActor, int nAimAngle)
                 if (nScale > 0) {
                     nRate = nScale;
                 }
-                func_ov022_020acebc(pActor, (short)nRate);
+                Ov022_SetAnimSpeed(pActor, (short)nRate);
                 if ((pActor->nFlags & FLAG_BIT61) != 0) {
                     pActor->pfnPreDraw(pActor, 0);
                 } else {
@@ -240,7 +240,7 @@ int Ov022_SteerIdleByAim(struct Actor *pActor, int nAimAngle)
             pActor->nStepRate = 0;
             pActor->nHoldTimer += data_ov022_020b2eb0 ? HOLD_GROW_FAST : HOLD_GROW_SLOW;
             if (pActor->nHoldTimer > HOLD_LIMIT) {
-                func_ov022_020acebc(pActor, 0x1000);
+                Ov022_SetAnimSpeed(pActor, 0x1000);
                 if ((pActor->nFlags & FLAG_BIT36) != 0 && (pActor->nFlags2 & FLAG2_BIT7) != 0) {
                     pActor->pfnPreDraw(pActor, PREDRAW_HELD);
                     nRet = (int)Ov022_StepGlideState;

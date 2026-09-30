@@ -36,7 +36,7 @@ typedef struct Ov002SpotStage {
 extern Ov002SpotStage *data_ov002_0207fa28[];
 
 extern int Ov002_GetCtxTableByte(int nSlot);
-extern void *func_0202c208(int nId, CollCastParams *pParams);
+extern void *EntityMgr_RayCastWithParams(int nId, CollCastParams *pParams);
 extern void ScaleVec3Fixed27(void *pObject, VecFx32 *pOut, VecFx32 *pIn);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void Ov002_SpawnSpot(int nRow, int nColumn, int nId, int nSlot,
@@ -69,13 +69,13 @@ void Ov002_PlaceSlotMarkerOnGround(Ov002PieceElement *pSlot)
     vDown.y = -0x64000;
     params.direction = &vDown;
 
-    pHit = func_0202c208((u16)nId, &params);
+    pHit = EntityMgr_RayCastWithParams((u16)nId, &params);
     if (pHit != 0) {
         ScaleVec3Fixed27(*(void **)((char *)pHit + 0xc), &vDown, &vDown);
         vDown.y += 0x1000;
         /* Written as a mask where another call truncates with a cast: mwcc would otherwise compute the
          * truncation once and keep it, while the ROM truncates again at each call. */
-        if (func_0202c208(nId & 0xffff, &params) == 0) {
+        if (EntityMgr_RayCastWithParams(nId & 0xffff, &params) == 0) {
             VEC_Add(&vDown, &data_ov002_0207fa28[1]->aSpots[pSlot->nRow],
                     &vAt);
         } else {

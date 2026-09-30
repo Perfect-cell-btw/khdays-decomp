@@ -1,5 +1,5 @@
 /* Attack burst of the mission enemy: the owner block's +0x124 timer accumulates the actor's
- * +0x2aba rate and fires every 0x15000. The anchor is sampled, raised 0x800 and the emitter
+ * animation step (+0x2aba) and fires every 0x15000. The anchor is sampled, raised 0x800 and the emitter
  * pointed backwards along the heading (kind 0x2333, range 0x1000, no anchor); the burst takes
  * spin 0x1900, flags 0x205, the fixed 0xa00/0x66/0xa00 extent and no second block. A successful
  * submit that is not busy spawns effect 0xc4 (arg 2) at +0x26c8. */

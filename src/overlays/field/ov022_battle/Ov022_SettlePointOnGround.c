@@ -52,8 +52,8 @@ struct ReactionCtx {
     struct Actor *pActor;            /* 0x58 */
 };
 
-extern struct Hit *func_0202c248(int nGroup, struct CollCastParams *pCast);
-extern struct Hit *func_0202c208(int nGroup, struct CollCastParams *pCast);
+extern struct Hit *EntityMgr_SphereCastWithParams(int nGroup, struct CollCastParams *pCast);
+extern struct Hit *EntityMgr_RayCastWithParams(int nGroup, struct CollCastParams *pCast);
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, unsigned int nSlot);
 extern void Vec3ScaleAddQ27(int nScale, VecFx32 *pDir, VecFx32 *pBase,
                           VecFx32 *pOut);
@@ -86,7 +86,7 @@ void Ov022_SettlePointOnGround(VecFx32 *pOut, struct ReactionCtx *pCtx,
     cast.wDirIsUnit = 0;
     cast.pExtra = pActor->pNode;
     cast.nRadius = nRadius;
-    pHit = func_0202c248((u16)nGroup, &cast);
+    pHit = EntityMgr_SphereCastWithParams((u16)nGroup, &cast);
     if (pHit != 0) {
         nSlot = 0;
         do {
@@ -116,7 +116,7 @@ void Ov022_SettlePointOnGround(VecFx32 *pOut, struct ReactionCtx *pCtx,
     cast.pExtra = pActor->pNode;
     /* Written as a mask where another call truncates with a cast: mwcc would otherwise compute the
      * truncation once and keep it, while the ROM truncates again at each call. */
-    pHit = func_0202c208(nGroup & 0xffff, &cast);
+    pHit = EntityMgr_RayCastWithParams(nGroup & 0xffff, &cast);
     if (pHit != 0) {
         Vec3ScaleAddQ27(pHit->nNearestHit, &vecDrop, &vecAt, &vecAt);
     } else {

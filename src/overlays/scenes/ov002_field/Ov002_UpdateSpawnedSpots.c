@@ -75,8 +75,8 @@ extern void Ov002_PlaceSlotMarkerOnGround(Ov002Spawned *);
 extern Ov002Vec3 *Ov002_GetElementVelocity(Ov002PieceElement *);
 /* Defined taking argument 0 as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
-extern Hit *func_0202c208(u16, CollCastParams *);
-extern Hit *func_0202c248(u16, CollCastParams *);
+extern Hit *EntityMgr_RayCastWithParams(u16, CollCastParams *);
+extern Hit *EntityMgr_SphereCastWithParams(u16, CollCastParams *);
 static inline int MulRound(int a, int b) { return (int)(((s64)a * b + 0x800) >> 12); }
 static inline int Abs(int a) { return a < 0 ? -a : a; }
 
@@ -175,7 +175,7 @@ void Ov002_UpdateSpawnedSpots(void)
                     vDown.y = -0x4000;
                     params.pDir = &vDown;
                     params.pOrigin = &vOrigin;
-                    pHit = func_0202c208((u16)nSlot, &params);
+                    pHit = EntityMgr_RayCastWithParams((u16)nSlot, &params);
                     pRow->pGroundElement = 0;
                     if (pHit != 0) {
                         if (pHit->pState != 0 && (pElementResting = pHit->pState->pPassOwner->pElement) != 0) {
@@ -197,13 +197,13 @@ void Ov002_UpdateSpawnedSpots(void)
             params.pDir = &pRow->vVel;
             params.pOrigin = &vOrigin;
             params.nRadius = pRow->nSpeed + 0x100;
-            pHit = func_0202c208((u16)nSlot, &params);
+            pHit = EntityMgr_RayCastWithParams((u16)nSlot, &params);
             if (pHit != 0) {
                 pGroundState = pHit->pState;
                 pGroundInfo = pHit->pInfo;
                 nGroundFraction = pHit->nNearestHit;
             } else nGroundFraction = -1;
-            pHit = func_0202c248((u16)nSlot, &params);
+            pHit = EntityMgr_SphereCastWithParams((u16)nSlot, &params);
             if (pHit != 0) {
                 pWallInfo = pHit->pInfo;
                 nWallFraction = pHit->nNearestHit;
@@ -219,7 +219,7 @@ void Ov002_UpdateSpawnedSpots(void)
                     vDown.y = -0x4000;
                     params.pDir = &vDown;
                     params.pOrigin = &vOrigin;
-                    pHit = func_0202c208((u16)nSlot, &params);
+                    pHit = EntityMgr_RayCastWithParams((u16)nSlot, &params);
                     if (pHit != 0 && pHit->pState != 0 &&
                         (pElement = pHit->pState->pPassOwner->pElement) != 0 &&
                         pElement->pOwner->wClassFlags == 0x13) {

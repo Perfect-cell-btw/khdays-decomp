@@ -1,0 +1,11 @@
+# old_name	new_name	module  -- names the field's controls and runtime traces say otherwise
+Ov002_PlayPanelConfirm	Ov002_PanelCursorNext	ov002
+Ov002_PlayPanelCancel	Ov002_PanelCursorPrev	ov002
+Ov002_Panel_HandleConfirm	Ov002_PanelCursorStepRight	ov002
+Ov002_EnterArchiveScene	Ov002_Camera_LeaveLookView	ov002
+func_ov022_02085280	Ov022_TryLockOn	ov022
+func_ov022_020acebc	Ov022_SetAnimSpeed	ov022
+func_ov022_0209ca88	Ov022_StepScaledAnimTracks	ov022
+func_0202c208	EntityMgr_RayCastWithParams	main
+func_0202c228	EntityMgr_CastNearestWithParams	main
+func_0202c248	EntityMgr_SphereCastWithParams	main

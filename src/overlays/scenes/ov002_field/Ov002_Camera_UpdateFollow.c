@@ -71,7 +71,7 @@ extern short Session_GetLocalPlayerIndex(void);
 extern int GetFrameRateMode(void);
 extern unsigned long long Ov022_GetStreamTimestamp(uint);
 extern void Ov002_ClearPendingOnBoot(void);
-extern void Ov002_EnterArchiveScene(void);
+extern void Ov002_Camera_LeaveLookView(void);
 extern short LoadGlobalU16At0(void);
 extern ushort *Ov002_ResolveRequestUnlessKind2a(ushort *);
 extern int FX_Div(int,int);
@@ -229,7 +229,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
     bVar22 = true;
   }
   if (bVar22) {
-    Ov002_EnterArchiveScene();
+    Ov002_Camera_LeaveLookView();
   }
   if ((piVar7[0xe] & 0x2000U) == 0)
     goto request_input;
@@ -570,7 +570,7 @@ LAB_arm9_ov002__0204d9ac:
       piVar7[0xe] = piVar7[0xe] | 0x400;
     }
     else {
-      Ov002_EnterArchiveScene();
+      Ov002_Camera_LeaveLookView();
     }
   }
   if ((piVar7[0xe] & 0x800U) != 0) {

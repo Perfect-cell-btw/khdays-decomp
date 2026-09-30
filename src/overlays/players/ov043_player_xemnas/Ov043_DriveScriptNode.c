@@ -1,7 +1,7 @@
 /* Drives the mission enemy's +0x2c2c script node from the model's track-0 frame. Mode 0x11
  * (windup) marks the node live, clears its held bit, binds channel 2 to the +0xe0 table and
  * winds it to the frame, then pins the node to the actor's position and heading. Mode 0x12
- * (release) marks it live, drops the held bit once the +0x7b0 timer reaches the +0x2aba rate,
+ * (release) marks it live, drops the held bit once the +0x7b0 timer reaches the animation step (+0x2aba),
  * re-pins the node while unheld (raising the held bit), binds channel 2 in mode 1, winds it and
  * latches bit 0 once the frame passes 0xc000. Whenever the node is live it is re-registered
  * for a flagged actor (+0x694 bit 0), and outside those two modes it is stepped at 0x1800

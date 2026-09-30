@@ -130,7 +130,7 @@ struct Actor {
     int nCenterY;                /* 0x26ac */
     int nClimbReach;             /* 0x26b0 */
     u8 pad26b4[0x406];
-    short nAreaFrame;            /* 0x2aba */
+    short nAnimStep;            /* 0x2aba */
 };
 
 #define CLIMB_READY 0xf000
@@ -173,8 +173,8 @@ extern struct Hit *Ov022_FindGroundUnder(int nSlot, VecFx32 *pPos, VecFx32 *pOut
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, int nTag);
 extern void MTX_RotY33_(MtxFx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(VecFx32 *pVec, MtxFx33 *pMtx, VecFx32 *pOut);
-extern struct Hit *func_0202c248(int nSlot, struct CollCastParams *pParams);    /* CollCast (sphere) */
-extern struct Hit *func_0202c208(int nSlot, struct CollCastParams *pParams);    /* CollCast (ray) */
+extern struct Hit *EntityMgr_SphereCastWithParams(int nSlot, struct CollCastParams *pParams);    /* CollCast (sphere) */
+extern struct Hit *EntityMgr_RayCastWithParams(int nSlot, struct CollCastParams *pParams);    /* CollCast (ray) */
 extern short FX_Atan2(int y, int x);
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 
@@ -220,7 +220,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
     short nCosC;
 
     if (pActor->ground.nStepScratch < CLIMB_READY) {
-        pActor->ground.nStepScratch += pActor->nAreaFrame;
+        pActor->ground.nStepScratch += pActor->nAnimStep;
         return 0;
     }
     if (pActor->nSlotIndex < 0) {
@@ -345,7 +345,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
             }
             MTX_MultVec33(&vecClimb, &mtx, &vecRot);
             ScaleVec3Fx12(PROBE_RADIUS, &vecRot, &vecRot);
-            if (func_0202c248((u16)pActor->nSlotIndex, &params) != 0) {
+            if (EntityMgr_SphereCastWithParams((u16)pActor->nSlotIndex, &params) != 0) {
                 apHit[0] = 0;
                 break;
             }
@@ -376,7 +376,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
         params.wFlagE = 0;
         params.pExtra = 0;
         params.wDirIsUnit = 1;
-        pHit = func_0202c208((u16)pActor->nSlotIndex, &params);
+        pHit = EntityMgr_RayCastWithParams((u16)pActor->nSlotIndex, &params);
         if (pHit != 0) {
             nTop = vecTo.y + pActor->nCenterY;
             Vec3ScaleAddQ27(pHit->nNearestHit, &vecDown, &vecTo, &vecHit);

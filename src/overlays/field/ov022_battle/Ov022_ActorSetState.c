@@ -41,7 +41,7 @@ extern const struct Vec3 data_02041dc8;
 extern int func_ov022_020a37d0(void);
 
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(u32 *pActor);
-extern void func_ov022_020acebc(int pActor, int nScale);
+extern void Ov022_SetAnimSpeed(int pActor, int nScale);
 extern void SceneNode_Disable(u16 *pFlags);
 extern int Ov022_EnterActorState(u32 *pActor, int nState, u32 nPrev);
 
@@ -74,7 +74,7 @@ int Ov022_ActorSetState(u32 *pActor, int nState)
     pSelf->nField64 = 0x666;
 
     Ov022_FillEightHalvesMinus1At0x2bd4(pActor);
-    func_ov022_020acebc((int)pActor, 0x1000);
+    Ov022_SetAnimSpeed((int)pActor, 0x1000);
 
     pSelf->nFlags &= ~(1ULL << 1);
     pSelf->nFlags &= ~(1ULL << 20);

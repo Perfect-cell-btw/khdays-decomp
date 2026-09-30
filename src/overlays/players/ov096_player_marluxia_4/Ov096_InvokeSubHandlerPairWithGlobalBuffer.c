@@ -1,5 +1,5 @@
 /* Calls two sub-handlers passing a shared buffer pointer (*data_ov096_020bc0c0 + 0xc50 + 0x2000)
- * and the s16 field at this+0x2aba to the first, buffer only to the second. */
+ * and the animation step at this+0x2aba to the first, buffer only to the second. */
 
 extern char *data_ov096_020bc0c0;
 extern void Ov096_ForwardToThreeSubHandlers(void *a, void *arg1, int arg2);

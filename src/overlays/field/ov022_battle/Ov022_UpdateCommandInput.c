@@ -87,13 +87,13 @@ extern int Ov002_IsMissionClearFinished(int nWhich);
 extern void Ov002_Hud_ActivatePanelSlot(void);
 extern void Ov002_RequestCrawlSkip(void);
 extern int Ov002_AcceptRequestAndNotify(int nWhich);
-extern void Ov002_PlayPanelConfirm(void);
+extern void Ov002_PanelCursorNext(void);
 extern int func_ov022_02083f0c(void);
 extern int Ov002_IsObjectFlag2000Set(int nSlot);
 extern unsigned short func_ov022_02088cdc(void);
-extern void Ov002_PlayPanelCancel(void);
+extern void Ov002_PanelCursorPrev(void);
 extern void Ov002_PanelCursorStepLeft(void);
-extern void Ov002_Panel_HandleConfirm(void);
+extern void Ov002_PanelCursorStepRight(void);
 extern unsigned short Ov002_GetPanelField01a4(void);
 extern u16 Ov002_Panel_GetSelectedCellArg(void);
 extern u16 Ov002_LookupRowLabel(void);
@@ -290,7 +290,7 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
             if (GameState_GetField(0x37c6, 1) != 0) {
                 if ((data_0204c190 & 0x400) != 0
                     && Ov002_Hud_IsPanelOpen() == 0 && bCommandChosen == 0) {
-                    Ov002_PlayPanelConfirm();
+                    Ov002_PanelCursorNext();
                 }
             } else {
                 nGlobal = func_ov022_02083f0c();
@@ -311,23 +311,23 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
                     } else if (pMenu[1] == 2 && bOk != 0) {
                         if ((func_ov022_02088cdc() & 0x80) != 0) {
                             pMenu[0] = 0;
-                            Ov002_PlayPanelConfirm();
+                            Ov002_PanelCursorNext();
                         } else if ((func_ov022_02088cdc() & 0x40) != 0) {
                             pMenu[0] = 0;
-                            Ov002_PlayPanelCancel();
+                            Ov002_PanelCursorPrev();
                         } else if ((data_0204c190 & 0x20) != 0) {
                             pMenu[0] = 0;
                             Ov002_PanelCursorStepLeft();
                         } else if ((data_0204c190 & 0x10) != 0) {
                             pMenu[0] = 0;
-                            Ov002_Panel_HandleConfirm();
+                            Ov002_PanelCursorStepRight();
                         }
                     }
                 } else {
                     pMenu[1] = 0;
                     if (pMenu[0] > 0) {
                         pMenu[0] = 0;
-                        Ov002_PlayPanelConfirm();
+                        Ov002_PanelCursorNext();
                     }
                 }
             }

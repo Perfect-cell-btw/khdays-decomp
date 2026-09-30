@@ -2,7 +2,7 @@
  * feeds the attachment with the current tick and steps it; when the attachment reports idle, the
  * two 64-bit flag words at +0x464 and +0x46c get bit 16 (each guarded by 02030788 being idle);
  * then the two secondary channels at +0xda8 (0x164 apart) are driven from their configs at
- * +0x2c54 (0x54 apart) with the heading at +0x2aba and the frame, and the common post-update
+ * +0x2c54 (0x54 apart) with the animation step at +0x2aba and the frame, and the common post-update
  * runs. */
 
 #include "game/engine.h"

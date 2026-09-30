@@ -1,5 +1,5 @@
 /* Calls two sub-handlers passing a shared buffer pointer (*globalData + 0xc50 + 0x2000) and the s16
- * field at this+0x2aba to the first, buffer only to the second. */
+ * animation step at this+0x2aba to the first, buffer only to the second. */
 
 extern int data_ov066_020b6b80;
 extern void Ov066_TickChargeState();

@@ -38,7 +38,7 @@ struct Actor {
     u8 nRumbleState;                 /* 0x2ab4 */
     u8 nRumbleRequest;               /* 0x2ab5 */
     u8 pad2ab6[4];
-    short nAreaFrame;                /* 0x2aba */
+    short nAnimStep;                /* 0x2aba */
 };
 
 /* One 0x30-byte slot of the status packet the gate receives each frame. */
@@ -51,7 +51,7 @@ struct StatusRecord {
     short nHitReaction;              /* 0x1c */
     short nAngleBias;                /* 0x1e */
     u16 nField20;                    /* 0x20 */
-    short nAreaFrame;                /* 0x22 */
+    short nAnimStep;                /* 0x22 */
     u16 nRefKind : 2;                /* 0x24 bits 0-1 */
     u16 nRefMode : 1;                /*      bit 2 */
     u16 nRefIndex : 5;               /*      bits 3-7 */
@@ -103,7 +103,7 @@ void Ov022_SendActorStatePacket(void)
             pRecord->nHitReaction = (short)pActor->nHitReaction;
             pRecord->nAngleBias = pActor->nAngleBias;
             pRecord->nField20 = Ov022_GetEntryField12(nOwner);
-            pRecord->nAreaFrame = pActor->nAreaFrame;
+            pRecord->nAnimStep = pActor->nAnimStep;
             pRecord->nRefKind = pActor->nRefKind;
             pRecord->nRefIndex = pActor->nRefIndex;
             pRecord->nRefId = pActor->nRefId;

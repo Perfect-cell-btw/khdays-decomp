@@ -2,7 +2,7 @@
  * flag words get bit 16, bit 7 of +0x24 is cleared and the +0x668 hook decides the fired bit
  * (bit 49, node shown, bit 1 of +0x464 on the local session). Once fired: with the +0x22f8
  * emitter idle the state becomes 0x23; otherwise the mission root's +0x2e80 turn accumulates the
- * +0x2aba rate, the +0x1a input's bit 5/4 steer the heading +-0xfff (resetting it), the node is
+ * animation step (+0x2aba), the +0x1a input's bit 5/4 steer the heading +-0xfff (resetting it), the node is
  * turned through 020ad4e8 unless locked and a +0x1c stick of 5/6 records the emitter's 95554
  * value in the root's +0x2e78 and goes to state 0x24; with nothing chosen an input carrying bit
  * 1 of +0x18 goes to 0x23. Without bit 2 of +0x24 the actor is marked unrestricted (bit 46) with
