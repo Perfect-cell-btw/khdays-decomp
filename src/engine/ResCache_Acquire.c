@@ -7,7 +7,7 @@ extern void *ResCache_FindSlot(int a, int b);
 extern int Loader_RequestFile(int a, int b);
 extern void strcpy(void *dst, int src);
 
-extern int data_0204bbfc[];
+extern int gFileLoader[];
 
 typedef struct {
     unsigned short s0;
@@ -26,11 +26,11 @@ int ResCache_Acquire(int a, Slot_0201f468 **out, int c) {
     if (p->s0 != 0) {
         p->s0++;
         *out = p;
-        data_0204bbfc[0x14 / 4] = 0;
+        gFileLoader[0x14 / 4] = 0;
         return 1;
     }
 
-    v = data_0204bbfc[0x14 / 4];
+    v = gFileLoader[0x14 / 4];
     if (v == 0) {
         v = Heap_GetCurrent();
     }

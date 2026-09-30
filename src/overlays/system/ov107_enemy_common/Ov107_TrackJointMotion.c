@@ -11,7 +11,7 @@ extern int func_02016320(void *pRenderObj, MtxFx43 *pos, void *nrm, u32 nodeID);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
 extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
-extern unsigned char data_0204c058;
+extern unsigned char gObjSystem;
 
 typedef struct {
     unsigned char bit0 : 1;
@@ -67,11 +67,11 @@ void Ov107_TrackJointMotion(char *self, int region)
             VEC_Subtract(&tmpPos, &node->f08, &node->f2c);
             node->f38 = VEC_Normalize(&node->f2c, &node->f14);
 
-            if (data_0204c058 == 1) {
+            if (gObjSystem == 1) {
                 node->f38 = (int)(((long long)node->f38 * 0xaaa + 0x800) >> 12);
                 ScaleVec3Fx12(node->f38, &node->f14, &node->f2c);
             } else if (LoadGlobalU16At0() != 0x2a) {
-                if (data_0204c058 == 2) {
+                if (gObjSystem == 2) {
                     node->f38 = node->f38 * 2;
                     ScaleVec3Fx12(node->f38, &node->f14, &node->f2c);
                 }

@@ -59,7 +59,7 @@ typedef struct GameState {
     u16 equippedItems[GRID_PAGES][PAGE_SLOTS];              /* 0x0ee0 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov008MenuContext *Ov025_GetPageA(void);                      /* Ov008_GetMenuContext */
 extern void Ov025_BuildActionPage(Ov008MenuContext *pCtx, int nMode);      /* enter a grid menu mode */
 extern void Ov025_ClearGridMenu(Ov008MenuContext *pCtx);                 /* Ov008_ClearGridMenu */
@@ -87,9 +87,9 @@ void Ov025_RunPendingGridAction(void)
             for (i = 0; i < PAGE_SLOTS; i++) {
                 pRecord = pCtx->apPageSlot[nPage][i];
                 if (pRecord != 0) {
-                    data_0204be18->aPresetItems[pCtx->nPreset][nPage][i] = pRecord->nItemId;
+                    gGameState->aPresetItems[pCtx->nPreset][nPage][i] = pRecord->nItemId;
                 } else {
-                    data_0204be18->aPresetItems[pCtx->nPreset][nPage][i] = 0;
+                    gGameState->aPresetItems[pCtx->nPreset][nPage][i] = 0;
                 }
             }
         }
@@ -99,7 +99,7 @@ void Ov025_RunPendingGridAction(void)
         break;
     case ACTION_LOAD_PRESET:
         Ov025_ClearGridMenu(pCtx);
-        MIi_CpuCopy16(data_0204be18->aPresetItems[pCtx->nPreset], data_0204be18->equippedItems, sizeof(data_0204be18->equippedItems));
+        MIi_CpuCopy16(gGameState->aPresetItems[pCtx->nPreset], gGameState->equippedItems, sizeof(gGameState->equippedItems));
         Ov025_LoadGridFromSave(pCtx);
         Ov025_ShowGridPage(pCtx, 0, 0);
         Ov025_BuildActionPage(pCtx, MODE_LOADED);

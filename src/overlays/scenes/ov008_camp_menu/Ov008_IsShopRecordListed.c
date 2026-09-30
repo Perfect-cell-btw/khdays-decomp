@@ -49,7 +49,7 @@ typedef struct GameState {
 
 extern const u16 data_ov008_0208ff78[];                                 /* day cap per shop page */
 extern Ov008ParamTable *data_ov008_02090fb0;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 
 int Ov008_IsShopRecordListed(Ov008ParamRecord *pRecord, int nSlot, int nCategory, u32 nIndex)
 {
@@ -87,7 +87,7 @@ int Ov008_IsShopRecordListed(Ov008ParamRecord *pRecord, int nSlot, int nCategory
         bOk = 1;
         nPrereq = pRecord->nPrereqSlot;
         if (nPrereq != NO_PREREQ
-            && data_0204be18->aLevel[nPrereq] < data_ov008_02090fb0->pShopRecords[nPrereq].nLevelReq) {
+            && gGameState->aLevel[nPrereq] < data_ov008_02090fb0->pShopRecords[nPrereq].nLevelReq) {
             bOk = 0;
         }
         if (bOk) {

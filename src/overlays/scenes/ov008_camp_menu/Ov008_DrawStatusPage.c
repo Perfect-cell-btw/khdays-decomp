@@ -2,7 +2,7 @@
  * Stats/status menu page render state. Draws six labelled stat fields (record indices 4,7,5,8,6,0xc
  * off ctx+0x58) into the ctx+0x118 layer, then pushes the numeric values through the variadic
  * setter Ov008_DrawPageBElement (ids 1, 9, 0xe, 0x10, 0x14, 0x12, 0x13, 0xf) sourced from the global
- * record at data_0204be18 and from game-state field 0x44e. When LoadGlobalShort (GetLanguage)
+ * record at gGameState and from game-state field 0x44e. When LoadGlobalShort (GetLanguage)
  * reports state 3 it briefly swaps ctx+0x138 around the fourth draw. A message-record scan
  * (MsgDb_FetchRecord / DispatchByNodeKind) over up to 99 entries computes a remaining count that feeds the
  * final eb64(0xf) call, then it builds the menu list and enqueues the five layer gfx commands.
@@ -13,7 +13,7 @@
 
 #include "nitro/types.h"
 
-extern char *data_0204be18;
+extern char *gGameState;
 
 extern int   Ov008_GetCtxBlock968c(void);
 extern int   Ov008_GetDescriptor3(void);
@@ -58,11 +58,11 @@ void Ov008_DrawStatusPage(int ctx)
 
     Ov008_DrawPageBElement(1, 0);
     Ov008_DrawPageBElement(9, 0, 0x64);
-    Ov008_DrawPageBElement(0xe, 0, *(int *)(data_0204be18 + 4));
+    Ov008_DrawPageBElement(0xe, 0, *(int *)(gGameState + 4));
     Ov008_DrawPageBElement(0x10, 0, 0);
     Ov008_DrawPageBElement(0x14, 0, 6);
-    Ov008_DrawPageBElement(0x12, 0, *(u16 *)(data_0204be18 + 0x196a),
-                        *(u16 *)(data_0204be18 + 0x1968));
+    Ov008_DrawPageBElement(0x12, 0, *(u16 *)(gGameState + 0x196a),
+                        *(u16 *)(gGameState + 0x1968));
     if (GameState_GetField(0x44e, 3) != 0)
         Ov008_DrawPageBElement(0x13, 0, GameState_GetField(0x44e, 3) + 0xe);
 
@@ -76,7 +76,7 @@ void Ov008_DrawStatusPage(int ctx)
             DispatchByNodeKind(&local_28);
             break;
         }
-        field4 = *(int *)(data_0204be18 + 4);
+        field4 = *(int *)(gGameState + 4);
         if ((unsigned)uVar7 > (unsigned)field4) {
             uVar9 = uVar7 - field4;
             DispatchByNodeKind(&local_28);
@@ -89,7 +89,7 @@ void Ov008_DrawStatusPage(int ctx)
     }
 
     Ov008_DrawPageBElement(0xf, 0, uVar9);
-    Ov008_BuildMenuList(data_0204be18 + 0xee0);
+    Ov008_BuildMenuList(gGameState + 0xee0);
     EnqueueObjGfxCommand(ctx + 0x64);
     EnqueueObjGfxCommand(ctx + 0xa0);
     EnqueueObjGfxCommand(ctx + 0xdc);

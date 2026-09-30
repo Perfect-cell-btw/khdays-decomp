@@ -3,7 +3,7 @@
  * a first open (+0xe8 clear, root state 1) outside mode bit 1 hands over to the overlay and sets
  * game field 0x2484. With data_0204c240 bit 2 outside mode bit 1 it only runs the pending-request
  * pair (PollAndLatchRequest / LatchPendingRequestOnce) when field 0x248f is set and nothing is open. Otherwise the
- * menu needs data_0204bd85 or field 0x20ef, an idle menu (PauseMenu_GetMode) and an expired timer
+ * menu needs gPauseAllowed or field 0x20ef, an idle menu (PauseMenu_GetMode) and an expired timer
  * (+0xc8, counted down here); it then reacts to B or a latched request (+0xd8): it is refused while
  * GetMasterBrightnessMain reports busy (unless mode 0xc without GetMasterBrightnessSub), in mode bit 1 without the
  * overlay's permission, and it only latches the request (+0xd8) in mode bit 3 with data_0204be04
@@ -32,9 +32,9 @@ typedef struct {
 
 extern Root0204be08 data_0204be08;
 extern u8 data_0204c240;
-extern u8 data_0204bd85;
+extern u8 gPauseAllowed;
 extern u8 data_0204be04;
-extern unsigned short data_0204c190;    /* keys pressed this frame */
+extern unsigned short gPadPressed;    /* keys pressed this frame */
 
 extern void Ov023_FlushTextBox(void);
 extern int Ov023_ScriptTestStatusBit3(void);
@@ -67,7 +67,7 @@ int PauseMenu_PollInput(void)
         }
         return 0;
     }
-    if (data_0204bd85 == 0 && GameState_IsFlagSet(0x20ef) == 0) {
+    if (gPauseAllowed == 0 && GameState_IsFlagSet(0x20ef) == 0) {
         return 0;
     }
     if (PauseMenu_GetMode() != 0) {
@@ -77,7 +77,7 @@ int PauseMenu_PollInput(void)
         ctx->timer--;
         return 0;
     }
-    if ((data_0204c190 & 8) || ctx->request != 0) {
+    if ((gPadPressed & 8) || ctx->request != 0) {
         if (GetMasterBrightnessMain() != 0 && (LoadGlobalU16At0() != 0xc || GetMasterBrightnessSub() != 0)) {
             return 0;
         }

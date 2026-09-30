@@ -81,6 +81,24 @@ def rename_in_indexes(mapping):
         json.dump(renamed, open(path, 'w'))
 
 
+def rename_in_data_receipts(mapping):
+    """build/data_receipts/<symbol>.json proves one DATA symbol and names it inside; a renamed data
+    symbol takes its receipt along (tools/refresh_data_receipts.py --fix then re-verifies the
+    source, whose hash the rename changed)."""
+    import json
+    folder = os.path.join(ROOT, 'build', 'data_receipts')
+    if not os.path.isdir(folder):
+        return
+    for old, new in mapping.items():
+        src = os.path.join(folder, old + '.json')
+        if not os.path.exists(src):
+            continue
+        receipt = json.load(open(src, encoding='utf-8'))
+        receipt['symbol'] = new
+        open(os.path.join(folder, new + '.json'), 'w', encoding='utf-8').write(json.dumps(receipt, indent=2) + '\n')
+        os.remove(src)
+
+
 def rename_in_report_asm(mapping, moves):
     """config/arm9/report_asm_matches.json keys its attested non-C sources by function name and
     records each one's path; carry both over (tools/verify_report_asm.py refreshes the hashes)."""
@@ -158,6 +176,7 @@ def main():
                 open(path, 'wb').write(new_text.encode('utf-8', 'surrogateescape'))
     if not args.dry_run:
         rename_in_indexes(mapping)
+        rename_in_data_receipts(mapping)
     print('renamed %d symbols, moved %d files, rewrote %d files%s'
           % (len(rows), len(moves), changed, ' (dry run)' if args.dry_run else ''))
 

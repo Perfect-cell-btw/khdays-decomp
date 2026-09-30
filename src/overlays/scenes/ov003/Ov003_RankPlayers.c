@@ -32,7 +32,7 @@ typedef struct {
 } Ov003UiState;
 
 extern Ov003SceneContext *data_ov003_0204f9a0;
-extern Ov003GameState *data_0204be18;
+extern Ov003GameState *gGameState;
 extern Ov003UiState data_0204c300;
 
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int nSize);
@@ -112,7 +112,7 @@ void Ov003_RankPlayers(void)
 
     nLocalPlayer = Session_GetLocalPlayerIndex();
     nGroup = data_ov003_0204f9a0->aRankGroups[nLocalPlayer];
-    pCounter = &data_0204be18->aRankCounters[data_ov003_0204f9a0->nPlayerCount - 2][nGroup];
+    pCounter = &gGameState->aRankCounters[data_ov003_0204f9a0->nPlayerCount - 2][nGroup];
     (*pCounter)++;
     if (*pCounter > 999) {
         *pCounter = 999;

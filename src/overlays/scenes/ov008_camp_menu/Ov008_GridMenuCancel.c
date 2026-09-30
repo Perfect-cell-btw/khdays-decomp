@@ -45,7 +45,7 @@ typedef struct Ov008MenuContext {
     int nSelectedRow;         /* 0x009c */
 } Ov008MenuContext;
 
-extern u16  data_0204c18c;                                                /* held keys */
+extern u16  gPadHeld;                                                /* held keys */
 extern int  Ov008_PlaceDraggedNode(Ov008MenuContext *pCtx, int nArg);        /* drop the dragged node */
 extern void Ov008_EnterMenuState(Ov008MenuContext *pCtx, int nState);      /* Ov008_EnterMenuState */
 extern int  Ov008_MoveGridCursor(Ov008MenuContext *pCtx, int nColumn, int nRow, int nStep); /* move the cursor */
@@ -58,7 +58,7 @@ void Ov008_GridMenuCancel(Ov008MenuContext *pCtx)
 {
     switch (pCtx->menuState) {
     case STATE_LIST:
-        if (data_0204c18c & KEY_A) {
+        if (gPadHeld & KEY_A) {
             if (Ov008_PlaceDraggedNode(pCtx, 1) != 0) {
                 if (pCtx->nHoldCount == 0) {
                     PlaySound(0, SOUND_DROP);
@@ -75,7 +75,7 @@ void Ov008_GridMenuCancel(Ov008MenuContext *pCtx)
         break;
     case STATE_GRID:
         if (pCtx->bHolding != 0) {
-            if (data_0204c18c & KEY_A) {
+            if (gPadHeld & KEY_A) {
                 if (Ov008_PlaceDraggedNode(pCtx, 1) != 0) {
                     if (pCtx->nHoldCount == 0) {
                         PlaySound(0, SOUND_DROP);
@@ -89,7 +89,7 @@ void Ov008_GridMenuCancel(Ov008MenuContext *pCtx)
                 pCtx->nBusyWord = 0;
                 Ov008_MoveGridCursor(pCtx, pCtx->nColumn, pCtx->nRowSel, 1);
             }
-        } else if (data_0204c18c & KEY_B) {
+        } else if (gPadHeld & KEY_B) {
             if (Ov008_RemoveGridNode(pCtx, pCtx->nVisiblePage, pCtx->nColumn, pCtx->nRowSel, 0) != 0) {
                 pCtx->bMoveArmed = 1;
                 PlaySound(0, SOUND_REMOVE);

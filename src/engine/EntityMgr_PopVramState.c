@@ -21,7 +21,7 @@ typedef struct S {
     unsigned char counter;              /* offset 0xa4d0 */
 } S;
 
-extern S *data_0204c208;
+extern S *gEntityMgr;
 
 void EntityMgr_PopVramState(void) {
     S *s;
@@ -30,7 +30,7 @@ void EntityMgr_PopVramState(void) {
     unsigned char flags;
     int new_counter;
 
-    s = data_0204c208;
+    s = gEntityMgr;
     if (s->counter == 0) {
         OS_Terminate();
     }

@@ -19,7 +19,7 @@ typedef struct Ov000ModeSelectContext {
 } Ov000ModeSelectContext;
 
 extern Ov000ModeSelectContext *data_ov000_0205ac28;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern void Ov000_DispatchLogoAction(int marker, int mode);
 extern u64 OS_GetTick(void);
@@ -51,7 +51,7 @@ void Ov000_NavigateModeSelect(void) {
         Ov000_DispatchLogoAction(1, data_ov000_0205ac28->activeMode);
         break;
     default:
-        switch (data_0204c190) {
+        switch (gPadPressed) {
         case 1:
             action = 3;
             PlaySound(0, 1);

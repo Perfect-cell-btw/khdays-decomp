@@ -1,7 +1,7 @@
 /* Ov008_BuildMenuList -- Ov008_BuildMenuList (144 B, 9 relocs).
  * Gated by data_ov008_02090f20: builds a display list on the stack (NNS_FndInitList, link offset
  * 0x28) and runs the begin/collect/finalize walker over it -- Ov008_BuildMenuGrid seeds it from
- * the game-state id table at data_0204be18+0xee0 into the work buffer, Ov008_RebuildViewAndCountCells and
+ * the game-state id table at gGameState+0xee0 into the work buffer, Ov008_RebuildViewAndCountCells and
  * Ov008_ReleaseHandleGridAndList collect, Ov008_RefreshEquipPanel applies the menu step, and
  * func_02053464 finalizes. The iterator (0x100 B), list (NNSFndList) and buffer (0x1e0 B) live in
  * one stack frame so their offsets (0x0/0xc/0x10c) match the original layout. */
@@ -22,7 +22,7 @@ typedef struct Ov008IterFrame {
 } Ov008IterFrame;
 
 extern int   data_ov008_02090f20;
-extern char *data_0204be18;
+extern char *gGameState;
 extern void  NNS_FndInitList(NNSFndList *list, int offset);
 extern void  Ov008_InitRecordContext(void *self, int a);
 extern void  Ov008_BuildMenuGrid(void *self, void *entries, NNSFndList *list, u16 *ids);
@@ -40,7 +40,7 @@ void Ov008_BuildMenuList(void)
     }
     NNS_FndInitList(&f.list, 0x28);
     Ov008_InitRecordContext(f.iter, 0);
-    Ov008_BuildMenuGrid(f.iter, f.buffer, &f.list, (u16 *)(data_0204be18 + 0xee0));
+    Ov008_BuildMenuGrid(f.iter, f.buffer, &f.list, (u16 *)(gGameState + 0xee0));
     Ov008_RebuildViewAndCountCells(f.iter, f.buffer, &f.list);
     Ov008_RefreshEquipPanel(f.iter);
     Ov008_ReleaseHandleGridAndList(f.iter, f.buffer, &f.list);

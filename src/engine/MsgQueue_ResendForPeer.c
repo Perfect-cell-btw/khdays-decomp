@@ -1,7 +1,7 @@
 /*
  * MsgQueue_ResendForPeer - re-queue every pending send slot owned by peer `param_1`.
  *
- * The send pool (base = *data_0204c230) keeps a 32-bit free-slot bitmask at +0xc
+ * The send pool (base = *gMsgQueue) keeps a 32-bit free-slot bitmask at +0xc
  * (SET bit = free, bit 31 = slot 0), 6-byte slot entries at +0x10 (u16 handle,
  * u16 size, u8 type, u8 peer) and a per-slot state block at +0xd0, stride 0x34.
  *
@@ -20,7 +20,7 @@
 
 static inline unsigned int Clz(unsigned int x) { asm { clz x, x } return x; }
 
-extern int *data_0204c230;
+extern int *gMsgQueue;
 
 typedef struct {
     unsigned char state:2, lpi:3, top:3;
@@ -30,7 +30,7 @@ typedef struct {
 
 void MsgQueue_ResendForPeer(int param_1)
 {
-    int *base = data_0204c230;
+    int *base = gMsgQueue;
     unsigned char *states;
     unsigned char *entries;
     unsigned char *entry;

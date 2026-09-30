@@ -27,9 +27,9 @@ extern MissionMenuRow data_ov006_020561d0;
 extern u32 data_ov006_020563f8[6];
 extern int data_ov006_02056410[2][12];
 extern MissionGridPosition data_ov006_02056470[6];
-extern u16 data_0204c18c;
+extern u16 gPadHeld;
 extern MissionMenuContext *data_ov006_02056660;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern u16 Ov006_MissionGetCursorEntry(void);
 extern int Ov006_ResolveMissionSelection(int selection);
@@ -86,7 +86,7 @@ int Ov006_UpdateMissionMemberSelectionInput(
     } while (i < 6);
 
     if (members[selectionIndex].flags3 == 0) {
-        directionInput = data_0204c18c;
+        directionInput = gPadHeld;
         if ((directionInput & 0x40) != 0) {
             directionInput = Mem_ReadU16(data_ov006_02056660->inputHeader);
             if ((directionInput & 0x40) != 0) {
@@ -110,10 +110,10 @@ int Ov006_UpdateMissionMemberSelectionInput(
         }
     }
 
-    if ((data_0204c190 & 2) != 0) {
+    if ((gPadPressed & 2) != 0) {
         action = 5;
     }
-    if ((data_0204c190 & 1) != 0) {
+    if ((gPadPressed & 1) != 0) {
         action = 4;
     }
 

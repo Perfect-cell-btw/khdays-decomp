@@ -37,8 +37,8 @@ typedef struct GameState {
 } GameState;
 
 extern char *data_ov008_02090fac;
-extern u16 data_0204c190;                                              /* pressed keys */
-extern GameState *data_0204be18;
+extern u16 gPadPressed;                                              /* pressed keys */
+extern GameState *gGameState;
 
 extern void KeyRepeat_Step(u16 *pWord);
 extern void Ov008_UpdateTouchState(void);                                 /* Ov008_UpdateTouchState */
@@ -62,13 +62,13 @@ void *Ov008_ShopConfirmPurchase(void)
     KeyRepeat_Step((u16 *)(ctx + 0xc0fc));
     Ov008_UpdateTouchState();
     Mem_ReadU16((u16 *)(ctx + 0xc0fc));
-    if ((data_0204c190 & KEY_CONFIRM_MASK) != 0 || *(int *)(ctx + 0xc118) != 0) {
+    if ((gPadPressed & KEY_CONFIRM_MASK) != 0 || *(int *)(ctx + 0xc118) != 0) {
         PlaySound(0, 0);
         pRecord = pDetail->pRecord;
         pNext = (void *)Ov008_CommitSelection;
         if (pRecord->pItemDef != 0) {
             nItemId = pRecord->pItemDef->nItemId;
-            pState = data_0204be18;
+            pState = gGameState;
             if (pState->aItemCount[nItemId] < Ov008_PanelAlpha(pRecord)) {
                 pState->aItemCount[nItemId]++;
             }

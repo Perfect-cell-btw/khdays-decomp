@@ -25,7 +25,7 @@ typedef struct Ov009SaveContext {
     Ov009GameState snapshot;
 } Ov009SaveContext;
 
-extern Ov009GameState *volatile data_0204be18;
+extern Ov009GameState *volatile gGameState;
 
 extern void Ov009_GetContext(void);
 extern long long OS_GetTick(void);
@@ -54,7 +54,7 @@ void Ov009_TickSaveCommitState(Ov009SaveContext *ctx)
             long long elapsed =
                 OS_GetTick() - Ov009_GetLatchedTick();
             Ov009_RenderTimeDigits(
-                (u32)(data_0204be18->value0 +
+                (u32)(gGameState->value0 +
                       func_02020368(elapsed << 6, 0x1ff6210, 0)));
         }
         break;
@@ -67,7 +67,7 @@ void Ov009_TickSaveCommitState(Ov009SaveContext *ctx)
             int result = Ov009_PollSaveTransfer(ctx);
 
             if (result == 0) {
-                MI_CpuCopy8(data_0204be18, &ctx->snapshot,
+                MI_CpuCopy8(gGameState, &ctx->snapshot,
                             sizeof(Ov009GameState));
                 ctx->slotPhase = 0;
                 ctx->state = 3;
@@ -81,7 +81,7 @@ void Ov009_TickSaveCommitState(Ov009SaveContext *ctx)
 
     case 3:
         if (Ov009_TickSaveSlotPrep(ctx, ctx->variant) == 2) {
-            MI_CpuCopy8(&ctx->snapshot, data_0204be18,
+            MI_CpuCopy8(&ctx->snapshot, gGameState,
                         sizeof(Ov009GameState));
             Ov009_SaveMenu_RefreshRows(ctx);
             Ov009_SaveMenu_UpdateNumbers(ctx);

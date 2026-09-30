@@ -39,8 +39,8 @@ typedef struct Ov022Root {
 } Ov022Root;
 
 extern char data_ov022_020b2e78[];
-extern unsigned short data_0204c190;
-extern unsigned short data_0204c18c;
+extern unsigned short gPadPressed;
+extern unsigned short gPadHeld;
 
 extern int Ov002_PollSession(void);
 extern int func_ov022_02083f0c(void);
@@ -108,7 +108,7 @@ void Ov022_StepPrimaryNodeTarget(int unused)
     }
     Ov022_TickSubObjectChain(node);
     Ov022_MarshalEntrySnapshot(1);
-    root->savedMask0 = data_0204c190;
-    root->savedMask1 = data_0204c18c;
+    root->savedMask0 = gPadPressed;
+    root->savedMask1 = gPadHeld;
 }
 

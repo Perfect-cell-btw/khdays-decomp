@@ -26,7 +26,7 @@ typedef struct {
 } Ov002HudScene;
 
 extern int data_ov002_0207f628;
-extern int data_0204c058;
+extern int gObjSystem;
 
 extern long long Math_DivMod(int nNumer, int nDenom);
 
@@ -55,7 +55,7 @@ void Ov002_SceneStepPanelHud(void)
     }
 
     if (s->bHudHeld != 0) {
-        switch (*(unsigned char *)&data_0204c058) {
+        switch (*(unsigned char *)&gObjSystem) {
         case 0:
             nFps = 0x1e;
             break;

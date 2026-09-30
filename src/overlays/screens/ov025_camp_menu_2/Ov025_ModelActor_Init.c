@@ -61,7 +61,7 @@ extern u32   NNS_G3dGetResDictIdxByName(void *pDictionary, const void *pszName);
 extern void  Ov025_ClearBytes01AndWord160(void *pPanel);                     /* clear the panel header */
 extern void  Ov025_Menu_InitPanelSubObject(u8 *pPanel, void *pResBase, int nSubId, int nSceneId, u32 nCharFlags, int nSlot); /* Ov008_Menu_InitPanelSubObject */
 extern void  Ov025_BuildPanelIdSummary(void *pPanel, void *pSummary, int nSrc); /* build the panel-id summary */
-extern u8    data_0204c678[];                                       /* kOv022KindRecords: byte 4 = the character kind */
+extern u8    gPartyMembers[];                                       /* kOv022KindRecords: byte 4 = the character kind */
 extern const char data_ov025_020b4c60[];                            /* "ro" */
 extern const char data_ov025_020b4c64[];                            /* "ba/ch/%s/def_hb.p.z" */
 extern const char data_ov025_020b4c78[];                            /* "ba/ch/%s/def.p.z" */
@@ -107,7 +107,7 @@ void Ov025_ModelActor_Init(Ov025ModelActor *pActor, Ov025ModelParams *pParams)
     BindAnimTrack(pActor->sequence, 0, pActor->blendTable, 0);
     pActor->pOwner = pActor;
     NNS_G3dRenderObjSetCallBack(&pActor->nCtrl058, Ov025_RefreshMatchingMatrices, 0, 6, 3);
-    Ov025_LoadCharacterMsgAndWeapon(pActor, pParams->nSceneId, data_0204c678[4]);
+    Ov025_LoadCharacterMsgAndWeapon(pActor, pParams->nSceneId, gPartyMembers[4]);
     pDict = pActor->pResource != 0 ? (u8 *)pActor->pResource + 0x40 : 0;
     pActor->nDictIndex = pDict != 0 ? NNS_G3dGetResDictIdxByName(pDict, data_ov025_020b3924) : -1;
     pActor->nField144 = 1;

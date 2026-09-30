@@ -1,7 +1,7 @@
 /*
  * Obj_LinkNode - insert a node into the object registry, keeping the doubly-linked list
- * (data_0204c058, head at [3]; prev at +8, next at +0xc) ordered by the node's 16-bit key (+0x10)
- * and the hash bucket table (data_0204c068, 64 keys) pointing at the first node of each key.
+ * (gObjSystem, head at [3]; prev at +8, next at +0xc) ordered by the node's 16-bit key (+0x10)
+ * and the hash bucket table (gObjKeyBuckets, 64 keys) pointing at the first node of each key.
  * An empty registry just takes the node. A node whose key already has nodes goes after the last of
  * them (the bucket keeps its head). Otherwise the node becomes its bucket's head and is linked
  * before the first node of the next used key and after the last node of the previous used key
@@ -10,8 +10,8 @@
  * (or another order) the next/prev/cur registers rotate.
  */
 
-extern int data_0204c058[];   /* object list: head at [3] (+0xc) */
-extern int data_0204c068[];   /* hash bucket table, indexed by key */
+extern int gObjSystem[];   /* object list: head at [3] (+0xc) */
+extern int gObjKeyBuckets[];   /* hash bucket table, indexed by key */
 
 #pragma push
 #pragma opt_common_subs off
@@ -23,16 +23,16 @@ void Obj_LinkNode(int node)
     int next;
     int k;
 
-    if (data_0204c058[3] == 0) {
-        data_0204c058[3] = node;
+    if (gObjSystem[3] == 0) {
+        gObjSystem[3] = node;
         *(int *)(node + 8) = 0;
         *(int *)(node + 0xc) = 0;
-        data_0204c068[key] = node;
+        gObjKeyBuckets[key] = node;
         return;
     }
     next = 0;
     prev = 0;
-    cur = data_0204c068[key];
+    cur = gObjKeyBuckets[key];
     if (cur != 0) {
         while ((next = *(int *)(cur + 0xc)) != 0 && *(unsigned short *)(next + 0x10) == key) {
             cur = next;
@@ -41,13 +41,13 @@ void Obj_LinkNode(int node)
         goto link;
     }
     for (k = key + 1; k < 0x40; k++) {
-        if (data_0204c068[k] != 0) {
-            next = data_0204c068[k];
+        if (gObjKeyBuckets[k] != 0) {
+            next = gObjKeyBuckets[k];
             break;
         }
     }
     for (k = key - 1; k >= 0; k--) {
-        cur = data_0204c068[k];
+        cur = gObjKeyBuckets[k];
         if (cur != 0) {
             int nx;
 
@@ -58,7 +58,7 @@ void Obj_LinkNode(int node)
             break;
         }
     }
-    data_0204c068[key] = node;
+    gObjKeyBuckets[key] = node;
 link:
     *(int *)(node + 0xc) = next;
     *(int *)(node + 8) = prev;
@@ -68,7 +68,7 @@ link:
     if (prev != 0) {
         *(int *)(prev + 0xc) = node;
     } else {
-        data_0204c058[3] = node;
+        gObjSystem[3] = node;
     }
 }
 #pragma pop

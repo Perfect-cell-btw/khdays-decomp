@@ -14,7 +14,7 @@
 
 #include "nitro/types.h"
 
-extern u8 *data_0204be18;
+extern u8 *gGameState;
 
 int Ov008_CountUnassignedCopies(int id) {
     u8 count;
@@ -25,7 +25,7 @@ int Ov008_CountUnassignedCopies(int id) {
     if (id < 0) {
         return 0;
     }
-    base = data_0204be18;
+    base = gGameState;
     count = (base + id)[0x810];
     i = 0;
     do {

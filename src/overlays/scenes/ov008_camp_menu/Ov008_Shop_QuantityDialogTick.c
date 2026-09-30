@@ -137,9 +137,9 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov008_02090fac;
-extern u16 data_0204c18c;                                              /* keys held */
-extern u16 data_0204c190;                                              /* keys pressed */
-extern GameState *data_0204be18;                                       /* g_pTallySource */
+extern u16 gPadHeld;                                              /* keys held */
+extern u16 gPadPressed;                                              /* keys pressed */
+extern GameState *gGameState;                                       /* g_pTallySource */
 extern const Ov008ChoiceBox data_ov008_0208fea7[ROW_COUNT];            /* arrow boxes */
 extern const u16 data_ov008_0208fe64[ROW_COUNT];                       /* keys by arrow row */
 extern const Ov008ChoiceBox data_ov008_0208fe84[1];                    /* yes box */
@@ -193,8 +193,8 @@ Ov008ShopStep Ov008_Shop_QuantityDialogTick(void)
     nCountBefore = pDialog->nCount;
     Ov008_UpdateTouchState();
     KeyRepeat_Step(&ctx->inputSource);
-    nPressed = data_0204c190;
-    pDialog->nRepeatBits = (pDialog->nRepeatBits << 1) | ((data_0204c18c & KEY_REPEAT_MASK) != 0);
+    nPressed = gPadPressed;
+    pDialog->nRepeatBits = (pDialog->nRepeatBits << 1) | ((gPadHeld & KEY_REPEAT_MASK) != 0);
     switch (pDialog->nSelection) {
     case 0:
         if ((pfnNext == 0 && (pDialog->nRepeatBits & 1) == 0) || pDialog->nRow >= 0) {
@@ -245,9 +245,9 @@ Ov008ShopStep Ov008_Shop_QuantityDialogTick(void)
             pDialog->nCount += 1;
         } else if (nKeys & KEY_DOWN) {
             pDialog->nCount -= 1;
-        } else if ((nKeys & KEY_PAGE_DOWN) && (data_0204c18c & KEY_SHOULDERS) == 0) {
+        } else if ((nKeys & KEY_PAGE_DOWN) && (gPadHeld & KEY_SHOULDERS) == 0) {
             pDialog->nCount += 10;
-        } else if ((nKeys & KEY_PAGE_UP) && (data_0204c18c & KEY_SHOULDERS) == 0) {
+        } else if ((nKeys & KEY_PAGE_UP) && (gPadHeld & KEY_SHOULDERS) == 0) {
             pDialog->nCount -= 10;
         } else if (nPressed & KEY_A) {
             PlaySound(0, 1);
@@ -279,28 +279,28 @@ Ov008ShopStep Ov008_Shop_QuantityDialogTick(void)
                 switch (nTab) {
                 case TAB_BUY:
                     nItem = Ov008_GetChildField14OrNeg1(pDialog->pRecord);
-                    data_0204be18->aItemCount[nItem] += pDialog->nCount;
-                    data_0204be18->aLevel[pDialog->pRecord->nUnlockBit] += pDialog->nCount;
+                    gGameState->aItemCount[nItem] += pDialog->nCount;
+                    gGameState->aLevel[pDialog->pRecord->nUnlockBit] += pDialog->nCount;
                     GameState_SetFlag(Ov008_GetChildField14OrNeg1(pDialog->pRecord) + FLAG_ITEM_BOUGHT);
                     nCost = pDialog->pRecord->nPrice * pDialog->nCount;
-                    if (data_0204be18->nMunny > nCost) {
-                        data_0204be18->nMunny -= nCost;
+                    if (gGameState->nMunny > nCost) {
+                        gGameState->nMunny -= nCost;
                     } else {
-                        data_0204be18->nMunny = 0;
+                        gGameState->nMunny = 0;
                     }
                     bReached = 0;
                     pRecord = pDialog->pRecord;
-                    if (pRecord->nLevelReq != 0 && data_0204be18->aLevel[pRecord->nUnlockBit] >= pRecord->nLevelReq) {
+                    if (pRecord->nLevelReq != 0 && gGameState->aLevel[pRecord->nUnlockBit] >= pRecord->nLevelReq) {
                         bReached = 1;
                     }
                     pRecord->bLevelReached = bReached != 0;
                     break;
                 case TAB_SELL:
                     nItem = Ov008_GetChildField14OrNeg1(pDialog->pRecord);
-                    data_0204be18->aItemCount[nItem] -= pDialog->nCount;
-                    data_0204be18->nPoints += pDialog->pRecord->nPrice * pDialog->nCount;
-                    if (data_0204be18->nPoints > POINTS_CAP) {
-                        data_0204be18->nPoints = POINTS_CAP;
+                    gGameState->aItemCount[nItem] -= pDialog->nCount;
+                    gGameState->nPoints += pDialog->pRecord->nPrice * pDialog->nCount;
+                    if (gGameState->nPoints > POINTS_CAP) {
+                        gGameState->nPoints = POINTS_CAP;
                     }
                     break;
                 }
@@ -336,7 +336,7 @@ Ov008ShopStep Ov008_Shop_QuantityDialogTick(void)
             }
             pRecord = pDialog->pRecord;
             if (pRecord->nLevelReq != 0) {
-                nLeft = pRecord->nLevelReq - data_0204be18->aLevel[pRecord->nUnlockBit];
+                nLeft = pRecord->nLevelReq - gGameState->aLevel[pRecord->nUnlockBit];
                 if ((u32)pDialog->nCount > nLeft) {
                     pDialog->nCount = nLeft;
                 }
@@ -345,8 +345,8 @@ Ov008ShopStep Ov008_Shop_QuantityDialogTick(void)
                 pDialog->nCount = nCap - pDialog->nBase;
             }
             nCost = pDialog->pRecord->nPrice * pDialog->nCount;
-            if (nCost > data_0204be18->nMunny) {
-                pDialog->nCount = (u32)Math_DivMod(data_0204be18->nMunny, pDialog->pRecord->nPrice);
+            if (nCost > gGameState->nMunny) {
+                pDialog->nCount = (u32)Math_DivMod(gGameState->nMunny, pDialog->pRecord->nPrice);
             }
             Ov008_DrawCounterPanel(pDialog->pRecord, pDialog->nCount + pDialog->nBase);
             if (nCountBefore != pDialog->nCount) {

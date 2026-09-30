@@ -1,6 +1,6 @@
-extern void *data_0204c028;
+extern void *gCurrentHeap;
 
 void *NNSi_FndGetAllocatorForDefaultHeap(void *p) {
-    if (p == 0) p = data_0204c028;
+    if (p == 0) p = gCurrentHeap;
     return (char *)p + 4;
 }

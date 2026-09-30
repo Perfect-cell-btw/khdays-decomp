@@ -1,10 +1,10 @@
 /* Stops the BGM player sequence with the fade frames and marks the manager stopping. */
 
-extern unsigned char *data_0204c234;
+extern unsigned char *gSoundMgr;
 extern void NNS_SndPlayerStopSeq(void *ptr, int arg);
 
 void SoundMgr_StopBgm(int arg) {
-    unsigned char *base = data_0204c234;
+    unsigned char *base = gSoundMgr;
 
     *(short *)(base + 0xb46f6) = -1;
     NNS_SndPlayerStopSeq(base + 0xb44c4, arg);

@@ -7,10 +7,10 @@ struct V3 {
     int z;
 };
 
-extern char *data_0204c234;
+extern char *gSoundMgr;
 
 void Handle_WritePayloadIfLive(unsigned int handle, struct V3 *src) {
-    char *rec = data_0204c234 + 0xb44e4 + (handle >> 24) * 32;
+    char *rec = gSoundMgr + 0xb44e4 + (handle >> 24) * 32;
     if (*(unsigned short *)(rec + 0x14) == 0) {
         return;
     }

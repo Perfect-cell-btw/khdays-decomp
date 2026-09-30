@@ -52,7 +52,7 @@ struct Actor {
     void *pContainer;            /* 0x2bd0 */
 };
 
-extern struct Record data_0204c678[];
+extern struct Record gPartyMembers[];
 extern char *data_02042a70[];
 extern char data_ov022_020b2ce4[];
 
@@ -74,7 +74,7 @@ void Ov022_BuildActorSlot(struct Actor *pActor)
     int nBlock;
     struct SubBlock *pBlock;
 
-    pRec = &data_0204c678[pActor->nId];
+    pRec = &gPartyMembers[pActor->nId];
     OS_SPrintf(szName, data_ov022_020b2ce4, data_02042a70[pActor->nKind]);
     pActor->pContainer = Msg_OpenContainerAndReadHeader(szName, CONTAINER_HEAP);
     pBlock = pActor->aBlocks;

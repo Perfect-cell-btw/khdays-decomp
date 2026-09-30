@@ -1,6 +1,6 @@
 /* Ov025_Reports_HighlightRows -- Ov025_Reports_HighlightRows: push the second sub-item pair of each
  * row's number entry (+0x18 of the rows at +0xd0; Ov008_PushSubitemPair 020889e4) when it is
- * the entry under the stylus (+0x25c) or, with A held (bit 0 of data_0204c18c), the cursor's
+ * the entry under the stylus (+0x25c) or, with A held (bit 0 of gPadHeld), the cursor's
  * row (+2 less +0); the other rows get the first pair. */
 
 #include "nitro/types.h"
@@ -72,7 +72,7 @@ typedef struct Ov025ReportsPage {
 
 extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA */
 extern void  Ov025_PushSubitemPair(int nCtx, void *pEntry, int nPair);  /* Ov008_PushSubitemPair */
-extern u16   data_0204c18c;                                         /* held keys */
+extern u16   gPadHeld;                                         /* held keys */
 
 void Ov025_Reports_HighlightRows(void)
 {
@@ -85,7 +85,7 @@ void Ov025_Reports_HighlightRows(void)
     nRow = pPage->nCursor - pPage->nTop;
     for (i = 0; i < 10; i++) {
         nPair = 1;
-        if (pPage->pHeldEntry != pPage->aRow[i].pNumber && (!(data_0204c18c & 1) || nRow != i)) {
+        if (pPage->pHeldEntry != pPage->aRow[i].pNumber && (!(gPadHeld & 1) || nRow != i)) {
             nPair = 0;
         }
         Ov025_PushSubitemPair(pPage->nCtx, pPage->aRow[i].pNumber, nPair ? 1 : 0);

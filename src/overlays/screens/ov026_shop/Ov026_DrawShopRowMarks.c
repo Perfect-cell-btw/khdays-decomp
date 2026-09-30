@@ -69,7 +69,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern u32  Ov026_QueryRecordUnlock(Ov008ParamRecord **apRecords, u32 nIndex, int nArg); /* Ov008_QueryRecordUnlock */
 extern void Slot_SetVisible(int hSlots, int nCell, int bVisible);          /* Slot_SetVisible */
 extern void Slot_ForwardToEntry(int hSlots, int nCell, u32 nFrame);            /* Slot_ForwardToEntry */
@@ -104,7 +104,7 @@ void Ov026_DrawShopRowMarks(int nRow, Ov008ParamRecord *pRecord)
             Slot_SetVisible(ctx->hSlots, pView->aCellF[nRow], 1);
         }
         nItemId = Ov026_GetChildField14OrNeg1(pRecord);
-        Slot_SetVisible(ctx->hSlots, pView->aCellG[nRow], data_0204be18->aItemCount[nItemId] != Ov026_CountSpareItemsOfChild(pRecord));
+        Slot_SetVisible(ctx->hSlots, pView->aCellG[nRow], gGameState->aItemCount[nItemId] != Ov026_CountSpareItemsOfChild(pRecord));
         return;
     }
     if (pRecord->nLevelReq != 0) {

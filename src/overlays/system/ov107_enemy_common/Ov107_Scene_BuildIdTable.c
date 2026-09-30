@@ -4,10 +4,10 @@
 extern void *CallocInstance(unsigned int size);
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
-extern char *data_ov107_020cbf1c;
+extern char *gOv107ActorManager;
 
 void Ov107_Scene_BuildIdTable(void) {
-    char *ctx = data_ov107_020cbf1c;
+    char *ctx = gOv107ActorManager;
     char *node;
     if (ctx == 0) {
         return;

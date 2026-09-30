@@ -20,13 +20,13 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;                                       /* g_pTallySource */
+extern GameState *gGameState;                                       /* g_pTallySource */
 
 static inline void Ov008_AddItemCount(int nItem, int nCount)
 {
-    data_0204be18->aItemCount[nItem] += nCount;
-    if (data_0204be18->aItemCount[nItem] > ITEM_COUNT_MAX) {
-        data_0204be18->aItemCount[nItem] = ITEM_COUNT_MAX;
+    gGameState->aItemCount[nItem] += nCount;
+    if (gGameState->aItemCount[nItem] > ITEM_COUNT_MAX) {
+        gGameState->aItemCount[nItem] = ITEM_COUNT_MAX;
     }
     GameState_SetFlag(FLAG_ITEM_OWNED + nItem);
 }

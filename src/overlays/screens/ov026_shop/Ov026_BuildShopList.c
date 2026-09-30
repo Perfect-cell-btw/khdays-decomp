@@ -44,7 +44,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008ParamTable *data_ov026_0209136c;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int  Ov026_IsShopRecordShown(int nSlot, int nCategory, u32 nIndex);   /* Ov008_IsShopRecordShown */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);                /* AllocDefault */
@@ -85,7 +85,7 @@ Ov008ParamRecord **Ov026_BuildShopList(int nSlot, int nCategory, int *pCount)
                 }
             }
             bReached = 0;
-            if (pRecord->nLevelReq != 0 && data_0204be18->aLevel[pRecord->nLevelField] >= pRecord->nLevelReq) {
+            if (pRecord->nLevelReq != 0 && gGameState->aLevel[pRecord->nLevelField] >= pRecord->nLevelReq) {
                 bReached = 1;
             }
             pRecord->bLevelReached = bReached != 0;

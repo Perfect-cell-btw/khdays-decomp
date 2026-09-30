@@ -221,4 +221,4 @@ data_ov107_020cbb08 kind:bss addr:0x020cbb08
 data_ov107_020cbb20 kind:bss addr:0x020cbb20
 data_ov107_020cbb98 kind:bss addr:0x020cbb98
 data_ov107_020cbca0 kind:bss addr:0x020cbca0
-data_ov107_020cbf1c kind:bss addr:0x020cbf1c
+gOv107ActorManager kind:bss addr:0x020cbf1c

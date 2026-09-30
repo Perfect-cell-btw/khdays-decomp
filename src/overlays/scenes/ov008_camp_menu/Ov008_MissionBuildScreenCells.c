@@ -85,7 +85,7 @@ typedef struct {
     int slotCells[19];                /* 0x9714 */
 } Ov006MissionContext;
 
-extern u8 data_0204c058[];
+extern u8 gObjSystem[];
 extern Ov006MissionContext *data_ov008_02090fa4;
 extern const MissionSetupParams data_ov008_0208fd48;
 extern const MissionOffsetTable data_ov008_0208fdc8;
@@ -119,7 +119,7 @@ void Ov008_MissionBuildScreenCells(int mode)
 
     ctx = (Ov006MissionContext *)NNSi_FndGetCurrentRootHeap();
 
-    switch (data_0204c058[0]) {
+    switch (gObjSystem[0]) {
     case 1:
         step = 20;
         break;

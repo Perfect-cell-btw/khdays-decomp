@@ -38,7 +38,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008ParamTable *data_ov026_0209136c;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int Ov026_GetItemParamWord(int nItemId);                            /* Ov008_GetItemParamWord */
 extern int Ov026_IsShopRecordListed(Ov008ParamRecord *pRecord, int nSlot, int nCategory, u32 nIndex); /* Ov008_IsShopRecordListed */
 
@@ -70,7 +70,7 @@ int Ov026_IsShopRecordShown(int nSlot, int nCategory, u32 nIndex)
                 && pRecord->pItemDef->nItemId == pNext->pItemDef->nItemId) {
                 bReached = 0;
                 if (pRecord->nLevelReq != 0
-                    && data_0204be18->aLevel[pRecord->nUnlockBit] >= pRecord->nLevelReq) {
+                    && gGameState->aLevel[pRecord->nUnlockBit] >= pRecord->nLevelReq) {
                     bReached = 1;
                 }
                 if (bReached) {
@@ -89,7 +89,7 @@ int Ov026_IsShopRecordShown(int nSlot, int nCategory, u32 nIndex)
             if (nIndex != 0 && pRecord->pItemDef->nItemId == pPrev->pItemDef->nItemId) {
                 bReached = 0;
                 if (pPrev->nLevelReq != 0
-                    && data_0204be18->aLevel[pPrev->nUnlockBit] >= pPrev->nLevelReq) {
+                    && gGameState->aLevel[pPrev->nUnlockBit] >= pPrev->nLevelReq) {
                     bReached = 1;
                 }
                 if (!bReached) {

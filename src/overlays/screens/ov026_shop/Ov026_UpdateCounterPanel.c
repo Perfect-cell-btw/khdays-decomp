@@ -1,5 +1,5 @@
 extern char *data_ov026_02091368;
-extern char *data_0204be18;
+extern char *gGameState;
 extern int Ov026_FindEntryByTag(void *p, unsigned int id);
 extern void Ov026_TagTracker_InvokeCallback(void *p, int cell);
 extern void Obj_InvokeInnerVtable8(void *p, int a, int b, int c, int d);
@@ -17,8 +17,8 @@ void Ov026_UpdateCounterPanel(void) {
         Obj_InvokeInnerVtable8(layout, 0, 0, 0xb0, 0x30);
         *(int *)panel = 1;
     }
-    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x196a),
+    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&gGameState + 0x196a),
                               panel + 8);
-    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x1968),
+    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&gGameState + 0x1968),
                               panel + 0x14);
 }

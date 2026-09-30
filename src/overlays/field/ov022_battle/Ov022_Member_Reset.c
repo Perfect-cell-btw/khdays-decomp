@@ -43,7 +43,7 @@ typedef struct Ov022ActorEntry {
 
 extern Ov022EntrySystem data_ov022_020b2e78;
 extern u8 data_0204c240;
-extern Ov002MissionMember data_0204c678[];
+extern Ov002MissionMember gPartyMembers[];
 
 extern void Ov022_SetSlotClaim(Ov022ActorEntry *entry, int enabled, int named);
 extern u32 func_ov022_020a0870(u32 *entry, int state);
@@ -70,7 +70,7 @@ void Ov022_Member_Reset(int index)
     root->flags3c &= ~2;
 
     if ((data_0204c240 & 4) == 0 && entry->field0c == 0) {
-        member = &data_0204c678[entry->actorIndex09];
+        member = &gPartyMembers[entry->actorIndex09];
         if (GameState_IsFlagSet(0x2089) != 0 || member->nameCode04 == '0') {
             GameState_SetField(0x2089, 1, 0);
             Ov022_SetSlotClaim(entry, 1, 1);

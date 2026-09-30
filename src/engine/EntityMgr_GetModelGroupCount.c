@@ -2,8 +2,8 @@
  * frees that many groups (records at +4, blocks at +0x44), which Entity_LoadAndAttach loads one per
  * player slot. No code that writes it has been found yet. */
 
-extern int *data_0204c208;
+extern int *gEntityMgr;
 
 int EntityMgr_GetModelGroupCount(void) {
-    return *data_0204c208;
+    return *gEntityMgr;
 }

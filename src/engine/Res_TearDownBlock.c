@@ -1,9 +1,9 @@
-/* Tears the block held by data_0204c234 down: runs NNS_SndStopSoundAll once, then NNS_SndHandleReleaseSeq
+/* Tears the block held by gSoundMgr down: runs NNS_SndStopSoundAll once, then NNS_SndHandleReleaseSeq
  * over the sixteen 0x20-byte entries at +0xb4500 and over the two singles at +0xb44c8 and
  * +0xb44c4, and finally drops the pointer.  Returns 1 (also when nothing was allocated).
  *
  * `i` has to be declared between the two pointers to reproduce the ROM's r4/r5. */
-extern char *data_0204c234;
+extern char *gSoundMgr;
 extern void NNS_SndStopSoundAll(void);
 extern void NNS_SndHandleReleaseSeq(void *p);
 
@@ -11,7 +11,7 @@ int Res_TearDownBlock(void) {
     char *base;
     int i;
     char *p;
-    base = data_0204c234;
+    base = gSoundMgr;
     if (base == 0) {
         return 1;
     }
@@ -25,6 +25,6 @@ int Res_TearDownBlock(void) {
     } while (i < 0x10);
     NNS_SndHandleReleaseSeq(base + 0xb44c8);
     NNS_SndHandleReleaseSeq(base + 0xb44c4);
-    data_0204c234 = 0;
+    gSoundMgr = 0;
     return 1;
 }

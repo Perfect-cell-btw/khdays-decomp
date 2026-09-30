@@ -2,7 +2,7 @@
 /* PartyMember_RebuildDerived -- rebuild a party member's derived data, MAIN (THUMB). Loads the member's growth
  * table (MsgDb_FetchRecord, db 0x1d, row by class -- classes 0x13/0x14 use row 0, 0x15 row 0xe), scales
  * two of the member's stats (the third one x3 clamped to 0..255, the first one halved or scaled by
- * 0x666 depending on data_0204c240 bit 1) and writes them back to the record (data_0204c678, 0x104
+ * 0x666 depending on data_0204c240 bit 1) and writes them back to the record (gPartyMembers, 0x104
  * bytes each) together with the display part. Every growth entry whose level (+0x20) is reached by
  * the current level (field 9) grants its reward (from data_020421b8): rewards 1..15 through
  * StoreBytePairKeepMin (with a 0x63 limit, lifted for 1..12 when game field 0x35bf is 2), the rest through
@@ -75,7 +75,7 @@ typedef struct Mover {
     VecFx32 pos;                        /* +0x2c */
 } Mover;
 
-extern MemberRec data_0204c678[];
+extern MemberRec gPartyMembers[];
 extern u8 data_0204c240;
 extern const RewardList data_020421b8;
 extern const FixedRewards data_02042154;
@@ -113,7 +113,7 @@ void PartyMember_RebuildDerived(int member, int a, int cls, int b)
         u16 aPos[2];
         u8 aPair[2];
 
-        rec = &data_0204c678[member];
+        rec = &gPartyMembers[member];
         stats = rec->stats;
         hdr = rec->hdr;
         MsgDb_LoadDb(0x1d, 2);
@@ -146,7 +146,7 @@ void PartyMember_RebuildDerived(int member, int a, int cls, int b)
         }
         hdr.stat = stats.s3;
         hdr.icon = 0x2e;
-        data_0204c678[member].stats = stats;
+        gPartyMembers[member].stats = stats;
         rec->hdr = hdr;
 
         level = GameState_GetField(0, 9);

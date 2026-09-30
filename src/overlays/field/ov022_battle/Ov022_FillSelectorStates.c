@@ -58,7 +58,7 @@ extern int InstantiateClass(void *classData, int argument);
 
 extern unsigned char data_02042a1d;
 extern Ov022MetadataRecord data_0204c3d8[];
-extern Ov022ConfigRecord data_0204c678[];
+extern Ov022ConfigRecord gPartyMembers[];
 extern Ov022CallbackArgs data_ov022_020b2e78;
 extern unsigned char data_0204c240;
 extern char data_ov022_020b2e80;
@@ -75,7 +75,7 @@ void Ov022_FillSelectorStates(int *input)
         int *inputCursor = input;
         unsigned char *stateCursor = (unsigned char *)root;
         Ov022MetadataRecord *metadata = data_0204c3d8;
-        Ov022ConfigRecord *config = data_0204c678;
+        Ov022ConfigRecord *config = gPartyMembers;
         rootFlags = (unsigned char *)root + 0x3c;
         Ov022CallbackArgs *args = &data_ov022_020b2e78;
         int clearBit0Mask = 1;

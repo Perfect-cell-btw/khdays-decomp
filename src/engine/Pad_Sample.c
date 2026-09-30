@@ -11,8 +11,8 @@ typedef struct {
     u16 trig;       /* 0x04 */
 } PadState;
 
-extern PadState data_0204c18c;
-extern unsigned int data_0204c194[];
+extern PadState gPadHeld;
+extern unsigned int gPadPressTimes[];
 extern unsigned int VBlank_GetCount(void);   /* GetVBlankCount */
 
 int Pad_Sample(void)
@@ -23,20 +23,20 @@ int Pad_Sample(void)
     unsigned int now;
     int i;
 
-    data_0204c18c.prev = data_0204c18c.cont;
+    gPadHeld.prev = gPadHeld.cont;
     if ((*(volatile u16 *)0x027fffa8 & 0x8000) >> 15) {
         cont = 0;
     } else {
         cont = ((*(volatile u16 *)0x04000130 | *(volatile u16 *)0x027fffa8) ^ 0x2fff) & 0x2fff;
     }
-    data_0204c18c.cont = cont;
-    prev = data_0204c18c.prev;
-    cont = (u16)data_0204c18c.cont;     /* the cast gives the reloaded state its own value, allocated after prev */
-    data_0204c18c.trig = ~prev & cont;
+    gPadHeld.cont = cont;
+    prev = gPadHeld.prev;
+    cont = (u16)gPadHeld.cont;     /* the cast gives the reloaded state its own value, allocated after prev */
+    gPadHeld.trig = ~prev & cont;
     now = VBlank_GetCount();
     for (i = 0; i < 12; i++) {
         if ((u16)(prev ^ cont) & bit) {
-            data_0204c194[i] = now;
+            gPadPressTimes[i] = now;
         }
         bit = bit << 1;
     }

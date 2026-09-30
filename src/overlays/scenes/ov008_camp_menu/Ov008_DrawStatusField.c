@@ -59,7 +59,7 @@ typedef struct GameState {
     u8  aItemCount[0x8d0];    /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;                                       /* g_pTallySource */
+extern GameState *gGameState;                                       /* g_pTallySource */
 extern const u16 data_ov008_02090814[];                                /* "--" text */
 extern int   Ov008_GetCtxBlock4a80(void);                                /* Ov008_GetCtxBlock4a80 */
 extern void  Obj_InvokeInnerVtable4(void *pSurface);                            /* Obj_InvokeInnerVtable4 */
@@ -270,7 +270,7 @@ void Ov008_DrawStatusField(Ov008StatusPanel *pPanel, int nField, u32 nDelta, int
         nValue = pValues[0];
         nSecond = pValues[1];
         Obj_InvokeInnerVtable8(pPanel->statSurface, 0x7a, 0x57, 0x25, 0xc);
-        if (data_0204be18->aItemCount[1] + 0xf > 0x78) {
+        if (gGameState->aItemCount[1] + 0xf > 0x78) {
             Ov008_BuildTable20AndDelegate(pPanel->statSurface, 0x9f, 0x57, nColour, 1, nValue, 0x78);
         } else {
             Ov008_BuildTable20AndDelegate(pPanel->statSurface, 0x9f, 0x57, nColour, 1, nValue, nSecond);

@@ -2,7 +2,7 @@
  * MsgQueue_Post - take a free send slot, copy the command payload into it and
  * hand back the slot's freshly stamped handle.
  *
- * The send pool (base = *data_0204c230) holds its queue context at base+0xc:
+ * The send pool (base = *gMsgQueue) holds its queue context at base+0xc:
  * a 32-bit free-slot bitmask (SET bit = free, bit 31 = slot 0), 32 six-byte
  * slot entries, 32 state blocks of 0x34 bytes each (four-byte header, then the
  * payload area) and, immediately after the last state block, the running u16
@@ -21,7 +21,7 @@
 
 static inline unsigned int Clz(unsigned int x) { asm { clz x, x } return x; }
 
-extern char *data_0204c230;
+extern char *gMsgQueue;
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 
 typedef struct {
@@ -45,7 +45,7 @@ typedef struct {
 
 unsigned short MsgQueue_Post(int nKind, const void *pCmd, unsigned short nSize)
 {
-    MsgCtx *ctx = (MsgCtx *)(data_0204c230 + 0xc);
+    MsgCtx *ctx = (MsgCtx *)(gMsgQueue + 0xc);
     MsgSlot *slot = 0;
     MsgState *state;
     unsigned int freeMask = ctx->freeMask;

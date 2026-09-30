@@ -30,7 +30,7 @@ typedef struct Ov002TallyEntry {
 } Ov002TallyEntry;
 
 extern u8 data_02042a1d;
-extern Ov002TallyEntry data_0204c678[];
+extern Ov002TallyEntry gPartyMembers[];
 
 extern int Ov002_GetRootField8d94(void);
 extern void Ov002_AddMissionTally(int nIndex, int nKind, int nWhole);
@@ -44,13 +44,13 @@ void Ov002_AwardCatchUpTally(void)
 
     nMax = -1;
     for (i = 0; i < data_02042a1d; i++) {
-        if (nMax < data_0204c678[i].nValue) {
-            nMax = data_0204c678[i].nValue;
+        if (nMax < gPartyMembers[i].nValue) {
+            nMax = gPartyMembers[i].nValue;
         }
     }
 
     for (i = 0; i < data_02042a1d; i++) {
-        nScaled = (int)((((long long)((nMax - data_0204c678[i].nValue) << 12))
+        nScaled = (int)((((long long)((nMax - gPartyMembers[i].nValue) << 12))
                          * (long long)Ov002_GetRootField8d94() + 0x800) >> 12);
         nWhole = (nScaled + 0xfff) >> 12;
         if (nWhole > 0) {

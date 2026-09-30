@@ -29,7 +29,7 @@ typedef struct Ov009SaveContext {
     u32 bestPackedValue;
 } Ov009SaveContext;
 
-extern Ov009GameState *volatile data_0204be18;
+extern Ov009GameState *volatile gGameState;
 extern const char data_ov009_02056378[];
 
 extern void Ov009_InitSubScreenGraphics(void);
@@ -60,7 +60,7 @@ int Ov009_TickSlotScanState(Ov009SaveContext *ctx)
         MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
         MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
         Ov009_InitResourceRecord(ctx->resource15c, data_ov009_02056378);
-        ctx->snapshot = *data_0204be18;
+        ctx->snapshot = *gGameState;
         ctx->slotPhase = 0;
         ctx->state = 0;
         ctx->phase++;
@@ -85,7 +85,7 @@ int Ov009_TickSlotScanState(Ov009SaveContext *ctx)
         break;
 
     case 2:
-        *data_0204be18 = ctx->snapshot;
+        *gGameState = ctx->snapshot;
         Ov009_LoadMenuBgWithVariantChars();
         Ov009_SaveMenu_BuildLayout(ctx);
         Ov009_SaveMenu_BuildTextSurfaces(ctx);
@@ -93,7 +93,7 @@ int Ov009_TickSlotScanState(Ov009SaveContext *ctx)
         Ov009_PlaceElementByVariant(ctx, 0, ctx->variant);
         Ov009_SaveMenu_UpdateNumbers(ctx);
         Tween_Clear(ctx->tween21c);
-        Ov009_DrawNumberDigits(data_0204be18->value8);
+        Ov009_DrawNumberDigits(gGameState->value8);
         ctx->phase++;
         break;
 

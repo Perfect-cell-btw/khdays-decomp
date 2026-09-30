@@ -1,5 +1,5 @@
 extern char *data_ov026_02091368;
-extern char *data_0204be18;
+extern char *gGameState;
 extern int Ov026_CreateMissionCell(int handle, int kind, int a, int x, int y);
 extern void Slot_SetVisible(int handle, int cell, int visible);
 extern int Ov026_FindEntryById(void *p, int id);
@@ -12,8 +12,8 @@ void Ov026_BuildTotalsPanel(void) {
     char *panel = st + 0xc54c;
     int handle = *(int *)(st + 0xbfb0);
     char *sound = st + 0x2ab0;
-    *(short *)(panel + 0x28) = *(unsigned short *)(*(char **)&data_0204be18 + 0x196a);
-    *(short *)(panel + 0x2a) = *(unsigned short *)(*(char **)&data_0204be18 + 0x1968);
+    *(short *)(panel + 0x28) = *(unsigned short *)(*(char **)&gGameState + 0x196a);
+    *(short *)(panel + 0x2a) = *(unsigned short *)(*(char **)&gGameState + 0x1968);
     *(int *)(st + 0xc54c) = Ov026_CreateMissionCell(handle, 0x13, 0, 0x24000, 0xa000);
     *(int *)(panel + 4) = Ov026_CreateMissionCell(handle, 0x14, 0, 0x4c000, 0xa000);
     Slot_SetVisible(handle, *(int *)(st + 0xc54c), 1);

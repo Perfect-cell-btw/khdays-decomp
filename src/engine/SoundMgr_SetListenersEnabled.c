@@ -13,10 +13,10 @@ typedef struct {
     unsigned char enabled;               /* +0xb47b4 */
 } S_020340d0;
 
-extern S_020340d0 *data_0204c234;
+extern S_020340d0 *gSoundMgr;
 
 void SoundMgr_SetListenersEnabled(int enabled) {
-    S_020340d0 *base = data_0204c234;
+    S_020340d0 *base = gSoundMgr;
     ListenerNode020340d0 *node;
 
     base->enabled = (unsigned char)enabled;

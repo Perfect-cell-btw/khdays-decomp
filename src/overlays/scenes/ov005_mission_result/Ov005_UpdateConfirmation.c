@@ -14,7 +14,7 @@ typedef struct Ov005Context {
     void *exitTaskHandle;
 } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 extern const char data_ov005_0205b7cc[];
 extern u16 Mem_ReadU16(MenuLimitHeader *);
 extern void Ov005_RefreshDialogChoice(void),Ov005_UpdateDialogVisibility(void);
@@ -27,7 +27,7 @@ void Ov005_UpdateConfirmation(void) {
     /* The original leaves r4 unchanged if none of these input bits is set. */
     if(Mem_ReadU16(&data_ov005_0205b80c->menuLimitHeader)&0x20)action=0x20;
     if(Mem_ReadU16(&data_ov005_0205b80c->menuLimitHeader)&0x10)action=0x10;
-    held=data_0204c190;
+    held=gPadPressed;
     if(held&1)action=1;
     if(held&2)action=2;
     switch(action) {

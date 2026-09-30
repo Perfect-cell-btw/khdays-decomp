@@ -40,7 +40,7 @@ extern int Ov002_Camera_GetPresetHeight(int nSlot);
 extern int Ov002_UpdateCameraDistance(int nSlot);
 
 extern unsigned char data_0204be04;
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern VecFx32 data_020475ac;
 
 static inline int FX_Mul(int a, int b)
@@ -143,7 +143,7 @@ void *Ov002_TickCamera(void)
         *(unsigned int *)(pCam + 0x38) &= 0xffffffdf;
         *(int *)(pCam + 0x84) = Ov002_Camera_GetPresetHeight(*(int *)(pCam + 0x44));
         *(int *)(pCam + 0x88) = Ov002_GetCameraDistance(*(int *)(pCam + 0x44));
-        if (((data_0204c190 & 4) != 0 && data_0204be04 == 0)
+        if (((gPadPressed & 4) != 0 && data_0204be04 == 0)
             || (data_0204be04 != 0 && *(int *)(pCam + 0xfc) != 0)) {
             *(unsigned int *)(pCam + 0x38) |= 0x2800;
             Ov002_ClearPendingOnBoot();

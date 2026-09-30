@@ -80,7 +80,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern const Ov008WidgetTable data_ov026_02091178;
 extern int   Ov026_IsSpecialItemId(int nItemId);                           /* special item? */
 extern void *Ov026_FindEntryByTag(void *pTracker, int nTag);              /* ov008_FindEntryByTag */
@@ -125,7 +125,7 @@ void Ov026_DrawCounterPanel(Ov008ParamRecord *pRecord, int nCount)
     if (pRecord == 0) {
         nOwned = 0;
     } else {
-        nOwned = data_0204be18->aItemCount[pRecord->pItemDef->nItemId];
+        nOwned = gGameState->aItemCount[pRecord->pItemDef->nItemId];
     }
     if (pPanel->bReady == 0) {
         Ov026_TagTracker_InvokeCallback(ctx->tagTracker, Ov026_FindEntryByTag(ctx->tagTracker, TAG_COUNTER));

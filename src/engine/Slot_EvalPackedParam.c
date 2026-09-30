@@ -1,5 +1,5 @@
 /* Looks up parameter word `b` in data_0204c590 and feeds its two packed fields to
- * BitArray_GetField together with the sub-record at +0x28 of record `a` in data_0204c678.
+ * BitArray_GetField together with the sub-record at +0x28 of record `a` in gPartyMembers.
  *
  * The packing must be written as a bitfield pair: the ROM extracts both halves with
  * lsl/lsr shift pairs (lsl#16/lsr#20 and lsl#28/lsr#28), which is bitfield codegen --
@@ -11,10 +11,10 @@ struct Params {
 };
 
 extern struct Params data_0204c590[];
-extern unsigned char data_0204c678[];
+extern unsigned char gPartyMembers[];
 extern int BitArray_GetField(unsigned char *p, int hi, int lo);
 
 int Slot_EvalPackedParam(int a, int b) {
     struct Params *v = &data_0204c590[b - 1];
-    return (unsigned char)BitArray_GetField(data_0204c678 + a * 260 + 0x28, v->hi, v->lo);
+    return (unsigned char)BitArray_GetField(gPartyMembers + a * 260 + 0x28, v->hi, v->lo);
 }

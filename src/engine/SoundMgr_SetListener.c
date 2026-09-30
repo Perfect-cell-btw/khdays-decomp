@@ -4,14 +4,14 @@
 
 extern void VEC_CrossProduct();
 extern void VEC_Normalize();
-extern char *data_0204c234;
+extern char *gSoundMgr;
 
 void SoundMgr_SetListener(VecFx32 *src, VecFx32 *a, VecFx32 *b)
 {
     char *base;
     VecFx32 local;
 
-    base = data_0204c234;
+    base = gSoundMgr;
     VEC_CrossProduct(a, b, &local);
     VEC_Normalize(&local, base + 0xb44d8);
     *(VecFx32 *)(base + 0xb44cc) = *src;

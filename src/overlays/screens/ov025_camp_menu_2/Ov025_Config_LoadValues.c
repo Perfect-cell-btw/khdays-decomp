@@ -18,7 +18,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov025ConfigPage *Ov025_GetPageA(void);                  /* Ov008_GetPageA */
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void  GameState_SetField(int nField, int nBits, u32 nValue);      /* GameState_SetField */
 extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 
@@ -27,7 +27,7 @@ void Ov025_Config_LoadValues(void)
     Ov025ConfigPage *pPage;
 
     pPage = Ov025_GetPageA();
-    if (data_0204be18->aItemCount[0x1a0] == 0) {
+    if (gGameState->aItemCount[0x1a0] == 0) {
         GameState_SetField(0x3c29, 2, 1);
     }
     pPage->aValue[0] = GameState_GetField(CONFIG_CONTROLS, 1);

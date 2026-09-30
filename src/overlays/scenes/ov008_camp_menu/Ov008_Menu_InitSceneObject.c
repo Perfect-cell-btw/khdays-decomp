@@ -18,7 +18,7 @@ extern SceneParam data_ov008_0208e9c4[];
 extern char data_ov008_02090298[];
 extern char data_ov008_020902ac[];
 extern char data_ov008_020902c0[];
-extern int  data_0204c678;
+extern int  gPartyMembers;
 
 /* Ov008_Menu_InitSceneObject: initialize the menu scene object and resources. */
 void Ov008_Menu_InitSceneObject(int *param_1, int *param_2)
@@ -78,6 +78,6 @@ void Ov008_Menu_InitSceneObject(int *param_1, int *param_2)
     *(u16 *)((char *)param_1 + 0x38) |= 0x20;
     param_1[0x21] = (int)param_1;
     NNS_G3dRenderObjSetCallBack((int)(param_1 + 0x16), (int)&Ov008_RefreshMatchingMatrices, 0, 6, 3);
-    Ov008_Menu_LoadSceneText((int)param_1, *param_2, *(u8 *)((char *)&data_0204c678 + 4));
+    Ov008_Menu_LoadSceneText((int)param_1, *param_2, *(u8 *)((char *)&gPartyMembers + 4));
     Ov008_Menu_BindScenePanels((int)param_1, (int *)param_2);
 }

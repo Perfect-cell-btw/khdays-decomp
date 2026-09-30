@@ -52,7 +52,7 @@ typedef struct GameState {
 } GameState;
 
 extern MissionMenuContext *data_ov008_02090fa0;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int   Ov008_GetMissionMenuSelection(void);                                  /* current row */
 extern void  Ov008_SetMissionCursorSelection(int nSelection);
 extern int   Ov008_Link_Poll(void);                                  /* session phase */
@@ -97,10 +97,10 @@ MissionState Ov008_MissionMenuWaitReady(void)
         if (nRank >= 5) {
             nFeatures |= 0x20;
         }
-        if (data_0204be18->aItemCount[ITEM_FEATURE_A] != 0) {
+        if (gGameState->aItemCount[ITEM_FEATURE_A] != 0) {
             nFeatures |= 0x04;
         }
-        if (data_0204be18->aItemCount[ITEM_FEATURE_B] != 0) {
+        if (gGameState->aItemCount[ITEM_FEATURE_B] != 0) {
             nFeatures |= 0x02;
         }
         data_ov008_02090fa0->nFeatures = nFeatures;

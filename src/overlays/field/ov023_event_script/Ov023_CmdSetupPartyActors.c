@@ -4,7 +4,7 @@
  * opened (02024ee8 heap 6).  Then per seat 0..3: the actor gets a walk motion (0202b850 with
  * {1, 0xccd, 0x99a}), its kind's resource table (data_ov023_0208a334; 0202b914 1 / 6), is
  * hidden (0202beb8 0) and has its member block built (ov002 020522c8 from the seat's record in
- * data_0204c678, the first record for an empty seat); its text container is bound to actor
+ * gPartyMembers, the first record for an empty seat); its text container is bound to actor
  * seat + 4 (0202b914 1 / 0xd with the packed descriptor, whose flags come from the block's
  * first byte in a host session) and, for kinds 1 / 2 / 7, to seat + 8 as well, for kinds 9 /
  * 0x13 to seat + 8 with the flags raised by 0x50; the container is closed (02024fd4).  Finally
@@ -44,7 +44,7 @@ extern int   Session_GetLocalPlayerIndex(void);                                 
 extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
 extern const char *data_02042a70[];                                 /* member names by kind */
 extern char  data_ov023_0208a5e4[];                                 /* "ba/ch/%s/w_.p2" */
-extern Ov023MemberRecord data_0204c678[];                           /* the party records */
+extern Ov023MemberRecord gPartyMembers[];                           /* the party records */
 extern void *data_ov023_0208a334[];                                 /* resource tables by kind */
 extern u8    data_0204c240;                                         /* session bits */
 
@@ -73,14 +73,14 @@ int Ov023_CmdSetupPartyActors(void)
         OS_SPrintf(szPath, data_ov023_0208a5e4, data_02042a70[nKind]);
         apText[i] = Msg_OpenContainerAndReadHeader(szPath, 6);
     }
-    pRecord = data_0204c678;
+    pRecord = gPartyMembers;
     for (i = 0; i < 4; i++) {
         Ov023MemberRecord *pUsed;
 
         pSlot = Slot4_GetIfOccupied(i);
         if (pSlot == 0) {
             nKind = 0;
-            pUsed = data_0204c678;
+            pUsed = gPartyMembers;
         } else {
             nKind = pSlot->nMemberKind;
             pUsed = pRecord;

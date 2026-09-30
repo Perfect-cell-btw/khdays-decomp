@@ -1,7 +1,7 @@
 /* Ov008_DrawSavePage -- Ov008_DrawSavePage (936 B, 44 relocs).
  * Renders one save/equip page. Fetches the draw context (Obj_GetWord18) and snapshots a blit
  * source; copies a 3-word tag template out of data_ov008_0208f118; then runs the Ov008IterFrame
- * list walker over the u16 cell grid at *data_0204be18 + 0xc10 + page*0xf0 (the same grid as
+ * list walker over the u16 cell grid at *gGameState + 0xc10 + page*0xf0 (the same grid as
  * Ov008_CheckPageItemLimits) to build the view, capturing the walker's field 4 (before the count) and
  * field 0 (after). It blits the panel, draws the page label + three fixed captions, then formats
  * three text fields with the variadic sprintf Text_FormatUtf16 (branching on a game-state flag from
@@ -35,7 +35,7 @@ typedef struct IterSelf {
     u8  pad_0078[0x100 - 0x78];
 } IterSelf;                    /* 0x100 */
 
-extern char     *data_0204be18;
+extern char     *gGameState;
 extern unsigned  data_ov008_0208f118[3];
 extern char      data_ov008_020903c4[];
 extern char      data_ov008_020903d0[];
@@ -77,7 +77,7 @@ void Ov008_DrawSavePage(int ctx, int page)
     *(Tmpl3 *)hdr.tag = *(Tmpl3 *)data_ov008_0208f118;
     NNS_FndInitList(&hdr.list, 0x28);
     Ov008_InitRecordContext(&self, ctx + 0x2090);
-    Ov008_BuildMenuGrid(&self, collect, &hdr.list, data_0204be18 + 0xc10 + page * 0xf0);
+    Ov008_BuildMenuGrid(&self, collect, &hdr.list, gGameState + 0xc10 + page * 0xf0);
     Ov008_RebuildViewAndCountCells(&self, collect, &hdr.list);
     f04 = self.f04;
     count = Ov008_CountChildEntries(&self);

@@ -57,8 +57,8 @@ struct ScreenCfg {
 
 extern u8 data_0204c240;
 extern struct ScreenCfg data_0204c254;
-extern u16 data_0204c18c;
-extern u16 data_0204c190;
+extern u16 gPadHeld;
+extern u16 gPadPressed;
 
 extern char *Ov022_GetGlobalPlusE0(void);
 extern int func_ov022_020ab350(struct Actor *pActor);
@@ -234,11 +234,11 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
         && Ov022_IsInputAllowedForActiveSlot() == 0 && bLock == 0) {
         bBtn = 0;
         if (GameState_GetField(CONFIG_CONTROLS, 1) == 0) {
-            if ((data_0204c18c & 0x200) != 0) {
+            if ((gPadHeld & 0x200) != 0) {
                 bBtn = 1;
             }
-        } else if ((data_0204c18c & 0x100) != 0
-                   && (data_0204c18c & 0x200) != 0) {
+        } else if ((gPadHeld & 0x100) != 0
+                   && (gPadHeld & 0x200) != 0) {
             bBtn = 1;
         }
         if (bBtn != 0 && Ov002_Hud_IsPanelOpen() == 0
@@ -249,7 +249,7 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
         Ov002_Hud_SetSecondaryFlag(bMenuActive);
         if (bMenuActive != 0) {
             nCmd = -1;
-            nBtn = data_0204c190;
+            nBtn = gPadPressed;
             if ((nBtn & 1) != 0) {
                 nCmd = 0;
             }
@@ -273,40 +273,40 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
             if (Ov002_IsMissionClearFinished(bNoRepeat) != 0) {
                 bNoRepeat = 0;
             }
-            if ((data_0204c190 & 1) != 0) {
+            if ((gPadPressed & 1) != 0) {
                 bCommandChosen = 1;
                 Ov002_Hud_ActivatePanelSlot();
                 if (bNoRepeat != 0) {
                     Ov002_RequestCrawlSkip();
                 }
-            } else if ((data_0204c190 & 2) != 0) {
+            } else if ((gPadPressed & 2) != 0) {
                 pActor->bHudFlag = (u8)Ov002_AcceptRequestAndNotify(1);
                 if (bNoRepeat != 0) {
                     Ov002_RequestCrawlSkip();
                 }
             }
-            if ((data_0204c190 & 0x800) != 0 && bNoRepeat != 0) {
+            if ((gPadPressed & 0x800) != 0 && bNoRepeat != 0) {
                 Ov002_RequestCrawlSkip();
             }
             if (GameState_GetField(CONFIG_COMMAND_LIST, 1) != 0) {
-                if ((data_0204c190 & 0x400) != 0
+                if ((gPadPressed & 0x400) != 0
                     && Ov002_Hud_IsPanelOpen() == 0 && bCommandChosen == 0) {
                     Ov002_PanelCursorNext();
                 }
             } else {
                 nGlobal = func_ov022_02083f0c();
                 bOk = 1;
-                if ((data_0204c190 & 0x400) != 0
+                if ((gPadPressed & 0x400) != 0
                     && Ov002_Hud_IsPanelOpen() == 0 && bCommandChosen == 0) {
                     pMenu[0] = 1;
                     pMenu[1] = 1;
                 }
-                if ((data_0204c18c & 0x400) != 0) {
+                if ((gPadHeld & 0x400) != 0) {
                     if (nGlobal != -1 && Ov002_IsObjectFlag2000Set(nGlobal) != 0) {
                         bOk = 0;
                     }
                     if (pMenu[1] == 1) {
-                        if ((data_0204c18c & 0xf0) == 0) {
+                        if ((gPadHeld & 0xf0) == 0) {
                             pMenu[1] = 2;
                         }
                     } else if (pMenu[1] == 2 && bOk != 0) {
@@ -316,10 +316,10 @@ void Ov022_UpdateCommandInput(struct Actor *pActor)
                         } else if ((Ov022_GetRepeatKeys() & 0x40) != 0) {
                             pMenu[0] = 0;
                             Ov002_PanelCursorPrev();
-                        } else if ((data_0204c190 & 0x20) != 0) {
+                        } else if ((gPadPressed & 0x20) != 0) {
                             pMenu[0] = 0;
                             Ov002_PanelCursorStepLeft();
-                        } else if ((data_0204c190 & 0x10) != 0) {
+                        } else if ((gPadPressed & 0x10) != 0) {
                             pMenu[0] = 0;
                             Ov002_PanelCursorStepRight();
                         }

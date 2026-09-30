@@ -30,7 +30,7 @@ struct Actor {
     int nPartnerSlot;            /* 0x2294 */
 };
 
-extern struct Record data_0204c678[];
+extern struct Record gPartyMembers[];
 
 extern int Slot_EvalPackedParam(int nId, int nWhat);
 extern int Load2DArrayU8(int nId, int nSlot);
@@ -45,7 +45,7 @@ int Ov022_GetActorValue(struct Actor *pActor, int nScale, int nActionLevel)
     struct Record *pRec;
     int nValue;
 
-    pRec = &data_0204c678[pActor->nId];
+    pRec = &gPartyMembers[pActor->nId];
     nValue = 0;
     nValue += pRec->nBaseValue << 12;
     nValue += pActor->nBonusValue << 12;

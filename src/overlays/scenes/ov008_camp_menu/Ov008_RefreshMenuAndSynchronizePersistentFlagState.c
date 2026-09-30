@@ -20,7 +20,7 @@ typedef struct Ov008MenuContext {
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void func_02023ad0(int handle);
-extern char *data_0204be18;
+extern char *gGameState;
 extern void Ov008_BuildMenuListFrom(void *source);
 extern Ov008MenuContext *data_ov008_02090f00;
 extern void Ov008_CommitSelectedPage(void);
@@ -35,7 +35,7 @@ void *Ov008_RefreshMenuAndSynchronizePersistentFlagState(void)
         *(int *)(root + 0x14) = -1;
     }
 
-    Ov008_BuildMenuListFrom(data_0204be18 + 0xee0);
+    Ov008_BuildMenuListFrom(gGameState + 0xee0);
 
     {
         u8 synchronized =

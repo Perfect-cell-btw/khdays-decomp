@@ -1,4 +1,4 @@
-/* Poll one request bit of the global flag word (data_0204c190 bit 3).
+/* Poll one request bit of the global flag word (gPadPressed bit 3).
  * When game flag 0x2483 is set, give ov023 first refusal on the request
  * (Ov023_StepDialog); if it declines, play sound 4 and drop the request.
  * Otherwise latch the request in the halfword at data_0204be08+2 -- playing
@@ -6,14 +6,14 @@
 
 #include "game/engine.h"
 
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern unsigned short data_0204be08;
 extern unsigned short data_0204be0a;
 
 extern int Ov023_StepDialog(void);
 
 void PollAndLatchRequest(void) {
-    if ((data_0204c190 & 8) == 0) return;
+    if ((gPadPressed & 8) == 0) return;
 
     if (GameState_IsFlagSet(0x2483) != 0) {
         if (Ov023_StepDialog() == 0) {

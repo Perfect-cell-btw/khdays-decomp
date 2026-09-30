@@ -92,7 +92,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern char  Ov008_CountGridEntriesForOwner(Ov008MenuContext *pCtx, int nItemId);  /* Ov008_CountGridEntriesForOwner */
 
@@ -166,7 +166,7 @@ Ov008Message15Record *Ov008_FindSpareItemOfKind(Ov008MenuContext *pCtx, Ov008Tra
         MsgDb_FetchRecord(&pList, DB_ITEM_LISTS, nListId, DB_SLOT_LISTS);
         for (nIndex = 0; nIndex < pList->nCount; nIndex++) {
             nItemId = pList->aItemId[nIndex];
-            if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) < data_0204be18->aItemCount[nItemId]) {
+            if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) < gGameState->aItemCount[nItemId]) {
                 for (i = 0, pT = aTally; i < TALLY_ROWS; i++, pT++) {
                     if (pT->nKind == pRow->nListId) {
                         aTally[i].nSpare++;
@@ -187,7 +187,7 @@ Ov008Message15Record *Ov008_FindSpareItemOfKind(Ov008MenuContext *pCtx, Ov008Tra
     }
     pResult = 0;
     for (nItemId = 1; nItemId < ITEM_ID_COUNT; nItemId++) {
-        if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) < data_0204be18->aItemCount[nItemId]) {
+        if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) < gGameState->aItemCount[nItemId]) {
             pResult = &pCtx->pRecords[nItemId];
             break;
         }

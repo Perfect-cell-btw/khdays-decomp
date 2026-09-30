@@ -6,7 +6,7 @@
 #include "game/scene.h"
 typedef struct SceneTransition {u8 flags,submode;u16 transitionValue,parameter;} SceneTransition;
 typedef struct ModeSource {char opaque[8];int mode;} ModeSource;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 extern SceneTransition data_0204c240;
 extern u8 data_0204c300[];
 extern ModeSource *data_ov005_0205b808;
@@ -26,8 +26,8 @@ int Ov005_UpdateMenuExitTransition(void) {
     int result=0;
     if(Ov005_SubScene_IsIdle())Ov005_SetField4C2C(0);
     else Ov005_SetField4C2C(1);
-    if(Ov005_SubScene_IsIdle() && ((data_0204c190&1)||(data_0204c190&2)))Ov005_SubScene_SetFlagC60();
-    if(Ov005_SubScene_IsIdle() && (data_0204c190&8))Ov005_SubScene_SetFlagC5C();
+    if(Ov005_SubScene_IsIdle() && ((gPadPressed&1)||(gPadPressed&2)))Ov005_SubScene_SetFlagC60();
+    if(Ov005_SubScene_IsIdle() && (gPadPressed&8))Ov005_SubScene_SetFlagC5C();
     if(Ov005_SubScene_IsState2() && Ov005_IsState6()) {
         Ov005_SubScene_Arm();
         Ov005_Arm();

@@ -8,9 +8,9 @@ typedef struct { u16 h0, h1, h2, h3, h4, h5; u32 w; } Ov008WeaponStat;
 typedef struct { int a[22]; } Ov008StatColTable;
 
 extern int               data_ov008_02090f20;
-extern u8                data_0204c678[];
+extern u8                gPartyMembers[];
 extern u16               data_0204c680[];
-extern u8               *data_0204be18;
+extern u8               *gGameState;
 extern Ov008StatColTable data_ov008_0208f7f8;
 
 extern int   Ov008_GetPageB(void);
@@ -47,20 +47,20 @@ void Ov008_RefreshEquipPanel(int *self)
     u16 *puVar2;
     int *puVar7;
     u8 *idxData;
-    idxData=data_0204c678;
+    idxData=gPartyMembers;
     local_98 = local_94 = local_90 = 0;
     if (data_ov008_02090f20 == 0)
         return;
     PlayRecord_FoldFrame(0, self);
     puVar2 = data_0204c680;
-    LevelTable_ReadEntry(data_0204c678[3], data_0204c678[2], &sbuf);
-    Ov008_LoadWeaponStats(self[0xb] != 0 ? -1 : (int)data_0204c678[4], self[0xc]);
+    LevelTable_ReadEntry(gPartyMembers[3], gPartyMembers[2], &sbuf);
+    Ov008_LoadWeaponStats(self[0xb] != 0 ? -1 : (int)gPartyMembers[4], self[0xc]);
     Ov008_DrawPageBElement(2, 0, idxData[2] + 1);
     if (self[0xd] != 0)
         Ov008_DrawPageBElement(3, 0, 1);
     else
         Ov008_DrawPageBElement(3, 0, puVar2[3]);
-    iVar12 = data_0204be18[0x811] + 0xf;
+    iVar12 = gGameState[0x811] + 0xf;
     Ov008_DrawPageBElement(0x11, 0, self[1], iVar12);
     Ov008_DrawPageBElementAt(sbuf.h0, puVar2[0], 7);
     Ov008_DrawPageBElementAt(sbuf.h1, puVar2[1], 9);

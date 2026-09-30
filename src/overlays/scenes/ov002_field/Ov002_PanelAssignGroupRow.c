@@ -46,7 +46,7 @@ typedef struct {
 } Ov002PanelSession;
 
 extern Ov002PanelSession *data_ov002_0207f620;
-extern int data_0204be18;
+extern int gGameState;
 
 extern void MI_CpuFill8(void *pDst, int nValue, unsigned int nSize);
 extern Ov002PanelSubEntry *Ov002_PanelFindListEntryByKey(int nGroup, unsigned int nKey);
@@ -66,8 +66,8 @@ void Ov002_PanelAssignGroupRow(int nRow, unsigned int nGroup, unsigned int nKey)
     if (nOther >= 0) {
         MI_CpuFill8(&s->aGroups[nOther], 0, 0x10);
         s->aGroups[nOther].nGroup = 7;
-        *(u16 *)(data_0204be18 + nOther * 4 + 0xfd0) = 7;
-        *(u16 *)(data_0204be18 + nOther * 4 + 0xfd2) = 0;
+        *(u16 *)(gGameState + nOther * 4 + 0xfd0) = 7;
+        *(u16 *)(gGameState + nOther * 4 + 0xfd2) = 0;
     }
     MI_CpuFill8(pGroup, 0, 0x10);
     pGroup->nGroup = 7;
@@ -78,8 +78,8 @@ void Ov002_PanelAssignGroupRow(int nRow, unsigned int nGroup, unsigned int nKey)
             if (nKey == s->aCells[i].bFirst) {
                 pGroup->pKeyRef = &s->aCells[i].bFirst;
                 pGroup->nGroup = (u16)nGroup;
-                *(u16 *)(data_0204be18 + nRow * 4 + 0xfd0) = (u16)nGroup;
-                *(u16 *)(data_0204be18 + nRow * 4 + 0xfd2) = nKey;
+                *(u16 *)(gGameState + nRow * 4 + 0xfd0) = (u16)nGroup;
+                *(u16 *)(gGameState + nRow * 4 + 0xfd2) = nKey;
                 return;
             }
         }
@@ -90,8 +90,8 @@ void Ov002_PanelAssignGroupRow(int nRow, unsigned int nGroup, unsigned int nKey)
             pGroup->nGroup = (u16)nGroup;
             pGroup->nKey = (u16)nKey;
             pGroup->pEntry = (u16 *)pEntry;
-            *(u16 *)(data_0204be18 + nRow * 4 + 0xfd0) = (u16)nGroup;
-            *(u16 *)(data_0204be18 + nRow * 4 + 0xfd2) = (u16)nKey;
+            *(u16 *)(gGameState + nRow * 4 + 0xfd0) = (u16)nGroup;
+            *(u16 *)(gGameState + nRow * 4 + 0xfd2) = (u16)nKey;
         }
         break;
     }

@@ -3,12 +3,12 @@
 
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 
-extern char *data_0204c4f0[];
+extern char *gPartyState[];
 extern char data_0204c6b4[];
 extern char data_0204c714[];
 
 void PartyState_CopyEquipTables(int a, int b) {
-    char *p = data_0204c4f0[2];
+    char *p = gPartyState[2];
     char *dst;
     char *src;
     int i;

@@ -62,8 +62,8 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov008_02090fac;
-extern GameState *data_0204be18;
-extern u16 data_0204c190;                                         /* keys pressed */
+extern GameState *gGameState;
+extern u16 gPadPressed;                                         /* keys pressed */
 extern u8  data_ov008_0208fe74[];                                 /* choice 0 box */
 extern u8  data_ov008_0208fe78[];                                 /* choice 1 box */
 extern void  KeyRepeat_Step(u16 *pSource);
@@ -107,7 +107,7 @@ void *Ov008_ShopDetailConfirmTick(void)
         Ov008_SetEntrySlotsVisible(pWidgets, Ov008_FindEntryById(pWidgets, 7), 1);
         Ov008_SetEntrySlotsVisible(pWidgets, Ov008_FindEntryById(pWidgets, 8), 1);
         Ov008_SetEntrySlotsVisible(pWidgets, Ov008_FindEntryById(pWidgets, 1), 0);
-        data_0204be18->nPoints -= pPanel->pRecord->nPrice;
+        gGameState->nPoints -= pPanel->pRecord->nPrice;
         ctx->nHold31c = 0;
         ctx->nHold314 = 0;
         Ov008_CommitSynthesisOrder(pPanel->pRecord);
@@ -120,7 +120,7 @@ void *Ov008_ShopDetailConfirmTick(void)
             pPanel->nChoice ^= 1;
             PlaySound(0, SOUND_MOVE);
         } else {
-            nKeys = data_0204c190;
+            nKeys = gPadPressed;
             if (nKeys & KEY_A) {
                 nChoice = pPanel->nChoice;
             } else if (nKeys & KEY_B) {
@@ -144,7 +144,7 @@ void *Ov008_ShopDetailConfirmTick(void)
             pNext = Ov008_Shop_ReturnToList;
         }
     } else {
-        if ((data_0204c190 & KEY_CLOSE) != 0 || ctx->bTouch != 0) {
+        if ((gPadPressed & KEY_CLOSE) != 0 || ctx->bTouch != 0) {
             PlaySound(0, SOUND_MOVE);
             Ov008_SetEntrySlotsVisible(pWidgets, Ov008_FindEntryById(pWidgets, 7), 0);
             Ov008_SetEntrySlotsVisible(pWidgets, Ov008_FindEntryById(pWidgets, 8), 0);

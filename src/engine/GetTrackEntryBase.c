@@ -1,8 +1,8 @@
 /* Returns the address of the indexed track entry header of the entity manager. */
 
-extern char *data_0204c208;
+extern char *gEntityMgr;
 
 void *GetTrackEntryBase(int idx)
 {
-    return (void *)(data_0204c208 + 4 + (idx << 3));
+    return (void *)(gEntityMgr + 4 + (idx << 3));
 }

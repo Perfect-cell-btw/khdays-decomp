@@ -87,8 +87,8 @@ extern void Ov022_TickSubObjectChain(Ov022Node *node);
 extern void Ov022_MarshalEntrySnapshot(int index);
 extern void func_ov022_0208a1a4(void);
 
-extern unsigned short data_0204c190;
-extern unsigned short data_0204c18c;
+extern unsigned short gPadPressed;
+extern unsigned short gPadHeld;
 
 void Ov022_RefreshSlotRows(int unused)
 {
@@ -115,8 +115,8 @@ void Ov022_RefreshSlotRows(int unused)
     actor = func_ov022_02083f0c();
     func_ov022_0208a1fc();
     if (LoadGlobalU16At0() == 0x2a) {
-        data_0204c190 |= root->savedMask0;
-        data_0204c18c |= root->savedMask1;
+        gPadPressed |= root->savedMask0;
+        gPadHeld |= root->savedMask1;
         func_ov022_02087a70();
     }
     primaryNode = root->firstOwner->node;

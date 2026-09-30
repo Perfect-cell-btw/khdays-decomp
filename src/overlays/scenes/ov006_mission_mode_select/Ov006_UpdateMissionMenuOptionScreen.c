@@ -35,7 +35,7 @@ typedef struct {
 typedef u16 MissionLabel[11];
 
 extern MissionMenuContext *data_ov006_02056660;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern u32 Ov006_Link_GetMode(void);
 extern int Ov006_GetMissionMenuSelection(void);
@@ -66,7 +66,7 @@ MissionState Ov006_UpdateMissionMenuOptionScreen(void)
     u8 optionIndex;
 
     KeyRepeat_Step(data_ov006_02056660->inputHeader);
-    buttonBits = data_0204c190;
+    buttonBits = gPadPressed;
     if ((buttonBits & 1) != 0) {
         action = 1;
     }

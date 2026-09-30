@@ -54,7 +54,7 @@ extern void Ov000_UpdateWidgetLayerDefault(void *object, int value);
 extern void *Ov000_FadeTransitionTick(void);
 
 extern const u8 data_ov000_0205a954[4];
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 Ov000SceneCallback Ov000_TickListSceneInput(void)
 {
@@ -107,9 +107,9 @@ Ov000SceneCallback Ov000_TickListSceneInput(void)
         }
 
         if (context->inputLocked == 0) {
-            if ((data_0204c190 & 1) != 0) {
+            if ((gPadPressed & 1) != 0) {
                 Ov000_ActivateSceneObject(context);
-            } else if ((data_0204c190 & 0x0a) != 0) {
+            } else if ((gPadPressed & 0x0a) != 0) {
                 Ov000_List_StartClose(context);
             } else if ((context->buttonState & 0x40) != 0) {
                 Ov000_MoveSelectionUp(context);

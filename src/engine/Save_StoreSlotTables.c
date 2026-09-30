@@ -1,10 +1,10 @@
 /* Saves the 24 word slots of data_0204c6b4 and the 15 halfword slots of data_0204c714 into the
- * save buffer (data_0204c4f0[2], words first, halfwords at +0x60); the counterpart of
+ * save buffer (gPartyState[2], words first, halfwords at +0x60); the counterpart of
  * PartyState_CopyEquipTables. */
 #pragma thumb on
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 
-extern char *data_0204c4f0[];
+extern char *gPartyState[];
 extern char data_0204c6b4[];
 extern char data_0204c714[];
 
@@ -15,7 +15,7 @@ void Save_StoreSlotTables(void)
     int i;
     char *p;
 
-    p = data_0204c4f0[2];
+    p = gPartyState[2];
 
     src = data_0204c6b4;
     for (i = 0, dst = p; i < 24; i++) {

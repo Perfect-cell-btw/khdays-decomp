@@ -40,7 +40,7 @@ extern void LevelTable_ReadEntry(int kind, int level, LevelEntry *out);
 extern void Store2DArrayU8(int slot, int skill, int level);
 extern int func_02020400(int a, int b);   /* _s32_div_f */
 extern LevelEntry data_0204c680[];
-extern SlotRecord data_0204c678[];
+extern SlotRecord gPartyMembers[];
 extern const SkillTable data_02042160;
 
 #pragma push
@@ -55,12 +55,12 @@ void PartyMember_Reset(int slot, int kind, int level)
 
     LevelTable_ReadEntry(kind, level, &e);
     *(LevelEntry *)((char *)data_0204c680 + slot * 0x104) = e;
-    h = data_0204c678[slot].header;
+    h = gPartyMembers[slot].header;
     h.level = level;
     h.chara = kind;
     h.slot = slot;
     h.w6 = e.f6;
-    data_0204c678[slot].header = h;
+    gPartyMembers[slot].header = h;
     for (i = 0; i < 0xe; i++) {
         Store2DArrayU8(slot, i, 0);
     }

@@ -1,15 +1,15 @@
 /* Ov000_List_PageDown -- fast-scroll the logo list down by up to 0xa rows, ov000. No-op
- * at the bottom (field[0]>=0x13) or while L/R are held (data_0204c18c & 0xc0). Advances
+ * at the bottom (field[0]>=0x13) or while L/R are held (gPadHeld & 0xc0). Advances
  * field[0]/field[1] by 0xa (clamped to 0x12), refreshing the display when it moves. */
 
 #include "game/engine.h"
 
-extern unsigned short data_0204c18c;
+extern unsigned short gPadHeld;
 extern void Ov000_QueueResourceTransfers(void);
 void Ov000_List_PageDown(short *s) {
     int old = s[0];
     if (old >= 0x13) return;
-    if (data_0204c18c & 0xc0) return;
+    if (gPadHeld & 0xc0) return;
     if (old < 9) {
         s[0] = old + 0xa;
         s[1] += 0xa;

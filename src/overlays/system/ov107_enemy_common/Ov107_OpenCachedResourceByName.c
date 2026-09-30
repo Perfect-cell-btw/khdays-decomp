@@ -2,7 +2,7 @@
  * On a hit the cached handle is returned. On a miss a new entry is inserted, the
  * name is duplicated into a fresh allocation, and Msg_OpenContainerAndReadHeader opens the
  * resource with mode 0xb. Returns 0 when the cache itself does not exist. */
-extern int data_ov107_020cbf1c;
+extern int gOv107ActorManager;
 
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
@@ -14,7 +14,7 @@ extern void strcpy(void *dst, const char *src);
 extern int Msg_OpenContainerAndReadHeader(const char *name, int mode);
 
 int Ov107_OpenCachedResourceByName(const char *name) {
-    char *cache = *(char **)&data_ov107_020cbf1c;
+    char *cache = *(char **)&gOv107ActorManager;
     int *entry;
 
     if (cache != 0) {

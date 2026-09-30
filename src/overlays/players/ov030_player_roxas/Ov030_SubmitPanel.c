@@ -16,7 +16,7 @@ extern void Ov002_BuildPanelIdSummary(int a, int b, int c);
 extern void Ov002_LoadAnimTables(int a, int b, int c, int d, int e);
 extern int data_ov030_020b5a00;
 extern unsigned char data_0204c240;
-extern int data_0204c678;
+extern int gPartyMembers;
 
 void Ov030_SubmitPanel(int self) {
     int base = *(int *)&data_ov030_020b5a00;
@@ -26,7 +26,7 @@ void Ov030_SubmitPanel(int self) {
     if ((data_0204c240 & 4) != 0) {
         named = ok;
     } else {
-        int member = (int)&data_0204c678
+        int member = (int)&gPartyMembers
                      + *(unsigned char *)(self + 9) * 0x104;
         if (GameState_IsFlagSet(0x2089) != 0
             || *(unsigned char *)(member + 4) == 0x30) {

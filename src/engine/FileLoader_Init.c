@@ -33,7 +33,7 @@ typedef struct FileLoader {
     LoaderRequest *pool;                /* +0x1c */
 } FileLoader;
 
-extern FileLoader data_0204bbfc;
+extern FileLoader gFileLoader;
 extern int **data_0204c024;             /* default heap */
 extern void *data_0204bc1c;             /* request queue */
 extern void *data_0204bc3c[32];         /* request queue buffer */
@@ -54,21 +54,21 @@ BOOL FileLoader_Init(void)
 {
     int i;
 
-    if (data_0204bbfc.work == 0) {
-        data_0204bbfc.work = AllocFromExpHeapWrapper(0x1800, data_0204c024);
-        MI_CpuFill8(data_0204bbfc.work, 0, 0x1800);
-        data_0204bbfc.reader = ExpHeap_AllocOrDefault(0x420, 0x20, data_0204c024);
-        data_0204bbfc.reader2 = ExpHeap_AllocOrDefault(0x460, 0x20, data_0204c024);
-        FS_InitFile(data_0204bbfc.reader2 + 0x400);
-        data_0204bbfc.pool = AllocFromExpHeapWrapper(0x600, data_0204c024);
+    if (gFileLoader.work == 0) {
+        gFileLoader.work = AllocFromExpHeapWrapper(0x1800, data_0204c024);
+        MI_CpuFill8(gFileLoader.work, 0, 0x1800);
+        gFileLoader.reader = ExpHeap_AllocOrDefault(0x420, 0x20, data_0204c024);
+        gFileLoader.reader2 = ExpHeap_AllocOrDefault(0x460, 0x20, data_0204c024);
+        FS_InitFile(gFileLoader.reader2 + 0x400);
+        gFileLoader.pool = AllocFromExpHeapWrapper(0x600, data_0204c024);
         for (i = 0; i < 32; i++) {
-            data_0204bbfc.pool[i].next = (i < 31) ? &data_0204bbfc.pool[i + 1] : 0;
+            gFileLoader.pool[i].next = (i < 31) ? &gFileLoader.pool[i + 1] : 0;
         }
-        data_0204bbfc.freeList = data_0204bbfc.pool;
-        data_0204bbfc.hookA = EnqueueGfxCmd0;
-        data_0204bbfc.hookB = EnqueueGfxCmd1;
+        gFileLoader.freeList = gFileLoader.pool;
+        gFileLoader.hookA = EnqueueGfxCmd0;
+        gFileLoader.hookB = EnqueueGfxCmd1;
         OS_InitMessageQueue(&data_0204bc1c, data_0204bc3c, 32);
-        OS_InitThreadQueue((OSThreadQueue *)(data_0204bbfc.reader2 + 0x44c));
+        OS_InitThreadQueue((OSThreadQueue *)(gFileLoader.reader2 + 0x44c));
         OS_CreateThread(data_0204bcbc, FileLoader_ThreadMain, 0, data_027e0350, 0x240, 0x11);
         OS_WakeupThreadDirect(data_0204bcbc);
     }

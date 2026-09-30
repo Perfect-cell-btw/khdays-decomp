@@ -46,7 +46,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008ParamTable *data_ov008_02090fb0;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void BitArray_SetBit(void *pBits, u32 nBit);                        /* BitArray_SetBit */
 
 #pragma push
@@ -79,7 +79,7 @@ u32 Ov008_QueryRecordUnlock(Ov008ParamRecord **apRecords, int nIndex, u32 bSet)
         BitArray_SetBit(&data_ov008_02090fb0->aPendingSummary[nList], nBit);
     }
     bSet = BitArray_TestBit(&data_ov008_02090fb0->aPendingSummary[nList], nBit) != 0;
-    return bSet | (BitArray_TestBit(&data_0204be18->aUnlockSummary[nList], nBit) != 0) << 1;
+    return bSet | (BitArray_TestBit(&gGameState->aUnlockSummary[nList], nBit) != 0) << 1;
 }
 
 #pragma pop

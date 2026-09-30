@@ -23,7 +23,7 @@ extern void PlaySound(int bank, int id);
 extern int Ov027_GameOverIdle(void);
 
 extern Ov027Res data_ov027_02084360;
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 
 Ov027Handler Ov027_PollConfirmAndAdvance(void) {
     char *root = NNSi_FndGetCurrentRootHeap();
@@ -34,7 +34,7 @@ Ov027Handler Ov027_PollConfirmAndAdvance(void) {
         Ov027_DrawSignInPanel(data_ov027_02084360.sub);
     }
     Camera_CommitMatrices(root + 0x4d8);
-    if ((data_0204c190 & 1) != 0) {
+    if ((gPadPressed & 1) != 0) {
         PlaySound(0, 1);
         {
             volatile unsigned int *reg_dispcnt = (volatile unsigned int *)0x04000000;

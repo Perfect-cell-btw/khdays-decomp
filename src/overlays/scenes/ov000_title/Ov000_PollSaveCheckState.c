@@ -56,7 +56,7 @@ typedef struct Ov000CardContext {
 } Ov000CardContext;
 
 extern Ov000CardContext *data_ov000_0205ac24;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern s64  OS_GetTick(void);
 extern s64  func_02020368(u32 nLo, u32 nHi, u32 dLo, u32 dHi);
@@ -119,7 +119,7 @@ void Ov000_PollSaveCheckState(void)
         }
         break;
     case 2:
-        switch (data_0204c190) {
+        switch (gPadPressed) {
         case 1:
             done = 1;
             PlaySound(0, 1);

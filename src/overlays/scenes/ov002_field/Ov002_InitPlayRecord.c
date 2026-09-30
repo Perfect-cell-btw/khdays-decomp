@@ -5,7 +5,7 @@
  *
  * Record @ +0x8ba8: sets the +0/+2 halfwords and the +8/+0xc words to -1, the +4 byte to
  * 0xff, the +5/+6 bytes and the +0x1c word and +0x20 halfword to 0. Then MemSets 0xc0 bytes
- * at (*data_0204be18)+0x420, copies GameState field 0x40a into field 0x20ea (low 16 bits),
+ * at (*gGameState)+0x420, copies GameState field 0x40a into field 0x20ea (low 16 bits),
  * and clears data_0204c4d8[0x11].
  *
  * THUMB. The -1 stores use SIGNED short/int lvalues so mwcc materializes 0xffffffff once and
@@ -18,7 +18,7 @@
 
 extern void MI_CpuFill8(void *dst, int val, int size);
 extern int  data_ov002_0207fa00;
-extern int  data_0204be18;
+extern int  gGameState;
 extern char data_0204c4d8[];
 
 void Ov002_InitPlayRecord(void)
@@ -37,7 +37,7 @@ void Ov002_InitPlayRecord(void)
     *(int *)(rec + 0x1c)   = 0;
     *(short *)(rec + 0x20) = 0;
 
-    gs = data_0204be18;
+    gs = gGameState;
     MI_CpuFill8((void *)(gs + 0x420), 0, 0xc0);
 
     v = GameState_GetField(0x40a, 2);

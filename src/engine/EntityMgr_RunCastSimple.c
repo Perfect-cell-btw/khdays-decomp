@@ -10,7 +10,7 @@ typedef struct {
     int word10;
 } func_0202c2f8_args;
 
-extern char *data_0204c208;
+extern char *gEntityMgr;
 extern void *Collision_CastNearest(void *ptr, func_0202c2f8_args *args);
 
 void *EntityMgr_RunCastSimple(int index, int arg1, int arg2, int arg3) {
@@ -21,5 +21,5 @@ void *EntityMgr_RunCastSimple(int index, int arg1, int arg2, int arg3) {
     args.halfc = 0;
     args.halfe = 0;
     args.word10 = arg3;
-    return Collision_CastNearest(data_0204c208 + 4 + index * 8, &args);
+    return Collision_CastNearest(gEntityMgr + 4 + index * 8, &args);
 }

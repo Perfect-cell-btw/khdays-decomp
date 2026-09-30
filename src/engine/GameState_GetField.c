@@ -2,8 +2,8 @@
  */
 
 extern int BitArray_GetField();
-extern int data_0204be18;
+extern int gGameState;
 
 int GameState_GetField(int arg0, int arg1) {
-    return BitArray_GetField(data_0204be18 + 0x10, arg0, arg1);
+    return BitArray_GetField(gGameState + 0x10, arg0, arg1);
 }

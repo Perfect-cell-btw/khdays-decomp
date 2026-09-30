@@ -56,7 +56,7 @@ struct Actor {
     u8 nRumbleState;             /* 0x2ab4 rumble.nState */
 };
 
-extern struct Record data_0204c678[];      /* kOv022KindRecords */
+extern struct Record gPartyMembers[];      /* kOv022KindRecords */
 
 extern int Slot_EvalPackedParam(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int func_ov022_020ad7b0(struct Actor *pActor);                           /* IsField12LeShifted16 */
@@ -77,7 +77,7 @@ int Ov022_ComputeStrengthDamage(struct Actor *pActor, int nScale)
     int nRuleLowHp;
     int nBoost;
 
-    pRec = &data_0204c678[pActor->nId];
+    pRec = &gPartyMembers[pActor->nId];
     nStrength = 0;
     nMagic = 0;
     nStrength += pRec->nStrength << 12;

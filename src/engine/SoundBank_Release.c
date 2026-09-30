@@ -1,4 +1,4 @@
-/* SoundBank_Release -- release a sound-data bank, MAIN. The game's sound context (data_0204c234) keeps
+/* SoundBank_Release -- release a sound-data bank, MAIN. The game's sound context (gSoundMgr) keeps
  * four sound heaps of 0x1c00 bytes carved from its +0x5e4a0 area, each with a state (+0xb4704),
  * a reference count (+0xb4708) and the id loaded in it (+0xb470c), plus the bank each id sits in
  * (+0xb4714). A negative id rebuilds all four heaps, provided every bank holds the same id and the
@@ -25,14 +25,14 @@ typedef struct SoundCtx {
     u8 busy;                                        /* +0xb47b6 */
 } SoundCtx;
 
-extern SoundCtx *data_0204c234;
+extern SoundCtx *gSoundMgr;
 extern NNSSndHeapHandle NNS_SndHeapCreate(void *startAddress, unsigned int size);   /* NNS_SndHeapCreate */
 extern void NNS_SndHeapDestroy(NNSSndHeapHandle heap);   /* NNS_SndHeapDestroy */
 extern void NNS_SndHeapClear(NNSSndHeapHandle heap);   /* NNS_SndHeapClear */
 
 BOOL SoundBank_Release(int id)
 {
-    SoundCtx *ctx = data_0204c234;
+    SoundCtx *ctx = gSoundMgr;
     int i;
 
     if (id < 0) {

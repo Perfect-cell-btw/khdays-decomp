@@ -15,7 +15,7 @@ extern int NNSi_FndGetCurrentRootHeap(void);
 extern void CallVirtSlot1(void *p, int b);
 extern void Text_UploadTileBuffer(void *p);
 extern int Ov007_TextWindowFadeIn(void);
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern int Ov007_FadeOutStep(void);
 
 /* Fade the backdrop colour to black over 8 frames by writing a grey RGB555 value
@@ -39,7 +39,7 @@ int Ov007_FadeBackdropStep(void) {
         int v = 0x20 - frame * 4;
         *(volatile unsigned short *)0x05000002 = v | v * 0x20 | v * 0x400;
     }
-    if ((data_0204c190 & 8) != 0) {
+    if ((gPadPressed & 8) != 0) {
         *(int *)(root + 0x20) = 0;
         ret = (int)Ov007_FadeOutStep;
     }

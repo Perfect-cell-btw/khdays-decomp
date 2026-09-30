@@ -1,7 +1,7 @@
 extern unsigned short *GXx_SetMasterBrightness_(unsigned short *p, int v);
 
 extern unsigned char data_027e0080;
-extern signed char data_027e0084;
+extern signed char gMasterBrightness;
 
 struct VBlankNode {
     int pad0[5];
@@ -28,10 +28,10 @@ void OSi_VBlankInterruptHandler(void) {
     ctx->counter = ctx->counter + 1;
 
     if (flags & 1) {
-        GXx_SetMasterBrightness_((unsigned short *)0x0400006C, (&data_027e0084)[0]);
+        GXx_SetMasterBrightness_((unsigned short *)0x0400006C, (&gMasterBrightness)[0]);
     }
     if (flags & 2) {
-        GXx_SetMasterBrightness_((unsigned short *)0x0400106C, (&data_027e0084)[1]);
+        GXx_SetMasterBrightness_((unsigned short *)0x0400106C, (&gMasterBrightness)[1]);
     }
     p = ctx->list;
     data_027e0080 = 0;

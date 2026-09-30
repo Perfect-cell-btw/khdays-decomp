@@ -23,10 +23,10 @@ struct CardCtx {
     int *pList;                 /* +0xb04a0 */
 };
 
-extern struct CardCtx *data_0204c234;
+extern struct CardCtx *gSoundMgr;
 
 void FSi_BindCardTransfer(unsigned int id) {
-    struct CardCtx *obj = data_0204c234;
+    struct CardCtx *obj = gSoundMgr;
 
     if (obj->uId == id) {
         NNS_SndHeapLoadState(obj->pList, obj->nCurSlot);

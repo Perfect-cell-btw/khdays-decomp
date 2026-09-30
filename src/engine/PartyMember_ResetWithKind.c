@@ -26,7 +26,7 @@ typedef struct {
 } SlotExtra;
 
 extern void MI_CpuFill8(void *dst, u8 val, unsigned int size);
-extern SlotRecord data_0204c678[];
+extern SlotRecord gPartyMembers[];
 extern SlotExtra data_0204c500[];
 
 #pragma push
@@ -36,9 +36,9 @@ void PartyMember_ResetWithKind(int slot, u8 kind, int a, int b)
     SlotHeader h;
 
     PartyMember_Reset(slot, a, b);
-    h = data_0204c678[slot].header;
+    h = gPartyMembers[slot].header;
     h.kind = kind;
-    data_0204c678[slot].header = h;
+    gPartyMembers[slot].header = h;
     if (slot > 0 && slot - 1 < 2) {
         MI_CpuFill8(&data_0204c500[slot - 1], 0, sizeof(SlotExtra));
     }

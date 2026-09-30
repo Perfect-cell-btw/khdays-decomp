@@ -27,9 +27,9 @@ extern MissionMenuRow data_ov008_0208fc8c;
 extern u32 data_ov008_02090be8[6];
 extern int data_ov008_02090c00[2][12];
 extern MissionGridPosition data_ov008_02090c60[6];
-extern u16 data_0204c18c;
+extern u16 gPadHeld;
 extern MissionMenuContext *data_ov008_02090fa0;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern u16 Ov008_GetLocalPlayerIndex(void);
 extern int Ov008_ResolveMissionSelection(int selection);
@@ -86,7 +86,7 @@ int Ov008_UpdateMissionMemberSelectionInput(
     } while (i < 6);
 
     if (members[selectionIndex].flags3 == 0) {
-        directionInput = data_0204c18c;
+        directionInput = gPadHeld;
         if ((directionInput & 0x40) != 0) {
             directionInput = Mem_ReadU16(data_ov008_02090fa0->inputHeader);
             if ((directionInput & 0x40) != 0) {
@@ -110,10 +110,10 @@ int Ov008_UpdateMissionMemberSelectionInput(
         }
     }
 
-    if ((data_0204c190 & 2) != 0) {
+    if ((gPadPressed & 2) != 0) {
         action = 5;
     }
-    if ((data_0204c190 & 1) != 0) {
+    if ((gPadPressed & 1) != 0) {
         action = 4;
     }
 

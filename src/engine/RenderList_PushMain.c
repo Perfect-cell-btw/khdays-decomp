@@ -1,8 +1,8 @@
 /* Push `node` onto the head of the intrusive list at
- * *(data_0204c208 + index*4 + 0x84); links prev/next and tags node[0xa]. */
-extern int data_0204c208;
+ * *(gEntityMgr + index*4 + 0x84); links prev/next and tags node[0xa]. */
+extern int gEntityMgr;
 void RenderList_PushMain(int index, void *node) {
-    int base = data_0204c208;
+    int base = gEntityMgr;
     void *old = *(void **)(base + index * 4 + 0x84);
     if (old != 0) {
         *(void **)node = old;

@@ -22,7 +22,7 @@ typedef struct Ov002MissionMember {
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c240, data_02042a1d, data_02042a1c;
-extern Ov002MissionMember data_0204c678[];
+extern Ov002MissionMember gPartyMembers[];
 extern void Ov002_EmitEntriesForSetBits(void);
 extern void Ov002_ScatterPlaceByIndex(const VecFx32 *pPlace, int nAngle, int nIndex, VecFx32 *pOut);
 extern int Ov002_GetRootField8bae(void);
@@ -55,9 +55,9 @@ void Ov002_ScriptAddMissionMember(int nMemberKind, int nBehaviorId, int nLevelBi
         PartyMember_RebuildDerived(nIndex, 0, nMemberKind, nLevelBias + Ov002_GetRootField8bae());
         PartyMember_RefreshDialogue(nIndex, nBehaviorId);
         Ov002MissionMemberHead *pHeadWords2And6, *pHeadWord4;
-        pHead = (Ov002MissionMemberHead *)((char *)data_0204c678 + nIndex * 0x104);
-        pHeadWords2And6 = (Ov002MissionMemberHead *)((unsigned int)data_0204c678 + nIndex * 0x104);
-        pHeadWord4 = (Ov002MissionMemberHead *)((char *)((unsigned int)data_0204c678) + nIndex * 0x104);
+        pHead = (Ov002MissionMemberHead *)((char *)gPartyMembers + nIndex * 0x104);
+        pHeadWords2And6 = (Ov002MissionMemberHead *)((unsigned int)gPartyMembers + nIndex * 0x104);
+        pHeadWord4 = (Ov002MissionMemberHead *)((char *)((unsigned int)gPartyMembers) + nIndex * 0x104);
         pHead->wHead0 &= 0xffff;
         pHeadWords2And6->wHead2 &= 0xffff;
         pHeadWord4->wHead4 &= 0xffff;

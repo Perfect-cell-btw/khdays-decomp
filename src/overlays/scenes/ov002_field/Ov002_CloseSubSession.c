@@ -1,7 +1,7 @@
 /* Close the ov002 sub-session: release the lookup at +0x5e8, publish four of its
  * fields to the globals the rest of the game reads, and drop the pointer. */
 extern int data_ov002_0207f620;
-extern unsigned char data_0204c4f0;
+extern unsigned char gPartyState;
 extern unsigned char data_0204c4f2;
 extern unsigned char data_0204c4f3;
 extern int data_0204c4fc;
@@ -12,7 +12,7 @@ void Ov002_CloseSubSession(void) {
     unsigned char *self = *(unsigned char **)&data_ov002_0207f620;
 
     Ov002_FreeResourceRecordBuffer(self + 0x5e8);
-    data_0204c4f0 = self[1];
+    gPartyState = self[1];
     data_0204c4f3 = self[0];
     data_0204c4f2 = self[4];
     data_0204c4fc = *(int *)(self + 0x10);

@@ -60,7 +60,7 @@ struct Ov022Actor {
     u16 nHpMax;                      /* 0x0016 */
 };
 
-extern struct MissionMember data_0204c678[];   /* the mission member table */
+extern struct MissionMember gPartyMembers[];   /* the mission member table */
 extern u8 data_0204c240;                       /* mode and day clock */
 extern u16 data_0204c254[];                    /* panel thresholds */
 extern struct StatRow data_0204c680;           /* member 0's stored row */
@@ -90,7 +90,7 @@ void Ov022_ApplyMissionLevelStats(struct Ov022Actor *pActor)
     nLevel = -1;
     LevelTable_ReadEntry(pActor->nCharacterId, 0, &rowAtTally);
     pActor->nBaseStatC = rowAtTally.nStatC;
-    pMember = &data_0204c678[pActor->nId];
+    pMember = &gPartyMembers[pActor->nId];
     pActor->nHpMax = pMember->row.nHpMax;
     if (Slot_EvalPackedParam(pActor->nId, PARAM_FORCE_ONE) != 0) {
         pActor->nHpMax = 1;
@@ -99,13 +99,13 @@ void Ov022_ApplyMissionLevelStats(struct Ov022Actor *pActor)
     if ((data_0204c240 & MODE_MISSION) != 0 && data_0204c254[1] != 0) {
         nSessionLevel = data_0204c254[1];
         nLevel = nSessionLevel;
-        pMember = &data_0204c678[pActor->nId];
+        pMember = &gPartyMembers[pActor->nId];
         if (pMember->nTally <= nSessionLevel - 1) {
             nLevel = -1;
         }
     }
     if ((pActor->nFlags & FLAGS_RESCALE) != 0) {
-        pMember = &data_0204c678[pActor->nId];
+        pMember = &gPartyMembers[pActor->nId];
         nLevel = (unsigned int)pMember->nTally >> 1;
         if (nLevel < 1) {
             nLevel = -1;
@@ -113,7 +113,7 @@ void Ov022_ApplyMissionLevelStats(struct Ov022Actor *pActor)
     }
     if (nLevel > 0) {
     nIndex = pActor->nId * sizeof(struct MissionMember);
-    pMember = (struct MissionMember *)((u8 *)data_0204c678 + nIndex);
+    pMember = (struct MissionMember *)((u8 *)gPartyMembers + nIndex);
     pRow = &pMember->row;
     LevelTable_ReadEntry(pActor->nCharacterId, pMember->nTally, &rowAtTally);
     nBonusA = pMember->row.nStatA - rowAtTally.nStatA;

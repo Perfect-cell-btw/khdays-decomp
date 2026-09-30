@@ -90,7 +90,7 @@ extern u32   Ov025_QueryItemFlags(u32 nItem, u32 bSet);              /* Ov025_Qu
 extern void  Ov025_Reports_RefreshCurrentEntry(void);                             /* Ov025_Reports_RefreshRows */
 extern void  Ov025_Reports_HighlightRows(void);                             /* Ov025_Reports_HighlightRows */
 extern void  Ov025_Reports_DrawRowTexts(void);                             /* Ov025_Reports_DrawRowTexts */
-extern u16   data_0204c18c;                                         /* held keys */
+extern u16   gPadHeld;                                         /* held keys */
 extern const u8 data_ov025_020b421c[];                              /* the scroll bar box */
 
 void Ov025_Reports_HandleInput(void)
@@ -170,7 +170,7 @@ void Ov025_Reports_HandleInput(void)
     if (pPage->bPressed != 0) {
         return;
     }
-    if (data_0204c18c & 1) {
+    if (gPadHeld & 1) {
         if (pPage->bReadVariants != 0) {
             return;
         }

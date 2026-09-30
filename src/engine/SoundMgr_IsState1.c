@@ -5,8 +5,8 @@ typedef struct {
     unsigned char field_b46fc;
 } S_020335a4;
 
-extern S_020335a4 *data_0204c234;
+extern S_020335a4 *gSoundMgr;
 
 int SoundMgr_IsState1(void) {
-    return data_0204c234->field_b46fc == 1;
+    return gSoundMgr->field_b46fc == 1;
 }

@@ -25,7 +25,7 @@ typedef struct Ov008MissionList {
 #define KEY_DIR_MASK 0xf0
 #define KEY_DOWN     0x80
 
-extern u16 data_0204c18c;                                                 /* held keys */
+extern u16 gPadHeld;                                                 /* held keys */
 extern u16 Ov008_GetCurrentListId(void);                                     /* mission entry count */
 extern int Ov008_GetCtxObject9630(void);                                     /* Ov008_GetCtxObject9630 */
 extern void Ov008_MissionListSelectRow(Ov008MissionList *pList, u32 nWord, int nTarget);
@@ -41,7 +41,7 @@ void Ov008_MissionListKeyDown(Ov008MissionList *pList)
     if (pList->bAnimating != 0 || pList->bSelectionPending != 0 || pList->nScrollA != 0 || pList->nScrollB != 0) {
         return;
     }
-    if ((data_0204c18c & KEY_DIR_MASK) != KEY_DOWN) {
+    if ((gPadHeld & KEY_DIR_MASK) != KEY_DOWN) {
         return;
     }
     nCount = Ov008_GetCurrentListId();

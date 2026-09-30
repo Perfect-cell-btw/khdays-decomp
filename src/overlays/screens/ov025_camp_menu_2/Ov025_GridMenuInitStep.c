@@ -78,7 +78,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int   Ov025_GetContext(void);                                  /* Ov008_GetContext */
 extern void  NNS_FndInitList(void *pList, int nOffset);
 extern void  Ov025_GetPlayerSlotConfig(int *pSlot, void *pArg);                /* open the resource slot */
@@ -133,7 +133,7 @@ int Ov025_GridMenuInitStep(Ov008MenuContext *pCtx)
         pCtx->pCurrentCell = 0;
         pCtx->nScrollTargetA = pCtx->nScrollTargetB = SCROLL_SENTINEL;
         pCtx->bShown = -1;
-        pCtx->nCellCount = data_0204be18->aItemCount[1] + CELL_EXTRA;
+        pCtx->nCellCount = gGameState->aItemCount[1] + CELL_EXTRA;
         if (pCtx->nCellCount > CELL_MAX) {
             pCtx->nCellCount = CELL_MAX;
         }

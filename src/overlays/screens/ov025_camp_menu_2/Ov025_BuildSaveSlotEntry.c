@@ -3,7 +3,7 @@
  * the entry, then maps the mode arg to entry->mode (0->1, 2->0, 4->2, else -1). Only mode 0 fills
  * the rest: it runs the Ov008IterFrame list walker (NNS_FndInitList / seed / collect / finalize)
  * to count the visible cells (entry->at2 = count+1), then reads save/game-state fields off
- * data_0204be18 -- *(obj+8), *obj (play time) -- and four GameState_GetField (GameState_GetField)
+ * gGameState -- *(obj+8), *obj (play time) -- and four GameState_GetField (GameState_GetField)
  * queries (ids 9, 0x40a, 0xc4b, 0x44e), with the last stored as (result == 6). The mode arm uses
  * a switch so the compiler lays the four stores out of line (sparse cmp-chain) rather than
  * predicating them inline. */
@@ -35,7 +35,7 @@ typedef struct MenuEntry {
     int at18;    /* 0x18 */
 } MenuEntry;
 
-extern char *data_0204be18;
+extern char *gGameState;
 extern void  MI_CpuFill8(void *dst, int v, unsigned int n);
 extern void  NNS_FndInitList(NNSFndList *list, int offset);
 extern void  Ov025_InitRecordContext(void *self, int a);
@@ -71,14 +71,14 @@ void Ov025_BuildSaveSlotEntry(int param_1, int param_2, int param_3)
 
         NNS_FndInitList(&f.list, 0x28);
         Ov025_InitRecordContext(f.iter, 0);
-        Ov025_BuildMenuGrid(f.iter, f.buffer, &f.list, data_0204be18 + 0xee0);
+        Ov025_BuildMenuGrid(f.iter, f.buffer, &f.list, gGameState + 0xee0);
         Ov025_RebuildViewAndCountCells(f.iter, f.buffer, &f.list);
         entry->at2 = (u16)(*(int *)(f.iter + 0x78) + 1);
         Ov025_ReleaseHandleGridAndList(f.iter, f.buffer, &f.list);
         func_ov025_02087254(f.iter);
-        entry->at4 = *(int *)(data_0204be18 + 8);
+        entry->at4 = *(int *)(gGameState + 8);
         entry->at0 = (u16)GameState_GetField(0, 9);
-        entry->atc = *(int *)data_0204be18;
+        entry->atc = *(int *)gGameState;
         entry->at8 = GameState_GetField(0x40a, 2);
         entry->at18 = GameState_GetField(0xc4b, 2);
         entry->at14 = (GameState_GetField(0x44e, 3) == 6);

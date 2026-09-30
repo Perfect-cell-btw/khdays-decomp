@@ -16,11 +16,11 @@ struct HandlerMgr {
     int *table;           /* +0x48 */
 };
 
-extern struct HandlerMgr *data_ov107_020cbf1c;
+extern struct HandlerMgr *gOv107ActorManager;
 
 int Ov107_FindMessageHandler(unsigned int id)
 {
-    struct HandlerMgr *mgr = data_ov107_020cbf1c;
+    struct HandlerMgr *mgr = gOv107ActorManager;
     int node, e;
 
     if (mgr->table != 0 && id < (u16)mgr->count) {

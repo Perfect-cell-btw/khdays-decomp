@@ -20,7 +20,7 @@ extern int Ov008_VerifySha1Signature(void *buf);
 extern void Ov008_StartCardThread(int a, int b, int c);
 
 extern char *data_0204be14;
-extern char *data_0204be18;
+extern char *gGameState;
 extern CardTransferCtx data_ov008_02090fb4;
 
 int Ov008_PollSaveLoad(void) {
@@ -46,7 +46,7 @@ int Ov008_PollSaveLoad(void) {
             ret = 2;
         } else if (Ov008_VerifySha1Signature(data_0204be14) != 0) {
             ret = 0;
-            data_0204be18 = data_0204be14 + 0x18;
+            gGameState = data_0204be14 + 0x18;
         } else {
             data_ov008_02090fb4.blockCounter = data_ov008_02090fb4.blockCounter + 1;
             if (data_ov008_02090fb4.blockCounter >= 2) {

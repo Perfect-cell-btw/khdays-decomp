@@ -24,7 +24,7 @@ typedef struct GameState {
     int missionResultRecords[200];
 } GameState;
 extern Ov005Config data_ov005_0205b85c;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern u32 GameState_GetField(u32,u32);
 extern void GameState_SetField(u32,u32,u32),GameState_SetFlag(u32);
 extern int GameState_IsFlagSet(u32);
@@ -81,13 +81,13 @@ void Ov005_CommitMissionResults(void) {
         }
     }
     reward=Ov005_ScaleByPercent(config->rewardBase0c,config->rewardScale0c);
-    data_0204be18->rewardTotal0c+=reward;
-    if(data_0204be18->rewardTotal0c>999999)data_0204be18->rewardTotal0c=999999;
+    gGameState->rewardTotal0c+=reward;
+    if(gGameState->rewardTotal0c>999999)gGameState->rewardTotal0c=999999;
     reward=Ov005_ScaleByPercent(config->rewardBase08,config->rewardScale08);
-    data_0204be18->rewardTotal08+=reward;
-    if(data_0204be18->rewardTotal08>999999)data_0204be18->rewardTotal08=999999;
+    gGameState->rewardTotal08+=reward;
+    if(gGameState->rewardTotal08>999999)gGameState->rewardTotal08=999999;
     reward=Ov005_ScaleByPercent(config->rewardBase04,config->rewardScale04);
-    data_0204be18->rewardTotal04+=reward;
-    if(data_0204be18->rewardTotal04>999999)data_0204be18->rewardTotal04=999999;
-    if(config->updateMissionRecord)data_0204be18->missionResultRecords[config->missionIndex]=config->missionResultValue;
+    gGameState->rewardTotal04+=reward;
+    if(gGameState->rewardTotal04>999999)gGameState->rewardTotal04=999999;
+    if(config->updateMissionRecord)gGameState->missionResultRecords[config->missionIndex]=config->missionResultValue;
 }

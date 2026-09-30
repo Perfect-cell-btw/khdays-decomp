@@ -1,5 +1,5 @@
 /* FileLoader_ThreadMain -- the file loader thread, MAIN. A state machine over the second reader
- * (data_0204bbfc.reader2: two 0x200-byte blocks, FSFile +0x400, current request +0x448, idle queue
+ * (gFileLoader.reader2: two 0x200-byte blocks, FSFile +0x400, current request +0x448, idle queue
  * +0x44c, block lengths +0x454, block flags +0x45c):
  *   0  idle: unless held (+0x3c) wakes the waiters and clears the request, then blocks on the
  *      request queue; a null request ends the thread. Compressed (1) / raw (0) file requests open their image
@@ -63,7 +63,7 @@ typedef struct FileLoader {
     int hold;                           /* +0x3c */
 } FileLoader;
 
-extern FileLoader data_0204bbfc;
+extern FileLoader gFileLoader;
 extern char data_0204bc1c[];            /* request queue */
 extern void OS_WakeupThread(OSThreadQueue *queue);
 extern int OS_ReceiveMessage(void *mq, void *msg, int flags);
@@ -96,12 +96,12 @@ void FileLoader_ThreadMain(void *arg)
 {
     int state = 0;
     LoaderRequest *req;
-    LoaderReader *rd = data_0204bbfc.reader2;
+    LoaderReader *rd = gFileLoader.reader2;
 
     for (;;) {
         switch (state) {
         case 0:
-            if (data_0204bbfc.hold == 0) {
+            if (gFileLoader.hold == 0) {
                 OS_WakeupThread(&rd->idleQueue);
                 rd->request = 0;
             }

@@ -6,7 +6,7 @@ extern void ExpHeap_Free(u32 a, u32 b);
 extern void Session_ShutdownHookNoOp(void);
 extern void func_02023ad0(void *p);
 
-extern u32 **data_0204c230;
+extern u32 **gMsgQueue;
 extern u32 *data_0204c024;
 
 void Session_Shutdown(void)
@@ -19,7 +19,7 @@ void Session_Shutdown(void)
     u32 *p;
     int k;
 
-    r6 = (u32 *)data_0204c230;
+    r6 = (u32 *)gMsgQueue;
     if (r6 == 0) goto end;
     j = 0;
     if ((int)r6[2] > 0) {
@@ -47,5 +47,5 @@ void Session_Shutdown(void)
         r6 = (u32 *)((char *)r6 + 4);
     } while (r4 < 2);
 end:
-    data_0204c230 = 0;
+    gMsgQueue = 0;
 }

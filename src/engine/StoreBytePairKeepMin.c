@@ -3,10 +3,10 @@
 
 #include "game/engine.h"
 
-extern char data_0204c678[];
+extern char gPartyMembers[];
 void StoreBytePairKeepMin(int param_1, int param_2, unsigned int param_3, unsigned char *param_4)
 {
-    unsigned char *row = (unsigned char *)(data_0204c678 + param_1 * 0x104 + 0x9c) + param_2 * 2;
+    unsigned char *row = (unsigned char *)(gPartyMembers + param_1 * 0x104 + 0x9c) + param_2 * 2;
     unsigned char b;
     row[0] = param_4[0];
     b = param_4[1];

@@ -1,8 +1,8 @@
-/* Returns a finished load request to the file loader's free list (data_0204bbfc + 0x18). */
+/* Returns a finished load request to the file loader's free list (gFileLoader + 0x18). */
 
-extern int data_0204bbfc;
+extern int gFileLoader;
 
 void FileLoader_FreeRequest(int *request) {
-    *request = *(int *)((char *)&data_0204bbfc + 0x18);
-    *(int *)((char *)&data_0204bbfc + 0x18) = (int)request;
+    *request = *(int *)((char *)&gFileLoader + 0x18);
+    *(int *)((char *)&gFileLoader + 0x18) = (int)request;
 }

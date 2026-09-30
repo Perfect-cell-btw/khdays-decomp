@@ -1,7 +1,7 @@
 /* Returns a sound handle entry to the free pool: unlinks it from the active list (fixing the tail)
  * and pushes it on the free list, marking it unused. */
 
-extern char *data_0204c234;
+extern char *gSoundMgr;
 
 typedef struct SlotLink {
     struct SlotLink *next;
@@ -10,7 +10,7 @@ typedef struct SlotLink {
 
 void ScriptPool_FreeSlot(void *ptr) {
     SlotLink *node = (SlotLink *)ptr;
-    char *base = data_0204c234;
+    char *base = gSoundMgr;
 
     {
         SlotLink *tailVal = *(SlotLink **)(base + 0xb46e8);

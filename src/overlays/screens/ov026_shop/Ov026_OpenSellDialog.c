@@ -144,7 +144,7 @@ typedef struct GameState {
 
 extern Ov026PanelContext *data_ov026_02091368;
 extern const Ov026CellRect data_ov026_020910dc[2];
-extern GameState *volatile data_0204be18;                                       /* g_pTallySource */
+extern GameState *volatile gGameState;                                       /* g_pTallySource */
 extern void *Ov026_FindEntryByTag(void *pTracker, unsigned int nTag);            /* Ov026_FindEntryByTag */
 extern void  Ov026_TagTracker_InvokeCallback(void *pTracker, void *pCell);         /* Ov026_TagTracker_InvokeCallback */
 extern int   Ov026_CreateMissionCell(int hSlots, int nKind, int nSlot, int nX, int nY); /* create a cell */
@@ -216,7 +216,7 @@ int Ov026_OpenSellDialog(void)
     nStock = pDialog->pRecord->pItemDef->nStock;
     pDialog->nCount = 1;
     if (nTab == 0) {
-        ((volatile Ov026SellDialog *)pDialog)->nOwned = data_0204be18->aItemCount[Ov026_GetChildField14OrNeg1(pDialog->pRecord)];
+        ((volatile Ov026SellDialog *)pDialog)->nOwned = gGameState->aItemCount[Ov026_GetChildField14OrNeg1(pDialog->pRecord)];
         pEntry = Ov026_FindEntryById(pWidgetsB, WIDGET_SELL);
         pBlock = Ov026_GetEntryBlock2c(pWidgetsB, pEntry);
         pos = *pBlock;
@@ -227,14 +227,14 @@ int Ov026_OpenSellDialog(void)
         ctx->columns.nRightSelected = 2;
         ctx->columns.nRightBase = -pDialog->pRecord->nPrice;
     } else {
-        ((volatile Ov026SellDialog *)pDialog)->nOwned = data_0204be18->aItemCount[Ov026_GetChildField14OrNeg1(pDialog->pRecord)];
+        ((volatile Ov026SellDialog *)pDialog)->nOwned = gGameState->aItemCount[Ov026_GetChildField14OrNeg1(pDialog->pRecord)];
         pEntry = Ov026_FindEntryById(pWidgetsB, WIDGET_BUY);
         pBlock = Ov026_GetEntryBlock2c(pWidgetsB, pEntry);
         pos = *pBlock;
-        Ov026_SetEntrySlotsVisible(pWidgetsB, pEntry, data_0204be18->nPoints != MUNNY_MAX);
+        Ov026_SetEntrySlotsVisible(pWidgetsB, pEntry, gGameState->nPoints != MUNNY_MAX);
         Ov026_ReleaseTwoSlotsEx(pWidgetsB, pEntry, &pos);
         Ov026_ReleaseTwoSlotsEx_2(pWidgetsB, pEntry, 0);
-        bShow = data_0204be18->nPoints == MUNNY_MAX ? COL_OFF : COL_ON;
+        bShow = gGameState->nPoints == MUNNY_MAX ? COL_OFF : COL_ON;
         ctx->columns.nLeftSelected = bShow;
         ctx->columns.nLeftBase = pDialog->pRecord->nPrice;
     }
@@ -245,7 +245,7 @@ int Ov026_OpenSellDialog(void)
     if (nStock > 0) {
         Slot_SetVisible(hSlots, pDialog->hCounterA, 1);
         nItem = Ov026_GetChildField14OrNeg1(pDialog->pRecord);
-        Slot_SetVisible(hSlots, pDialog->hCounterB, data_0204be18->aItemCount[nItem] != Ov026_CountSpareItemsOfChild(pDialog->pRecord));
+        Slot_SetVisible(hSlots, pDialog->hCounterB, gGameState->aItemCount[nItem] != Ov026_CountSpareItemsOfChild(pDialog->pRecord));
         Slot_ForwardToEntry(hSlots, pDialog->hCounterA, (u16)(nStock - 1));
     }
     switch (nTab) {
@@ -255,14 +255,14 @@ int Ov026_OpenSellDialog(void)
         pRecord = pDialog->pRecord;
         bRecipe = 0;
         bOk = bLast = bAfford = 1;
-        pair.delta = data_0204be18->aItemCount[nItem];
+        pair.delta = gGameState->aItemCount[nItem];
         pair.c = 0;
         pair.delta -= pDialog->nOwned;
         pair.cap -= pair.delta;
         if (pRecord->nRecipeA != 0 && pRecord->nRecipeC != 0) pair.c = 1;
         if (pair.c != 0 && pRecord->nRecipeB != 0) bRecipe = 1;
         if (!bRecipe) {
-            if (pRecord->nLevelReq - data_0204be18->aLevel[pRecord->nLevelIndex] != 1) {
+            if (pRecord->nLevelReq - gGameState->aLevel[pRecord->nLevelIndex] != 1) {
                 bOk = 0;
             }
         }
@@ -272,7 +272,7 @@ int Ov026_OpenSellDialog(void)
             }
         }
         if (!bLast) {
-            if (data_0204be18->nMunny >= pRecord->nPrice << 1) {
+            if (gGameState->nMunny >= pRecord->nPrice << 1) {
                 bAfford = 0;
             }
         }

@@ -19,12 +19,12 @@ typedef struct ScriptPool {
     unsigned char resident;
 } ScriptPool;
 
-extern ScriptPool *data_0204c234;
+extern ScriptPool *gSoundMgr;
 extern unsigned int data_020429e8;
 
 ScriptSlot *ScriptPool_AllocSlot(void)
 {
-    ScriptPool *pool = data_0204c234;
+    ScriptPool *pool = gSoundMgr;
     ScriptSlot *slot = pool->freeHead;
 
     if (slot == 0) {

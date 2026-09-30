@@ -115,7 +115,7 @@ struct Actor {
 #define ONE 0x1000
 #define THREE 0x3000
 
-extern struct Record data_0204c678[];              /* kOv022KindRecords */
+extern struct Record gPartyMembers[];              /* kOv022KindRecords */
 extern u8 data_0204c240;                           /* g_modeAndDayClock.nModeFlags */
 extern struct TallyRules data_0204c248;            /* Ov002TallyRules */
 extern struct PanelThresholds data_0204c254;       /* g_ov002PanelThresholds */
@@ -153,7 +153,7 @@ int Ov022_ComputeDamageTaken(struct Actor *pActor, struct HitRequest *pReq)
 
     nFlags = pReq->nFlags;
     nResult = 0;
-    pRec = &data_0204c678[pActor->nId];
+    pRec = &gPartyMembers[pActor->nId];
     bDrain = 0;
     pStats = &pActor->stats;
     if ((nFlags & REQ_RAW) != 0) {

@@ -1,4 +1,4 @@
-/* Clears record `slot` of the four 0x104-byte records at data_0204c678: the 24 entry ids (+0x3c),
+/* Clears record `slot` of the four 0x104-byte records at gPartyMembers: the 24 entry ids (+0x3c),
  * the 15 byte pairs (+0x9c) and the 5 counters (+0x28). Codegen: every loop indexes the global
  * record directly; a `rec` pointer local puts the record address in r1 instead of the ROM's r2. */
 #pragma thumb on
@@ -23,20 +23,20 @@ struct SlotRecord {
     u8 padBA[0x104 - 0xba];
 };
 
-extern struct SlotRecord data_0204c678[];
+extern struct SlotRecord gPartyMembers[];
 
 void PartyMember_ClearLists(int slot)
 {
     int i = 0;
 
     for (; i < 24; i++) {
-        data_0204c678[slot].aEntry[i].nId = 0;
+        gPartyMembers[slot].aEntry[i].nId = 0;
     }
     for (i = 0; i < 15; i++) {
-        data_0204c678[slot].aPair[i].a = 0;
-        data_0204c678[slot].aPair[i].b = 0;
+        gPartyMembers[slot].aPair[i].a = 0;
+        gPartyMembers[slot].aPair[i].b = 0;
     }
     for (i = 0; i < 5; i++) {
-        data_0204c678[slot].anCount[i] = 0;
+        gPartyMembers[slot].anCount[i] = 0;
     }
 }

@@ -48,7 +48,7 @@ typedef struct GameState {
     u16 equippedItems[GRID_PAGES][PAGE_SLOTS];    /* 0x0ee0 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void  Ov025_ClearTrackedGridCells(Ov008MenuContext *pCtx);                /* Ov008_ClearTrackedGridCells */
 extern void  Ov025_InvokeMethod8(void *pObject);                          /* ov008_InvokeMethod8 */
 extern void  Ov025_FreeAllWidgetLists(Ov008MenuContext *pCtx);                /* Ov008_FreeAllWidgetLists */
@@ -94,9 +94,9 @@ void Ov025_DestroyGridMenu(Ov008MenuContext *pCtx)
         for (i = 0; i < PAGE_SLOTS; i++) {
             pRecord = pCtx->apPageSlot[nPage][i];
             if (pRecord != 0) {
-                data_0204be18->equippedItems[nPage][i] = pRecord->nItemId;
+                gGameState->equippedItems[nPage][i] = pRecord->nItemId;
             } else {
-                data_0204be18->equippedItems[nPage][i] = 0;
+                gGameState->equippedItems[nPage][i] = 0;
             }
         }
     }

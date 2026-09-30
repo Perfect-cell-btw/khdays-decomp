@@ -65,7 +65,7 @@ struct Actor {
 #define ROLL_LOW 20
 #define ROLL_HALF 50
 
-extern struct MissionMember data_0204c678[];   /* the mission member table */
+extern struct MissionMember gPartyMembers[];   /* the mission member table */
 
 extern struct PlayerSlot *GetPlayerSlotTableEntry(int nSlot);
 extern int Load2DArrayU8(int nId, int nAction);
@@ -82,7 +82,7 @@ void Ov022_RollSlotRetreat(struct Actor *pActor)
     u32 nRoll;
 
     pSlot = GetPlayerSlotTableEntry((u8)(pActor->nId - 1));
-    pMember = &data_0204c678[pActor->nId];
+    pMember = &gPartyMembers[pActor->nId];
     if ((pSlot->nFlags & SLOT_BIT3) != 0) {
         for (nAction = ACTION_FIRST; nAction < ACTION_END; nAction++) {
             if (Load2DArrayU8(pActor->nId, nAction) > 0

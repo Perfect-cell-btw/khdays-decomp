@@ -1,6 +1,6 @@
 /* Ov027_MoveCursor -- Ov027_MoveCursor: move the game-over panel's cursor with the pad.
  * Outside a client session (bit 1 of data_0204c240) and below room 10000 (data_0204c240 + 2),
- * up (bit 7 of the pressed keys data_0204c190) or down (bit 6) plays sound 0 / 0, clears the
+ * up (bit 7 of the pressed keys gPadPressed) or down (bit 6) plays sound 0 / 0, clears the
  * old slot's blink phase (+0x574 of the scene work, 8 bytes a slot), steps the cursor and skips
  * the hidden middle slot of a three-slot panel (+0x5d4) without the prompt (+0x5e0), wrapping
  * at both ends.  Then bit 1 of the panel word (+0x5b8) is set, the selection (+0x5c0) becomes
@@ -132,7 +132,7 @@ extern void  Ov027_DrawPanelSlotShifted(Ov027Panel *pPanel, int nSlot, int nShif
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
 extern Ov027SessionInfo data_0204c240;                                 /* session bits */
-extern u16   data_0204c190;                                         /* the keys pressed this frame */
+extern u16   gPadPressed;                                         /* the keys pressed this frame */
 
 void Ov027_MoveCursor(int *pCursor)
 {
@@ -143,10 +143,10 @@ void Ov027_MoveCursor(int *pCursor)
 
     if (!(data_0204c240.nBits & 2)) {
         if (data_0204c240.nRoom < 10000) {
-            if ((data_0204c190 & 0x80) || (data_0204c190 & 0x40)) {
+            if ((gPadPressed & 0x80) || (gPadPressed & 0x40)) {
                 PlaySound(0, 0);
                 data_ov027_02084364->aBlink[*pCursor].nPhase = 0;
-                if (data_0204c190 & 0x80) {
+                if (gPadPressed & 0x80) {
                     nStep = 1;
                 } else {
                     nStep = -1;

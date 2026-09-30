@@ -50,7 +50,7 @@ GameClassDescriptor data_020429a4 = {
 };
 
 /* Two small tables read by 02031600 / 02031618. */
-int data_020429b8[4] = { 1, 1, 0, 0 };
+int gSessionSetup[4] = { 1, 1, 0, 0 };
 int data_020429c8[8] = { 1, 0, 0, 1, 0, 2, 0, 3 };
 
 /* A flag 020329e8 tests. */

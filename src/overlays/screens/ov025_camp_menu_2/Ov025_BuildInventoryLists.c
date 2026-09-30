@@ -55,7 +55,7 @@ typedef struct GameState {
 } GameState;
 
 extern const Ov008CategoryFilter data_ov025_020b3d68;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int   Ov025_IsGridItemEligible(int nItemId);                          /* Ov008_IsGridItemEligible */
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);                /* AllocDefault */
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
@@ -74,13 +74,13 @@ void Ov025_BuildInventoryLists(Ov008MenuContext *pCtx)
     for (i = 0; i < CATEGORY_COUNT; i++) {
         pCtx->nTotal = 0;
         for (nItemId = 1; nItemId < ITEM_ID_END; nItemId++) {
-            if (Ov025_IsGridItemEligible(nItemId) != 0 && data_0204be18->aItemCount[nItemId] != 0) {
+            if (Ov025_IsGridItemEligible(nItemId) != 0 && gGameState->aItemCount[nItemId] != 0) {
                 pRecord = &pCtx->pRecords[nItemId];
                 if (filter.aCategory[i] == CATEGORY_ANY || pRecord->nCategory == filter.aCategory[i]) {
                     pItem = NNSi_FndAllocFromDefaultExpHeap(sizeof(Ov008InventoryItem));
                     MI_CpuFill8(pItem, 0, sizeof(Ov008InventoryItem));
                     pItem->pRecord = pRecord;
-                    pItem->nCount = data_0204be18->aItemCount[pRecord->nItemId];
+                    pItem->nCount = gGameState->aItemCount[pRecord->nItemId];
                     pItem->nPlaced = Ov025_CountGridEntriesForOwner(pCtx, pItem->pRecord->nItemId);
                     pCtx->aPlaced[pItem->pRecord->nItemId] = pItem->nPlaced;
                     Ov025_InsertWidgetByDepth(pCtx, &pCtx->aList[i], pItem);

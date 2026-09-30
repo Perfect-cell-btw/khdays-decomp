@@ -8,7 +8,7 @@ struct GameState {
     u8 itemCounts[0x1ca];
 };
 
-extern struct GameState *data_0204be18;
+extern struct GameState *gGameState;
 
 int Ov008_IsMenuPageUnlocked(unsigned int page)
 {
@@ -28,10 +28,10 @@ int Ov008_IsMenuPageUnlocked(unsigned int page)
         if (level >= 5) return 1;
         break;
     case 5:
-        if (data_0204be18->itemCounts[0x1c8] != 0) return 1;
+        if (gGameState->itemCounts[0x1c8] != 0) return 1;
         break;
     case 16:
-        if (data_0204be18->itemCounts[0x1c9] != 0) return 1;
+        if (gGameState->itemCounts[0x1c9] != 0) return 1;
         break;
     default:
         return 1;

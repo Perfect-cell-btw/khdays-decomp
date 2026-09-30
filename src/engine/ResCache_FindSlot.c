@@ -1,5 +1,5 @@
 /* ResCache_FindSlot = ResCache_FindSlot. Looks a resource up in the 128-entry cache table
- * (data_0204bbfc[2], 0x30 bytes each) by `key`: a key with bit 31 set is a numeric id compared with
+ * (gFileLoader[2], 0x30 bytes each) by `key`: a key with bit 31 set is a numeric id compared with
  * the entries' ids (bit 31 set too), any other key is a name compared (strcmp) with the named
  * entries. Returns the entry, or else the last unused entry seen (0 when the table is full); the
  * caller takes a reference by bumping refCount. */
@@ -12,7 +12,7 @@ typedef struct ResCacheEntry {
     char name[0x20];    /* 0x10: or an id with bit 31 set */
 } ResCacheEntry;
 
-extern ResCacheEntry *data_0204bbfc[];
+extern ResCacheEntry *gFileLoader[];
 extern int strcmp(const char *a, const char *b);   /* strcmp */
 
 ResCacheEntry *ResCache_FindSlot(const char *key)
@@ -30,7 +30,7 @@ ResCacheEntry *ResCache_FindSlot(const char *key)
     unsigned int keyIsId = (unsigned int)key & 0x80000000;
 
     unused = 0;
-    cur[n].entry = data_0204bbfc[2];
+    cur[n].entry = gFileLoader[2];
 
     for (i = 0; i < 0x80; i++, cur[n].entry++) {
         cur[n].refCount = cur[n].entry->refCount;

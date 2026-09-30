@@ -19,7 +19,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov025ConfigPage *Ov025_GetPageA(void);                  /* Ov008_GetPageA */
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 
 void Ov025_Config_SaveValues(void)
 {

@@ -80,7 +80,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void  Ov025_InitRecordContext(Ov008GridSummary *pSummary, void *pHooks);        /* init a summary */
 extern void  Ov025_RebuildViewAndCountCells(Ov008GridSummary *pSummary, void *pSlots, void *pList); /* RebuildViewAndCountCells */
 extern Ov008InventoryItem *Ov025_FindListObjectByKey(Ov008MenuContext *pCtx, int nList, int nItemId); /* find the inventory item */
@@ -158,7 +158,7 @@ int Ov025_PlaceDraggedNode(Ov008MenuContext *pCtx, int bKeepDrag)
         EnqueueObjGfxCommand(pCtx->gridSurface);
     }
     nItemId = pCtx->pListNode->nItemId;
-    if ((u32)Ov025_CountGridEntriesForOwner(pCtx, nItemId) >= data_0204be18->aItemCount[nItemId]) {
+    if ((u32)Ov025_CountGridEntriesForOwner(pCtx, nItemId) >= gGameState->aItemCount[nItemId]) {
         Ov025_ResetGridDrag(pCtx, 0);
         Ov025_EnterMenuState(pCtx, STATE_IDLE);
         pCtx->nBusyWord = 0;

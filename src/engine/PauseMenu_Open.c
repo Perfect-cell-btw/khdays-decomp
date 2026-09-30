@@ -1,5 +1,5 @@
 #pragma thumb on
-/* PauseMenu_Open -- pause menu opening step, MAIN (THUMB). Without data_0204bd85 or game field 0x20ef
+/* PauseMenu_Open -- pause menu opening step, MAIN (THUMB). Without gPauseAllowed or game field 0x20ef
  * it pushes step 0 and stops; while the opening delay (+0xcc) runs it counts down. Otherwise it sets
  * the menu BG (BG3, or BG2 in mode bit 1) to text 256x256 at screen base 0xf800 / char base 0xc000
  * and clears its screen, redraws the panels (unless game field 0x2483 is set), loads the menu screen
@@ -33,7 +33,7 @@ typedef struct {
 } Root0204be08;
 
 extern Root0204be08 data_0204be08;
-extern unsigned char data_0204bd85;
+extern unsigned char gPauseAllowed;
 extern unsigned char data_0204c240;
 extern char data_02042748[];            /* "pause_refresh" */
 
@@ -97,7 +97,7 @@ void PauseMenu_Open(void)
     PauseContext *ctx = data_0204be08.pCtx;
     int i;
 
-    if (data_0204bd85 == 0 && GameState_IsFlagSet(0x20ef) == 0) {
+    if (gPauseAllowed == 0 && GameState_IsFlagSet(0x20ef) == 0) {
         PauseMenu_SetMode(0);
         return;
     }

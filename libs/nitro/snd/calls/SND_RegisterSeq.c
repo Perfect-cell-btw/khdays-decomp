@@ -4,7 +4,7 @@ extern void *ResCache_FindSlot(int a, int b);
 extern int Archive_LoadFile(int a, int b);
 extern void strcpy(void *dst, int src);
 
-extern int data_0204bbfc[];
+extern int gFileLoader[];
 
 typedef struct {
     unsigned short s0;
@@ -22,11 +22,11 @@ void *SND_RegisterSeq(int a, int b) {
 
     if (p->s0 != 0) {
         p->s0++;
-        data_0204bbfc[0x14 / 4] = 0;
+        gFileLoader[0x14 / 4] = 0;
         return p;
     }
 
-    v = data_0204bbfc[0x14 / 4];
+    v = gFileLoader[0x14 / 4];
     if (v == 0) {
         v = Heap_GetCurrent();
     }

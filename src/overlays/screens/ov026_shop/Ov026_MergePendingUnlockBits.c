@@ -27,7 +27,7 @@ typedef struct GameState {
 
 extern const Ov008BitArrayCounts data_ov026_020911bc;   /* { 32, 32 } */
 extern Ov008ParamTable *data_ov026_0209136c;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 
 void Ov026_MergePendingUnlockBits(void)
 {
@@ -39,6 +39,6 @@ void Ov026_MergePendingUnlockBits(void)
         for (j = 0; j < counts.aCount[i]; j++) {
             data_ov026_0209136c->apUnlockBits[i][j] |= data_ov026_0209136c->apPendingBits[i][j];
         }
-        data_0204be18->aUnlockSummary[i] |= data_ov026_0209136c->aPendingSummary[i];
+        gGameState->aUnlockSummary[i] |= data_ov026_0209136c->aPendingSummary[i];
     }
 }

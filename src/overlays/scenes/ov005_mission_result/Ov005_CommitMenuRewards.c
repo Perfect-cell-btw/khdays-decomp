@@ -32,7 +32,7 @@ typedef struct Ov005Config {
     char opaque18[0x51];
     u8 specialItemMask;
 } Ov005Config;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov005Context *data_ov005_0205b80c;
 extern Ov005Config data_ov005_0205b85c;
 extern u32 OVERLAY_28_ID[1];
@@ -50,11 +50,11 @@ void Ov005_CommitMenuRewards(void) {
             for(itemId=0;itemId<1024;itemId++) {
                 if(itemId==data_ov005_0205b80c->items[index].itemId) {
                     if(data_ov005_0205b80c->items[index].quantities[row]!=0) {
-                        count=data_0204be18->itemCounts[itemId]+data_ov005_0205b80c->items[index].quantities[row];
+                        count=gGameState->itemCounts[itemId]+data_ov005_0205b80c->items[index].quantities[row];
                         GameState_SetFlag(itemId+0x4db);
                         if(data_ov005_0205b80c->items[index].indicatorState==2)GameState_SetFlag(itemId+0x37c9);
                         if(count>data_ov005_0205b80c->items[index].quantityLimit)count=data_ov005_0205b80c->items[index].quantityLimit;
-                        data_0204be18->itemCounts[itemId]=count;
+                        gGameState->itemCounts[itemId]=count;
                     }
                     break;
                 }
@@ -62,9 +62,9 @@ void Ov005_CommitMenuRewards(void) {
         }
     }
     if(data_ov005_0205b80c->bonusItemCount) {
-        data_0204be18->itemCounts[63]+=data_ov005_0205b80c->bonusItemCount;
+        gGameState->itemCounts[63]+=data_ov005_0205b80c->bonusItemCount;
         GameState_SetFlag(0x51a);
-        if(data_0204be18->itemCounts[63]>99)data_0204be18->itemCounts[63]=99;
+        if(gGameState->itemCounts[63]>99)gGameState->itemCounts[63]=99;
     }
     LoadOverlaySync(0,(u32)OVERLAY_28_ID);
     if(func_ov028_0208b3c0(0)) {
@@ -81,18 +81,18 @@ void Ov005_CommitMenuRewards(void) {
         int total;
         if(config->suppressMode8Reward!=0)return;
         if(config->missionIndex==94 || config->missionIndex==37)return;
-        total=data_0204be18->mode8RewardTotal+config->specialQuantity;
+        total=gGameState->mode8RewardTotal+config->specialQuantity;
         if(total>999)total=999;
-        data_0204be18->mode8RewardTotal=total;
+        gGameState->mode8RewardTotal=total;
         break;
     }
     case 255:break;
     default: {
         int total;
         if(config->specialQuantity>0) {
-            total=data_0204be18->otherRewardTotal+config->specialQuantity;
+            total=gGameState->otherRewardTotal+config->specialQuantity;
             if(total>999)total=999;
-            data_0204be18->otherRewardTotal=total;
+            gGameState->otherRewardTotal=total;
         }
     }
     }

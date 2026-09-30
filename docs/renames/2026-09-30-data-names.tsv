@@ -1,0 +1,25 @@
+# old_name	new_name	module  -- data and BSS the code shows the meaning of
+data_02042548	gSceneTable	main
+data_0204bda8	gSceneCtl	main
+data_0204c058	gObjSystem	main
+data_0204c068	gObjKeyBuckets	main
+data_0204bd84	gPauseMode	main
+data_0204bd85	gPauseAllowed	main
+data_0204bd88	gPauseHooks	main
+data_0204bd94	gPauseHookArgs	main
+data_0204bda0	gSleepBlockCount	main
+data_027e0084	gMasterBrightness	dtcm
+data_0204c1ec	gLangPath	main
+data_0204c028	gCurrentHeap	main
+data_0204c18c	gPadHeld	main
+data_0204c190	gPadPressed	main
+data_0204c194	gPadPressTimes	main
+data_0204c208	gEntityMgr	main
+data_0204c234	gSoundMgr	main
+data_0204c230	gMsgQueue	main
+data_0204be18	gGameState	main
+data_0204c678	gPartyMembers	main
+data_0204c4f0	gPartyState	main
+data_0204bbfc	gFileLoader	main
+data_020429b8	gSessionSetup	main
+data_ov107_020cbf1c	gOv107ActorManager	ov107

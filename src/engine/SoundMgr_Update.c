@@ -1,4 +1,4 @@
-/* Per-frame command dispatcher for the object anchored at data_0204c234, plus the tail
+/* Per-frame command dispatcher for the object anchored at gSoundMgr, plus the tail
  * maintenance pass over its "active" SlotLink list (base+0xb46e8): each node is either
  * kept spatialised (Sound_UpdateSpatial) or unlinked (ScriptPool_FreeSlot) depending on
  * NNS_SndPlayerCountPlayingSeqByPlayerNo's verdict on the node's index field, then NNS_SndMain() runs.
@@ -20,7 +20,7 @@
 
 #include "game/engine.h"
 
-extern char *data_0204c234;
+extern char *gSoundMgr;
 extern void NNS_SndPlayerStopSeq(void *ptr, int arg);
 extern int NNS_SndPlayerReadVariable(int *param_1, int param_2, short *param_3);
 extern int *SoundMgr_PeekQueued(int i);
@@ -38,7 +38,7 @@ typedef struct SlotLink {
 
 void SoundMgr_Update(void)
 {
-    char *base = data_0204c234;
+    char *base = gSoundMgr;
 
     SoundMgr_ExpireRequests();
 

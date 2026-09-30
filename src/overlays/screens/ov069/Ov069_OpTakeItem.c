@@ -6,7 +6,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
-extern char *data_0204be18;
+extern char *gGameState;
 
 int Ov069_OpTakeItem(void *vm, unsigned short *pc)
 {
@@ -21,7 +21,7 @@ int Ov069_OpTakeItem(void *vm, unsigned short *pc)
     if (id > 0 && id >= 0x400) {
         return 1;
     }
-    row = data_0204be18;
+    row = gGameState;
     count = *(u8 *)(row + id + 0x810);
     for (i = 0; i < 3; i++) {
         j = 0;
@@ -38,9 +38,9 @@ int Ov069_OpTakeItem(void *vm, unsigned short *pc)
     }
     amount = ScriptVm_ReadOperandInt(vm, pc + 4);
     if (count > amount) {
-        *(u8 *)(data_0204be18 + 0x810 + id) -= amount;
+        *(u8 *)(gGameState + 0x810 + id) -= amount;
     } else {
-        *(u8 *)(data_0204be18 + id + 0x810) = 0;
+        *(u8 *)(gGameState + id + 0x810) = 0;
     }
     return 1;
 }

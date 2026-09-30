@@ -1,6 +1,6 @@
 /* Ov025_CheckPageItemLimits -- Ov008_CheckPageItemLimits (212 B, 4 relocs).
  * Capacity check for one save/equip page. Allocates a 1 KB per-item counter buffer and clears it,
- * then walks the u16 cell grid at *data_0204be18 + 0xc10 -- a [page][3][40] array -- for the given
+ * then walks the u16 cell grid at *gGameState + 0xc10 -- a [page][3][40] array -- for the given
  * page. Each non-zero cell v is an entry index into the 0x9c-stride table at ctx->table (held at
  * ctx+0x207c); the entry's itemId (field 0x14) selects a counter. It tallies each item, and as soon
  * as a count would exceed that item's per-item limit (base + itemId + 0x810) it stops and returns 1
@@ -19,7 +19,7 @@ typedef struct Ov008SlotCtx {
     SlotEntry *table;    /* 0x207c */
 } Ov008SlotCtx;
 
-extern char *data_0204be18;
+extern char *gGameState;
 extern void *NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void  MI_CpuFill8(void *dst, int val, unsigned int n);
 extern void  NNSi_FndFreeFromDefaultHeap(void *p);
@@ -33,7 +33,7 @@ int Ov025_CheckPageItemLimits(Ov008SlotCtx *ctx, int page)
     MI_CpuFill8(buf, 0, 0x400);
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 40; j++) {
-            char *base = data_0204be18;
+            char *base = gGameState;
             u16 v = ((u16 (*)[3][40])(base + 0xc10))[page][i][j];
             if (v != 0) {
                 int p = ctx->table[v].itemId;

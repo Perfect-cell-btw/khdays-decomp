@@ -46,7 +46,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008ParamTable *data_ov026_0209136c;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);                /* AllocDefault */
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern int   Ov026_LoadParamRecords(u32 *pCount, Ov008ParamRecord **ppRecords, Ov008FillRecordFn pfnFill, int nDbId); /* Ov008_LoadParamRecords */
@@ -67,8 +67,8 @@ void Ov026_CreateParamTable(void)
     Ov026_LoadParamRecords(&data_ov026_0209136c->aCount[4], &data_ov026_0209136c->apRecords[4], Ov026_FillRewardRecord, DB_REWARDS_B);
     data_ov026_0209136c->apPendingBits[0] = data_ov026_0209136c->aPendingBits[0];
     data_ov026_0209136c->apPendingBits[1] = data_ov026_0209136c->aPendingBits[1];
-    data_ov026_0209136c->apUnlockBits[0] = data_0204be18->aUnlockBits[0];
-    data_ov026_0209136c->apUnlockBits[1] = data_0204be18->aUnlockBits[1];
+    data_ov026_0209136c->apUnlockBits[0] = gGameState->aUnlockBits[0];
+    data_ov026_0209136c->apUnlockBits[1] = gGameState->aUnlockBits[1];
     data_ov026_0209136c->bShowAll = GameState_GetField(FIELD_RANK, 3) == RANK_SHOW_ALL;
     Ov026_RefreshShopUnlockParams();
 }

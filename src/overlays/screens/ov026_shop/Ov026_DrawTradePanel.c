@@ -113,7 +113,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern u8    data_ov026_02091338[];                                      /* "/" text */
 extern u8    data_ov026_0209133c[];                                      /* unit text */
 extern void  Obj_InvokeInnerVtable8(void *pSurface, int nX, int nY, int nW, int nH); /* Obj_InvokeInnerVtable8: clear */
@@ -172,12 +172,12 @@ void Ov026_DrawTradePanel(void)
             pRecord = pView->apRows[pView->nRow];
             pDetail->pRecord = pRecord;
             nCap = Ov026_PanelAlpha(pRecord);
-            pState = data_0204be18;
+            pState = gGameState;
             nOwned = pState->aItemCount[Ov026_GetChildField14OrNeg1(pDetail->pRecord)];
             pRecord = pDetail->pRecord;
             nTotal = nOwned + pRecord->nBonus;
             if (pRecord->nPrice <= pState->nPoints) {
-                if (pDetail->pRecord->nBonus + data_0204be18->aItemCount[Ov026_GetChildField14OrNeg1(pRecord)] > (u32)nCap) {
+                if (pDetail->pRecord->nBonus + gGameState->aItemCount[Ov026_GetChildField14OrNeg1(pRecord)] > (u32)nCap) {
                     pDetail->nQuantity = nOwned;
                     pColumns->nLeftSelected = 0;
                     pColumns->nLeftBase = 0;
@@ -216,7 +216,7 @@ void Ov026_DrawTradePanel(void)
             if (pIngredient->nIconId != 0) {
                 Slot_SetVisible(hSlots, pDetail->aRowCell[i], 1);
                 Slot_ForwardToEntry(hSlots, pDetail->aRowCell[i], (u16)(pIngredient->nIconId - 1));
-                Slot_SetVisible(hSlots, pDetail->aRowCell[INGREDIENTS + i], data_0204be18->aItemCount[pIngredient->nItemId] != Ov026_CountUnassignedCopies(pIngredient->nItemId));
+                Slot_SetVisible(hSlots, pDetail->aRowCell[INGREDIENTS + i], gGameState->aItemCount[pIngredient->nItemId] != Ov026_CountUnassignedCopies(pIngredient->nItemId));
             }
             nOwned = Ov026_CountUnassignedCopies(pIngredient->nItemId);   /* the ingredient's unassigned copies */
             nStyle = (u32)nOwned >= pDetail->pRecord->aIngredient[i].nNeeded ? STYLE_ON : STYLE_OFF;

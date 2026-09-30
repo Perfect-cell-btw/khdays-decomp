@@ -3,7 +3,7 @@
 
 #include "nitro/types.h"
 
-extern unsigned char *data_0204be18;
+extern unsigned char *gGameState;
 
 extern void NNS_FndInitList(void *list, int offset);
 extern void *NNS_FndGetNextListObject(void *list, void *object);
@@ -25,7 +25,7 @@ void Ov004_BuildMissionObjectLists(void) {
 
     NNS_FndInitList(list, 0x28);
     Ov004_InitRecordContext(state, 0);
-    Ov004_BuildMenuGrid(state, work, list, (u16 *)(data_0204be18 + 0xee0));
+    Ov004_BuildMenuGrid(state, work, list, (u16 *)(gGameState + 0xee0));
     Ov004_RebuildViewAndCountCells(state, work, list);
 
     for (node = NNS_FndGetNextListObject(state + 0x20, 0); node != 0;

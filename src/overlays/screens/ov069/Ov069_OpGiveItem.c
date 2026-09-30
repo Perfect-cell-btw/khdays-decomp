@@ -6,7 +6,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
-extern char *data_0204be18;
+extern char *gGameState;
 
 int Ov069_OpGiveItem(void *vm, unsigned short *pc)
 {
@@ -31,7 +31,7 @@ int Ov069_OpGiveItem(void *vm, unsigned short *pc)
             }
         }
     } else if (id > 0 && id < 0x277) {
-        stock = (u8 *)(data_0204be18 + 0x810);
+        stock = (u8 *)(gGameState + 0x810);
         value = stock[id];
         value += amount;
         if (value > 0x63) {

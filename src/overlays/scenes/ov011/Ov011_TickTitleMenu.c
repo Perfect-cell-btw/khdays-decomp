@@ -48,7 +48,7 @@ typedef struct Ov011Globals {
 
 extern Ov011Globals data_ov011_0205e960;
 extern Ov011StateFn data_ov011_0205e8b4[];
-extern volatile u16 data_0204c190;
+extern volatile u16 gPadPressed;
 
 extern void GX_DispOff(void);
 extern void DispCnt_ApplyPendingMode(void);
@@ -105,7 +105,7 @@ Ov011StateFn Ov011_TickTitleMenu(void)
             }
         } else {
             if (data_ov011_0205e960.pScene->nArg == 0) {
-                done = data_0204c190 & 1;
+                done = gPadPressed & 1;
             } else {
                 data_ov011_0205e960.pScene->nSubState++;
                 done = data_ov011_0205e960.pScene->nSubState >= 0xb4;
@@ -114,7 +114,7 @@ Ov011StateFn Ov011_TickTitleMenu(void)
                 data_ov011_0205e960.pScene->flags &= ~2;
             }
         }
-        if (data_ov011_0205e960.pScene->nArg != 0 && (data_0204c190 & 8) != 0) {
+        if (data_ov011_0205e960.pScene->nArg != 0 && (gPadPressed & 8) != 0) {
             u16 *tp;
             data_ov011_0205e960.pScene->nPrevMode = data_ov011_0205e960.pScene->nMode;
             data_ov011_0205e960.pScene->nMode = 4;

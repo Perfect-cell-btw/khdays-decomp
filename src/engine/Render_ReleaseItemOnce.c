@@ -1,7 +1,7 @@
 /* Release-once guard for a render item: if bit 0x20 of the item's state word is clear, run
  * ReleaseField74AndCleanup on the item body at +4, then set the bit unconditionally. Note the bit
  * is set even when the release was skipped, which is what makes this idempotent rather than merely
- * conditional. Part of the per-view draw-list module on the entity manager (data_0204c208). Three
+ * conditional. Part of the per-view draw-list module on the entity manager (gEntityMgr). Three
  * head tables, 8 entries each, indexed by view: +0x64 drawn FIRST +0x84 drawn SECOND, after its own
  * prepass +0xa4 drawn LAST, through a different renderer (G3d_ResetGlobalState /
  * Billboard_DrawList) rather than RenderNode Nodes are doubly linked (next at +0, prev at +4) and

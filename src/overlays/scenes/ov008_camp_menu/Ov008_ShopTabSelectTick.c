@@ -55,7 +55,7 @@ typedef struct Ov008PanelContext {
 } Ov008PanelContext;
 
 extern Ov008PanelContext *data_ov008_02090fac;
-extern u16 data_0204c190;                                         /* keys pressed */
+extern u16 gPadPressed;                                         /* keys pressed */
 extern u8  data_ov008_0208fe98[];                                 /* Ov008TabOrder */
 extern Ov008ChoiceBox data_ov008_0208fedc[];                      /* touch boxes */
 extern void  KeyRepeat_Step(u16 *pSource);
@@ -116,7 +116,7 @@ void *Ov008_ShopTabSelectTick(void)
                 ctx->nTabCursor++;
             }
         }
-    } else if (data_0204c190 & KEY_A) {
+    } else if (gPadPressed & KEY_A) {
         if (ctx->nTabCursor == ENTRY_EXIT) {
             PlaySound(0, SOUND_CANCEL);
             pNext = Ov008_FadeToBlackStep;
@@ -125,7 +125,7 @@ void *Ov008_ShopTabSelectTick(void)
             pNext = Ov008_ShopFadeOutThenConfirm;
         }
         ctx->nStep = 0;
-    } else if (data_0204c190 & KEY_B) {
+    } else if (gPadPressed & KEY_B) {
         PlaySound(0, SOUND_CANCEL);
         pNext = Ov008_FadeToBlackStep;
         ctx->nStep = 0;

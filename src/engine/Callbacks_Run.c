@@ -1,12 +1,12 @@
 /* Runs callback slot index with its registered argument, if set. */
 
-extern void (*data_0204bd88[])(void *ptr);
-extern void *data_0204bd94[];
+extern void (*gPauseHooks[])(void *ptr);
+extern void *gPauseHookArgs[];
 
 void Callbacks_Run(int index) {
-    void (*callback)(void *ptr) = data_0204bd88[index];
+    void (*callback)(void *ptr) = gPauseHooks[index];
 
     if (callback != 0) {
-        callback(data_0204bd94[index]);
+        callback(gPauseHookArgs[index]);
     }
 }

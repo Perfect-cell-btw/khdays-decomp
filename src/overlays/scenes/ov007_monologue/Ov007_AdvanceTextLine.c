@@ -37,7 +37,7 @@ extern void Ov007_CopyLine(void *p);
 extern int Ov007_ScrollTextWindow(void);
 extern int Ov007_TextWindowFadeIn(void);
 extern int Ov007_FadeOutStep(void);
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 
 Ov007Handler Ov007_AdvanceTextLine(void)
 {
@@ -65,7 +65,7 @@ Ov007Handler Ov007_AdvanceTextLine(void)
         }
     }
 
-    if ((data_0204c190 & 8) != 0) {
+    if ((gPadPressed & 8) != 0) {
         root->frame = 0;
         ret = Ov007_FadeOutStep;
     }

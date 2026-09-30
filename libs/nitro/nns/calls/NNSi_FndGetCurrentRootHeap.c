@@ -1,9 +1,9 @@
 
 #include "nitro/types.h"
 
-extern u32 *data_0204c058[];
+extern u32 *gObjSystem[];
 
 void *NNSi_FndGetCurrentRootHeap(void)
 {
-    return (void *)data_0204c058[1][8];
+    return (void *)gObjSystem[1][8];
 }

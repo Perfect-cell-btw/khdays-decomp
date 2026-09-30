@@ -14,10 +14,10 @@ typedef struct {
     unsigned char counter;             /* offset 0xa4d0 */
 } S;
 
-extern S *data_0204c208;
+extern S *gEntityMgr;
 
 unsigned char EntityMgr_PushVramState(void) {
-    S *s = data_0204c208;
+    S *s = gEntityMgr;
     if (s->counter < 0x10) {
         NNS_GfdGetFrmTexVramState(&s->arr1[s->counter]);
         GFXi_SaveStateTo(&s->arr2[s->counter]);

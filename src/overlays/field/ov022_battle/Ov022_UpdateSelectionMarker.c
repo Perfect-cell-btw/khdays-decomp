@@ -38,7 +38,7 @@ typedef struct Ov022SelectionController {
     int activationState230;
 } Ov022SelectionController;
 
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern Ov022SelectionController *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov002_MoveCaret(unsigned int row, int argument);
@@ -95,7 +95,7 @@ void Ov022_UpdateSelectionMarker(void)
 
     {
         Ov022Actor *actor = (Ov022Actor *)GetEntryField20ByIndex(QueryActiveStateOrDelegate());
-        if ((data_0204c190 & 4) != 0 &&
+        if ((gPadPressed & 4) != 0 &&
             (actor->flags0 & 0x1000000ULL) == 0 &&
             (context->flags0 & 4) != 0) {
             Ov022_SetSelectionEnabled(0);

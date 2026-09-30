@@ -31,7 +31,7 @@ typedef struct Ov000GameState {
 } Ov000GameState;
 
 extern Ov000LoadSceneContext *volatile data_ov000_0205ac24;
-extern Ov000GameState *volatile data_0204be18;
+extern Ov000GameState *volatile gGameState;
 extern void NNS_FndInitList(void *list, int offset);
 extern void Ov000_InitRecordContext(void *state, int value);
 extern void Ov000_BuildMenuGrid(
@@ -76,15 +76,15 @@ void Ov000_RecordLoadResult(int index, int result) {
     NNS_FndInitList(list, 0x28);
     Ov000_InitRecordContext(state, 0);
     Ov000_BuildMenuGrid(state, work, list,
-                        data_0204be18->menuIds);
+                        gGameState->menuIds);
     Ov000_RebuildViewAndCountCells(state, work, list);
     entry->cellCount = *(int *)(state + 0x78) + 1;
     Ov000_ReleaseHandleGridAndList(state, work, list);
     func_ov000_02058360(state);
 
-    entry->gameValue8 = data_0204be18->value8;
+    entry->gameValue8 = gGameState->value8;
     entry->profileValue = GameState_GetField(0, 9);
-    entry->gameValue0 = data_0204be18->value0;
+    entry->gameValue0 = gGameState->value0;
     entry->field40a = GameState_GetField(0x40a, 2);
     entry->fieldC4b = GameState_GetField(0xc4b, 2);
     entry->hasCompleteData = GameState_GetField(0x44e, 3) == 6;

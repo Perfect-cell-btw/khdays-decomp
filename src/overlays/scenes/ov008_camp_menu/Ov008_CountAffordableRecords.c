@@ -36,7 +36,7 @@ typedef struct GameState {
     u16 otherRewardTotal;     /* 0x196a */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov008ParamTable *data_ov008_02090fb0;
 
 void Ov008_CountAffordableRecords(u16 *aCount)
@@ -49,8 +49,8 @@ void Ov008_CountAffordableRecords(u16 *aCount)
 
     GameState_GetField(0x44e, 3);
     i = 0;
-    aTotal[0] = data_0204be18->otherRewardTotal;
-    aTotal[1] = data_0204be18->mode8RewardTotal;
+    aTotal[0] = gGameState->otherRewardTotal;
+    aTotal[1] = gGameState->mode8RewardTotal;
     nFlagBase = FLAG_REWARD_BASE;
     do {
         aCount[i] = 0;

@@ -73,7 +73,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov008_02090fac;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void *Ov008_FindEntryByTag(void *pTracker, int nTag);                 /* ov008_FindEntryByTag */
 extern void  Ov008_TagTracker_InvokeCallback(void *pTracker, void *pCell);              /* Ov008_TagTracker_InvokeCallback */
 extern void *Ov008_FindEntryById(void *pWidgets, int nId);                  /* FindEntryById */
@@ -109,8 +109,8 @@ void Ov008_OpenBuyDialog(void)
     pSurface = ctx->dialogSurface;
     pWidgets = ctx->widgets;
     if (pDialog->bFirstOpen != 0) {
-        pDialog->aFunds[0] = data_0204be18->otherRewardTotal;
-        pDialog->aFunds[1] = data_0204be18->mode8RewardTotal;
+        pDialog->aFunds[0] = gGameState->otherRewardTotal;
+        pDialog->aFunds[1] = gGameState->mode8RewardTotal;
         Ov008_TagTracker_InvokeCallback(ctx->trackerB, Ov008_FindEntryByTag(ctx->trackerB, TAG_BUY_SECONDARY));
         Ov008_TagTracker_InvokeCallback(ctx->tracker, Ov008_FindEntryByTag(ctx->tracker, TAG_BUY_PRIMARY));
         Ov008_SetEntrySlotsVisible(pWidgets, Ov008_FindEntryById(pWidgets, 1), 0);

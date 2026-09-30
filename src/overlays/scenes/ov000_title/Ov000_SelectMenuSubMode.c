@@ -1,6 +1,6 @@
 /* Menu sub-mode selector. Input code 0x10 sets baseMode to 1 and 0x20 sets it to 0 (each resetting
  * the fade via PlaySound only on an actual change). Any other input dispatches on the external code
- * (data_0204c190) into a mode (2/5/...), restarting the fade as needed. */
+ * (gPadPressed) into a mode (2/5/...), restarting the fade as needed. */
 
 #include "nitro/types.h"
 #include "game/engine.h"
@@ -18,7 +18,7 @@ typedef struct Ov000SubSceneContext {
 } Ov000SubSceneContext;
 
 extern Ov000SubSceneContext *volatile data_ov000_0205ac28;
-extern volatile u16 data_0204c190;
+extern volatile u16 gPadPressed;
 extern void Ov000_DispatchLogoAction(int selector, int argument);
 extern u64 OS_GetTick(void);
 extern void Ov000_SetupWorkArea(int slot);
@@ -51,7 +51,7 @@ input_10:
 
 input_other:
     {
-        u16 externalCode = data_0204c190;
+        u16 externalCode = gPadPressed;
 
     switch (externalCode) {
     case 1:

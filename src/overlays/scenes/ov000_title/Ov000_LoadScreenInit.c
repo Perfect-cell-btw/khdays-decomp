@@ -28,7 +28,7 @@ typedef struct {
 } Ov000SceneContext;
 
 extern Ov000SceneContext *data_ov000_0205ac24;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern u8 data_ov000_0205aae4[];
 
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
@@ -45,7 +45,7 @@ OverlayCallback Ov000_LoadScreenInit(int mode) {
     data_ov000_0205ac24 = context;
     MI_CpuFill8(context, 0, sizeof(Ov000SceneContext));
 
-    data_ov000_0205ac24->gameStateSnapshot = *data_0204be18;
+    data_ov000_0205ac24->gameStateSnapshot = *gGameState;
     data_ov000_0205ac24->fontResource =
         Loader_RequestFile(data_ov000_0205aae4, 14);
 

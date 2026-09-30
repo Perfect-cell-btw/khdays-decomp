@@ -3,7 +3,7 @@
 #include "game/engine.h"
 
 extern char data_0204c300[];
-extern int data_0204be18;     /* an address kept as an integer */
+extern int gGameState;     /* an address kept as an integer */
 
 extern char *NNSi_FndGetCurrentRootHeap(void);               /* the overlay root */
 extern void Ov002_BuildWrapUpReport(void *pReport);  /* Ov002_BuildWrapUpReport */
@@ -86,7 +86,7 @@ int Ov002_SendSeatTally(void)
         for (k = 0, nOff = 0, pCol = (char *)aCmd; k < 3; k++) {
             m = 0;
             t = 0;
-            nSrc = nOff + data_0204be18;
+            nSrc = nOff + gGameState;
             do {
                 *(u16 *)(pCol + 4) = (u16)(*(u16 *)(pCol + 4)
                                         + *(u16 *)(t + nSrc + 0x1974));

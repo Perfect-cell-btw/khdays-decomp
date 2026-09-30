@@ -34,19 +34,19 @@ typedef struct GameState {
     u8 aUnlockBits[1];                /* 0x10e0 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void BitArray_SetBit(u8 *pBits, u32 nBit);     /* BitArray_SetBit */
 
 void Ov008_CommitSynthesisOrder(Ov008RecipeRecord *pRecipe)
 {
     int i;
 
-    data_0204be18->aItemCount[pRecipe->pItemDef->nItemId] += pRecipe->nCount;
+    gGameState->aItemCount[pRecipe->pItemDef->nItemId] += pRecipe->nCount;
     GameState_SetFlag(pRecipe->pItemDef->nItemId + FLAG_ITEM_SEEN_BASE);
-    BitArray_SetBit(data_0204be18->aUnlockBits, pRecipe->nUnlockBit);
+    BitArray_SetBit(gGameState->aUnlockBits, pRecipe->nUnlockBit);
     for (i = 0; i < INGREDIENT_COUNT; i++) {
         if (pRecipe->aIngredient[i].nCount != 0) {
-            data_0204be18->aItemCount[pRecipe->aIngredient[i].pItemDef->nItemId] -= pRecipe->aIngredient[i].nCount;
+            gGameState->aItemCount[pRecipe->aIngredient[i].pItemDef->nItemId] -= pRecipe->aIngredient[i].nCount;
         }
     }
 }

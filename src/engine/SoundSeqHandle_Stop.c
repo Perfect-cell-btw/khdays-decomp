@@ -3,11 +3,11 @@
 
 #include "game/engine.h"
 
-extern unsigned char *data_0204c234;
+extern unsigned char *gSoundMgr;
 extern void NNS_SndPlayerStopSeq(void *ptr, int value);
 
 void SoundSeqHandle_Stop(unsigned int arg) {
-    unsigned char *entry = data_0204c234 + 0xb44e4 + (arg >> 24) * 0x20;
+    unsigned char *entry = gSoundMgr + 0xb44e4 + (arg >> 24) * 0x20;
 
     if (*(unsigned short *)(entry + 0x14) == 0) {
         return;

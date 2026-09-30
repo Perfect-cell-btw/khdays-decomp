@@ -25,14 +25,14 @@ typedef struct SoundCtx {
     u8 busy;                                        /* +0xb47b6 */
 } SoundCtx;
 
-extern SoundCtx *data_0204c234;
+extern SoundCtx *gSoundMgr;
 extern NNSSndHeapHandle NNS_SndHeapCreate(void *startAddress, unsigned int size);   /* NNS_SndHeapCreate */
 extern void NNS_SndHeapDestroy(NNSSndHeapHandle heap);   /* NNS_SndHeapDestroy */
 extern void Loader_PostTypedRequest(unsigned short dataId, unsigned short waveId, NNSSndHeapHandle heap, u8 *pState);
 
 BOOL SoundBank_Acquire(int id, int dataId)
 {
-    SoundCtx *ctx = data_0204c234;
+    SoundCtx *ctx = gSoundMgr;
     int i;
 
     if (id < 0) {

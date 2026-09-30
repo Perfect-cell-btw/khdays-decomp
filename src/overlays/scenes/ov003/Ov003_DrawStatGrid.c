@@ -7,12 +7,12 @@
  * tile 0xb03f. Filled cells accumulate a per-column total in buf[]. Afterwards each
  * column total, clamped to 999, is drawn under the grid as a 4-digit number via
  * Ov003_DrawNumber. Cell values are u16 stats read from the session global
- * (data_0204be18 + 0x1974 + row*8 + col*2); the tilemap base comes from
+ * (gGameState + 0x1974 + row*8 + col*2); the tilemap base comes from
  * data_ov003_0204f9a0.
  */
 
 extern int data_ov003_0204f9a0;
-extern int data_0204be18;
+extern int gGameState;
 extern void Ov003_DrawNumber3Digit(unsigned short *dst, unsigned int val, int b);
 extern void Ov003_DrawNumber(unsigned short *dst, unsigned int val);
 #pragma opt_strength_reduction off
@@ -41,9 +41,9 @@ void Ov003_DrawStatGrid(void) {
                     iVar3 = iVar9 * 0x1a;
                     iVar4 = iVar5 + iVar3 * 2;
                     Ov003_DrawNumber3Digit((unsigned short *)(iVar4 + iVar8),
-                                        (unsigned int)*(unsigned short *)(data_0204be18 + iVar6 * 8 + iVar7 * 2 + 0x1974), 10);
+                                        (unsigned int)*(unsigned short *)(gGameState + iVar6 * 8 + iVar7 * 2 + 0x1974), 10);
                     buf[iVar7] = buf[iVar7] +
-                        *(unsigned short *)(data_0204be18 + iVar6 * 8 + iVar7 * 2 + 0x1974);
+                        *(unsigned short *)(gGameState + iVar6 * 8 + iVar7 * 2 + 0x1974);
                 } else {
                     unsigned short blank;
                     iVar3 = iVar9 * 0x1a;

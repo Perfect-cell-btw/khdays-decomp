@@ -2,7 +2,7 @@
  * Runs every frame as the BootTask steady-state helper (called from the object
  * state fn @0x02020978, whose return is ignored). Drives the scene-control record
  * @0x0204bda4:
- *   +0x04 obj      current scene task object (from InstantiateClass) [== data_0204bda8]
+ *   +0x04 obj      current scene task object (from InstantiateClass) [== gSceneCtl]
  *   +0x08 entry    &g_SceneTable[curId]
  *   +0x0c curId    active scene id
  *   +0x10 pendId   pending scene id  (0x0204bdb4; set by Scene_RequestPending @0x02020a78)
@@ -28,9 +28,9 @@ typedef struct SceneCtl {
     int         pendArg;  /* +0x10 (0x0204bdb8) pending scene arg */
 } SceneCtl;
 
-extern int  data_0204bda4;           /* record base; +4 aliases data_0204bda8 (obj) */
-extern char data_0204bda8[];         /* SceneCtl (obj..pendArg); cleared by Scene_ClearPending */
-extern SceneEntry data_02042548[];   /* g_SceneTable, indexed by scene id */
+extern int  data_0204bda4;           /* record base; +4 aliases gSceneCtl (obj) */
+extern char gSceneCtl[];         /* SceneCtl (obj..pendArg); cleared by Scene_ClearPending */
+extern SceneEntry gSceneTable[];   /* g_SceneTable, indexed by scene id */
 extern void *data_0204c02c;
 
 extern int  Instance_ReleaseIfDead(void *obj);
@@ -42,7 +42,7 @@ extern void *InstantiateClass(void *classDesc, int arg);   /* InstantiateClass *
 extern void Word_Set(void *obj, int);
 
 int Scene_AdvanceToPending(void) {
-    SceneCtl *s = (SceneCtl *)data_0204bda8;
+    SceneCtl *s = (SceneCtl *)gSceneCtl;
 
     if (*(void **)((char *)&data_0204bda4 + 4) != 0) {
         if (Instance_ReleaseIfDead(s->obj) != 0) {
@@ -59,7 +59,7 @@ int Scene_AdvanceToPending(void) {
     if (s->obj == 0) {
         int id = s->pendId;
         if (id != 0) {
-            SceneEntry *ent = &data_02042548[id];
+            SceneEntry *ent = &gSceneTable[id];
             int ov = ent->overlayId;
             if (ov != -1) {
                 LoadOverlaySync(0, ov);

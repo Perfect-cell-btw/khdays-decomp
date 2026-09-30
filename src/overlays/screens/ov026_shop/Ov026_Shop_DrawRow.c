@@ -90,7 +90,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern u8    data_ov026_0209131c[];                                      /* "sold out" text */
 extern u8    data_ov026_02091324[];                                      /* locked recipe text */
 extern int   Ov026_PanelAlpha(Ov008ParamRecord *pRecord);             /* stock cap */
@@ -115,15 +115,15 @@ void Ov026_Shop_DrawRow(int nRow, Ov008ParamRecord *pRecord)
     nMode = GetLanguage();
     switch (ctx->nTab) {
     case TAB_BUY:
-        nStyle = (pRecord->nPrice <= data_0204be18->nMunny && pRecord->bLevelReached == 0
-            && data_0204be18->aItemCount[pRecord->pItemDef->nItemId] < Ov026_PanelAlpha(pRecord)) ? STYLE_ON : STYLE_OFF;
+        nStyle = (pRecord->nPrice <= gGameState->nMunny && pRecord->bLevelReached == 0
+            && gGameState->aItemCount[pRecord->pItemDef->nItemId] < Ov026_PanelAlpha(pRecord)) ? STYLE_ON : STYLE_OFF;
         break;
     case TAB_SELL:
         nStyle = (pRecord->pItemDef->nSellable == 1 && Ov026_CountSpareItemsOfChild(pRecord) > 0) ? STYLE_ON : STYLE_OFF;
         break;
     case TAB_TRADE:
-        nStyle = (pRecord->nPrice <= data_0204be18->nPoints
-            && data_0204be18->aItemCount[pRecord->pItemDef->nItemId] < Ov026_PanelAlpha(pRecord)
+        nStyle = (pRecord->nPrice <= gGameState->nPoints
+            && gGameState->aItemCount[pRecord->pItemDef->nItemId] < Ov026_PanelAlpha(pRecord)
             && Ov026_AreRequirementsMet(pRecord) != 0) ? STYLE_ON : STYLE_OFF;
         break;
     case TAB_RECIPES:

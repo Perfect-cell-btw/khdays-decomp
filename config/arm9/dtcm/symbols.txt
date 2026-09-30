@@ -8,7 +8,7 @@ data_027e0074 kind:bss addr:0x027e0074
 data_027e0078 kind:bss addr:0x027e0078
 data_027e007c kind:bss addr:0x027e007c
 data_027e0080 kind:bss addr:0x027e0080
-data_027e0084 kind:bss addr:0x027e0084
+gMasterBrightness kind:bss addr:0x027e0084
 data_027e0088 kind:bss addr:0x027e0088
 data_027e008c kind:bss addr:0x027e008c
 data_027e0090 kind:bss addr:0x027e0090

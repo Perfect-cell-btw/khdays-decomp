@@ -32,7 +32,7 @@ typedef struct {
 } LoadStream;
 
 /* Loader globals: [0] the streaming context, [5] a one-shot heap override. */
-extern int *data_0204bbfc[];
+extern int *gFileLoader[];
 extern const u8 data_02041c48[128];
 
 extern void FS_InitFile(FSFile *file);
@@ -66,7 +66,7 @@ void *Archive_LoadFile(char *name, u32 kind)
     int opened;
     u32 compressed;
     void *buf;
-    LoadStream *stream = (LoadStream *)data_0204bbfc[0];
+    LoadStream *stream = (LoadStream *)gFileLoader[0];
 
     FS_InitFile(&file);
     FSi_WaitForCardThread();
@@ -85,7 +85,7 @@ void *Archive_LoadFile(char *name, u32 kind)
         return 0;
     }
     if (compressed != 0) {
-        buf = Stream_StartUncomp(stream, &file, 0, &size, data_0204bbfc[5], kind, &status);
+        buf = Stream_StartUncomp(stream, &file, 0, &size, gFileLoader[5], kind, &status);
         if (status == 0) {
             do {
                 stream->readIdx ^= 1;
@@ -107,12 +107,12 @@ void *Archive_LoadFile(char *name, u32 kind)
         }
     } else {
         size = file.bottom - file.top;
-        buf = ExpHeap_AllocOrDefault(size, 0x20, (int **)data_0204bbfc[5]);
+        buf = ExpHeap_AllocOrDefault(size, 0x20, (int **)gFileLoader[5]);
         if (buf != 0) {
             FS_ReadFile(&file, buf, size);
         }
     }
-    data_0204bbfc[5] = 0;
+    gFileLoader[5] = 0;
     FS_CloseFile(&file);
     return buf;
 }

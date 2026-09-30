@@ -25,7 +25,7 @@ extern int Ov002_Camera_GetPresetHeight(int nSelector);
 extern int Ov002_UpdateCameraDistance(int nSelector);
 
 extern unsigned char data_0204be04;
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 
 /* Locked-yaw camera tick: hold the camera at the angle the session dictates,
  * and hand back the ordinary handler as soon as it stops dictating.
@@ -63,7 +63,7 @@ void *Ov002_TickLockedCamera(void)
     }
     *(int *)(pCam + 0x88) = Ov002_GetCameraDistance(*(int *)(pCam + 0x44));
 
-    if ((data_0204c190 & 0x100) != 0 && (data_0204c190 & 0x200) == 0) {
+    if ((gPadPressed & 0x100) != 0 && (gPadPressed & 0x200) == 0) {
         *(int *)(pCam + 0x50) = func_ov022_02088254(nPlayer);
     }
 

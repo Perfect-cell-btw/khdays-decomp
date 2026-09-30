@@ -1,7 +1,7 @@
 /* Ov009_SetupWorkArea -- set up the screen's work area and register everything it draws.
  *
  * The work area starts 0x18 into the block at data_0204be14; that pointer is cached at
- * data_0204be18 and the whole 0x1cac of it is zeroed. Two sub-regions get a second clear as
+ * gGameState and the whole 0x1cac of it is zeroed. Two sub-regions get a second clear as
  * halfwords (+0xee0 for 0xf0, +0xc10 for 0x2d0) and one as words with -1 (+0x198c for 0x320) --
  * different fill values, so they are different kinds of table, not one big buffer.
  *
@@ -18,15 +18,15 @@
 
 #include "game/config.h"
 extern void *data_0204be14;
-extern void *data_0204be18;
+extern void *gGameState;
 
 extern void *MI_CpuFill8(void *dst, unsigned char v, unsigned int n);
 extern void MIi_CpuClear16(unsigned short v, void *dst, unsigned int n);
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int v, void *dst, unsigned int n);
 
 void Ov009_SetupWorkArea(int slot) {
-    data_0204be18 = (char *)data_0204be14 + 0x18;
-    MI_CpuFill8(data_0204be18, 0, 0x1cac);
+    gGameState = (char *)data_0204be14 + 0x18;
+    MI_CpuFill8(gGameState, 0, 0x1cac);
     GameState_SetField(0, 9, 0x191);
 
     if (slot < 0) {
@@ -37,8 +37,8 @@ void Ov009_SetupWorkArea(int slot) {
     }
     GameState_SetField(0x40a, 2, (unsigned short)slot);
 
-    MIi_CpuClear16(0, (char *)data_0204be18 + 0xee0, 0xf0);
-    MIi_CpuClear16(0, (char *)data_0204be18 + 0xc10, 0x2d0);
+    MIi_CpuClear16(0, (char *)gGameState + 0xee0, 0xf0);
+    MIi_CpuClear16(0, (char *)gGameState + 0xc10, 0x2d0);
 
     GameState_SetField(CONFIG_CONTROLS, 1, 0);
     GameState_SetField(CONFIG_CHASE_CAM, 1, 0);
@@ -67,5 +67,5 @@ void Ov009_SetupWorkArea(int slot) {
     GameState_SetField(0xab3, 4, 8);
     GameState_SetField(0x95b, 4, 8);
 
-    INITi_CpuClear32_0x01ff86fc(-1, (char *)data_0204be18 + 0x198c, 0x320);
+    INITi_CpuClear32_0x01ff86fc(-1, (char *)gGameState + 0x198c, 0x320);
 }

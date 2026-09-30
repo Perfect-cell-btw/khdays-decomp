@@ -70,7 +70,7 @@ struct Actor {
 };
 
 extern u8 data_0204c240;
-extern u16 data_0204c18c;
+extern u16 gPadHeld;
 
 extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
 extern int Session_GetLocalPlayerIndex(void);
@@ -249,7 +249,7 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
         } else {
             nMask = 0x100;
         }
-        if ((data_0204c18c & (u16)nMask) == 0
+        if ((gPadHeld & (u16)nMask) == 0
             || ((Ov002_Panel_IsMode9() != 0 || Ov002_Panel_GetField10() != 0) ? 1 : 0) == 0) {
             Ov002_AcceptRequestAndNotify(0);
         }

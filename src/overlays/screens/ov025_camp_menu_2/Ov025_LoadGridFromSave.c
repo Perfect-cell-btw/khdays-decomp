@@ -79,7 +79,7 @@ typedef struct GameState {
     u16 aEquipped[GRID_PAGES][GRID_CELLS]; /* 0xee0 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern void *NNSi_FndAllocFromDefaultExpHeap(int nSize);
 extern void  Ov025_AssignTrackedNodeId(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode); /* Ov008_AssignTrackedNodeId */
@@ -101,10 +101,10 @@ void Ov025_LoadGridFromSave(Ov008MenuContext *pCtx)
     MI_CpuFill8(pCtx->aGridCount, 0, ITEM_ID_END);
     for (i = 0; i < GRID_PAGES; i++) {
         for (j = 0; j < GRID_CELLS; j++) {
-            if (data_0204be18->aEquipped[i][j] != 0) {
-                pCtx->pListNode = &pCtx->pRecords[data_0204be18->aEquipped[i][j]];
+            if (gGameState->aEquipped[i][j] != 0) {
+                pCtx->pListNode = &pCtx->pRecords[gGameState->aEquipped[i][j]];
                 nItemId = pCtx->pListNode->nItemId;
-                if (pCtx->aGridCount[nItemId] < data_0204be18->aItemCount[nItemId]) {
+                if (pCtx->aGridCount[nItemId] < gGameState->aItemCount[nItemId]) {
                     pCtx->aGridCount[nItemId]++;
                     pCtx->apPageSlot[i][j] = pCtx->pListNode;
                     if (pCtx->pListNode->nPlacedSlot >= 0) {

@@ -2,7 +2,7 @@
  * Sound_UpdateSpatial - recompute a sound slot's volume and pan from its 3D
  * position relative to the listener, then push both to its audio channel.
  *
- * With base = *data_0204c234 (the listener/world state): unless the slot's
+ * With base = *gSoundMgr (the listener/world state): unless the slot's
  * "no-spatialise" flag (flags & 4, at snd+0x14) is set, take delta = position
  * (snd+8) - listener (base+0xb44cc) and dist = |delta|. Volume (unless flag 2
  * forces 0x7f): full (base+0xb46f4) when dist <= near (base+0xb46ec), 0 beyond
@@ -14,7 +14,7 @@
  * mwcc predicates it as `movne` instead of a separate tail block.
  */
 
-extern unsigned char *data_0204c234;
+extern unsigned char *gSoundMgr;
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern int VEC_Mag(int *v);
 extern int VEC_DotProduct(int *a, int *b);
@@ -24,7 +24,7 @@ extern void NNS_SndPlayerSetTrackVolume(int *ch, int mask, int val);
 
 void Sound_UpdateSpatial(int param_1)
 {
-    int base = (int)data_0204c234;
+    int base = (int)gSoundMgr;
     int delta[3];
     int vol;
 

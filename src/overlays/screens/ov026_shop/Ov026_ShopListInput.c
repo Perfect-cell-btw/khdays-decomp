@@ -112,9 +112,9 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern u16 data_0204c18c;                                              /* keys held */
-extern u16 data_0204c190;                                              /* keys pressed */
-extern GameState *data_0204be18;                                       /* g_pTallySource */
+extern u16 gPadHeld;                                              /* keys held */
+extern u16 gPadPressed;                                              /* keys pressed */
+extern GameState *gGameState;                                       /* g_pTallySource */
 extern const Ov008ChoiceBox data_ov026_020910d4[2];                    /* gauge boxes by tab */
 extern const Ov008ChoiceBox data_ov026_020910c4[2];                    /* row boxes by tab */
 extern const Ov008ChoiceBox data_ov026_02091194[16];                   /* category boxes (+8 on the reward tab) */
@@ -228,7 +228,7 @@ Ov008ShopStep Ov026_ShopListInput(void)
         } else if (nRow < pView->nScroll) {
             pView->nScroll--;
         }
-    } else if ((nKeys & KEY_PAGE_UP) && !(data_0204c18c & KEY_SHOULDERS)) {
+    } else if ((nKeys & KEY_PAGE_UP) && !(gPadHeld & KEY_SHOULDERS)) {
         nScroll = pView->nScroll;
         if (nScroll != 0) {
             if (nScroll >= ROWS_VISIBLE) {
@@ -240,7 +240,7 @@ Ov008ShopStep Ov026_ShopListInput(void)
             }
             PlaySound(0, 0);
         }
-    } else if ((nKeys & KEY_PAGE_DOWN) && !(data_0204c18c & KEY_SHOULDERS)) {
+    } else if ((nKeys & KEY_PAGE_DOWN) && !(gPadHeld & KEY_SHOULDERS)) {
         nScroll = pView->nScroll;
         nCount = pView->nCount;
         nLast = nCount - (ROWS_VISIBLE - 1);
@@ -260,7 +260,7 @@ Ov008ShopStep Ov026_ShopListInput(void)
             }
         }
     } else {
-        nPressed = data_0204c190;
+        nPressed = gPadPressed;
         if (nPressed & KEY_R) {
             nCategory = pShop->nCategory;
             do {
@@ -399,10 +399,10 @@ Ov008ShopStep Ov026_ShopListInput(void)
     } else if (pView->apRows != 0) {
         pRecord = pView->apRows[pView->nRow];
         nItem = Ov026_GetChildField14OrNeg1(pRecord);
-        if (data_0204be18->aItemCount[nItem] < Ov026_PanelAlpha(pRecord)) {
+        if (gGameState->aItemCount[nItem] < Ov026_PanelAlpha(pRecord)) {
             nOwned = -1;
         } else {
-            nOwned = data_0204be18->aItemCount[Ov026_GetChildField14OrNeg1(pRecord)];
+            nOwned = gGameState->aItemCount[Ov026_GetChildField14OrNeg1(pRecord)];
         }
         Ov026_DrawCounterPanel(pRecord, nOwned);
     } else {

@@ -17,7 +17,7 @@ extern void *Loader_SetupLZDecompress(
 extern void *ExpHeap_AllocOrDefault(u32 size, int align, int **heapPP);
 extern int FS_CloseFile(char *file);
 extern int OS_SendMessage(char *q, void *msg, int flags);
-extern int data_0204bbfc[];
+extern int gFileLoader[];
 extern char data_0204bc1c[];
 extern const unsigned char data_02041c48[128];
 
@@ -59,15 +59,15 @@ void *Loader_RequestFile(const void *data, int id)
     self[4] = file[10];
 
     if (flag != 0) {
-        Loader_SetupLZDecompress((char *)self, file, 0, 0, (int **)data_0204bbfc[5], id);
+        Loader_SetupLZDecompress((char *)self, file, 0, 0, (int **)gFileLoader[5], id);
         self[1] = 1;
     } else {
         self[11] = self[4] - self[3];
-        self[10] = (int)ExpHeap_AllocOrDefault(self[11], 0x20, (int **)data_0204bbfc[5]);
+        self[10] = (int)ExpHeap_AllocOrDefault(self[11], 0x20, (int **)gFileLoader[5]);
         self[1] = 0;
     }
 
-    data_0204bbfc[5] = 0;
+    gFileLoader[5] = 0;
     FS_CloseFile((char *)file);
     OS_SendMessage(data_0204bc1c, self, 1);
     return (void *)self[10];

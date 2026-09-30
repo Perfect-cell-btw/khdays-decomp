@@ -63,7 +63,7 @@ struct InputPacket {
 #define INPUT_MASK_A 0xf0
 #define INPUT_MASK_B 0xc03
 
-extern u16 data_0204c18c;
+extern u16 gPadHeld;
 
 extern void MI_CpuFill8(void *pDst, u32 nValue, u32 nSize);
 extern int Ov002_PollSession(void);
@@ -109,7 +109,7 @@ void Ov022_SendControlPacket(void)
         bTrimA = 0;
         bTrimB = 0;
         pState = Ov022_GetGlobalPlusE0();
-        packet.nInput = data_0204c18c;
+        packet.nInput = gPadHeld;
         if (Ov002_IsObjectFlag2000Set(nSession) != 0) {
             bTrimA = 1;
         }

@@ -7,7 +7,7 @@ struct Row020a23a4 {
     char _pad0c[0x104 - 0x0c];
 };
 
-extern struct Row020a23a4 data_0204c678[];
+extern struct Row020a23a4 gPartyMembers[];
 
 struct Gauge020a23a4 {
     char _pad00[2];
@@ -42,7 +42,7 @@ void Ov022_ScaleRowValues(
 
     kind = *(unsigned char *)(obj + 9);
     obj += 0x118;
-    row = (int)&data_0204c678[kind];
+    row = (int)&gPartyMembers[kind];
     rowA = ((struct Row020a23a4 *)row)->scaleA;
     obj += 0x800;
     rowB = ((struct Row020a23a4 *)row)->scaleB;

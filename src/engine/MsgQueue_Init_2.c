@@ -3,7 +3,7 @@
 #include "game/class_descriptor.h"
 #pragma thumb on
 /* MsgQueue_Init_2 = MsgQueue_Init (THUMB). Sets up the message-queue context: it lives at the base of
- * the current root heap and is published in data_0204c230. The queue gets two entries (0x20 bytes
+ * the current root heap and is published in gMsgQueue. The queue gets two entries (0x20 bytes
  * each, from the default heap); every entry owns two 0x1e0-byte buffers (32-byte aligned) and starts
  * with the first one active. Table6_ResetAll (Table6_ResetAll) then clears the send state, and the two
  * transfer tasks are instantiated (InstantiateClass, InstantiateClass) from the descriptor template
@@ -40,7 +40,7 @@ extern void *ExpHeap_AllocOrDefault(u32 size, int align, int **heap);
 extern void Table6_ResetAll(void);                                /* Table6_ResetAll */
 extern int InstantiateClass(const GameClassDescriptor *desc, int param);  /* InstantiateClass */
 extern void MsgQueue_GetHeap(void);                                /* MsgQueue_GetHeap */
-extern MsgQueueCtx *data_0204c230;
+extern MsgQueueCtx *gMsgQueue;
 extern int **data_0204c024;
 extern const GameClassDescriptor data_02042110;
 extern const MsgQueueClassIds data_02042108;
@@ -58,7 +58,7 @@ void *MsgQueue_Init_2(void)
     int n = 0;
 
     ctx[n] = NNSi_FndGetCurrentRootHeap();
-    data_0204c230 = ctx[n];
+    gMsgQueue = ctx[n];
     ctx[n]->count = 2;
     ctx[n]->entries = AllocFromExpHeapWrapper(ctx[n]->count * sizeof(MsgQueueEntry), data_0204c024);
     for (i = 0; i < ctx[n]->count; i++) {

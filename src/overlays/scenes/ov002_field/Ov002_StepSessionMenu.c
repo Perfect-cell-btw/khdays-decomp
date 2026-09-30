@@ -43,7 +43,7 @@ typedef struct Ov002SessionBoard {
 extern Ov002DayClock data_0204c240;
 extern Ov002SessionBoard data_0204c300;
 extern u8 data_0204c340[];          /* +0xe is the member-present mask */
-extern u8 *data_0204be18;           /* tally source; totals live at +0x1974 */
+extern u8 *gGameState;           /* tally source; totals live at +0x1974 */
 
 extern Ov002SessionScreen *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov002_RaiseSeatFlagsForKey(void);
@@ -104,7 +104,7 @@ void *Ov002_StepSessionMenu(void)
             }
             if (Session_IsReady() == 0) {
                 MIi_CpuClear16(0, aReport, 0xa);
-                pRow = data_0204be18;
+                pRow = gGameState;
                 for (nRow = 0; nRow < 3; nRow++) {
                     for (nColumn = 0, pCell = pRow, pTotal = aReport;
                          nColumn < 3; nColumn++) {

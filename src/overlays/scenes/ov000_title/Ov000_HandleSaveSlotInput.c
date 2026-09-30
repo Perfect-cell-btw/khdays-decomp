@@ -62,7 +62,7 @@ typedef struct Ov000MenuContextB {
 } Ov000MenuContextB;
 
 extern Ov000MenuContext *data_ov000_0205ac24;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern void Ov000_PushSubWidgetValue(int a);
 extern u64  OS_GetTick(void);
@@ -93,7 +93,7 @@ void Ov000_HandleSaveSlotInput(void)
         PlaySound(0, 0);
         break;
     default:
-        switch (data_0204c190) {
+        switch (gPadPressed) {
         case 1:
             {
                 int pg = ctx->nPageIndex;

@@ -152,7 +152,7 @@ struct Actor {
 #define TALLY_LIMIT 10000
 
 extern u8 data_0204c240;                    /* g_modeAndDayClock.nModeFlags */
-extern struct TallySource *data_0204be18;   /* g_pTallySource */
+extern struct TallySource *gGameState;   /* g_pTallySource */
 
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
 extern int Slot_EvalPackedParam(int nId, int nRule);                                   /* Slot_EvalPackedParam */
@@ -257,9 +257,9 @@ int Ov022_SendSweepHit(struct Actor *pActor, struct HitSpec *pSpec, struct Entry
                     u16 *pCount;
 
                     if ((pkt.nFlags & PKT_BIT10) != 0) {
-                        pCount = &data_0204be18->nBlockedB;
+                        pCount = &gGameState->nBlockedB;
                     } else {
-                        pCount = &data_0204be18->nBlockedA;
+                        pCount = &gGameState->nBlockedA;
                     }
                     *pCount += 1;
                     if (*pCount > TALLY_LIMIT) {

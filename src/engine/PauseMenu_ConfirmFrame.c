@@ -30,7 +30,7 @@ typedef struct {
 } Root0204be08;
 
 extern Root0204be08 data_0204be08;
-extern unsigned short data_0204c190;    /* keys pressed this frame */
+extern unsigned short gPadPressed;    /* keys pressed this frame */
 /* khdays: shared-bss */
 int data_02042730 = 1;                  /* two-tab page cursor */
 
@@ -54,7 +54,7 @@ void PauseMenu_ConfirmFrame(void)
     TabContext *ctx = data_0204be08.pCtx;
     int i;
 
-    if ((data_0204c190 & 8) || PauseMenu_GetMode() == 0) {
+    if ((gPadPressed & 8) || PauseMenu_GetMode() == 0) {
         data_02042730 = 1;
         PlaySound(0, 3);
         setDualArrayEntry(1, PauseMenu_Frame, 0);
@@ -62,8 +62,8 @@ void PauseMenu_ConfirmFrame(void)
         return;
     }
     TabPanel_HandleUpDown(&data_02042730);
-    if ((data_0204c190 & 1) || (data_0204c190 & 2)) {
-        if (data_0204c190 & 2) {
+    if ((gPadPressed & 1) || (gPadPressed & 2)) {
+        if (gPadPressed & 2) {
             data_02042730 = 1;
         }
         switch (data_02042730) {

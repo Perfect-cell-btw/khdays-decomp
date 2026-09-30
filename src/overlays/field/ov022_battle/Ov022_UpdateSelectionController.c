@@ -29,7 +29,7 @@ typedef struct Ov022SelectionMarkOwner {
 } Ov022SelectionMarkOwner;
 
 extern u8 data_0204be04;
-extern u8 *data_0204be18;
+extern u8 *gGameState;
 
 extern Ov022SelectionController *NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_020847f0(void);
@@ -63,7 +63,7 @@ void Ov022_UpdateSelectionController(void)
         }
 
         if ((context->typeOneCandidate->flags1ac & 4) == 0) {
-            ((Ov022SelectionMarkOwner *)&data_0204be18[
+            ((Ov022SelectionMarkOwner *)&gGameState[
                 0x200 + context->typeOneCandidate->selectionId19c + 1])
                 ->mark810 = 1;
         }

@@ -47,7 +47,7 @@ typedef struct GameState {
     u16 otherRewardTotal;     /* 0x196a */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov008ParamTable *data_ov026_0209136c;
 extern u32  GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern int  GameState_IsFlagSet(int nFlag);                                   /* GameState_IsFlagSet */
@@ -67,8 +67,8 @@ Ov008RewardRecord *Ov026_FindNewlyEarnedReward(void)
 
     nRank = GameState_GetField(FIELD_RANK, 3);
     i = 0;
-    aTotal[0] = data_0204be18->otherRewardTotal;
-    aTotal[1] = data_0204be18->mode8RewardTotal;
+    aTotal[0] = gGameState->otherRewardTotal;
+    aTotal[1] = gGameState->mode8RewardTotal;
     nFlagBase = FLAG_REWARD_BASE;
     do {
         nList = i + LIST_FIRST;
@@ -80,7 +80,7 @@ Ov008RewardRecord *Ov026_FindNewlyEarnedReward(void)
                 if (pRecord->nLevel <= nRank && pRecord->nPrice <= aTotal[i]) {
                     GameState_SetFlag(nFlagBase + j);
                     if (j < SUMMARY_BITS) {
-                        BitArray_ClearBit(&data_0204be18->aUnlockSummary[i], j);
+                        BitArray_ClearBit(&gGameState->aUnlockSummary[i], j);
                     }
                     return &data_ov026_0209136c->apRecords[nList][j];
                 }

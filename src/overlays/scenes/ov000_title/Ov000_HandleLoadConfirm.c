@@ -52,9 +52,9 @@ typedef struct Ov000ConfirmContext {
 } Ov000ConfirmContext;
 
 extern Ov000ConfirmContext *data_ov000_0205ac24;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 extern u8  data_ov000_0205ab00[];
-extern Ov000GameSave *data_0204be18;
+extern Ov000GameSave *gGameState;
 
 extern void  Ov000_PlaceCursorByMode(int mode, int row);
 extern void  Ov000_UpdateMenuMarkers(int a, int b, int c);
@@ -85,7 +85,7 @@ void Ov000_HandleLoadConfirm(void)
         }
         break;
     default:
-        switch (data_0204c190) {
+        switch (gPadPressed) {
         case 1:
             if (ctx->nCursorRow != 0) {
                 next = 6;
@@ -137,7 +137,7 @@ void Ov000_HandleLoadConfirm(void)
             u32 *hdr = Msg_OpenContainerAndReadHeader(data_ov000_0205ab00, 0xe);
             void *buf = Archive_LoadFile(
                 ((((u32)hdr + 0x8000) & 0xfffffc) << 7) | 0x80000003, 0xe);
-            *data_0204be18 = *(Ov000GameSave *)buf;
+            *gGameState = *(Ov000GameSave *)buf;
             if (buf != 0) {
                 NNSi_FndFreeFromDefaultHeap(buf);
             }

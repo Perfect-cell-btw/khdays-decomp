@@ -1,5 +1,5 @@
 #pragma thumb on
-/* SoundCtx_Init -- create the sound context (data_0204c234), MAIN. Once only: allocates and clears
+/* SoundCtx_Init -- create the sound context (gSoundMgr), MAIN. Once only: allocates and clears
  * the 0xb47b8-byte context, starts the sound system (NNS_SndInit) and carves its sound heaps
  * (NNS_SndHeapCreate): the main 0x5e400-byte heap, the four 0x1c00-byte data banks (each marked
  * free, unreferenced and unmapped), a 0x4b000-byte stream heap and a 0x4000-byte effect heap. Then
@@ -49,7 +49,7 @@ typedef struct SoundCtx {
     u8 pad0b47b7;
 } SoundCtx;
 
-extern SoundCtx *data_0204c234;
+extern SoundCtx *gSoundMgr;
 extern int **data_0204c024;
 extern void *AllocFromExpHeapWrapper(u32 size, int **heap);
 extern void MI_CpuFill8(void *dest, int data, u32 size);
@@ -62,11 +62,11 @@ BOOL SoundCtx_Init(void)
     SoundCtx *ctx;
     int i;
 
-    if (data_0204c234 != 0) {
+    if (gSoundMgr != 0) {
         return 1;
     }
     ctx = AllocFromExpHeapWrapper(sizeof(SoundCtx), data_0204c024);
-    data_0204c234 = ctx;
+    gSoundMgr = ctx;
     MI_CpuFill8(ctx, 0, sizeof(SoundCtx));
     NNS_SndInit();
     ctx->mainHeap = NNS_SndHeapCreate(ctx->mainArea, sizeof(ctx->mainArea));

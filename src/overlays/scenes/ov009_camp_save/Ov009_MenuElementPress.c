@@ -14,7 +14,7 @@ typedef struct Ov009SaveContext {
 
 extern void Ov009_PlaceElementByVariant(Ov009SaveContext *element, int oldVariant,
                                 int newVariant);
-extern u16 data_0204c18c;
+extern u16 gPadHeld;
 
 /* Commit the pressed form of a two-state menu element. State 0 changes the
  * visible variant to 2 when no directional input is held; states 1 and 6
@@ -29,7 +29,7 @@ void Ov009_MenuElementPress(Ov009SaveContext *element)
 
     switch (element->state) {
     case 0:
-        if (data_0204c18c & 0xe0) {
+        if (gPadHeld & 0xe0) {
             return;
         }
         if (variant == 2) {

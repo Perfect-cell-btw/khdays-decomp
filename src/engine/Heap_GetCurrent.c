@@ -1,6 +1,6 @@
-/* Returns the current heap (data_0204c028). */
-extern int data_0204c028;
+/* Returns the current heap (gCurrentHeap). */
+extern int gCurrentHeap;
 
 int Heap_GetCurrent(void) {
-    return data_0204c028;
+    return gCurrentHeap;
 }

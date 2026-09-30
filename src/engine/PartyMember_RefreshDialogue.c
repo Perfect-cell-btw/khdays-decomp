@@ -3,7 +3,7 @@
  * message record (+0x44) is released and rebuilt from message db 0x1e (MsgDb_FetchRecord, kind 5 with
  * `msgArg`) with the db pinned around it, then the member's flags (+0x4) are recomputed from two
  * progress queries (GameState_GetField): 0x37c7 gives 0 = record marked (+0x30), 1 = 0x800, 2 = 0x1;
- * 0x35bf gives 1 = 0x1000|0x200, 2 = 0x2; a member whose table entry (data_0204c678, stride
+ * 0x35bf gives 1 = 0x1000|0x200, 2 = 0x2; a member whose table entry (gPartyMembers, stride
  * 0x104, byte +3) is 0xe also gets 0x1 once flag 0x208c is set. */
 
 #include "nitro/types.h"
@@ -27,7 +27,7 @@ typedef struct PartyEntry {
     u8 pad04[0x104 - 4];
 } PartyEntry;
 
-extern PartyEntry data_0204c678[];
+extern PartyEntry gPartyMembers[];
 
 void PartyMember_RefreshDialogue(int slot, int msgArg)
 {
@@ -64,7 +64,7 @@ void PartyMember_RefreshDialogue(int slot, int msgArg)
         member->flags |= 2;
         break;
     }
-    if (((PartyEntry *)((u8 *)data_0204c678 + slot * sizeof(PartyEntry)))->kind == 0xe && GameState_IsFlagSet(0x208c)) {
+    if (((PartyEntry *)((u8 *)gPartyMembers + slot * sizeof(PartyEntry)))->kind == 0xe && GameState_IsFlagSet(0x208c)) {
         member->flags |= 1;
     }
 }

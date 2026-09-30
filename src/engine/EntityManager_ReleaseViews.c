@@ -1,4 +1,4 @@
-/* Tear down the block held by data_0204c208 and drop the pointer.
+/* Tear down the block held by gEntityMgr and drop the pointer.
  *
  * The trailing scratch buffer is released first, then every one of the 64
  * fixed entries that is active (bit 2 of its flag byte) but not already
@@ -32,7 +32,7 @@ typedef struct Manager {
     void *buffer;                     /* 0x61c4 */
 } Manager;
 
-extern Manager *data_0204c208;
+extern Manager *gEntityMgr;
 
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern int SNDi_ProcessEntry(int nIndex);
@@ -44,7 +44,7 @@ int EntityManager_ReleaseViews(void)
     char *entry;
     unsigned int j;
 
-    mgr = data_0204c208;
+    mgr = gEntityMgr;
     if (mgr != 0) {
         if (mgr->buffer != 0) {
             NNSi_FndFreeFromDefaultHeap(mgr->buffer);
@@ -69,7 +69,7 @@ int EntityManager_ReleaseViews(void)
         }
 
         NNSi_FndFreeFromDefaultHeap(mgr);
-        data_0204c208 = 0;
+        gEntityMgr = 0;
     }
     return 1;
 }

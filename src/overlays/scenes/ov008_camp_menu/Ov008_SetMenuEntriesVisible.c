@@ -10,7 +10,7 @@ typedef struct Ov009GameState {
     int value8;
 } Ov009GameState;
 
-extern Ov009GameState *volatile data_0204be18;
+extern Ov009GameState *volatile gGameState;
 extern const int data_ov008_0208f4f0[4];
 extern const int data_ov008_0208f4e8[2];
 
@@ -47,10 +47,10 @@ void Ov008_SetMenuEntriesVisible(int visible, int secondaryVisible)
     if (visible != 0) {
         long long elapsed;
 
-        Ov008_DrawNumberDigits(data_0204be18->value8);
+        Ov008_DrawNumberDigits(gGameState->value8);
         elapsed = OS_GetTick() - Ov008_GetLatchedTick();
         Ov008_RenderTimeDigits(
-            (u32)(data_0204be18->value0 +
+            (u32)(gGameState->value0 +
                   func_02020368(elapsed << 6, 0x1ff6210, 0)));
     } else {
         int entry = Ov008_FindEntryByTag(tracker, 2);

@@ -11,7 +11,7 @@ extern void *List_First(void *list);
 extern void NNSi_FndDestroyDoubleList(void *list);
 extern void ClearGlobalArrayInt(int a);
 
-extern void *data_ov107_020cbf1c;
+extern void *gOv107ActorManager;
 
 void Ov107_FieldClassTeardown(void) {
     char *root;
@@ -54,5 +54,5 @@ void Ov107_FieldClassTeardown(void) {
     Ov107_ReleaseLoadedResources();
     ClearGlobalArrayInt(1);
     ClearGlobalArrayInt(4);
-    data_ov107_020cbf1c = 0;
+    gOv107ActorManager = 0;
 }

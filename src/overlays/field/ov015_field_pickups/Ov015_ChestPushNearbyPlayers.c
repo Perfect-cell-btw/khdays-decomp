@@ -4,7 +4,7 @@
  * (ov022 020881f8) lies within nRange of the chest position (+0x488): sends the player a
  * push request (ov022 02088398) of id 0xc whose offset is the unit direction chest ->
  * player scaled by 0x266, damage a tenth (0x19a / 4096) of the seat's recorded value
- * (data_0204c678 rows of 0x104 bytes, +0xe), kind 7 (def class 0x1b) or 3, strength 100 and
+ * (gPartyMembers rows of 0x104 bytes, +0xe), kind 7 (def class 0x1b) or 3, strength 100 and
  * the chest as owner, then marks the seat's bit. */
 
 #include "nitro/types.h"
@@ -43,7 +43,7 @@ typedef struct Ov015Chest {
     u8   nPushedMask;         /* 0x72c */
 } Ov015Chest;
 
-extern Ov015MissionMember data_0204c678[];
+extern Ov015MissionMember gPartyMembers[];
 
 extern int  func_ov022_020882f8(void);                                    /* seat count */
 extern int  Ov022_GetEntryField66(int nSeat);                               /* seat -> owner slot */
@@ -70,7 +70,7 @@ void Ov015_ChestPushNearbyPlayers(Ov015Chest *pChest, int nRange)
                     VEC_Subtract(func_ov022_020881f8(i), &pChest->position, &direction);
                     VEC_Normalize(&direction, &direction);
                     ScaleVec3Fx12(0x266, &direction, &request.vecOffset);
-                    request.nDamage = (data_0204c678[i].wRecordedValue * 0x19a) >> 12;
+                    request.nDamage = (gPartyMembers[i].wRecordedValue * 0x19a) >> 12;
                     request.nKind = (pDef->nClass == 0x1b) ? 7 : 3;
                     request.nStrength = 100;
                     request.nId = 0xc;

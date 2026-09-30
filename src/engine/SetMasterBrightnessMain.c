@@ -1,11 +1,11 @@
 extern unsigned short *GXx_SetMasterBrightness_(unsigned short *p, int v);
 extern unsigned char data_027e0080;
-extern unsigned char data_027e0084;
+extern unsigned char gMasterBrightness;
 
 /* Main-engine master brightness: apply now if DISPSTAT says we are in V-blank,
  * else stash it and flag a deferred update (data_027e0080 bit 0). */
 void SetMasterBrightnessMain(int brightness) {
-    data_027e0084 = (unsigned char)brightness;
+    gMasterBrightness = (unsigned char)brightness;
     {
         volatile unsigned short *reg_dispstat = (volatile unsigned short *)0x04000004;
         if (*reg_dispstat & 1) {

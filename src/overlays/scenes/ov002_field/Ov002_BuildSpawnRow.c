@@ -75,7 +75,7 @@ typedef struct Ov002SpotDesc {
 
 extern Ov002SpotHolder data_ov002_0207fa28;
 extern Ov002SpotDesc data_ov002_0207e67c[];
-extern u8 data_0204c058;                    /* 0 = easy, 1 = hard, 2 = normal */
+extern u8 gObjSystem;                    /* 0 = easy, 1 = hard, 2 = normal */
 
 extern void BitArray_ClearBit(u32 *pBits, int nIndex);      /* clear the free bit */
 extern int Ov002_GetCtxTableByte(int nCtxIndex);          /* ctx -> model id */
@@ -165,8 +165,8 @@ Ov002Spawned *Ov002_BuildSpawnRow(int nSpotId, int nKind, int nTier,
     /* Nested rather than an else-if chain: that is what keeps the hard-mode
        arm inline and pushes the easy-mode one past it, the way the ROM lays
        the two out. */
-    if (data_0204c058 != 0) {
-        if (data_0204c058 == 1) {
+    if (gObjSystem != 0) {
+        if (gObjSystem == 1) {
             pRow->vVel.x = pRow->vVel.x + pRow->vVel.x / 2;
             pRow->vVel.y = pRow->vVel.y + pRow->vVel.y / 2;
             pRow->vVel.z = pRow->vVel.z + pRow->vVel.z / 2;

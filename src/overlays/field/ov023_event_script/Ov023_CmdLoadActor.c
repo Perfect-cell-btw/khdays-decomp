@@ -1,6 +1,6 @@
 /* Ov023_CmdLoadActor -- Ov023_CmdLoadActor: script command that loads an actor's resource
  * group.  Operand 0 is the actor id, operand 1 the group's name (resolved against the
- * context's table at +0x128 by 02020af0).  If the entity manager (data_0204c208) already holds
+ * context's table at +0x128 by 02020af0).  If the entity manager (gEntityMgr) already holds
  * a block for that id, its record (+4 + id * 8, 0202b064) and block (+0x44 + id * 4) are
  * released first; then the group is registered under the id (0202b820).  For actor 0 the group
  * resources are requested (Ov023_RequestGroupResources 02083c14, with the extra set when game
@@ -35,7 +35,7 @@ extern void  Entity_LoadAndAttach(int nId, char *pszGroup);                /* re
 extern int   GameState_GetField(int nField, int nArg);                   /* GameState_GetField */
 extern void  Ov023_RequestGroupResources(int nGroup, int bExtra);           /* Ov023_RequestGroupResources */
 extern void  Req_SetPendingFields(int nNear, int nFar, int nArg);          /* set the camera distance */
-extern Ov023EntityManager *data_0204c208;
+extern Ov023EntityManager *gEntityMgr;
 
 int Ov023_CmdLoadActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 {
@@ -46,9 +46,9 @@ int Ov023_CmdLoadActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     nId = ScriptVm_ReadOperandInt(pCtx, pOperand);
     pszGroup = ByteCode_ResolveOperand(pCtx, pOperand + 1);
     nDistance = 0xa000;
-    if (data_0204c208->apBlock[nId] != 0) {
-        SubResourceTable_Free(data_0204c208->aRecord[nId]);
-        NNSi_FndFreeFromDefaultHeap(data_0204c208->apBlock[nId]);
+    if (gEntityMgr->apBlock[nId] != 0) {
+        SubResourceTable_Free(gEntityMgr->aRecord[nId]);
+        NNSi_FndFreeFromDefaultHeap(gEntityMgr->apBlock[nId]);
     }
     pszGroup = ParseSlotQuantityId(pCtx->pTable, pszGroup);
     Entity_LoadAndAttach((u16)nId, pszGroup);

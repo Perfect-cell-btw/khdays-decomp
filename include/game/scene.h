@@ -1,8 +1,8 @@
 #ifndef GAME_SCENE_H
 #define GAME_SCENE_H
 
-/* Scene ids: the index of the scene table (data_02042548, {overlay, class descriptor} per id),
- * what Scene_RequestPending takes and the scene controller (data_0204bda8) holds as current and
+/* Scene ids: the index of the scene table (gSceneTable, {overlay, class descriptor} per id),
+ * what Scene_RequestPending takes and the scene controller (gSceneCtl) holds as current and
  * pending. Named where the scene has been seen running; 3 (ov003), 8 (ov011), 9 (ov009) and 13
  * (no overlay) are not identified yet. */
 

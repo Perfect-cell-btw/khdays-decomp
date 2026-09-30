@@ -4,7 +4,7 @@
  * live (!= -1).
  *
  * Publishes a scaled timeout ((Ov002_GetTimeoutTicks()<<6)/0x82ea) into data_0204c4d8+0x14, then,
- * unless the phase at ctx+0x8bb4 is 0 or 3, walks the four 0x104-byte entries at data_0204c678:
+ * unless the phase at ctx+0x8bb4 is 0 or 3, walks the four 0x104-byte entries at gPartyMembers:
  * copies the 8-byte head into a scratch, recomputes its 4th halfword from Ov022_GetEntryField12 (or
  * the entry's +0xe field, gated on func_ov022_020886f8 and data_0204c240 & 4), writes the head
  * back, and - depending on the same flag - refreshes the entry (GetEntryField20ByIndex) and, if
@@ -30,7 +30,7 @@ extern int  func_ov022_020886f8(int i);
 extern int  Ov002_TestRosterSlotGroundRay(int i);
 extern void Ov002_FillRosterSlotDefaults(int i);
 extern int  data_0204c4d8;
-extern u16  data_0204c678;
+extern u16  gPartyMembers;
 extern u8   data_0204c240;
 
 void Ov002_UpdatePartyEntries(void)
@@ -55,8 +55,8 @@ void Ov002_UpdatePartyEntries(void)
     }
     i = 0;
     fp = flags;
-    rdp = (char *)&data_0204c678;
-    wrp = (char *)&data_0204c678;
+    rdp = (char *)&gPartyMembers;
+    wrp = (char *)&gPartyMembers;
     for (; i < 4; i++) {
         if (GetEntryField20ByIndex(i) == 0) return;
         buf = *(Head *)rdp;

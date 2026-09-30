@@ -96,8 +96,8 @@ extern unsigned char data_027e0060;   /* current scene id (0 = none)            
 extern void         *data_027e0350;   /* boot resource list head                  */
 extern int           data_0204c024;   /* default arena ref                        */
 extern unsigned char data_0204c215;   /* "present pending" flag                   */
-extern unsigned char data_0204bd84;   /* display mode byte (0/1/2)                */
-extern unsigned char data_0204c058;   /* frame-rate/skip mode byte                */
+extern unsigned char gPauseMode;   /* display mode byte (0/1/2)                */
+extern unsigned char gObjSystem;   /* frame-rate/skip mode byte                */
 extern void         *data_02042534;       /* root task class descriptor           */
 
 /* scene-render state struct @ data_020442a0: +0x00 u8 displays off (lid closed), +0x04 handle */
@@ -159,7 +159,7 @@ int main(void) {
         Pad_Sample();
         G3X_ResetMtxStack();
 
-        switch (data_0204bd84) {                 /* display mode             */
+        switch (gPauseMode) {                 /* display mode             */
         case 0: Obj_UpdateAll(0); break;
         case 1: Callbacks_Run(1); frameTarget = VBlank_GetCount(); break;
         case 2: Obj_UpdateAll(0); Callbacks_Run(1); break;
@@ -167,8 +167,8 @@ int main(void) {
         SoundMgr_Update();
 
         /* frame-rate pacing: advance whole frames until we reach the target */
-        if (data_0204c058 != 2) {
-            frameTarget += (data_0204c058 == 1) ? 2 : 1;
+        if (gObjSystem != 2) {
+            frameTarget += (gObjSystem == 1) ? 2 : 1;
             while (VBlank_GetCount() < frameTarget) {
                 OS_WaitVBlankIntr();
                 FrameStep_UpdateTaskQueue();
@@ -176,7 +176,7 @@ int main(void) {
         }
 
         /* present (unless mode 1 already did its own swap) */
-        if (data_0204bd84 != 1) {
+        if (gPauseMode != 1) {
             GXi_FlushCommandList();
             REG_0540 = 1;
             data_0204c215 = 1;
@@ -210,9 +210,9 @@ int main(void) {
         if (Sleep_IsAllowed() == 0) continue;
         if (LID_CLOSED != 1) continue;
 
-        if (data_0204bd84 == 0) NNS_SndPlayerPauseAll(1); else SoundMgr_PauseBgm(1);
+        if (gPauseMode == 0) NNS_SndPlayerPauseAll(1); else SoundMgr_PauseBgm(1);
         PM_GoSleepMode(0xc, 0, 0);
-        if (data_0204bd84 == 0) NNS_SndPlayerPauseAll(0); else SoundMgr_PauseBgm(0);
+        if (gPauseMode == 0) NNS_SndPlayerPauseAll(0); else SoundMgr_PauseBgm(0);
 
         if (PM_GetLCDPower() == 0) {
             if (PM_SetLCDPower(1) == 0) {

@@ -751,7 +751,7 @@
       "mode": "arm",
       "size": 576,
       "source": "src/overlays/scenes/ov003/Ov003_RankPlayers.c",
-      "source_sha256": "21c675b489ab1a0d8e315ad5e705bff10e87732ce29716c4b6ff287f0a548270",
+      "source_sha256": "f57041fb183f664029a1fcb01abd073be13798403f67d6f0e116756a9898df00",
       "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
     },
     "Ov024_MobiClip_AudioTransformDecode": {

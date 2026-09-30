@@ -47,7 +47,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008ParamTable *data_ov026_0209136c;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);                /* AllocDefault */
 extern void  MI_CpuCopy8(const void *pSrc, void *pDst, u32 nSize);
 extern int   Ov026_IsValidItemId(int nItemId);                          /* item is sellable */
@@ -63,7 +63,7 @@ Ov008ParamRecord **Ov026_BuildSellList(int nCategory, int *pCount)
     Ov008ParamRecord *pRecord;
 
     aOwned = NNSi_FndAllocFromDefaultExpHeap(data_ov026_0209136c->nSellCount);
-    MI_CpuCopy8(&data_0204be18->aItemCount[1], aOwned, data_ov026_0209136c->nSellCount);
+    MI_CpuCopy8(&gGameState->aItemCount[1], aOwned, data_ov026_0209136c->nSellCount);
     nListed = 0;
     for (i = 0; i < data_ov026_0209136c->nSellCount; i++) {
         if (aOwned[i] != 0 && Ov026_IsValidItemId(data_ov026_0209136c->pSellRecords[i].pItemDef->nItemId) != 0

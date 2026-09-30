@@ -46,7 +46,7 @@ const struct {
     21, 34, 37, 40, 88, 62, 33, 20,
 } };
 
-/* Key-repeat (KeyRepeat_Update): index of each key's press stamp in data_0204c194 ... */
+/* Key-repeat (KeyRepeat_Update): index of each key's press stamp in gPadPressTimes ... */
 const u16 data_02042218[10] = { 6, 7, 5, 4, 0, 1, 10, 11, 9, 8 };
 
 /* ... and the key bit of each slot, in the same order. */

@@ -1,6 +1,6 @@
 /* FileLoader_LoadSync -- load a file into a caller buffer synchronously, MAIN. The file (an id with bit 31
  * set, or a path whose language placeholder Msg_BuildLangPath expands) is opened. A ".?Z" name or a
- * compressed id is decompressed straight into `buffer` through the streaming reader data_0204bbfc[0]:
+ * compressed id is decompressed straight into `buffer` through the streaming reader gFileLoader[0]:
  * Stream_StartUncomp starts it, then the two 0x200-byte halves swap, the next block is queued with
  * FS_ReadFileAsync and the finished one is fed to the uncompressor (func_02004484) until it reports
  * the end (a failed read terminates the thread); the data cache is then flushed (all of it past
@@ -28,7 +28,7 @@ extern void DC_FlushAll(void);
 extern void DC_FlushRange(const void *startAddr, u32 nBytes);
 extern int FS_ReadFile(void *file, void *dst, int len);   /* FS_ReadFile */
 extern int FS_CloseFile(void *file);
-extern char *data_0204bbfc[];
+extern char *gFileLoader[];
 extern const unsigned char data_02041c48[128];
 
 static inline int toupper(int c)
@@ -51,7 +51,7 @@ int FileLoader_LoadSync(const void *data, void *buffer, int size)
     int done;
     int flag;
     int len;
-    char *rd = data_0204bbfc[0];
+    char *rd = gFileLoader[0];
 
     FS_InitFile(file);
     FSi_WaitForCardThread();

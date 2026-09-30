@@ -41,7 +41,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern char Ov008_CountGridEntriesForOwner(Ov008MessageCacheContextView *pCtx, int nItemId); /* Ov008_CountGridEntriesForOwner */
 
 Ov008Message15Record *Ov008_FindBestSpareItemForNode(Ov008MessageCacheContextView *pCtx, Ov008TrackedNode *pNode)
@@ -58,7 +58,7 @@ Ov008Message15Record *Ov008_FindBestSpareItemForNode(Ov008MessageCacheContextVie
     MsgDb_FetchRecord(&pList, DB_ITEM_LISTS, pNode->nListIndex, DB_SLOT_LISTS);
     for (i = 0; i < pList->nCount; i++) {
         nItemId = pList->aItemId[i];
-        if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) < data_0204be18->aItemCount[nItemId]) {
+        if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) < gGameState->aItemCount[nItemId]) {
             pItem = &pCtx->pMessage15Records[nItemId];
             if (pItem->nPlacedSlot < 0 && (pBest == 0 || pBest->nRank < pItem->nRank)) {
                 pBest = pItem;

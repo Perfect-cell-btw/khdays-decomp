@@ -17,7 +17,7 @@
 #include "game/engine.h"
 
 extern int data_ov002_0207f624;
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 
 extern void Ov002_SelectEntryByKey(int nKey);
 extern void Ov002_WaitThenPlayIdle(void);
@@ -44,7 +44,7 @@ void *Ov002_SceneCrawlStep(void)
     ctx = *(int **)&data_ov002_0207f624;
     Ov002_SelectEntryByKey(*(int *)((char *)ctx + 0x69c));
 
-    if ((data_0204c190 & 0x83) != 0) {
+    if ((gPadPressed & 0x83) != 0) {
         Ov002_WaitThenPlayIdle();
     } else {
         if (GetFrameRateMode() != 2 || (Obj_GetFrameCount() & 1) == 0) {

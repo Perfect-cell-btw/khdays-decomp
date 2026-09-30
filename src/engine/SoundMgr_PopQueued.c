@@ -2,7 +2,7 @@
  * base+0xb47a2, copying it into the "current" output field at base+0xb479e.
  * If the queue is already empty (count byte at +0xb47b3 == 0), only the low
  * byte of the output field is cleared and the head/count are left alone. */
-extern char *data_0204c234;
+extern char *gSoundMgr;
 
 typedef struct {
     unsigned short field_00;
@@ -10,7 +10,7 @@ typedef struct {
 } QueueRec;
 
 void SoundMgr_PopQueued(void) {
-    char *base = data_0204c234;
+    char *base = gSoundMgr;
 
     if (*(unsigned char *)(base + 0xb47b3) == 0) {
         *(unsigned char *)(base + 0xb479e) = 0;

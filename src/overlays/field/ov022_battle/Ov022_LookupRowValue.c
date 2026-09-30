@@ -4,7 +4,7 @@
 #include "game/engine.h"
 
 extern int func_ov022_020ad7b0(int obj);
-extern int data_0204c678;
+extern int gPartyMembers;
 
 struct GaugeFields020a2230 {
     char _pad00[8];
@@ -44,7 +44,7 @@ unsigned int Ov022_LookupRowValue(
     int scaled;
     int value;
 
-    row = (struct Row020a2230 *)&data_0204c678;
+    row = (struct Row020a2230 *)&gPartyMembers;
     arg1 = obj->kind;
     row += arg1;
     objectBase = (int)obj + 0x118;

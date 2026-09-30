@@ -32,7 +32,7 @@ typedef struct {
 } Root0204be08;
 
 extern Root0204be08 data_0204be08;
-extern unsigned short data_0204c190;    /* keys pressed this frame */
+extern unsigned short gPadPressed;    /* keys pressed this frame */
 
 extern int PauseMenu_GetMode(void);
 extern void PlaySound(int a, int b);            /* play menu sound */
@@ -61,14 +61,14 @@ void PauseMenu_Frame(void)
         return;
     }
     if (ctx->timer == 0) {
-        if (data_0204c190 & 8) {
+        if (gPadPressed & 8) {
             PlaySound(0, 3);
             Callbacks_ClearByteAndRun2();
             return;
         }
         if (GameState_IsFlagSet(0x2483) == 0) {
             TabPanel_HandleUpDown(&ctx->cursor);
-            if (data_0204c190 & 1) {
+            if (gPadPressed & 1) {
                 if (ctx->cursor == 0) {
                     Callbacks_ClearByteAndRun2();
                     PlaySound(0, 1);

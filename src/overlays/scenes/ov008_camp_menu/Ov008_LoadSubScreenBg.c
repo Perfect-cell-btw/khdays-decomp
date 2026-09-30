@@ -1,12 +1,12 @@
 /* Ov008_LoadSubScreenBg -- Ov008_LoadSubScreenBg (164 B, 9 relocs).
  * Loads a sub-screen (engine B) menu background. When param_2 == 0 it first pokes the
- * shared object at data_0204be18 + 0xee0 (Ov008_BuildMenuListFrom). It maps param_2 to an
+ * shared object at gGameState + 0xee0 (Ov008_BuildMenuListFrom). It maps param_2 to an
  * archive subfile (Ov008_GetLocalPlayerStatC -> Ov008_PackSlotTag), unpacks it into a resource
  * cell (Res_LoadSpriteSet with the -1,0,0 tail args), then uploads the sub-screen BG palette
  * (offset 0x80, 0x160 bytes, sourced from palette->data + 0x80) and BG3 character data
  * (offset 0x2000). The character size/data are read into locals before the palette upload
  * so they survive that call in callee-saved r5/r6. Finally frees the temp resource.
- * data_0204be18 is a char* global; `+ 0xee0` reads the pointer then adds the field offset. */
+ * gGameState is a char* global; `+ 0xee0` reads the pointer then adds the field offset. */
 
 #include "nitro/types.h"
 #include "game/engine.h"
@@ -20,7 +20,7 @@ typedef struct Ov008ResourceCell {
     Ov008PaletteBlock   *palette;
 } Ov008ResourceCell;
 
-extern char *data_0204be18;
+extern char *gGameState;
 extern void  Ov008_BuildMenuListFrom(void *anchor);
 extern int   Ov008_GetLocalPlayerStatC(int arg);
 extern u32   Ov008_PackSlotTag(int subfile);
@@ -37,7 +37,7 @@ void Ov008_LoadSubScreenBg(int param_1, int param_2)
     void *charData;
 
     if (param_2 == 0) {
-        Ov008_BuildMenuListFrom(data_0204be18 + 0xee0);
+        Ov008_BuildMenuListFrom(gGameState + 0xee0);
     }
     resource = Archive_LoadFile(Ov008_PackSlotTag(Ov008_GetLocalPlayerStatC(param_2)), 0xe);
     Res_LoadSpriteSet(&cell, resource, -1, 0, 0);

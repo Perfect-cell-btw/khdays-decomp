@@ -4,7 +4,7 @@
  * page transitions come back to.  Per frame it services input, finishes the cross-fade,
  * redraws, dispatches the selection and watches the idle timer.
  *
- * Input is held off until the transition object at data_0204c18c reports idle; from then
+ * Input is held off until the transition object at gPadHeld reports idle; from then
  * on Ov000_StepMenuSelection advances the cursor row for the current page.  A/Start counts as
  * confirm (key mask 9), B as cancel (mask 2).
  *
@@ -53,8 +53,8 @@ typedef struct Ov000MenuContext {
     long long enterTick;
 } Ov000MenuContext;
 
-extern unsigned short data_0204c18c;
-extern unsigned short data_0204c190;
+extern unsigned short gPadHeld;
+extern unsigned short gPadPressed;
 
 extern Ov000MenuContext *NNSi_FndGetCurrentRootHeap(void);
 extern void      Ov000_FadeStateHookNoOp(void);
@@ -88,7 +88,7 @@ StateFn Ov000_TickMenuLoop(void) {
         ctx->cursorRow[ctx->page] = Ov000_StepMenuSelection(ctx->inputSource,
                                                         ctx->cursorRow[ctx->page],
                                                         ctx->page);
-    } else if (data_0204c18c == 0) {
+    } else if (gPadHeld == 0) {
         ctx->inputReady = 1;
     }
 
@@ -107,9 +107,9 @@ StateFn Ov000_TickMenuLoop(void) {
 
     Ov000_RefreshMenuLayout();
     Ov000_RegisterLogoObjects();
-    if ((data_0204c190 & 9) != 0) {
+    if ((gPadPressed & 9) != 0) {
         confirm = 1;
-    } else if ((data_0204c190 & 2) != 0) {
+    } else if ((gPadPressed & 2) != 0) {
         cancel = 1;
     }
     Camera_CommitMatricesEx(ctx->scrollBounds, 0x3b33, -0x3b33, -0x4d9a, 0x4d9a);
@@ -168,7 +168,7 @@ StateFn Ov000_TickMenuLoop(void) {
         return (StateFn)Ov000_TickMenuLevelChange;
     }
 
-    if (ctx->inputReady != 0 && data_0204c18c != 0) {
+    if (ctx->inputReady != 0 && gPadHeld != 0) {
         ctx->enterTick = OS_GetTick();
     }
     if (func_02020368((OS_GetTick() - ctx->enterTick) << 6, 0x01ff6210, 0) > 0x69) {

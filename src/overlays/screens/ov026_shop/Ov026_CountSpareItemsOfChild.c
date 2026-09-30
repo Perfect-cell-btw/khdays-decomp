@@ -15,7 +15,7 @@ typedef struct GameState {
     u16 aEquipped[MEMBER_COUNT][SLOT_COUNT]; /* 0xee0 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int Ov026_GetChildField14OrNeg1(int nChild);   /* GetChildField14OrNeg1 */
 
 int Ov026_CountSpareItemsOfChild(int nChild)
@@ -30,7 +30,7 @@ int Ov026_CountSpareItemsOfChild(int nChild)
     if (nItem < 0) {
         return 0;
     }
-    pState = data_0204be18;
+    pState = gGameState;
     nSpare = pState->aItemCount[nItem];
     for (nMember = 0; nMember < MEMBER_COUNT; nMember++) {
         for (nSlot = 0; nSlot < SLOT_COUNT; nSlot++) {

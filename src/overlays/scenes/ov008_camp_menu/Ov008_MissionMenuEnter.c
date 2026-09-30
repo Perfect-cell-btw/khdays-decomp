@@ -47,7 +47,7 @@ typedef struct GameState {
 
 extern u8 data_ov008_02090d1c;                                          /* scene object class */
 extern MissionMenuContext *data_ov008_02090fa0;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int   Ov008_Link_IsReady(void);                                  /* Ov008_Fn_bb14: ready */
 extern void *InstantiateClass(void *pClass, int nArg);                      /* InstantiateClass */
 extern int   Ov008_CountPlayers(void);
@@ -89,10 +89,10 @@ MissionState Ov008_MissionMenuEnter(void)
         if (nRank >= 5) {
             nFeatures |= 0x20;
         }
-        if (data_0204be18->aItemCount[ITEM_FEATURE_A] != 0) {
+        if (gGameState->aItemCount[ITEM_FEATURE_A] != 0) {
             nFeatures |= 0x04;
         }
-        if (data_0204be18->aItemCount[ITEM_FEATURE_B] != 0) {
+        if (gGameState->aItemCount[ITEM_FEATURE_B] != 0) {
             nFeatures |= 0x02;
         }
         data_ov008_02090fa0->nFeatures = nFeatures;

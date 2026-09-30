@@ -1,7 +1,7 @@
 /* Records (id, kind) in the 32-slot recent-events ring at base+0xb4718, stamped with the current
  * tick: returns 0 when the pair is already queued; a full ring overwrites its oldest slot,
  * otherwise the record is appended. Returns 1 when recorded. */
-extern int data_0204c234;
+extern int gSoundMgr;
 
 typedef struct {
     unsigned short id;
@@ -18,7 +18,7 @@ typedef struct {
 
 int RecentRing_Record(unsigned short id, unsigned char kind)
 {
-    RingQueue *q = (RingQueue *)(*(int *)&data_0204c234 + 0xb4718);
+    RingQueue *q = (RingQueue *)(*(int *)&gSoundMgr + 0xb4718);
     unsigned short i = 0;
     unsigned short count = q->count;
     RingSlot *slot;

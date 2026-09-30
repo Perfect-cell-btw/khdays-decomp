@@ -5,7 +5,7 @@ extern void Ov005_HandleDirectionalInput(void);
 extern void Ov005_RenderTextSurface(int layer);
 extern void Ov005_UpdateDialogVisibility(void);
 extern void Ov005_RefreshDialogChoice(void);
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern char *data_ov005_0205b80c;
 
 /* Per-frame refresh: rebuilds the three layers, and when the pad reports B without A, arms the
@@ -17,7 +17,7 @@ void Ov005_RefreshAndHandleCancel(void) {
     Ov005_RenderTextSurface(1);
     Ov005_RenderTextSurface(0);
     Ov005_RenderTextSurface(3);
-    held = data_0204c190;
+    held = gPadPressed;
     if ((held & 1) == 0 && (held & 2) == 0) {
         return;
     }

@@ -18,7 +18,7 @@ extern int   Session_GetLocalPlayerIndex(void);
 extern char *Slot4_GetIfOccupied(int);
 extern void  MI_CpuFill8(void *dst, int val, int size);
 extern void  Ov008_BuildMenuListFrom(void *anchor);
-extern char *data_0204be18;
+extern char *gGameState;
 extern int   GameState_IsFlagSet(int);
 extern void  Ov008_RecordInputCoords(void *init);
 extern void  Ov008_MainMenuTopState(void);
@@ -43,7 +43,7 @@ void *Ov008_MainMenuInit(void) {
     GameState_ClearFlag(0x200c);
     sel = Slot4_GetIfOccupied(Session_GetLocalPlayerIndex());
     MI_CpuFill8(init, 0, 6);
-    Ov008_BuildMenuListFrom(data_0204be18 + 0xee0);
+    Ov008_BuildMenuListFrom(gGameState + 0xee0);
     if (sel != 0) {
         init[2] &= ~1;
         *(unsigned short *)(init + 4) = *(int *)(sel + 4);

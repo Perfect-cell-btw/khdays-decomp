@@ -9,7 +9,7 @@
  *   - elapsed is computed BEFORE the counter pointer is loaded;
  *   - the counter pointer is hoisted into a local so it is loaded once and kept
  *     in a callee-saved register ACROSS the divide call. Written as
- *     `*data_0204be18 += f(...)` it reloads afterwards, which is +4 bytes;
+ *     `*gGameState += f(...)` it reloads afterwards, which is +4 bytes;
  *   - MATH_CalcSHA1 runs before the 0xc8f592a6 magic is written, not after.
  *
  * func_02020368 takes a long long in r0:r1 -- the divisor 0x1ff6210 against a
@@ -37,7 +37,7 @@ extern void Ov025_EmitCommandVariantA(int a, int b, int c);
 
 extern unsigned short data_0204be10;
 extern long long data_0204be1c;
-extern int *data_0204be18;
+extern int *gGameState;
 extern char *data_0204be14;
 extern CardTransferCtx data_ov025_020b5760;
 
@@ -54,7 +54,7 @@ int Ov025_CommitSaveToSlot(int slot) {
         return 0;
     }
     elapsed = OS_GetTick() - data_0204be1c;
-    pCounter = data_0204be18;
+    pCounter = gGameState;
     *pCounter += func_02020368(elapsed << 6, 0x1ff6210, 0);
     MATH_CalcSHA1(data_0204be14 + 4, data_0204be14 + 0x18, 0x1cac);
     *(int *)data_0204be14 = 0xc8f592a6;

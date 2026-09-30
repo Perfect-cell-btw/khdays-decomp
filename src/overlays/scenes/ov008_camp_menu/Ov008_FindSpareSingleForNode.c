@@ -57,7 +57,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern char Ov008_CountGridEntriesForOwner(Ov008MenuContext *pCtx, int nItemId);  /* Ov008_CountGridEntriesForOwner */
 
 Ov008Message15Record *Ov008_FindSpareSingleForNode(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode)
@@ -82,7 +82,7 @@ Ov008Message15Record *Ov008_FindSpareSingleForNode(Ov008MenuContext *pCtx, Ov008
             if (pRecord->nPlacedSlot >= 0) {
                 continue;
             }
-            if ((u32)Ov008_CountGridEntriesForOwner(pCtx, pRecord->nItemId) < data_0204be18->aItemCount[pRecord->nItemId]) {
+            if ((u32)Ov008_CountGridEntriesForOwner(pCtx, pRecord->nItemId) < gGameState->aItemCount[pRecord->nItemId]) {
                 return pRecord;
             }
         }
@@ -91,7 +91,7 @@ Ov008Message15Record *Ov008_FindSpareSingleForNode(Ov008MenuContext *pCtx, Ov008
     for (nRow = 1; nRow < ITEM_ID_END; nRow++) {
         pItem = &pCtx->pRecords[nRow];
         if (pItem->nCategory == CATEGORY_SINGLE && pItem->nPlacedSlot < 0
-            && (u32)Ov008_CountGridEntriesForOwner(pCtx, pItem->nItemId) < data_0204be18->aItemCount[pItem->nItemId]) {
+            && (u32)Ov008_CountGridEntriesForOwner(pCtx, pItem->nItemId) < gGameState->aItemCount[pItem->nItemId]) {
             return pItem;
         }
     }

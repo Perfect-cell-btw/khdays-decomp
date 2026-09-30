@@ -3,11 +3,11 @@
 
 extern void NNS_SndHeapClear(void *node);
 extern void Loader_PostIdRequest(unsigned int a, void *node, void *dst);
-extern char *data_0204c234;
+extern char *gSoundMgr;
 
 void StoreU16FieldAndRefresh(unsigned int param_1)
 {
-    char *base = data_0204c234;
+    char *base = gSoundMgr;
 
     *(unsigned char *)(base + 0xb46fc) = 1;
     *(unsigned short *)(base + 0xb46f6) = param_1;

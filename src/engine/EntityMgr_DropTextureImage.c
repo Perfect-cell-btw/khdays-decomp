@@ -3,8 +3,8 @@
 
 #include "game/engine.h"
 
-extern int data_0204c208;
+extern int gEntityMgr;
 
 void EntityMgr_DropTextureImage(int index) {
-    EntityRecord_DropTextureImage(data_0204c208 + 0xc4 + index * 0x184);
+    EntityRecord_DropTextureImage(gEntityMgr + 0xc4 + index * 0x184);
 }

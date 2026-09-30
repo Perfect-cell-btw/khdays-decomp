@@ -1,7 +1,7 @@
 /*
  * MsgQueue_Contains - is a message with handle `id` still queued?
  *
- * The message pool (base = *data_0204c230) keeps a 32-bit slot bitmask at +0xc,
+ * The message pool (base = *gMsgQueue) keeps a 32-bit slot bitmask at +0xc,
  * where a SET bit marks a FREE slot and a CLEAR bit an OCCUPIED one (bit 31 =
  * slot 0). The 6-byte slots start at base+0x10 (MsgSlot: u16 handle, u16 size,
  * u8 type, u8 flags); the per-slot handle at +0 is what the allocator returns.
@@ -17,11 +17,11 @@
 
 static inline unsigned int Clz(unsigned int x) { asm { clz x, x } return x; }
 
-extern int *data_0204c230;
+extern int *gMsgQueue;
 
 int MsgQueue_Contains(unsigned int id)
 {
-    int *base = data_0204c230;
+    int *base = gMsgQueue;
     char *slots = (char *)base + 0xc;
     unsigned int used = ~*(unsigned int *)slots;
     int idx;

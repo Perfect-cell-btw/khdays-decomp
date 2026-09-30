@@ -58,7 +58,7 @@ typedef struct {
 } MissionMenuContext;
 
 extern MissionMenuContext *data_ov006_02056660;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 extern u8 data_ov006_020561d0[];
 
 extern u16 Ov006_MissionGetCursorEntry(void);  /* Ov006_MissionGetCursorEntry */
@@ -200,7 +200,7 @@ have_flag:
 have_unique:
             if (unique != 0) {
                 slotVisible = 1;
-                if ((data_0204c190 & 8) != 0) {
+                if ((gPadPressed & 8) != 0) {
                     Ov006_SetPendingInput(rows[0].memberId);
                 }
             }

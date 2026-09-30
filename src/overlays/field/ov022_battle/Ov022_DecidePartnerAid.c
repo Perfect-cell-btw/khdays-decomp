@@ -70,7 +70,7 @@ struct Actor {
     u32 run[0xdc];               /* 0x22f8 Ov022ActionOwner (0x370) */
 };
 
-extern struct Record data_0204c678[];      /* kOv022KindRecords */
+extern struct Record gPartyMembers[];      /* kOv022KindRecords */
 
 extern struct PlayerSlot *GetPlayerSlotTableEntry(int nSlot);                             /* GetPlayerSlotTableEntry */
 extern struct KeyEntry *Table_FindKey(int nId, int nKey);                       /* Table_FindKey */
@@ -102,7 +102,7 @@ void Ov022_DecidePartnerAid(struct Actor *pSelf, struct Actor *pTarget)
     bReact = 0;
     bKey4 = 0;
     bKey7 = 0;
-    pRec = &data_0204c678[pTarget->nId];
+    pRec = &gPartyMembers[pTarget->nId];
     if ((pSlot->nFlags & SLOT_MUTED) == 0) {
         pKey = Table_FindKey(pSelf->nId, KEY_4);
         if (pKey != 0 && pKey->nCount > 0) {

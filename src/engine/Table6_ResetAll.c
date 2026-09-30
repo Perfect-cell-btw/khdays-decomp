@@ -1,4 +1,4 @@
-/* Resets the 32-entry, 6-byte-stride table at +0xc of the block held by data_0204c230:
+/* Resets the 32-entry, 6-byte-stride table at +0xc of the block held by gMsgQueue:
  * every entry's halfword at +4 goes to 0xffff, the header word at +0xc to -1 and the
  * halfword at +0x744 to 0.
  *
@@ -6,13 +6,13 @@
  * the zeroed counter) while the 0xffff is an UNSIGNED SHORT literal -- as a plain -1 mwcc
  * notices the two constants agree in 16 bits and reuses the register, dropping the pool
  * entry and eight bytes.  And `i` must be declared before `p` to keep the ROM's r3/ip. */
-extern char *data_0204c230;
+extern char *gMsgQueue;
 
 void Table6_ResetAll(void) {
     int i;
     char *p;
     char *base;
-    base = data_0204c230;
+    base = gMsgQueue;
     p = base + 0xc;
     i = 0;
     *(short *)(p + 0x744) = (short)i;

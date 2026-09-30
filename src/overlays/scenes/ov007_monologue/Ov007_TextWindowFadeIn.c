@@ -3,7 +3,7 @@
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Text_UploadTileBuffer(void *p);
 extern int Ov007_AdvanceTextLine(void);
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern int Ov007_FadeOutStep(void);
 
 /* Text window fade-in: on entry set the window colour to white (0x7fff) and
@@ -31,7 +31,7 @@ int Ov007_TextWindowFadeIn(void) {
     } else {
         *(volatile unsigned short *)0x05000004 = frame | frame * 0x20 | frame * 0x400;
     }
-    if ((data_0204c190 & 1) != 0) {
+    if ((gPadPressed & 1) != 0) {
         if (*(int *)(root + 0x20) < 0x20) {
             Text_DrawDirectional(root + 0x30, 0x80, *(int *)(root + 0x70) * 0x12 + 0xe, 1, 0x14, root + 0x7c);
             Text_UploadTileBuffer((void *)(root + 0x30));
@@ -39,7 +39,7 @@ int Ov007_TextWindowFadeIn(void) {
         ret = (int)Ov007_AdvanceTextLine;
         *(int *)(root + 0x20) = 0xf;
     }
-    if ((data_0204c190 & 8) != 0) {
+    if ((gPadPressed & 8) != 0) {
         *(int *)(root + 0x20) = 0;
         ret = (int)Ov007_FadeOutStep;
     }

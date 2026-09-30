@@ -2,7 +2,7 @@
  * Fold one frame's worth of accumulated play data into the run record for
  * player nIdx and hand the individual events on to the scorers.
  *
- * The record lives in the 0x104-byte-per-player table at data_0204c678.  The
+ * The record lives in the 0x104-byte-per-player table at gPartyMembers.  The
  * six running counters at +0x08 each take this frame's delta from the state
  * block, then every one of them is clamped: the four halfword counters at
  * 999, the long counter at 0x64000, and the fifth halfword at 255.  The
@@ -75,8 +75,8 @@ typedef struct {
     int nField14;               /* 0x14 */
 } Event;
 
-extern u8 data_0204c678[];
-extern u8 data_0204c4f0[];
+extern u8 gPartyMembers[];
+extern u8 gPartyState[];
 extern u8 data_0204c67c[];
 
 extern void *NNS_FndGetNextListObject(NNSFndList *pList, void *pObject);
@@ -100,17 +100,17 @@ void PlayRecord_FoldFrame(int nIdx, State *pState)
     u8 aPair[2] = {0, 0};
 
     nOffset = nIdx * 0x104;
-    pTable = data_0204c678;
+    pTable = gPartyMembers;
     pRec = (Record *)(pTable + nOffset);
     pCnt = &pRec->counters;
 
     PartyMember_ClearLists(nIdx);
 
-    data_0204c4f0[0] = 0;
-    data_0204c4f0[3] = 0;
-    data_0204c4f0[2] = 0;
+    gPartyState[0] = 0;
+    gPartyState[3] = 0;
+    gPartyState[2] = 0;
 
-    PartyMember_Reset(nIdx, ((Record *)((int)data_0204c678 + nOffset))->nKind, pState->nField78);
+    PartyMember_Reset(nIdx, ((Record *)((int)gPartyMembers + nOffset))->nKind, pState->nField78);
 
     data_0204c67c[nOffset] = (u8)pState->nField74;
 

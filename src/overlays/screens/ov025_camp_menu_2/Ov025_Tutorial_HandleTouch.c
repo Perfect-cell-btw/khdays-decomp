@@ -1,6 +1,6 @@
 /* Ov025_Tutorial_HandleTouch -- Ov025_Tutorial_HandleTouch: the tutorial page's stylus input.  Nothing
  * happens while the page is inactive (bits 4-7 of +0xc); a pending cursor move (bits 0-1) with no
- * touch held (bits 2-3) and no direction key (data_0204c18c bits 4-7) clears the phase and
+ * touch held (bits 2-3) and no direction key (gPadHeld bits 4-7) clears the phase and
  * cancels the viewer (020afcdc), and a pending phase otherwise ends the frame.  With the stylus
  * up, or the text viewer idle (020afcf0), the touch state (bits 2-3) copies the stylus, the
  * viewer is cancelled, the topic under the cursor (+0xcc table, +2) is opened when it is not
@@ -72,7 +72,7 @@ extern int   Ov025_PageB_IsBusyOrInactive(void);                             /* 
 extern int   Ov025_PointInBox(const u16 *pPos, const u8 *pBox);  /* Ov025_PointInBox */
 extern void  Ov025_Tutorial_DragKnob(const Ov025TouchInput *pTouch);    /* Ov025_Tutorial_DragKnob */
 extern void  Ov025_Tutorial_Refresh(void);                             /* Ov025_Tutorial_RefreshRows */
-extern u16   data_0204c18c;                                         /* held keys */
+extern u16   gPadHeld;                                         /* held keys */
 extern const u8 data_ov025_020b41a0[];                              /* the scroll bar box */
 
 void Ov025_Tutorial_HandleTouch(void)
@@ -87,7 +87,7 @@ void Ov025_Tutorial_HandleTouch(void)
     if (pPage->nActive == 0) {
         return;
     }
-    if (pPage->nTouch == 0 && pPage->nPhase != 0 && !(data_0204c18c & 0xf0)) {
+    if (pPage->nTouch == 0 && pPage->nPhase != 0 && !(gPadHeld & 0xf0)) {
         pPage->nPhase = 0;
         Ov025_PageB_ClearHold();
     }

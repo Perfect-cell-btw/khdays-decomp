@@ -1,5 +1,5 @@
 /* Page refresh of ov025, the twin of ov008 0206ed7c: when the page is active (020b575c) the stat
- * block of the selected entry (02035730 on data_0204c678) is shown through 020a4cd0 / 020a41f0 /
+ * block of the selected entry (02035730 on gPartyMembers) is shown through 020a4cd0 / 020a41f0 /
  * 020a36d8, the row list is rebuilt (the +0x74 record as kind 4, then the +0x8, +0x14 and +0x20 lists
  * as kinds 1, 5 and 0, each resolved through 020342e8 / 020343cc), the fourteen +0x38 column values
  * are applied (the entry's own column from data_ov025_020b4520 forced to 0) and the cursor (+0x50)
@@ -13,9 +13,9 @@ typedef struct { u16 h0, h1, h2, h3, h4, h5; u32 w; } Ov025WeaponStat;
 typedef struct { int a[22]; } Ov025StatColTable;
 
 extern int               data_ov025_020b575c;
-extern u8                data_0204c678[];
+extern u8                gPartyMembers[];
 extern u16               data_0204c680[];
-extern u8               *data_0204be18;
+extern u8               *gGameState;
 extern Ov025StatColTable data_ov025_020b4520;
 
 extern int   Ov025_GetPageB(void);
@@ -51,20 +51,20 @@ void Ov025_RefreshStatusPage(int *self)
     u16 *puVar2;
     int *puVar7;
     u8 *idxData;
-    idxData=data_0204c678;
+    idxData=gPartyMembers;
     local_98 = local_94 = local_90 = 0;
     if (data_ov025_020b575c == 0)
         return;
     PlayRecord_FoldFrame(0, self);
     puVar2 = data_0204c680;
-    LevelTable_ReadEntry(data_0204c678[3], data_0204c678[2], &sbuf);
-    Ov025_StatusPanel_SetWeapon(data_0204c678[4], self[0xc]);
+    LevelTable_ReadEntry(gPartyMembers[3], gPartyMembers[2], &sbuf);
+    Ov025_StatusPanel_SetWeapon(gPartyMembers[4], self[0xc]);
     Ov025_DrawPageBElement(2, 0, idxData[2] + 1);
     if (self[0xd] != 0)
         Ov025_DrawPageBElement(3, 0, 1);
     else
         Ov025_DrawPageBElement(3, 0, puVar2[3]);
-    iVar12 = data_0204be18[0x811] + 0xf;
+    iVar12 = gGameState[0x811] + 0xf;
     Ov025_DrawPageBElement(0x11, 0, self[1], iVar12);
     Ov025_DrawPageBElementAt(sbuf.h0, puVar2[0], 7);
     Ov025_DrawPageBElementAt(sbuf.h1, puVar2[1], 9);

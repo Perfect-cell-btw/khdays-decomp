@@ -34,19 +34,19 @@ typedef struct GameState {
     u8 aUnlockBits[1];                /* 0x10e0 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void BitArray_SetBit(u8 *pBits, u32 nBit);     /* BitArray_SetBit */
 
 void Ov026_CommitSynthesisOrder(Ov008SynthRequest *pReq)
 {
     int i;
 
-    data_0204be18->aItemCount[pReq->pRecord->nId] += pReq->nCount;
+    gGameState->aItemCount[pReq->pRecord->nId] += pReq->nCount;
     GameState_SetFlag(pReq->pRecord->nId + FLAG_ITEM_SEEN_BASE);
-    BitArray_SetBit(data_0204be18->aUnlockBits, pReq->nUnlockBit);
+    BitArray_SetBit(gGameState->aUnlockBits, pReq->nUnlockBit);
     for (i = 0; i < INGREDIENT_COUNT; i++) {
         if (pReq->aIngredient[i].nCount != 0) {
-            data_0204be18->aItemCount[pReq->aIngredient[i].pRecord->nId] -= pReq->aIngredient[i].nCount;
+            gGameState->aItemCount[pReq->aIngredient[i].pRecord->nId] -= pReq->aIngredient[i].nCount;
         }
     }
 }

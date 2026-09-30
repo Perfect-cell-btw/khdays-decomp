@@ -1,6 +1,6 @@
 /*
  * Obj_IsIdFree - test whether an object id is not currently in use in the object registry
- * (data_0204bc1c). The "current" entry is data_0204bbfc's owner at +4 -> +0x448.
+ * (data_0204bc1c). The "current" entry is gFileLoader's owner at +4 -> +0x448.
  *
  * id 0 is a special query: returns true only when the registry is empty AND there is no current
  * entry. For a real id, returns false if the current entry owns it (entry+0x28 == id) or if any of
@@ -16,7 +16,7 @@
  * slot index is (int)(result >> 32).
  */
 
-extern char data_0204bbfc[];
+extern char gFileLoader[];
 extern char data_0204bc1c[];
 extern unsigned long long func_02020400(unsigned a, unsigned b);
 
@@ -26,7 +26,7 @@ int Obj_IsIdFree(int param_1)
     int cur;
     int count;
 
-    cur = *(int *)(*(int *)(data_0204bbfc + 4) + 0x448);
+    cur = *(int *)(*(int *)(gFileLoader + 4) + 0x448);
     if (param_1 == 0) {
         return *(int *)(reg + 0x1c) == 0 && cur == 0;
     }

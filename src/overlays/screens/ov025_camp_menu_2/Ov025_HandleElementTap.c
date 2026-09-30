@@ -5,7 +5,7 @@
 #include "game/engine.h"
 
 extern void Ov025_PlaceElementByVariant(int *obj, int variant, int state);
-extern unsigned short data_0204c18c;
+extern unsigned short gPadHeld;
 
 void Ov025_HandleElementTap(int *param_1) {
     int variant = *param_1;
@@ -14,7 +14,7 @@ void Ov025_HandleElementTap(int *param_1) {
     }
     switch (param_1[1]) {
     case 0:
-        if (data_0204c18c & 0xe0) {
+        if (gPadHeld & 0xe0) {
             return;
         }
         if (variant == 2) {

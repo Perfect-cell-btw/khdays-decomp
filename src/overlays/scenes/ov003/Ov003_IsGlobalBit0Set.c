@@ -1,7 +1,7 @@
 /* Whether the A button is pressed. */
 
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 
 int Ov003_IsGlobalBit0Set(void) {
-    return (data_0204c190 & 1) != 0;
+    return (gPadPressed & 1) != 0;
 }

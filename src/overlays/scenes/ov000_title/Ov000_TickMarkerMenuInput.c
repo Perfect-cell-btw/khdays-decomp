@@ -1,5 +1,5 @@
 /* Marker-select scene tick. Reads the pending button id: 0x20 turns the highlight on (toggle=1),
- * 0x10 turns it off; any other id resolves a confirm/back from data_0204c190 (1 -> confirm when
+ * 0x10 turns it off; any other id resolves a confirm/back from gPadPressed (1 -> confirm when
  * highlighted else back, 2 -> back). On confirm (action 4) it first steps the transition, then lays
  * out the four markers (selected at 0, the rest parked at -0x100000) and clears pendingMode; on
  * back (action 2) it re-enables the primary and reselects. Finally drops the highlight, notifies
@@ -32,7 +32,7 @@ typedef struct Ov000MarkerSceneContext {
 } Ov000MarkerSceneContext;
 
 extern Ov000MarkerSceneContext *data_ov000_0205ac24;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern void Ov000_PlaceCursorByMode(int enabled, int mode);
 extern void Ov000_UpdateMenuMarkers(
@@ -61,7 +61,7 @@ void Ov000_TickMarkerMenuInput(void)
         }
         break;
     default:
-        switch (data_0204c190) {
+        switch (gPadPressed) {
         case 1:
             if (data_ov000_0205ac24->toggle != 0) {
                 if (data_ov000_0205ac24->transitionStep != 0) {

@@ -22,7 +22,7 @@ typedef struct Ov008MenuEntryDef {
 } Ov008MenuEntryDef;
 
 extern Ov008MenuEntryDef data_ov008_02090598[];
-extern u8 *data_0204be18;
+extern u8 *gGameState;
 
 void Ov008_ArmUnseenMarkers(void) {
     if (GameState_IsFlagSet(0x200d) == 0) {
@@ -31,7 +31,7 @@ void Ov008_ArmUnseenMarkers(void) {
         data_ov008_02090598[17].bEnabled = 1;
         data_ov008_02090598[18].bEnabled = 1;
     }
-    if (data_0204be18[0x9b0] != 0) {
+    if (gGameState[0x9b0] != 0) {
         data_ov008_02090598[24].bEnabled = 1;
     }
 }

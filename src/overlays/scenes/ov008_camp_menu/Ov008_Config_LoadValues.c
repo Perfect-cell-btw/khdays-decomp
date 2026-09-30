@@ -21,7 +21,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov008SelCtx *Ov008_GetMenuContext(void);                    /* Ov008_GetMenuContext */
 extern void GameState_SetField(int nField, int nBits, u32 nValue);      /* GameState_SetField */
 extern u32  GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
@@ -31,7 +31,7 @@ void Ov008_Config_LoadValues(void)
     Ov008SelCtx *pCtx;
 
     pCtx = Ov008_GetMenuContext();
-    if (data_0204be18->aItemCount[ITEM_LAST_UNLOCK] == 0) {
+    if (gGameState->aItemCount[ITEM_LAST_UNLOCK] == 0) {
         GameState_SetField(FIELD_LAST_UNLOCK, 2, 1);
     }
     pCtx->aValue[0] = GameState_GetField(CONFIG_CONTROLS, 1);

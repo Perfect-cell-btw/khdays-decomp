@@ -14,7 +14,7 @@
 #include "game/engine.h"
 
 extern int *data_ov002_0207f9fc;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern int Ov002_Res_GetCount(void *pStream);
 extern void Ov002_Res_BindSecondBlock(void *pStream);
@@ -31,13 +31,13 @@ void Ov002_HandleHudPageKeys(void)
     int i;
 
     hud = (int)data_ov002_0207f9fc;
-    if ((data_0204c190 & 0x100) != 0) {
+    if ((gPadPressed & 0x100) != 0) {
         nNext = *(u16 *)(hud + 2) + 1;
         if (nNext < Ov002_Res_GetCount((void *)(hud + 0xc))) {
             Ov002_ArmScene((u16)nNext);
             PlaySound(0, 2);
         }
-    } else if ((data_0204c190 & 0x200) != 0) {
+    } else if ((gPadPressed & 0x200) != 0) {
         if (*(u16 *)(hud + 2) != 0) {
             if (*(int *)(hud + 0x30) != 0) {
                 nStep = 4;
@@ -51,7 +51,7 @@ void Ov002_HandleHudPageKeys(void)
             Ov002_ArmScene((u16)(*(u16 *)(hud + 2) - 1));
             PlaySound(0, 2);
         }
-    } else if ((data_0204c190 & 8) != 0) {
+    } else if ((gPadPressed & 8) != 0) {
         if (*(u16 *)(hud + 2) + 1 >= Ov002_Res_GetCount((void *)(hud + 0xc))) {
             if (*(int *)(hud + 0x1a8) == 0) {
                 if (Ov002_Field_HasPendingEvent() != 0) {

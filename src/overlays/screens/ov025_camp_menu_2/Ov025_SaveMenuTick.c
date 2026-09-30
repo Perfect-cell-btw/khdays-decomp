@@ -46,7 +46,7 @@ typedef struct Ov008SaveMenu {
     GameState backup;         /* 0x248 */
 } Ov008SaveMenu;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int  Ov025_GetContext(void);                                   /* Ov008_GetContext */
 extern long long OS_GetTick(void);                                    /* GetTick64 */
 extern long long Ov025_GetLatchedTick(void);                              /* tick at menu open */
@@ -74,12 +74,12 @@ void Ov025_SaveMenuTick(Ov008SaveMenu *pMenu)
     switch (pMenu->nPhase) {
     case PHASE_PICK:
         nElapsed = OS_GetTick() - Ov025_GetLatchedTick();
-        Ov025_RenderTimeDigits((u32)(data_0204be18->nPlayTimeSeconds + func_02020368(nElapsed << 6, TICKS_PER_SECOND, 0)));
+        Ov025_RenderTimeDigits((u32)(gGameState->nPlayTimeSeconds + func_02020368(nElapsed << 6, TICKS_PER_SECOND, 0)));
         break;
     case PHASE_SAVING:
         nResult = Ov025_PollSaveCardOp(pMenu);
         if (nResult == CARD_OP_DONE) {
-            MI_CpuCopy8(data_0204be18, &pMenu->backup, GAME_STATE_SIZE);
+            MI_CpuCopy8(gGameState, &pMenu->backup, GAME_STATE_SIZE);
             pMenu->nLoadPhase = 0;
             pMenu->nPhase = PHASE_RELOAD;
             Ov025_LatchTick();
@@ -90,7 +90,7 @@ void Ov025_SaveMenuTick(Ov008SaveMenu *pMenu)
         break;
     case PHASE_RELOAD:
         if (Ov025_StepSaveSlotLoad(pMenu, pMenu->nSlot) == LOAD_DONE) {
-            MI_CpuCopy8(&pMenu->backup, data_0204be18, GAME_STATE_SIZE);
+            MI_CpuCopy8(&pMenu->backup, gGameState, GAME_STATE_SIZE);
             Ov025_SaveMenu_RefreshRows(pMenu);
             Ov025_RefreshSaveRowDigits(pMenu);
             Ov025_SetMenuEntriesVisible(0, 0);

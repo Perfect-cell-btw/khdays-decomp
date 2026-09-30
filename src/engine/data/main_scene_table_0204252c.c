@@ -39,7 +39,7 @@ GameClassDescriptor data_02042534 = {
     &data_0204c024,  /* pArena */
 };
 
-SceneEntry data_02042548[20] = {
+SceneEntry gSceneTable[20] = {
     { -1, 0 },                        /* 0 */
     { 0, &data_ov000_0205a9c0 },      /* 1: logos, title, menus, save files (ov000) */
     { 2, &data_ov002_0207ef54 },      /* 2: field (ov002) */

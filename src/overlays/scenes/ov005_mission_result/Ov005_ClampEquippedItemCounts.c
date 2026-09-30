@@ -5,7 +5,7 @@ typedef struct NNSFndList {void *head,*tail;u16 count,offset;} NNSFndList;
 typedef struct Ov005PanelView {char opaque[0x20];NNSFndList itemQuantities;char tail[0x100-0x2c];} Ov005PanelView;
 typedef struct Ov005ItemQuantity {int itemId,quantity;} Ov005ItemQuantity;
 typedef struct PlayerItemLimit {u16 itemId;short limit;} PlayerItemLimit;
-extern char *data_0204be18;
+extern char *gGameState;
 extern void NNS_FndInitList(NNSFndList *,u16);
 extern void *NNS_FndGetNextListObject(NNSFndList *,void *);
 extern void Ov005_InitRecordContext(Ov005PanelView *,void *);
@@ -23,7 +23,7 @@ void Ov005_ClampEquippedItemCounts(void) {
     Ov005ItemQuantity *item;
     NNS_FndInitList(&nodes,0x28);
     Ov005_InitRecordContext(&view,0);
-    Ov005_BuildMenuGrid(&view,entries,&nodes,(u16 *)(data_0204be18+0xee0));
+    Ov005_BuildMenuGrid(&view,entries,&nodes,(u16 *)(gGameState+0xee0));
     Ov005_RebuildViewAndCountCells(&view,entries,&nodes);
     for(item=NNS_FndGetNextListObject(&view.itemQuantities,0);item;item=NNS_FndGetNextListObject(&view.itemQuantities,item)) {
         int id=item->itemId;

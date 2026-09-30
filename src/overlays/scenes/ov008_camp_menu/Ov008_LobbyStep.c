@@ -78,7 +78,7 @@ typedef struct MissionMenuContext {
 } MissionMenuContext;
 
 extern MissionMenuContext *data_ov008_02090fa0;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 extern const Ov008LobbyCaptions data_ov008_0208fc8c;
 extern void  Ov008_LobbyNextStepNoOp(void);                                  /* next lobby step */
 extern u16   Ov008_GetLocalPlayerIndex(void);                                  /* local member index */
@@ -177,7 +177,7 @@ checked:
             }
         } else {
             nLocal = Session_GetLocalPlayerIndex();
-            if (data_0204c190 & 1) {
+            if (gPadPressed & 1) {
                 Ov008_Link_RequestLeave(aRow[nLocal].icon);
             }
         }

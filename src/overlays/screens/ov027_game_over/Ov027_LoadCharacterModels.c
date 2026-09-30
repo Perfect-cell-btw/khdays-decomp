@@ -6,7 +6,7 @@
  * carries the archive pointer above the kind's entry from data_ov027_020840f0) into the matching
  * slot (+0x448, 0202a388) and started on track 0 (0202accc); the loaded models are then placed
  * on the row of data_ov027_02083e10 for that many characters.  In single player only the
- * player is loaded (Roxas, or Xion after byte 3 of data_0204c678 is set: entry 19), with
+ * player is loaded (Roxas, or Xion after byte 3 of gPartyMembers is set: entry 19), with
  * animation entry 2 and the position data_ov027_02083e04. */
 
 #include "nitro/types.h"
@@ -145,7 +145,7 @@ extern void  BindAnimTrack(Ov027Model *pModel, int nTrack, Ov027AnimSlot *pSlot,
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
 extern Ov027SessionInfo data_0204c240;
-extern Ov027PlayerRecord data_0204c678;
+extern Ov027PlayerRecord gPartyMembers;
 extern const char *data_ov027_02084190[];                           /* model definition per member kind */
 extern s8    data_ov027_020840f0[];                                 /* animation entry per member kind */
 extern VecFx32 data_ov027_02083e10[4][4];                           /* positions by character count */
@@ -179,7 +179,7 @@ void Ov027_LoadCharacterModels(void)
         }
     } else {
         data_ov027_02084364->nModels = 1;
-        if (data_0204c678.bXion == 0) {
+        if (gPartyMembers.bXion == 0) {
             RegisterSeqAndInit(&data_ov027_02084364->aModel[0], data_ov027_02084190[0], 0, 6);
         } else {
             RegisterSeqAndInit(&data_ov027_02084364->aModel[0], data_ov027_02084190[19], 0, 6);

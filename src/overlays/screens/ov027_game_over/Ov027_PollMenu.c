@@ -1,6 +1,6 @@
 /* Ov027_PollMenu -- Ov027_PollMenu: read the game-over panel's input while no fade is
  * running (0201e428).  The cursor (+0x5d8 of the scene work) moves with the pad
- * (Ov027_MoveCursor 0208360c); A (bit 0 of data_0204c190) plays sound 0 / 1 and acts on the
+ * (Ov027_MoveCursor 0208360c); A (bit 0 of gPadPressed) plays sound 0 / 1 and acts on the
  * cursor: slot 0 sets mode 2 (+0x24) and, with the prompt up (+0x5e0), records game flag
  * 0x20ea as 2 / 1 (020235e8) -- and returns; slot 1 records the flag as 2 / 0 and sets mode 2;
  * slot 2 sets mode 4.  Every accepted choice then sets bit 4 of the mode word and the highlight
@@ -124,13 +124,13 @@ extern void  Ov027_BlinkPanelSlot(int nSlot);                        /* Ov027_Bl
 /* khdays: shared-bss */
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
-extern u16   data_0204c190;                                         /* the keys pressed this frame */
+extern u16   gPadPressed;                                         /* the keys pressed this frame */
 
 void Ov027_PollMenu(void)
 {
     if (GetMasterBrightnessMain() == 0) {
         Ov027_MoveCursor(&data_ov027_02084364->nCursor);
-        if (data_0204c190 & 1) {
+        if (gPadPressed & 1) {
             PlaySound(0, 1);
             switch (data_ov027_02084364->nCursor) {
             case 0:

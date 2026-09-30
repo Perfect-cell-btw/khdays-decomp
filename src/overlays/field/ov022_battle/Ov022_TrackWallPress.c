@@ -65,7 +65,7 @@ struct Actor {
     struct WallHold wallHold;       /* 0x2bc4 */
 };
 
-extern u16 data_0204c18c;
+extern u16 gPadHeld;
 extern short data_0203d210[];
 
 extern int Session_GetLocalPlayerIndex(void);
@@ -116,7 +116,7 @@ void Ov022_TrackWallPress(struct Actor *pActor)
         nAngle = pActor->nAimAngle;
     } else {
         nSaved = pActor->nButtons2;
-        pActor->nButtons2 = data_0204c18c;
+        pActor->nButtons2 = gPadHeld;
         nAngle = Ov022_HeadingFromHeldDpad(pActor);
         pActor->nButtons2 = nSaved;
     }

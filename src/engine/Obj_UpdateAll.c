@@ -1,5 +1,5 @@
 /*
- * Obj_UpdateAll - run one frame of the object registry (data_0204c058, head at [3]). Each object
+ * Obj_UpdateAll - run one frame of the object registry (gObjSystem, head at [3]). Each object
  * is published as the current one ([1]) while it runs. An update callback of -2 marks an object
  * to destroy (Obj_Destroy, unless it is protected by flag 1), -1 an idle one; any other callback
  * runs inside the object's allocator arena (obj[7]) when the registry is not paused or the object
@@ -10,15 +10,15 @@
 
 #include "game/engine.h"
 
-extern int  data_0204c058[];
+extern int  gObjSystem[];
 
 void Obj_UpdateAll(int paused)
 {
     int *obj;
     int next;
 
-    data_0204c058[1] = data_0204c058[3];
-    obj = (int *)data_0204c058[1];
+    gObjSystem[1] = gObjSystem[3];
+    obj = (int *)gObjSystem[1];
     while (obj != 0) {
         switch (obj[5]) {
         case -2:
@@ -33,21 +33,21 @@ void Obj_UpdateAll(int paused)
         default:
             if (paused == 0 || (obj[0] & 4)) {
                 int arena = Heap_SetCurrent(obj[7]);
-                int cb = ((int (*)(void))((int *)data_0204c058[1])[5])();
+                int cb = ((int (*)(void))((int *)gObjSystem[1])[5])();
 
                 Heap_SetCurrent(arena);
                 if (cb != 0) {
-                    ((int *)data_0204c058[1])[5] = cb;
+                    ((int *)gObjSystem[1])[5] = cb;
                 }
             }
-            next = ((int *)data_0204c058[1])[3];
+            next = ((int *)gObjSystem[1])[3];
             break;
         }
-        data_0204c058[1] = next;
+        gObjSystem[1] = next;
         obj = (int *)next;
     }
-    data_0204c058[1] = 0;
+    gObjSystem[1] = 0;
     if (paused == 0) {
-        data_0204c058[2]++;
+        gObjSystem[2]++;
     }
 }

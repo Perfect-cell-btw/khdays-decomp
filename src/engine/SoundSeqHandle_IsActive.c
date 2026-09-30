@@ -3,10 +3,10 @@
  * +0x1c is set.  Companion of Handle_WritePayloadIfLive.
  *
  * Both failure paths share one `return 0`, so they reach it with a goto. */
-extern char *data_0204c234;
+extern char *gSoundMgr;
 
 int SoundSeqHandle_IsActive(unsigned int handle) {
-    char *rec = data_0204c234 + 0xb44e4 + (handle >> 24) * 32;
+    char *rec = gSoundMgr + 0xb44e4 + (handle >> 24) * 32;
     if (*(unsigned short *)(rec + 0x14) == 0) {
         goto no;
     }

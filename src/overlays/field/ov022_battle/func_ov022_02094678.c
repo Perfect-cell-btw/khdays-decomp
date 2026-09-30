@@ -1,10 +1,10 @@
 /* Returns the gauge rate for a count out of a total, scaled by the frame-rate mode. */
 
 extern int FX_Div(int arg0, int arg1);
-extern int data_0204c058;
+extern int gObjSystem;
 
 int func_ov022_02094678(int arg0, unsigned int arg1) {
-    unsigned char c = *(unsigned char *)&data_0204c058;
+    unsigned char c = *(unsigned char *)&gObjSystem;
     int r;
     int x;
     switch (c) {

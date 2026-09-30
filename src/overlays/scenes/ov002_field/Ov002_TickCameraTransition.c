@@ -20,7 +20,7 @@ extern VecFx32 *func_ov022_020881f8(int nPlayer);
 extern unsigned short func_ov022_02088254(int nPlayer);
 extern void Ov022_GetStreamTimestamp(int nPlayer);
 
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern short data_0203d210[];   /* angle sin/cos table, 4 bytes per entry */
 extern int data_ov002_0207e734[];
 extern int data_ov002_0207e73c[];
@@ -250,7 +250,7 @@ int Ov002_TickCameraTransition(void *pScene)
                     &vEye);
         pCam->vEyePos = vEye;
         if (PauseMenu_GetMode() != 2 || Session_GetLocalPlayerIndex() != 0) {
-            if ((data_0204c190 & 0x40) != 0) {
+            if ((gPadPressed & 0x40) != 0) {
                 pCam->nTargetYaw = nAngle;
                 pCam->nYaw = nAngle;
             }

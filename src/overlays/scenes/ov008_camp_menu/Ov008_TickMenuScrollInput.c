@@ -1,5 +1,5 @@
 /* Ov008_TickMenuScrollInput -- Ov008_TickMenuScrollInput (460 B, 26 relocs).
- * Menu list scroll/selection tick. When the input-latch bit 0x400 of data_0204c18c is set it reads
+ * Menu list scroll/selection tick. When the input-latch bit 0x400 of gPadHeld is set it reads
  * the pad (Ov008_ReadInputHeader): the up bit (0x40) scrolls to entry list[sel-1], the down bit
  * (0x80) to list[sel+1], each via Ov008_ScrollMenuMoveTo, playing a click when the scroll actually
  * moved and clearing the ctx+0x10 pending flag. When the latch is clear it settles the selection:
@@ -9,7 +9,7 @@
 
 #include "nitro/types.h"
 
-extern u16  data_0204c18c;
+extern u16  gPadHeld;
 
 extern unsigned short  Ov008_ReadInputHeader(void);
 extern int  Ov008_ScrollMenuMoveTo(int ctx, int bound, int b, int c);
@@ -27,7 +27,7 @@ void Ov008_TickMenuScrollInput(int param_1)
 {
     int block, entry;
 
-    if ((data_0204c18c & 0x400) != 0) {
+    if ((gPadHeld & 0x400) != 0) {
         if (*(int *)(param_1 + 0x44) == 1)
             return;
         if (Ov008_ReadInputHeader() & 0x40) {

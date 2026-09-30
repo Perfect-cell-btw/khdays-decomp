@@ -34,7 +34,7 @@ struct Ov008MenuContext {
 };
 
 extern const Ov008ModeHandlerTable data_ov025_020b3cac;
-extern u16 data_0204c18c;                                   /* held keys */
+extern u16 gPadHeld;                                   /* held keys */
 
 extern int  Ov025_IsContextMode4(void);                      /* scene paused */
 extern void Ov025_UpdateKnobDrag(Ov008MenuContext *pCtx);    /* drag update */
@@ -71,6 +71,6 @@ void Ov025_TickGridMenu(Ov008MenuContext *pCtx)
         Ov025_UpdateButton3State(pCtx);
     }
     Ov025_DrawGridMenu(pCtx);
-    pCtx->nKeyLatch &= data_0204c18c;
+    pCtx->nKeyLatch &= gPadHeld;
     pCtx->bFrameDrawn = 1;
 }

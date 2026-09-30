@@ -34,7 +34,7 @@ typedef struct {
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 
-extern u8 data_0204c058;
+extern u8 gObjSystem;
 
 int Ov107_Scene_Tick(void) {
     Root *root = (Root *)NNSi_FndGetCurrentRootHeap();
@@ -46,11 +46,11 @@ int Ov107_Scene_Tick(void) {
     mode = LoadGlobalU16At0();
 
     if (mode == 0x2a) {
-        mul = (data_0204c058 == 1) ? 0x1800 : 0x1000;
+        mul = (gObjSystem == 1) ? 0x1800 : 0x1000;
     } else {
-        if (data_0204c058 == 1) {
+        if (gObjSystem == 1) {
             mul = 0x1800;
-        } else if (data_0204c058 == 2) {
+        } else if (gObjSystem == 2) {
             mul = 0x800;
         } else {
             mul = 0x1000;

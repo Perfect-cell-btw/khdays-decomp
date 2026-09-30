@@ -1,6 +1,6 @@
 /* Ov025_Reports_PageUp -- Ov025_Reports_PageUp: scroll the reports window (+0 of the page) up by
  * ten records, the cursor (+2) with it, while no row number is held (+0x25c), the window is not
- * at the top and neither L nor R (bits 6-7 of data_0204c18c) is held.  With A held (bit 0) in
+ * at the top and neither L nor R (bits 6-7 of gPadHeld) is held.  With A held (bit 0) in
  * read-variant mode (+0xc0, reports only) the cursor then settles on the nearest record of the
  * new window that has a read variant (+0xc), searching outward up to ten rows, and the page
  * turn is abandoned when there is none.  A moved window resets the row base (+0x5c); the rows
@@ -63,7 +63,7 @@ typedef struct Ov025ReportsPage {
 } Ov025ReportsPage;
 
 extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA */
-extern u16   data_0204c18c;                                         /* held keys */
+extern u16   gPadHeld;                                         /* held keys */
 extern void  Ov025_Reports_HighlightRows(void);                             /* Ov025_Reports_HighlightRows */
 extern u32   Ov025_QueryItemFlags(u32 nItem, u32 bSet);              /* Ov025_QueryItemFlags */
 extern void  Ov025_Reports_RefreshCurrentEntry(void);                             /* Ov025_Reports_RefreshRows */
@@ -88,7 +88,7 @@ void Ov025_Reports_PageUp(void)
     if (nOldTop == 0) {
         return;
     }
-    if (data_0204c18c & 0xc0) {
+    if (gPadHeld & 0xc0) {
         return;
     }
     if (nOldTop >= 10) {
@@ -98,7 +98,7 @@ void Ov025_Reports_PageUp(void)
         nCursor -= nOldTop;
         nTop = 0;
     }
-    if (pPage->bReadVariants != 0 && (data_0204c18c & 1) && pPage->bMissionMode == 0) {
+    if (pPage->bReadVariants != 0 && (gPadHeld & 1) && pPage->bMissionMode == 0) {
         nLast = nTop + 9;
         for (d = 0; d < 10; d++) {
             if (nTop <= nCursor - d && pPage->pEntries[nCursor - d].pRead != 0) {
@@ -124,7 +124,7 @@ void Ov025_Reports_PageUp(void)
     }
     nMode = pPage->bMissionMode;
     if (nMode == 0 || pPage->pEntries[pPage->nCursor].nPending == 0) {
-        if (nMode == 0 && pPage->bReadVariants != 0 && (data_0204c18c & 1)) {
+        if (nMode == 0 && pPage->bReadVariants != 0 && (gPadHeld & 1)) {
             nItem = 0x40;
         } else {
             nItem = 0;

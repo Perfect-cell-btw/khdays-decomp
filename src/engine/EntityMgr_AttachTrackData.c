@@ -12,7 +12,7 @@ typedef struct {
 
 extern S5 *GetTrackEntryBase(int nTrack);
 
-extern unsigned char *data_0204c208;
+extern unsigned char *gEntityMgr;
 
 void EntityMgr_AttachTrackData(unsigned int nTrack, const char *pName, const void *src, unsigned int size) {
     S5 *s;
@@ -30,9 +30,9 @@ void EntityMgr_AttachTrackData(unsigned int nTrack, const char *pName, const voi
         if (s->entries[i] != 0) {
             entry = FindEntryByExactName(s->entries[i], pName);
             if (entry != 0) {
-                off = *(unsigned int *)(data_0204c208 + 0xa1cc);
-                dst = data_0204c208 + 0x61cc + off;
-                *(unsigned int *)(data_0204c208 + 0xa1cc) = off + size;
+                off = *(unsigned int *)(gEntityMgr + 0xa1cc);
+                dst = gEntityMgr + 0x61cc + off;
+                *(unsigned int *)(gEntityMgr + 0xa1cc) = off + size;
                 MI_CpuCopy8(src, dst, size);
                 *(void **)((unsigned char *)entry + 0x10) = dst;
                 return;

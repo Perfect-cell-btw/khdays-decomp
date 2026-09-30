@@ -60,7 +60,7 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern Ov008MenuContext *data_ov008_02090f00;
-extern SharedPlayerRecord data_0204c678;
+extern SharedPlayerRecord gPartyMembers;
 extern GameplayThresholdSnapshot data_0204c254;
 extern GameplayRules data_0204c248;
 extern GameplaySessionConfig data_0204c240;
@@ -103,7 +103,7 @@ void *Ov008_TransferSessionSnapshotState(void)
                 i++;
             } while ((int)i < 4);
 
-            data_ov008_02090f00->transferredRecord = data_0204c678;
+            data_ov008_02090f00->transferredRecord = gPartyMembers;
             data_ov008_02090f00->thresholdSnapshot = data_0204c254;
             data_ov008_02090f00->ruleSnapshot = data_0204c248;
             data_ov008_02090f00->sessionConfig = data_0204c240;
@@ -123,7 +123,7 @@ void *Ov008_TransferSessionSnapshotState(void)
             u32 remaining;
             Ov008Message68 *outgoing;
             u8 *payload;
-            u8 *record = (u8 *)&data_0204c678;
+            u8 *record = (u8 *)&gPartyMembers;
             u16 copySize = 0x40;
 
             context->outgoing6.chunkIndex = context->commonTransfer.nextChunk;

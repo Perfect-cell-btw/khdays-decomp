@@ -11,8 +11,8 @@ typedef struct {
 } MissionMenuContext;
 
 extern MissionMenuContext *data_ov006_02056660;
-extern unsigned short data_0204c190;
-extern unsigned short data_0204c18c;
+extern unsigned short gPadPressed;
+extern unsigned short gPadHeld;
 
 void Ov006_UpdateMissionMenuCursor(int count)
 {
@@ -31,19 +31,19 @@ void Ov006_UpdateMissionMenuCursor(int count)
 
     moveRight = 0;
     moveLeft = moveRight;
-    if (data_0204c190 == 0x40) {
+    if (gPadPressed == 0x40) {
         context->repeatFrames = 0;
         moveLeft = 1;
-    } else if (data_0204c190 == 0x80) {
+    } else if (gPadPressed == 0x80) {
         context->repeatFrames = 0;
         moveRight = 1;
-    } else if (data_0204c18c == 0x40) {
+    } else if (gPadHeld == 0x40) {
         context->repeatFrames++;
         if (context->repeatFrames >= 6 &&
             (context->repeatFrames - 6) % 2 == 0) {
             moveLeft = 1;
         }
-    } else if (data_0204c18c == 0x80) {
+    } else if (gPadHeld == 0x80) {
         context->repeatFrames++;
         if (context->repeatFrames >= 6 &&
             (context->repeatFrames - 6) % 2 == 0) {

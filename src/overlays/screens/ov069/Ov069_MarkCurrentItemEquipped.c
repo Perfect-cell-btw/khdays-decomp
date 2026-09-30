@@ -6,7 +6,7 @@
 extern int ScriptVm_ReadOperandInt(void *, int);
 extern void GameState_SetFlag(int flag);
 extern void GameState_ClearFlag(int flag);
-extern char *data_0204be18;
+extern char *gGameState;
 
 int Ov069_MarkCurrentItemEquipped(void *arg0, int arg1)
 {
@@ -16,7 +16,7 @@ int Ov069_MarkCurrentItemEquipped(void *arg0, int arg1)
     char *row;
 
     id = ScriptVm_ReadOperandInt(arg0, arg1);
-    row = data_0204be18;
+    row = gGameState;
     for (i = 0; i < 3; i++) {
         j = 0;
         {

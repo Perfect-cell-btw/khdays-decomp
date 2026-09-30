@@ -1,5 +1,5 @@
 /* RunClassConstructor(obj, desc, ctorArg): build a 0x2c-byte task object from the class
- * descriptor, link it into the global object list (data_0204c058+4), then run the
+ * descriptor, link it into the global object list (gObjSystem+4), then run the
  * descriptor's constructor with `obj` as the current object; the ctor's return becomes the
  * object's initial per-frame state fn (obj+0x14). Descriptor: +0/+2 u16 magics, +4 ctor,
  * +8 method, +0xc auxSize, +0x10 arenaRef. */
@@ -7,12 +7,12 @@ extern int Heap_SetCurrent(int arena);
 extern void *AllocFromExpHeapWrapper(int size, int arena);
 extern void MI_CpuFill8(void *dst, int val, int n);
 extern void Obj_LinkNode(int obj);
-extern char data_0204c058;
+extern char gObjSystem;
 
 int *RunClassConstructor(int *obj, unsigned short *desc, int ctorArg) {
     int def, saved, token;
     obj[0] = 0;
-    obj[1] = ((int *)&data_0204c058)[1];
+    obj[1] = ((int *)&gObjSystem)[1];
     *(unsigned short *)((char *)obj + 0x10) = desc[0];
     *(unsigned short *)((char *)obj + 0x12) = desc[1];
     def = 0;
@@ -32,11 +32,11 @@ int *RunClassConstructor(int *obj, unsigned short *desc, int ctorArg) {
         MI_CpuFill8((void *)obj[8], 0, obj[9]);
     }
     Obj_LinkNode((int)obj);
-    saved = ((int *)&data_0204c058)[1];
-    ((int *)&data_0204c058)[1] = (int)obj;
-    *(int *)(((int *)&data_0204c058)[1] + 0x14) =
+    saved = ((int *)&gObjSystem)[1];
+    ((int *)&gObjSystem)[1] = (int)obj;
+    *(int *)(((int *)&gObjSystem)[1] + 0x14) =
         (*(int (**)(int))((char *)desc + 4))(ctorArg);
-    ((int *)&data_0204c058)[1] = saved;
+    ((int *)&gObjSystem)[1] = saved;
     Heap_SetCurrent(token);
     return obj;
 }

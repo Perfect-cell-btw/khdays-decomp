@@ -1,6 +1,6 @@
 /* Ov027_PollChoice -- Ov027_PollChoice: read the yes / no prompt of the game-over panel.  The
  * choice cursor (the scene's static word data_ov027_02083ee0) moves with the pad
- * (Ov027_MoveCursor 0208360c); A (bit 0 of data_0204c190) confirms it and B (bit 1) forces "no"
+ * (Ov027_MoveCursor 0208360c); A (bit 0 of gPadPressed) confirms it and B (bit 1) forces "no"
  * (1) first.  "Yes" (0) plays sound 0 / 1, resets the choice to 1 and drops bit 4 of the mode
  * word (+0x24 of the scene work).  "No" plays sound 0 / 3 and sets mode 1; with the panel
  * cursor (+0x5d8) on the hidden middle slot of a promptless panel (+0x5e0) the highlight
@@ -129,7 +129,7 @@ int data_ov027_02083ee0 = 1;                                        /* the choic
 /* khdays: shared-bss */
 int data_ov027_02084360 = 0;                                        /* the fade-out frame counter */
 Ov027Scene *data_ov027_02084364 = 0;                                /* the scene work */
-extern u16   data_0204c190;                                         /* the keys pressed this frame */
+extern u16   gPadPressed;                                         /* the keys pressed this frame */
 
 void Ov027_PollChoice(void)
 {
@@ -137,8 +137,8 @@ void Ov027_PollChoice(void)
     Ov027Scene *pScene;
 
     Ov027_MoveCursor(&data_ov027_02083ee0);
-    if ((data_0204c190 & 1) || (data_0204c190 & 2)) {
-        if (data_0204c190 & 2) {
+    if ((gPadPressed & 1) || (gPadPressed & 2)) {
+        if (gPadPressed & 2) {
             data_ov027_02083ee0 = 1;
         }
         switch (data_ov027_02083ee0) {

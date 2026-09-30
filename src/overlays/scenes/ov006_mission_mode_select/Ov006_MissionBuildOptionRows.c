@@ -35,7 +35,7 @@ typedef struct {
 } MissionSystemContext;
 
 extern MissionMenuContext *data_ov006_02056660;
-extern MissionSystemContext *data_0204be18;
+extern MissionSystemContext *gGameState;
 
 extern int Ov006_CanConfirmMissionMenu(void);
 extern void Ov006_BlankScreensAndTeardownText(void);
@@ -89,10 +89,10 @@ int Ov006_MissionBuildOptionRows(void) {
     if (level >= 5) {
         option_mask |= 0x20;
     }
-    if (data_0204be18->feature_a != 0) {
+    if (gGameState->feature_a != 0) {
         option_mask |= 4;
     }
-    if (data_0204be18->feature_b != 0) {
+    if (gGameState->feature_b != 0) {
         option_mask |= 2;
     }
 

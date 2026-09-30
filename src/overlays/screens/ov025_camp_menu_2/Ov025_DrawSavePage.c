@@ -26,7 +26,7 @@ typedef struct IterSelf {
     u8  pad_0078[0x100 - 0x78];
 } IterSelf;                    /* 0x100 */
 
-extern char     *data_0204be18;
+extern char     *gGameState;
 extern unsigned  data_ov025_020b3c78[3];
 extern char      data_ov025_020b4d90[];
 extern char      data_ov025_020b4d9c[];
@@ -68,7 +68,7 @@ void Ov025_DrawSavePage(int ctx, int page)
     *(Tmpl3 *)hdr.tag = *(Tmpl3 *)data_ov025_020b3c78;
     NNS_FndInitList(&hdr.list, 0x28);
     Ov025_InitRecordContext(&self, ctx + 0x2090);
-    Ov025_BuildMenuGrid(&self, collect, &hdr.list, data_0204be18 + 0xc10 + page * 0xf0);
+    Ov025_BuildMenuGrid(&self, collect, &hdr.list, gGameState + 0xc10 + page * 0xf0);
     Ov025_RebuildViewAndCountCells(&self, collect, &hdr.list);
     f04 = self.f04;
     count = Ov025_CountChildEntries(&self);

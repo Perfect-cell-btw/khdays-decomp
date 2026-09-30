@@ -10,7 +10,7 @@ typedef struct {
     int word10;
 } func_0202c2ac_args;
 
-extern char *data_0204c208;
+extern char *gEntityMgr;
 extern void *Collision_RunSphereCast(void *ptr, func_0202c2ac_args *args);
 
 void *EntityMgr_RunSphereCast(int index, int arg1, int arg2, int arg3, int arg4) {
@@ -22,5 +22,5 @@ void *EntityMgr_RunSphereCast(int index, int arg1, int arg2, int arg3, int arg4)
     args.halfc = 0;
     args.halfe = 0;
     args.word10 = arg4;
-    return Collision_RunSphereCast(data_0204c208 + 4 + index * 8, &args);
+    return Collision_RunSphereCast(gEntityMgr + 4 + index * 8, &args);
 }

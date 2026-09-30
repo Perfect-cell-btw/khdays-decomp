@@ -1,10 +1,10 @@
 /* Unlink `node` from its doubly-linked list, fix head at
- * *(data_0204c208 + node[0xa]*4 + 0x64), then zero node links and mark node[0xa]=0xff.
+ * *(gEntityMgr + node[0xa]*4 + 0x64), then zero node links and mark node[0xa]=0xff.
  * Family with EntityMgr_UnlinkFromListA/684/6e0 differing only in the head-table offset. */
-extern int data_0204c208;
+extern int gEntityMgr;
 void EntityMgr_UnlinkFromListA(void *node) {
     void *next = *(void **)node;
-    int base = data_0204c208;
+    int base = gEntityMgr;
     if (next != 0) {
         *(void **)((char *)next + 4) = *(void **)((char *)node + 4);
     }

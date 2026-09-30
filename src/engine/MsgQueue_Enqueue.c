@@ -4,7 +4,7 @@
  * the session is ready, else 0x60) or the slot is locked (state==1); returns 1 on
  * success.
  *
- * ctx = data_0204c230; the target buffer is entries[IsKind1Or4(param1)].pActive.
+ * ctx = gMsgQueue; the target buffer is entries[IsKind1Or4(param1)].pActive.
  * A 2-byte packet header is written in place at pBuffer[writeOffset] as three
  * bitfields (chan:5 @bit1 = param1, len:10 @bit6 = param2, valid:1 @bit0), the
  * payload is MI_CpuCopy8'd right after it, and writeOffset advances by param2+2
@@ -23,12 +23,12 @@ typedef struct { int state; unsigned char *pBuffer; unsigned short writeOffset; 
 typedef struct { MsgQueueBuf slots[2]; MsgQueueBuf *pActive; int field1c; } MsgQueueEntry;
 typedef struct { int f0; MsgQueueEntry *entries; int count; } MsgQueueCtx;
 
-extern MsgQueueCtx *data_0204c230;
+extern MsgQueueCtx *gMsgQueue;
 extern void MI_CpuCopy8(void *src, void *dst, unsigned int size);
 
 int MsgQueue_Enqueue(int param1, int param2, unsigned short *param3)
 {
-    MsgQueueCtx *ctx = data_0204c230;
+    MsgQueueCtx *ctx = gMsgQueue;
     int idx = IsKind1Or4(param1);
     MsgQueueBuf *buf = ctx->entries[idx].pActive;
     int cap;

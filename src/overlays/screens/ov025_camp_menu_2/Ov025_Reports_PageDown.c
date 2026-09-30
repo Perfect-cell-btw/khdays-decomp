@@ -1,7 +1,7 @@
 /* Ov025_Reports_PageDown -- Ov025_Reports_PageDown: scroll the reports window (+0 of the page) down
  * by ten records, or to the last window, the cursor (+2) with it, while no row number is held
  * (+0x25c), the window is not at the end (count - 9) and neither L nor R (bits 6-7 of
- * data_0204c18c) is held.  With A held (bit 0) in read-variant mode (+0xc0, reports only) the
+ * gPadHeld) is held.  With A held (bit 0) in read-variant mode (+0xc0, reports only) the
  * cursor then settles on the nearest record of the new window that has a read variant (+0xc),
  * searching outward up to ten rows, and the page turn is abandoned when there is none.  A moved
  * window resets the row base (+0x5c) and plays the cursor sound (02033b78); the rows are
@@ -63,7 +63,7 @@ typedef struct Ov025ReportsPage {
 } Ov025ReportsPage;
 
 extern Ov025ReportsPage *Ov025_GetPageA(void);                 /* Ov008_GetPageA */
-extern u16   data_0204c18c;                                         /* held keys */
+extern u16   gPadHeld;                                         /* held keys */
 extern void  Ov025_Reports_HighlightRows(void);                             /* Ov025_Reports_HighlightRows */
 extern u32   Ov025_QueryItemFlags(u32 nItem, u32 bSet);              /* Ov025_QueryItemFlags */
 extern void  Ov025_Reports_RefreshCurrentEntry(void);                             /* Ov025_Reports_RefreshRows */
@@ -93,7 +93,7 @@ void Ov025_Reports_PageDown(void)
     if (nOldTop >= nMaxTop) {
         return;
     }
-    if (data_0204c18c & 0xc0) {
+    if (gPadHeld & 0xc0) {
         return;
     }
     if (nOldTop < nMaxTop - 10) {
@@ -103,7 +103,7 @@ void Ov025_Reports_PageDown(void)
         nCursor += nMaxTop - nOldTop - 1;
         nTop = nMaxTop - 1;
     }
-    if (pPage->bReadVariants != 0 && (data_0204c18c & 1) && pPage->bMissionMode == 0) {
+    if (pPage->bReadVariants != 0 && (gPadHeld & 1) && pPage->bMissionMode == 0) {
         nLast = nTop + 9;
         if (nCount <= nLast) {
             nLast = nCount - 1;
@@ -134,7 +134,7 @@ void Ov025_Reports_PageDown(void)
     }
     nMode = pPage->bMissionMode;
     if (nMode == 0 || pPage->pEntries[pPage->nCursor].nPending == 0) {
-        if (nMode == 0 && pPage->bReadVariants != 0 && (data_0204c18c & 1)) {
+        if (nMode == 0 && pPage->bReadVariants != 0 && (gPadHeld & 1)) {
             nItem = 0x40;
         } else {
             nItem = 0;

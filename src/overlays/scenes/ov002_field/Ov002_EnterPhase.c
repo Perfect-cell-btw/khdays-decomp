@@ -29,7 +29,7 @@ typedef struct Ov002RootContext {
 
 extern Ov002RootContext *data_ov002_0207fa00;
 extern u8 data_0204c240;
-extern u8 data_0204c4f0;
+extern u8 gPartyState;
 extern u8 data_0204c4f2;
 extern u8 data_0204c4f3;
 extern int data_ov002_0207efcc;
@@ -89,7 +89,7 @@ dispatch:
     case 11:
     case 12:
     case 13:
-        data_0204c4f0 = 0;
+        gPartyState = 0;
         data_0204c4f3 = 0;
         data_0204c4f2 = 0;
         Ov002_LoadSubFlowOverlay(pCtx->nPhase);

@@ -96,8 +96,8 @@ extern void Ov002_TickCamera(void);
 extern void Ov002_TickScriptedCamera(void);
 extern void Ov002_ResetCamera(void);
 extern unsigned char data_0204be04;
-extern unsigned short data_0204c18c;
-extern unsigned short data_0204c190;
+extern unsigned short gPadHeld;
+extern unsigned short gPadPressed;
 extern unsigned char data_0204c240;
 extern const short data_0203d210[];
 
@@ -175,7 +175,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
   goto LAB_arm9_ov002__0204d9ac;
   bVar22 = false;
   if ((piVar7[0xf] & 0x20U) == 0) {
-    if ((data_0204c18c & 0x100) != 0) {
+    if ((gPadHeld & 0x100) != 0) {
       GetFrameRateMode();
       iVar11 = GetFrameRateMode() == 1;
       if (piVar7[0x36] + iVar11 != 0) {
@@ -212,7 +212,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
     }
   }
   if (((piVar7[0xe] & 0x200U) == 0 &&
-       (data_0204c190 & 4) != 0 &&
+       (gPadPressed & 4) != 0 &&
        data_0204be04 == 0 &&
        (Ov022_GetStreamTimestamp(idx) & 0x400) == 0) ||
       (data_0204be04 != 0 && piVar7[0x3f] != 0)) {
@@ -226,7 +226,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
     }
   } else if ((Ov022_GetStreamTimestamp(idx) & 0x400) != 0 ||
              ((piVar7[0xe] & 0x2000U) != 0 &&
-              (data_0204c190 & 0xf03) != 0)) {
+              (gPadPressed & 0xf03) != 0)) {
     bVar22 = true;
   }
   if (bVar22) {
@@ -234,7 +234,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
   }
   if ((piVar7[0xe] & 0x2000U) == 0)
     goto request_input;
-  uVar4 = data_0204c18c;
+  uVar4 = gPadHeld;
   if ((uVar4 & 0x40) != 0) {
     uVar20 |= 2;
   } else if ((uVar4 & 0x80) != 0) {
@@ -491,7 +491,7 @@ LAB_arm9_ov002__0204d9ac:
     if (((piVar7[0xe] & 0x200U) == 0) && ((puVar10->flags & 0x800) == 0)) {
       iVar11 = PauseMenu_GetMode();
       if (((iVar11 != 2) || (sVar5 = Session_GetLocalPlayerIndex(), sVar5 != 0)) &&
-         (((data_0204c190 & 0x100) != 0 && ((data_0204c190 & 0x200) == 0))))
+         (((gPadPressed & 0x100) != 0 && ((gPadPressed & 0x200) == 0))))
       {
         piVar7[0xe] = piVar7[0xe] | 8;
       }
@@ -503,7 +503,7 @@ LAB_arm9_ov002__0204d9ac:
     }
   }
   else {
-    uVar4 = data_0204c18c;
+    uVar4 = gPadHeld;
     uVar18 = uVar4 & 0x100;
     if ((uVar18 != 0) && ((uVar4 & 0x200) == 0)) {
       uVar20 = uVar20 | 4;
@@ -514,7 +514,7 @@ LAB_arm9_ov002__0204d9ac:
     if (((piVar7[0xe] & 0x200U) == 0) && ((puVar10->flags & 0x800) == 0)) {
       iVar11 = PauseMenu_GetMode();
       if (((iVar11 != 2) || (sVar5 = Session_GetLocalPlayerIndex(), sVar5 != 0)) &&
-         ((data_0204c190 & 0x200) != 0)) {
+         ((gPadPressed & 0x200) != 0)) {
         if (piVar7[0x35] <= 0) {
           piVar7[0x35] = 0x400;
         }
@@ -663,10 +663,10 @@ LAB_arm9_ov002__0204d9ac:
           goto camera_input_inactive;
       }
       if (((uVar18 = GameState_GetField(CONFIG_COMMAND_LIST,1), uVar18 != 0 ||
-           (((data_0204c18c & 0x400) == 0 || (*(char *)(iVar11 + 1) != '\x02')))) &&
+           (((gPadHeld & 0x400) == 0 || (*(char *)(iVar11 + 1) != '\x02')))) &&
           ((((puVar10->flags & 0x800) == 0 &&
             (uVar23 = Ov022_GetStreamTimestamp(idx), (uVar23 & 0x3710) == 0)) &&
-           ((((uVar4 = data_0204c18c, (uVar4 & 0x40) != 0 || ((uVar4 & 0x80) != 0)) ||
+           ((((uVar4 = gPadHeld, (uVar4 & 0x40) != 0 || ((uVar4 & 0x80) != 0)) ||
              ((uVar4 & 0x20) != 0)) || ((uVar4 & 0x10) != 0))))))) {
         iVar11 = Ov002_Camera_GetPresetHeight(piVar7[0x11]);
         piVar7[0x21] = iVar11;
@@ -677,7 +677,7 @@ LAB_arm9_ov002__0204d9ac:
         uVar18 = Ov002_ComputeModeScaledFixedPoint();
         piVar7[0x2a] = uVar18;
         if (((piVar7[0xe] & 0x10000000U) == 0) &&
-           (((data_0204c18c & 0x20) != 0 || ((data_0204c18c & 0x10) != 0))))
+           (((gPadHeld & 0x20) != 0 || ((gPadHeld & 0x10) != 0))))
         {
           GetFrameRateMode();
           iVar11 = piVar7[0x37] + (GetFrameRateMode() == 1 ? 0xcd : 0x89);
@@ -689,7 +689,7 @@ LAB_arm9_ov002__0204d9ac:
           piVar7[0x37] = iVar11;
           if (iVar11 > 0x333) {
             iVar12 = piVar7[0x16];
-            if ((data_0204c18c & 0x20) != 0) {
+            if ((gPadHeld & 0x20) != 0) {
               piVar7[0x20] = iVar12 + 0x300U & 0xffff;
             }
             else {

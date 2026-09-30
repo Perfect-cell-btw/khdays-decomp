@@ -7,7 +7,7 @@
 extern void func_ov008_020594c4(int a);
 extern void Ov008_Menu_CommitEnterSubScene8(int a);
 extern int data_ov008_02090f1c;
-extern unsigned short data_0204c18c;
+extern unsigned short gPadHeld;
 
 struct Ov008Flags { unsigned short lo : 5, bit5 : 1, rest : 10; };
 
@@ -16,7 +16,7 @@ void Ov008_MenuScreenHook(int arg) {
         func_ov008_020594c4(arg);
         return;
     }
-    if ((data_0204c18c & 0xb) == 8) {
+    if ((gPadHeld & 0xb) == 8) {
         Ov008_Menu_CommitEnterSubScene8(arg);
     }
 }

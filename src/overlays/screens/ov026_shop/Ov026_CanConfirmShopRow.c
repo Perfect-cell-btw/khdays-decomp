@@ -54,7 +54,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern int Ov026_GetChildField14OrNeg1(Ov008ParamRecord *pRecord);              /* GetChildField14OrNeg1: item id */
 extern int Ov026_PanelAlpha(Ov008ParamRecord *pRecord);              /* stock cap */
 extern int Ov026_CountSpareItemsOfChild(Ov008ParamRecord *pRecord);              /* Ov008_CountSpareItemsOfChild (u8) */
@@ -75,10 +75,10 @@ int Ov026_CanConfirmShopRow(void)
     pRecord = pView->apRows[pView->nRow];
     switch (nTab) {
     case TAB_BUY:
-        if (data_0204be18->nMunny >= pRecord->nPrice) {
+        if (gGameState->nMunny >= pRecord->nPrice) {
             nItem = Ov026_GetChildField14OrNeg1(pRecord);
             nCap = Ov026_PanelAlpha(pRecord);
-            if (data_0204be18->aItemCount[nItem] < nCap && pRecord->bLocked == 0) {
+            if (gGameState->aItemCount[nItem] < nCap && pRecord->bLocked == 0) {
                 return 1;
             }
         }
@@ -89,10 +89,10 @@ int Ov026_CanConfirmShopRow(void)
         }
         break;
     case TAB_REDEEM:
-        if (data_0204be18->nPoints >= pRecord->nPrice) {
+        if (gGameState->nPoints >= pRecord->nPrice) {
             nItem = Ov026_GetChildField14OrNeg1(pRecord);
             nCap = Ov026_PanelAlpha(pRecord);
-            if (pRecord->nCount + data_0204be18->aItemCount[nItem] <= (u32)nCap) {
+            if (pRecord->nCount + gGameState->aItemCount[nItem] <= (u32)nCap) {
                 return Ov026_AreRequirementsMet(pRecord);
             }
         }

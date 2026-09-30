@@ -64,7 +64,7 @@ typedef struct SoundCtx {
     u8 pad0b47b7;
 } SoundCtx;
 
-extern SoundCtx *data_0204c234;
+extern SoundCtx *gSoundMgr;
 extern const char data_020429ec[];      /* default sound archive path */
 extern void NNS_SndPlayerStopSeqAll(int mode);
 extern void NNS_SndInit(void);
@@ -87,7 +87,7 @@ extern void *NNS_SndHeapSaveState(NNSSndHeapHandle heap);
  * reset to -1. */
 void SoundSys_Start(const char *path)
 {
-    SoundCtx *ctx = data_0204c234;
+    SoundCtx *ctx = gSoundMgr;
     int i;
 
     if (path == 0) {
@@ -116,7 +116,7 @@ void SoundSys_Start(const char *path)
     ctx->nextBgm = -1;
     ctx->bgmFlags = 0;
     NNS_SndArcLoadBank(0x25, ctx->mainHeap);
-    ctx->waveHeap = NNS_SndHeapSaveState(data_0204c234->mainHeap);
+    ctx->waveHeap = NNS_SndHeapSaveState(gSoundMgr->mainHeap);
     ctx->waveHeapCur = ctx->waveHeap;
     ctx->waveState = -1;
 }

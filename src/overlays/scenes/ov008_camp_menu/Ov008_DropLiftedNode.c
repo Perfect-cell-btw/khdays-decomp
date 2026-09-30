@@ -81,7 +81,7 @@ typedef struct GameState {
     u8 aItemCount[0x8d0];     /* 0x810 */
 } GameState;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern void  Ov008_InitRecordContext(Ov008GridSummary *pSummary, void *pHooks);        /* init a summary */
 extern void  Ov008_RebuildViewAndCountCells(Ov008GridSummary *pSummary, void *pSlots, void *pList); /* RebuildViewAndCountCells */
 extern void *Ov008_FindGridHit(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow); /* Ov008_FindGridHit */
@@ -139,7 +139,7 @@ int Ov008_DropLiftedNode(Ov008MenuContext *pCtx)
             } else {
                 pCtx->nHoldCount = 1;
                 nItemId = pCtx->pListNode->nItemId;
-                if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) >= data_0204be18->aItemCount[nItemId] || pCtx->bScroll != 0) {
+                if ((u32)Ov008_CountGridEntriesForOwner(pCtx, nItemId) >= gGameState->aItemCount[nItemId] || pCtx->bScroll != 0) {
                     Ov008_ResetGridDrag(pCtx, 0);
                 } else {
                     pCtx->bHolding = 1;

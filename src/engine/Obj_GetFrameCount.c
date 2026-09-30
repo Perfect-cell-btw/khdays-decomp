@@ -1,8 +1,8 @@
-/* Returns the object frame counter (data_0204c058 word 2), advanced by Obj_UpdateAll on every
+/* Returns the object frame counter (gObjSystem word 2), advanced by Obj_UpdateAll on every
  * frame that is not paused. */
 
-extern int data_0204c058;
+extern int gObjSystem;
 
 int Obj_GetFrameCount(void) {
-    return *(int *)((char *)&data_0204c058 + 8);
+    return *(int *)((char *)&gObjSystem + 8);
 }

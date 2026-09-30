@@ -3,10 +3,10 @@
 extern int List_First(int list);
 extern int List_Next(int list);
 extern int List_RemoveByHandle(int list, int handle);
-extern char *data_ov107_020cbf1c;
+extern char *gOv107ActorManager;
 
 void Ov107_Scene_RemoveObject(int obj) {
-    char *self = data_ov107_020cbf1c;
+    char *self = gOv107ActorManager;
     int list = (int)(self + 4);
     int handle = List_First(list);
     if (handle == 0) return;

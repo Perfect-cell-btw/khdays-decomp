@@ -17,7 +17,7 @@ typedef struct Ov009InputContext {
 } Ov009InputContext;
 
 extern Ov009InputContext *volatile data_ov009_020563e4[];
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 #define OV009_CONTEXT (data_ov009_020563e4[1])
 
@@ -62,40 +62,40 @@ void Ov009_PollPageInput(void)
         return;
     }
 
-    if ((data_0204c190 & 0x0001) != 0 &&
+    if ((gPadPressed & 0x0001) != 0 &&
         Ov009_MenuInputDispatch_04(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0002) != 0 &&
+    if ((gPadPressed & 0x0002) != 0 &&
         Ov009_MenuInputDispatch_05(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0400) != 0 &&
+    if ((gPadPressed & 0x0400) != 0 &&
         Ov009_MenuInputDispatch_06(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0800) != 0 &&
+    if ((gPadPressed & 0x0800) != 0 &&
         Ov009_MenuInputDispatch_07(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0200) != 0 &&
+    if ((gPadPressed & 0x0200) != 0 &&
         Ov009_MenuInputDispatch_08(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0100) != 0 &&
+    if ((gPadPressed & 0x0100) != 0 &&
         Ov009_MenuInputDispatch_09(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0004) != 0 &&
+    if ((gPadPressed & 0x0004) != 0 &&
         Ov009_MenuInputDispatch_10(pageA, pageB) != 0) {
         return;
     }
-    if ((data_0204c190 & 0x0008) != 0 &&
+    if ((gPadPressed & 0x0008) != 0 &&
         Ov009_MenuInputDispatch_11(pageA, pageB) != 0) {
         return;
     }
 
     OV009_CONTEXT->buttonState =
-        (data_0204c190 & 0x2f0f) |
+        (gPadPressed & 0x2f0f) |
         (Mem_ReadU16(&OV009_CONTEXT->inputSource) & 0x00f0);
 }

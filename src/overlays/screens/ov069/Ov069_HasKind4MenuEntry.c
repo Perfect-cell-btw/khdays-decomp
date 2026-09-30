@@ -22,7 +22,7 @@ extern void Ov069_RebuildViewAndCountCells(void *ctx, void **entries, void *list
 extern void *NNS_FndGetNextListObject(void *list, void *cur);
 extern void Ov069_ReleaseHandleGridAndList(void *ctx, void **entries, void *list);
 extern void func_ov069_020ba244(void *ctx);
-extern char *data_0204be18;
+extern char *gGameState;
 
 int Ov069_HasKind4MenuEntry(unsigned int min)
 {
@@ -35,7 +35,7 @@ int Ov069_HasKind4MenuEntry(unsigned int min)
     found = 0;
     NNS_FndInitList(list, 0x28);
     Ov069_InitRecordContext(ctx, 0);
-    Ov069_BuildMenuGrid(ctx, (void **)entries, list, (u16 *)(data_0204be18 + 0xee0));
+    Ov069_BuildMenuGrid(ctx, (void **)entries, list, (u16 *)(gGameState + 0xee0));
     Ov069_RebuildViewAndCountCells(ctx, (void **)entries, list);
     for (node = NNS_FndGetNextListObject(list, 0); node != 0; node = NNS_FndGetNextListObject(list, node)) {
         if (*(int *)(entries[node->nPage][node->nColumn + node->nRow * 5] + 0x18) == 4 &&

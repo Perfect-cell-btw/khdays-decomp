@@ -75,8 +75,8 @@ typedef struct Ov002SessionScreen {
 
 extern u8 data_0204be04;
 extern u8 data_0204c240;
-extern u16 data_0204c190;
-extern u16 data_0204c18c;
+extern u16 gPadPressed;
+extern u16 gPadHeld;
 
 extern Ov002SessionScreen *NNSi_FndGetCurrentRootHeap(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
@@ -259,15 +259,15 @@ void *Ov002_SessionTick(void)
     }
 
     if (pSess->nState == 7
-        && ((data_0204c190 & 8) != 0
-            || ((data_0204c190 & 0x800) != 0 && (data_0204c18c & 0x200) == 0
+        && ((gPadPressed & 8) != 0
+            || ((gPadPressed & 0x800) != 0 && (gPadHeld & 0x200) == 0
                 && (u32)GameState_GetField(0, 9) >= 0xb))
         && func_ov022_02088648() == 0 && Ov002_RunShutdownHook() == 0
         && func_ov022_020886d0(0) == 0 && pSess->nPending == 0) {
         if ((GetEntryField20ByIndex(QueryActiveStateOrDelegate())[9] & 4) != 0) {
             if (Ov002_List_GetSlot((u16)QueryActiveStateOrDelegate()) == 0) {
                 pLink->nSavedSubState = pLink->nSubState;
-                pLink->nSubState = (data_0204c190 & 8) != 0 ? -2 : -7;
+                pLink->nSubState = (gPadPressed & 8) != 0 ? -2 : -7;
                 Ov002_SetSessionBusy(1);
                 Ov002_ResetAllSlots();
                 Ov002_Roster_Reset();

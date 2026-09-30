@@ -14,7 +14,7 @@
 #include "game/engine.h"
 
 extern int data_ov002_0207f624;
-extern u16 data_0204c190;
+extern u16 gPadPressed;
 
 extern void EnqueueObjGfxCommand(void *pSurface);
 
@@ -36,7 +36,7 @@ void *Ov002_ScenePanelIdleStep(void)
     Ov002_SceneDrawEntryLines();
     EnqueueObjGfxCommand((char *)ctx + 0x6f8);
 
-    nButtons = data_0204c190;
+    nButtons = gPadPressed;
     if (nButtons & 0x40) {
         Ov002_StepCursorWrappingBack();
     } else {

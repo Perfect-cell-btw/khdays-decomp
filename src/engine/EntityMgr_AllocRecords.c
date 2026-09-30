@@ -1,9 +1,9 @@
 /* Allocates the entity manager's record table (n entries of 0x14 bytes). */
 
 extern void *NNSi_FndAllocFromDefaultExpHeap(int size);
-extern char *data_0204c208;
+extern char *gEntityMgr;
 
 void EntityMgr_AllocRecords(int n) {
-    *(void **)(data_0204c208 + 0x61c4) = NNSi_FndAllocFromDefaultExpHeap(n * 0x14);
-    *(int   *)(data_0204c208 + 0x61c8) = n;
+    *(void **)(gEntityMgr + 0x61c4) = NNSi_FndAllocFromDefaultExpHeap(n * 0x14);
+    *(int   *)(gEntityMgr + 0x61c8) = n;
 }

@@ -89,7 +89,7 @@ typedef struct GameState {
     int missionResultRecords[200]; /* 0x198c */
 } GameState;
 
-extern GameState *data_0204be18;                                       /* g_pTallySource */
+extern GameState *gGameState;                                       /* g_pTallySource */
 extern const u16 data_ov008_0209092c[];                                /* blank line */
 extern const u16 data_ov008_02090930[];                                /* record time format */
 extern const u16 data_ov008_02090954[];                                /* record plain format */
@@ -276,7 +276,7 @@ void Ov008_MissionMenu_DrawInfo(Ov008MissionMenu *pMenu, volatile Ov008MissionLi
             }
             pLabel = Ov008_GetVarRecordByIndex(pMenu->records, TEXT_RECORD);
             nMissionId = pEntry->missionId;
-            nRecord = data_0204be18->missionResultRecords[nMissionId];
+            nRecord = gGameState->missionResultRecords[nMissionId];
             if ((int)GameState_GetField(nMissionId * 3 + FIELD_MISSION_STAGE, 3) >= 0 && nRecord != -1) {
                 switch (pEntry->nRewardKind) {
                 case 0:

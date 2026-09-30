@@ -4,7 +4,7 @@
  * down -> +0x8c, 0x20 left -> +0x90, 0x10 right -> +0x94. A candidate is rejected when its group id
  * at +0xc equals the current node's or the focused node's, which is what stops the walk wrapping
  * within a group. The direction mask at +0x4a78 gates all four: it is reset to 0xf0 whenever it no
- * longer intersects data_0204c18c, and then narrowed to the single direction actually taken -- so a
+ * longer intersects gPadHeld, and then narrowed to the single direction actually taken -- so a
  * held d-pad keeps repeating in one axis instead of drifting. */
 
 typedef struct {
@@ -22,7 +22,7 @@ typedef struct {
 } Root;
 
 extern void Ov025_SwapParamOverrides(Root *self, int node);
-extern unsigned short data_0204c18c;
+extern unsigned short gPadHeld;
 
 void Ov025_MoveFocusByDpad(Root *self, int keys)
 {
@@ -37,7 +37,7 @@ void Ov025_MoveFocusByDpad(Root *self, int keys)
         return;
     }
 
-    if ((data_0204c18c & self->dirs) == 0) {
+    if ((gPadHeld & self->dirs) == 0) {
         self->dirs = 0xf0;
     }
 

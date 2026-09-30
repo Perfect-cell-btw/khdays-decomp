@@ -6,7 +6,7 @@
  * queue's free/done mask at ctx+0xc. No-op if param2 is not the local player, the
  * handle is not present, or the slot is already marked complete.
  *
- * ctx (data_0204c230): done-mask u32 @0xc, MsgSlot[32] @0x10 (stride 6). The scan
+ * ctx (gMsgQueue): done-mask u32 @0xc, MsgSlot[32] @0x10 (stride 6). The scan
  * walks a pointer from ctx+0xc reading the handle at +4 (== slot[i].handle), while
  * the matched slot pointer is recomputed as ctx+0x10 + i*6. flags |= 1<<bit is
  * written without a (u8) cast so mwcc fuses `orr rD, rN, #1, lsl bit`. */
@@ -15,11 +15,11 @@
 
 typedef struct { unsigned short handle; unsigned short size; unsigned char type; unsigned char flags; } MsgSlot;
 
-extern char *data_0204c230;
+extern char *gMsgQueue;
 
 void MsgQueue_MarkSlotReceived(unsigned int handle, unsigned int playerIndex, unsigned int bit)
 {
-    char *ctx = data_0204c230;
+    char *ctx = gMsgQueue;
     MsgSlot *found = 0;
     char *p;
     int i;

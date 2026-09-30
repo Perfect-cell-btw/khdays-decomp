@@ -85,7 +85,7 @@ typedef struct GameState {
 } GameState;
 
 extern Ov008PanelContext *data_ov026_02091368;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov008ChoiceBox data_ov026_020910cc[];
 extern int   Ov026_IsEntryVisible(Ov008ParamRecord *pRecord);               /* Ov008_IsEntryVisible */
 extern void *Ov026_FindEntryByTag(void *pTracker, int nTag);                 /* ov008_FindEntryByTag */
@@ -136,7 +136,7 @@ void Ov026_OpenShopDetailPanel(void)
     pPanel->hIconCell = Ov026_CreateMissionCell(hSlots, 0xb, 1, pos.nX - 0xb000, pos.nY + 0x4000);
     if (pPanel->pRecord->pItemDef->nIconId != 0) {
         Slot_SetVisible(hSlots, pPanel->hTitleCell, 1);
-        Slot_SetVisible(hSlots, pPanel->hIconCell, data_0204be18->aItemCount[pPanel->pRecord->pItemDef->nItemId] != Ov026_CountSpareItemsOfChild(pPanel->pRecord));
+        Slot_SetVisible(hSlots, pPanel->hIconCell, gGameState->aItemCount[pPanel->pRecord->pItemDef->nItemId] != Ov026_CountSpareItemsOfChild(pPanel->pRecord));
         Slot_ForwardToEntry(hSlots, pPanel->hTitleCell, (u16)(pPanel->pRecord->pItemDef->nIconId - 1));
     }
     pPanel->bConfirmed = 0;

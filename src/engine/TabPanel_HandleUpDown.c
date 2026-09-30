@@ -22,7 +22,7 @@ typedef struct {
 } Root0204be08;
 
 extern Root0204be08 data_0204be08;
-extern unsigned short data_0204c190;
+extern unsigned short gPadPressed;
 extern void PlaySound(int a, int b);
 extern int LoadGlobalU16At0(void);
 extern void SubObject_NudgeAndRedraw(void *panel, int index, int state);
@@ -33,7 +33,7 @@ void TabPanel_HandleUpDown(int *pIndex) {
     int count;
     int i;
 
-    if ((data_0204c190 & 0x80) == 0 && (data_0204c190 & 0x40) == 0) {
+    if ((gPadPressed & 0x80) == 0 && (gPadPressed & 0x40) == 0) {
         return;
     }
 
@@ -41,7 +41,7 @@ void TabPanel_HandleUpDown(int *pIndex) {
 
     ctx->slots[*pIndex].selected = 0;
 
-    delta = (data_0204c190 & 0x80) ? 1 : -1;
+    delta = (gPadPressed & 0x80) ? 1 : -1;
     *pIndex = *pIndex + delta;
 
     count = ctx->count;

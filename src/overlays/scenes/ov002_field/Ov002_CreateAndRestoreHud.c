@@ -70,7 +70,7 @@ typedef struct Ov002RootContext {
 typedef struct Ov002DayClock { u8 nModeFlags; } Ov002DayClock;
 typedef struct Ov002PanelThresholds { char pad000[4]; u16 wHiddenGroups; char pad006[8]; u16 nMetric; } Ov002PanelThresholds;
 extern Ov002RootContext *data_ov002_0207fa00;
-extern Ov002MissionMember data_0204c678[];
+extern Ov002MissionMember gPartyMembers[];
 extern const s8 data_ov002_0207ef68[];
 extern const GameClassDescriptor data_ov002_0207e8c8;
 extern Ov002DayClock data_0204c240;
@@ -142,8 +142,8 @@ void Ov002_CreateAndRestoreHud(void)
     if (!Session_IsActive()) {
         nIndex = 0;
         if (nIndex < func_ov022_020882f8()) {
-            pHeader = data_0204c678;
-            pRecord = data_0204c678;
+            pHeader = gPartyMembers;
+            pRecord = gPartyMembers;
             pSlot = params.aSlots;
             do {
                 memberHeader = pHeader->header;
@@ -164,7 +164,7 @@ void Ov002_CreateAndRestoreHud(void)
         nMember = nPeer;
         nOther = 1;
         if (nPeer < pSession->nSlotCount) {
-            pOnline = data_0204c678;
+            pOnline = gPartyMembers;
             do {
                 pPeer = Slot4_GetIfOccupied(nPeer);
                 if (pPeer != 0) {

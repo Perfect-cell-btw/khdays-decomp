@@ -2,7 +2,7 @@
  * to stay in this scene. Once Ov000_UpdateLoadState reports phase 2, reads the two score halves
  * (0xc77/0xc87 via GameState_GetField), packs them (low | high<<16), keeps the best packed value
  * and its phase, advances loadPhase and -- at phase 3 -- finishes: snapshots the game state into
- * data_0204be18, counts the valid save slots, allocates and clears three 0x800 transfer buffers,
+ * gGameState, counts the valid save slots, allocates and clears three 0x800 transfer buffers,
  * runs the four sub-initialisers, kicks the tween pulse, stamps a 64-bit timestamp, picks
  * selectedResult (0 when resultFlags set, else bestPhase), and returns the next scene callback
  * Ov000_TickSelectionScene. */
@@ -49,7 +49,7 @@ typedef struct Ov000LoadSceneContext {
 } Ov000LoadSceneContext;
 
 extern Ov000LoadSceneContext *data_ov000_0205ac24;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 
 extern int Obj_IsIdFree(void *resource);
 extern u8 Ov000_UpdateLoadState(int phase);
@@ -97,7 +97,7 @@ OverlayCallback Ov000_TickLoadScene(void)
 
     if (ready != 0) {
         context = data_ov000_0205ac24;
-        *data_0204be18 = context->gameStateSnapshot;
+        *gGameState = context->gameStateSnapshot;
 
     context->validSlotCount = 0;
     {

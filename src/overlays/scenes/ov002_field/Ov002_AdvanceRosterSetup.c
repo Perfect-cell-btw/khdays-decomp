@@ -36,7 +36,7 @@ typedef struct Ov002SessionCmd {
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c240;                /* boot-mode flags */
-extern u16 data_0204c678[];             /* 0x104 byte records */
+extern u16 gPartyMembers[];             /* 0x104 byte records */
 extern u8 data_02042a1c;
 extern u8 data_0204c4f1;
 extern int data_02041dc8;               /* the zero vector */
@@ -102,10 +102,10 @@ int Ov002_AdvanceRosterSetup(int nMode)
 
     if ((int)pRoster->pInstance == -1) {
         if ((data_0204c240 & 4) == 0) {
-            aTmp[4] = data_0204c678[0];
-            aTmp[5] = data_0204c678[1];
-            aTmp[6] = data_0204c678[2];
-            aTmp[7] = data_0204c678[3];
+            aTmp[4] = gPartyMembers[0];
+            aTmp[5] = gPartyMembers[1];
+            aTmp[6] = gPartyMembers[2];
+            aTmp[7] = gPartyMembers[3];
 
             if (*(s16 *)(pRoot + 0x8ba8) == 0x6c) {
                 ((u8 *)aTmp)[0xc] = 0x2e;
@@ -124,10 +124,10 @@ int Ov002_AdvanceRosterSetup(int nMode)
                 }
             }
 
-            data_0204c678[0] = aTmp[4];
-            data_0204c678[1] = aTmp[5];
-            data_0204c678[2] = aTmp[6];
-            data_0204c678[3] = aTmp[7];
+            gPartyMembers[0] = aTmp[4];
+            gPartyMembers[1] = aTmp[5];
+            gPartyMembers[2] = aTmp[6];
+            gPartyMembers[3] = aTmp[7];
 
             if (nMode == 7) {
                 Slot_EvalPackedParamWith(0, 0x65, 1);
@@ -137,7 +137,7 @@ int Ov002_AdvanceRosterSetup(int nMode)
         }
 
         nCount = data_02042a1c;
-        pRec = data_0204c678;
+        pRec = gPartyMembers;
         i = 0;
         pArg = args.aPresent;
         nDelta = nMode - 4;

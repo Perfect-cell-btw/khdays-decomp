@@ -33,7 +33,7 @@ extern u16 data_0204c23c;
 extern Ov002MissionResult data_0204c32c;
 extern Ov002PanelThresholds data_0204c254;
 extern Ov002SessionBoard data_0204c300;
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern Ov005Config data_ov005_0205b85c;
 extern const Ov005MissionListConfig data_ov005_0205b3b0;
 extern Ov005MissionListManager data_ov005_0205b814,data_ov005_0205b838;
@@ -124,7 +124,7 @@ void Ov005_InitializeResultConfiguration(void) {
             for(index=0;index<4;index++) {
                 if(config->rankThresholds[index]<=(u32)config->missionResultValue) {config->resultRank=index;break;}
             }
-            if(config->rewardMode!=255 && (data_0204be18->missionResultRecords[config->missionIndex]==-1 || data_0204be18->missionResultRecords[config->missionIndex]<(u32)config->missionResultValue))config->updateMissionRecord=1;
+            if(config->rewardMode!=255 && (gGameState->missionResultRecords[config->missionIndex]==-1 || gGameState->missionResultRecords[config->missionIndex]<(u32)config->missionResultValue))config->updateMissionRecord=1;
             break;
         case 8:
             if((data_0204c240.nModeFlags&12)==4)config->resultRank=data_0204c300.nLocalRankGroup;
@@ -134,13 +134,13 @@ void Ov005_InitializeResultConfiguration(void) {
             for(index=0;index<4;index++) {
                 if(config->rankThresholds[index]>=(u32)config->missionResultValue/10) {config->resultRank=index;break;}
             }
-            if(data_0204be18->missionResultRecords[config->missionIndex]==-1 || data_0204be18->missionResultRecords[config->missionIndex]>(u32)config->missionResultValue)config->updateMissionRecord=1;
+            if(gGameState->missionResultRecords[config->missionIndex]==-1 || gGameState->missionResultRecords[config->missionIndex]>(u32)config->missionResultValue)config->updateMissionRecord=1;
             break;
         default:
             for(index=0;index<4;index++) {
                 if(config->rankThresholds[index]>=(u32)config->missionResultValue) {config->resultRank=index;break;}
             }
-            if(data_0204be18->missionResultRecords[config->missionIndex]==-1 || data_0204be18->missionResultRecords[config->missionIndex]>(u32)config->missionResultValue)config->updateMissionRecord=1;
+            if(gGameState->missionResultRecords[config->missionIndex]==-1 || gGameState->missionResultRecords[config->missionIndex]>(u32)config->missionResultValue)config->updateMissionRecord=1;
             break;
         }
     }
@@ -164,9 +164,9 @@ void Ov005_InitializeResultConfiguration(void) {
     config->rewardBases[0]=(short)result->wPanelTotal;
     config->rewardBases[1]=result->nRaw;
     config->rewardBases[2]=result->nScaled;
-    config->rewardTotals[0]=data_0204be18->rewardTotal0c;
-    config->rewardTotals[1]=data_0204be18->rewardTotal08;
-    config->rewardTotals[2]=data_0204be18->rewardTotal04;
+    config->rewardTotals[0]=gGameState->rewardTotal0c;
+    config->rewardTotals[1]=gGameState->rewardTotal08;
+    config->rewardTotals[2]=gGameState->rewardTotal04;
     for(index=0;index<103;index++) {
         RewardRecord *record=0;
         MsgDb_FetchRecord(&record,25,index,14);

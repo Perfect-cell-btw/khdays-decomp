@@ -22,7 +22,7 @@ typedef struct TrackEntryGroup { u16 wPad,wCount; CollisionModelBlob **apEntry; 
 typedef struct Ov002SurfaceTagTemplate { const char *pName; s8 nTag; char pad5[3]; } Ov002SurfaceTagTemplate;
 extern Ov002LinkCtx *data_ov002_0207fa10;
 extern u8 data_02042a1d;
-extern Ov002MissionMember data_0204c678[];
+extern Ov002MissionMember gPartyMembers[];
 extern u8 data_ov002_0207e610[];
 extern Ov002SurfaceTagTemplate data_ov002_0207e640[];
 extern char data_ov002_0207f0dc[];
@@ -55,7 +55,7 @@ void Ov002_LoadPeerIntoSlot(int nSlot,int nPeer)
     pCtx->slots[nSlot]=nPeer;
     Entity_LoadAndAttach((u16)((u16)nSlot), (((((u32)pCtx->pArchiveIndex+0x8000)&0xfffffc)<<7)|0x80000000)|(pPeer->nArchiveMember&0x1ff));
     for(i=0;i<data_02042a1d;i++) {
-        int nKind=data_0204c678[i].bMemberKind;
+        int nKind=gPartyMembers[i].bMemberKind;
         if(nKind==0x11) pCtx->bResourceKinds|=4;
         else if(nKind!=0 && nKind!=5 && nKind!=0x13) pCtx->bResourceKinds|=2;
     }

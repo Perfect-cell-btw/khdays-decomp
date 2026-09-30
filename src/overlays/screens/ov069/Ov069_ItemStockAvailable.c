@@ -3,7 +3,7 @@
 
 #include "nitro/types.h"
 
-extern char *data_0204be18;
+extern char *gGameState;
 
 int Ov069_ItemStockAvailable(unsigned int id)
 {
@@ -15,7 +15,7 @@ int Ov069_ItemStockAvailable(unsigned int id)
     if (id >= 0x400) {
         return 0;
     }
-    row = data_0204be18;
+    row = gGameState;
     count = *(u8 *)(row + id + 0x810);
     for (i = 0; i < 3; i++) {
         j = 0;

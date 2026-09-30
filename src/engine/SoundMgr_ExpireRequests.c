@@ -1,6 +1,6 @@
 /* Advances the request ring's tick and drops the requests older than 8 ticks. */
 
-extern int data_0204c234;
+extern int gSoundMgr;
 
 typedef struct {
     unsigned char pad0[3];
@@ -15,7 +15,7 @@ typedef struct {
 } RingQueue;
 
 void SoundMgr_ExpireRequests(void) {
-    RingQueue *q = (RingQueue *)(*(int *)&data_0204c234 + 0xb4718);
+    RingQueue *q = (RingQueue *)(*(int *)&gSoundMgr + 0xb4718);
     unsigned short i = 0;
     unsigned char tick;
     unsigned short count;

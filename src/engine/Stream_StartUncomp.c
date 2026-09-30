@@ -11,13 +11,13 @@ extern int FS_ReadFileAsync(FSFile *p_file, void *dst, int len);
 extern void *ExpHeap_AllocOrDefault(unsigned size, int align, int **heapPP);
 extern void MI_InitUncompContextLZ(void *context, void *dest, void *header);
 extern int func_02004484(void *context, void *src, int len);
-extern char *data_0204bbfc[];
+extern char *gFileLoader[];
 
 void *Stream_StartUncomp(char *rd, FSFile *file, void *dest, int *pSize, int **heap, int unused,
                     int *pDone)
 {
     int size;
-    char *m = data_0204bbfc[0];
+    char *m = gFileLoader[0];
 
     *(int *)(rd + 0x418) = FS_ReadFile(file, rd, 0x200);
     size = *(unsigned *)rd >> 8;

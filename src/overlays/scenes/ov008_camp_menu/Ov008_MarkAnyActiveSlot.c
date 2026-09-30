@@ -1,14 +1,14 @@
 /* Set obj+0x4c to 1 if any active game slot (1..0x276) is currently flagged in the shared state
- * bitmap at data_0204be18[+0x810]; otherwise leave it 0. */
+ * bitmap at gGameState[+0x810]; otherwise leave it 0. */
 extern int Ov008_IsGridItemEligible(int slot);
-extern unsigned char *data_0204be18;
+extern unsigned char *gGameState;
 
 void Ov008_MarkAnyActiveSlot(int obj) {
     int i;
     *(int *)(obj + 0x4c) = 0;
     i = 1;
     do {
-        if (Ov008_IsGridItemEligible(i) != 0 && data_0204be18[i + 0x810] != 0) {
+        if (Ov008_IsGridItemEligible(i) != 0 && gGameState[i + 0x810] != 0) {
             *(int *)(obj + 0x4c) = 1;
             return;
         }

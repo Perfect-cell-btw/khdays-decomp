@@ -60,7 +60,7 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern Ov008MenuContext *data_ov008_02090f00;
-extern Ov002MissionMember data_0204c678[4];
+extern Ov002MissionMember gPartyMembers[4];
 extern Ov002DayClock data_0204c240;
 extern u16 data_0204c23c;
 extern Ov002PanelThresholds data_0204c254;
@@ -100,10 +100,10 @@ int Ov008_CommitSynchronizedSnapshotState(void)
         do {
             if (Slot4_GetIfOccupied(slot) != 0) {
                 Ov008_RefreshSaveSlotWidget(slot);
-                data_0204c678[slot] =
+                gPartyMembers[slot] =
                     data_ov008_02090f00->sharedSnapshot.missionMembers[slot];
-                ((u8 *)&data_0204c678[slot])[0] = (u8)slot;
-                ((u8 *)&data_0204c678[slot])[1] = (u8)slot;
+                ((u8 *)&gPartyMembers[slot])[0] = (u8)slot;
+                ((u8 *)&gPartyMembers[slot])[1] = (u8)slot;
             }
             slot++;
         } while (slot < 4);

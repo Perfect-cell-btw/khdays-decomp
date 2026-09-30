@@ -24,7 +24,7 @@ typedef struct {
 } Ov002HudScene;
 
 extern int data_ov002_0207f628;
-extern int data_0204c058;
+extern int gObjSystem;
 
 extern int Ov002_GetRootField8bc8(void);
 
@@ -34,7 +34,7 @@ void Ov002_StartHudTimer(int nKind, int nSeconds)
     Ov002HudScene *s;
 
     s = *(Ov002HudScene **)&data_ov002_0207f628;
-    switch (*(unsigned char *)&data_0204c058) {
+    switch (*(unsigned char *)&gObjSystem) {
     case 0:
         nFps = 0x1e;
         break;

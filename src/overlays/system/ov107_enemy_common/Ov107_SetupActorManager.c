@@ -7,7 +7,7 @@ extern char *Ov107_Pillar_New(int size);
 extern int Ov107_ContainerNode_New(void);
 extern void Ov107_DispatchByType(void);
 extern void Ov107_Scene_Tick(void);
-extern char *data_ov107_020cbf1c;
+extern char *gOv107ActorManager;
 extern int data_ov107_020cbab8;
 extern int data_ov107_020cbac4;
 extern int data_ov107_020cbad0;
@@ -19,7 +19,7 @@ void *Ov107_SetupActorManager(void) {
     char *self = NNSi_FndGetCurrentRootHeap();
     int i;
     char *slot;
-    data_ov107_020cbf1c = self;
+    gOv107ActorManager = self;
     Ov107_ClearGlobalCBB00();
     List_Init(self + 4);
     List_Init(self + 0x4c);

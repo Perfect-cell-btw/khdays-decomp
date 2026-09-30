@@ -29,8 +29,8 @@ typedef struct Ov022SelectionController {
 } Ov022SelectionController;
 
 extern u8 data_0204be04;
-extern s16 data_0204c18c;
-extern s16 data_0204c190;
+extern s16 gPadHeld;
+extern s16 gPadPressed;
 extern u8 data_ov022_020b2e6c;
 
 extern int func_ov022_02083f0c(void);
@@ -64,8 +64,8 @@ int Ov022_ReadSelectionInput(void)
     int step;
     int value;
 
-    held = data_0204c18c;
-    pressed = data_0204c190;
+    held = gPadHeld;
+    pressed = gPadPressed;
     suppressInput = 0;
     if (runtimeMode != context->runtimeMode) {
         return suppressInput;

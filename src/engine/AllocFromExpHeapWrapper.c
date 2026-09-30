@@ -2,9 +2,9 @@
  * none is given. */
 
 extern int NNS_FndAllocFromExpHeapEx();
-extern int data_0204c028;
+extern int gCurrentHeap;
 
 int AllocFromExpHeapWrapper(int size, int *heap) {
-    if (heap == 0) heap = *(int **)&data_0204c028;
+    if (heap == 0) heap = *(int **)&gCurrentHeap;
     return NNS_FndAllocFromExpHeapEx(*heap, size, 4);
 }

@@ -18,7 +18,7 @@ typedef struct {
 } SlotRecord;
 
 extern ItemEntry *Table_FindKey(int slot, unsigned int id);
-extern SlotRecord data_0204c678[];
+extern SlotRecord gPartyMembers[];
 
 void SaveSlot_AddItem(int slot, ItemEntry *item, int add)
 {
@@ -54,7 +54,7 @@ void SaveSlot_AddItem(int slot, ItemEntry *item, int add)
     if (item->count == 0) {
         return;
     }
-    e = ((SlotRecord *)((char *)data_0204c678 + off))->items;
+    e = ((SlotRecord *)((char *)gPartyMembers + off))->items;
     for (i = 0; i < 24; i++, e++) {
         if (e->id == 0) {
             e->id = item->id;

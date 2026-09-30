@@ -1,5 +1,5 @@
 /* Construct a 0x4a80-byte subsystem object: zero it, set the +0x4a78 tag to 0xf0, pick a
- * pool budget by the global mode (data_0204c058: 0=>0x1e, 1=>0x14, 2=>0x3c), allocate it
+ * pool budget by the global mode (gObjSystem: 0=>0x1e, 1=>0x14, 2=>0x3c), allocate it
  * (func_02020400(0x3c000, budget)) at +0x4a74, init the sub-object at +0x4a54 and the list
  * at +0x4a38. If a template (param_2) is given, apply it (Ov008_InitFromDescAndMark) and, when it
  * carries a non-empty payload (param_2[5], param_2[4]>0), load it via Ov008_LoadBlockProcessAndFree. */
@@ -9,12 +9,12 @@ extern void Tween_Clear(void *p);
 extern void NNS_FndInitList(void *list, int a);
 extern void Ov008_InitFromDescAndMark(char *obj, int *tmpl);
 extern void Ov008_LoadBlockProcessAndFree(char *obj, char *data, int count);
-extern unsigned char data_0204c058;
+extern unsigned char gObjSystem;
 int Ov008_InitSubsystemObject(char *param_1, int *param_2, int param_3, int param_4) {
     int budget;
     MI_CpuFill8(param_1, 0, 0x4a80);
     *(unsigned short *)(param_1 + 0x4a78) = 0xf0;
-    switch (data_0204c058) {
+    switch (gObjSystem) {
         case 1: budget = 0x14; break;
         case 0: budget = 0x1e; break;
         case 2: budget = 0x3c; break;

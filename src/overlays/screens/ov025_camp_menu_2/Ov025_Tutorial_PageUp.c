@@ -1,5 +1,5 @@
 /* Ov025_Tutorial_PageUp -- Ov025_Tutorial_PageUp: scroll the tutorial list up a page.  Ignored
- * while up / down are held (bits 6-7 of data_0204c18c), something is busy (020afd18), the
+ * while up / down are held (bits 6-7 of gPadHeld), something is busy (020afd18), the
  * stylus is down (bits 2-3 of +0xc) or the window (+0) is already at the top; otherwise the
  * window and the cursor (+2) move up nine topics, or up to the top when fewer remain.  The
  * row base (+0x64) resets, the phase bits (0-1 of +0xc) become 1, the cursor sound plays
@@ -53,7 +53,7 @@ typedef struct Ov025TutorialPage {
 extern Ov025TutorialPage *Ov025_GetPageA(void);                /* Ov008_GetPageA */
 extern int   Ov025_PageB_IsBusyOrInactive(void);                             /* Ov025_IsPageBBusy */
 extern void  Ov025_Tutorial_Refresh(void);                             /* Ov025_Tutorial_RefreshRows */
-extern u16   data_0204c18c;                                         /* held keys */
+extern u16   gPadHeld;                                         /* held keys */
 
 void Ov025_Tutorial_PageUp(void)
 {
@@ -61,7 +61,7 @@ void Ov025_Tutorial_PageUp(void)
     s16 nTop;
 
     pPage = Ov025_GetPageA();
-    if (data_0204c18c & 0xc0) {
+    if (gPadHeld & 0xc0) {
         return;
     }
     if (Ov025_PageB_IsBusyOrInactive() != 0) {

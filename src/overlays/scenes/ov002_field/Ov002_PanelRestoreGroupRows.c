@@ -25,7 +25,7 @@ typedef struct {
 } Ov002PanelSession;
 
 extern Ov002PanelSession *data_ov002_0207f620;
-extern int data_0204be18;
+extern int gGameState;
 
 extern int Ov002_FindSlotByKey(unsigned int nKey);
 extern void Ov002_PanelAssignGroupRow(int nRow, unsigned int nGroup,
@@ -51,13 +51,13 @@ void Ov002_PanelRestoreGroupRows(void)
        with two plain terms mwcc keeps the order of the sum as written, which is
        what puts the offset ahead of the base inside the group 8 test. */
     for (j = 0, nOff = 0; j < 4; j++, nOff += 4) {
-        switch (*(u16 *)(data_0204be18 + nOff + 0xfd0)) {
+        switch (*(u16 *)(gGameState + nOff + 0xfd0)) {
         case 8:
             pWalk = s;
             for (k = 0; k < 0xf; k++) {
-                if (pWalk->aCells[0] == *(u16 *)(nOff + data_0204be18 + 0xfd2)) {
+                if (pWalk->aCells[0] == *(u16 *)(nOff + gGameState + 0xfd2)) {
                     Ov002_PanelAssignGroupRow(j, 8,
-                                        *(u16 *)(data_0204be18 + nOff
+                                        *(u16 *)(gGameState + nOff
                                                  + 0xfd2));
                 }
                 pWalk = (Ov002PanelSession *)((char *)pWalk + 2);
@@ -65,10 +65,10 @@ void Ov002_PanelRestoreGroupRows(void)
             break;
         case 3:
             nSlot = Ov002_FindSlotByKey(
-                *(u16 *)(data_0204be18 + nOff + 0xfd2));
+                *(u16 *)(gGameState + nOff + 0xfd2));
             if (nSlot >= 0 && nSlot < s->wSlotCount) {
                 Ov002_PanelAssignGroupRow(j, 3,
-                                    *(u16 *)(data_0204be18 + nOff + 0xfd2));
+                                    *(u16 *)(gGameState + nOff + 0xfd2));
             }
             break;
         }

@@ -48,7 +48,7 @@ typedef struct Ov008SaveMenu {
     u32 nBestStamp;           /* 0x1ef8 */
 } Ov008SaveMenu;
 
-extern GameState *data_0204be18;
+extern GameState *gGameState;
 extern const char data_ov008_020904e4[];
 extern void  Ov008_InitSubScreenGraphics(void);                                   /* load the menu graphics */
 extern void *G2_GetBG1ScrPtr(void);
@@ -80,7 +80,7 @@ int Ov008_SaveMenuInitStep(Ov008SaveMenu *pMenu)
         MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
         MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
         Ov008_VarTable_Load(pMenu->varRecords, data_ov008_020904e4);
-        pMenu->backup = *data_0204be18;
+        pMenu->backup = *gGameState;
         pMenu->nLoadPhase = 0;
         pMenu->nPhase = 0;
         pMenu->nInitStep++;
@@ -101,7 +101,7 @@ int Ov008_SaveMenuInitStep(Ov008SaveMenu *pMenu)
         }
         break;
     case 2:
-        *data_0204be18 = pMenu->backup;
+        *gGameState = pMenu->backup;
         Ov008_LoadMenuBgWithVariantChars();
         Ov008_SaveMenu_BuildLayout(pMenu);
         Ov008_SaveMenu_BuildTextSurfaces(pMenu);
@@ -109,7 +109,7 @@ int Ov008_SaveMenuInitStep(Ov008SaveMenu *pMenu)
         Ov008_PlaceElementByVariant(pMenu, 0, pMenu->nSlot);
         Ov008_RefreshSaveRowDigits(pMenu);
         Tween_Clear(pMenu->tween);
-        Ov008_DrawNumberDigits(data_0204be18->nPoints);
+        Ov008_DrawNumberDigits(gGameState->nPoints);
         pMenu->nInitStep++;
         break;
     case STEP_DONE:
