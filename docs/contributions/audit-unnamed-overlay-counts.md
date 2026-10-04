@@ -20,7 +20,7 @@ function categories applies:
 
 CONTRIBUTING.md separately calls for tooling fixes to go in separate PRs,
 one problem each, linked to the issue they fix. This branch addresses one
-reporting problem; an upstream PR has not been opened.
+reporting problem.
 
 ## Validation
 
